@@ -45,45 +45,13 @@ export default function DocumentationPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <BookOpen className="h-6 w-6" />
-            <span>MarketingDocs</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/documentation" className="text-sm font-medium hover:underline underline-offset-4">
-              Documentation
-            </Link>
-            <Link href="/services" className="text-sm font-medium hover:underline underline-offset-4">
-              Services
-            </Link>
-            <Link href="/brief" className="text-sm font-medium hover:underline underline-offset-4">
-              Create Brief
-            </Link>
-            <Link href="/freelancers" className="text-sm font-medium hover:underline underline-offset-4">
-              Find Freelancers
-            </Link>
-          </nav>
-          <div className="flex gap-4">
-            <Link href="/login">
-              <Button variant="outline" size="sm">
-                Log In
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button size="sm">Sign Up</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Digital Marketing Documentation
+                <h1 className="text-3xl font-medium font-adobetitre tracking-tighter sm:text-4xl md:text-5xl">
+                  Rechercher dans la documentation
                 </h1>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl">
                   Comprehensive guides and resources to help you master digital marketing for websites.

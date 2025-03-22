@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 819.96 605.68">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 282px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: HouschkaRounded-DemiBold, 'Houschka Rounded';
+        font-weight: 300;
+      }
+
+      .cls-1, .cls-3 {
+        fill: #021373;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        fill: #1f54bf;
+        font-size: 272px;
+      }
+
+      .cls-3 {
+        font-size: 118px;
+      }
+    </style>
+  </defs>
+  <g id="Calque_1-2" data-name="Calque 1">
+    <text class="cls-1" transform="translate(105.07 239.7)"><tspan x="0" y="0">ne</tspan><tspan class="cls-5" x="307.37" y="0">x</tspan><tspan x="440.47" y="0">t</tspan></text>
+    <text class="cls-2" transform="translate(0 443.19)"><tspan x="0" y="0">Impact</tspan></text>
+    <text class="cls-3" transform="translate(467.28 571.69)"><tspan x="0" y="0">.digi</tspan><tspan class="cls-4" x="209.92" y="0">t</tspan><tspan x="254.28" y="0">al</tspan></text>
+  </g>
+</svg>

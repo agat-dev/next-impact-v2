@@ -15,7 +15,7 @@ body {
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 220.13, 72.07%, 43.53%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -30,7 +30,7 @@ body {
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
+    --border: 218.82, 56.67%, 88.24%, 0.2;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --chart-1: 12 76% 61%;
@@ -47,6 +47,18 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --color-dark-blue: 231.03, 95.6%, 17.84%;
+    --color-medium-blue: 230.97, 96.58%, 22.94%;
+    --color-regular-blue: 220.13, 72.07%, 43.53%;
+    --color-light-blue: 214.04, 57.78%, 64.71%;
+    --color-extra-light-blue: 218.82, 56.67%, 88.24%;
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -91,4 +103,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-adobetitre font-medium;
+  }
 }
+

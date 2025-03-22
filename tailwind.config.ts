@@ -10,6 +10,19 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			adobetitre: ['"houschka-rounded"', 'system-ui', 'sans-serif'],
+			adobetext: ['area-normal', 'sans-serif'],
+		},
+		fontWeight: {
+			light: '300',
+			normal: '400',
+			regular: '500',
+			medium: '600',
+			semibold: '700',
+			bold: '800',
+			extrabold: '900'
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

@@ -2,120 +2,16 @@ import Link from "next/link"
 import { ArrowRight, BookOpen, Calendar, FileText, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { Timeline } from "@/components/ui/timeline"
 
 export default function Home() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <header className="border-b">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <BookOpen className="h-6 w-6" />
-            <span>MarketingDocs</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/documentation" className="text-sm font-medium hover:underline underline-offset-4">
-              Documentation
-            </Link>
-            <Link href="/services" className="text-sm font-medium hover:underline underline-offset-4">
-              Services
-            </Link>
-            <Link href="/brief" className="text-sm font-medium hover:underline underline-offset-4">
-              Create Brief
-            </Link>
-            <Link href="/freelancers" className="text-sm font-medium hover:underline underline-offset-4">
-              Find Freelancers
-            </Link>
-          </nav>
-          <div className="flex gap-4">
-            <Link href="/login">
-              <Button variant="outline" size="sm">
-                Log In
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button size="sm">Sign Up</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    Your Digital Marketing Knowledge Hub
-                  </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Comprehensive documentation, expert consultations, and freelancer matching for your web marketing
-                    needs.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link href="/documentation">
-                    <Button className="w-full">
-                      Explore Documentation
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link href="/services">
-                    <Button variant="outline" className="w-full">
-                      Our Services
-                    </Button>
-                  </Link>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="relative h-[350px] w-[350px] sm:h-[400px] sm:w-[400px] md:h-[450px] md:w-[450px] lg:h-[500px] lg:w-[500px]">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="grid grid-cols-2 gap-8">
-                      <div className="flex flex-col items-center gap-4 rounded-lg border bg-background p-6 shadow-sm">
-                        <BookOpen className="h-12 w-12 text-primary" />
-                        <h3 className="text-xl font-bold">Documentation</h3>
-                        <p className="text-center text-sm text-muted-foreground">
-                          Comprehensive guides on digital marketing
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center gap-4 rounded-lg border bg-background p-6 shadow-sm">
-                        <Calendar className="h-12 w-12 text-primary" />
-                        <h3 className="text-xl font-bold">Consultations</h3>
-                        <p className="text-center text-sm text-muted-foreground">Book expert video consultations</p>
-                      </div>
-                      <div className="flex flex-col items-center gap-4 rounded-lg border bg-background p-6 shadow-sm">
-                        <FileText className="h-12 w-12 text-primary" />
-                        <h3 className="text-xl font-bold">Brief Builder</h3>
-                        <p className="text-center text-sm text-muted-foreground">
-                          Create detailed project specifications
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-center gap-4 rounded-lg border bg-background p-6 shadow-sm">
-                        <Users className="h-12 w-12 text-primary" />
-                        <h3 className="text-xl font-bold">Freelancers</h3>
-                        <p className="text-center text-sm text-muted-foreground">Connect with verified professionals</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Comprehensive Digital Marketing Resources
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  Access our extensive library of guides, tutorials, and best practices to elevate your web marketing
-                  strategy.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+
+  const data = [
+    {
+      title: "Découvrir le marketing digital",
+      content: (
+        <>
+        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <svg
@@ -212,14 +108,16 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          </>
+      ),
+    },
+    {
+      title: "Être conseillé par des experts",
+      content: (
+        <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Expert Consultations</h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     Book one-on-one video sessions with our digital marketing specialists to get personalized advice for
                     your projects.
@@ -274,6 +172,101 @@ export default function Home() {
               </div>
             </div>
           </div>
+      ),
+    },
+    {
+      title: "Trouver des prestataires",
+      content: (
+        <div className="container px-4 md:px-6">
+        <div className="flex flex-col space-y-4">
+          <div className="space-y-2">
+            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+              After your consultation, we'll match you with the perfect freelancers for your project.
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
+            <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+              <div className="h-16 w-16 rounded-full bg-gray-100"></div>
+              <div className="space-y-2 text-center">
+                <h3 className="text-xl font-bold">Web Developers</h3>
+                <p className="text-sm text-muted-foreground">
+                  Front-end, back-end, and full-stack developers to build your website or application.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+              <div className="h-16 w-16 rounded-full bg-gray-100"></div>
+              <div className="space-y-2 text-center">
+                <h3 className="text-xl font-bold">UX/UI Designers</h3>
+                <p className="text-sm text-muted-foreground">
+                  Experienced designers who create beautiful and functional user interfaces.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+              <div className="h-16 w-16 rounded-full bg-gray-100"></div>
+              <div className="space-y-2 text-center">
+                <h3 className="text-xl font-bold">SEO Specialists</h3>
+                <p className="text-sm text-muted-foreground">
+                  Experts who can optimize your website for search engines and drive organic traffic.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <Link href="/services">
+              <Button>Book a Consultation to Get Matched</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+      ),
+    },
+  ];
+
+  return (
+    <>
+      <main className="flex-1">
+        <section className="w-full pt-12 md:pt-24 lg:pt-32 xl:pt-48">
+          <div className="container px-4 md:px-6">
+            <div>
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-adobetitre font-medium tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                    Développer sa visibilité en ligne
+                  </h1>
+                  <p className="max-w-[600px] font-adobetexte text-muted-foreground md:text-xl">
+                    Comprehensive documentation, expert consultations, and freelancer matching for your web marketing
+                    needs.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Link href="/documentation">
+                    <Button className="w-full">
+                      Explore Documentation
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/services">
+                    <Button variant="outline" className="w-full">
+                      Our Services
+                    </Button>
+                  </Link>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="w-full h-full py-6 md:py-12 lg:py-16 xl:py-24">
+              <div className="flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <div className="inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl" />
+                  <div className="inset-0 flex items-center justify-center">
+                      <Timeline data={data} />
+                  </div>
+                </div>
+              </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
@@ -330,54 +323,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Connect with Verified Freelancers
-                </h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                  After your consultation, we'll match you with the perfect freelancers for your project.
-                </p>
-              </div>
-              <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
-                <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="h-16 w-16 rounded-full bg-gray-100"></div>
-                  <div className="space-y-2 text-center">
-                    <h3 className="text-xl font-bold">Web Developers</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Front-end, back-end, and full-stack developers to build your website or application.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="h-16 w-16 rounded-full bg-gray-100"></div>
-                  <div className="space-y-2 text-center">
-                    <h3 className="text-xl font-bold">UX/UI Designers</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Experienced designers who create beautiful and functional user interfaces.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="h-16 w-16 rounded-full bg-gray-100"></div>
-                  <div className="space-y-2 text-center">
-                    <h3 className="text-xl font-bold">SEO Specialists</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Experts who can optimize your website for search engines and drive organic traffic.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <Link href="/services">
-                  <Button>Book a Consultation to Get Matched</Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -429,7 +374,7 @@ export default function Home() {
           </nav>
         </div>
       </footer>
-    </div>
+    </>
   )
 }
 
