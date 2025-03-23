@@ -12,6 +12,12 @@ export default function DocumentationPage() {
   // Définir les catégories pour la recherche
   const categories = [
     {
+      id: "bases",
+      title: "Marketing digital",
+      description: "Principes et concepts de base du marketing digital",
+      url: "/documentation/bases",
+    },
+    {
       id: "seo",
       title: "SEO",
       description: "Search Engine Optimization guides and techniques",
@@ -38,6 +44,7 @@ export default function DocumentationPage() {
   ]
 
   // Filtrer les articles par catégorie
+  const basesArticles = articles.filter((article) => article.category === "bases")
   const seoArticles = articles.filter((article) => article.category === "seo")
   const uxuiArticles = articles.filter((article) => article.category === "ux-ui")
   const contentArticles = articles.filter((article) => article.category === "content")
@@ -74,6 +81,12 @@ export default function DocumentationPage() {
                   All Topics
                 </TabsTrigger>
                 <TabsTrigger
+                  value="bases"
+                  className="rounded-none border-b-2 border-transparent px-4 py-2 data-[state=active]:border-primary"
+                >
+                  Marketing digital
+                </TabsTrigger>
+                <TabsTrigger
                   value="seo"
                   className="rounded-none border-b-2 border-transparent px-4 py-2 data-[state=active]:border-primary"
                 >
@@ -101,6 +114,34 @@ export default function DocumentationPage() {
               <TabsContent value="all" className="pt-6">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {articles.map((article) => (
+                    <div
+                      key={article.slug}
+                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md"
+                    >
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-bold">{article.title}</h3>
+                        <p className="text-muted-foreground">{article.description}</p>
+                      </div>
+                      <Link
+                        href={`/documentation/${article.category}/${article.slug}`}
+                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                        aria-label={article.title}
+                      >
+                        <span className="sr-only">{article.title}</span>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-10 flex justify-center">
+                  <Button variant="outline">
+                    Load More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </TabsContent>
+              <TabsContent value="bases" className="pt-6">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {basesArticles.map((article) => (
                     <div
                       key={article.slug}
                       className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md"

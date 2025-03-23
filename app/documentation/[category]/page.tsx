@@ -20,9 +20,9 @@ export function generateStaticParams() {
   }))
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const { category } = params
-  const articles = getArticlesByCategory(category)
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { category } = await params
+  const articles =  getArticlesByCategory(category)
 
   if (articles.length === 0) {
     notFound()
@@ -30,6 +30,12 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   // Définir les catégories pour la recherche
   const categories = [
+    {
+      id: "bases",
+      title: "Marketing digital",
+      description: "Principes et concepts de base du marketing digital",
+      url: "/documentation/bases",
+    },
     {
       id: "seo",
       title: "SEO",
@@ -58,6 +64,10 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   // Titre et description de la catégorie
   const categoryInfo = {
+    bases: {
+      title: "Marketing Digital",
+      description: "Découvrez les principes et concepts de base du marketing digital",
+    },
     seo: {
       title: "Search Engine Optimization (SEO)",
       description: "Comprehensive guides and resources to help you master SEO for your website.",
@@ -85,54 +95,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="border-b">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <BookOpen className="h-6 w-6" />
-            <span>MarketingDocs</span>
-          </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/documentation" className="text-sm font-medium hover:underline underline-offset-4">
-              Documentation
-            </Link>
-            <Link href="/services" className="text-sm font-medium hover:underline underline-offset-4">
-              Services
-            </Link>
-            <Link href="/brief" className="text-sm font-medium hover:underline underline-offset-4">
-              Create Brief
-            </Link>
-            <Link href="/freelancers" className="text-sm font-medium hover:underline underline-offset-4">
-              Find Freelancers
-            </Link>
-          </nav>
-          <div className="flex gap-4">
-            <Link href="/login">
-              <Button variant="outline" size="sm">
-                Log In
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button size="sm">Sign Up</Button>
-            </Link>
-          </div>
-        </div>
-      </header>
+
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-6 md:py-12 lg:py-16">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{categoryTitle}</h1>
+            <div className="space-y-2 pb-4">
+                <h1 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl">{categoryTitle}</h1>
                 <p className="max-w-[700px] text-muted-foreground md:text-xl">{categoryDescription}</p>
-              </div>
-              <div className="w-full max-w-md">
-                <SearchDocumentation articles={articles} categories={categories} />
-              </div>
             </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
             <div className="flex justify-between items-center mb-8">
               <Link href="/documentation">
                 <Button variant="ghost" size="sm">

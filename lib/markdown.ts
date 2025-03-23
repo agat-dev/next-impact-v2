@@ -26,7 +26,7 @@ export function getArticleBySlug(category: string, slug: string): Article {
   // Formater la date si c'est un objet Date
   const formattedDate =
     data.date instanceof Date
-      ? data.date.toLocaleDateString("en-US", {
+      ? data.date.toLocaleDateString("fr-FR", {
           year: "numeric",
           month: "long",
           day: "numeric",
@@ -109,7 +109,7 @@ export function getArticlesByCategory(category: string): ArticleMeta[] {
       // Formater la date si c'est un objet Date
       const formattedDate =
         data.date instanceof Date
-          ? data.date.toLocaleDateString("en-US", {
+          ? data.date.toLocaleDateString("fr-FR", {
               year: "numeric",
               month: "long",
               day: "numeric",

@@ -175,7 +175,7 @@ export default function Home() {
       ),
     },
     {
-      title: "Trouver des prestataires",
+      title: "Trouver un prestataire",
       content: (
         <div className="container px-4 md:px-6">
         <div className="flex flex-col space-y-4">
