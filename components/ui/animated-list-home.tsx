@@ -2,54 +2,47 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatedList } from "@/components/magicui/animated-list";
+import Link from "next/link"; 
 
 interface Item {
   name: string;
   description: string;
   icon: string;
   color: string;
-  time: string;
+  link?: string;
 }
 
 let notifications = [
   {
-    name: "Payment received",
-    description: "Magic UI",
-    time: "15m ago",
-
-    icon: "💸",
-    color: "#00C9A7",
-  },
-  {
-    name: "User signed up",
-    description: "Magic UI",
-    time: "10m ago",
+    name: "Besoin d'un prestataire ?",
+    description: "Déléguez à des freelances",
+    link: "/freelancers",
     icon: "👤",
     color: "#FFB800",
   },
   {
-    name: "New message",
-    description: "Magic UI",
-    time: "5m ago",
+    name: "Besoin de conseils ?",
+    description: "Consultez nos expert",
+    link: "/services",
     icon: "💬",
     color: "#FF3D71",
   },
   {
-    name: "New event",
-    description: "Magic UI",
-    time: "2m ago",
-    icon: "🗞️",
-    color: "#1E86FF",
+    name: "Besoin d'information pour agir ?",
+    description: "Accédez à notre base de connaissances",
+    link: "/documentation",
+    icon: "💸",
+    color: "#00C9A7",
   },
 ];
 
-notifications = Array.from({ length: 10 }, () => notifications).flat();
+notifications = Array.from({ length: 1 }, () => notifications).flat();
 
-const Notification = ({ name, description, icon, color, time }: Item) => {
+const Notification = ({ name, description, icon, color, link }: Item) => {
   return (
     <figure
       className={cn(
-        "relative mx-auto min-h-fit w-full max-w-[400px] cursor-pointer overflow-hidden rounded-2xl p-4",
+        "relative mx-auto min-h-fit w-full max-w-[600px] cursor-pointer overflow-hidden rounded-2xl p-4",
         // animation styles
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
         // light styles
@@ -58,34 +51,36 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
         "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
       )}
     >
-      <div className="flex flex-row items-center gap-3">
+      <Link href={link || "#"}>
+      <div className="flex flex-row justify-between items-center gap-3">
+        <div className="flex flex-col overflow-hidden">
+          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
+            <span className="text-xl font-adobetitre">{name}</span>
+          </figcaption>
+          <p className="text-sm font-normal dark:text-white/60">
+            {description}
+          </p>
+        </div>
         <div
           className="flex size-10 items-center justify-center rounded-2xl"
           style={{
             backgroundColor: color,
           }}
         >
-          <span className="text-lg">{icon}</span>
-        </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre text-lg font-medium dark:text-white ">
-            <span className="text-sm sm:text-lg">{name}</span>
-            <span className="mx-1">·</span>
-            <span className="text-xs text-gray-500">{time}</span>
-          </figcaption>
-          <p className="text-sm font-normal dark:text-white/60">
-            {description}
-          </p>
+           <div className="text-lg">{icon}</div>
         </div>
       </div>
+      </Link>
     </figure>
   );
 };
 
 export function AnimatedListHome({
   className,
+  delay = 1400,
 }: {
   className?: string;
+  delay?: number;
 }) {
   return (
     <div
@@ -94,7 +89,7 @@ export function AnimatedListHome({
         className,
       )}
     >
-      <AnimatedList>
+      <AnimatedList delay={delay} className="flex flex-col items-center gap-4">
         {notifications.map((item, idx) => (
           <Notification {...item} key={idx} />
         ))}
