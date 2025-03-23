@@ -3,25 +3,22 @@ import { BookOpen, Calendar, Check } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { TextAnimate } from "@/components/magicui/text-animate"
 
 export default function FreelancersPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                  Find the Perfect Freelancer
-                </h1>
-                <p className="max-w-[700px] text-muted-foreground md:text-xl">
-                  After your consultation, we'll match you with verified professionals who can bring your project to
-                  life.
-                </p>
+        <section className="w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">
+                <div className="container px-4 md:px-6">             
+                  <div className="flex justify-center space-y-4 pt-8">
+                      <TextAnimate animation="blurInUp" by="character" once>
+                          Recommandation de freelances 
+                      </TextAnimate>
+                  </div>
+                  <div className="flex justify-center space-y-4 py-8">                      
+                </div>
               </div>
-            </div>
-          </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
