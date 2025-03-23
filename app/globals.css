@@ -113,25 +113,25 @@ body {
     @apply font-adobetitre font-normal py-1;
   }
   h1 {
-    @apply text-4xl;
+    @apply text-4xl text-regularblue;
   }
   h2 {
-    @apply text-3xl pt-4;
+    @apply text-3xl text-mediumblue pt-4;
   }
   h3 {
-    @apply text-2xl;
+    @apply text-2xl text-mediumblue;
   }
   h4 {
-    @apply text-xl;
+    @apply text-xl text-mediumblue;
   }
   h5 {
-    @apply text-lg;
+    @apply text-xl text-darkblue;
   }
   h6 {
-    @apply text-base;
+    @apply text-base text-darkblue;
   }
   p, span, button, li, input, textarea, label {
-    @apply font-adobetext font-regular text-black py-1;
+    @apply font-adobetext font-regular text-darkblue py-1;
   }
 }
 

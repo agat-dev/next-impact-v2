@@ -10,16 +10,13 @@ export default function Header() {
           </Link>
           <nav className="hidden md:flex gap-6">
             <Link href="/documentation" className="text-sm font-medium hover:underline underline-offset-4">
-              Documentation
+              S'informer
             </Link>
             <Link href="/services" className="text-sm font-medium hover:underline underline-offset-4">
-              Services
-            </Link>
-            <Link href="/brief" className="text-sm font-medium hover:underline underline-offset-4">
-              Create Brief
+              Être conseillé
             </Link>
             <Link href="/freelancers" className="text-sm font-medium hover:underline underline-offset-4">
-              Find Freelancers
+              Trouver des prestataires
             </Link>
           </nav>
         </div>

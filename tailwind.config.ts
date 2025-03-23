@@ -24,6 +24,12 @@ const config: Config = {
 			extrabold: '900'
 		},
   		colors: {
+			darkblue: '#020F59',	
+			mediumblue: '#021373',
+			regularblue: '#1F54BF',
+			lightblue: '#719ED9',
+			extralightblue: '#D0DCF2',
+			white: '#FFFFFF',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

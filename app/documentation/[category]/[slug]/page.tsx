@@ -28,7 +28,7 @@ export function generateTableOfContents(content: string) {
     const level = hashes.length // Le niveau du titre est déterminé par le nombre de #
     const id = text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "") // Génération d'un ID unique
 
-    if (level === 2) {
+    if (level === 2 || level === 3) {
       toc.push({ id, text, level })
     }
   }
@@ -120,15 +120,15 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             <aside className="w-64 hidden lg:block pl-8">
               <div className="sticky top-16">
                 <h3 className="text-lg mb-4">Table of Contents</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                   {tableOfContents.map((item) => (
-                    <li key={item.id}>
+                    <li key={item.id} className="py-0.5"> 
                         <a
                         href={`#${item.id}`}
                         className={`${
-                          item.level === 1
-                          ? "text-base text-foreground"
-                          : "text-sm text-muted-foreground"
+                          item.level === 2
+                          ? "text-sm text-foreground"
+                          : "text-xs text-muted-foreground pl-6"
                         } hover:text-foreground`}
                         >
                         {item.text}

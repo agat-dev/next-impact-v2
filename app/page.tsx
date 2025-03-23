@@ -3,6 +3,8 @@ import { ArrowRight, BookOpen, Calendar, FileText, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Timeline } from "@/components/ui/timeline"
+import { AnimatedList } from "@/components/magicui/animated-list"
+import { AnimatedListHome } from "@/components/ui/animated-list-home"
 
 export default function Home() {
 
@@ -30,7 +32,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">SEO Optimization</h3>
+                  <h3 className="text-xl">SEO Optimization</h3>
                   <p className="text-muted-foreground">
                     Learn how to improve your website's visibility in search engines and drive organic traffic.
                   </p>
@@ -65,7 +67,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">UX/UI Design</h3>
+                  <h3 className="text-xl">UX/UI Design</h3>
                   <p className="text-muted-foreground">
                     Discover principles and practices for creating user-friendly and engaging website experiences.
                   </p>
@@ -95,7 +97,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold">Content Strategy</h3>
+                  <h3 className="text-xl">Content Strategy</h3>
                   <p className="text-muted-foreground">
                     Master the art of creating compelling content that converts visitors into customers.
                   </p>
@@ -188,7 +190,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
               <div className="h-16 w-16 rounded-full bg-gray-100"></div>
               <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">Web Developers</h3>
+                <h3 className="text-xl">Web Developers</h3>
                 <p className="text-sm text-muted-foreground">
                   Front-end, back-end, and full-stack developers to build your website or application.
                 </p>
@@ -197,7 +199,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
               <div className="h-16 w-16 rounded-full bg-gray-100"></div>
               <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">UX/UI Designers</h3>
+                <h3 className="text-xl">UX/UI Designers</h3>
                 <p className="text-sm text-muted-foreground">
                   Experienced designers who create beautiful and functional user interfaces.
                 </p>
@@ -206,7 +208,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4 rounded-lg border bg-background p-6 shadow-sm">
               <div className="h-16 w-16 rounded-full bg-gray-100"></div>
               <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">SEO Specialists</h3>
+                <h3 className="text-xl">SEO Specialists</h3>
                 <p className="text-sm text-muted-foreground">
                   Experts who can optimize your website for search engines and drive organic traffic.
                 </p>
@@ -229,15 +231,16 @@ export default function Home() {
       <main className="flex-1">
         <section className="w-full pt-12 md:pt-24 lg:pt-32 xl:pt-48">
           <div className="container px-4 md:px-6">
-            <div>
+              {/*}
+              <div>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-adobetitre font-medium tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    Développer sa visibilité en ligne
+                    Les clés de votre visibilité
                   </h1>
-                  <p className="max-w-[600px] font-adobetexte text-muted-foreground md:text-xl">
-                    Comprehensive documentation, expert consultations, and freelancer matching for your web marketing
-                    needs.
+                  <p className="max-w-[600px] font-adobetitre font-regular text-mediumblue md:text-2xl">
+                    S'informer, être conseillé et trouver des prestataires pour mettre en oeuvre votre stratégie de marketing
+                    digital.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -254,6 +257,9 @@ export default function Home() {
                   </Link>
                 </div>
             </div>
+            */}
+            <div className="flex flex-col justify-center space-y-4">
+              <AnimatedListHome className="" />
           </div>
         </div>
       </section>
@@ -272,7 +278,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl">
                   From Brief to Project Specification
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
@@ -283,7 +289,7 @@ export default function Home() {
                 <div className="rounded-lg border bg-background p-6 shadow-sm">
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <h3 className="text-xl font-bold">Interactive Brief Builder</h3>
+                      <h3 className="text-xl">Interactive Brief Builder</h3>
                       <p className="text-muted-foreground">
                         Answer a series of questions to create a comprehensive project specification that you can share
                         with freelancers or agencies.
@@ -327,7 +333,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-3xl tracking-tighter sm:text-4xl md:text-5xl">
                   Join Our Knowledge Community
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl">
