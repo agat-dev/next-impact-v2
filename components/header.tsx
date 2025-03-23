@@ -9,14 +9,14 @@ export default function Header() {
             <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
           </Link>
           <nav className="hidden md:flex gap-6">
-            <Link href="/documentation" className="text-sm font-medium hover:underline underline-offset-4">
-              S'informer
+            <Link href="/documentation" className="text-lg font-medium">
+              Ressources
             </Link>
-            <Link href="/services" className="text-sm font-medium hover:underline underline-offset-4">
-              Être conseillé
+            <Link href="/services" className="text-lg font-medium">
+              Conseil
             </Link>
-            <Link href="/freelancers" className="text-sm font-medium hover:underline underline-offset-4">
-              Trouver des prestataires
+            <Link href="/freelancers" className="text-lg font-medium">
+              Compétences
             </Link>
           </nav>
         </div>
