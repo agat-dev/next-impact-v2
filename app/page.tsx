@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link"
 import { ArrowRight, BookOpen, Calendar, FileText, Users } from "lucide-react"
 
@@ -5,10 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Timeline } from "@/components/ui/timeline"
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { Expandable, ExpandableCard, ExpandableCardFooter, ExpandableCardContent, ExpandableCardHeader, ExpandableContent, ExpandableTrigger } from "@/components/ui/expand-cards";
-import { Badge } from "@/components/magicui/text-animate";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 
 
@@ -274,12 +276,11 @@ export default function Home() {
                           <ExpandableCardHeader>
                             <div className="flex justify-between items-start w-full">
                               <div>
-                                <Badge
-                                  variant="secondary"
-                                  className="bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-100 mb-2"
+                                <span
+                                  className="bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-100 mb-2 px-2 py-1 rounded"
                                 >
                                   In 15 mins
-                                </Badge>
+                                </span>
                                 <h3 className="font-semibold text-xl text-gray-800 dark:text-white">
                                   Ressources
                                 </h3>
