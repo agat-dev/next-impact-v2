@@ -9,16 +9,16 @@ export default function Header() {
             <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
           </Link>
           <nav className="hidden md:flex gap-6">        
-            <Link href="/brief" className="text-lg font-medium">
+            <Link href="/brief" className="text-lg font-regular">
               Diagnostic
             </Link>
-            <Link href="/services" className="text-lg font-medium">
+            <Link href="/services" className="text-lg font-regular">
               Conseil
             </Link>
-            <Link href="/freelancers" className="text-lg font-medium">
+            <Link href="/freelancers" className="text-lg font-regular">
               Prestataires
             </Link>
-            <Link href="/documentation" className="text-lg font-medium">
+            <Link href="/documentation" className="text-lg font-regular">
               Ressources
             </Link>    
           </nav>

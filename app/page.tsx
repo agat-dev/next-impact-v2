@@ -1,18 +1,22 @@
-"use client";
-
 import Link from "next/link"
 import { ArrowRight, BookOpen, Calendar, FileText, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Timeline } from "@/components/ui/timeline"
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { Expandable, ExpandableCard, ExpandableCardFooter, ExpandableCardContent, ExpandableCardHeader, ExpandableContent, ExpandableTrigger } from "@/components/ui/expand-cards";
+import { Badge } from "@/components/magicui/text-animate";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
+
 
 
 export default function Home() {
 
   const data = [
     {
-      title: "Evaluer sa visibilité sur le web",
+      title: "Comprendre la communication digitale",
       content: (
         <>
         <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
@@ -116,7 +120,7 @@ export default function Home() {
       ),
     },
     {
-      title: "Être conseillé par des experts",
+      title: "Conseil par des experts",
       content: (
         <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
@@ -179,7 +183,7 @@ export default function Home() {
       ),
     },
     {
-      title: "Trouver des prestataires",
+      title: "Recherche de prestataires",
       content: (
         <div className="container px-4 md:px-6">
         <div className="flex flex-col space-y-4">
@@ -238,6 +242,252 @@ export default function Home() {
                     Marketing à impact
                 </TextAnimate>
                 </div>
+                <div className="flex justify-center space-y-4 pb-8">
+                <TextAnimate animation="blurInUp" by="character" once>
+                    de l'idée à la visibilité
+                </TextAnimate>
+             </div>
+        </div>
+      </section>
+
+      <section className="w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2 flex flex-row items-center justify-center">
+                <Expandable
+                    expandDirection="both"
+                    expandBehavior="replace"
+                    initialDelay={0.2}
+                    onExpandStart={() => console.log("Expanding meeting card...")}
+                    onExpandEnd={() => console.log("Meeting card expanded!")}
+                  >
+                    {({ isExpanded }: { isExpanded: boolean }) => (
+                      <ExpandableTrigger>
+                        <ExpandableCard
+                          className="w-full relative"
+                          collapsedSize={{ width: 320, height: 240 }}
+                          expandedSize={{ width: 420, height: 480 }}
+                          hoverToExpand={false}
+                          expandDelay={200}
+                          collapseDelay={500}
+                        >
+                          <ExpandableCardHeader>
+                            <div className="flex justify-between items-start w-full">
+                              <div>
+                                <Badge
+                                  variant="secondary"
+                                  className="bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-100 mb-2"
+                                >
+                                  In 15 mins
+                                </Badge>
+                                <h3 className="font-semibold text-xl text-gray-800 dark:text-white">
+                                  Ressources
+                                </h3>
+                              </div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <Button size="icon" variant="outline" className="h-8 w-8">
+                                      <Calendar className="h-4 w-4" />
+                                    </Button>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>Add to Calendar</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                          </ExpandableCardHeader>
+              
+                          <ExpandableCardContent>
+                            <div className="flex flex-col items-start justify-between mb-4">
+                              <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <Clock className="h-4 w-4 mr-1" />
+                                <span>1:30PM → 2:30PM</span>
+                              </div>
+              
+                              <ExpandableContent preset="blur-md">
+                                <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                  <MapPin className="h-4 w-4 mr-1" />
+                                  <span>Conference Room A</span>
+                                </div>
+                              </ExpandableContent>
+                            </div>
+                            <ExpandableContent preset="blur-md" stagger staggerChildren={0.2}>
+                              <p className="text-sm text-gray-700 dark:text-gray-200 mb-4">
+                                Weekly design sync to discuss ongoing projects, share updates,
+                                and address any design-related challenges.
+                              </p>
+                              <div className="mb-4">
+                                <h4 className="font-medium text-sm text-gray-800 dark:text-gray-100 mb-2 flex items-center">
+                                  <Users className="h-4 w-4 mr-2" />
+                                  Attendees:
+                                </h4>
+                                <div className="flex -space-x-2 overflow-hidden">
+                                  {["Alice", "Bob", "Charlie", "David"].map((name, index) => (
+                                    <TooltipProvider key={index}>
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Avatar className="border-2 border-white dark:border-gray-800">
+                                            <AvatarImage
+                                              src={`/placeholder.svg?height=32&width=32&text=${name[0]}`}
+                                              alt={name}
+                                            />
+                                            <AvatarFallback>{name[0]}</AvatarFallback>
+                                          </Avatar>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>{name}</p>
+                                        </TooltipContent>
+                                      </Tooltip>
+                                    </TooltipProvider>
+                                  ))}
+                                </div>
+                              </div>
+                              <div className="space-y-2">
+                                <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                                  <Video className="h-4 w-4 mr-2" />
+                                  Join Meeting
+                                </Button>
+                                {isExpanded && (
+                                  <Button variant="outline" className="w-full">
+                                    <MessageSquare className="h-4 w-4 mr-2" />
+                                    Open Chat
+                                  </Button>
+                                )}
+                              </div>
+                            </ExpandableContent>
+                          </ExpandableCardContent>
+                          <ExpandableContent preset="slide-up">
+                            <ExpandableCardFooter>
+                              <div className="flex items-center justify-between w-full text-sm text-gray-600 dark:text-gray-300">
+                                <span>Weekly</span>
+                                <span>Next: Mon, 10:00 AM</span>
+                              </div>
+                            </ExpandableCardFooter>
+                          </ExpandableContent>
+                        </ExpandableCard>
+                      </ExpandableTrigger>
+                    )}
+                  </Expandable>
+                  <Expandable
+                    expandDirection="both"
+                    expandBehavior="replace"
+                    initialDelay={0.2}
+                    onExpandStart={() => console.log("Expanding meeting card...")}
+                    onExpandEnd={() => console.log("Meeting card expanded!")}
+                  >
+                    {({ isExpanded }: { isExpanded: boolean }) => (
+                      <ExpandableTrigger>
+                        <ExpandableCard
+                          className="w-full relative"
+                          collapsedSize={{ width: 320, height: 240 }}
+                          expandedSize={{ width: 420, height: 480 }}
+                          hoverToExpand={false}
+                          expandDelay={200}
+                          collapseDelay={500}
+                        >
+                          <ExpandableCardHeader>
+                            <div className="flex justify-between items-start w-full">
+                              <div>
+                                <Badge
+                                  variant="secondary"
+                                  className="bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-100 mb-2"
+                                >
+                                  In 15 mins
+                                </Badge>
+                                <h3 className="font-semibold text-xl text-gray-800 dark:text-white">
+                                  Compétences
+                                </h3>
+                              </div>
+                              <TooltipProvider>
+                                <Tooltip>
+                                  <TooltipTrigger asChild>
+                                    <Button size="icon" variant="outline" className="h-8 w-8">
+                                      <Calendar className="h-4 w-4" />
+                                    </Button>
+                                  </TooltipTrigger>
+                                  <TooltipContent>
+                                    <p>Add to Calendar</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            </div>
+                          </ExpandableCardHeader>
+              
+                          <ExpandableCardContent>
+                            <div className="flex flex-col items-start justify-between mb-4">
+                              <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <Clock className="h-4 w-4 mr-1" />
+                                <span>1:30PM → 2:30PM</span>
+                              </div>
+              
+                              <ExpandableContent preset="blur-md">
+                                <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                  <MapPin className="h-4 w-4 mr-1" />
+                                  <span>Conference Room A</span>
+                                </div>
+                              </ExpandableContent>
+                            </div>
+                            <ExpandableContent preset="blur-md" stagger staggerChildren={0.2}>
+                              <p className="text-sm text-gray-700 dark:text-gray-200 mb-4">
+                                Weekly design sync to discuss ongoing projects, share updates,
+                                and address any design-related challenges.
+                              </p>
+                              <div className="mb-4">
+                                <h4 className="font-medium text-sm text-gray-800 dark:text-gray-100 mb-2 flex items-center">
+                                  <Users className="h-4 w-4 mr-2" />
+                                  Attendees:
+                                </h4>
+                                <div className="flex -space-x-2 overflow-hidden">
+                                  {["Alice", "Bob", "Charlie", "David"].map((name, index) => (
+                                    <TooltipProvider key={index}>
+                                      <Tooltip>
+                                        <TooltipTrigger asChild>
+                                          <Avatar className="border-2 border-white dark:border-gray-800">
+                                            <AvatarImage
+                                              src={`/placeholder.svg?height=32&width=32&text=${name[0]}`}
+                                              alt={name}
+                                            />
+                                            <AvatarFallback>{name[0]}</AvatarFallback>
+                                          </Avatar>
+                                        </TooltipTrigger>
+                                        <TooltipContent>
+                                          <p>{name}</p>
+                                        </TooltipContent>
+                                      </Tooltip>
+                                    </TooltipProvider>
+                                  ))}
+                                </div>
+                              </div>
+                              <div className="space-y-2">
+                                <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
+                                  <Video className="h-4 w-4 mr-2" />
+                                  Join Meeting
+                                </Button>
+                                {isExpanded && (
+                                  <Button variant="outline" className="w-full">
+                                    <MessageSquare className="h-4 w-4 mr-2" />
+                                    Open Chat
+                                  </Button>
+                                )}
+                              </div>
+                            </ExpandableContent>
+                          </ExpandableCardContent>
+                          <ExpandableContent preset="slide-up">
+                            <ExpandableCardFooter>
+                              <div className="flex items-center justify-between w-full text-sm text-gray-600 dark:text-gray-300">
+                                <span>Weekly</span>
+                                <span>Next: Mon, 10:00 AM</span>
+                              </div>
+                            </ExpandableCardFooter>
+                          </ExpandableContent>
+                        </ExpandableCard>
+                      </ExpandableTrigger>
+                    )}
+                  </Expandable>
+            </div>
+          </div>
         </div>
       </section>
       
