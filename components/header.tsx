@@ -8,10 +8,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
           </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/documentation" className="text-lg font-medium">
-              Ressources
-            </Link>            
+          <nav className="hidden md:flex gap-6">        
             <Link href="/brief" className="text-lg font-medium">
               Diagnostic
             </Link>
@@ -21,6 +18,9 @@ export default function Header() {
             <Link href="/freelancers" className="text-lg font-medium">
               Prestataires
             </Link>
+            <Link href="/documentation" className="text-lg font-medium">
+              Ressources
+            </Link>    
           </nav>
         </div>
       </header>
