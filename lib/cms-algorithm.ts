@@ -197,55 +197,62 @@ const CMS_OPTIONS: Record<string, { name: string; notes: string; strengths: stri
       }
     }
   
-    // Vérification finale pour s'assurer qu'il y a au moins un résultat
-    const sortedResults = Object.entries(scores)
-      .map(([cms, data]) => {
-        // Vérification de sécurité pour s'assurer que le CMS existe
-        if (!CMS_OPTIONS[cms as keyof typeof CMS_OPTIONS]) {
-          return null
-        }
-  
-        const cmsData = CMS_OPTIONS[cms as keyof typeof CMS_OPTIONS]
-        return {
-          cms: cmsData.name,
-          score: data.score,
-          reasons: data.reasons.length > 0 ? data.reasons : ["Solution adaptable à divers besoins"],
-          notes: cmsData.notes,
-          strengths: cmsData.strengths,
-        }
-      })
-      .filter((result) => result !== null)
-      .sort((a, b) => (b?.score || 0) - (a?.score || 0))
-  
-    // Si aucun résultat n'a de score, ajouter des scores par défaut aux CMS polyvalents
-    if (sortedResults.length === 0 || sortedResults[0]?.score === 0) {
-      return [
-        {
-          cms: "WordPress",
-          score: 50,
-          reasons: ["Solution polyvalente par défaut"],
-          notes: CMS_OPTIONS.wordpress.notes,
-          strengths: CMS_OPTIONS.wordpress.strengths,
-        },
-        {
-          cms: "Wix",
-          score: 40,
-          reasons: ["Solution simple par défaut"],
-          notes: CMS_OPTIONS.wix.notes,
-          strengths: CMS_OPTIONS.wix.strengths,
-        },
-        {
-          cms: "Drupal",
-          score: 30,
-          reasons: ["Solution avancée par défaut"],
-          notes: CMS_OPTIONS.drupal.notes,
-          strengths: CMS_OPTIONS.drupal.strengths,
-        },
-      ]
+// Vérification finale pour s'assurer qu'il y a au moins un résultat
+let sortedResults = Object.entries(scores)
+  .map(([cms, data]) => {
+    // Vérification de sécurité pour s'assurer que le CMS existe
+    if (!CMS_OPTIONS[cms as keyof typeof CMS_OPTIONS]) {
+      return null;
     }
-  
-    // Retourner les 3 meilleurs résultats
-    return sortedResults.slice(0, 3)
-  }
-  
-  
+
+    const cmsData = CMS_OPTIONS[cms as keyof typeof CMS_OPTIONS];
+    return {
+      cms: cmsData.name,
+      score: data.score,
+      reasons: data.reasons.length > 0 ? data.reasons : ["Solution adaptable à divers besoins"],
+      notes: cmsData.notes,
+      strengths: cmsData.strengths,
+    };
+  })
+  .filter((result) => result !== null)
+  .sort((a, b) => (b?.score || 0) - (a?.score || 0));
+
+// Si "E-commerce" est sélectionné, filtrer les résultats pour ne garder que les CMS e-commerce
+if (responses.specificFeatures === "E-commerce") {
+  const ecommerceCMS = ["shopify", "woocommerce", "magento", "prestashop"];
+  sortedResults = sortedResults.filter((result) =>
+    ecommerceCMS.includes(result?.cms.toLowerCase())
+  );
+}
+
+// Si aucun résultat n'a de score, ajouter des scores par défaut aux CMS polyvalents
+if (sortedResults.length === 0 || sortedResults[0]?.score === 0) {
+  return [
+    {
+      cms: "WordPress",
+      score: 50,
+      reasons: ["Solution polyvalente par défaut"],
+      notes: CMS_OPTIONS.wordpress.notes,
+      strengths: CMS_OPTIONS.wordpress.strengths,
+    },
+    {
+      cms: "Wix",
+      score: 40,
+      reasons: ["Solution simple par défaut"],
+      notes: CMS_OPTIONS.wix.notes,
+      strengths: CMS_OPTIONS.wix.strengths,
+    },
+    {
+      cms: "Drupal",
+      score: 30,
+      reasons: ["Solution avancée par défaut"],
+      notes: CMS_OPTIONS.drupal.notes,
+      strengths: CMS_OPTIONS.drupal.strengths,
+    },
+  ];
+}
+
+// Retourner les 3 meilleurs résultats
+return sortedResults.slice(0, 3);
+
+    }

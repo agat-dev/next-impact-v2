@@ -9,7 +9,7 @@ import { QuizResults } from "@/components/quiz/quiz-results"
 import { questions } from "@/lib/questions"
 import { selectBestCMS } from "../../lib/cms-algorithm"
 
-console.log(questions)
+
 
 export function CmsQuiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
