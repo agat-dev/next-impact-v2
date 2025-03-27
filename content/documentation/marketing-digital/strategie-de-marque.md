@@ -1,11 +1,11 @@
 ---
 title: Stratégie de marque
 description: Qu'est-ce qu'une stratégie de marque ?
-category: bases
+category: marketing-digital
 author: Next Impact
 date: "2025-03-15"
+order: 1
 ---
-
 
 La stratégie de marque, ou "brand strategy" en anglais, est un élément clé du succès durable d'une entreprise. C'est bien plus que créer un logo ou choisir une palette de couleurs. Il s'agit d'une approche réfléchie qui définit la manière dont une marque se présente, communique, et se différencie dans un marché concurrentiel. Une stratégie de marque solide agit comme une boussole : elle guide toutes les actions marketing et business en assurant une cohérence et une identité claire.
 
@@ -15,7 +15,7 @@ Pour les entrepreneurs, les propriétaires d'entreprises, et les professionnels 
 
 ### Mission, vision et valeurs : Le socle de votre marque
 
-Chaque marque doit être  ancrée dans une mission forte, éclairée par une vision inspirante et renforcée par des valeurs fondamentales.
+Chaque marque doit être ancrée dans une mission forte, éclairée par une vision inspirante et renforcée par des valeurs fondamentales.
 
 - **La Mission** définit pourquoi votre entreprise existe et la raison profonde de son activité. Par exemple, "rendre le café bio accessible à tous".
 - **La Vision** projette un futur idéal grâce à votre impact. Par exemple, "un monde où chaque café est respectueux des producteurs et de la planète".
@@ -106,7 +106,7 @@ Maîtriser la stratégie de marque, c’est embrasser la possibilité de vous d�
 
 ## Outils
 
-[Stratégie de marque](https://www.notion.so/Strat-gie-de-marque-17b3c8ef34fa807b8153f0c7aa28af00?pvs=21) 
+[Stratégie de marque](https://www.notion.so/Strat-gie-de-marque-17b3c8ef34fa807b8153f0c7aa28af00?pvs=21)
 
 </aside>
 

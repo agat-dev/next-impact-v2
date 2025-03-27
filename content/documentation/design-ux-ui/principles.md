@@ -4,6 +4,7 @@ description: Learn the core principles of user experience design to create intui
 category: ux-ui
 author: MarketingDocs Team
 date: "2025-03-20"
+order: 1
 ---
 
 ## Introduction to UX Design
@@ -107,4 +108,3 @@ Working with developers to bring the design to life.
 Good UX design is about creating products that are not only visually appealing but also easy to use and valuable to users. By following these principles and process, you can create websites and applications that provide a positive user experience and help achieve business goals.
 
 Remember that UX design is an iterative process. Continuously gathering feedback and making improvements is key to creating exceptional user experiences.
-

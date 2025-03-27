@@ -9,6 +9,7 @@ export interface ArticleMeta {
   category: string
   author: string
   date: string
+  order?: number
 }
 
 export interface Article extends ArticleMeta {
@@ -41,6 +42,7 @@ export function getArticleBySlug(category: string, slug: string): Article {
     author: data.author,
     date: formattedDate,
     content,
+    order: data.order,
   }
 }
 
@@ -79,6 +81,7 @@ export function getAllArticles(): ArticleMeta[] {
             category: data.category,
             author: data.author,
             date: formattedDate,
+            order: data.order,
           })
         }
       })
