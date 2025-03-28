@@ -31,16 +31,10 @@ export default function DocumentationPage() {
       url: "/documentation/projet-site-web",
     },
     {
-      id: "Choisir WordPress",
-      title: "Choisir WordPress",
-      description: "Pourquoi choisir WordPress pour votre site web",
-      url: "/documentation/choisir-wordpress",
-    },
-    {
-      id: "Utiliser WordPress",
-      title: "Créer et gerer un site web WordPress",
-      description: "Comment créer et gérer un site web WordPress",
-      url: "/documentation/site-web-wordpress",
+      id: "WordPress",
+      title: "WordPress",
+      description: "Choisir WordPress pour votre site web",
+      url: "/documentation/wordpress",
     },
     {
       id: "SEO",
@@ -60,11 +54,8 @@ export default function DocumentationPage() {
   const projetArticles = articles.filter(
     (article) => article.category === "projet-site-web"
   );
-  const choisirWordpressArticles = articles.filter(
-    (article) => article.category === "choisir-wordpress"
-  );
-  const utiliserWordpressArticles = articles.filter(
-    (article) => article.category === "utiliser-wordpress"
+  const wordpressArticles = articles.filter(
+    (article) => article.category === "wordpress"
   );
   const seoArticles = articles.filter(
     (article) => article.category === "seo");
@@ -114,12 +105,7 @@ export default function DocumentationPage() {
                 <TabsTrigger
                   value="choisir-wordpress"
                   className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  Choisir WordPress
-                </TabsTrigger>
-                <TabsTrigger
-                  value="utiliser-wordpress"
-                  className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  Utiliser WordPress
+                  WordPress
                 </TabsTrigger>
                 <TabsTrigger
                   value="seo"
@@ -227,31 +213,9 @@ export default function DocumentationPage() {
                   ))}
                 </div>
               </TabsContent>
-              <TabsContent value="choisir-wordpress" className="pt-6">
+              <TabsContent value="wordpress" className="pt-6">
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {choisirWordpressArticles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="utiliser-wordpress" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {utiliserWordpressArticles.map((article) => (
+                  {wordpressArticles.map((article) => (
                     <div
                       key={article.slug}
                       className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from './ui/button'
 
 export default function Header() {
   return (
@@ -9,19 +10,18 @@ export default function Header() {
             <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
           </Link>
           <nav className="hidden md:flex gap-6">        
-            <Link href="/brief" className="text-lg font-regular">
-              Diagnostic
-            </Link>
-            <Link href="/services" className="text-lg font-regular">
-              Conseil
-            </Link>
-            <Link href="/freelancers" className="text-lg font-regular">
-              Prestataires
-            </Link>
+            <Link href="/audit" className="text-lg font-regular">
+              Diagnostics
+            </Link>            
             <Link href="/documentation" className="text-lg font-regular">
               Ressources
-            </Link>    
+            </Link>   
           </nav>
+          <div className='flex gap-4'>
+          <Button className="hidden md:flex">
+            <Link href="/services" className="text-lg font-regular">Services</Link>
+          </Button> 
+          </div>
         </div>
       </header>
   )
