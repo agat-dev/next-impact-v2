@@ -241,6 +241,105 @@ const SOLUTIONS_OPTIONS: Record<
 }
 
 /**
+ * Traite les réponses à choix multiples pour les fonctionnalités spécifiques
+ * @param {Record<string, string>} responses - Objet contenant les réponses aux questions
+ * @param {Record<string, { score: number; reasons: string[] }>} scores - Scores actuels des solutions
+ */
+function processMultipleFeatures(
+  responses: Record<string, string>,
+  scores: Record<string, { score: number; reasons: string[] }>,
+) {
+  // Si la réponse contient plusieurs fonctionnalités séparées par des virgules
+  if (responses.specificFeatures && responses.specificFeatures.includes(",")) {
+    const features = responses.specificFeatures.split(",")
+
+    features.forEach((feature) => {
+      const trimmedFeature = feature.trim()
+
+      if (trimmedFeature === "E-commerce") {
+        // Solutions e-commerce spécialisées
+        ;["shopify", "woocommerce", "magento", "prestashop"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 15
+            scores[solution].reasons.push("Spécialisé pour l'e-commerce")
+          }
+        })
+
+        // Solutions avec capacités e-commerce
+        ;["wordpress", "drupal", "webflow", "contentful", "strapi"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 5
+            scores[solution].reasons.push("Peut intégrer des fonctionnalités e-commerce")
+          }
+        })
+      } else if (trimmedFeature === "Multilingual") {
+        // Solutions avec bonnes capacités multilingues
+        ;["drupal", "typo3", "wordpress", "storyblok", "dato", "contentful"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 8
+            scores[solution].reasons.push("Excellentes capacités multilingues")
+          }
+        })
+      } else if (trimmedFeature === "Booking") {
+        // Solutions adaptées aux systèmes de réservation
+        ;["wordpress", "drupal", "wix", "bubble"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 6
+            scores[solution].reasons.push("Bonne intégration de systèmes de réservation")
+          }
+        })
+      } else if (trimmedFeature === "Integration") {
+        // Solutions avec bonnes capacités d'intégration
+        ;["drupal", "wordpress", "strapi", "contentful", "directus", "contentstack"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 8
+            scores[solution].reasons.push("Bonnes capacités d'intégration avec d'autres systèmes")
+          }
+        })
+
+        // Avantage pour les headless CMS
+        for (const solution in SOLUTIONS_OPTIONS) {
+          if (SOLUTIONS_OPTIONS[solution].type === "headless") {
+            scores[solution].score += 4
+            scores[solution].reasons.push("Architecture API-first facilite les intégrations")
+          }
+        }
+      } else if (trimmedFeature === "UserManagement") {
+        // Solutions avec bonne gestion des utilisateurs
+        ;["drupal", "wordpress", "bubble", "joomla", "typo3"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 7
+            scores[solution].reasons.push("Gestion avancée des utilisateurs")
+          }
+        })
+
+        // Frameworks avec capacités d'authentification
+        ;["laravel", "symfony", "nextjs", "nuxt", "angular"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 8
+            scores[solution].reasons.push("Fonctionnalités d'authentification robustes")
+          }
+        })
+      } else if (trimmedFeature === "Marketing") {
+        // Solutions marketing
+        ;["wordpress", "drupal", "webflow", "wix", "shopify"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 6
+            scores[solution].reasons.push("Bonnes capacités marketing via plugins/extensions")
+          }
+        })
+      }
+    })
+
+    // Retourner true pour indiquer que nous avons traité des fonctionnalités multiples
+    return true
+  }
+
+  // Retourner false si nous n'avons pas traité de fonctionnalités multiples
+  return false
+}
+
+/**
  * Évalue les réponses et attribue des scores aux différentes solutions
  * @param {Record<string, string>} responses - Objet contenant les réponses aux questions
  * @returns {Array} - Les 3 solutions les plus pertinentes avec leurs scores et notes
@@ -498,110 +597,116 @@ export function selectBestCMS(responses: Record<string, string>) {
 
   // Analyse des fonctionnalités spécifiques
   if (responses.specificFeatures) {
-    if (responses.specificFeatures === "E-commerce (vente de produits/services)") {
-      // Solutions e-commerce spécialisées
-      ;["shopify", "woocommerce", "magento", "prestashop"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 20
-          scores[solution].reasons.push("Spécialisé pour l'e-commerce")
-        }
-      })
+    // Vérifier si nous avons des fonctionnalités multiples
+    const processedMultiple = processMultipleFeatures(responses, scores)
 
-      // Solutions avec capacités e-commerce
-      ;["wordpress", "drupal", "webflow", "contentful", "strapi"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 5
-          scores[solution].reasons.push("Peut intégrer des fonctionnalités e-commerce")
-        }
-      })
+    // Si nous n'avons pas traité de fonctionnalités multiples, continuer avec le traitement normal
+    if (!processedMultiple) {
+      if (responses.specificFeatures === "E-commerce (vente de produits/services)") {
+        // Solutions e-commerce spécialisées
+        ;["shopify", "woocommerce", "magento", "prestashop"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 20
+            scores[solution].reasons.push("Spécialisé pour l'e-commerce")
+          }
+        })
 
-      // Frameworks adaptés à l'e-commerce
-      ;["nextjs", "nuxt", "laravel", "symfony"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 3
-          scores[solution].reasons.push("Peut servir de base pour un site e-commerce sur mesure")
-        }
-      })
-    } else if (responses.specificFeatures === "Gestion multilingue") {
-      // Solutions avec bonnes capacités multilingues
-      ;["drupal", "typo3", "wordpress", "storyblok", "dato", "contentful"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 10
-          scores[solution].reasons.push("Excellentes capacités multilingues")
-        }
-      })
-    } else if (responses.specificFeatures === "Réservation/prise de rendez-vous") {
-      // Solutions adaptées aux systèmes de réservation
-      ;["wordpress", "drupal", "wix", "bubble"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 8
-          scores[solution].reasons.push("Bonne intégration de systèmes de réservation")
-        }
-      })
+        // Solutions avec capacités e-commerce
+        ;["wordpress", "drupal", "webflow", "contentful", "strapi"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 5
+            scores[solution].reasons.push("Peut intégrer des fonctionnalités e-commerce")
+          }
+        })
 
-      // Frameworks pour solutions sur mesure
-      ;["laravel", "symfony", "nextjs"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 5
-          scores[solution].reasons.push("Peut servir de base pour un système de réservation sur mesure")
-        }
-      })
-    } else if (responses.specificFeatures === "Intégration avec d'autres systèmes (CRM, ERP, etc.)") {
-      // Solutions avec bonnes capacités d'intégration
-      ;["drupal", "wordpress", "strapi", "contentful", "directus", "contentstack"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 10
-          scores[solution].reasons.push("Bonnes capacités d'intégration avec d'autres systèmes")
-        }
-      })
+        // Frameworks adaptés à l'e-commerce
+        ;["nextjs", "nuxt", "laravel", "symfony"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 3
+            scores[solution].reasons.push("Peut servir de base pour un site e-commerce sur mesure")
+          }
+        })
+      } else if (responses.specificFeatures === "Gestion multilingue") {
+        // Solutions avec bonnes capacités multilingues
+        ;["drupal", "typo3", "wordpress", "storyblok", "dato", "contentful"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 10
+            scores[solution].reasons.push("Excellentes capacités multilingues")
+          }
+        })
+      } else if (responses.specificFeatures === "Réservation/prise de rendez-vous") {
+        // Solutions adaptées aux systèmes de réservation
+        ;["wordpress", "drupal", "wix", "bubble"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 8
+            scores[solution].reasons.push("Bonne intégration de systèmes de réservation")
+          }
+        })
 
-      // Frameworks pour intégrations sur mesure
-      ;["laravel", "symfony", "express", "nextjs"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 12
-          scores[solution].reasons.push("Flexibilité maximale pour intégrations complexes")
-        }
-      })
+        // Frameworks pour solutions sur mesure
+        ;["laravel", "symfony", "nextjs"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 5
+            scores[solution].reasons.push("Peut servir de base pour un système de réservation sur mesure")
+          }
+        })
+      } else if (responses.specificFeatures === "Intégration avec d'autres systèmes (CRM, ERP, etc.)") {
+        // Solutions avec bonnes capacités d'intégration
+        ;["drupal", "wordpress", "strapi", "contentful", "directus", "contentstack"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 10
+            scores[solution].reasons.push("Bonnes capacités d'intégration avec d'autres systèmes")
+          }
+        })
 
-      // Avantage pour les headless CMS
-      for (const solution in SOLUTIONS_OPTIONS) {
-        if (SOLUTIONS_OPTIONS[solution].type === "headless") {
-          scores[solution].score += 5
-          scores[solution].reasons.push("Architecture API-first facilite les intégrations")
+        // Frameworks pour intégrations sur mesure
+        ;["laravel", "symfony", "express", "nextjs"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 12
+            scores[solution].reasons.push("Flexibilité maximale pour intégrations complexes")
+          }
+        })
+
+        // Avantage pour les headless CMS
+        for (const solution in SOLUTIONS_OPTIONS) {
+          if (SOLUTIONS_OPTIONS[solution].type === "headless") {
+            scores[solution].score += 5
+            scores[solution].reasons.push("Architecture API-first facilite les intégrations")
+          }
         }
+      } else if (responses.specificFeatures === "Authentification et gestion des utilisateurs") {
+        // Solutions avec bonne gestion des utilisateurs
+        ;["drupal", "wordpress", "bubble", "joomla", "typo3"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 8
+            scores[solution].reasons.push("Gestion avancée des utilisateurs")
+          }
+        })
+
+        // Frameworks avec capacités d'authentification
+        ;["laravel", "symfony", "nextjs", "nuxt", "angular"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 10
+            scores[solution].reasons.push("Fonctionnalités d'authentification robustes")
+          }
+        })
+      } else if (responses.specificFeatures === "Marketing digital avancé (automation, personnalisation, etc.)") {
+        // Solutions marketing
+        ;["wordpress", "drupal", "webflow", "wix", "shopify"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 7
+            scores[solution].reasons.push("Bonnes capacités marketing via plugins/extensions")
+          }
+        })
+
+        // Avantage pour headless CMS avec personnalisation
+        ;["contentful", "sanity", "contentstack", "kontent"].forEach((solution) => {
+          if (scores[solution]) {
+            scores[solution].score += 5
+            scores[solution].reasons.push("Personnalisation de contenu avancée possible")
+          }
+        })
       }
-    } else if (responses.specificFeatures === "Authentification et gestion des utilisateurs") {
-      // Solutions avec bonne gestion des utilisateurs
-      ;["drupal", "wordpress", "bubble", "joomla", "typo3"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 8
-          scores[solution].reasons.push("Gestion avancée des utilisateurs")
-        }
-      })
-
-      // Frameworks avec capacités d'authentification
-      ;["laravel", "symfony", "nextjs", "nuxt", "angular"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 10
-          scores[solution].reasons.push("Fonctionnalités d'authentification robustes")
-        }
-      })
-    } else if (responses.specificFeatures === "Marketing digital avancé (automation, personnalisation, etc.)") {
-      // Solutions marketing
-      ;["wordpress", "drupal", "webflow", "wix", "shopify"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 7
-          scores[solution].reasons.push("Bonnes capacités marketing via plugins/extensions")
-        }
-      })
-
-      // Avantage pour headless CMS avec personnalisation
-      ;["contentful", "sanity", "contentstack", "kontent"].forEach((solution) => {
-        if (scores[solution]) {
-          scores[solution].score += 5
-          scores[solution].reasons.push("Personnalisation de contenu avancée possible")
-        }
-      })
     }
   }
 

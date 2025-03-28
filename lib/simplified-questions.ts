@@ -65,7 +65,7 @@ export const simplifiedQuestions: Question[] = [
   },
   {
     id: "specificFeatures",
-    text: "Avez-vous besoin de fonctionnalités spécifiques ? (Sélectionnez la plus importante)",
+    text: "Quelles fonctionnalités spécifiques recherchez-vous ? (Sélectionnez toutes celles qui s'appliquent)",
     options: [
       { label: "E-commerce (vente de produits/services)", value: "E-commerce" },
       { label: "Gestion multilingue", value: "Multilingual" },
