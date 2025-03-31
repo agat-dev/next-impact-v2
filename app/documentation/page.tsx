@@ -1,265 +1,31 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SearchDocumentation } from "@/components/search-documentation";
-import { getAllArticles } from "@/lib/markdown";
+import DocTabs from "@/components/documentation/doc-tabs";
 import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function DocumentationPage() {
-  const articles = getAllArticles().sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
-
-  // Définir les catégories pour la recherche
-  const categories = [
-    {
-      id: "Marketing digital",
-      title: "Marketing digital",
-      description: "Principes et concepts de base du marketing digital",
-      url: "/documentation/marketing-digital",
-    },
-    {
-      id: "Design et UI/UX",
-      title: "Design et UI/UX",
-      description: "Principes et concepts du design et de l'UI/UX",
-      url: "/documentation/design-ui-ux",
-    },
-    {
-      id: "Projet de site web",
-      title: "Projet de site web",
-      description: "Préparer et mener un projet de site web",
-      url: "/documentation/projet-site-web",
-    },
-    {
-      id: "WordPress",
-      title: "WordPress",
-      description: "Choisir WordPress pour votre site web",
-      url: "/documentation/wordpress",
-    },
-    {
-      id: "SEO",
-      title: "SEO",
-      description: "Optimisation pour les moteurs de recherche",
-      url: "/documentation/seo",
-    },
-  ];
-
-  // Filtrer les articles par catégorie
-  const marketingArticles = articles.filter(
-    (article) => article.category === "marketing-digital"
-  );
-  const uxuiArticles = articles.filter(
-    (article) => article.category === "design-ux-ui"
-  );
-  const projetArticles = articles.filter(
-    (article) => article.category === "projet-site-web"
-  );
-  const wordpressArticles = articles.filter(
-    (article) => article.category === "wordpress"
-  );
-  const seoArticles = articles.filter(
-    (article) => article.category === "seo");
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
-        <section className="w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">
-          <div className="container px-4 md:px-6">
-            <div className="flex justify-center space-y-4 pt-8">
-              <TextAnimate animation="blurInUp" by="character" once>
-                Ressources pour décider
-              </TextAnimate>
+    <main>
+      {/* Resources Section */}
+      <section id="resources" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-medium tracking-tighter md:text-4xl/tight">Ressources pour s'informer</h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Plus de 50 articles pour vous aider à créer et optimiser votre site web.
+              </p>
             </div>
-            <div className="flex justify-center space-y-4 py-8">
-              <SearchDocumentation
-                articles={articles}
-                categories={categories}
-              />
+            <div className="w-full">
+              <div className="relative">
+                <DocTabs />
+              </div>
             </div>
           </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <Tabs defaultValue="all" className="w-full">
-              <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
-                <TabsTrigger
-                  value="all"
-                  className="rounded-none text-base font-medium text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  Tout
-                </TabsTrigger>
-                <TabsTrigger
-                  value="marketing-digital"
-                  className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  Marketing digital
-                </TabsTrigger>
-                <TabsTrigger
-                  value="design-ui-ux"
-                  className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  Design et UI/UX
-                </TabsTrigger>
-                <TabsTrigger
-                  value="projet-site-web"
-                  className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  Projet de site web
-                </TabsTrigger>
-                <TabsTrigger
-                  value="choisir-wordpress"
-                  className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  WordPress
-                </TabsTrigger>
-                <TabsTrigger
-                  value="seo"
-                  className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                  SEO
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="all" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {articles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-10 flex justify-center">
-                  <Button variant="outline">
-                    Load More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </TabsContent>
-              <TabsContent value="marketing-digital" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {marketingArticles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-10 flex justify-center">
-                  <Button variant="outline">
-                    Load More
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              </TabsContent>
-              <TabsContent value="design-ux-ui" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {uxuiArticles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="projet-site-web" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {projetArticles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="wordpress" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {wordpressArticles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-              <TabsContent value="seo" className="pt-6">
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {seoArticles.map((article) => (
-                    <div
-                      key={article.slug}
-                      className="group relative rounded-lg border p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-bold">{article.title}</h3>
-                        <p className="text-muted-foreground">
-                          {article.description}
-                        </p>
-                      </div>
-                      <Link
-                        href={`/documentation/${article.category}/${article.slug}`}
-                        className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                        aria-label={article.title}>
-                        <span className="sr-only">{article.title}</span>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
+        </div>
+      </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -341,30 +107,5 @@ export default function DocumentationPage() {
           </div>
         </section>
       </main>
-      <footer className="w-full border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © 2025 MarketingDocs. All rights reserved.
-          </p>
-          <nav className="flex gap-4 sm:gap-6">
-            <Link
-              href="/terms"
-              className="text-sm font-medium hover:underline underline-offset-4">
-              Terms
-            </Link>
-            <Link
-              href="/privacy"
-              className="text-sm font-medium hover:underline underline-offset-4">
-              Privacy
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-medium hover:underline underline-offset-4">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </footer>
-    </div>
   );
 }

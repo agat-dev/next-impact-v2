@@ -47,6 +47,7 @@
     "fs": "latest",
     "gray-matter": "latest",
     "input-otp": "1.4.1",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.454.0",
     "marked": "latest",
     "motion": "^12.5.0",

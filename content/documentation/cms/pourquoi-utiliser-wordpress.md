@@ -1,7 +1,7 @@
 ---
 title: Pourquoi utiliser WordPress ?
 description: Dans quels cas utiliser WordPress pour créer son site web ?
-category: wordpress
+category: cms
 author: Next Impact
 date: "2025-03-20"
 order: 1
