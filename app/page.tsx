@@ -48,19 +48,22 @@ export default function Home() {
                 <div className="space-y-2">
                   <h1 className="font-regular tracking-tighter">
                   <TextAnimate animation="blurInUp" by="character" once>
-                    Développer son impact digital
+                    Développement
+                    </TextAnimate>
+                    <TextAnimate animation="blurInUp" by="character" once>
+                    de projets web 
                   </TextAnimate>
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Ressources, conseils personnalisés et accompagnement pour développer votre présence en ligne.
+                    Ressources, Conseils personnalisés et Création de site web pour développer votre présence en ligne.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1">
-                    Commencer maintenant <ArrowRight className="h-4 w-4" />
+                    <Link href="/audit" className="text-xl font-regular">Audit de site web</Link>
                   </Button>
                   <Button size="lg" variant="outline">
-                    Découvrir nos services
+                    <Link href="/services" className="text-xl font-regular">Découvrir nos services</Link>
                   </Button>
                 </div>
               </div>
@@ -106,7 +109,7 @@ export default function Home() {
                   </p>
                    
                   <Button size="lg" className="gap-1">
-                    Commencer le quiz <ArrowRight className="h-4 w-4" />
+                    <Link href="/quizz" className="text-xl font-regular">Commencer le quiz</Link>
                   </Button>
                   <LottieAnimation4 />
                 </div>
