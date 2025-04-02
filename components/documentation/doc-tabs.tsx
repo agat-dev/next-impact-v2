@@ -104,7 +104,7 @@ export default function DocTabs() {
                     <TabsTrigger
                       value="cms"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      cms
+                      CMS
                     </TabsTrigger>                
                   </TabsList>
                   <TabsContent value="all" className="pt-6">
