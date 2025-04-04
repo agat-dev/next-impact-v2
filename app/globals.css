@@ -61,6 +61,12 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --darkblue: #020F59;	
+    --mediumblue: #021373;
+    --regularblue: #1F54BF;
+    --lightblue: #719ED9;
+    --extralightblue: #D0DCF2;
+    --white: #FFFFFF;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -126,7 +132,7 @@
   h6 {
     @apply text-base text-darkblue;
   }
-  p, span, button, li, input, textarea, label {
+  p, span, li, input, textarea, label {
     @apply font-adobetext font-regular text-darkblue py-1;
   }
   .container {

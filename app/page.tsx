@@ -59,10 +59,10 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="gap-1">
+                  <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
                     <Link href="/audit" className="text-xl font-regular">Audit de site web</Link>
                   </Button>
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" className="gap-1 rouded-lg bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
                     <Link href="/services" className="text-xl font-regular">Découvrir nos services</Link>
                   </Button>
                 </div>

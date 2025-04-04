@@ -66,7 +66,7 @@ export function NavBar() {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
                     
@@ -183,7 +183,7 @@ export default function Header() {
           <NavBar />
           </div>
           <div className='basis-1/6 flex justify-end'>
-          <Button className="hidden md:flex">
+          <Button className="hidden md:flex gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
             <Link href="/services" className="text-xl font-regular">Contact</Link>
           </Button> 
           </div>
