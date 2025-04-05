@@ -13,7 +13,7 @@ export default function LottieAnimation1() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/astronaut-with-space-shuttle.json")
+    fetch("/preloading-1.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -21,7 +21,7 @@ export default function LottieAnimation1() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full h-[550px] rounded-xl bg-muted flex items-center justify-center">
+      <div className="w-full h-[250px] rounded-xl bg-muted flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
       </div>
     )
@@ -32,7 +32,7 @@ export default function LottieAnimation1() {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "15rem", height: "15rem" }}
     />
   )
 }
@@ -49,7 +49,7 @@ export function LottieAnimation2() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/astronaut-sitting-planet-waving-hand.json")
+    fetch("/preloading-3.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -68,7 +68,7 @@ export function LottieAnimation2() {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "15rem", height: "15rem" }}
     />
   )
 }
@@ -84,7 +84,7 @@ export function LottieAnimation3() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/cloud-astronaut.json")
+    fetch("/preloading-4.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -103,7 +103,7 @@ export function LottieAnimation3() {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "25rem", height: "25rem" }}
     />
   )
 }
@@ -119,7 +119,7 @@ export function LottieAnimation4() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/astronaut-with-surprise-box.json")
+    fetch("/preloading-5.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -138,7 +138,7 @@ export function LottieAnimation4() {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "25rem", height: "25rem" }}
     />
   )
 }

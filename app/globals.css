@@ -112,7 +112,7 @@
     @apply bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6, a {
-    @apply font-adobetitre font-normal py-1;
+    @apply font-googletitre font-normal py-1;
   }
   h1 {
     @apply text-4xl text-regularblue;
@@ -133,7 +133,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-adobetext font-regular text-darkblue py-1;
+    @apply font-googletexte font-normal text-darkblue;
   }
   .container {
     @apply mx-auto px-4;

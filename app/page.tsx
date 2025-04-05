@@ -11,7 +11,6 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import { LottieAnimation2, LottieAnimation3, LottieAnimation4 } from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {
   Expandable,
   ExpandableCard,
@@ -31,6 +30,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import dynamic from "next/dynamic";
+import { Bento } from "@/components/diag-bento";
 
 
 
@@ -40,37 +40,33 @@ export default function Home() {
   return (
     <>
       <main className="flex-1 bg-white">
-        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full py-12 md:py-18 lg:py-18 xl:py-24">
-          <div className="flex justify-centerpx-4 md:px-6">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2 flex flex-col items-center justify-center text-center">                  
-                <p className="text-muted-foreground md:text-xl">
-                    Documentation - Audits - Conseil - Livrables - Création et Refonte
-                  </p>
-                  <h1 className="tracking-tighter">
-                    <TypewriterEffectSmooth 
-                      words={[
-                        { text: "Les", className: "font-adobetitre text-regularblue" },
-                        { text: "services", className: "font-adobetitre text-regularblue" },
-                        { text: "essentiels", className: "font-adobetitre text-regularblue" },
-                        { text: "pour", className: "font-adobetitre text-regularblue" },
-                        { text: "réussir", className: "font-adobetitre text-regularblue" },
-                        { text: "votre", className: "font-adobetitre text-regularblue" },
-                        { text: "projet", className: "font-adobetitre text-regularblue" },
-                        { text: "web", className: "font-adobetitre text-regularblue" },
-                      ]}
-                    />
-                  </h1>
+
+       {/* Hero Section */}
+        <section className="flex align-center justify-center w-full h-full md:py-18 lg:py-18 xl:py-24">
+          <div className="flex justify-center px-4 md:px-6">
+              <div className="flex space-y-4 text-center">
+                <LottieAnimation1 />
+              </div>
+              <div className="flex flex-col justify-center space-y-8">
+                <div className="space-y-2 flex flex-col items-center justify-center text-center">
+                  <TextAnimate className="text-regularblue font-googletitre" animation="blurIn" as="h1">De l'idée à l'impact</TextAnimate>
+                <div>               
+                  <h2 className="text-2xl font-googletitre">
+                    Outils et services pour réussir son projet web
+                  </h2>
                 </div>
-                <div className="flex flex-col justify-center gap-2 min-[400px]:flex-row">
+                </div>
+                <div className="flex flex-col justify-center gap-2 pt-16 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/audit" className="text-xl font-regular">Outils gratuits</Link>
+                    <Link href="/diagnostic" className="text-lg font-regular">Outils gratuits</Link>
                   </Button>
                   <Button size="lg" className="gap-1 rouded-lg bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
-                    <Link href="/services" className="text-xl font-regular">Services</Link>
+                    <Link href="/services" className="text-lg font-regular">Services</Link>
                   </Button>
                 </div>
+              </div>
+            <div className="flex align-end space-y-4 text-center">
+              <LottieAnimation2 />
               </div>
           </div>
         </section>

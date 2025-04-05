@@ -13,6 +13,8 @@ const config: Config = {
 		fontFamily: {
 			adobetitre: ['"houschka-rounded"', 'system-ui', 'sans-serif'],
 			adobetext: ['area-normal', 'sans-serif'],
+			googletitre: ['"Quicksand"', 'sans-serif'],
+			googletexte: ['"Inter"', 'sans-serif'],
 		},
 		fontWeight: {
 			light: '300',

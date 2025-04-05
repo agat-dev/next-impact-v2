@@ -51,7 +51,7 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Développement custom",
     href: "/docs/primitives/tooltip",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "receives keyboard focus or the mouse hovers over it.",
   },
 ]
 
@@ -60,7 +60,7 @@ export function NavBar() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-googletitre text-lg'>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -89,36 +89,17 @@ export function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Centre de ressources</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid row-span-4 w-[600px] gap-3 p-4 md:w-[800px] md:grid-cols-3 lg:w-[800px]">
-              {components.map((component) => (
-                <li className='h-full'>
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Outils gratuits</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-googletitre text-lg'>Diagnostics gratuits</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
               <li className="row-span-4 basis-1/3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
+                    
+                    <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
@@ -143,6 +124,27 @@ export function NavBar() {
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               </div>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>        
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className='font-googletitre text-lg'>Centre de ressources</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid h-full w-[600px] gap-3 p-4 md:w-[800px] md:grid-cols-3 lg:w-[800px]">
+              {components.map((component) => (
+                <li>
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                  className='h-24'
+                >
+                  <p className='h-20 text-sm leading-tight text-muted-foreground'>
+                  {component.description}
+                  </p>
+                </ListItem>
+                </li>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -193,7 +195,7 @@ export default function Header() {
           </div>
           <div className='basis-1/6 flex justify-end'>
           <Button className="hidden md:flex gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-xl font-regular">Contact</Link>
+            <Link href="/services" className="text-lg font-regular">Rendez-vous conseil</Link>
           </Button> 
           </div>
         </div>
