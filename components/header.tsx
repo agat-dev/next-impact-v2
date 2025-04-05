@@ -79,10 +79,7 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/services" title="Accompagnement">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/services" title="Audit et Conseil">
+              <ListItem href="/services" title="Conseil projet">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               <ListItem href="/services" title="Création de sites web">
@@ -92,10 +89,11 @@ export function NavBar() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Documentation</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Centre de ressources</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid row-span-4 w-[600px] gap-3 p-4 md:w-[800px] md:grid-cols-3 lg:w-[800px]">
               {components.map((component) => (
+                <li className='h-full'>
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -103,15 +101,16 @@ export function NavBar() {
                 >
                   {component.description}
                 </ListItem>
+                </li>
               ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Audits en ligne</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-adobetitre text-base font-regular'>Outils gratuits</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
+            <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
+              <li className="row-span-4 basis-1/3">
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
@@ -128,12 +127,22 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/audit" title="Auditer son site">
+              <div className='basis-1/3'>
+              <ListItem href="/audit" title="Audit global">
+                How to install dependencies and structure your app.
+              </ListItem>              
+              <ListItem href="/audit" title="Audit SEO">
                 How to install dependencies and structure your app.
               </ListItem>
+              </div> 
+              <div className='basis-1/3'>             
+              <ListItem href="/quizz" title="Générer son cahier des charges">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>              
               <ListItem href="/quizz" title="Choisir son CMS">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
+              </div>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -176,7 +185,7 @@ export default function Header() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className='basis-1/6'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
+            <Image src="/logo.png" alt="Next Impact Digital" width={64} height={64} />
           </Link>
           </div>
           <div className='basis-4/6 flex justify-center'>

@@ -11,6 +11,7 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import { LottieAnimation2, LottieAnimation3, LottieAnimation4 } from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import {
   Expandable,
   ExpandableCard,
@@ -30,7 +31,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import dynamic from "next/dynamic";
-// Removed duplicate import
 
 
 
@@ -41,57 +41,37 @@ export default function Home() {
     <>
       <main className="flex-1 bg-white">
         {/* Hero Section */}
-        <section className="w-full py-4 md:py-6 lg:py-8 xl:py-12">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+        <section className="flex align-center justify-center w-full h-full py-12 md:py-18 lg:py-18 xl:py-24">
+          <div className="flex justify-centerpx-4 md:px-6">
               <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="font-regular tracking-tighter">
-                  <TextAnimate animation="blurInUp" by="character" once>
-                    Développement
-                    </TextAnimate>
-                    <TextAnimate animation="blurInUp" by="character" once>
-                    de projets web 
-                  </TextAnimate>
-                  </h1>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Ressources, Conseils personnalisés et Création de site web pour développer votre présence en ligne.
+                <div className="space-y-2 flex flex-col items-center justify-center text-center">                  
+                <p className="text-muted-foreground md:text-xl">
+                    Documentation - Audits - Conseil - Livrables - Création et Refonte
                   </p>
+                  <h1 className="tracking-tighter">
+                    <TypewriterEffectSmooth 
+                      words={[
+                        { text: "Les", className: "font-adobetitre text-regularblue" },
+                        { text: "services", className: "font-adobetitre text-regularblue" },
+                        { text: "essentiels", className: "font-adobetitre text-regularblue" },
+                        { text: "pour", className: "font-adobetitre text-regularblue" },
+                        { text: "réussir", className: "font-adobetitre text-regularblue" },
+                        { text: "votre", className: "font-adobetitre text-regularblue" },
+                        { text: "projet", className: "font-adobetitre text-regularblue" },
+                        { text: "web", className: "font-adobetitre text-regularblue" },
+                      ]}
+                    />
+                  </h1>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-col justify-center gap-2 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/audit" className="text-xl font-regular">Audit de site web</Link>
+                    <Link href="/audit" className="text-xl font-regular">Outils gratuits</Link>
                   </Button>
                   <Button size="lg" className="gap-1 rouded-lg bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
-                    <Link href="/services" className="text-xl font-regular">Découvrir nos services</Link>
+                    <Link href="/services" className="text-xl font-regular">Services</Link>
                   </Button>
                 </div>
               </div>
-              <div className="mx-auto flex w-full max-w-[400px] flex-col justify-center lg:max-w-none">
-                <div className="mx-auto w-full max-w-[550px] h-[550px] rounded-xl overflow-hidden">
-                  <LottieAnimation1 />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Resources Section */}
-        <section id="resources" className="w-full pb-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-medium tracking-tighter md:text-4xl/tight">Ressources pour s'informer</h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Plus de 50 articles pour vous aider à créer et optimiser votre site web.
-                </p>
-              </div>
-              <div className="w-full">
-                <div className="relative">
-                  <DocTabs />
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -192,6 +172,55 @@ export default function Home() {
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Audit Section */}
+        <section id="audit" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
+                    Audit de votre site web
+                  </h2>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Découvrez les points forts et les axes d'amélioration de votre site web avec notre audit en ligne.
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <p className="font-medium">Analyse technique complète</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <p className="font-medium">Évaluation du SEO</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <p className="font-medium">Analyse de l'expérience utilisateur</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <p className="font-medium">Recommandations personnalisées</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <p className="font-medium">Plan d'action détaillé</p>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Button size="lg" className="gap-1">
+                    Tester son site <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+              <div className="relative">
+                <LottieAnimation2 />
+
               </div>
             </div>
           </div>
@@ -365,50 +394,20 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Audit Section */}
-        <section id="audit" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        {/* Resources Section */}
+        <section id="resources" className="w-full pb-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
-                    Audit de votre site web
-                  </h2>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Découvrez les points forts et les axes d'amélioration de votre site web avec notre audit en ligne.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Analyse technique complète</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Évaluation du SEO</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Analyse de l'expérience utilisateur</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Recommandations personnalisées</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Plan d'action détaillé</p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="gap-1">
-                    Tester son site <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </div>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-medium tracking-tighter md:text-4xl/tight">Ressources pour s'informer</h2>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                  Plus de 50 articles pour vous aider à créer et optimiser votre site web.
+                </p>
               </div>
-              <div className="relative">
-                <LottieAnimation2 />
-
+              <div className="w-full">
+                <div className="relative">
+                  <DocTabs />
+                </div>
               </div>
             </div>
           </div>
