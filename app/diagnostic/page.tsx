@@ -1,4 +1,4 @@
-import { Bento } from "@/components/diag-bento";
+import { BentoDiag } from "@/components/bentos";
 
 
 
@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* Bento Box */}
       <section className="flex align-center justify-center w-full h-full py-8 px-12 md:px-18 lg:px-18 xl:px-24">
-          <Bento />
+          <BentoDiag />
         </section>
 
         {/* End of Bento Box */}

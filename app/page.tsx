@@ -30,33 +30,32 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import dynamic from "next/dynamic";
-import { Bento } from "@/components/diag-bento";
-
-
+import { BentoFeatures } from "@/components/bentos";
 
 
 export default function Home() {
 
   return (
     <>
-      <main className="flex-1 bg-white">
+      <main className="flex-1 bg-white w-10/12 mx-auto">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full md:py-18 lg:py-18 xl:py-24">
-          <div className="flex justify-center px-4 md:px-6">
-              <div className="flex space-y-4 text-center">
-                <LottieAnimation1 />
+        <section className="flex align-center justify-center w-full pt-36 pb-24">
+          <div className="h-full grid grid-cols-6 justify-center px-4 md:px-6">
+              <div className="col-span-1 space-y-4 place-self-center align-self-end">
+              <LottieAnimation2 />
               </div>
-              <div className="flex flex-col justify-center space-y-8">
-                <div className="space-y-2 flex flex-col items-center justify-center text-center">
-                  <TextAnimate className="text-regularblue font-googletitre" animation="blurIn" as="h1">De l'idée à l'impact</TextAnimate>
-                <div>               
-                  <h2 className="text-2xl font-googletitre">
-                    Outils et services pour réussir son projet web
+              <div className="grid col-span-4 align-self-center place-self-center space-y-8">
+                <div className="space-y-2 text-center">
+                  <TextAnimate className="text-regularblue font-googletitre" animation="blurIn" as="h1">Mener votre projet web</TextAnimate>
+                  <TextAnimate className="text-regularblue font-googletitre" animation="blurIn" as="h1">en toute sérénité</TextAnimate>
+                <div className="w-2/3 mx-auto">               
+                  <h2 className="text-xl font-googletitre">
+                  Notre plateforme vous accompagne à chaque étape pour passer de l'idée à un site web concret, pertinent et techniquement bien pensé.
                   </h2>
                 </div>
                 </div>
-                <div className="flex flex-col justify-center gap-2 pt-16 min-[400px]:flex-row">
+                <div className="flex justify-center gap-2 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
                     <Link href="/diagnostic" className="text-lg font-regular">Outils gratuits</Link>
                   </Button>
@@ -65,14 +64,19 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-            <div className="flex align-end space-y-4 text-center">
-              <LottieAnimation2 />
+            <div className="col-span-1 space-y-4">
+              <LottieAnimation1 />
               </div>
           </div>
         </section>
 
+        {/* Features Section */}
+        <section className="flex align-center justify-center w-full p-12">
+            <BentoFeatures />
+        </section>
+
         {/* Quiz Section */}
-        <section id="quiz" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section id="quiz" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">

@@ -13,7 +13,7 @@ export default function LottieAnimation1() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/preloading-1.json")
+    fetch("/astronaut-with-space-shuttle.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -21,8 +21,7 @@ export default function LottieAnimation1() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full h-[250px] rounded-xl bg-muted flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+      <div className="w-full h-[250px] rounded-xl bg-white flex items-center justify-center">
       </div>
     )
   }
@@ -32,7 +31,7 @@ export default function LottieAnimation1() {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      style={{ width: "15rem", height: "15rem" }}
+      style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
     />
   )
 }
@@ -49,7 +48,7 @@ export function LottieAnimation2() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/preloading-3.json")
+    fetch("/cloud-astronaut.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -57,8 +56,7 @@ export function LottieAnimation2() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full h-[550px] rounded-xl bg-muted flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+      <div className="w-full h-[550px] rounded-xl bg-white flex items-center justify-center">
       </div>
     )
   }
@@ -68,7 +66,7 @@ export function LottieAnimation2() {
       animationData={animationData}
       loop={true}
       autoplay={true}
-      style={{ width: "15rem", height: "15rem" }}
+      style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
     />
   )
 }
