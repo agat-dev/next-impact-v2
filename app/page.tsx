@@ -31,6 +31,7 @@ import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import dynamic from "next/dynamic";
 import { BentoFeatures } from "@/components/bentos";
+import { Timeline } from "@/components/ui/timeline";
 
 
 export default function Home() {
@@ -40,22 +41,22 @@ export default function Home() {
       <main className="flex-1 bg-white w-10/12 mx-auto">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full pt-36 pb-24">
-          <div className="h-full grid grid-cols-6 justify-center px-4 md:px-6">
-              <div className="col-span-1 space-y-4 place-self-center align-self-end">
+        <section className="flex align-center justify-center w-full h-full pt-36 pb-24">
+          <div className="grid grid-cols-6 justify-center px-4 md:px-6">
+              <div className="col-span-1 space-y-4 place-self-center">
               <LottieAnimation2 />
               </div>
-              <div className="grid col-span-4 align-self-center place-self-center space-y-8">
-                <div className="space-y-2 text-center">
-                  <TextAnimate className="text-regularblue font-googletitre" animation="blurIn" as="h1">Mener votre projet web</TextAnimate>
-                  <TextAnimate className="text-regularblue font-googletitre" animation="blurIn" as="h1">en toute sérénité</TextAnimate>
-                <div className="w-2/3 mx-auto">               
-                  <h2 className="text-xl font-googletitre">
-                  Notre plateforme vous accompagne à chaque étape pour passer de l'idée à un site web concret, pertinent et techniquement bien pensé.
-                  </h2>
+              <div className="col-span-4">
+                <div className="py-2 text-center">
+                  <TextAnimate className="text-regularblue text-xl font-googletitre" animation="blurIn" as="h1">Créer ou refondre son site web</TextAnimate>
                 </div>
+                <div className="w-2/3 py-2 mx-auto text-center">               
+                  <p className="text-base font-medium font-googletitre text-lightblue">
+                      LES INFOS, LA METHODE, LES OUTILS, LES SERVICES        
+                  </p>
                 </div>
-                <div className="flex justify-center gap-2 min-[400px]:flex-row">
+                {/* CTA Buttons}
+                <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
                     <Link href="/diagnostic" className="text-lg font-regular">Outils gratuits</Link>
                   </Button>
@@ -63,6 +64,7 @@ export default function Home() {
                     <Link href="/services" className="text-lg font-regular">Services</Link>
                   </Button>
                 </div>
+                */}
               </div>
             <div className="col-span-1 space-y-4">
               <LottieAnimation1 />
@@ -72,7 +74,12 @@ export default function Home() {
 
         {/* Features Section */}
         <section className="flex align-center justify-center w-full p-12">
-            <BentoFeatures />
+            <Timeline data={[
+              { title: "Clarifier le projet", content: "Description for step 1" },
+              { title: "Explorer les meilleures solutions", content: "Description for step 2" },
+              { title: "Lancer son projet", content: "Description for step 3" },              
+              { title: "Continuer à améliorer", content: "Description for step 3" },
+            ]} />
         </section>
 
         {/* Quiz Section */}

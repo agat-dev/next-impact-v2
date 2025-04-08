@@ -59,37 +59,34 @@ export function NavBar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
+        {/* Base de doc 
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-googletitre text-lg'>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Base de doc</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    
-                    <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/services" title="Conseil projet">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/services" title="Création de sites web">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
+            <ul className="grid h-full w-[600px] gap-3 p-4 md:w-[800px] md:grid-cols-3 lg:w-[800px]">
+              {components.map((component) => (
+                <li>
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                  className='h-24'
+                >
+                  <p className='h-20 text-sm leading-tight text-muted-foreground'>
+                  {component.description}
+                  </p>
+                </ListItem>
+                </li>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-googletitre text-lg'>Diagnostics gratuits</NavigationMenuTrigger>
+          <Link href="/blog" className='font-googletitre text-regularblue text-lg font-medium px-6'>Docs</Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils gratuits</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
               <li className="row-span-4 basis-1/3">
@@ -126,27 +123,45 @@ export function NavBar() {
               </div>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>        
+          
+        </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-googletitre text-lg'>Centre de ressources</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Services</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid h-full w-[600px] gap-3 p-4 md:w-[800px] md:grid-cols-3 lg:w-[800px]">
-              {components.map((component) => (
-                <li>
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                  className='h-24'
-                >
-                  <p className='h-20 text-sm leading-tight text-muted-foreground'>
-                  {component.description}
-                  </p>
-                </ListItem>
-                </li>
-              ))}
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
+                    href="/"
+                  >
+                    
+                    <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      Beautifully designed components that you can copy and
+                      paste into your apps. Accessible. Customizable. Open
+                      Source.
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <ListItem href="/services" title="Sites vitrines">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
+              <ListItem href="/services" title="E-commerce">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+              <ListItem href="/services" title="Besoins spécifiques">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/blog" className='font-googletitre text-regularblue text-lg font-medium px-6'>Blog</Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/blog" className='font-googletitre text-regularblue text-lg font-medium px-6'>A propos</Link>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -163,12 +178,12 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-lightblue/10 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-lg font-regular leading-none">{title}</div>
+          <div className="text-lg font-regular text-regularblue leading-none">{title}</div>
           <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
             {children}
           </p>
@@ -195,7 +210,7 @@ export default function Header() {
           </div>
           <div className='basis-1/6 flex justify-end'>
           <Button className="hidden md:flex gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-lg font-regular">Rendez-vous conseil</Link>
+            <Link href="/services" className="text-lg font-regular">Contact</Link>
           </Button> 
           </div>
         </div>
