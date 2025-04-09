@@ -209,7 +209,7 @@ export default function Header() {
           <NavBar />
           </div>
           <div className='basis-1/6 flex justify-end'>
-          <Button className="hidden md:flex gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+          <Button className="hidden md:flex gap-1 rounded-full px-8 bg-mediumblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
             <Link href="/services" className="text-lg font-regular">Contact</Link>
           </Button> 
           </div>

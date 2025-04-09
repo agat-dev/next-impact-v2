@@ -67,6 +67,7 @@
     --lightblue: #719ED9;
     --extralightblue: #D0DCF2;
     --white: #FFFFFF;
+    --orange: #E68415;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -109,7 +110,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground bg-extralightblue/20;
   }
   h1, h2, h3, h4, h5, h6, a {
     @apply font-googletitre font-normal py-1;

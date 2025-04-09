@@ -21,6 +21,7 @@
 
 import {
   forwardRef,
+  ReactNode,
   useCallback,
   useEffect,
   useRef,
@@ -92,7 +93,7 @@ interface Step {
   id: string
   name: string
   title: string
-  description: string
+  description: ReactNode
 }
 
 // Constants
@@ -103,25 +104,25 @@ const steps = [
     id: "1",
     name: "INFOS",
     title: "Les infos essentielles pour son projet",
-    description: "<p>S'informer sur la gestion de projet web, les CMS, le SEO, la stratégie marketing</p>",
+    description: <p>S'informer sur la gestion de projet web, les CMS, le SEO, la stratégie marketing</p>,
   },
   {
     id: "2",
-    name: "TESTS",
+    name: "AUDITS",
     title: "Des outils pour tester son site web",
-    description: "Comparer les outils (WordPress, Webflow, Shopify, Headless) et choisir la solution adaptée",
+    description: <p>Comparer les outils (WordPress, Webflow, Shopify, Headless) et choisir la solution adaptée</p>,
   },
   {
     id: "3",
-    name: "METHODE",
+    name: "METHODES",
     title: "Des outils pour organiser son projet",
-    description: "Diagnostiquer son site actuel et rédiger un cahier des charges technique précis",
+    description: <p>Diagnostiquer son site actuel et rédiger un cahier des charges technique précis</p>,
   },
   {
     id: "4",
     name: "SERVICES",
     title: "Des services pour concrétiser son site web",
-    description: "Services de création et de refonte de site web et accompagnements personnalisés",
+    description: <p>Services de création et de refonte de site web et accompagnements personnalisés</p>,
   },
 ] as const
 
@@ -352,11 +353,9 @@ function FeatureCard({
   bgClass,
   children,
   step,
-  description,
 }: CardProps & {
   children: React.ReactNode
   step: number
-  description: React.ReactNode
 }) {
   const [mounted, setMounted] = useState(false)
   const mouseX = useMotionValue(0)
@@ -426,9 +425,9 @@ function FeatureCard({
                   ease: [0.23, 1, 0.32, 1],
                 }}
               >
-                <p className="text-sm leading-5 text-neutral-300 sm:text-base sm:leading-5 dark:text-zinc-400">
-                  <Balancer>{description}</Balancer>
-                </p>
+                <div className="text-sm leading-5 text-neutral-300 sm:text-base sm:leading-5 dark:text-zinc-400">
+                  {steps[step].description}
+                </div>
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -472,8 +471,8 @@ function Steps({
               variants={stepVariants}
               transition={{ duration: 0.3 }}
               className={cn(
-                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-regularblue/10",
-                isCompleted ? "bg-regularblue/20" : "bg-regularblue/50"
+                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-mediumblue/80",
+                isCompleted ? "bg-regularblue" : "bg-mediumblue"
               )}
             >
               <div
@@ -526,9 +525,9 @@ function Steps({
                     animate={{ opacity: 1, x: 0 }}
                     className={clsx(
                       "text-base font-adobetitre font-regular duration-300",
-                      isCompleted && "text-lightblue",
+                      isCompleted && "text-white",
                       isCurrent && "text-white",
-                      isFuture && "text-regularblue"
+                      isFuture && "text-white"
                     )}
                   >
                     {step.name}

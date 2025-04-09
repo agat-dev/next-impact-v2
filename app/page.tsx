@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex-1 bg-white w-10/12 mx-auto">
+      <main className="flex-1 w-10/12 mx-auto">
 
        {/* Hero Section */}
         <section className="flex align-center justify-center w-full h-full pt-24 pb-6">
@@ -50,14 +50,11 @@ export default function Home() {
               </div>
               <div className="col-span-4">
                 <div className="py-2 text-center">
-                  <TextAnimate className="text-regularblue text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et bien !</TextAnimate>
+                  <TextAnimate className="text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et bien !</TextAnimate>
                 </div>
-                <div className="py-8 space-y-2 mx-auto text-center">             
-                  <p className="text-base font-regular font-googletitre text-regularblue">
-                      LES INFOS, LA METHODE, LES OUTILS, LES SERVICES        
-                  </p> 
-                  <p className="text-xl font-regular font-googletitre text-lightblue">
-                     Tout pour choisir les bons outils, cadrer le projet et concevoir un site web professionnel, rapide et bien référencé        
+                <div className="w-10/12 py-4 space-y-2 mx-auto text-center">   
+                  <p className="text-xl font-regular font-googletitre text-regularblue">
+                     Clarifier son projet de site web, Choisir les meilleures solutions et Construire un site web professionnel, rapide et bien référencé        
                   </p> 
                 </div>
                 {/* CTA Buttons}
@@ -78,7 +75,7 @@ export default function Home() {
         </section>
 
       {/* Carousel Section */}
-        <section className="flex align-center justify-center w-5/6 m-auto">         
+        <section className="flex align-center justify-center w-4/6 m-auto">         
           <FeatureCarousel
             title=""
             description=""
