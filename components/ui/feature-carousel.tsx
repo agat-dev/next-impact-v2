@@ -107,7 +107,7 @@ const steps = [
   },
   {
     id: "2",
-    name: "TESTS",
+    name: "OUTILS",
     title: "Des outils pour tester son site web",
     description: "Comparer les outils (WordPress, Webflow, Shopify, Headless) et choisir la solution adaptée",
   },
@@ -472,8 +472,8 @@ function Steps({
               variants={stepVariants}
               transition={{ duration: 0.3 }}
               className={cn(
-                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-regularblue/10",
-                isCompleted ? "bg-regularblue/20" : "bg-regularblue/50"
+                "relative z-50 rounded-full px-4 py-1 transition-all duration-600 ease-in-out md:flex",
+                isCompleted ? "bg-lightblue" : "bg-regularblue"
               )}
             >
               <div
@@ -483,7 +483,7 @@ function Steps({
                 )}
                 onClick={() => onChange(stepIdx)}
               >
-                <span className="flex items-center gap-2 text-base text-white font-medium">
+                <span className="flex items-center gap-2 text-white font-medium">
                   <motion.span
                     initial={false}
                     animate={{
@@ -526,9 +526,9 @@ function Steps({
                     animate={{ opacity: 1, x: 0 }}
                     className={clsx(
                       "text-base font-adobetitre font-regular duration-300",
-                      isCompleted && "text-lightblue",
+                      isCompleted && "text-white",
                       isCurrent && "text-white",
-                      isFuture && "text-regularblue"
+                      isFuture && "text-white"
                     )}
                   >
                     {step.name}

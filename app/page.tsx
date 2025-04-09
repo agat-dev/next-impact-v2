@@ -52,12 +52,9 @@ export default function Home() {
                 <div className="py-2 text-center">
                   <TextAnimate className="text-regularblue text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et bien !</TextAnimate>
                 </div>
-                <div className="py-8 space-y-2 mx-auto text-center">             
-                  <p className="text-base font-regular font-googletitre text-regularblue">
-                      LES INFOS, LA METHODE, LES OUTILS, LES SERVICES        
-                  </p> 
+                <div className="py-8 space-y-2 mx-auto text-center">     
                   <p className="text-xl font-regular font-googletitre text-lightblue">
-                     Tout pour choisir les bons outils, cadrer le projet et concevoir un site web professionnel, rapide et bien référencé        
+                     Choisir les bons outils, cadrer le projet et concevoir un site web professionnel, rapide et bien référencé        
                   </p> 
                 </div>
                 {/* CTA Buttons}
