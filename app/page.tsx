@@ -11,6 +11,7 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import { LottieAnimation2, LottieAnimation3, LottieAnimation4 } from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
   Expandable,
   ExpandableCard,
@@ -32,6 +33,7 @@ import { Badge } from "@/components/ui/badge";
 import dynamic from "next/dynamic";
 import { BentoFeatures } from "@/components/bentos";
 import { Timeline } from "@/components/ui/timeline";
+import FeatureCarousel from "@/components/ui/feature-carousel";
 
 
 export default function Home() {
@@ -41,19 +43,22 @@ export default function Home() {
       <main className="flex-1 bg-white w-10/12 mx-auto">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full pt-36 pb-24">
+        <section className="flex align-center justify-center w-full h-full pt-24 pb-6">
           <div className="grid grid-cols-6 justify-center px-4 md:px-6">
               <div className="col-span-1 space-y-4 place-self-center">
               <LottieAnimation2 />
               </div>
               <div className="col-span-4">
                 <div className="py-2 text-center">
-                  <TextAnimate className="text-regularblue text-xl font-googletitre" animation="blurIn" as="h1">Créer ou refondre son site web</TextAnimate>
+                  <TextAnimate className="text-regularblue text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et bien !</TextAnimate>
                 </div>
-                <div className="w-2/3 py-2 mx-auto text-center">               
-                  <p className="text-base font-medium font-googletitre text-lightblue">
+                <div className="py-8 space-y-2 mx-auto text-center">             
+                  <p className="text-base font-regular font-googletitre text-regularblue">
                       LES INFOS, LA METHODE, LES OUTILS, LES SERVICES        
-                  </p>
+                  </p> 
+                  <p className="text-xl font-regular font-googletitre text-lightblue">
+                     Tout pour choisir les bons outils, cadrer le projet et concevoir un site web professionnel, rapide et bien référencé        
+                  </p> 
                 </div>
                 {/* CTA Buttons}
                 <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
@@ -70,6 +75,23 @@ export default function Home() {
               <LottieAnimation1 />
               </div>
           </div>
+        </section>
+
+      {/* Carousel Section */}
+        <section className="flex align-center justify-center w-5/6 m-auto">         
+          <FeatureCarousel
+            title="Your Feature Title"
+            description="Your feature description"
+            image={{
+              step1light1: "/path/to/your/image1.jpg", // Replace with the actual path to your image
+              step1light2: "/path/to/image2.jpg", // Replace with the actual path to your image
+              step2light1: "/path/to/image3.jpg", // Replace with the actual path to your image
+              step2light2: "/path/to/image4.jpg", // Replace with the actual path to your image
+              step3light: "/path/to/image5.jpg", // Replace with the actual path to your image
+              step4light: "/path/to/image6.jpg", // Replace with the actual path to your image
+              alt: "Feature showcase",
+            }}
+          />
         </section>
 
         {/* Features Section */}
