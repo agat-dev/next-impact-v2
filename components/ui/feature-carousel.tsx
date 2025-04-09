@@ -50,7 +50,7 @@ type WrapperStyle = MotionStyle & {
 
 interface CardProps {
   title: string
-  description: string
+  description: React.ReactNode
   bgClass?: string
 }
 
@@ -101,27 +101,27 @@ const TOTAL_STEPS = 4
 const steps = [
   {
     id: "1",
-    name: "Clarifier",
-    title: "Clarifier le projet",
-    description: "Feature 1 description  ",
+    name: "INFOS",
+    title: "Les infos essentielles pour son projet",
+    description: "<p>S'informer sur la gestion de projet web, les CMS, le SEO, la stratégie marketing</p>",
   },
   {
     id: "2",
-    name: "Explorer",
-    title: "Explorer les solutions",
-    description: "Feature 2 description",
+    name: "TESTS",
+    title: "Des outils pour tester son site web",
+    description: "Comparer les outils (WordPress, Webflow, Shopify, Headless) et choisir la solution adaptée",
   },
   {
     id: "3",
-    name: "Décider",
-    title: "Choisir les meilleures solutions",
-    description: "Feature 3 description",
+    name: "METHODE",
+    title: "Des outils pour organiser son projet",
+    description: "Diagnostiquer son site actuel et rédiger un cahier des charges technique précis",
   },
   {
     id: "4",
-    name: "Lancer",
-    title: "Concrétiser le projet",
-    description: "Feature 4 description",
+    name: "SERVICES",
+    title: "Des services pour concrétiser son site web",
+    description: "Services de création et de refonte de site web et accompagnements personnalisés",
   },
 ] as const
 
@@ -352,9 +352,11 @@ function FeatureCard({
   bgClass,
   children,
   step,
+  description,
 }: CardProps & {
   children: React.ReactNode
   step: number
+  description: React.ReactNode
 }) {
   const [mounted, setMounted] = useState(false)
   const mouseX = useMotionValue(0)
@@ -390,11 +392,11 @@ function FeatureCard({
           bgClass
         )}
       >
-        <div className="m-10 min-h-[450px] w-full">
+        <div className="m-10 min-h-[450px] w-full py-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
-              className="flex w-4/6 flex-col gap-3"
+              className="flex w-4/6 flex-col gap-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -425,7 +427,7 @@ function FeatureCard({
                 }}
               >
                 <p className="text-sm leading-5 text-neutral-300 sm:text-base sm:leading-5 dark:text-zinc-400">
-                  <Balancer>{steps[step].description}</Balancer>
+                  <Balancer>{description}</Balancer>
                 </p>
               </motion.div>
             </motion.div>
@@ -470,8 +472,8 @@ function Steps({
               variants={stepVariants}
               transition={{ duration: 0.3 }}
               className={cn(
-                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex",
-                isCompleted ? "bg-regularblue" : "bg-regularblue/30"
+                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-regularblue/10",
+                isCompleted ? "bg-regularblue/20" : "bg-regularblue/50"
               )}
             >
               <div
@@ -481,7 +483,7 @@ function Steps({
                 )}
                 onClick={() => onChange(stepIdx)}
               >
-                <span className="flex items-center gap-2 text-sm text-white font-medium">
+                <span className="flex items-center gap-2 text-base text-white font-medium">
                   <motion.span
                     initial={false}
                     animate={{
@@ -490,7 +492,7 @@ function Steps({
                     className={cn(
                       "flex h-4 w-4 shrink-0 items-center justify-center rounded-full duration-300",
                       isCompleted &&
-                        "bg-brand-400 text-white dark:bg-brand-400",
+                        "bg-brand-400 text-white",
                       isCurrent &&
                         "bg-brand-300/80 text-white",
                       isFuture && "bg-brand-300/10 text-white"
@@ -511,7 +513,7 @@ function Steps({
                     ) : (
                       <span
                         className={cn(
-                          "text-xs",
+                          "text-xs font-adobetitre text-white",
                           !isCurrent && "text-white"
                         )}
                       >
@@ -523,7 +525,7 @@ function Steps({
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className={clsx(
-                      "text-sm font-adobetitre font-medium duration-300",
+                      "text-base font-adobetitre font-regular duration-300",
                       isCompleted && "text-lightblue",
                       isCurrent && "text-white",
                       isFuture && "text-regularblue"
@@ -583,6 +585,8 @@ export function FeatureCarousel({
   const handleAnimationComplete = () => {
     setIsAnimating(false)
   }
+
+  
 
   const renderStepContent = () => {
     const content = () => {

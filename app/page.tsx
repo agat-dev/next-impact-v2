@@ -80,8 +80,8 @@ export default function Home() {
       {/* Carousel Section */}
         <section className="flex align-center justify-center w-5/6 m-auto">         
           <FeatureCarousel
-            title="Your Feature Title"
-            description="Your feature description"
+            title=""
+            description=""
             image={{
               step1light1: "/path/to/your/image1.jpg", // Replace with the actual path to your image
               step1light2: "/path/to/image2.jpg", // Replace with the actual path to your image
