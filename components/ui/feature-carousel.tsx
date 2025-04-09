@@ -386,7 +386,7 @@ function FeatureCard({
     >
       <div
         className={clsx(
-          "group relative w-full overflow-hidden rounded-3xl bg-gradient-to-b from-lightblue/10 to-lightblue/0 transition duration-300",
+          "group relative w-full overflow-hidden rounded-3xl bg-lightblue-500 transition duration-300",
           "md:hover:border-transparent",
           bgClass
         )}

@@ -43,15 +43,16 @@ export default function Home() {
       <main className="flex-1 w-10/12 mx-auto">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full pt-24 pb-6">
-          <div className="grid grid-cols-6 justify-center px-4 md:px-6">
-              <div className="col-span-1 space-y-4 place-self-center">
+        <section className="flex align-center justify-center w-full h-full pb-6">
+          <div className="grid grid-cols-6 justify-center align-center px-4 md:px-6">
+              <div className="col-span-1 pt-24">
               <LottieAnimation2 />
               </div>
-              <div className="col-span-4">
+              <div className="col-span-4 place-self-center">
                 <div className="py-2 text-center">
-                  <TextAnimate className="text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et bien !</TextAnimate>
+                  <TextAnimate className="text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et loin !</TextAnimate>
                 </div>
+                {/*}
                 <div className="py-8 space-y-2 mx-auto text-center">             
                   <p className="text-base font-regular font-googletitre text-regularblue">
                       LES INFOS, LA METHODE, LES OUTILS, LES SERVICES        
@@ -60,6 +61,7 @@ export default function Home() {
                      Tout pour choisir les bons outils, cadrer le projet et concevoir un site web professionnel, rapide et bien référencé        
                   </p> 
                 </div>
+                */}
                 {/* CTA Buttons}
                 <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
@@ -71,7 +73,7 @@ export default function Home() {
                 </div>
                 */}
               </div>
-            <div className="col-span-1 space-y-4">
+            <div className="col-span-1 pt-8">
               <LottieAnimation1 />
               </div>
           </div>
