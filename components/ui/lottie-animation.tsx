@@ -13,7 +13,7 @@ export default function LottieAnimation1() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/astronaut-with-space-shuttle.json")
+    fetch("/lotties/astronaut-with-space-shuttle.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -47,7 +47,7 @@ export function LottieAnimation2() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/cloud-astronaut.json")
+    fetch("/lotties/cloud-astronaut.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -80,7 +80,7 @@ export function LottieAnimation3() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/astronaut-with-surprise-box.json")
+    fetch("/lotties/astronaut-with-surprise-box.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))
@@ -113,7 +113,7 @@ export function LottieAnimation4() {
     })
 
     // Fetch the Lottie animation data
-    fetch("/astronaut-sitting-planet-waving-hand.json")
+    fetch("/lotties/astronaut-sitting-planet-waving-hand.json")
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
       .catch((error) => console.error("Failed to load animation:", error))

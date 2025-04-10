@@ -38,7 +38,7 @@ export function ExpandableCardNIP() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            className="fixed inset-0 bg-mediumblue/20 h-full w-full z-10"
           />
         )}
       </AnimatePresence>
@@ -125,7 +125,7 @@ export function ExpandableCardNIP() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="w-3xl mx-0 gap-4">
+      <ul className="w-3xl mx-0 grid grid-cols-2 gap-8">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -133,7 +133,7 @@ export function ExpandableCardNIP() {
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row ">
+            <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <Image
                   width={100}
@@ -146,13 +146,13 @@ export function ExpandableCardNIP() {
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-regular text-lg text-mediumblue text-center md:text-left"
+                  className="font-regular text-xl text-regularblue text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left"
+                  className="text-darkblue/70 text-left text-xs"
                 >
                   {card.description}
                 </motion.p>
@@ -160,9 +160,15 @@ export function ExpandableCardNIP() {
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
+              className="ml-4 px-4 py-2 mt-4 md:mt-0"
             >
-              {card.ctaText}
+              <Image
+                width={80}
+                height={80}
+                src="/img/arrow.svg"
+                alt="rocket"
+                className="h-4 w-4"
+              />
             </motion.button>
           </motion.div>
         ))}
@@ -207,8 +213,8 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "Infos, Quizz, Conseils",
-    title: "Par où commencer pour créer mon site web ?",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    title: "Par où commencer ?",
+    src: "/img/astronaut-doing-fishing.svg",
     ctaText: "Voir",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -230,8 +236,8 @@ const cards = [
   },
   {
     description: "Infos, Quizz, Conseils",
-    title: "Quel CMS choisir pour mon projet web ?",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
+    title: "Quel CMS choisir ?",
+    src: "/img/astronaut-playing-rugby.svg",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -254,7 +260,7 @@ const cards = [
   {
     description: "Infos, Outils, Modèles",
     title: "Comment rédiger mon cahier des charges ?",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
+    src: "/img/astronaut-floating-holding-tools.svg",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -276,7 +282,7 @@ const cards = [
   {
     description: "Infos, Diagnostic, Conseils",
     title: "Quelle techno pour mon site web ?",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
+    src: "/img/astronaut-sitting-on-ufo.svg",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -295,9 +301,51 @@ const cards = [
     },
   },
   {
-    description: "Infos, Quizz, Modèles",
+    description: "Infos, Audit, Conseils",
+    title: "Pourquoi mon site web ne fonctionne pas ?",	
+    src: "/img/astronaut-hanging-on-earth-balloon.svg",
+    ctaText: "Play",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
+          renowned for its intense storyline and powerful performances. Directed
+          by Mohit Suri, the film has become a significant work in the Indian
+          film industry. <br /> <br /> The movie explores themes of love,
+          redemption, and sacrifice, capturing the essence of human emotions and
+          relationships. With a gripping narrative and memorable music,
+          &quot;Aawarapan&quot; has garnered a massive fan following both in
+          India and abroad, solidifying Emraan Hashmi&apos;s status as a
+          versatile actor.
+        </p>
+      );
+    },
+  },{
+    description: "Infos, Quizz, Conseils",
     title: "Combien coute un site web ?",	
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
+    src: "/img/astronaut-sitting-on-a-gold-stacks.svg",
+    ctaText: "Play",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
+          renowned for its intense storyline and powerful performances. Directed
+          by Mohit Suri, the film has become a significant work in the Indian
+          film industry. <br /> <br /> The movie explores themes of love,
+          redemption, and sacrifice, capturing the essence of human emotions and
+          relationships. With a gripping narrative and memorable music,
+          &quot;Aawarapan&quot; has garnered a massive fan following both in
+          India and abroad, solidifying Emraan Hashmi&apos;s status as a
+          versatile actor.
+        </p>
+      );
+    },
+  },{
+    description: "Infos, Outils, Conseils",
+    title: "Comment briefer un prestataire ?",	
+    src: "/img/astronaut-doing-earth-climbing.svg",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {

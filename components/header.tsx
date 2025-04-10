@@ -199,7 +199,7 @@ export default function Header() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className='basis-1/6'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Image src="/logo.png" alt="Next Impact Digital" width={64} height={64} />
+            <Image src="/img/logo.png" alt="Next Impact Digital" width={72} height={72} />
           </Link>
           </div>
           <div className='basis-4/6 flex justify-center'>
