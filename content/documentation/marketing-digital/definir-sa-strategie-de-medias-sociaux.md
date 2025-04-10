@@ -4,7 +4,7 @@ description: Les bases de l’élaboration d’une stratégie de médias sociaux
 category: marketing-digital
 author: Next Impact
 date: "2025-03-15"
-order: 10
+order: 6
 ---
 
 Les médias sociaux jouent un rôle essentiel dans la croissance d'une entreprise. Une stratégie bien définie peut vous aider à accroître votre visibilité, à engager votre audience et à générer des résultats tangibles pour votre activité. Mais comment créer une stratégie efficace et adaptée à vos besoins ? 

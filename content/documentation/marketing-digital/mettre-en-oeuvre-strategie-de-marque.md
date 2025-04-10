@@ -4,7 +4,7 @@ description: Une explication didactique des étapes clés pour concevoir et mett
 category: marketing-digital
 author: Next Impact
 date: "2025-03-15"
-order: 2
+order: 5
 ---
 
 # Méthodologie de Mise en Œuvre d'une Stratégie Marketing : Guide pas à pas

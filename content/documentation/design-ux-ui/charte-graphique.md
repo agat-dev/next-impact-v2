@@ -1,10 +1,10 @@
 ---
 title: Charte graphique
 description: Qu'est-ce qu'une charte graphique, pourquoi est-elle indispensable, et comment la définir ? 
-category: marketing-digital
+category: design-ux-ui
 author: Next Impact
 date: "2025-03-15"
-order: 7
+order: 2
 ---
 
 Pour toute marque souhaitant se démarquer, la cohérence visuelle et le message véhiculé jouent un rôle essentiel. Une **charte graphique** offre un cadre structuré, garantissant que votre identité visuelle reste intacte à travers tous les supports et canaux de communication.

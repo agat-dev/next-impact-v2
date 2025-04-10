@@ -1,10 +1,10 @@
 ---
 title: Identité visuelle
 description: Qu'est-ce que l'identité visuelle, pourquoi est-elle essentielle, et comment la développer efficacement ? 
-category: marketing-digital
+category: design-ux-ui
 author: Next Impact
 date: "2025-03-15"
-order: 5
+order: 1
 ---
 
 

@@ -1,10 +1,10 @@
 ---
 title: Créer une charte graphique
 description: comment créer une charte graphique qui reflète fidèlement votre identité tout en étant professionnelle et impactante ? 
-category: marketing-digital
+category: design-ux-ui
 author: Next Impact
 date: "2025-03-15"
-order: 8
+order: 4
 ---
 
 La charte graphique est bien plus qu’un simple document esthétique : elle est la pierre angulaire de votre identité visuelle. Qu’il s’agisse de séduire vos clients, d’unifier vos supports ou de renforcer votre crédibilité, une charte graphique cohérente est essentielle pour toute entreprise ou marque.  

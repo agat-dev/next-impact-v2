@@ -15,7 +15,7 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex justify-center space-y-4 py-8">
             <TextAnimate animation="blurInUp" by="character" once>
-              Choisir le meilleur CMS pour son projet
+              Choisir son CMS
             </TextAnimate>
           </div>
         </div>

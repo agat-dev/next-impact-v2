@@ -4,7 +4,7 @@ description: Qu'est-ce qu'une stratégie sur les médias sociaux ? Comment peut-
 category: marketing-digital
 author: Next Impact
 date: "2025-03-15"
-order: 9
+order: 3
 ---
 
 Pour de nombreuses entreprises modernes, les réseaux sociaux ne sont plus un simple outil de communication. Ils sont désormais une composante essentielle des stratégies marketing et un levier pour atteindre vos objectifs de croissance. 

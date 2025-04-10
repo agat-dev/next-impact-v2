@@ -1,10 +1,10 @@
 ---
 title: Créer son identité visuelle
 description: Les bases d’une identité visuelle efficace
-category: marketing-digital
+category: design-ux-ui
 author: Next Impact
 date: "2025-03-15"
-order: 6
+order: 3
 ---
 
 Votre identité visuelle est bien plus qu’un simple logo ; elle est l’essence même de ce que représente votre marque. Une identité visuelle forte et cohérente peut transformer votre activité en une marque mémorable, reconnaissable et respectée. Alors, comment construire une identité visuelle efficace ? 
