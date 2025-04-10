@@ -77,7 +77,7 @@ export default function DocTabs() {
       (article) => article.category === "marketing-digital"
     );
     const uxuiArticles = articles.filter(
-      (article) => article.category === "design-ux-ui"
+      (article) => article.category === "design"
     );
     const projetArticles = articles.filter(
       (article) => article.category === "projet-site-web"
@@ -137,9 +137,9 @@ export default function DocTabs() {
                       Marketing
                     </TabsTrigger>
                     <TabsTrigger
-                      value="design-ux-ui"
+                      value="design"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      UI/UX
+                      Design
                     </TabsTrigger>              
                     <TabsTrigger
                       value="seo"
@@ -221,7 +221,7 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="design-ux-ui" className="pt-6">
+                  <TabsContent value="design" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {uxuiArticles.map((article) => (
                         <div

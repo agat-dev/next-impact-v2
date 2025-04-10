@@ -1,7 +1,7 @@
 ---
 title: Créer une charte graphique
 description: comment créer une charte graphique qui reflète fidèlement votre identité tout en étant professionnelle et impactante ? 
-category: design-ux-ui
+category: design
 author: Next Impact
 date: "2025-03-15"
 order: 4

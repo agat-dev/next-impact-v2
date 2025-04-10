@@ -21,8 +21,7 @@ export default function LottieAnimation1() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full h-[250px] rounded-xl bg-white flex items-center justify-center">
-      </div>
+      <></>
     )
   }
 
@@ -56,8 +55,7 @@ export function LottieAnimation2() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full h-[550px] rounded-xl bg-white flex items-center justify-center">
-      </div>
+      <></>
     )
   }
 
@@ -90,9 +88,7 @@ export function LottieAnimation3() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full h-[550px] rounded-xl bg-muted flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-      </div>
+      <></>
     )
   }
 
@@ -125,9 +121,7 @@ export function LottieAnimation4() {
 
   if (!LottieComponent || !animationData) {
     return (
-      <div className="w-full rounded-xl bg-muted flex items-center justify-center">
-        <div className="animate-spin rounded-full border-t-2 border-b-2 border-primary"></div>
-      </div>
+      <> </>
     )
   }
 

@@ -1,7 +1,7 @@
 ---
 title: Charte graphique
 description: Qu'est-ce qu'une charte graphique, pourquoi est-elle indispensable, et comment la définir ? 
-category: design-ux-ui
+category: design
 author: Next Impact
 date: "2025-03-15"
 order: 2

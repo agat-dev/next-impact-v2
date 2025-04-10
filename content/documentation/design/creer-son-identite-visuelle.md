@@ -1,7 +1,7 @@
 ---
 title: Créer son identité visuelle
 description: Les bases d’une identité visuelle efficace
-category: design-ux-ui
+category: design
 author: Next Impact
 date: "2025-03-15"
 order: 3
