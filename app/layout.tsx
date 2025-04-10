@@ -29,7 +29,7 @@ export default function RootLayout({
         className="absolute inset-0 z-0"
         quantity={100}
         ease={50}
-        color={"#E5A21E"}
+        color={"#E0C035"}
         refresh
       />
         <Header />

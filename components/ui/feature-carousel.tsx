@@ -471,8 +471,8 @@ function Steps({
               variants={stepVariants}
               transition={{ duration: 0.3 }}
               className={cn(
-                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-regularblue/10",
-                isCompleted ? "bg-regularblue/20" : "bg-regularblue/50"
+                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-regularblue/20",
+                isCompleted ? "bg-regularblue/30" : "bg-regularblue"
               )}
             >
               <div

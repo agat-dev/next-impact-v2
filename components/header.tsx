@@ -83,7 +83,7 @@ export function NavBar() {
         </NavigationMenuItem>
         */}
         <NavigationMenuItem>
-          <Link href="/blog" className='font-googletitre text-regularblue text-lg font-medium px-6'>Docs</Link>
+          <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Infos</Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils gratuits</NavigationMenuTrigger>
@@ -106,18 +106,15 @@ export function NavBar() {
                 </NavigationMenuLink>
               </li>
               <div className='basis-1/3'>
-              <ListItem href="/audit" title="Audit global">
+              <ListItem href="/audit" title="Audit de site web">
                 How to install dependencies and structure your app.
-              </ListItem>              
-              <ListItem href="/audit" title="Audit SEO">
-                How to install dependencies and structure your app.
-              </ListItem>
+              </ListItem>                
+              <ListItem href="/quizz" title="Choisir son CMS">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>      
               </div> 
               <div className='basis-1/3'>             
-              <ListItem href="/quizz" title="Générer son cahier des charges">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>              
-              <ListItem href="/quizz" title="Choisir son CMS">
+              <ListItem href="/quizz" title="Tous les outils en ligne">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               </div>
@@ -210,7 +207,7 @@ export default function Header() {
           </div>
           <div className='basis-1/6 flex justify-end'>
           <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-lg font-regular">Contact</Link>
+            <Link href="/services" className="text-base font-regular">RDV Conseil</Link>
           </Button> 
           </div>
         </div>
