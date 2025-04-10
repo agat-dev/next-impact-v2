@@ -117,7 +117,7 @@ export default function DocTabs() {
                 </div>
               </div>
             </section>
-            <section className="w-full py-16">
+            <section className="w-full py-8">
               <div className="container px-4 md:px-6">
                 <Tabs defaultValue="all" className="w-full">
                   <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">

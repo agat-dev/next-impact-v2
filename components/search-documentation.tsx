@@ -94,8 +94,8 @@ export function SearchDocumentation({ articles, categories }: SearchDocumentatio
         <Input
           ref={inputRef}
           type="search"
-          placeholder="Search documentation..."
-          className="w-full appearance-none bg-background pl-8 pr-10 shadow-none"
+          placeholder="Rechercher dans la documentation..."
+          className="w-full rounded-full appearance-none bg-background pl-8 pr-10 shadow-none"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => setIsSearching(true)}
@@ -110,7 +110,7 @@ export function SearchDocumentation({ articles, categories }: SearchDocumentatio
       </div>
 
       {isSearching && (searchQuery || filteredCategories.length > 0 || filteredArticles.length > 0) && (
-        <div className="absolute top-full z-10 mt-2 w-full rounded-md border bg-background shadow-md">
+        <div className="absolute top-full z-10 mt-2 w-full rounded-md bg-background shadow-md">
           <div className="p-4">
             {filteredCategories.length === 0 && filteredArticles.length === 0 ? (
               <p className="text-center text-sm text-muted-foreground py-6">No results found</p>
