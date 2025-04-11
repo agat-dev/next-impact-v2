@@ -100,7 +100,7 @@ const steps = [
               </div>
               <div className="flex flex-col basis-[75%] gap-2">
                   <div className="flex flex-col gap-2">
-                    <div className="w-full h-full p-2">
+                    <div className="w-full h-full p-2 hover:bg-lightblue/10 rounded-lg">
                       <div className="text-xl font-adobetitre text-regularblue">Les étapes de création d'un site web</div>
                       <p className="text-xs">De l'expression des besoins à la mise en ligne</p>
                     </div>
