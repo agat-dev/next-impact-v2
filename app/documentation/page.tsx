@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DocTabs from "@/components/documentation/doc-tabs";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { LottieAnimation4 } from "@/components/ui/lottie-animation";
+import LottieAnimation from "@/components/ui/lottie-animation";
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 
 export default function DocumentationPage() {
@@ -12,7 +12,7 @@ export default function DocumentationPage() {
       <main className="flex-1">
    
           {/* Hero Section */}
-           <section className="flex align-center justify-center w-full h-full pt-8">
+           <section className="flex align-center justify-center w-full h-full  min-h-[16rem] pt-8">
              <div className="grid grid-cols-6 justify-center align-center px-4 md:px-6">
              <div className="col-span-1">
                  </div>
@@ -27,7 +27,7 @@ export default function DocumentationPage() {
                    </div>
                  </div>
                <div className="col-span-1">
-                 <LottieAnimation4 />
+                 <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" />
                  </div>
              </div>
            </section>

@@ -1,22 +1,3 @@
-/*
- ! Add the following to your .globals.css
-
-       .animated-cards::before {
-         @apply pointer-events-none absolute select-none rounded-3xl opacity-0 transition-opacity duration-300 hover:opacity-100;
-         background: radial-gradient(
-           1000px circle at var(--x) var(--y),
-           #c9ee80 0,
-           #eebbe2 10%,
-           #adc0ec 25%,
-           #c9ee80 35%,
-           rgba(255, 255, 255, 0) 50%,
-           transparent 80%
-         );
-         z-index: -1;
-         content: "";
-         inset: -1px;
-       }
-*/
 "use client"
 
 import {
@@ -42,6 +23,8 @@ import {
 import Balancer from "react-wrap-balancer"
 
 import { cn } from "@/lib/utils"
+import { Card } from "./card"
+import LottieAnimation from "./lottie-animation"
 
 // Types
 type WrapperStyle = MotionStyle & {
@@ -103,25 +86,59 @@ const steps = [
   {
     id: "1",
     name: "INFOS",
-    title: "Les infos essentielles pour son projet",
-    description: <p>S'informer sur la gestion de projet web, les CMS, le SEO, la stratégie marketing</p>,
+    title: "1 - S'informer pour pouvoir s'orienter",
+    description: <>
+            <p>Connaître en amont les éléments essentiels de la création d'un site web, c'est se donner les moyens de faire les bons choix.</p>
+            <div className="flex gap-4 py-4">
+              <div className="flex flex-col basis-[25%] gap-2 align-bottom rounded-lg bg-lightblue/10 p-4 text-regularblue">                  
+                  <p className="text-sm leading-tight">
+                    Beautifully designed components that you can copy and
+                    paste into your apps. Accessible. Customizable. Open
+                    Source.
+                  </p>
+                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" />
+              </div>
+              <div className="flex flex-col basis-[75%] gap-2">
+                  <div className="flex flex-col gap-2">
+                    <div className="w-full h-full p-2">
+                      <div className="text-xl font-adobetitre text-regularblue">Les étapes de création d'un site web</div>
+                      <p className="text-xs">De l'expression des besoins à la mise en ligne</p>
+                    </div>
+                    <div className="w-full h-full p-2">
+                      <div className="text-xl font-adobetitre text-regularblue">Les types de sites web</div>
+                      <p className="text-xs">Vitrine, e-commerce, blog, plateforme</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <div className="w-full h-full p-2">
+                      <div className="text-xl font-adobetitre text-regularblue">Les technologies de création de site web</div>
+                      <p className="text-xs">CMS, no-code, développement sur mesure, headless CMS…</p>
+                    </div>
+                    <div className="w-full h-full p-2">
+                      <div className="text-xl font-adobetitre text-regularblue">Les bonnes pratiques</div>
+                      <p className="text-xs">Design, SEO et performances</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            </>
   },
   {
     id: "2",
     name: "TESTS",
-    title: "Des outils pour tester son site web",
+    title: "2 - Tester son site et son projet pour décider",
     description: <p>Comparer les outils (WordPress, Webflow, Shopify, Headless) et choisir la solution adaptée</p>,
   },
   {
     id: "3",
     name: "METHODES",
-    title: "Des outils pour organiser son projet",
+    title: "3 - Avoir des livrables pour structurer",
     description: <p>Diagnostiquer son site actuel et rédiger un cahier des charges technique précis</p>,
   },
   {
     id: "4",
     name: "SERVICES",
-    title: "Des services pour concrétiser son site web",
+    title: "4 - Faire appel aux bons professionnels",
     description: <p>Services de création et de refonte de site web et accompagnements personnalisés</p>,
   },
 ] as const
@@ -181,7 +198,7 @@ interface AnimatedStepImageProps extends StepImageProps {
  */
 function useNumberCycler(
   totalSteps: number = TOTAL_STEPS,
-  interval: number = 3000
+  interval: number = 7000
 ) {
   const [currentNumber, setCurrentNumber] = useState(0)
   const [isManualInteraction, setIsManualInteraction] = useState(false)
@@ -395,7 +412,7 @@ function FeatureCard({
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
-              className="flex w-4/6 flex-col gap-6"
+              className="flex flex-col gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -542,6 +559,7 @@ function Steps({
   )
 }
 
+
 const defaultClasses = {
   step1img1:
     "pointer-events-none w-[50%] border border-border-100/10 transition-all duration-500 dark:border-border-700/50 rounded-2xl",
@@ -590,6 +608,7 @@ export function FeatureCarousel({
   const renderStepContent = () => {
     const content = () => {
       switch (step) {
+        
         case 0:
           /**
            * Layout: Two images side by side

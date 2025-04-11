@@ -1,136 +1,48 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
-export default function LottieAnimation1() {
-  const [LottieComponent, setLottieComponent] = useState<any>(null)
-  const [animationData, setAnimationData] = useState<any>(null)
-
-  useEffect(() => {
-    // Dynamically import Lottie
-    import("lottie-react").then((module: typeof import("lottie-react")) => {
-      setLottieComponent(() => module.default)
-    })
-
-    // Fetch the Lottie animation data
-    fetch("/lotties/astronaut-with-space-shuttle.json")
-      .then((response) => response.json())
-      .then((data) => setAnimationData(data))
-      .catch((error) => console.error("Failed to load animation:", error))
-  }, [])
-
-  if (!LottieComponent || !animationData) {
-    return (
-      <></>
-    )
-  }
-
-  return (
-    <LottieComponent
-      animationData={animationData}
-      loop={true}
-      autoplay={true}
-      style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
-    />
-  )
+interface LottieAnimationProps {
+  animationPath: string;
+  width?: string | number;
+  height?: string | number;
+  loop?: boolean;
+  autoplay?: boolean;
 }
 
-
-export function LottieAnimation2() {
-  const [LottieComponent, setLottieComponent] = useState<any>(null)
-  const [animationData, setAnimationData] = useState<any>(null)
+export default function LottieAnimation({
+  animationPath,
+  width = "13rem",
+  height = "13rem",
+  loop = true,
+  autoplay = true,
+}: LottieAnimationProps) {
+  const [LottieComponent, setLottieComponent] = useState<any>(null);
+  const [animationData, setAnimationData] = useState<any>(null);
 
   useEffect(() => {
     // Dynamically import Lottie
     import("lottie-react").then((module: typeof import("lottie-react")) => {
-      setLottieComponent(() => module.default)
-    })
+      setLottieComponent(() => module.default);
+    });
 
     // Fetch the Lottie animation data
-    fetch("/lotties/cloud-astronaut.json")
+    fetch(animationPath)
       .then((response) => response.json())
       .then((data) => setAnimationData(data))
-      .catch((error) => console.error("Failed to load animation:", error))
-  }, [])
+      .catch((error) => console.error("Failed to load animation:", error));
+  }, [animationPath]);
 
   if (!LottieComponent || !animationData) {
-    return (
-      <></>
-    )
+    return <></>;
   }
 
   return (
     <LottieComponent
       animationData={animationData}
-      loop={true}
-      autoplay={true}
-      style={{ width: "15rem", height: "15rem", margin: "0 auto" }}
+      loop={loop}
+      autoplay={autoplay}
+      style={{ width, height }}
     />
-  )
-}
-
-export function LottieAnimation3() {
-  const [LottieComponent, setLottieComponent] = useState<any>(null)
-  const [animationData, setAnimationData] = useState<any>(null)
-
-  useEffect(() => {
-    // Dynamically import Lottie
-    import("lottie-react").then((module: typeof import("lottie-react")) => {
-      setLottieComponent(() => module.default)
-    })
-
-    // Fetch the Lottie animation data
-    fetch("/lotties/astronaut-with-surprise-box.json")
-      .then((response) => response.json())
-      .then((data) => setAnimationData(data))
-      .catch((error) => console.error("Failed to load animation:", error))
-  }, [])
-
-  if (!LottieComponent || !animationData) {
-    return (
-      <></>
-    )
-  }
-
-  return (
-    <LottieComponent
-      animationData={animationData}
-      loop={true}
-      autoplay={true}
-      style={{ width: "15rem", height: "15rem" }}
-    />
-  )
-}
-
-export function LottieAnimation4() {
-  const [LottieComponent, setLottieComponent] = useState<any>(null)
-  const [animationData, setAnimationData] = useState<any>(null)
-
-  useEffect(() => {
-    // Dynamically import Lottie
-    import("lottie-react").then((module: typeof import("lottie-react")) => {
-      setLottieComponent(() => module.default)
-    })
-
-    // Fetch the Lottie animation data
-    fetch("/lotties/astronaut-sitting-planet-waving-hand.json")
-      .then((response) => response.json())
-      .then((data) => setAnimationData(data))
-      .catch((error) => console.error("Failed to load animation:", error))
-  }, [])
-
-  if (!LottieComponent || !animationData) {
-    return (
-      <> </>
-    )
-  }
-
-  return (
-    <LottieComponent
-      animationData={animationData}
-      loop={true}
-      autoplay={true}
-      style={{ width: "15rem", height: "15rem" }}
-    />
-  )
+  );
 }

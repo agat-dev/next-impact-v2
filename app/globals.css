@@ -134,7 +134,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-googletexte font-normal text-darkblue;
+    @apply text-base/6 font-googletexte font-normal text-darkblue/60 ;
   }
   .container {
     @apply mx-auto px-4;

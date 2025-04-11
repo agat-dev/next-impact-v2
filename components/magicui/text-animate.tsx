@@ -393,7 +393,7 @@ export function TextAnimate({
             variants={finalVariants.item}
             custom={i * staggerTimings[by]}
             className={cn(
-              by === "line" ? "block" : "inline-block whitespace-pre font-adobetitre text-mediumblue text-5xl",
+              by === "line" ? "block" : "inline-block whitespace-pre text-5xl font-adobetitre text-regularblue",
               by === "character" && "",
               segmentClassName,
             )}

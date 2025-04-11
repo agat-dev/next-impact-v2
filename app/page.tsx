@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
-import { LottieAnimation2, LottieAnimation3, LottieAnimation4 } from "@/components/ui/lottie-animation";
+import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
@@ -43,18 +43,18 @@ export default function Home() {
       <main className="flex-1">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full pt-8">
+        <section className="flex align-center justify-center w-full h-full min-h-[16rem] pt-8">
           <div className="grid grid-cols-6 justify-center align-center px-4 md:px-6">
               <div className="col-span-1">
-              <LottieAnimation2 />
+              <LottieAnimation animationPath="/lotties/astronaut-need-help.json" />
               </div>
               <div className="col-span-4 place-self-center">
                 <div className="py-2 text-center">
-                  <TextAnimate className="text-xl font-googletitre" animation="blurIn" as="h1">Lancer son site web vite et loin !</TextAnimate>
+                  <TextAnimate animation="blurIn" as="h1">Lancer son site web vite et loin !</TextAnimate>
                 </div>
-                <div className="w-10/12 py-8 space-y-2 mx-auto text-center">  
+                <div className="w-10/12 py-2 space-y-2 mx-auto text-center">  
                   <p className="text-xl font-regular font-googletitre text-lightblue">
-                     Choisir les bons outils, cadrer le projet et concevoir un site web professionnel, rapide et bien référencé        
+                    Vous permettre de connaître précisément les processus et les outils pour créer son site web pour décider des méthodes et technos et faire appel au bon prestataire.        
                   </p> 
                 </div>
                 {/* CTA Buttons}
@@ -69,18 +69,18 @@ export default function Home() {
                 */}
               </div>
             <div className="col-span-1">
-              <LottieAnimation1 />
+              <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" />
               </div>
           </div>
         </section>
 
       {/* Carousel Section */}
-        <section className="flex align-center justify-center w-4/6 m-auto border border-regularblue/20 rounded-3xl bg-white shadow-lg p-4 mt-8 mb-12">         
+        <section className="flex align-center justify-center w-4/6 m-auto p-4 mt-8 mb-12">         
           <FeatureCarousel
             title=""
             description=""
             image={{
-              step1light1: "/path/to/your/image1.jpg", // Replace with the actual path to your image
+              step1light1: "", // Replace with the actual path to your image
               step1light2: "/path/to/image2.jpg", // Replace with the actual path to your image
               step2light1: "/path/to/image3.jpg", // Replace with the actual path to your image
               step2light2: "/path/to/image4.jpg", // Replace with the actual path to your image
@@ -117,7 +117,6 @@ export default function Home() {
                   <Button size="lg" className="gap-1">
                     <Link href="/quizz" className="text-xl font-regular">Commencer le quiz</Link>
                   </Button>
-                  <LottieAnimation4 />
                 </div>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -245,7 +244,6 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative">
-                <LottieAnimation2 />
 
               </div>
             </div>
@@ -444,7 +442,6 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="relative">
-                <LottieAnimation3 />
                 
               </div>
               <div className="flex flex-col justify-center space-y-4">

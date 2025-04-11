@@ -59,29 +59,6 @@ export function NavBar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        {/* Base de doc 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Base de doc</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid h-full w-[600px] gap-3 p-4 md:w-[800px] md:grid-cols-3 lg:w-[800px]">
-              {components.map((component) => (
-                <li>
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                  className='h-24'
-                >
-                  <p className='h-20 text-sm leading-tight text-muted-foreground'>
-                  {component.description}
-                  </p>
-                </ListItem>
-                </li>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        */}
         <NavigationMenuItem>
           <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Infos</Link>
         </NavigationMenuItem>
@@ -96,7 +73,7 @@ export function NavBar() {
                     href="/"
                   >
                     
-                    <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
+                    <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
@@ -133,7 +110,7 @@ export function NavBar() {
                     href="/"
                   >
                     
-                    <Image src="/logo.png" alt="MarketingDocs" width={64} height={64} />
+                    <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
