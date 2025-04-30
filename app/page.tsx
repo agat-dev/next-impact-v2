@@ -11,6 +11,7 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
   Expandable,
@@ -43,38 +44,47 @@ export default function Home() {
       <main className="flex-1">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full min-h-[16rem] pt-8">
-          <div className="grid grid-cols-6 justify-center align-center px-4 md:px-6">
+        <section className="flex align-center justify-center w-full h-full min-h-[16rem] pt-36 pb-24">
+
               <div className="col-span-1">
               <LottieAnimation animationPath="/lotties/astronaut-need-help.json" />
               </div>
               <div className="col-span-4 place-self-center">
                 <div className="py-2 text-center">
-                  <TextAnimate animation="blurIn" as="h1">Lancer son site web vite et loin !</TextAnimate>
+                  <TextAnimate animation="blurIn" as="h1">De l'idée au site web à impact</TextAnimate>
                 </div>
                 <div className="w-10/12 py-2 space-y-2 mx-auto text-center">  
                   <p className="text-xl font-regular font-googletitre text-lightblue">
-                    Vous permettre de connaître précisément les processus et les outils pour créer son site web pour décider des méthodes et technos et faire appel au bon prestataire.        
+                  Construire une solution personnalisée pour votre projet de site web, avec les bonnes technos et le bon budget.
                   </p> 
                 </div>
-                {/* CTA Buttons}
+              
                 <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
-                  <Button size="lg" className="gap-1 rounded-lg bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/diagnostic" className="text-lg font-regular">Outils gratuits</Link>
+                  <Button size="lg" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/diagnostic" className="text-lg font-regular">Analyser le projet</Link>
                   </Button>
-                  <Button size="lg" className="gap-1 rouded-lg bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
-                    <Link href="/services" className="text-lg font-regular">Services</Link>
+                  <Button size="lg" className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
+                    <Link href="/services" className="text-lg font-regular">Lancer le projet</Link>
                   </Button>
                 </div>
-                */}
+
               </div>
             <div className="col-span-1">
               <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" />
               </div>
-          </div>
+
         </section>
 
-      {/* Carousel Section */}
+
+        {/* Questions Personas section */}
+        <section className="w-full py-4">
+        <div className="flex justify-center align-center px-4 md:px-6">
+            <ExpandableCardNIP
+            />
+            </div>
+          </section>
+
+      {/* Carousel Section 
         <section className="flex align-center justify-center w-4/6 m-auto p-4 mt-8 mb-12">         
           <FeatureCarousel
             title=""
@@ -90,14 +100,118 @@ export default function Home() {
             }}
           />
         </section>
+        */}
 
         {/* Features Section */}
-        <section className="flex align-center justify-center w-full p-12">
+        <section className="flex align-center justify-center w-10/12 mx-auto py-12">
             <Timeline data={[
-              { title: "Clarifier le projet", content: "Description for step 1" },
-              { title: "Explorer les meilleures solutions", content: "Description for step 2" },
-              { title: "Lancer son projet", content: "Description for step 3" },              
-              { title: "Continuer à améliorer", content: "Description for step 3" },
+              { title: "Explorer les meilleures solutions", content: 
+              <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+              <div className="grid grid-cols-4 row-span-1 gap-4">
+                <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                  <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/quizz" className="text-base font-regular">Choisir mon CMS</Link>
+                  </Button>
+                </div>
+              <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS pour vitrines
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS pour site de contenus
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS E-commerce
+                    </div>
+                  </a> 
+              </div>  
+              <div className='grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS personnalisé
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    Headless CMS
+                    </div>
+                  </a> 
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    Développement personnalisé
+                    </div>
+                  </a> 
+              </div>  
+              <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/documentation" className="text-base font-regular">Auditer mon site web</Link>
+                  </Button>
+                </div>
+
+
+              </div>
+              </div>},
+              { title: "Prendre les bonnes infos", content:                   
+                  <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+                  <div className="grid grid-cols-4 row-span-1 gap-4">          
+                    <div className='grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                      <a href="/audit" title="Audit de site web">
+                        <div className="bg-white h-max rounded-md p-4">
+                        CMS personnalisé
+                        </div>
+                      </a>
+                      <a href="/audit" title="Audit de site web">
+                        <div className="bg-white h-max rounded-md p-4">
+                        Headless CMS
+                        </div>
+                      </a> 
+                      <a href="/audit" title="Audit de site web">
+                        <div className="bg-white h-max rounded-md p-4">
+                        Développement personnalisé
+                        </div>
+                      </a> 
+                  </div>  
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                        <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                        <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                        <Link href="/documentation" className="text-base font-regular">Base de connaissance</Link>
+                      </Button>
+                    </div> 
+                    <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                  <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/quizz" className="text-base font-regular">Créer mon cahier des charges</Link>
+                  </Button>
+                </div>
+              <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS pour vitrines
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS pour site de contenus
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS E-commerce
+                    </div>
+                  </a> 
+              </div>  
+                  </div>
+                  
+                  </div>},
+              { title: "Préparer son projet", content: "Description for step 3" },              
+              { title: "Lancer son projet web", content: "Description for step 3" },
             ]} />
         </section>
 

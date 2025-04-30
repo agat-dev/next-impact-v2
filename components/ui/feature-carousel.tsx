@@ -85,7 +85,7 @@ const TOTAL_STEPS = 4
 const steps = [
   {
     id: "1",
-    name: "INFOS",
+    name: "PRENDRE DES INFOS",
     title: "1 - S'informer pour pouvoir s'orienter",
     description: <>
             <p>Connaître en amont les éléments essentiels de la création d'un site web, c'est se donner les moyens de faire les bons choix.</p>
@@ -125,19 +125,19 @@ const steps = [
   },
   {
     id: "2",
-    name: "TESTS",
+    name: "TESTER ET DECIDER",
     title: "2 - Tester son site et son projet pour décider",
     description: <p>Comparer les outils (WordPress, Webflow, Shopify, Headless) et choisir la solution adaptée</p>,
   },
   {
     id: "3",
-    name: "METHODES",
+    name: "FORMALISER", 
     title: "3 - Avoir des livrables pour structurer",
     description: <p>Diagnostiquer son site actuel et rédiger un cahier des charges technique précis</p>,
   },
   {
     id: "4",
-    name: "SERVICES",
+    name: "LANCER LE PROJET",
     title: "4 - Faire appel aux bons professionnels",
     description: <p>Services de création et de refonte de site web et accompagnements personnalisés</p>,
   },
@@ -488,8 +488,8 @@ function Steps({
               variants={stepVariants}
               transition={{ duration: 0.3 }}
               className={cn(
-                "relative z-50 rounded-full px-3 py-1 transition-all duration-300 ease-in-out md:flex bg-regularblue/20",
-                isCompleted ? "bg-regularblue/30" : "bg-regularblue"
+                "relative z-50 px-3 py-1 transition-all duration-300 ease-in-out md:flex",
+                isCompleted ? "" : ""
               )}
             >
               <div
@@ -499,7 +499,7 @@ function Steps({
                 )}
                 onClick={() => onChange(stepIdx)}
               >
-                <span className="flex items-center gap-2 text-white font-medium">
+                <span className="flex items-center gap-2 font-medium">
                   <motion.span
                     initial={false}
                     animate={{
@@ -508,10 +508,10 @@ function Steps({
                     className={cn(
                       "flex h-4 w-4 shrink-0 items-center justify-center rounded-full duration-300",
                       isCompleted &&
-                        "bg-brand-400 text-white",
+                        "bg-brand-400",
                       isCurrent &&
-                        "bg-brand-300/80 text-white",
-                      isFuture && "bg-brand-300/10 text-white"
+                        "bg-brand-300/80",
+                      isFuture && "bg-brand-300/10"
                     )}
                   >
                     {isCompleted ? (
@@ -541,10 +541,10 @@ function Steps({
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className={clsx(
-                      "text-base font-adobetitre font-regular duration-300",
-                      isCompleted && "text-white",
-                      isCurrent && "text-white",
-                      isFuture && "text-white"
+                      "px-4 py-2 text-lg font-adobetitre duration-300",
+                      isCompleted && "text-regularblue",
+                      isCurrent && "text-regularblue border-b-2 border-regularblue",
+                      isFuture && "text-regularblue",
                     )}
                   >
                     {step.name}
