@@ -44,7 +44,7 @@ export default function Home() {
       <main className="flex-1">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full min-h-[16rem] pt-36 pb-24">
+        <section className="flex align-center justify-center w-full h-full min-h-[16rem] py-48">
 
               <div className="col-span-1">
               <LottieAnimation animationPath="/lotties/astronaut-need-help.json" />
@@ -61,10 +61,10 @@ export default function Home() {
               
                 <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/diagnostic" className="text-lg font-regular">Analyser le projet</Link>
+                    <Link href="/diagnostic" className="text-lg font-regular">Services</Link>
                   </Button>
                   <Button size="lg" className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
-                    <Link href="/services" className="text-lg font-regular">Lancer le projet</Link>
+                    <Link href="/services" className="text-lg font-regular">Outils gratuits</Link>
                   </Button>
                 </div>
 
@@ -105,59 +105,6 @@ export default function Home() {
         {/* Features Section */}
         <section className="flex align-center justify-center w-10/12 mx-auto py-12">
             <Timeline data={[
-              { title: "Explorer les meilleures solutions", content: 
-              <div className="grid py-6 md:w-[600px] lg:w-[800px]">
-              <div className="grid grid-cols-4 row-span-1 gap-4">
-                <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                  <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/quizz" className="text-base font-regular">Choisir mon CMS</Link>
-                  </Button>
-                </div>
-              <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS pour vitrines
-                    </div>
-                  </a>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS pour site de contenus
-                    </div>
-                  </a>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS E-commerce
-                    </div>
-                  </a> 
-              </div>  
-              <div className='grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS personnalisé
-                    </div>
-                  </a>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    Headless CMS
-                    </div>
-                  </a> 
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    Développement personnalisé
-                    </div>
-                  </a> 
-              </div>  
-              <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/documentation" className="text-base font-regular">Auditer mon site web</Link>
-                  </Button>
-                </div>
-
-
-              </div>
-              </div>},
               { title: "Prendre les bonnes infos", content:                   
                   <div className="grid py-6 md:w-[600px] lg:w-[800px]">
                   <div className="grid grid-cols-4 row-span-1 gap-4">          
@@ -184,10 +131,39 @@ export default function Home() {
                         <Link href="/documentation" className="text-base font-regular">Base de connaissance</Link>
                       </Button>
                     </div> 
-                    <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <div className='grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS personnalisé
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    Headless CMS
+                    </div>
+                  </a> 
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    Développement personnalisé
+                    </div>
+                  </a> 
+              </div>  
+              <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/documentation" className="text-base font-regular">Auditer mon site web</Link>
+                  </Button>
+                </div>
+                  </div>
+                  
+                  </div>},
+              { title: "Explorer les meilleures solutions", content: 
+              <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+              <div className="grid grid-cols-4 row-span-1 gap-4">
+                <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
                   <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
                   <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/quizz" className="text-base font-regular">Créer mon cahier des charges</Link>
+                    <Link href="/quizz" className="text-base font-regular">Choisir mon CMS</Link>
                   </Button>
                 </div>
               <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
@@ -207,162 +183,78 @@ export default function Home() {
                     </div>
                   </a> 
               </div>  
+
+
+
+              </div>
+              </div>},
+              { title: "Préparer son projet", content: 
+                <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+                <div className="grid grid-cols-4 row-span-1 gap-4">
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                      <Link href="/quizz" className="text-base font-regular">Faire mon cahier des charges</Link>
+                    </Button>
                   </div>
-                  
-                  </div>},
-              { title: "Préparer son projet", content: "Description for step 3" },              
-              { title: "Lancer son projet web", content: "Description for step 3" },
+                <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS pour vitrines
+                      </div>
+                    </a>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS pour site de contenus
+                      </div>
+                    </a>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS E-commerce
+                      </div>
+                    </a> 
+                </div>  
+  
+  
+  
+                </div>
+                </div>
+               },              
+              { title: "Lancer son projet web", content: 
+                <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+                <div className="grid grid-cols-4 row-span-1 gap-4">
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                      <Link href="/quizz" className="text-base font-regular">Faire appel à un prestataire</Link>
+                    </Button>
+                  </div>
+                <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS pour vitrines
+                      </div>
+                    </a>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS pour site de contenus
+                      </div>
+                    </a>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS E-commerce
+                      </div>
+                    </a> 
+                </div>  
+  
+  
+  
+                </div>
+                </div>
+               },
             ]} />
         </section>
 
-        {/* Quiz Section */}
-        <section id="quiz" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
-                    Trouver le meilleur CMS pour son projet
-                  </h2>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Répondez à quelques questions simples et découvrez la solution idéale pour votre projet web.
-                  </p>
-                   
-                  <Button size="lg" className="gap-1">
-                    <Link href="/quizz" className="text-xl font-regular">Commencer le quiz</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="grid gap-4 md:grid-cols-2">
-                              
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="rounded-full bg-primary/10 p-2">
-                        <Image
-                          src="/placeholder.svg?height=24&width=24&text=WP"
-                          width={24}
-                          height={24}
-                          alt="WordPress"
-                          className="h-6 w-6"
-                        />
-                      </div>
-                      <h3 className="font-regular">WordPress</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Idéal pour les sites avec beaucoup de contenu et une grande flexibilité.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="rounded-full bg-primary/10 p-2">
-                        <Image
-                          src="/placeholder.svg?height=24&width=24&text=SB"
-                          width={24}
-                          height={24}
-                          alt="Shopify"
-                          className="h-6 w-6"
-                        />
-                      </div>
-                      <h3 className="font-regular">Shopify</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Parfait pour les boutiques en ligne avec des fonctionnalités e-commerce avancées.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="rounded-full bg-primary/10 p-2">
-                        <Image
-                          src="/placeholder.svg?height=24&width=24&text=WX"
-                          width={24}
-                          height={24}
-                          alt="Webflow"
-                          className="h-6 w-6"
-                        />
-                      </div>
-                      <h3 className="font-regular">Webflow</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Simple d'utilisation avec des templates modernes pour les débutants.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="rounded-full bg-primary/10 p-2">
-                        <Image
-                          src="/placeholder.svg?height=24&width=24&text=CS"
-                          width={24}
-                          height={24}
-                          alt="Headless CMS"
-                          className="h-6 w-6"
-                        />
-                      </div>
-                      <h3 className="font-regular">Headless CMS</h3>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Développement personnalisé pour des besoins spécifiques et des performances optimales.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Audit Section */}
-        <section id="audit" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
-                    Audit de votre site web
-                  </h2>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Découvrez les points forts et les axes d'amélioration de votre site web avec notre audit en ligne.
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Analyse technique complète</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Évaluation du SEO</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Analyse de l'expérience utilisateur</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Recommandations personnalisées</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <p className="font-medium">Plan d'action détaillé</p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="gap-1">
-                    Tester son site <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </div>
-              </div>
-              <div className="relative">
-
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Services Section */}
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
@@ -532,24 +424,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Resources Section */}
-        <section id="resources" className="w-full pb-12 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-medium tracking-tighter md:text-4xl/tight">Ressources pour s'informer</h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Plus de 50 articles pour vous aider à créer et optimiser votre site web.
-                </p>
-              </div>
-              <div className="w-full">
-                <div className="relative">
-                  <DocTabs />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* About Section */}
         <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
