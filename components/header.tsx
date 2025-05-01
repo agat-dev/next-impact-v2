@@ -86,12 +86,15 @@ export function NavBar() {
               <ListItem href="/audit" title="Audit de site web">
                 How to install dependencies and structure your app.
               </ListItem>                
-              <ListItem href="/quizz" title="Choisir son CMS">
+              <ListItem href="/quizz" title="Choix du CMS">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>      
               </div> 
               <div className='basis-1/3'>             
-              <ListItem href="/quizz" title="Tous les outils en ligne">
+              <ListItem href="/quizz" title="Rédaction du cahier des charges">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>            
+              <ListItem href="/quizz" title="Estimation du budget">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               </div>
@@ -100,7 +103,39 @@ export function NavBar() {
           
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Services</NavigationMenuTrigger>
+          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Développement web</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
+                    href="/"
+                  >
+                    
+                    <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      Beautifully designed components that you can copy and
+                      paste into your apps. Accessible. Customizable. Open
+                      Source.
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <ListItem href="/services" title="Sites vitrines">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>
+              <ListItem href="/services" title="E-commerce">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+              <ListItem href="/services" title="Besoins spécifiques">
+                Styles for headings, paragraphs, lists...etc
+              </ListItem>
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Conseil</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
