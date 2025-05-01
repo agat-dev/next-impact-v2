@@ -61,7 +61,7 @@ export default function Home() {
               
                 <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/diagnostic" className="text-lg font-regular">Services</Link>
+                    <Link href="/diagnostic" className="text-lg font-regular">RDV Conseil</Link>
                   </Button>
                   <Button size="lg" className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
                     <Link href="/services" className="text-lg font-regular">Outils gratuits</Link>
@@ -77,7 +77,7 @@ export default function Home() {
 
 
         {/* Questions Personas section */}
-        <section className="w-full py-4">
+        <section className="w-full pb-24">
         <div className="flex justify-center align-center px-4 md:px-6">
             <ExpandableCardNIP
             />
@@ -103,7 +103,7 @@ export default function Home() {
         */}
 
         {/* Features Section */}
-        <section className="flex align-center justify-center w-10/12 mx-auto py-12">
+        <section className="flex align-center justify-center w-10/12 mx-auto py-24">
             <Timeline data={[
               { title: "Prendre les bonnes infos", content:                   
                   <div className="grid py-6 md:w-[600px] lg:w-[800px]">
@@ -257,7 +257,7 @@ export default function Home() {
 
 
         {/* Services Section */}
-        <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section id="services" className="w-full py-24 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

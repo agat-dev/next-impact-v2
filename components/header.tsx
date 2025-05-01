@@ -86,12 +86,15 @@ export function NavBar() {
               <ListItem href="/audit" title="Audit de site web">
                 How to install dependencies and structure your app.
               </ListItem>                
-              <ListItem href="/quizz" title="Choisir son CMS">
+              <ListItem href="/quizz" title="Choix du CMS">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>      
               </div> 
               <div className='basis-1/3'>             
-              <ListItem href="/quizz" title="Tous les outils en ligne">
+              <ListItem href="/quizz" title="Rédaction du cahier des charges">
+                Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>            
+              <ListItem href="/quizz" title="Estimation du budget">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               </div>
