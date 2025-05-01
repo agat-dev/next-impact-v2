@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
                   <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
                   <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/quizz" className="text-base font-regular">Choisir mon CMS</Link>
+                    <Link href="/quizz" className="text-base font-regular">Choisir un CMS</Link>
                   </Button>
                 </div>
               <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
@@ -151,7 +151,7 @@ export default function Home() {
               <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
                     <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
                     <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/documentation" className="text-base font-regular">Auditer mon site web</Link>
+                    <Link href="/documentation" className="text-base font-regular">Auditer son site web</Link>
                   </Button>
                 </div>
 
@@ -187,7 +187,7 @@ export default function Home() {
                     <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
                   <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
                   <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/quizz" className="text-base font-regular">Créer mon cahier des charges</Link>
+                    <Link href="/quizz" className="text-base font-regular">Créer un cahier des charges</Link>
                   </Button>
                 </div>
               <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
