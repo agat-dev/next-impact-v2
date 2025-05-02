@@ -51,6 +51,8 @@
     "fs": "latest",
     "gray-matter": "latest",
     "input-otp": "1.4.1",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.454.0",
     "marked": "latest",

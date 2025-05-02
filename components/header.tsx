@@ -91,7 +91,7 @@ export function NavBar() {
               </ListItem>      
               </div> 
               <div className='basis-1/3'>             
-              <ListItem href="/quizz" title="Rédaction du cahier des charges">
+              <ListItem href="/cahier-des-charges" title="Rédaction du cahier des charges">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>            
               <ListItem href="/quizz" title="Estimation du budget">
