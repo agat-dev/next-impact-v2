@@ -66,23 +66,7 @@ export function NavBar() {
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils gratuits</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
-              <li className="row-span-4 basis-1/3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    
-                    <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
-                    </p>
-                  </a>
-                </NavigationMenuLink>
-              </li>
-              <div className='basis-1/3'>
+              <div className='basis-1/2'>
               <ListItem href="/audit" title="Audit de site web">
                 How to install dependencies and structure your app.
               </ListItem>                
@@ -90,11 +74,11 @@ export function NavBar() {
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>      
               </div> 
-              <div className='basis-1/3'>             
+              <div className='basis-1/2'>             
               <ListItem href="/cahier-des-charges" title="Rédaction du cahier des charges">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>            
-              <ListItem href="/quizz" title="Estimation du budget">
+              <ListItem href="/simulateur-tarifs" title="Estimation du budget">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               </div>

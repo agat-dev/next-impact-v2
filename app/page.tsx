@@ -168,23 +168,6 @@ export default function Home() {
               { title: "Préparer son projet", content: 
                 <div className="grid py-6 md:w-[600px] lg:w-[800px]">
                 <div className="grid grid-cols-4 row-span-1 gap-4">
-                <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
-                    <a href="/audit" title="Audit de site web">
-                      <div className="bg-white h-max rounded-md p-4">
-                      CMS pour vitrines
-                      </div>
-                    </a>
-                    <a href="/audit" title="Audit de site web">
-                      <div className="bg-white h-max rounded-md p-4">
-                      CMS pour site de contenus
-                      </div>
-                    </a>
-                    <a href="/audit" title="Audit de site web">
-                      <div className="bg-white h-max rounded-md p-4">
-                      CMS E-commerce
-                      </div>
-                    </a> 
-                </div>
                   <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
                     <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
                     <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
@@ -192,6 +175,12 @@ export default function Home() {
                     </Button>
                   </div>  
   
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                      <Link href="/quizz" className="text-base font-regular">Estimer le coût</Link>
+                    </Button>
+                  </div>  
   
   
                 </div>
