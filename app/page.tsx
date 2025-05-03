@@ -11,7 +11,7 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import QuestionsList from "@/components/ui/questions-list";
+import QuestionsList from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
@@ -46,7 +46,7 @@ export default function Home() {
 
        {/* Hero Section */}
         <section className="grid grid-cols-12 w-full h-full min-h-[92vh]">
-              <div className="col-span-3 place-items-end mt-[30vh]">
+              <div className="col-span-3 place-items-end mt-[20vh]">
               <LottieAnimation animationPath="/lotties/astronaut-need-help.json" />
               </div>
               <div className="col-span-6 place-content-center">
@@ -69,7 +69,7 @@ export default function Home() {
                 </div>
 
               </div>
-            <div className="col-span-3 place-items-start mt-[10vh]">
+            <div className="col-span-3 place-items-start mt-[20vh]">
               <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" />
               </div>
 
@@ -135,7 +135,29 @@ export default function Home() {
         {/* Questions Personas section */}
         <section className="pb-24">
         <div className="flex justify-center align-center px-4 md:px-6">
-              <QuestionsList />
+              <QuestionsList
+                mainImage="/img/astronaut-doing-earth-climbing.svg"
+                mainTitle="Comment démarrer un projet web ?"
+                mainDescription="Un projet web peut être un vrai défi. Voici quelques étapes clés pour vous aider à démarrer."
+                resourcesTitle="L’essentiel pour y voir plus clair"
+                ctaButtons={[
+                  {
+                    href: "/outils",
+                    text: "Outils en ligne",
+                    image: "/img/tools.gif",
+                  },
+                  {
+                    href: "/documentation",
+                    text: "Documentation",
+                    image: "/img/folder.gif",
+                  },
+                  {
+                    href: "/contact",
+                    text: "Rendez-vous Conseil",
+                    image: "/img/meet.gif",
+                  },
+                ]}
+              />
             </div>
           </section>
       
