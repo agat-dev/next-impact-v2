@@ -11,6 +11,7 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import QuestionsList from "@/components/ui/questions-list";
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
@@ -44,45 +45,100 @@ export default function Home() {
       <main className="flex-1">
 
        {/* Hero Section */}
-        <section className="flex align-center justify-center w-full h-full min-h-[16rem] py-48">
-
-              <div className="col-span-1">
+        <section className="grid grid-cols-12 w-full h-full min-h-[92vh]">
+              <div className="col-span-3 place-items-end mt-[30vh]">
               <LottieAnimation animationPath="/lotties/astronaut-need-help.json" />
               </div>
-              <div className="col-span-4 place-self-center">
+              <div className="col-span-6 place-content-center">
                 <div className="py-2 text-center">
-                  <TextAnimate animation="blurIn" as="h1">De l'idée au site web à impact</TextAnimate>
+                  <TextAnimate animation="blurIn" as="h1">De l'idée au site web</TextAnimate>
                 </div>
-                <div className="w-10/12 py-2 space-y-2 mx-auto text-center">  
-                  <p className="text-xl font-regular font-googletitre text-lightblue">
-                  Construire une solution personnalisée pour votre projet de site web, avec les bonnes technos et le bon budget.
+                <div className="w-10/12 pt-2 pb-6 space-y-2 mx-auto text-center">  
+                  <p className="text-xl font-regular font-googletitre text-regularblue/70">
+                  Construire une solution personnalisée<br /> et conserver votre autonomie
                   </p> 
                 </div>
               
                 <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
                   <Button size="lg" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/diagnostic" className="text-lg font-regular">RDV Conseil</Link>
+                    <Link href="/diagnostic" className="text-lg font-regular">Outils en ligne</Link>
                   </Button>
                   <Button size="lg" className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
-                    <Link href="/services" className="text-lg font-regular">Outils gratuits</Link>
+                    <Link href="/services" className="text-lg font-regular">RDV Conseil</Link>
                   </Button>
                 </div>
 
               </div>
-            <div className="col-span-1">
+            <div className="col-span-3 place-items-start mt-[10vh]">
               <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" />
               </div>
 
         </section>
 
 
+      {/* Personas Section */}
+        <section className="w-full pb-12 md:pb-24 lg:pb-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2 py-2">
+                <h2 className="text-4xl font-medium text-regularblue tracking-tighter sm:text-3xl md:text-4xl">
+                  Pour ceux qui veulent garder la main 
+                </h2>
+                <p className="max-w-[700px] pb-6 text-2xl font-regular font-googletitre text-regularblue/80 md:text-xl">
+                  Des conseils et des services pour mieux concevoir, optimiser ou lancer votre site web
+                </p>
+              </div>
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+                  <div className="space-y-2">
+                    <LottieAnimation animationPath="/lotties/astronaut-in-pencil.json" width="8rem" height="8rem"/>
+                    <h3 className="text-2xl font-bold text-regularblue">Associations et ESS</h3>
+                    <p className="text-base font-regular font-googletitre text-regularblue">
+                      Vous avez besoin d'un site web efficace mais facile à gérer ?<br />
+                    </p>
+                  </div>
+                  <Link href="/learning-paths/seo">
+                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions web pour l'ESS</Button>
+                  </Link>
+                </div>
+                <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+                  <div className="space-y-2">
+                    <LottieAnimation animationPath="/lotties/super-astronaut.json" width="8rem" height="8rem"/>
+                    <h3 className="text-2xl font-bold text-regularblue">Freelances</h3>
+                    <p className="text-base font-regular font-googletitre text-regularblue">
+                      Vous voulez un site web professionnel tout simplement ?<br />
+                    </p>
+                  </div>
+                  <Link href="/learning-paths/ux">
+                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions web pour TPE</Button>
+                  </Link>
+                </div>
+                <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+                  <div className="space-y-2">
+                  <LottieAnimation animationPath="/lotties/astronaut-in-rocket.json" width="8rem" height="8rem"/>
+                    <h3 className="text-2xl font-bold text-regularblue">Entreprises</h3>
+                    <p className="text-base font-regular font-googletitre text-regularblue">
+                      Votre site web doit être à votre image et performant ?
+                    </p>
+                  </div>
+                  <Link href="/learning-paths/content">
+                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions pour Entreprises</Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
         {/* Questions Personas section */}
-        <section className="w-full pb-24">
+        <section className="pb-24">
         <div className="flex justify-center align-center px-4 md:px-6">
-            <ExpandableCardNIP
-            />
+              <QuestionsList />
             </div>
           </section>
+      
 
       {/* Carousel Section 
         <section className="flex align-center justify-center w-4/6 m-auto p-4 mt-8 mb-12">         
@@ -102,7 +158,7 @@ export default function Home() {
         </section>
         */}
 
-        {/* Features Section */}
+        {/* Features Section 
         <section className="flex align-center justify-center w-10/12 mx-auto py-24">
             <Timeline data={[
               { title: "Prendre les bonnes infos", content:                   
@@ -220,6 +276,9 @@ export default function Home() {
                },
             ]} />
         </section>
+        */}
+
+        {/* CTA Section */}
 
 
         {/* Services Section */}
