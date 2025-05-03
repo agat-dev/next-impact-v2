@@ -29,7 +29,8 @@ export default function QuestionsList() {
         <div className='relative grid grid-cols-2 gap-4 p-4 md:p-8 lg:p-12'>
             <div className='col-span-1 flex flex-row gap-4 relative'>
                 <div>
-                    <div className='flex gap-4 relative items-center justify-center bg-white rounded-lg shadow-md p-4 transition-all duration-300 ease-in-out hover:shadow-lg'>
+                    <div className='flex gap-4 relative items-center justify-center bg-white rounded-lg shadow-md p-4 transition-all duration-300 ease-in-out hover:shadow-lg' 
+                    onClick={() => setShowResources(!showResources)}>
                         <Image
                             src="/img/astronaut-doing-fishing.svg"
                             alt="Next Impact Logo"
@@ -45,8 +46,7 @@ export default function QuestionsList() {
                         </div>
                         <ChevronDown
                             className="text-regularblue cursor-pointer"
-                            size={64}
-                            onClick={() => setShowResources(!showResources)}
+                            size={48}
                         />
                     </div>
                     {/* Resources Section */}
@@ -59,7 +59,7 @@ export default function QuestionsList() {
                     >
                         {/* Close Button */}
                         <button
-                            className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+                            className="absolute top-2 right-2 text-regularblue"
                             onClick={() => setShowResources(false)}
                         >
                             <X size={24} />
@@ -68,8 +68,8 @@ export default function QuestionsList() {
                         <h3 className="text-xl font-bold text-center text-regularblue mb-2">
                         Trouvez l’essentiel pour y voir plus clair</h3>
                         <div>
-                                <Link href="/commencent-commencer" className="pl-2 text-sm font-medium text-regularblue hover:text-white">
-                                <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">                               
+                                <Link href="/commencent-commencer" className="pl-2 text-sm font-medium text-regularblue">
+                                <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/10 text-darkblue-600 transition-all duration-900 ease-in-out">                               
                                     <Image
                                         src="/img/tools.gif"
                                         alt="Ressources"
@@ -80,8 +80,8 @@ export default function QuestionsList() {
                                     Outils en ligne
                                 </Button>
                                 </Link>
-                                <Link href="/commencent-commencer" className="pl-2 text-sm font-medium text-regularblue hover:text-white">
-                                <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">
+                                <Link href="/commencent-commencer" className="pl-2 text-sm font-medium text-regularblue">
+                                <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/10 text-darkblue-600 transition-all duration-900 ease-in-out">
                                 <Image
                                         src="/img/folder.gif"
                                         alt="Ressources"
@@ -94,8 +94,8 @@ export default function QuestionsList() {
                                 </Link>
                             </div>
                             <div className="flex justify-around gap-4 mt-2">                                
-                                <Link href="/commencent-commencer" className="pl-2 text-sm font-medium text-regularblue hover:text-white">
-                                <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">
+                                <Link href="/commencent-commencer" className="pl-2 text-sm font-medium text-regularblue">
+                                <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/10 text-darkblue-600 transition-all duration-900 ease-in-out">
                                 <Image
                                         src="/img/meet.gif"
                                         alt="Ressources"
