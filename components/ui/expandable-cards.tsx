@@ -291,28 +291,7 @@ const cards = [
       );
     },
   },
-  {
-    description: "Infos, Audit, Conseils",
-    title: "Pourquoi mon site web ne fonctionne pas ?",	
-    src: "/img/astronaut-hanging-on-earth-balloon.svg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
-        </p>
-      );
-    },
-  },{
+{
     description: "Infos, Quizz, Conseils",
     title: "Combien coute un site web ?",	
     src: "/img/astronaut-sitting-on-a-gold-stacks.svg",

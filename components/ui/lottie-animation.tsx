@@ -12,8 +12,8 @@ interface LottieAnimationProps {
 
 export default function LottieAnimation({
   animationPath,
-  width = "13rem",
-  height = "13rem",
+  width,
+  height,
   loop = true,
   autoplay = true,
 }: LottieAnimationProps) {

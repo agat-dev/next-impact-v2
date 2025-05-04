@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, X } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -19,7 +19,7 @@ interface QuestionsListProps {
     }[];
 }
 
-export default function QuestionsList({
+export default function Question({
     mainImage,
     mainTitle,
     mainDescription,
@@ -29,26 +29,15 @@ export default function QuestionsList({
     const [showResources, setShowResources] = useState(false);
     const resourcesRef = useRef<HTMLDivElement>(null);
 
-    // Gestion des clics en dehors de la div
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
-                setShowResources(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-
     return (
-        <div className='relative grid grid-cols-2 gap-4 p-4 md:p-8 lg:p-12'>
             <div className='col-span-1 flex flex-row gap-4 relative'>
                 <div>
-                    <div className='flex gap-4 relative items-center justify-center bg-white rounded-lg shadow-sm p-4 transition-all duration-300 ease-in-out' 
-                    onClick={() => setShowResources(!showResources)}>
+                    <div
+                        className='flex gap-4 relative items-center justify-center bg-white rounded-lg shadow-sm p-4 transition-all duration-300 ease-in-out'
+                        onClick={() => {
+                            setShowResources((prev) => !prev); // Bascule l'état
+                        }}
+                    >
                         <Image
                             src={mainImage}
                             alt="Main Image"
@@ -61,30 +50,29 @@ export default function QuestionsList({
                             <p>{mainDescription}</p>
                         </div>
                         <ChevronDown
-                            className="text-regularblue cursor-pointer"
+                            className={`text-regularblue cursor-pointer transition-transform duration-300 ${
+                                showResources ? 'rotate-180' : ''
+                            }`}
                             size={48}
                         />
                     </div>
                     {/* Resources Section */}
                     <motion.div
                         ref={resourcesRef}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={showResources ? { height: "13rem", opacity: 1 } : { height: 0, opacity: 0 }}
+                        initial={{ height: 0, opacity: 0, translateY: -20 }}
+                        animate={
+                            showResources
+                                ? { height: "13rem", opacity: 1, translateY: 0 }
+                                : { height: 0, opacity: 0, translateY: -20 }
+                        }
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="absolute inset-0 flex flex-col justify-between bg-white rounded-lg shadow-sm p-2 overflow-hidden z-10"
+                        className="absolute left-0 top-full w-full flex flex-col justify-between bg-white rounded-lg shadow-sm p-2 overflow-hidden z-10"
                     >
-                        {/* Close Button */}
-                        <button
-                            className="absolute top-2 right-2 text-regularblue"
-                            onClick={() => setShowResources(false)}
-                        >
-                            <X size={24} />
-                        </button>
                         <div className="h-full p-4 flex flex-col items-center justify-between">
                             <h3 className="text-xl font-bold text-center text-regularblue mb-2">
                                 {resourcesTitle}
                             </h3>
-                            <div className='grid grid-cols-2 gap-4'>
+                            <div className="grid grid-cols-2 gap-4">
                                 {ctaButtons.map((button, index) => (
                                     <Link
                                         key={index}
@@ -110,6 +98,5 @@ export default function QuestionsList({
                     </motion.div>
                 </div>
             </div>
-        </div>
     );
 }

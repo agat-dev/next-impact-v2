@@ -11,7 +11,7 @@ import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation1 from "@/components/ui/lottie-animation";
 import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import QuestionsList from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
+import Question from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
@@ -46,47 +46,41 @@ export default function Home() {
 
        {/* Hero Section */}
         <section className="grid grid-cols-12 w-full h-full min-h-[92vh]">
-              <div className="col-span-3 place-items-end mt-[20vh]">
-              <LottieAnimation animationPath="/lotties/astronaut-need-help.json" />
+              <div className="col-span-3 place-items-end mt-[30vh]">
+              <LottieAnimation animationPath="/lotties/astronaut-need-help.json" width="30rem"/>
               </div>
               <div className="col-span-6 place-content-center">
-                <div className="py-2 text-center">
-                  <TextAnimate animation="blurIn" as="h1">De l'idée au site web</TextAnimate>
+                <div className="text-center">
+                  <Image
+                    src="/img/logo.png"
+                    width={170}
+                    height={100}
+                    alt="Logo Next Impact"
+                    className="mx-auto mb-16"
+                  />                  
+                  <TextAnimate animation="blurIn" as="h1">Conseil & Services en création de site web</TextAnimate>
                 </div>
                 <div className="w-10/12 pt-2 pb-6 space-y-2 mx-auto text-center">  
-                  <p className="text-xl font-regular font-googletitre text-regularblue/70">
-                  Construire une solution personnalisée<br /> et conserver votre autonomie
+                  <p className="text-lg font-regular font-googletitre text-regularblue">
+                  Que vous réalisiez votre site web vous-même ou que vous vouliez faire 
+                  appel à un prestataire, nous vous accompagnons dans votre projet dans la jungle des technos, 
+                  des bonnes pratiques et du marché des sites web.
                   </p> 
                 </div>
-              
-                <div className="flex justify-center gap-2 py-8 min-[400px]:flex-row">
-                  <Button size="lg" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/diagnostic" className="text-lg font-regular">Outils en ligne</Link>
-                  </Button>
-                  <Button size="lg" className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">               
-                    <Link href="/services" className="text-lg font-regular">RDV Conseil</Link>
-                  </Button>
-                </div>
-
               </div>
             <div className="col-span-3 place-items-start mt-[20vh]">
-              <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" />
+              <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" width="22rem"/>
               </div>
 
         </section>
 
 
       {/* Personas Section */}
-        <section className="w-full pb-12 md:pb-24 lg:pb-32">
+        <section className="w-full py-6 md:py-12 lg:py-24">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2 py-2">
-                <h2 className="text-4xl font-medium text-regularblue tracking-tighter sm:text-3xl md:text-4xl">
-                  Pour ceux qui veulent garder la main 
-                </h2>
-                <p className="max-w-[700px] pb-6 text-2xl font-regular font-googletitre text-regularblue/80 md:text-xl">
-                  Des conseils et des services pour mieux concevoir, optimiser ou lancer votre site web
-                </p>
+              <div className="space-y-2 pb-12">
+              <TextAnimate animation="blurIn" as="h2">Pour ceux qui veulent maîtriser leur projet</TextAnimate>
               </div>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
@@ -131,33 +125,10 @@ export default function Home() {
         </section>
 
 
-
-        {/* Questions Personas section */}
-        <section className="pb-24">
-        <div className="flex justify-center align-center px-4 md:px-6">
-              <QuestionsList
-                mainImage="/img/astronaut-doing-earth-climbing.svg"
-                mainTitle="Comment démarrer un projet web ?"
-                mainDescription="Un projet web peut être un vrai défi. Voici quelques étapes clés pour vous aider à démarrer."
-                resourcesTitle="L’essentiel pour y voir plus clair"
-                ctaButtons={[
-                  {
-                    href: "/outils",
-                    text: "Outils en ligne",
-                    image: "/img/tools.gif",
-                  },
-                  {
-                    href: "/documentation",
-                    text: "Documentation",
-                    image: "/img/folder.gif",
-                  },
-                  {
-                    href: "/contact",
-                    text: "Rendez-vous Conseil",
-                    image: "/img/meet.gif",
-                  },
-                ]}
-              />
+      {/* Questions Personas section */}
+        <section className="pb-12 md:pb-24 lg:pb-32">
+            <div className="flex justify-center align-center px-4 md:px-6">
+              <ExpandableCardNIP />
             </div>
           </section>
       
@@ -303,173 +274,173 @@ export default function Home() {
         {/* CTA Section */}
 
 
-        {/* Services Section */}
-        <section id="services" className="w-full py-24 md:py-24 lg:py-32 bg-background">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
-                  Services de conseil personnalisés
-                </h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Un accompagnement sur mesure pour vous aider à atteindre vos objectifs en ligne.
-                </p>
-              </div>
+      {/* Services Section */}
+      <section className="w-full py-12 md:py-12 lg:py-16">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
+                Services de conseil personnalisés
+              </h2>
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                Un accompagnement sur mesure pour vous aider à atteindre vos objectifs en ligne.
+              </p>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3">
-              <Card className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
-                <Image
-                  src="/placeholder.svg?height=400&width=300&text=Basic"
-                  width={300}
-                  height={400}
-                  alt="Basic Plan"
-                  className="w-full object-cover absolute inset-0 h-full"
-                />
-                <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                  <h3 className="text-2xl font-regular">Consultation Simple</h3>
-                  <div className="mt-4 space-y-2">
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Session vidéo de 30 minutes</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Analyse de votre projet</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Recommandations personnalisées</span>
-                    </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3">
+            <Card className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
+              <Image
+                src="/placeholder.svg?height=400&width=300&text=Basic"
+                width={300}
+                height={400}
+                alt="Basic Plan"
+                className="w-full object-cover absolute inset-0 h-full"
+              />
+              <CardContent className="p-6 relative z-20 mt-auto pt-24">
+                <h3 className="text-2xl font-regular">Consultation Simple</h3>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Session vidéo de 30 minutes</span>
                   </div>
-                  <div className="mt-6">
-                    <p className="text-3xl font-bold">99€</p>
-                    <p className="text-sm text-muted-foreground">Session unique</p>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Analyse de votre projet</span>
                   </div>
-                  <Button className="mt-6 w-full">Réserver</Button>
-                </CardContent>
-              </Card>
-              <Card className="relative overflow-hidden border-primary">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium">
-                  Populaire
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Recommandations personnalisées</span>
+                  </div>
                 </div>
-                <Image
-                  src="/placeholder.svg?height=400&width=300&text=Pro"
-                  width={300}
-                  height={400}
-                  alt="Pro Plan"
-                  className="w-full object-cover absolute inset-0 h-full"
-                />
-                <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                  <h3 className="text-2xl font-regular">Conseil Créa</h3>
-                  <div className="mt-4 space-y-2">
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">3 sessions vidéo de 30 minutes</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Analyse approfondie du besoin</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Formalisation d'un cahier des charges</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Conseil sur la solution technique</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Conseil au choix de prestataire</span>
-                    </div>
+                <div className="mt-6">
+                  <p className="text-3xl font-bold">99€</p>
+                  <p className="text-sm text-muted-foreground">Session unique</p>
+                </div>
+                <Button className="mt-6 w-full">Réserver</Button>
+              </CardContent>
+            </Card>
+            <Card className="relative overflow-hidden border-primary">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium">
+                Populaire
+              </div>
+              <Image
+                src="/placeholder.svg?height=400&width=300&text=Pro"
+                width={300}
+                height={400}
+                alt="Pro Plan"
+                className="w-full object-cover absolute inset-0 h-full"
+              />
+              <CardContent className="p-6 relative z-20 mt-auto pt-24">
+                <h3 className="text-2xl font-regular">Conseil Créa</h3>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">3 sessions vidéo de 30 minutes</span>
                   </div>
-                  <div className="mt-6">
-                    <p className="text-3xl font-bold">399€</p>
-                    <p className="text-sm text-muted-foreground">Pack de 3 sessions</p>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Analyse approfondie du besoin</span>
                   </div>
-                  <Button className="mt-6 w-full">Réserver</Button>
-                </CardContent>
-              </Card>
-              <Card className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
-                <Image
-                  src="/placeholder.svg?height=400&width=300&text=Premium"
-                  width={300}
-                  height={400}
-                  alt="Premium Plan"
-                  className="w-full object-cover absolute inset-0 h-full"
-                />
-                <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                  <h3 className="text-2xl font-regular">Conseil Refonte</h3>
-                  <div className="mt-4 space-y-2">
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">5 sessions vidéo de 30 minutes</span>
-                    </div>
-                    
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Audit personnalisé du site web</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Analyse approfondie du besoin</span>
-                    </div>                    
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Formalisation d'un cahier des charges</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Conseil sur la solution technique</span>
-                    </div>
-                    <div className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                      <span className="text-sm">Conseil au choix d'un prestataire</span>
-                    </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Formalisation d'un cahier des charges</span>
                   </div>
-                  <div className="mt-6">
-                    <p className="text-3xl font-bold">499€</p>
-                    <p className="text-sm text-muted-foreground">Pack de 5 sessions</p>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Conseil sur la solution technique</span>
                   </div>
-                  <Button className="mt-6 w-full">Réserver</Button>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="mt-8">
-              <div className="mx-auto max-w-3xl rounded-lg border bg-muted p-8">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-full bg-primary/10 p-3">
-                    <Star className="h-6 w-6 text-primary" />
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Conseil au choix de prestataire</span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold">Témoignage client</h3>
-                    <p className="mt-2 text-muted-foreground">
-                      "Grâce aux conseils de WebCreation, j'ai pu transformer mon site web et augmenter mes conversions
-                      de 150% en seulement 3 mois. L'accompagnement était personnalisé et les recommandations
-                      parfaitement adaptées à mon secteur d'activité."
-                    </p>
-                    <div className="mt-4 flex items-center gap-2">
-                      <Image
-                        src="/placeholder.svg?height=40&width=40"
-                        width={40}
-                        height={40}
-                        alt="Client"
-                        className="rounded-full"
-                      />
-                      <div>
-                        <p className="font-medium">Sophie Martin</p>
-                        <p className="text-sm text-muted-foreground">Fondatrice, Boutique en ligne</p>
-                      </div>
+                </div>
+                <div className="mt-6">
+                  <p className="text-3xl font-bold">399€</p>
+                  <p className="text-sm text-muted-foreground">Pack de 3 sessions</p>
+                </div>
+                <Button className="mt-6 w-full">Réserver</Button>
+              </CardContent>
+            </Card>
+            <Card className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
+              <Image
+                src="/placeholder.svg?height=400&width=300&text=Premium"
+                width={300}
+                height={400}
+                alt="Premium Plan"
+                className="w-full object-cover absolute inset-0 h-full"
+              />
+              <CardContent className="p-6 relative z-20 mt-auto pt-24">
+                <h3 className="text-2xl font-regular">Conseil Refonte</h3>
+                <div className="mt-4 space-y-2">
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">5 sessions vidéo de 30 minutes</span>
+                  </div>
+                  
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Audit personnalisé du site web</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Analyse approfondie du besoin</span>
+                  </div>                    
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Formalisation d'un cahier des charges</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Conseil sur la solution technique</span>
+                  </div>
+                  <div className="flex items-center">
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                    <span className="text-sm">Conseil au choix d'un prestataire</span>
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <p className="text-3xl font-bold">499€</p>
+                  <p className="text-sm text-muted-foreground">Pack de 5 sessions</p>
+                </div>
+                <Button className="mt-6 w-full">Réserver</Button>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="mt-8">
+            <div className="mx-auto max-w-3xl rounded-lg border bg-muted p-8">
+              <div className="flex items-start gap-4">
+                <div className="rounded-full bg-primary/10 p-3">
+                  <Star className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">Témoignage client</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    "Grâce aux conseils de WebCreation, j'ai pu transformer mon site web et augmenter mes conversions
+                    de 150% en seulement 3 mois. L'accompagnement était personnalisé et les recommandations
+                    parfaitement adaptées à mon secteur d'activité."
+                  </p>
+                  <div className="mt-4 flex items-center gap-2">
+                    <Image
+                      src="/placeholder.svg?height=40&width=40"
+                      width={40}
+                      height={40}
+                      alt="Client"
+                      className="rounded-full"
+                    />
+                    <div>
+                      <p className="font-medium">Sophie Martin</p>
+                      <p className="text-sm text-muted-foreground">Fondatrice, Boutique en ligne</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
 
         {/* About Section */}
