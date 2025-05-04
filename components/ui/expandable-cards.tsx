@@ -92,7 +92,6 @@ export function ExpandableCardNIP() {
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
-                    target="_blank"
                     className="px-6 py-3 text-sm rounded-full font-bold bg-regularblue text-white"
                   >
                     {active.ctaText}
@@ -203,11 +202,11 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Infos, Quizz, Conseils",
-    title: "Par où commencer ?",
+    description: "Quizz",
+    title: "Quel CMS choisir pour mon site web ?",
     src: "/img/astronaut-doing-fishing.svg",
-    ctaText: "Voir",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Tester en ligne",
+    ctaLink: "/quizz",
     content: () => {
       return (
         <p>
@@ -226,11 +225,11 @@ const cards = [
     },
   },
   {
-    description: "Infos, Quizz, Conseils",
-    title: "Quel CMS choisir ?",
+    description: "Test en ligne",
+    title: "Auditer mon site web",
     src: "/img/astronaut-playing-rugby.svg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Lancer l'audit",
+    ctaLink: "/audit",
     content: () => {
       return (
         <p>
@@ -249,11 +248,11 @@ const cards = [
   },
 
   {
-    description: "Infos, Outils, Modèles",
-    title: "Comment rédiger mon cahier des charges ?",
+    description: "Outil en ligne",
+    title: "Rédiger mon cahier des charges ?",
     src: "/img/astronaut-floating-holding-tools.svg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Commencer la rédaction",
+    ctaLink: "/cahier-des-charges",
     content: () => {
       return (
         <p>
@@ -270,54 +269,12 @@ const cards = [
       );
     },
   },
-  {
-    description: "Infos, Diagnostic, Conseils",
-    title: "Quelle techno pour mon site web ?",
-    src: "/img/astronaut-sitting-on-ufo.svg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
-        </p>
-      );
-    },
-  },
 {
-    description: "Infos, Quizz, Conseils",
-    title: "Combien coute un site web ?",	
+    description: "Quizz",
+    title: "Quel tarif pour mon site web ?",	
     src: "/img/astronaut-sitting-on-a-gold-stacks.svg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
-        </p>
-      );
-    },
-  },{
-    description: "Infos, Outils, Conseils",
-    title: "Comment briefer un prestataire ?",	
-    src: "/img/astronaut-doing-earth-climbing.svg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Lancer l'estimation",
+    ctaLink: "/simulateur-tarifs",
     content: () => {
       return (
         <p>
