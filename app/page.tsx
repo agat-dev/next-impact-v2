@@ -287,30 +287,44 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3">
-            <Card className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
-              <Image
-                src="/placeholder.svg?height=400&width=300&text=Basic"
-                width={300}
-                height={400}
-                alt="Basic Plan"
-                className="w-full object-cover absolute inset-0 h-full"
-              />
-              <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                <h3 className="text-2xl font-regular">Consultation Simple</h3>
-                <div className="mt-4 space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Session vidéo de 30 minutes</span>
+          <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-6 py-12">
+            <Card className="relative col-span-1 overflow-hidden">
+              <CardContent className="p-6 relative z-20 mt-auto pt-4 bg-white">
+                <div className="h-full bg-extralightblue/10 rounded-md p-4 flex flex-col items-center justify-center">
+                <Image
+                  src="/img/astronauts-meeting.png"
+                  width={100}
+                  height={200}
+                  alt="Consultation"
+                  className="object-contain"
+                />
+                <h3 className="text-3xl font-bold text-center text-regularblue">Conseil</h3>
+                <p className="text-base font-regular font-googletitre text-regularblue text-center">
+                  Vous avez besoin d'un avis sur votre projet ?<br />
+                  Réservez une consultation vidéo avec un expert.
+                </p>
+                </div>
+                <div className="grid grid-cols-2 mt-8 p-4 gap-4">
+                  <div className="col-span-1">
+                    <Image
+                      src="/img/pack-crea.jpeg"
+                      alt="Meeting animation"
+                      width={120}
+                      height={120} 
+                      className="m-auto object-contain"
+                      />
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Analyse de votre projet</span>
+                  <div className="col-span-1">
+                    <Image
+                      src="/img/pack-refonte.jpeg"
+                      alt="Meeting animation"
+                      width={120}
+                      height={120}
+                      className="m-auto object-contain"
+                      />
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Recommandations personnalisées</span>
+                  <div className="col-span-2">
+
                   </div>
                 </div>
                 <div className="mt-6">
@@ -320,60 +334,63 @@ export default function Home() {
                 <Button className="mt-6 w-full">Réserver</Button>
               </CardContent>
             </Card>
-            <Card className="relative overflow-hidden border-primary">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium">
-                Populaire
-              </div>
-              <Image
-                src="/placeholder.svg?height=400&width=300&text=Pro"
-                width={300}
-                height={400}
-                alt="Pro Plan"
-                className="w-full object-cover absolute inset-0 h-full"
-              />
-              <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                <h3 className="text-2xl font-regular">Conseil Créa</h3>
-                <div className="mt-4 space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">3 sessions vidéo de 30 minutes</span>
+            <Card className="relative col-span-1 overflow-hidden">
+              <CardContent className="p-6 relative z-20 mt-auto pt-4 bg-white">
+                <div className="h-full bg-extralightblue/10 rounded-md p-4 flex flex-col items-center justify-center">
+                <Image
+                  src="/img/astronauts-meeting.png"
+                  width={100}
+                  height={200}
+                  alt="Consultation"
+                  className="object-contain"
+                />
+                <h3 className="text-3xl font-bold text-center text-regularblue">Prestations</h3>
+                <p className="text-base font-regular font-googletitre text-regularblue text-center">
+                  Vous avez besoin d'un avis sur votre projet ?<br />
+                  Réservez une consultation vidéo avec un expert.
+                </p>
+                </div>
+                <div className="grid grid-cols-2 mt-8 p-4 gap-4">
+                  <div className="col-span-1">
+                    <Image
+                      src="/img/pack-crea-dev.jpeg"
+                      alt="Meeting animation"
+                      width={120}
+                      height={120} 
+                      className="m-auto object-contain"
+                      />
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Analyse approfondie du besoin</span>
+                  <div className="col-span-1">
+                    <Image
+                      src="/img/pack-refonte-dev.jpeg"
+                      alt="Meeting animation"
+                      width={120}
+                      height={120}
+                      className="m-auto object-contain"
+                      />
                   </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Formalisation d'un cahier des charges</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Conseil sur la solution technique</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Conseil au choix de prestataire</span>
+                  <div className="col-span-2">
+
                   </div>
                 </div>
                 <div className="mt-6">
-                  <p className="text-3xl font-bold">399€</p>
-                  <p className="text-sm text-muted-foreground">Pack de 3 sessions</p>
+                  <p className="text-3xl font-bold">99€</p>
+                  <p className="text-sm text-muted-foreground">Session unique</p>
                 </div>
                 <Button className="mt-6 w-full">Réserver</Button>
               </CardContent>
             </Card>
-            <Card className="relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10"></div>
+            <Card className="relative col-span-2 overflow-hidden">
+              <div className="absolute inset-0 bg-white z-10"></div>
               <Image
-                src="/placeholder.svg?height=400&width=300&text=Premium"
+                src="/img/premium-placeholder.svg" // Ensure this file exists in the public/img directory
                 width={300}
                 height={400}
                 alt="Premium Plan"
                 className="w-full object-cover absolute inset-0 h-full"
               />
               <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                <h3 className="text-2xl font-regular">Conseil Refonte</h3>
+                <h3 className="text-2xl font-regular">RDV conseil</h3>
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center">
                     <CheckCircle className="mr-2 h-4 w-4 text-primary" />
