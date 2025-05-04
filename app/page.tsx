@@ -279,12 +279,12 @@ export default function Home() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-regular tracking-tighter md:text-4xl/tight">
-                Services de conseil personnalisés
-              </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Un accompagnement sur mesure pour vous aider à atteindre vos objectifs en ligne.
-              </p>
+            <TextAnimate animation="blurIn" as="h2">
+                Des services personnalisés
+              </TextAnimate>
+              <p className="text-lg font-regular font-googletitre text-regularblue">
+                Un accompagnement conçu sur votre besoin pour vous aider à atteindre vos objectifs en ligne.
+              </p> 
             </div>
           </div>
           <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-6 py-12">
@@ -298,11 +298,7 @@ export default function Home() {
                   alt="Consultation"
                   className="object-contain"
                 />
-                <h3 className="text-3xl font-bold text-center text-regularblue">Conseil</h3>
-                <p className="text-base font-regular font-googletitre text-regularblue text-center">
-                  Vous avez besoin d'un avis sur votre projet ?<br />
-                  Réservez une consultation vidéo avec un expert.
-                </p>
+                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Packs Conseil</h3>
                 </div>
                 <div className="grid grid-cols-2 mt-8 p-4 gap-4">
                   <div className="col-span-1">
@@ -311,8 +307,21 @@ export default function Home() {
                       alt="Meeting animation"
                       width={120}
                       height={120} 
-                      className="m-auto object-contain"
+                      className="m-auto mb-8 object-contain"
                       />
+                      <div className="flex items-center">
+                        <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <span className="text-sm">5 sessions vidéo de 30 minutes</span>
+                      </div>
+                      
+                      <div className="flex items-center">
+                        <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <span className="text-sm">Audit personnalisé du site web</span>
+                      </div>
+                      <div className="flex items-center">
+                        <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <span className="text-sm">Analyse approfondie du besoin</span>
+                      </div>   
                   </div>
                   <div className="col-span-1">
                     <Image
@@ -324,14 +333,19 @@ export default function Home() {
                       />
                   </div>
                   <div className="col-span-2">
-
                   </div>
                 </div>
+                {/*}
                 <div className="mt-6">
                   <p className="text-3xl font-bold">99€</p>
                   <p className="text-sm text-muted-foreground">Session unique</p>
                 </div>
-                <Button className="mt-6 w-full">Réserver</Button>
+                */}
+                <div className="w-full flex justify-center mt-4">
+                  <Link href="/learning-paths/seo">
+                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Découvrir les accompagnements</Button>
+                  </Link>
+                  </div>
               </CardContent>
             </Card>
             <Card className="relative col-span-1 overflow-hidden">
