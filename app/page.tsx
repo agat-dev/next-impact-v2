@@ -287,10 +287,10 @@ export default function Home() {
               </p> 
             </div>
           </div>
-          <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-6 py-12">
+          <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-12 py-12">
             <Card className="relative col-span-1 overflow-hidden">
-              <CardContent className="p-6 relative z-20 mt-auto pt-4 bg-white">
-                <div className="h-full bg-extralightblue/10 rounded-md p-4 flex flex-col items-center justify-center">
+              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
+                <div className="h-full p-4 flex flex-col items-center justify-center">
                 <Image
                   src="/img/astronauts-meeting.png"
                   width={100}
@@ -300,7 +300,7 @@ export default function Home() {
                 />
                 <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Conseil</h3>
                 </div>
-                <div className="grid grid-cols-2 mt-8 p-4 gap-4">
+                <div className="grid grid-cols-2 mt-6 p-4 gap-14">
                   <div className="col-span-2 grid grid-cols-8 gap-6">
                     <Image
                       src="/img/pack-creation-conseil.png"
@@ -332,7 +332,7 @@ export default function Home() {
                     <Image
                       src="/img/pack-refonte-conseil.png"
                       alt="Meeting animation"
-                      width={80}
+                      width={78}
                       height={120} 
                       className="mb-8 col-span-2 object-contain"
                       />
@@ -366,7 +366,7 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground">Session unique</p>
                 </div>
                 */}
-                <div className="w-full flex justify-center mt-4">
+                <div className="w-full flex justify-center mt-10">
                   <Link href="/learning-paths/seo">
                     <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Découvrir les accompagnements</Button>
                   </Link>
