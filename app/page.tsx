@@ -298,41 +298,66 @@ export default function Home() {
                   alt="Consultation"
                   className="object-contain"
                 />
-                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Packs Conseil</h3>
+                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Conseil</h3>
                 </div>
                 <div className="grid grid-cols-2 mt-8 p-4 gap-4">
-                  <div className="col-span-1">
+                  <div className="col-span-2 grid grid-cols-8 gap-6">
                     <Image
-                      src="/img/pack-crea.jpeg"
+                      src="/img/pack-creation-conseil.png"
                       alt="Meeting animation"
-                      width={120}
+                      width={88}
                       height={120} 
-                      className="m-auto mb-8 object-contain"
+                      className="mb-8 col-span-2 object-contain"
                       />
-                      <div className="flex items-center">
-                        <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                        <span className="text-sm">5 sessions vidéo de 30 minutes</span>
-                      </div>
-                      
-                      <div className="flex items-center">
-                        <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                        <span className="text-sm">Audit personnalisé du site web</span>
-                      </div>
-                      <div className="flex items-center">
-                        <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                        <span className="text-sm">Analyse approfondie du besoin</span>
-                      </div>   
+                      <div className="col-span-6">
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">3 sessions vidéo de 30 minutes</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Analyse approfondie du besoin</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                        </div>  
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Conseil sur la solution technique</span>
+                        </div>  
+                      </div> 
                   </div>
-                  <div className="col-span-1">
+                  <div className="col-span-2 grid grid-cols-8 gap-6">
                     <Image
-                      src="/img/pack-refonte.jpeg"
+                      src="/img/pack-refonte-conseil.png"
                       alt="Meeting animation"
-                      width={120}
-                      height={120}
-                      className="m-auto object-contain"
+                      width={80}
+                      height={120} 
+                      className="mb-8 col-span-2 object-contain"
                       />
-                  </div>
-                  <div className="col-span-2">
+                      <div className="col-span-6">
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">4 sessions vidéo de 30 minutes</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Analyse approfondie du besoin</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Audit du site actuel</span>
+                        </div>  
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                        </div>  
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Conseil sur la solution technique</span>
+                        </div>  
+                      </div> 
                   </div>
                 </div>
                 {/*}
