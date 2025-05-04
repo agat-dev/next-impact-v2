@@ -612,7 +612,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         })
 
         // Solutions avec capacités e-commerce
-        ;["wordpress", "drupal", "webflow", "contentful", "strapi"].forEach((solution) => {
+        ;["drupal", "webflow", "contentful", "strapi"].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 5
             scores[solution].reasons.push("Peut intégrer des fonctionnalités e-commerce")

@@ -98,7 +98,7 @@ export default function Home() {
                 <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
                   <div className="space-y-2">
                     <LottieAnimation animationPath="/lotties/super-astronaut.json" width="8rem" height="8rem"/>
-                    <h3 className="text-2xl font-bold text-regularblue">Freelances</h3>
+                    <h3 className="text-2xl font-bold text-regularblue">Indépendants</h3>
                     <p className="text-base font-regular font-googletitre text-regularblue">
                       Vous voulez un site web professionnel tout simplement ?<br />
                     </p>
@@ -128,7 +128,7 @@ export default function Home() {
       {/* Questions Personas section */}
         <section className="py-12 md:py-24 lg:py-32">
             <div className="pb-12 text-center">
-              <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits pour tester son projet</TextAnimate>
+              <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits</TextAnimate>
               </div>
             <div className="flex justify-center align-center px-4 md:px-6">
               
@@ -311,7 +311,7 @@ export default function Home() {
                     <Image
                       src="/img/pack-creation-conseil.png"
                       alt="Meeting animation"
-                      width={100}
+                      width={97}
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
@@ -338,7 +338,7 @@ export default function Home() {
                     <Image
                       src="/img/pack-refonte-conseil.png"
                       alt="Meeting animation"
-                      width={89}
+                      width={88}
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
@@ -396,7 +396,7 @@ export default function Home() {
                     <Image
                       src="/img/wordpress-dev.png"
                       alt="Meeting animation"
-                      width={122}
+                      width={124}
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
@@ -423,7 +423,7 @@ export default function Home() {
                     <Image
                       src="/img/headless-dev.png"
                       alt="Meeting animation"
-                      width={112}
+                      width={109}
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
@@ -525,72 +525,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tools Section */}
+      {/* Base de connaissances Section */}
       <section className="w-full py-6 md:py-12 lg:py-24">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center">
               <div className="pb-12">
-              <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits pour tester son projet</TextAnimate>
+              <TextAnimate animation="blurIn" as="h2">Des infos pour décider</TextAnimate>
               </div>
-              <div className="grid gap-6 grid-cols-2">
-                <div className="col-span-1 flex flex-row gap-6 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="space-y-2">
-                    <LottieAnimation animationPath="/lotties/astronaut-in-pencil.json" width="8rem" height="8rem"/>
-                    </div>
-                  <div className="space-y-2">
-                    <h3 className="text-2xl font-medium text-regularblue">Quel CMS choisir ?</h3>
-                    <p className="mb-4 text-base font-regular font-googletitre text-regularblue">
-                      En répondant à ce quizz vous saurez si votre projet a besoin d'un CMS ou d'un développement spécifique, 
-                      quel seraient les meilleurs CMS ou technos à utiliser. <br />
-                    </p>
-                    <div>
-                    <Link href="/learning-paths/seo">
-                      <Button className="gap-1 mt-4 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Trouver le bon CMS</Button>
-                    </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-span-1 flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="space-y-2">
-                    <LottieAnimation animationPath="/lotties/super-astronaut.json" width="8rem" height="8rem"/>
-                    <h3 className="text-2xl font-bold text-regularblue">Freelances</h3>
-                    <p className="text-base font-regular font-googletitre text-regularblue">
-                      Vous voulez un site web professionnel tout simplement ?<br />
-                    </p>
-                  </div>
-                  <Link href="/learning-paths/ux">
-                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions web pour TPE</Button>
-                  </Link>
-                </div>
-                <div className="col-span-1 flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="space-y-2">
-                  <LottieAnimation animationPath="/lotties/astronaut-in-rocket.json" width="8rem" height="8rem"/>
-                    <h3 className="text-2xl font-bold text-regularblue">Entreprises</h3>
-                    <p className="text-base font-regular font-googletitre text-regularblue">
-                      Votre site web doit être à votre image et performant ?
-                    </p>
-                  </div>
-                  <Link href="/learning-paths/content">
-                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions pour Entreprises</Button>
-                  </Link>
-                </div>
-              </div>
+                  <DocTabs />
+
             </div>
           </div>
         </section>
 
 
         {/* About Section */}
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="relative">
                 
               </div>
               <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">À propos de notre expertise</h2>
-                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                <div className="space-y-6">
+                <TextAnimate animation="blurIn" as="h2">Expertise et éthique</TextAnimate>
+                  <p className="max-w-[600px] text-lg font-regular font-googletitre text-regularblue">
                     Avec plus de 10 ans d'expérience dans la création de sites web et le marketing digital, nous avons
                     aidé des centaines d'entreprises à réussir en ligne.
                   </p>
@@ -649,12 +608,12 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-6 md:py-12 lg:py-16">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Ce que nos clients disent</h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              <TextAnimate animation="blurIn" as="h2">Nos clients en parlent</TextAnimate>
+                <p className="mx-auto max-w-[700px] text-lg font-regular font-googletitre text-regularblue">
                   Découvrez comment nous avons aidé nos clients à transformer leur présence en ligne.
                 </p>
               </div>
@@ -691,49 +650,16 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-            <div className="mx-auto max-w-3xl rounded-lg border bg-background p-8">
-              <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="md:w-1/3">
-                  <Image
-                    src="/placeholder.svg?height=300&width=300&text=Case+Study"
-                    width={300}
-                    height={300}
-                    alt="Case Study"
-                    className="rounded-lg"
-                  />
-                </div>
-                <div className="md:w-2/3">
-                  <h3 className="text-xl font-bold">Étude de cas : E-commerce de mode</h3>
-                  <p className="mt-2 text-muted-foreground">
-                    Une boutique en ligne de mode a vu ses ventes augmenter de 300% après avoir suivi nos
-                    recommandations et mis en place notre stratégie de marketing digital.
-                  </p>
-                  <div className="mt-4 grid grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-3xl font-bold text-primary">+300%</p>
-                      <p className="text-sm text-muted-foreground">Augmentation des ventes</p>
-                    </div>
-                    <div>
-                      <p className="text-3xl font-bold text-primary">-40%</p>
-                      <p className="text-sm text-muted-foreground">Réduction du coût d'acquisition</p>
-                    </div>
-                  </div>
-                  <Button variant="outline" className="mt-4">
-                    Lire l'étude complète
-                  </Button>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section className="w-full py-6 md:py-12 lg:py-16">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Questions fréquentes</h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              <TextAnimate animation="blurIn" as="h2">Questions fréquentes</TextAnimate>
+                <p className="mx-auto max-w-[700px] text-lg font-regular font-googletitre text-regularblue">
                   Tout ce que vous devez savoir sur nos services et notre accompagnement.
                 </p>
               </div>
@@ -791,7 +717,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+        <section className="w-full py-12 md:py-24 lg:py-32 ">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

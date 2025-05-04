@@ -117,9 +117,6 @@ export function NavBar() {
         <NavigationMenuItem>
           <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/blog" className='font-googletitre text-regularblue text-lg font-medium px-6'>Blog</Link>
-        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   )

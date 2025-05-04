@@ -182,7 +182,7 @@ export default function DocTabs() {
                       {articles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground">
@@ -204,7 +204,7 @@ export default function DocTabs() {
                       {marketingArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -226,7 +226,7 @@ export default function DocTabs() {
                       {uxuiArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -248,7 +248,7 @@ export default function DocTabs() {
                       {projetArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -270,7 +270,7 @@ export default function DocTabs() {
                       {webflowArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -292,7 +292,7 @@ export default function DocTabs() {
                       {wordpressArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -314,7 +314,7 @@ export default function DocTabs() {
                       {shopifyArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground">
@@ -336,7 +336,7 @@ export default function DocTabs() {
                       {headlessCmsArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -358,7 +358,7 @@ export default function DocTabs() {
                       {frameworksArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -380,7 +380,7 @@ export default function DocTabs() {
                       {vibeCodingArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
@@ -402,7 +402,7 @@ export default function DocTabs() {
                       {seoArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white border border-regularblue/20 border p-6 shadow-sm transition-shadow hover:shadow-md">
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                           <div className="space-y-2">
                             <h3 className="text-xl font-regular">{article.title}</h3>
                             <p className="text-muted-foreground text-sm">
