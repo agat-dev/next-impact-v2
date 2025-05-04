@@ -126,8 +126,12 @@ export default function Home() {
 
 
       {/* Questions Personas section */}
-        <section className="pb-12 md:pb-24 lg:pb-32">
+        <section className="py-12 md:py-24 lg:py-32">
+            <div className="pb-12 text-center">
+              <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits pour tester son projet</TextAnimate>
+              </div>
             <div className="flex justify-center align-center px-4 md:px-6">
+              
               <ExpandableCardNIP />
             </div>
           </section>
@@ -290,7 +294,8 @@ export default function Home() {
           <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-12 py-12">
             <Card className="relative col-span-1 overflow-hidden">
               <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
-                <div className="h-full p-4 flex flex-col items-center justify-center">
+                <div className="h-full mb-4 p-4 flex flex-col items-center justify-center">
+                  {/*}
                 <Image
                   src="/img/astronauts-meeting.png"
                   width={100}
@@ -298,16 +303,17 @@ export default function Home() {
                   alt="Consultation"
                   className="object-contain"
                 />
+                */}
                 <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Conseil</h3>
                 </div>
-                <div className="grid grid-cols-2 mt-6 p-4 gap-14">
-                  <div className="col-span-2 grid grid-cols-8 gap-6">
+                <div className="p-4">
+                  <div>
                     <Image
                       src="/img/pack-creation-conseil.png"
                       alt="Meeting animation"
-                      width={88}
+                      width={100}
                       height={120} 
-                      className="mb-8 col-span-2 object-contain"
+                      className="mb-4 col-span-2 object-contain"
                       />
                       <div className="col-span-6">
                         <div className="flex items-center">
@@ -328,15 +334,15 @@ export default function Home() {
                         </div>  
                       </div> 
                   </div>
-                  <div className="col-span-2 grid grid-cols-8 gap-6">
+                  <div className="mt-12">
                     <Image
                       src="/img/pack-refonte-conseil.png"
                       alt="Meeting animation"
-                      width={78}
+                      width={89}
                       height={120} 
-                      className="mb-8 col-span-2 object-contain"
+                      className="mb-4 col-span-2 object-contain"
                       />
-                      <div className="col-span-6">
+                      <div>
                         <div className="flex items-center">
                           <CheckCircle className="mr-2 h-4 w-4 text-primary" />
                           <span className="text-sm">4 sessions vidéo de 30 minutes</span>
@@ -368,112 +374,133 @@ export default function Home() {
                 */}
                 <div className="w-full flex justify-center mt-10">
                   <Link href="/learning-paths/seo">
-                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Découvrir les accompagnements</Button>
+                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Accompagnements</Button>
                   </Link>
                   </div>
               </CardContent>
             </Card>
             <Card className="relative col-span-1 overflow-hidden">
-              <CardContent className="p-6 relative z-20 mt-auto pt-4 bg-white">
-                <div className="h-full bg-extralightblue/10 rounded-md p-4 flex flex-col items-center justify-center">
-                <Image
+              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
+                <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
+                {/*<Image
                   src="/img/astronauts-meeting.png"
                   width={100}
                   height={200}
                   alt="Consultation"
                   className="object-contain"
-                />
-                <h3 className="text-3xl font-bold text-center text-regularblue">Prestations</h3>
-                <p className="text-base font-regular font-googletitre text-regularblue text-center">
-                  Vous avez besoin d'un avis sur votre projet ?<br />
-                  Réservez une consultation vidéo avec un expert.
-                </p>
+                /> */}
+                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Développement web</h3>
                 </div>
-                <div className="grid grid-cols-2 mt-8 p-4 gap-4">
-                  <div className="col-span-1">
+                <div className="p-4">
+                  <div>
                     <Image
-                      src="/img/pack-crea-dev.jpeg"
+                      src="/img/wordpress-dev.png"
                       alt="Meeting animation"
-                      width={120}
+                      width={122}
                       height={120} 
-                      className="m-auto object-contain"
+                      className="mb-4 col-span-2 object-contain"
                       />
+                      <div className="col-span-6">
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">3 sessions vidéo de 30 minutes</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Analyse approfondie du besoin</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                        </div>  
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Conseil sur la solution technique</span>
+                        </div>  
+                      </div> 
                   </div>
-                  <div className="col-span-1">
+                  <div className="mt-12">
                     <Image
-                      src="/img/pack-refonte-dev.jpeg"
+                      src="/img/headless-dev.png"
                       alt="Meeting animation"
-                      width={120}
-                      height={120}
-                      className="m-auto object-contain"
+                      width={112}
+                      height={120} 
+                      className="mb-4 col-span-2 object-contain"
                       />
-                  </div>
-                  <div className="col-span-2">
-
+                      <div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">4 sessions vidéo de 30 minutes</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Analyse approfondie du besoin</span>
+                        </div>
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Audit du site actuel</span>
+                        </div>  
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                        </div>  
+                        <div className="flex items-center">
+                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                          <span className="text-sm">Conseil sur la solution technique</span>
+                        </div>  
+                      </div> 
                   </div>
                 </div>
+                {/*}
                 <div className="mt-6">
                   <p className="text-3xl font-bold">99€</p>
                   <p className="text-sm text-muted-foreground">Session unique</p>
                 </div>
-                <Button className="mt-6 w-full">Réserver</Button>
+                */}
+                <div className="w-full flex justify-center mt-10">
+                  <Link href="/learning-paths/seo">
+                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Créations et refontes</Button>
+                  </Link>
+                  </div>
               </CardContent>
             </Card>
             <Card className="relative col-span-2 overflow-hidden">
-              <div className="absolute inset-0 bg-white z-10"></div>
-              <Image
-                src="/img/premium-placeholder.svg" // Ensure this file exists in the public/img directory
-                width={300}
-                height={400}
-                alt="Premium Plan"
-                className="w-full object-cover absolute inset-0 h-full"
-              />
-              <CardContent className="p-6 relative z-20 mt-auto pt-24">
-                <h3 className="text-2xl font-regular">RDV conseil</h3>
-                <div className="mt-4 space-y-2">
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">5 sessions vidéo de 30 minutes</span>
-                  </div>
-                  
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Audit personnalisé du site web</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Analyse approfondie du besoin</span>
-                  </div>                    
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Formalisation d'un cahier des charges</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Conseil sur la solution technique</span>
-                  </div>
-                  <div className="flex items-center">
-                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                    <span className="text-sm">Conseil au choix d'un prestataire</span>
-                  </div>
+              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
+                <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
+                {/*<Image
+                  src="/img/astronauts-meeting.png"
+                  width={100}
+                  height={200}
+                  alt="Consultation"
+                  className="object-contain"
+                /> */}
+                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">consultation</h3>
+                <span className="text-base text-center">Session vidéo unique de 30 minutes</span>
                 </div>
+                {/*}
                 <div className="mt-6">
-                  <p className="text-3xl font-bold">499€</p>
-                  <p className="text-sm text-muted-foreground">Pack de 5 sessions</p>
+                  <p className="text-3xl font-bold">99€</p>
+                  <p className="text-sm text-muted-foreground">Session unique</p>
                 </div>
-                <Button className="mt-6 w-full">Réserver</Button>
+                */}
+                <div className="w-full flex justify-center">
+                  <Link href="/learning-paths/seo">
+                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Prendre RDV</Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
+           
           </div>
           <div className="mt-8">
-            <div className="mx-auto max-w-3xl rounded-lg border bg-muted p-8">
+            <div className="mx-auto max-w-3xl rounded-lg border p-8">
               <div className="flex items-start gap-4">
-                <div className="rounded-full bg-primary/10 p-3">
-                  <Star className="h-6 w-6 text-primary" />
+                <div className="rounded-full p-3">
+                  <Star className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Témoignage client</h3>
-                  <p className="mt-2 text-muted-foreground">
+                  <h3 className="text-xl font-bold text-regularblue">Témoignage client</h3>
+                  <p className="mt-2">
                     "Grâce aux conseils de WebCreation, j'ai pu transformer mon site web et augmenter mes conversions
                     de 150% en seulement 3 mois. L'accompagnement était personnalisé et les recommandations
                     parfaitement adaptées à mon secteur d'activité."
@@ -497,6 +524,60 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Tools Section */}
+      <section className="w-full py-6 md:py-12 lg:py-24">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center">
+              <div className="pb-12">
+              <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits pour tester son projet</TextAnimate>
+              </div>
+              <div className="grid gap-6 grid-cols-2">
+                <div className="col-span-1 flex flex-row gap-6 rounded-lg border bg-background p-6 shadow-sm">
+                  <div className="space-y-2">
+                    <LottieAnimation animationPath="/lotties/astronaut-in-pencil.json" width="8rem" height="8rem"/>
+                    </div>
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-medium text-regularblue">Quel CMS choisir ?</h3>
+                    <p className="mb-4 text-base font-regular font-googletitre text-regularblue">
+                      En répondant à ce quizz vous saurez si votre projet a besoin d'un CMS ou d'un développement spécifique, 
+                      quel seraient les meilleurs CMS ou technos à utiliser. <br />
+                    </p>
+                    <div>
+                    <Link href="/learning-paths/seo">
+                      <Button className="gap-1 mt-4 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Trouver le bon CMS</Button>
+                    </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-span-1 flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+                  <div className="space-y-2">
+                    <LottieAnimation animationPath="/lotties/super-astronaut.json" width="8rem" height="8rem"/>
+                    <h3 className="text-2xl font-bold text-regularblue">Freelances</h3>
+                    <p className="text-base font-regular font-googletitre text-regularblue">
+                      Vous voulez un site web professionnel tout simplement ?<br />
+                    </p>
+                  </div>
+                  <Link href="/learning-paths/ux">
+                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions web pour TPE</Button>
+                  </Link>
+                </div>
+                <div className="col-span-1 flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
+                  <div className="space-y-2">
+                  <LottieAnimation animationPath="/lotties/astronaut-in-rocket.json" width="8rem" height="8rem"/>
+                    <h3 className="text-2xl font-bold text-regularblue">Entreprises</h3>
+                    <p className="text-base font-regular font-googletitre text-regularblue">
+                      Votre site web doit être à votre image et performant ?
+                    </p>
+                  </div>
+                  <Link href="/learning-paths/content">
+                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions pour Entreprises</Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
         {/* About Section */}

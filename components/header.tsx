@@ -167,7 +167,7 @@ export default function Header() {
           </div>
           <div className='basis-1/6 flex justify-end'>
           <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-base font-regular">RDV Conseil</Link>
+            <Link href="/services" className="text-base font-regular">Prendre RDV</Link>
           </Button> 
           </div>
         </div>
