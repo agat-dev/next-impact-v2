@@ -476,7 +476,7 @@ export function selectBestCMS(responses: Record<string, string>) {
       })
     } else if (responses.customization === "Modéré (thème existant avec personnalisation importante)") {
       // CMS traditionnels et solutions no-code avancées
-      ;["wordpress", "drupal", "webflow", "joomla"].forEach((solution) => {
+      ;["wordpress", "webflow", "squarespace", "bubble"].forEach((solution) => {
         if (scores[solution]) {
           scores[solution].score += 8
           scores[solution].reasons.push("Bon équilibre entre templates et personnalisation")
@@ -484,7 +484,7 @@ export function selectBestCMS(responses: Record<string, string>) {
       })
     } else if (responses.customization === "Basique (thème existant avec personnalisation mineure)") {
       // Solutions simples avec nombreux templates
-      ;["wix", "squarespace", "wordpress", "prestashop", "shopify"].forEach((solution) => {
+      ;["squarespace", "wordpress", "prestashop", "shopify"].forEach((solution) => {
         if (scores[solution]) {
           scores[solution].score += 10
           scores[solution].reasons.push("Nombreux templates prêts à l'emploi")
@@ -505,7 +505,7 @@ export function selectBestCMS(responses: Record<string, string>) {
   if (responses.budget) {
     if (responses.budget === "Moins de 1 000 €") {
       // Solutions économiques
-      ;["wordpress", "wix", "ghost", "concrete5"].forEach((solution) => {
+      ;["wordpress", "ghost", "concrete5"].forEach((solution) => {
         if (scores[solution]) {
           scores[solution].score += 10
           scores[solution].reasons.push("Économique pour les petits budgets")
@@ -539,7 +539,7 @@ export function selectBestCMS(responses: Record<string, string>) {
       })
     } else if (responses.budget === "Entre 5 000 et 15 000 €") {
       // Solutions plus avancées
-      ;["drupal", "magento", "sanity", "contentful", "laravel", "symfony", "nextjs"].forEach((solution) => {
+      ;["wordpress", "strapi", "magento", "sanity", "contentful", "laravel", "symfony", "nextjs"].forEach((solution) => {
         if (scores[solution]) {
           scores[solution].score += 7
           scores[solution].reasons.push("Solution adaptée à ce budget intermédiaire")
@@ -547,7 +547,7 @@ export function selectBestCMS(responses: Record<string, string>) {
       })
     } else if (responses.budget === "Plus de 15 000 €") {
       // Solutions enterprise
-      ;["magento", "drupal", "typo3", "contentstack", "kontent", "contentful", "angular", "symfony"].forEach(
+      ;["magento", "contentstack", "kontent", "contentful", "angular", "symfony", "sanity", "strapi", "nextjs"].forEach(
         (solution) => {
           if (scores[solution]) {
             scores[solution].score += 8
@@ -562,7 +562,7 @@ export function selectBestCMS(responses: Record<string, string>) {
   if (responses.deadline) {
     if (responses.deadline === "Moins d'un mois") {
       // Solutions rapides à déployer
-      ;["wix", "squarespace", "webflow", "shopify", "ghost"].forEach((solution) => {
+      ;["squarespace", "webflow", "shopify", "ghost"].forEach((solution) => {
         if (scores[solution]) {
           scores[solution].score += 15
           scores[solution].reasons.push("Mise en place rapide")
@@ -628,7 +628,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         })
       } else if (responses.specificFeatures === "Gestion multilingue") {
         // Solutions avec bonnes capacités multilingues
-        ;["drupal", "typo3", "wordpress", "storyblok", "dato", "contentful"].forEach((solution) => {
+        ;["wordpress", "storyblok", "dato", "contentful"].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 10
             scores[solution].reasons.push("Excellentes capacités multilingues")
@@ -636,7 +636,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         })
       } else if (responses.specificFeatures === "Réservation/prise de rendez-vous") {
         // Solutions adaptées aux systèmes de réservation
-        ;["wordpress", "drupal", "wix", "bubble"].forEach((solution) => {
+        ;["wordpress", "bubble"].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 8
             scores[solution].reasons.push("Bonne intégration de systèmes de réservation")
@@ -644,7 +644,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         })
 
         // Frameworks pour solutions sur mesure
-        ;["laravel", "symfony", "nextjs"].forEach((solution) => {
+        ;["strapi", "sanity", "contentful", "laravel", "symfony", "nextjs"].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 5
             scores[solution].reasons.push("Peut servir de base pour un système de réservation sur mesure")
@@ -652,7 +652,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         })
       } else if (responses.specificFeatures === "Intégration avec d'autres systèmes (CRM, ERP, etc.)") {
         // Solutions avec bonnes capacités d'intégration
-        ;["drupal", "wordpress", "strapi", "contentful", "directus", "contentstack"].forEach((solution) => {
+        ;["wordpress", "strapi", "contentful", "directus", "contentstack"].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 10
             scores[solution].reasons.push("Bonnes capacités d'intégration avec d'autres systèmes")
@@ -676,7 +676,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         }
       } else if (responses.specificFeatures === "Authentification et gestion des utilisateurs") {
         // Solutions avec bonne gestion des utilisateurs
-        ;["drupal", "wordpress", "bubble", "joomla", "typo3"].forEach((solution) => {
+        ;[ "wordpress", "bubble" ].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 8
             scores[solution].reasons.push("Gestion avancée des utilisateurs")
@@ -692,7 +692,7 @@ export function selectBestCMS(responses: Record<string, string>) {
         })
       } else if (responses.specificFeatures === "Marketing digital avancé (automation, personnalisation, etc.)") {
         // Solutions marketing
-        ;["wordpress", "drupal", "webflow", "wix", "shopify"].forEach((solution) => {
+        ;["wordpress", "webflow", "shopify"].forEach((solution) => {
           if (scores[solution]) {
             scores[solution].score += 7
             scores[solution].reasons.push("Bonnes capacités marketing via plugins/extensions")

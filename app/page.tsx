@@ -130,8 +130,7 @@ export default function Home() {
             <div className="pb-12 text-center">
               <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits</TextAnimate>
               </div>
-            <div className="flex justify-center align-center px-4 md:px-6">
-              
+            <div className="flex justify-center align-center px-4 md:px-6">              
               <ExpandableCardNIP />
             </div>
           </section>
@@ -274,9 +273,6 @@ export default function Home() {
             ]} />
         </section>
         */}
-
-        {/* CTA Section */}
-
 
       {/* Services Section */}
       <section className="w-full py-12 md:py-12 lg:py-16">
