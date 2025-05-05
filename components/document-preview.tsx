@@ -447,16 +447,24 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           <div className="ml-4 space-y-6">
             <div>
               <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                5.1 Système de gestion de contenu (CMS)
+                5.1 Contenus
               </h3>
               <div className="ml-4 space-y-3 mt-3">
                 <div>
-                  <span className="font-semibold">CMS proposé: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.cms_propose || "Non spécifié"}</span>
+                  <span className="font-semibold">Contenus à migrer : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.migration_volume || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Fonctionnalités du CMS: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.fonctionnalites_cms || "Non spécifié"}</span>
+                  <span className="font-semibold">Type de migration : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.migration_types || "Non spécifié"}</span>
+                </div>                
+                <div>
+                  <span className="font-semibold">Contenus à créer : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.contenus_creer || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Profils des administrateurs : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.profils_admin || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -488,32 +496,35 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           <div className="ml-4 space-y-6">
             <div>
               <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                6.1 Prestations de développement
+                6.1 Prestations de gestion de projet
               </h3>
               <div className="ml-4 space-y-3 mt-3">
+                
+              {formData.phases_projet ? (
+                <ul className="grid grid-cols-2 gap-2">
+                  {Object.entries(formData.phases_projet).map(([key, value]) => (
+                    <li key={key} className="flex items-center">
+                      <div
+                        className={`w-4 h-4 mr-2 rounded-sm ${
+                          value.checked ? "bg-orange-500" : "border border-gray-300"
+                        }`}
+                      >
+                        {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
+                      </div>
+                      {value.label}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span className="text-gray-500">Aucune information sur la gestion du projet</span>
+              )}
                 <div>
-                  <span className="font-semibold">Développement front-end: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.dev_frontend || "Non spécifié"}</span>
+                  <span className="font-semibold">Méthodologie : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.methodologie || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Développement back-end: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.dev_backend || "Non spécifié"}</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                6.2 Prestations de maintenance
-              </h3>
-              <div className="ml-4 space-y-3 mt-3">
-                <div>
-                  <span className="font-semibold">Maintenance corrective: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.maintenance_corrective || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Maintenance évolutive: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.maintenance_evolutive || "Non spécifié"}</span>
+                  <span className="font-semibold">Garantie : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.garantie || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -533,12 +544,12 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
               </h3>
               <div className="ml-4 space-y-3 mt-3">
                 <div>
-                  <span className="font-semibold">Date de début: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_debut || "Non spécifié"}</span>
+                  <span className="font-semibold">Date de démarrage : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_demarrage || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Date de fin: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_fin || "Non spécifié"}</span>
+                  <span className="font-semibold">Date de mise en ligne: </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_mise en ligne || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -549,12 +560,12 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
               </h3>
               <div className="ml-4 space-y-3 mt-3">
                 <div>
-                  <span className="font-semibold">Budget total: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.budget_total || "Non spécifié"}</span>
+                  <span className="font-semibold">Budget global : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.budget_global || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Détails du budget: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.details_budget || "Non spécifié"}</span>
+                  <span className="font-semibold">Budget de maintenance : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.budget_maintenance || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -575,7 +586,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
               <div className="ml-4 space-y-3 mt-3">
                 <div>
                   <span className="font-semibold">Date limite de réponse: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_limite_reponse || "Non spécifié"}</span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_limite || "Non spécifié"}</span>
                 </div>
                 <div>
                   <span className="font-semibold">Mode de réponse: </span>
@@ -599,6 +610,22 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 </div>
               </div>
             </div>
+
+            <div>
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+                8.2 Contact
+              </h3>
+              <div className="ml-4 space-y-3 mt-3">
+                <div>
+                  <span className="font-semibold">Personne référente : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.contact_nom || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Adresse email de la personne référente : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.contact_email || "Non spécifié"}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -614,14 +641,24 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 9.1 Annexes
               </h3>
               <div className="ml-4 space-y-3 mt-3">
-                <div>
-                  <span className="font-semibold">Annexe 1: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.annexe_1 || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Annexe 2: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.annexe_2 || "Non spécifié"}</span>
-                </div>
+                {formData.documents_fournis ? (
+                  <ul className="grid grid-cols-2 gap-2">
+                    {Object.entries(formData.documents_fournis).map(([key, value]) => (
+                      <li key={key} className="flex items-center">
+                        <div
+                          className={`w-4 h-4 mr-2 rounded-sm ${
+                            value.checked ? "bg-orange-500" : "border border-gray-300"
+                          }`}
+                        >
+                          {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
+                        </div>
+                        {value.label}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="text-gray-500">Aucune information sur la gestion du projet</span>
+                )}
               </div>
             </div>
           </div>
@@ -632,7 +669,8 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
         {/* Pied de page */}
         <div className="border-t pt-4 mt-12 flex justify-between text-sm text-gray-500">
           <div>{formData.organisation_name || "Cahier des charges"}</div>
-          <div>Page 3</div>
+          <div>{formData.redacteur || "Rédigé par"}</div>
+          <div>{formData.date_redaction || new Date().toLocaleDateString()}</div>
           <div>Version: {formData.version || "1.0"}</div>
         </div>
       </div>

@@ -459,6 +459,18 @@ const formSections: FormSection[] = [
         type: "textarea",
         placeholder: "Ex: Super admin, éditeur, contributeur...",
       },
+      {
+        id: "formation_proposee",
+        label: "Formation proposée pour la gestion du site",
+        type: "textarea",
+        placeholder: "Ex: Formation en visio, tutoriels vidéo...",
+      },
+      {
+        id: "support_technique",
+        label: "Support technique proposé",
+        type: "textarea",
+        placeholder: "Ex: Hotline, chat en ligne, email...",
+      }
     ],
   },
   {
@@ -538,6 +550,12 @@ const formSections: FormSection[] = [
         label: "Critères financiers de sélection",
         type: "textarea",
         placeholder: "Ex: Prix, modalités de paiement...",
+      },
+      {
+        id: "mode_reponse",
+        label: "Mode de réponse souhaité",
+        type: "textarea",
+        placeholder: "Ex: PDF, présentation orale, démonstration...",
       },
       {
         id: "date_limite",
