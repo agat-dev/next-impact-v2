@@ -33,7 +33,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           formData.site_url ||
           formData.site_creation_date ||
           formData.technologies_actuelles
-        )
+        );
       case "section-2":
         return !!(
           formData.arborescence ||
@@ -103,7 +103,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           </div>
         </div>
 
-        {/* Table des matières */}
+       
         <div className="mb-12">
           <h2 className="text-xl font-bold text-blue-800 text-center mb-4">TABLE DES MATIÈRES</h2>
           <div className="border-t border-b py-4">
@@ -235,25 +235,26 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 2.2 Fonctionnalités standards
               </h3>
               <div className="ml-4 mt-3 bg-gray-50 p-3 rounded">
-                {formData.fonctionnalites_standards ? (
-                  <ul className="grid grid-cols-2 gap-2">
-                    {Object.entries(formData.fonctionnalites_standards).map(([key, checked]) => (
-                      <li key={key} className="flex items-center">
-                        <div
-                          className={`w-4 h-4 mr-2 rounded-sm ${checked ? "bg-orange-500" : "border border-gray-300"}`}
-                        >
-                          {Boolean(checked) && <span className="text-white text-xs flex justify-center">✓</span>}
-                        </div>
-                        {key}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <span className="text-gray-500">Aucune fonctionnalité standard sélectionnée</span>
-                )}
+              {formData.fonctionnalites_standards ? (
+                <ul className="grid grid-cols-2 gap-2">
+                  {Object.entries(formData.fonctionnalites_standards).map(([key, value]) => (
+                    <li key={key} className="flex items-center">
+                      <div
+                        className={`w-4 h-4 mr-2 rounded-sm ${
+                          value.checked ? "bg-orange-500" : "border border-gray-300"
+                        }`}
+                      >
+                        {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
+                      </div>
+                      {value.label}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span className="text-gray-500">Aucune fonctionnalité standard sélectionnée</span>
+              )}
               </div>
             </div>
-
             <div>
               <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
                 2.3 Fonctionnalités avancées
@@ -277,6 +278,16 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 )}
               </div>
             </div>
+            <div>
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+                2.4 Contraintes techniques
+              </h3>
+              <div className="ml-4 space-y-3 mt-3">
+                <div>
+                  <span className="font-semibold">Contraintes techniques: </span>
+                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.contraintes_techniques || "Non spécifié"}</div>
+                </div>
+              </div>
           </div>
         </div>
 
@@ -285,13 +296,37 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
             <h2 className="text-lg font-bold">3. SPÉCIFICATIONS GRAPHIQUES ET ERGONOMIQUES</h2>
           </div>
-
           <div className="ml-4 space-y-6">
             <div>
               <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
                 3.1 Charte graphique
               </h3>
               <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 mt-3 bg-gray-50 p-3 rounded">
+              {formData.charte_graphique ? (
+                <ul className="grid grid-cols-2 gap-2">
+                  {Object.entries(formData.charte_graphique).map(([key, value]) => (
+                    <li key={key} className="flex items-center">
+                      <div
+                        className={`w-4 h-4 mr-2 rounded-sm ${
+                          value.checked ? "bg-orange-500" : "border border-gray-300"
+                        }`}
+                      >
+                        {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
+                      </div>
+                      {value.label}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span className="text-gray-500">Aucune information sur la charte graphique</span>
+              )}
+              </div>
+                <div>
+                  <span className="font-semibold">Sites d'inspiration : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.inspirations || "Non spécifié"}</span>
+                </div>
+
                 <div>
                   <span className="font-semibold">Couleurs principales: </span>
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.couleurs_principales || "Non spécifié"}</span>
@@ -299,6 +334,18 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 <div>
                   <span className="font-semibold">Typographie: </span>
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.typographie || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Ambiance : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.ambiance || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Priorité UX : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.ux_priorites || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Responsive : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.responsive || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -328,19 +375,36 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
             <h2 className="text-lg font-bold">4. SPÉCIFICATIONS TECHNIQUES</h2>
           </div>
 
-          <div className="ml-4 space-y-6">
+          <div className="ml-4 space-y-6">  
+
+          <div>
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+                4.1 Outils et Technologies
+              </h3>
+              <div className="ml-4 space-y-3 mt-3">
+                <div>
+                  <span className="font-semibold">Type de CMS ou Framework: </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.cms_framework || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Langages de programmation : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.langages || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Base de données : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.base_donnees || "Non spécifié"}</span>
+                </div>
+              </div>
+            </div>
+
             <div>
               <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                4.1 Hébergement
+                4.2 Hébergement
               </h3>
               <div className="ml-4 space-y-3 mt-3">
                 <div>
                   <span className="font-semibold">Type d'hébergement: </span>
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.type_hebergement || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Capacité de stockage: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.capacite_stockage || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -355,8 +419,18 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.protocoles_securite || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Sauvegardes: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.sauvegardes || "Non spécifié"}</span>
+                </div>
+                <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+                4.3 Perfomance et SEO
+              </h3>
+              <div className="ml-4 space-y-3 mt-3">
+                <div>
+                  <span className="font-semibold">Temps de chargement : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.performance || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold">Exigeances SEO spécifiques : </span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.seo || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -562,6 +636,8 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           <div>Version: {formData.version || "1.0"}</div>
         </div>
       </div>
+    </div>
+    </div>
     )
   }
 

@@ -41,18 +41,18 @@ export function CahierDesChargesForm() {
     }))
   }
 
-  const handleCheckboxGroupChange = (groupId: string, itemId: string, checked: boolean) => {
+  const handleCheckboxGroupChange = (groupId: string, itemId: string, checked: boolean, label: string) => {
     setFormData((prev) => {
-      const currentGroup = prev[groupId] || {}
+      const currentGroup = prev[groupId] || {};
       return {
         ...prev,
         [groupId]: {
           ...currentGroup,
-          [itemId]: checked,
+          [itemId]: checked ? { checked: true, label } : { checked: false, label },
         },
-      }
-    })
-  }
+      };
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -100,23 +100,23 @@ export function CahierDesChargesForm() {
                                 <>
                                   <Label className="text-base font-medium">{field.label}</Label>
                                   <div className="grid gap-3 pt-2">
-                                    {field.options?.map((option) => (
-                                      <div key={option.id} className="flex items-start space-x-2">
-                                        <Checkbox
-                                          id={`${field.id}-${option.id}`}
-                                          checked={formData[field.id]?.[option.id] || false}
-                                          onCheckedChange={(checked) =>
-                                            handleCheckboxGroupChange(field.id, option.id, checked as boolean)
-                                          }
-                                        />
-                                        <Label
-                                          htmlFor={`${field.id}-${option.id}`}
-                                          className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                        >
-                                          {option.label}
-                                        </Label>
-                                      </div>
-                                    ))}
+                                  {field.options?.map((option) => (
+                                    <div key={option.id} className="flex items-start space-x-2">
+                                      <Checkbox
+                                        id={`${field.id}-${option.id}`}
+                                        checked={formData[field.id]?.[option.id]?.checked || false}
+                                        onCheckedChange={(checked) =>
+                                          handleCheckboxGroupChange(field.id, option.id, checked as boolean, option.label)
+                                        }
+                                      />
+                                      <Label
+                                        htmlFor={`${field.id}-${option.id}`}
+                                        className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                      >
+                                        {option.label}
+                                      </Label>
+                                    </div>
+                                  ))}
                                   </div>
                                 </>
                               ) : field.type === "checkbox" ? (
@@ -324,16 +324,15 @@ const formSections: FormSection[] = [
     id: "section-3",
     title: "3. Spécifications Graphiques et Ergonomiques",
     fields: [
-      {
-        id: "charte_existante",
-        label: "Charte graphique existante à respecter",
-        type: "checkbox",
-      },
-      {
-        id: "nouvelle_charte",
-        label: "Nouvelle charte graphique à créer",
-        type: "checkbox",
-      },
+      { 
+        id: "charte_graphique",
+        label: "Création de charte graphique",
+        type: "checkboxGroup",
+        options: [
+          { id: "charte_existante", label: "Charte graphique existante à respecter" },
+          { id: "nouvelle_charte", label: "Nouvelle charte graphique à créer" },
+        ],
+        },
       {
         id: "inspirations",
         label: "Inspirations/références",
@@ -369,6 +368,18 @@ const formSections: FormSection[] = [
         label: "Formats prioritaires (desktop, tablette, mobile)",
         type: "text",
         placeholder: "Ex: Mobile-first, tous formats équivalents...",
+      },
+      {
+        id: "accessibilite",
+        label: "Accessibilité (RGAA, WCAG)",
+        type: "text",
+        placeholder: "Ex: RGAA 3, WCAG 2.1 AA",
+      },
+      {
+        id: "navigation",
+        label: "Navigation souhaitée",
+        type: "textarea",
+        placeholder: "Ex: Menu déroulant, barre latérale, fil d'Ariane...",
       },
     ],
   },
