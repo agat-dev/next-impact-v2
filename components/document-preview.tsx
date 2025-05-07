@@ -323,7 +323,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
               )}
               </div>
                 <div>
-                  <span className="font-semibold">Sites d'inspiration : </span>
+                  <span className="font-semibold">Sites d'inspiration : </span> 
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.inspirations || "Non spécifié"}</span>
                 </div>
 
