@@ -17,43 +17,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Marketing Digital",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "SEO",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "CMS",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "E-commerce",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Headless CMS",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Développement custom",
-    href: "/docs/primitives/tooltip",
-    description:
-      "receives keyboard focus or the mouse hovers over it.",
-  },
-]
 
 export function NavBar() {
   return (
@@ -84,17 +47,39 @@ export function NavBar() {
               </li>
               <ListItem href="/services" title="Création de site web">
                 Re-usable components built using Radix UI and Tailwind CSS.
+              </ListItem>              
+              <ListItem href="/services" title="Refonte de site web">
+                Styles for headings, paragraphs, lists...etc
               </ListItem>
               <ListItem href="/services" title="Conseil">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
             </ul>
           </NavigationMenuContent>
+        </NavigationMenuItem>         
+        <NavigationMenuItem>
+          <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
+            <li className="basis-1/2 row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
+                    href="/"
+                  >
+                    
+                    <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      Beautifully designed components that you can copy and
+                      paste into your apps. Accessible. Customizable. Open
+                      Source.
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
               <div className='basis-1/2'>
               <ListItem href="/audit" title="Audit de site web">
                 How to install dependencies and structure your app.
@@ -114,9 +99,9 @@ export function NavBar() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem> 
-        <NavigationMenuItem>
+        {/*<NavigationMenuItem>
           <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem>*/}
       </NavigationMenuList>
     </NavigationMenu>
   )

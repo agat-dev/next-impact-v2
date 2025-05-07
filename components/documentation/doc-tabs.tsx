@@ -84,8 +84,7 @@ export default function DocTabs() {
     );
     const wordpressArticles = articles.filter(
       (article) => article.category === "wordpress"
-    );
-    
+    );    
     const webflowArticles = articles.filter(
       (article) => article.category === "webflow"
     );
@@ -121,11 +120,6 @@ export default function DocTabs() {
               <div className="container px-4 md:px-6">
                 <Tabs defaultValue="all" className="w-full">
                   <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
-                    <TabsTrigger
-                      value="all"
-                      className="rounded-none text-base font-medium text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Tout
-                    </TabsTrigger>
                     <TabsTrigger
                       value="projet-site-web"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">

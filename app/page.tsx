@@ -497,21 +497,21 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-bold text-regularblue">Témoignage client</h3>
                   <p className="mt-2">
-                    "Grâce aux conseils de WebCreation, j'ai pu transformer mon site web et augmenter mes conversions
-                    de 150% en seulement 3 mois. L'accompagnement était personnalisé et les recommandations
-                    parfaitement adaptées à mon secteur d'activité."
+                    "Échanges constructifs, livrable impeccable, délai respecté ! Combo parfait."
                   </p>
                   <div className="mt-4 flex items-center gap-2">
+                    <div className="h-[70px] w-[70px] flex justify-center align-center rounded-full overflow-hidden bg-white">
                     <Image
-                      src="/placeholder.svg?height=40&width=40"
-                      width={40}
-                      height={40}
-                      alt="Client"
-                      className="rounded-full"
+                      src="/img/geofit-logo.jpg"
+                      width={60}
+                      height={60}
+                      alt="logo client Geofit"
+                      className="object-contain"
                     />
+                    </div>
                     <div>
-                      <p className="font-medium">Sophie Martin</p>
-                      <p className="text-sm text-muted-foreground">Fondatrice, Boutique en ligne</p>
+                      <p className="font-medium">Justine Denechere</p>
+                      <p className="text-sm text-muted-foreground">Communicante, Geofit</p>
                     </div>
                   </div>
                 </div>

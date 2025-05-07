@@ -17,23 +17,31 @@ interface ArticlePageProps {
 
  
 export function generateTableOfContents(content: string) {
-  const toc: { id: string; text: string; level: number }[] = []
+  if (!content || typeof content !== "string") {
+    return []; // Return an empty array if content is invalid
+  }
 
-  // Utilisation d'une expression régulière pour trouver les titres Markdown (##, ###, etc.)
-  const headingRegex = /^(#{2,6})\s+(.*)$/gm
-  let match
+  const toc: { id: string; text: string; level: number }[] = [];
+
+  // Use a regular expression to find Markdown headings (##, ###, etc.)
+  const headingRegex = /^(#{2,6})\s+(.*)$/gm;
+  let match;
 
   while ((match = headingRegex.exec(content)) !== null) {
-    const [_, hashes, text] = match
-    const level = hashes.length // Le niveau du titre est déterminé par le nombre de #
-    const id = text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "") // Génération d'un ID unique
+    const [_, hashes, text] = match;
+    const level = hashes.length; // The heading level is determined by the number of #
+    const id = text
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\wÀ-ÖØ-öø-ÿ-]/g, ""); // Allow special French characters and remove others
 
     if (level === 2 || level === 3) {
-      toc.push({ id, text, level })
+      toc.push({ id, text, level });
     }
   }
 
-  return toc
+  return toc;
 }
 
 export default function ArticlePage({ params }: ArticlePageProps) {
@@ -42,7 +50,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       .filter((a) => a.slug !== params.slug)
       .slice(0, 2)
 
-    const tableOfContents = generateTableOfContents(article.content) // Generate TOC from article content
+    const tableOfContents = article?.content ? generateTableOfContents(article.content) : [] // Safely generate TOC
 
     return (
       <div className="flex flex-col min-h-screen"> 

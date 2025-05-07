@@ -12,16 +12,27 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
 
   useEffect(() => {
     // Configuration de marked pour une meilleure sécurité et personnalisation
+    const renderer = new marked.Renderer()
+
+    // Ajout d'ancres sur les titres H2
+    renderer.heading = ({ depth, text }) => {
+      if (depth === 2) {
+        const anchor = text.toLowerCase().replace(/\s+/g, "-").replace(/[^\p{L}\p{N}-]/gu, "")
+        return `<h2 id="${anchor}">${text}</h2>`
+      }
+      return `<h${depth}>${text}</h${depth}>`
+    }
+
     marked.setOptions({
       gfm: true, // GitHub Flavored Markdown
-      breaks: true, // Convertit les retours à la ligne en <br>
-      headerIds: true, // Ajoute des IDs aux en-têtes pour la navigation
-      mangle: false, // Désactive le mangle pour éviter les problèmes avec certains caractères
+      renderer,
     })
 
-    setHtml(marked.parse(content))
+    const parsedContent = marked.parse(content)
+    if (typeof parsedContent === "string") {
+      setHtml(parsedContent)
+    }
   }, [content])
 
   return <div className="prose prose-lg max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: html }} />
 }
-
