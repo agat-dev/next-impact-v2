@@ -68,7 +68,7 @@ export function ExpandableCardNIP() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[80%] h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-[60%] max-w-[80%] h-fit flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
 
 
@@ -77,13 +77,13 @@ export function ExpandableCardNIP() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200"
+                      className="font-bold text-regularblue"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400"
+                      className="text-regularblue/80 text-xs uppercase font-bold"
                     >
                       {active.description}
                     </motion.p>
@@ -103,7 +103,7 @@ export function ExpandableCardNIP() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -141,7 +141,7 @@ export function ExpandableCardNIP() {
                   {card.title}
                 </motion.h3>
                 <motion.p
-                  layoutId={`description-${card.description}-${id}`}
+                  layoutId={`description-${card.description}-${index}-${id}`}
                   className="text-darkblue/70 text-left text-xs"
                 >
                   {card.description}
@@ -203,23 +203,18 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "Quizz",
-    title: "Quel CMS choisir pour mon site web ?",
+    title: "Quel CMS choisir ?",
     src: "/img/astronaut-doing-fishing.svg",
     ctaText: "Tester en ligne",
     ctaLink: "/quizz",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+           Outil diagnostique en ligne gratuit qui analyse en profondeur votre projet de site web dans ses aspects techniques, 
+           ergonomiques et marketing.<br /> <br />
+           Conçu pour les professionnels comme pour les novices, 
+           ce quizz propose des recommandations personnalisées et actionnables 
+           pour choisir la meilleure solution technique.
         </p>
       );
     },
@@ -233,38 +228,30 @@ const cards = [
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
+          Outil diagnostique complet en ligne et gratuit qui analyse en profondeur 
+          les aspects techniques, ergonomiques et marketing de votre site web.<br /><br />
+          Sur la base de votre URL, il identifie rapidement l'ensemble des failles 
+          qui freinent sa visibilité et son efficacité. 
         </p>
       );
     },
   },
 
   {
-    description: "Outil en ligne",
-    title: "Rédiger mon cahier des charges ?",
+    description: "Générateur",
+    title: "Rédiger mon cahier des charges",
     src: "/img/astronaut-floating-holding-tools.svg",
     ctaText: "Commencer la rédaction",
     ctaLink: "/cahier-des-charges",
     content: () => {
       return (
         <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
+          Solution de génération de livrable gratuite et en ligne pour structurer et formaliser méthodiquement 
+          votre projet digital de leur conception à leur livraison <br />
+          <br />
+          En guidant l'utilisateur à travers des questions ciblées et personnalisables, il transforme 
+          vos besoins métiers en spécifications techniques précises, complètes et exploitables 
+          par tous les acteurs du projet.
         </p>
       );
     },
@@ -278,15 +265,11 @@ const cards = [
     content: () => {
       return (
         <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
+          Simulateur en ligne et gratuit qui calcule instantanément 
+          le coût précis de votre projet digital en fonction de vos besoins, 
+          et du type de prestataire choisi.<br /><br />
+          Cet outil stratégique aide les décideurs à optimiser leur budget en visualisant 
+          l'impact financier de chaque choix technique..
         </p>
       );
     },

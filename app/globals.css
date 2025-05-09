@@ -111,6 +111,7 @@
   }
   body {
     @apply text-foreground bg-extralightblue/20;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6, a {
     @apply font-googletitre font-normal py-1;
@@ -134,7 +135,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply text-base/6 font-adobetext font-normal text-darkblue/60 ;
+    @apply text-base/6 font-adobetext font-normal text-darkblue/80 ;
   }
   .container {
     @apply mx-auto px-4;
