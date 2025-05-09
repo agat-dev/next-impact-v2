@@ -506,18 +506,23 @@ export default function Home() {
                 <div className="space-y-6">
                 <TextAnimate animation="blurIn" as="h2">Expertise et éthique</TextAnimate>
                   <p className="max-w-[600px] text-lg font-regular font-googletitre text-regularblue">
-                    Avec plus de 10 ans d'expérience dans la création de sites web et le marketing digital, nous avons
-                    aidé des centaines d'entreprises à réussir en ligne.
+                    Avec plus de 5 ans d'expérience dans la création de sites WordPress, plus de 20 créations et 
+                    refontes de site, plus de 100 interventions sur des sites WordPress existants, j'ai pu acquérir une solide
+                    expertise dans le domaine.
                   </p>
                 </div>
                 <div className="space-y-4">
                   <p>
-                    Notre équipe d'experts combine des compétences techniques pointues et une vision stratégique pour
-                    vous offrir des solutions adaptées à vos besoins spécifiques.
-                  </p>
-                  <p>
-                    Nous sommes certifiés par les plus grandes plateformes web et maintenons constamment nos
-                    connaissances à jour pour vous proposer les meilleures pratiques du marché.
+                    Je suis développeuse freelance spécialisée sur WordPress, le système de création de site le plus utilisé au monde. 
+                    J’interviens principalement sur des projets personnalisés : création de sites sur mesure, ajout de fonctionnalités spécifiques, 
+                    adaptation du design, ou optimisation du site pour qu’il soit plus rapide et mieux référencé sur Google. 
+                    <br /><br />
+                    J’ai une très bonne connaissance du fonctionnement interne de WordPress, ce qui me permet de proposer des solutions fiables, 
+                    efficaces et évolutives. 
+                    <br /><br />
+                    Je rends aussi le site simple à gérer pour vous, avec un tableau de bord clair, adapté à vos besoins. 
+                    J’accompagne aussi bien des agences web que des entreprises ou des indépendants, sur des projets de refonte, 
+                    des boutiques en ligne ou des sites à fort trafic.
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4 pt-4">
