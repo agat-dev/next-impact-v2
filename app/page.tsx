@@ -67,6 +67,14 @@ export default function Home() {
                   des bonnes pratiques et du marché des sites web.
                   </p> 
                 </div>
+                <div className="flex justify-center gap-4 pt-4">
+                  <Link href="/learning-paths/ux">
+                    <Button className="gap-1 rounded-3xl bg-regularblue text-base text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">Je veux un site web</Button>
+                  </Link>
+                  <Link href="/learning-paths/seo">
+                    <Button variant="outline" className="gap-1 rounded-3xl border border-regularblue/30 text-base hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Je veux du conseil</Button>
+                  </Link>
+                </div>
               </div>
             <div className="col-span-3 place-items-start mt-[20vh]">
               <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" width="22rem"/>
@@ -125,7 +133,7 @@ export default function Home() {
         </section>
 
 
-      {/* Questions Personas section */}
+      {/* Tools section */}
         <section className="py-12 md:py-24 lg:py-32">
             <div className="pb-12 text-center">
               <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits</TextAnimate>
@@ -135,144 +143,6 @@ export default function Home() {
             </div>
           </section>
       
-
-      {/* Carousel Section 
-        <section className="flex align-center justify-center w-4/6 m-auto p-4 mt-8 mb-12">         
-          <FeatureCarousel
-            title=""
-            description=""
-            image={{
-              step1light1: "", // Replace with the actual path to your image
-              step1light2: "/path/to/image2.jpg", // Replace with the actual path to your image
-              step2light1: "/path/to/image3.jpg", // Replace with the actual path to your image
-              step2light2: "/path/to/image4.jpg", // Replace with the actual path to your image
-              step3light: "/path/to/image5.jpg", // Replace with the actual path to your image
-              step4light: "/path/to/image6.jpg", // Replace with the actual path to your image
-              alt: "Feature showcase",
-            }}
-          />
-        </section>
-        */}
-
-        {/* Features Section 
-        <section className="flex align-center justify-center w-10/12 mx-auto py-24">
-            <Timeline data={[
-              { title: "Prendre les bonnes infos", content:                   
-                  <div className="grid py-6 md:w-[600px] lg:w-[800px]">
-                  <div className="grid grid-cols-4 row-span-1 gap-4">  
-                    <div className='grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS personnalisé
-                    </div>
-                  </a>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    Headless CMS
-                    </div>
-                  </a> 
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    Développement personnalisé
-                    </div>
-                  </a> 
-              </div>  
-              <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/documentation" className="text-base font-regular">Auditer mon site web</Link>
-                  </Button>
-                </div>
-                  </div>
-                  
-                  </div>},
-              { title: "Explorer les meilleures solutions", content: 
-              <div className="grid py-6 md:w-[600px] lg:w-[800px]">
-              <div className="grid grid-cols-4 row-span-1 gap-4">
-                <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                  <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    <Link href="/quizz" className="text-base font-regular">Choisir mon CMS</Link>
-                  </Button>
-                </div>
-              <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS pour vitrines
-                    </div>
-                  </a>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS pour site de contenus
-                    </div>
-                  </a>
-                  <a href="/audit" title="Audit de site web">
-                    <div className="bg-white h-max rounded-md p-4">
-                    CMS E-commerce
-                    </div>
-                  </a> 
-              </div>  
-
-
-
-              </div>
-              </div>},
-              { title: "Préparer son projet", content: 
-                <div className="grid py-6 md:w-[600px] lg:w-[800px]">
-                <div className="grid grid-cols-4 row-span-1 gap-4">
-                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                      <Link href="/quizz" className="text-base font-regular">Faire mon cahier des charges</Link>
-                    </Button>
-                  </div>  
-  
-                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                      <Link href="/quizz" className="text-base font-regular">Estimer le coût</Link>
-                    </Button>
-                  </div>  
-  
-  
-                </div>
-                </div>
-               },              
-              { title: "Lancer son projet web", content: 
-                <div className="grid py-6 md:w-[600px] lg:w-[800px]">
-                <div className="grid grid-cols-4 row-span-1 gap-4">
-                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
-                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
-                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                      <Link href="/quizz" className="text-base font-regular">Faire appel à un prestataire</Link>
-                    </Button>
-                  </div>
-                <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
-                    <a href="/audit" title="Audit de site web">
-                      <div className="bg-white h-max rounded-md p-4">
-                      CMS pour vitrines
-                      </div>
-                    </a>
-                    <a href="/audit" title="Audit de site web">
-                      <div className="bg-white h-max rounded-md p-4">
-                      CMS pour site de contenus
-                      </div>
-                    </a>
-                    <a href="/audit" title="Audit de site web">
-                      <div className="bg-white h-max rounded-md p-4">
-                      CMS E-commerce
-                      </div>
-                    </a> 
-                </div>  
-  
-  
-  
-                </div>
-                </div>
-               },
-            ]} />
-        </section>
-        */}
 
       {/* Services Section */}
       <section className="w-full py-12 md:py-12 lg:py-16">
@@ -288,10 +158,10 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-12 py-12">
-            <Card className="relative col-span-1 overflow-hidden">
-              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
+            <Card className="relative col-span-1">
+              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
                 <div className="h-full mb-4 p-4 flex flex-col items-center justify-center">
-                  {/*}
+                  {
                 <Image
                   src="/img/astronauts-meeting.png"
                   width={100}
@@ -299,7 +169,7 @@ export default function Home() {
                   alt="Consultation"
                   className="object-contain"
                 />
-                */}
+                }
                 <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Conseil</h3>
                 </div>
                 <div className="p-4">
@@ -311,26 +181,46 @@ export default function Home() {
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
-                      <div className="col-span-6">
+                      <div className="col-span-6 flex flex-col gap-3 pt-4">
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/meet.gif"
+                            alt="Meeting animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">3 sessions vidéo de 30 minutes</span>
                         </div>
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/settings.gif"
+                            alt="Analyse du besoin animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Analyse approfondie du besoin</span>
                         </div>
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/folder.gif"
+                            alt="Cahier des charges animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Formalisation d'un cahier des charges</span>
                         </div>  
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/code.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Conseil sur la solution technique</span>
                         </div>  
                       </div> 
                   </div>
-                  <div className="mt-12">
+                  <div className="mt-16">
                     <Image
                       src="/img/pack-refonte-conseil.png"
                       alt="Meeting animation"
@@ -338,25 +228,50 @@ export default function Home() {
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
-                      <div>
+                      <div className="col-span-6 flex flex-col gap-3 pt-4">
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/meet.gif"
+                            alt="Meeting animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">4 sessions vidéo de 30 minutes</span>
                         </div>
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/settings.gif"
+                            alt="Analyse du besoin animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Analyse approfondie du besoin</span>
                         </div>
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/tools.gif"
+                            alt="Audit animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Audit du site actuel</span>
                         </div>  
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/folder.gif"
+                            alt="Cahier des charges animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Formalisation d'un cahier des charges</span>
                         </div>  
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
+                        <Image 
+                            src="/img/code.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
                           <span className="text-sm">Conseil sur la solution technique</span>
                         </div>  
                       </div> 
@@ -375,16 +290,16 @@ export default function Home() {
                   </div>
               </CardContent>
             </Card>
-            <Card className="relative col-span-1 overflow-hidden">
+            <Card className="relative col-span-1">
               <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
                 <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
-                {/*<Image
+                <Image
                   src="/img/astronauts-meeting.png"
                   width={100}
                   height={200}
                   alt="Consultation"
                   className="object-contain"
-                /> */}
+                /> 
                 <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Développement web</h3>
                 </div>
                 <div className="p-4">
@@ -396,26 +311,46 @@ export default function Home() {
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
-                      <div className="col-span-6">
+                        <div className="col-span-6 flex flex-col gap-3 pt-4">
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">3 sessions vidéo de 30 minutes</span>
-                        </div>
-                        <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Analyse approfondie du besoin</span>
-                        </div>
-                        <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                        <Image 
+                            src="/img/site-vitrine.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Site vitrine - 5 à 10 pages</span>
                         </div>  
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Conseil sur la solution technique</span>
+                        <Image 
+                            src="/img/site-corporate.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Site corporate - 15 à 50 pages</span>
                         </div>  
+                        <div className="flex items-center">
+                        <Image 
+                            src="/img/media.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Blog / Média en ligne</span>
+                        </div>  
+                        <div className="flex items-center">
+                        <Image 
+                            src="/img/e-learning.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">E-learning</span>
+                        </div>   
                       </div> 
                   </div>
-                  <div className="mt-12">
+                  <div className="mt-16">
                     <Image
                       src="/img/headless-dev.png"
                       alt="Meeting animation"
@@ -423,26 +358,51 @@ export default function Home() {
                       height={120} 
                       className="mb-4 col-span-2 object-contain"
                       />
-                      <div>
+                        <div className="col-span-6 flex flex-col gap-3 pt-4">
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">4 sessions vidéo de 30 minutes</span>
-                        </div>
-                        <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Analyse approfondie du besoin</span>
-                        </div>
-                        <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Audit du site actuel</span>
+                        <Image 
+                            src="/img/site-corporate.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Site corporate</span>
                         </div>  
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                        <Image 
+                            src="/img/info-doc.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Plateforme d'information</span>
                         </div>  
                         <div className="flex items-center">
-                          <CheckCircle className="mr-2 h-4 w-4 text-primary" />
-                          <span className="text-sm">Conseil sur la solution technique</span>
+                        <Image 
+                            src="/img/media.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Blog / Média en ligne</span>
+                        </div>  
+                        <div className="flex items-center">
+                        <Image 
+                            src="/img/e-learning.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">E-learning</span>
+                        </div>  
+                        <div className="flex items-center">
+                        <Image 
+                            src="/img/web-app.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-2 text-primary" />
+                          <span className="text-sm">Applications web</span>
                         </div>  
                       </div> 
                   </div>
@@ -747,30 +707,151 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="w-full border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-          <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © 2025 MarketingDocs. All rights reserved.
-          </p>
-          <nav className="flex gap-4 sm:gap-6">
-            <Link
-              href="/terms"
-              className="text-sm font-medium hover:underline underline-offset-4">
-              Terms
-            </Link>
-            <Link
-              href="/privacy"
-              className="text-sm font-medium hover:underline underline-offset-4">
-              Privacy
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-medium hover:underline underline-offset-4">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </footer>
+
+     {/* Carousel Section 
+        <section className="flex align-center justify-center w-4/6 m-auto p-4 mt-8 mb-12">         
+          <FeatureCarousel
+            title=""
+            description=""
+            image={{
+              step1light1: "", // Replace with the actual path to your image
+              step1light2: "/path/to/image2.jpg", // Replace with the actual path to your image
+              step2light1: "/path/to/image3.jpg", // Replace with the actual path to your image
+              step2light2: "/path/to/image4.jpg", // Replace with the actual path to your image
+              step3light: "/path/to/image5.jpg", // Replace with the actual path to your image
+              step4light: "/path/to/image6.jpg", // Replace with the actual path to your image
+              alt: "Feature showcase",
+            }}
+          />
+        </section>
+        */}
+
+        {/* Features Section 
+        <section className="flex align-center justify-center w-10/12 mx-auto py-24">
+            <Timeline data={[
+              { title: "Prendre les bonnes infos", content:                   
+                  <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+                  <div className="grid grid-cols-4 row-span-1 gap-4">  
+                    <div className='grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS personnalisé
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    Headless CMS
+                    </div>
+                  </a> 
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    Développement personnalisé
+                    </div>
+                  </a> 
+              </div>  
+              <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/documentation" className="text-base font-regular">Auditer mon site web</Link>
+                  </Button>
+                </div>
+                  </div>
+                  
+                  </div>},
+              { title: "Explorer les meilleures solutions", content: 
+              <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+              <div className="grid grid-cols-4 row-span-1 gap-4">
+                <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                  <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    <Link href="/quizz" className="text-base font-regular">Choisir mon CMS</Link>
+                  </Button>
+                </div>
+              <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS pour vitrines
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS pour site de contenus
+                    </div>
+                  </a>
+                  <a href="/audit" title="Audit de site web">
+                    <div className="bg-white h-max rounded-md p-4">
+                    CMS E-commerce
+                    </div>
+                  </a> 
+              </div>  
+
+
+
+              </div>
+              </div>},
+              { title: "Préparer son projet", content: 
+                <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+                <div className="grid grid-cols-4 row-span-1 gap-4">
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                      <Link href="/quizz" className="text-base font-regular">Faire mon cahier des charges</Link>
+                    </Button>
+                  </div>  
+  
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                      <Link href="/quizz" className="text-base font-regular">Estimer le coût</Link>
+                    </Button>
+                  </div>  
+  
+  
+                </div>
+                </div>
+               },              
+              { title: "Lancer son projet web", content: 
+                <div className="grid py-6 md:w-[600px] lg:w-[800px]">
+                <div className="grid grid-cols-4 row-span-1 gap-4">
+                  <div className="grid col-span-2 row-span-1 h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md">
+                    <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="10rem" height="10rem"/>
+                    <Button size="sm" className="gap-1 rounded-3xl bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                      <Link href="/quizz" className="text-base font-regular">Faire appel à un prestataire</Link>
+                    </Button>
+                  </div>
+                <div className='grid col-span-2 row-span-1 row h-full rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md'>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS pour vitrines
+                      </div>
+                    </a>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS pour site de contenus
+                      </div>
+                    </a>
+                    <a href="/audit" title="Audit de site web">
+                      <div className="bg-white h-max rounded-md p-4">
+                      CMS E-commerce
+                      </div>
+                    </a> 
+                </div>  
+  
+  
+  
+                </div>
+                </div>
+               },
+            ]} />
+        </section>
+        */}
+
+
+
+
+
+
+
     </>
   );
 }

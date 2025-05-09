@@ -12,7 +12,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { generatePDF } from "@/lib/pdf-generator"
-import { DocumentPreview } from "@/components/document-preview"
+import { DocumentPreview } from "@/components/cahier-des-charges/document-preview"
 import { Loader2, FileText, Eye } from "lucide-react"
 
 type FormSection = {

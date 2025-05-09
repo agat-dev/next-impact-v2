@@ -1,4 +1,4 @@
-import { CahierDesChargesForm } from "@/components/cahier-des-charges-form"
+import { CahierDesChargesForm } from "@/components/cahier-des-charges/cahier-des-charges-form"
 
 export default function Home() {
   return (

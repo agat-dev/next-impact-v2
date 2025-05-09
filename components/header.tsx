@@ -35,7 +35,6 @@ export function NavBar() {
                     className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    
                     <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
                     <p className="text-sm leading-tight text-muted-foreground">
                       Beautifully designed components that you can copy and
@@ -46,17 +45,21 @@ export function NavBar() {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/services" title="Création de site web">
+                <p className='text-xs'>Création de sites corporate ou associatifs</p>
+              </ListItem>
+              <ListItem href="/services" title="Refonte de site web">
+              <p className='text-xs'>Refonte de sites corporate ou associatifs</p>
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>              
               <ListItem href="/services" title="Refonte de site web">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
               <ListItem href="/services" title="Conseil">
-                Styles for headings, paragraphs, lists...etc
+                <p className='text-xs'>Accompagnement dans la réalisation de votre projet web</p>
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>         
+        </NavigationMenuItem>        
         <NavigationMenuItem>
           <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
         </NavigationMenuItem>
@@ -64,7 +67,7 @@ export function NavBar() {
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
-            <li className="basis-1/2 row-span-3">
+            <li className="basis-1/3">
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
@@ -72,7 +75,7 @@ export function NavBar() {
                   >
                     
                     <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
-                    <p className="text-sm leading-tight text-muted-foreground">
+                    <p className="text-sm leading-tight">
                       Beautifully designed components that you can copy and
                       paste into your apps. Accessible. Customizable. Open
                       Source.
@@ -80,20 +83,20 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <div className='basis-1/2'>
+              <div className='basis-1/3'>
               <ListItem href="/audit" title="Audit de site web">
-                How to install dependencies and structure your app.
+                <p className='text-xs'>Outil en ligne pour tester globalement la qualité de votre site web.</p>
               </ListItem>                
-              <ListItem href="/quizz" title="Choix du CMS">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/quizz" title="Quiz de choix du CMS">
+              <p className='text-xs'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
               </ListItem>      
               </div> 
-              <div className='basis-1/2'>             
-              <ListItem href="/cahier-des-charges" title="Rédaction du cahier des charges">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <div className='basis-1/3'>             
+              <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges">
+              <p className='text-xs'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
               </ListItem>            
-              <ListItem href="/simulateur-tarifs" title="Estimation du budget">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/simulateur-tarifs" title="Simulateur du budget">
+              <p className='text-xs'>Outil interactif pour estimer le budget de votre projet web.</p>
               </ListItem>
               </div>
             </ul>

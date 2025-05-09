@@ -288,6 +288,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                   <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.contraintes_techniques || "Non spécifié"}</div>
                 </div>
               </div>
+              </div>
           </div>
         </div>
 
@@ -368,75 +369,66 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           </div>
         </div>  
           
-  
-          {/* Section 4 */}
+        {/* Section 4 */}
         <div className="mb-10">
           <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
             <h2 className="text-lg font-bold">4. SPÉCIFICATIONS TECHNIQUES</h2>
           </div>
 
-          <div className="ml-4 space-y-6">  
-
           <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                4.1 Outils et Technologies
-              </h3>
-              <div className="ml-4 space-y-3 mt-3">
-                <div>
-                  <span className="font-semibold">Type de CMS ou Framework: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.cms_framework || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Langages de programmation : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.langages || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Base de données : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.base_donnees || "Non spécifié"}</span>
-                </div>
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              4.1 Outils et Technologies
+            </h3>
+            <div className="ml-4 space-y-3 mt-3">
+              <div>
+                <span className="font-semibold">Type de CMS ou Framework: </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.cms_framework || "Non spécifié"}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Langages de programmation : </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.langages || "Non spécifié"}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Base de données : </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.base_donnees || "Non spécifié"}</span>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                4.2 Hébergement
-              </h3>
-              <div className="ml-4 space-y-3 mt-3">
-                <div>
-                  <span className="font-semibold">Type d'hébergement: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.type_hebergement || "Non spécifié"}</span>
-                </div>
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              4.2 Hébergement
+            </h3>
+            <div className="ml-4 space-y-3 mt-3">
+              <div>
+                <span className="font-semibold">Type d'hébergement: </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.type_hebergement || "Non spécifié"}</span>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                4.2 Sécurité
-              </h3>
-              <div className="ml-4 space-y-3 mt-3">
-                <div>
-                  <span className="font-semibold">Protocoles de sécurité: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.protocoles_securite || "Non spécifié"}</span>
-                </div>
-                <div>
-                </div>
-                <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
-                4.3 Perfomance et SEO
-              </h3>
-              <div className="ml-4 space-y-3 mt-3">
-                <div>
-                  <span className="font-semibold">Temps de chargement : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.performance || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Exigeances SEO spécifiques : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.seo || "Non spécifié"}</span>
-                </div>
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              4.3 Sécurité
+            </h3>
+            <div className="ml-4 space-y-3 mt-3">
+              <div>
+                <span className="font-semibold">Protocoles de sécurité: </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.protocoles_securite || "Non spécifié"}</span>
+              </div>
+            </div>
+
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              4.4 Performance et SEO
+            </h3>
+            <div className="ml-4 space-y-3 mt-3">
+              <div>
+                <span className="font-semibold">Temps de chargement : </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.performance || "Non spécifié"}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Exigeances SEO spécifiques : </span>
+                <span className="bg-gray-50 px-2 py-1 rounded">{formData.seo || "Non spécifié"}</span>
               </div>
             </div>
           </div>
         </div>
-
 
         {/* Section 5 */}
         <div className="mb-10">
@@ -457,7 +449,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 <div>
                   <span className="font-semibold">Type de migration : </span>
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.migration_types || "Non spécifié"}</span>
-                </div>                
+                </div>
                 <div>
                   <span className="font-semibold">Contenus à créer : </span>
                   <span className="bg-gray-50 px-2 py-1 rounded">{formData.contenus_creer || "Non spécifié"}</span>
@@ -549,7 +541,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                 </div>
                 <div>
                   <span className="font-semibold">Date de mise en ligne: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_mise en ligne || "Non spécifié"}</span>
+                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_mise_en_ligne || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -673,11 +665,10 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           <div>{formData.date_redaction || new Date().toLocaleDateString()}</div>
           <div>Version: {formData.version || "1.0"}</div>
         </div>
+
       </div>
-    </div>
-    </div>
-    )
-  }
+    );
+  };
 
   return (
     <Card className="border-2 border-blue-200 shadow-lg">
@@ -691,5 +682,5 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
         </div>
       </ScrollArea>
     </Card>
-  )
-}
+  );
+};
