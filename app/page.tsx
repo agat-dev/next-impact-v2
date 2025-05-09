@@ -188,8 +188,8 @@ export default function Home() {
                             alt="Meeting animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">3 sessions vidéo de 30 minutes</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">3 sessions vidéo de 30 minutes</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -197,8 +197,8 @@ export default function Home() {
                             alt="Analyse du besoin animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Analyse approfondie du besoin</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Analyse approfondie du besoin</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -206,8 +206,8 @@ export default function Home() {
                             alt="Cahier des charges animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Formalisation d'un cahier des charges</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -215,8 +215,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Conseil sur la solution technique</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Conseil sur la solution technique</span>
                         </div>  
                       </div> 
                   </div>
@@ -235,8 +235,8 @@ export default function Home() {
                             alt="Meeting animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">4 sessions vidéo de 30 minutes</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">4 sessions vidéo de 30 minutes</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -244,8 +244,8 @@ export default function Home() {
                             alt="Analyse du besoin animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Analyse approfondie du besoin</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Analyse approfondie du besoin</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -253,8 +253,8 @@ export default function Home() {
                             alt="Audit animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Audit du site actuel</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Audit du site actuel</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -262,8 +262,8 @@ export default function Home() {
                             alt="Cahier des charges animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Formalisation d'un cahier des charges</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Formalisation d'un cahier des charges</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -271,8 +271,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Conseil sur la solution technique</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Conseil sur la solution technique</span>
                         </div>  
                       </div> 
                   </div>
@@ -291,7 +291,7 @@ export default function Home() {
               </CardContent>
             </Card>
             <Card className="relative col-span-1">
-              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
+              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
                 <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
                 <Image
                   src="/img/astronauts-meeting.png"
@@ -318,8 +318,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Site vitrine - 5 à 10 pages</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Site vitrine - 5 à 10 pages</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -327,8 +327,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Site corporate - 15 à 50 pages</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Site corporate - 15 à 50 pages</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -336,8 +336,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Blog / Média en ligne</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Blog / Média en ligne</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -345,8 +345,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">E-learning</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">E-learning</span>
                         </div>   
                       </div> 
                   </div>
@@ -365,8 +365,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Site corporate</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Site corporate</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -374,8 +374,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Plateforme d'information</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Plateforme d'information</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -383,8 +383,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Blog / Média en ligne</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Blog / Média en ligne</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -392,8 +392,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">E-learning</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">E-learning</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -401,8 +401,8 @@ export default function Home() {
                             alt="Solution technique animation"
                             width={20}
                             height={20}
-                            className="mr-2 text-primary" />
-                          <span className="text-sm">Applications web</span>
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre">Applications web</span>
                         </div>  
                       </div> 
                   </div>
@@ -421,7 +421,7 @@ export default function Home() {
               </CardContent>
             </Card>
             <Card className="relative col-span-2 overflow-hidden">
-              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4 bg-white">
+              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
                 <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
                 {/*<Image
                   src="/img/astronauts-meeting.png"
