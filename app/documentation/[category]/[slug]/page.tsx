@@ -75,17 +75,17 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 <Link href={`/documentation/${article.category}`}>
                   <Button variant="ghost" size="sm">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Back to {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
+                    {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
                   </Button>
                 </Link>
                 <div className="flex gap-2">
                   <Button variant="ghost" size="icon">
                     <Copy className="h-4 w-4" />
-                    <span className="sr-only">Copy link</span>
+                    <span className="sr-only">Copier</span>
                   </Button>
                   <Button variant="ghost" size="icon">
                     <Share2 className="h-4 w-4" />
-                    <span className="sr-only">Share</span>
+                    <span className="sr-only">Partager</span>
                   </Button>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                       <span className="text-sm font-medium">By {article.author}</span>
                     </div>
                     <span className="text-sm text-muted-foreground">
-                      Updated {typeof article.date === "string" ? article.date : "Recently"}
+                      Mise à jour : {typeof article.date === "string" ? article.date : "Recently"}
                     </span>
                   </div>
                 </div>
@@ -108,7 +108,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 <Separator />
                 {relatedArticles.length > 0 && (
                   <div className="space-y-4">
-                    <h3 className="text-xl font-bold">Related Articles</h3>
+                    <h3 className="text-xl font-bold">Articles en lien</h3>
                     <div className="grid gap-4 md:grid-cols-2">
                       {relatedArticles.map((relatedArticle) => (
                         <Link
@@ -127,45 +127,31 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             </div>
             <aside className="w-64 hidden lg:block pl-8">
               <div className="sticky top-16">
-                <h3 className="text-lg mb-4">Table of Contents</h3>
-                <ul className="space-y-1">
+                <details className="group">
+                    <summary className="w-64 cursor-pointer text-base font-medium text-regularblue">
+                    Sommaire
+                    </summary>
+                  <ul className="space-y-1 mt-2">
                   {tableOfContents.map((item) => (
-                    <li key={item.id} className="py-0.5"> 
-                        <a
-                        href={`#${item.id}`}
-                        className={`${
-                          item.level === 2
-                          ? "text-sm text-foreground"
-                          : "text-xs text-muted-foreground pl-6"
-                        } hover:text-foreground`}
-                        >
-                        {item.text}
-                        </a>
+                    <li key={item.id} className="py-0.5">
+                    <a
+                      href={`#${item.id}`}
+                      className={`${
+                      item.level === 2
+                        ? "text-base font-medium text-regularblue"
+                        : "text-sm font-regular pl-6"
+                      } hover:text-foreground`}
+                    >
+                      {item.text}
+                    </a>
                     </li>
                   ))}
-                </ul>
+                  </ul>
+                </details>
               </div>
             </aside>
           </div>
         </main>
-        <footer className="w-full border-t py-6 md:py-0">
-          <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
-            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              © 2025 MarketingDocs. All rights reserved.
-            </p>
-            <nav className="flex gap-4 sm:gap-6">
-              <Link href="/terms" className="text-sm font-medium hover:underline underline-offset-4">
-                Terms
-              </Link>
-              <Link href="/privacy" className="text-sm font-medium hover:underline underline-offset-4">
-                Privacy
-              </Link>
-              <Link href="/contact" className="text-sm font-medium hover:underline underline-offset-4">
-                Contact
-              </Link>
-            </nav>
-          </div>
-        </footer>
       </div>
     )
 }

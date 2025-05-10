@@ -8,7 +8,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import DocTabs from "@/components/documentation/doc-tabs"
-import LottieAnimation1 from "@/components/ui/lottie-animation";
 import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Question from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
@@ -160,16 +159,10 @@ export default function Home() {
           <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-12 py-12">
             <Card className="relative col-span-1">
               <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
-                <div className="h-full mb-4 p-4 flex flex-col items-center justify-center">
-                  {
-                <Image
-                  src="/img/astronauts-meeting.png"
-                  width={100}
-                  height={200}
-                  alt="Consultation"
-                  className="object-contain"
-                />
-                }
+                <div className="h-full mb-4 p-4 flex flex-col items-center">
+                  <div className="rounded-full p-3 h-full w-full flex justify-center align-center">
+                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="6rem" height="6rem"/>
+                  </div>
                 <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Conseil</h3>
                 </div>
                 <div className="p-4">
@@ -189,7 +182,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">3 sessions vidéo de 30 minutes</span>
+                          <span className="font-adobetitre text-lg">3 sessions vidéo de 30 minutes</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -198,7 +191,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Analyse approfondie du besoin</span>
+                          <span className="font-adobetitre text-lg">Analyse approfondie du besoin</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -207,7 +200,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Formalisation d'un cahier des charges</span>
+                          <span className="font-adobetitre text-lg">Formalisation d'un cahier des charges</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -216,7 +209,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Conseil sur la solution technique</span>
+                          <span className="font-adobetitre text-lg">Conseil sur la solution technique</span>
                         </div>  
                       </div> 
                   </div>
@@ -236,7 +229,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">4 sessions vidéo de 30 minutes</span>
+                          <span className="font-adobetitre text-lg">4 sessions vidéo de 30 minutes</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -245,7 +238,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Analyse approfondie du besoin</span>
+                          <span className="font-adobetitre text-lg">Analyse approfondie du besoin</span>
                         </div>
                         <div className="flex items-center">
                         <Image 
@@ -254,7 +247,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Audit du site actuel</span>
+                          <span className="font-adobetitre text-lg">Audit du site actuel</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -263,7 +256,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Formalisation d'un cahier des charges</span>
+                          <span className="font-adobetitre text-lg">Formalisation d'un cahier des charges</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -272,7 +265,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Conseil sur la solution technique</span>
+                          <span className="font-adobetitre text-lg">Conseil sur la solution technique</span>
                         </div>  
                       </div> 
                   </div>
@@ -293,13 +286,9 @@ export default function Home() {
             <Card className="relative col-span-1">
               <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
                 <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
-                <Image
-                  src="/img/astronauts-meeting.png"
-                  width={100}
-                  height={200}
-                  alt="Consultation"
-                  className="object-contain"
-                /> 
+                  <div className="rounded-full p-3 h-full w-1/3 flex justify-center align-center">
+                <LottieAnimation animationPath="/lotties/astronaut-with-flag.json" width="6rem" height="6rem"/>
+                  </div>
                 <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Développement web</h3>
                 </div>
                 <div className="p-4">
@@ -319,7 +308,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Site vitrine - 5 à 10 pages</span>
+                          <span className="font-adobetitre text-lg">Site vitrine - 5 à 10 pages</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -328,7 +317,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Site corporate - 15 à 50 pages</span>
+                          <span className="font-adobetitre text-lg">Site corporate - 15 à 50 pages</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -337,7 +326,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Blog / Média en ligne</span>
+                          <span className="font-adobetitre text-lg">Blog / Média en ligne</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -346,7 +335,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">E-learning</span>
+                          <span className="font-adobetitre text-lg">E-learning</span>
                         </div>   
                       </div> 
                   </div>
@@ -366,7 +355,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Site corporate</span>
+                          <span className="font-adobetitre text-lg">Site corporate</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -375,7 +364,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Plateforme d'information</span>
+                          <span className="font-adobetitre text-lg">Plateforme d'information</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -384,7 +373,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Blog / Média en ligne</span>
+                          <span className="font-adobetitre text-lg">Blog / Média en ligne</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -393,7 +382,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">E-learning</span>
+                          <span className="font-adobetitre text-lg">E-learning</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -402,7 +391,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre">Applications web</span>
+                          <span className="font-adobetitre text-lg">Applications web</span>
                         </div>  
                       </div> 
                   </div>
@@ -500,7 +489,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="relative">
-                
+                <LottieAnimation animationPath="/lotties/astronaut-with-surprise-box.json" width="20rem" height="20rem"/>
               </div>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-6">
@@ -513,14 +502,14 @@ export default function Home() {
                 </div>
                 <div className="space-y-4">
                   <p>
-                    Je suis développeuse freelance spécialisée sur WordPress, le système de création de site le plus utilisé au monde. 
-                    J’interviens principalement sur des projets personnalisés : création de sites sur mesure, ajout de fonctionnalités spécifiques, 
+                    Développeuse freelance spécialisée sur WordPress, le système de création de site le plus utilisé au monde,
+                    j’interviens principalement sur des projets personnalisés : création de sites sur mesure, ajout de fonctionnalités spécifiques, 
                     adaptation du design, ou optimisation du site pour qu’il soit plus rapide et mieux référencé sur Google. 
                     <br /><br />
-                    J’ai une très bonne connaissance du fonctionnement interne de WordPress, ce qui me permet de proposer des solutions fiables, 
+                    Avec une très bonne connaissance du fonctionnement interne de WordPress, je peux de proposer des solutions fiables, 
                     efficaces et évolutives. 
                     <br /><br />
-                    Je rends aussi le site simple à gérer pour vous, avec un tableau de bord clair, adapté à vos besoins. 
+                    L'objectif est de réaliser un site simple à gérer pour vous, avec un tableau de bord clair, adapté à vos besoins. 
                     J’accompagne aussi bien des agences web que des entreprises ou des indépendants, sur des projets de refonte, 
                     des boutiques en ligne ou des sites à fort trafic.
                   </p>

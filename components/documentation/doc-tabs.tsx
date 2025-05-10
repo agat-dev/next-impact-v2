@@ -27,13 +27,7 @@ export default function DocTabs() {
         title: "Projet de site web",
         description: "Préparer et mener un projet de site web",
         url: "/documentation/projet-site-web",
-      },      
-      {
-        id: "Webflow",
-        title: "Webflow",
-        description: "Choisir Webflow pour votre site web",
-        url: "/documentation/webflow",
-      },
+      },  
       {
         id: "WordPress",
         title: "WordPress",
@@ -41,10 +35,10 @@ export default function DocTabs() {
         url: "/documentation/wordpress",
       },
       {
-        id: "Shopify",
-        title: "Shopify",
-        description: "Choisir Shopify pour votre site web",
-        url: "/documentation/shopify",
+        id: "CMS",
+        title: "Choisir un CMS",
+        description: "Choisir un CMS pour votre site web",
+        url: "/documentation/cms",
       },
       {
         id: "Headless CMS",
@@ -57,12 +51,6 @@ export default function DocTabs() {
         title: "Frameworks",
         description: "Choisir Frameworks", 
         url: "/documentation/frameworks",
-      },
-      {
-        id: "Vibe Coding",
-        title: "Vibe Coding",
-        description: "Choisir Vibe Coding", 
-        url: "/documentation/vibe-coding",
       },
       {
         id: "SEO",
@@ -84,21 +72,15 @@ export default function DocTabs() {
     );
     const wordpressArticles = articles.filter(
       (article) => article.category === "wordpress"
-    );    
-    const webflowArticles = articles.filter(
-      (article) => article.category === "webflow"
-    );
-    const shopifyArticles = articles.filter(
-      (article) => article.category === "shopify"
+    ); 
+    const cmsArticles = articles.filter(
+      (article) => article.category === "cms"
     );
     const headlessCmsArticles = articles.filter(
       (article) => article.category === "headless-cms"
     );
     const frameworksArticles = articles.filter(
       (article) => article.category === "frameworks"
-    );
-    const vibeCodingArticles = articles.filter(
-      (article) => article.category === "vibe-coding"
     );
     const seoArticles = articles.filter(
       (article) => article.category === "seo");
@@ -118,7 +100,7 @@ export default function DocTabs() {
             </section>
             <section className="w-full py-8">
               <div className="container px-4 md:px-6">
-                <Tabs defaultValue="all" className="w-full">
+                <Tabs defaultValue="projet-site-web" className="w-full">
                   <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
                     <TabsTrigger
                       value="projet-site-web"
@@ -141,19 +123,9 @@ export default function DocTabs() {
                       SEO
                     </TabsTrigger>
                     <TabsTrigger
-                      value="webflow"
+                      value="cms"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Webflow
-                    </TabsTrigger> 
-                    <TabsTrigger
-                      value="wordpress"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      WordPress
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="shopify"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Shopify
+                      CMS
                     </TabsTrigger> 
                     <TabsTrigger
                       value="headless-cms"
@@ -166,9 +138,9 @@ export default function DocTabs() {
                       Frameworks
                     </TabsTrigger>                      
                     <TabsTrigger
-                      value="vibe-coding"
+                      value="wordpress"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Vibe Coding
+                      WordPress
                     </TabsTrigger>                 
                   </TabsList>
                   <TabsContent value="all" className="pt-6">
@@ -259,53 +231,9 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="webflow" className="pt-6">
+                  <TabsContent value="cms" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {webflowArticles.map((article) => (
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="wordpress" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {wordpressArticles.map((article) => (
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="shopify" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {shopifyArticles.map((article) => (
+                      {cmsArticles.map((article) => (
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
@@ -369,9 +297,9 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="vibe-coding" className="pt-6">
+                  <TabsContent value="seo" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {vibeCodingArticles.map((article) => (
+                      {seoArticles.map((article) => (
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
@@ -391,9 +319,10 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="seo" className="pt-6">
+                  
+                  <TabsContent value="wordpress" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {seoArticles.map((article) => (
+                      {wordpressArticles.map((article) => (
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">

@@ -16,8 +16,12 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
 
     // Ajout d'ancres sur les titres H2
     renderer.heading = ({ depth, text }) => {
-      if (depth === 2) {
-        const anchor = text.toLowerCase().replace(/\s+/g, "-").replace(/[^\p{L}\p{N}-]/gu, "")
+      if (depth === 2 || depth === 3) {
+        const anchor = text
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\wÀ-ÖØ-öø-ÿ-]/g, ""); 
         return `<h2 id="${anchor}">${text}</h2>`
       }
       return `<h${depth}>${text}</h${depth}>`
