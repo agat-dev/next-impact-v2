@@ -126,7 +126,12 @@ export default function DocTabs() {
                       value="cms"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
                       CMS
-                    </TabsTrigger> 
+                    </TabsTrigger>                 
+                    <TabsTrigger
+                      value="wordpress"
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      WordPress
+                    </TabsTrigger>   
                     <TabsTrigger
                       value="headless-cms"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
@@ -136,12 +141,7 @@ export default function DocTabs() {
                       value="frameworks"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
                       Frameworks
-                    </TabsTrigger>                      
-                    <TabsTrigger
-                      value="wordpress"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      WordPress
-                    </TabsTrigger>                 
+                    </TabsTrigger>                    
                   </TabsList>
                   <TabsContent value="all" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -253,6 +253,28 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
+                  <TabsContent value="wordpress" className="pt-6">
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {wordpressArticles.map((article) => (
+                        <div
+                          key={article.slug}
+                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                          <div className="space-y-2">
+                            <h3 className="text-xl font-regular">{article.title}</h3>
+                            <p className="text-muted-foreground text-sm">
+                              {article.description}
+                            </p>
+                          </div>
+                          <Link
+                            href={`/documentation/${article.category}/${article.slug}`}
+                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            aria-label={article.title}>
+                            <span className="sr-only">{article.title}</span>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
                   <TabsContent value="headless-cms" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {headlessCmsArticles.map((article) => (
@@ -277,7 +299,7 @@ export default function DocTabs() {
                   </TabsContent>
                   <TabsContent value="frameworks" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {frameworksArticles.map((article) => (
+                      {frameworksArticles.map((article) => ( 
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
@@ -319,29 +341,7 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  
-                  <TabsContent value="wordpress" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {wordpressArticles.map((article) => (
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
+
                 </Tabs>
               </div>
             </section>

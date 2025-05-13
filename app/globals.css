@@ -120,10 +120,10 @@
     @apply text-4xl text-regularblue;
   }
   h2 {
-    @apply text-3xl text-mediumblue pt-4;
+    @apply text-3xl text-mediumblue pt-10;
   }
   h3 {
-    @apply text-2xl text-mediumblue;
+    @apply text-2xl text-mediumblue pt-6;
   }
   h4 {
     @apply text-xl text-mediumblue;
