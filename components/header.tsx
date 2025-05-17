@@ -42,7 +42,7 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/services" title="Création & Refonte" className='h-24'>
+              <ListItem href="/services/creation-refonte" title="Création & Refonte" className='h-24'>
                 <p className='text-xs'>Création de sites corporate ou associatifs</p>
               </ListItem>
               <ListItem href="/services" title="Conseil" className='h-24'>
@@ -50,15 +50,13 @@ export function NavBar() {
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>  
-        {/*      
+        </NavigationMenuItem>               
+        <NavigationMenuItem>
+          <Link href="/demo" className='font-googletitre text-regularblue text-lg font-medium px-6'>Démo</Link>
+        </NavigationMenuItem>     
         <NavigationMenuItem>
           <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
-        </NavigationMenuItem> 
-        */}       
-        <NavigationMenuItem>
-          <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem>      
         <NavigationMenuItem>
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
           <NavigationMenuContent>

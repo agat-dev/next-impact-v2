@@ -12,6 +12,7 @@ import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import Question from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
 import { LoadingCarousel } from "@/components/ui/loading-carousel";
 import {
   Expandable,
@@ -37,6 +38,45 @@ import { Timeline } from "@/components/ui/timeline";
 import FeatureCarousel from "@/components/ui/feature-carousel";
 
 
+export function CardHoverEffectDisplay() {
+  return (
+    <div className="mx-auto px-8">
+      <HoverEffect items={projects} />
+    </div>
+  );
+}
+
+export const projects = [
+  {
+    image: <LottieAnimation animationPath="/lotties/astronaut-with-surprise-box.json" width="6rem" height="6rem"/>,
+    title: "Qualité finale",
+    description:
+        <p className="text-base font-regular font-googletitre text-regularblue">
+          Votre site web doit être à votre image et performant sans rogner sur la qualité ?
+          <br />
+        </p>,
+    link: "https://stripe.com",
+  },
+  {
+    image: <LottieAnimation animationPath="/lotties/super-astronaut.json" width="6rem" height="6rem"/>,
+    title: "Fonctionnalités avancées",
+    description:
+      <p className="text-base font-regular font-googletitre text-regularblue">
+        Vous avez besoin d'un site adapté à vos besoins techniques spécifiques ?
+      </p>,
+    link: "https://netflix.com",
+  },
+  {
+    image: <LottieAnimation animationPath="/lotties/astronaut-in-rocket.json" width="6rem" height="6rem"/>,
+    title: "Autonomie et contrôle",
+    description:
+      <p className="text-base font-regular font-googletitre text-regularblue">
+        Vous avez besoin d'un site web efficace mais facile à gérer ?                      
+      </p>,
+    link: "https://google.com",
+  },
+];
+
 export default function Home() {
 
   return (
@@ -52,14 +92,14 @@ export default function Home() {
                 <div className="text-center">
                   <Image
                     src="/img/logo.png"
-                    width={170}
+                    width={140}
                     height={100}
                     alt="Logo Next Impact"
                     className="mx-auto mb-16"
                   />                  
-                  <TextAnimate animation="blurIn" as="h1">Conseil & Services en création de site web</TextAnimate>
+                  <TextAnimate animation="blurIn" as="h1">Création de sites web pour PME</TextAnimate>
                 </div>
-                <div className="w-10/12 pt-2 pb-6 space-y-2 mx-auto text-center">  
+                <div className="w-10/12 pt-2 pb-6 space-y-2 mt-4 mx-auto text-center">  
                   <p className="text-lg font-regular font-googletitre text-regularblue">
                   Que vous réalisiez votre site web vous-même ou que vous vouliez faire 
                   appel à un prestataire, nous vous accompagnons dans votre projet dans la jungle des technos, 
@@ -71,7 +111,7 @@ export default function Home() {
                     <Button className="gap-1 rounded-3xl bg-regularblue text-base text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">Je veux un site web</Button>
                   </Link>
                   <Link href="/learning-paths/seo">
-                    <Button variant="outline" className="gap-1 rounded-3xl border border-regularblue/30 text-base hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Je veux du conseil</Button>
+                    <Button variant="outline" className="gap-1 rounded-3xl border border-regularblue/30 text-base hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Je veux une démo</Button>
                   </Link>
                 </div>
               </div>
@@ -89,44 +129,12 @@ export default function Home() {
               <div className="space-y-2 pb-12">
               <TextAnimate animation="blurIn" as="h2">Pour ceux qui veulent maîtriser leur projet</TextAnimate>
               </div>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="space-y-2">
-                    <LottieAnimation animationPath="/lotties/astronaut-in-pencil.json" width="8rem" height="8rem"/>
-                    <h3 className="text-2xl font-bold text-regularblue">Associations et ESS</h3>
-                    <p className="text-base font-regular font-googletitre text-regularblue">
-                      Vous avez besoin d'un site web efficace mais facile à gérer ?<br />
-                    </p>
-                  </div>
-                  <Link href="/learning-paths/seo">
-                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions web pour l'ESS</Button>
-                  </Link>
-                </div>
-                <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="space-y-2">
-                    <LottieAnimation animationPath="/lotties/super-astronaut.json" width="8rem" height="8rem"/>
-                    <h3 className="text-2xl font-bold text-regularblue">Indépendants</h3>
-                    <p className="text-base font-regular font-googletitre text-regularblue">
-                      Vous voulez un site web professionnel tout simplement ?<br />
-                    </p>
-                  </div>
-                  <Link href="/learning-paths/ux">
-                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions web pour TPE</Button>
-                  </Link>
-                </div>
-                <div className="flex flex-col space-y-4 rounded-lg border bg-background p-6 shadow-sm">
-                  <div className="space-y-2">
-                  <LottieAnimation animationPath="/lotties/astronaut-in-rocket.json" width="8rem" height="8rem"/>
-                    <h3 className="text-2xl font-bold text-regularblue">Entreprises</h3>
-                    <p className="text-base font-regular font-googletitre text-regularblue">
-                      Votre site web doit être à votre image et performant ?
-                    </p>
-                  </div>
-                  <Link href="/learning-paths/content">
-                    <Button className="gap-1 rounded-3xl bg-white border border-regularblue/30 hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Solutions pour Entreprises</Button>
-                  </Link>
-                </div>
+              <div>
+                <CardHoverEffectDisplay />
               </div>
+            <Link href="/learning-paths/content">
+              <Button className="mt-8 gap-1 rounded-3xl bg-white border bg-regularblue hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Voir la démo</Button>
+            </Link>
             </div>
           </div>
         </section>
@@ -270,7 +278,7 @@ export default function Home() {
                       </div> 
                   </div>
                 </div>
-                {/*}
+                {/*
                 <div className="mt-6">
                   <p className="text-3xl font-bold">99€</p>
                   <p className="text-sm text-muted-foreground">Session unique</p>
@@ -326,7 +334,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Blog / Média en ligne</span>
+                          <span className="font-adobetitre text-lg">Contenus personnalisés</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -335,7 +343,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">E-learning</span>
+                          <span className="font-adobetitre text-lg">Administration simplifiée</span>
                         </div>   
                       </div> 
                   </div>
@@ -359,12 +367,12 @@ export default function Home() {
                         </div>  
                         <div className="flex items-center">
                         <Image 
-                            src="/img/info-doc.gif"
+                            src="/img/web-app.gif"
                             alt="Solution technique animation"
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Plateforme d'information</span>
+                          <span className="font-adobetitre text-lg">Appli web</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -373,7 +381,16 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Blog / Média en ligne</span>
+                          <span className="font-adobetitre text-lg">Contenus personnalisés</span>
+                        </div>  
+                        <div className="flex items-center">
+                        <Image 
+                            src="/img/code.gif"
+                            alt="Solution technique animation"
+                            width={20}
+                            height={20}
+                            className="mr-3 text-primary" />
+                          <span className="font-adobetitre text-lg">Fonctionnalités dédiées</span>
                         </div>  
                         <div className="flex items-center">
                         <Image 
@@ -382,16 +399,7 @@ export default function Home() {
                             width={20}
                             height={20}
                             className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">E-learning</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/web-app.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Applications web</span>
+                          <span className="font-adobetitre text-lg">Administration simplifiée</span>
                         </div>  
                       </div> 
                   </div>
@@ -470,20 +478,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Base de connaissances Section */}
-      <section className="w-full py-6 md:py-12 lg:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center">
-              <div className="pb-12">
-              <TextAnimate animation="blurIn" as="h2">Des infos pour décider</TextAnimate>
-              </div>
-                  <DocTabs />
-
-            </div>
-          </div>
-        </section>
-
-
         {/* About Section */}
         <section id="about" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
@@ -517,38 +511,20 @@ export default function Home() {
                 <div className="flex flex-wrap gap-4 pt-4">
                   <div className="flex h-12 w-auto items-center justify-center rounded-md border p-2">
                     <Image
-                      src="/placeholder.svg?height=40&width=100&text=WordPress"
+                      src="/img/logo-wordpress.png"
                       width={100}
                       height={40}
                       alt="WordPress"
-                      className="h-8"
+                      className="h-8 object-contain"
                     />
                   </div>
                   <div className="flex h-12 w-auto items-center justify-center rounded-md border p-2">
                     <Image
-                      src="/placeholder.svg?height=40&width=100&text=Shopify"
+                      src="/img/logo-nextjs.png"
                       width={100}
                       height={40}
-                      alt="Shopify"
-                      className="h-8"
-                    />
-                  </div>
-                  <div className="flex h-12 w-auto items-center justify-center rounded-md border p-2">
-                    <Image
-                      src="/placeholder.svg?height=40&width=100&text=Google"
-                      width={100}
-                      height={40}
-                      alt="Google"
-                      className="h-8"
-                    />
-                  </div>
-                  <div className="flex h-12 w-auto items-center justify-center rounded-md border p-2">
-                    <Image
-                      src="/placeholder.svg?height=40&width=100&text=Meta"
-                      width={100}
-                      height={40}
-                      alt="Meta"
-                      className="h-8"
+                      alt="Next.js"
+                      className="h-8 object-contain"
                     />
                   </div>
                 </div>
@@ -564,7 +540,8 @@ export default function Home() {
               <div className="space-y-2">
               <TextAnimate animation="blurIn" as="h2">Nos clients en parlent</TextAnimate>
                 <p className="mx-auto max-w-[700px] text-lg font-regular font-googletitre text-regularblue">
-                  Découvrez comment nous avons aidé nos clients à transformer leur présence en ligne.
+                  Découvrez comment nous avons aidé nos clients<br />
+                  à transformer leur présence en ligne.
                 </p>
               </div>
             </div>
@@ -575,11 +552,11 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-4">
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
-                          <Star key={star} className="h-4 w-4 fill-primary text-primary" />
+                          <Star key={star} className="h-4 w-4 fill-regularblue text-regularblue" />
                         ))}
                       </div>
                     </div>
-                    <p className="text-muted-foreground">
+                    <p>
                       "Grâce à l'audit marketing et aux conseils personnalisés, nous avons pu augmenter notre trafic de
                       200% en seulement 6 mois. Un investissement qui a largement porté ses fruits."
                     </p>
@@ -593,7 +570,7 @@ export default function Home() {
                       />
                       <div>
                         <p className="font-medium">Client {i}</p>
-                        <p className="text-sm text-muted-foreground">Entreprise</p>
+                        <p>Entreprise</p>
                       </div>
                     </div>
                   </CardContent>
