@@ -89,6 +89,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const categoryTitle =
     categoryInfo[category as keyof typeof categoryInfo]?.title || category.charAt(0).toUpperCase() + category.slice(1)
 
+console.log(categoryTitle)
+
   const categoryDescription =
     categoryInfo[category as keyof typeof categoryInfo]?.description ||
     "Explore our comprehensive guides and resources."
@@ -105,7 +107,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </div>
             <div className="flex justify-between items-center mb-8">
               <Link href="/documentation">
-                <Button variant="ghost" size="sm">
+                <Button className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full" size="sm">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Documentation
                 </Button>

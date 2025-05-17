@@ -135,7 +135,13 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply text-base/6 font-adobetext font-normal text-darkblue/80 ;
+    @apply text-base/6 font-adobetext font-normal text-mediumblue/70;
+  }
+  a {
+    @apply text-regularblue no-underline;
+  }
+  a:hover {
+    @apply text-regularblue/80 no-underline;
   }
   .container {
     @apply mx-auto px-4;

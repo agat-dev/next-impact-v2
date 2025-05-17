@@ -30,15 +30,15 @@ export default function TableOfContentsPopup({ tableOfContents }: TableOfContent
       {/* Trigger Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center justify-between w-full text-white mb-4 px-4 py-2 rounded-lg shadow-md hover:bg-white/30"
+        className="flex items-center justify-between mb-4 px-4 py-2 rounded-full shadow-md hover:bg-white/30"
       >
-        <span>Sommaire</span>
-        {isOpen ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        <span className="text-regularblue font-medium">Sommaire</span>
+        {isOpen ? <ChevronUp className="w-5 h-5 ml-4" /> : <ChevronDown className="w-5 h-5 ml-4" />}
       </button>
 
       {/* Animated Table of Contents */}
       <motion.div
-        className="absolute left-0 top-full mt-4w-full bg-gray-50 p-4 rounded-lg shadow-lg z-10"
+        className="absolute left-0 top-full mt-4 bg-gray-50 p-4 rounded-lg shadow-lg z-10"
         initial={false}
         animate={isOpen ? "open" : "closed"}
         variants={{
@@ -52,7 +52,7 @@ export default function TableOfContentsPopup({ tableOfContents }: TableOfContent
             <li key={item.id} className={getClassByLevel(item.level)}>
               <a
                 href={`#${item.id}`}
-                className="hover:underline"
+                className="hover:text-regularblue/80 transition-colors duration-200"
               >
                 {item.text}
               </a>

@@ -42,21 +42,22 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/services" title="Création de site web" className='h-24'>
+              <ListItem href="/services" title="Création & Refonte" className='h-24'>
                 <p className='text-xs'>Création de sites corporate ou associatifs</p>
               </ListItem>
-              <ListItem href="/services" title="Refonte de site web" className='h-24'>
-              <p className='text-xs'>Refonte de sites corporate ou associatifs</p>
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>  
               <ListItem href="/services" title="Conseil" className='h-24'>
                 <p className='text-xs'>Accompagnement dans la réalisation de votre projet web</p>
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>        
+        </NavigationMenuItem>  
+        {/*      
         <NavigationMenuItem>
           <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
+        </NavigationMenuItem> 
+        */}       
+        <NavigationMenuItem>
+          <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
@@ -95,9 +96,6 @@ export function NavBar() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem> 
-        {/*<NavigationMenuItem>
-          <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
-        </NavigationMenuItem>*/}
       </NavigationMenuList>
     </NavigationMenu>
   )
@@ -144,8 +142,8 @@ export default function Header() {
           <NavBar />
           </div>
           <div className='basis-1/6 flex justify-end'>
-          <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-base font-regular">Prendre RDV</Link>
+          <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+            <Link href="/services" className="text-base text-white hover:text-white font-regular">Prendre RDV</Link>
           </Button> 
           </div>
         </div>

@@ -59,32 +59,32 @@ export default function ArticlePage({ params }: ArticlePageProps) {
           <div className="container px-4 py-12 md:px-6 md:py-16 lg:py-24 flex">
             <div className="flex-1 mx-full">
             <div className="flex items-center gap-2 mb-8">
-              <Link href="/documentation" className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href="/documentation" className="text-sm text-regularblue hover:text-regularblue/80">
                 Documentation
               </Link>
               <span className="text-muted-foreground">/</span>
               <Link
                 href={`/documentation/${article.category}`}
-                className="text-sm text-muted-foreground hover:text-foreground"
+                className="text-sm text-regularblue hover:text-regularblue/80"
               >
                 {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
               </Link>
-              <span className="text-muted-foreground">/</span>
-              <span className="text-sm">{article.title}</span>
+              <span className="text-regularblue">/</span>
+              <span className="font-adobetitre text-mediumblue/70">{article.title}</span>
               </div>
             <div className="flex justify-between items-center mb-6">
               <Link href={`/documentation/${article.category}`}>
-                <Button variant="ghost" size="sm">
+                <Button size="sm" className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
                 </Button>
               </Link>
               <div className="flex gap-2">
-                <Button variant="ghost" size="icon">
+                <Button size="icon" className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full">
                   <Copy className="h-4 w-4" />
                   <span className="sr-only">Copier</span>
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button size="icon" className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full">
                   <Share2 className="h-4 w-4" />
                   <span className="sr-only">Partager</span>
                 </Button>
@@ -114,8 +114,8 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             </div>
             <Separator />
             {relatedArticles.length > 0 && (
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold">Articles en lien</h3>
+              <div className="space-y-4 mt-12">
+                <h3 className="text-xl font-bold text-regularblue">Articles en lien</h3>
                 <div className="grid gap-4 md:grid-cols-2">
                   {relatedArticles.map((relatedArticle) => (
                     <Link
@@ -123,7 +123,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                       href={`/documentation/${relatedArticle.category}/${relatedArticle.slug}`}
                       className="group rounded-lg border p-4 hover:bg-muted/50"
                     >
-                      <h4 className="font-medium group-hover:underline">{relatedArticle.title}</h4>
+                      <h4 className="font-medium text-regularblue hover:text-regularblue/80">{relatedArticle.title}</h4>
                       <p className="text-sm text-muted-foreground">{relatedArticle.description}</p>
                     </Link>
                   ))}
