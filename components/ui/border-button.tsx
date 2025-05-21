@@ -1,14 +1,9 @@
-import { Button } from "@/components/ui/button";
 import { BorderBeam } from "@/components/magicui/border-beam";
 
-interface BorderBeamButtonProps {
-  text: string;
-}
 
-export function BorderBeamButton({ text }: BorderBeamButtonProps) {
+
+export function BorderBeamButton() {
   return (
-    <Button className="relative overflow-hidden rounded-full" size="lg" variant="outline">
-      {text}
       <BorderBeam
         size={60}
         initialOffset={30}
@@ -19,6 +14,5 @@ export function BorderBeamButton({ text }: BorderBeamButtonProps) {
           damping: 180,
         }}
       />
-    </Button>
   );
 }

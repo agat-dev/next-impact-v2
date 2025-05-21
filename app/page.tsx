@@ -92,18 +92,21 @@ export default function Home() {
                   </p> 
                 </div>
                 <div className="flex justify-center gap-4 pt-4">
-                  <Link href="/learning-paths/ux">
-                    <Button className="gap-1 rounded-3xl bg-regularblue text-base text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-                    Je veux un site web
-                    </Button>
-                  </Link>
                   <div>
-                  <Link href="/learning-paths/seo">
-                    <Button variant="outline" className="gap-1 rounded-3xl border border-regularblue/30 text-base hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">
-                    Je veux une démo
+                    <Link href="/learning-paths/seo">
+                    <Button className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100" size="lg" variant="outline">
+                      Je veux un site web
+                    <BorderBeamButton/>
                     </Button>
-                  </Link>
-                  <BorderBeamButton text="Je veux une démo" />
+                    </Link>
+                  </div>
+                  <div>
+                    <Link href="/learning-paths/seo">
+                    <Button className="relative overflow-hidden rounded-full text-md font-googletitre border-pink-100" size="lg" variant="outline">
+                      Je veux une démo
+                    <BorderBeamButton/>
+                    </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
