@@ -13,22 +13,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import Question from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { LoadingCarousel } from "@/components/ui/loading-carousel";
-import {
-  Expandable,
-  ExpandableCard,
-  ExpandableCardFooter,
-  ExpandableCardContent,
-  ExpandableCardHeader,
-  ExpandableContent,
-  ExpandableTrigger,
-} from "@/components/ui/expand-cards";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { BorderBeamButton } from "@/components/ui/border-button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -108,11 +93,18 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center gap-4 pt-4">
                   <Link href="/learning-paths/ux">
-                    <Button className="gap-1 rounded-3xl bg-regularblue text-base text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">Je veux un site web</Button>
+                    <Button className="gap-1 rounded-3xl bg-regularblue text-base text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+                    Je veux un site web
+                    </Button>
                   </Link>
+                  <div>
                   <Link href="/learning-paths/seo">
-                    <Button variant="outline" className="gap-1 rounded-3xl border border-regularblue/30 text-base hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">Je veux une démo</Button>
+                    <Button variant="outline" className="gap-1 rounded-3xl border border-regularblue/30 text-base hover:bg-regularblue/80 text-darkblue-600 hover:text-white transition-all duration-900 ease-in-out">
+                    Je veux une démo
+                    </Button>
                   </Link>
+                  <BorderBeamButton text="Je veux une démo" />
+                  </div>
                 </div>
               </div>
             <div className="col-span-3 place-items-start mt-[20vh]">
@@ -123,6 +115,9 @@ export default function Home() {
 
 
       {/* Personas Section */}
+      <div className="absolute inset-0 -z-10">
+            <div className="absolute top-[400px] left-0 h-full w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+      </div>
         <section className="w-full py-6 md:py-12 lg:py-24">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -141,6 +136,10 @@ export default function Home() {
 
 
       {/* Tools section */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[1400px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+        <div className="absolute top-[1000px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+      </div>
         <section className="py-12 md:py-24 lg:py-32">
             <div className="pb-12 text-center">
               <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits</TextAnimate>
@@ -152,6 +151,10 @@ export default function Home() {
       
 
       {/* Services Section */}
+        <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[2400px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-10 blur-3xl"></div>
+        <div className="absolute top-[1800px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-20 blur-3xl"></div>
+      </div>
       <section className="w-full py-12 md:py-12 lg:py-16">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">

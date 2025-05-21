@@ -110,7 +110,7 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-extralightblue/20;
+    @apply text-foreground;
   }
   h1, h2, h3, h4, h5, h6, a {
     @apply font-googletitre font-normal py-1;
