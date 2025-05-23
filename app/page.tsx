@@ -10,17 +10,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation from "@/components/ui/lottie-animation";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import Question from "@/components/ui/questions-list"; // Ensure this path is correct and the component exists
+import About from "@/components/about";
 import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { BorderBeamButton } from "@/components/ui/border-button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Clock, MapPin, MessageSquare, Video } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import dynamic from "next/dynamic";
-import { BentoFeatures } from "@/components/bentos";
-import { Timeline } from "@/components/ui/timeline";
-import FeatureCarousel from "@/components/ui/feature-carousel";
+import { BorderBeamEffect } from "@/components/ui/border-beam";
+import Hero from "@/components/hero";
 
 
 export function CardHoverEffectDisplay() {
@@ -69,53 +63,10 @@ export default function Home() {
       <main className="flex-1">
 
        {/* Hero Section */}
-        <section className="grid grid-cols-12 w-full h-full min-h-[92vh]">
-              <div className="col-span-3 place-items-end mt-[30vh]">
-              <LottieAnimation animationPath="/lotties/astronaut-need-help.json" width="30rem"/>
-              </div>
-              <div className="col-span-6 place-content-center">
-                <div className="text-center">
-                  <Image
-                    src="/img/logo.png"
-                    width={140}
-                    height={100}
-                    alt="Logo Next Impact"
-                    className="mx-auto mb-16"
-                  />                  
-                  <TextAnimate animation="blurIn" as="h1">Création de sites web pour PME</TextAnimate>
-                </div>
-                <div className="w-10/12 pt-2 pb-6 space-y-2 mt-4 mx-auto text-center">  
-                  <p className="text-lg font-regular font-googletitre text-regularblue">
-                  Que vous réalisiez votre site web vous-même ou que vous vouliez faire 
-                  appel à un prestataire, nous vous accompagnons dans votre projet dans la jungle des technos, 
-                  des bonnes pratiques et du marché des sites web.
-                  </p> 
-                </div>
-                <div className="flex justify-center gap-4 pt-4">
-                  <div>
-                    <Link href="/learning-paths/seo">
-                    <Button className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100" size="lg" variant="outline">
-                      Je veux un site web
-                    <BorderBeamButton/>
-                    </Button>
-                    </Link>
-                  </div>
-                  <div>
-                    <Link href="/learning-paths/seo">
-                    <Button className="relative overflow-hidden rounded-full text-md font-googletitre border-pink-100" size="lg" variant="outline">
-                      Je veux une démo
-                    <BorderBeamButton/>
-                    </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            <div className="col-span-3 place-items-start mt-[20vh]">
-              <LottieAnimation animationPath="/lotties/astronaut-sitting-planet-waving-hand.json" width="22rem"/>
-              </div>
+       <Hero />
 
-        </section>
-
+      {/* About Section */}
+      <About />
 
       {/* Personas Section */}
       <div className="absolute inset-0 -z-10">

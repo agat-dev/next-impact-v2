@@ -110,7 +110,7 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground;
+    @apply text-regularblue;
   }
   h1, h2, h3, h4, h5, h6, a {
     @apply font-googletitre font-normal py-1;
@@ -134,7 +134,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-adobetext font-normal text-mediumblue/70;
+    @apply font-adobetext font-normal  p-4;
   }
   a {
     @apply text-regularblue no-underline;
