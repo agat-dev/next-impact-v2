@@ -1,20 +1,13 @@
 
-import Link from "next/link";
-import { ArrowRight, CheckCircle, Search, Star } from "lucide-react";
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import DocTabs from "@/components/documentation/doc-tabs"
 import LottieAnimation from "@/components/ui/lottie-animation";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import About from "@/components/about";
-import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
+import ServicesDev from "@/components/services-dev";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { BorderBeamEffect } from "@/components/ui/border-beam";
 import Hero from "@/components/hero";
+import ServicesConseil from "@/components/services-conseil";
+import Realisations from "@/components/realisations";
+import Testimonials from "@/components/testimonials";
+import FAQ from "@/components/faq"
+import { CTASection } from "@/components/cta-section";
 
 
 export function CardHoverEffectDisplay() {
@@ -66,9 +59,13 @@ export default function Home() {
        <Hero />
 
       {/* About Section */}
-      <About />
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[900px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+        <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+      </div>
+      <ServicesDev />
 
-      {/* Personas Section */}
+      {/* Personas Section 
       <div className="absolute inset-0 -z-10">
             <div className="absolute top-[400px] left-0 h-full w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
       </div>
@@ -87,553 +84,45 @@ export default function Home() {
             </div>
           </div>
         </section>
+        */}
 
-
-      {/* Tools section */}
+      {/* Tools Section */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[1400px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-        <div className="absolute top-[1000px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        <div className="absolute top-[1900px] left-0 h-[1000px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+        <div className="absolute top-[2200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
       </div>
-        <section className="py-12 md:py-24 lg:py-32">
-            <div className="pb-12 text-center">
-              <TextAnimate animation="blurIn" as="h2">Des outils en ligne gratuits</TextAnimate>
-              </div>
-            <div className="flex justify-center align-center px-4 md:px-6">              
-              <ExpandableCardNIP />
-            </div>
-          </section>
+      <ServicesConseil />
+
+      {/* Realisation Section */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[3200px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+        <div className="absolute top-[3600px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+      </div>
+      <Realisations />
       
 
-      {/* Services Section */}
-        <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[2400px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-10 blur-3xl"></div>
-        <div className="absolute top-[1800px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-20 blur-3xl"></div>
+      {/* Testimonials Section */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[4400px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+        <div className="absolute top-[4600px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
       </div>
-      <section className="w-full py-12 md:py-12 lg:py-16">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-            <TextAnimate animation="blurIn" as="h2">
-                Des services personnalisés
-              </TextAnimate>
-              <p className="text-lg font-regular font-googletitre text-regularblue">
-                Un accompagnement conçu sur votre besoin pour vous aider à atteindre vos objectifs en ligne.
-              </p> 
-            </div>
-          </div>
-          <div className="mx-auto grid grid-cols-2 max-w-5xl items-start gap-12 py-12">
-            <Card className="relative col-span-1">
-              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
-                <div className="h-full mb-4 p-4 flex flex-col items-center">
-                  <div className="rounded-full p-3 h-full w-full flex justify-center align-center">
-                  <LottieAnimation animationPath="/lotties/thoughtful-astronaut.json" width="6rem" height="6rem"/>
-                  </div>
-                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Conseil</h3>
-                </div>
-                <div className="p-4">
-                  <div>
-                    <Image
-                      src="/img/pack-creation-conseil.png"
-                      alt="Meeting animation"
-                      width={97}
-                      height={120} 
-                      className="mb-4 col-span-2 object-contain"
-                      />
-                      <div className="col-span-6 flex flex-col gap-3 pt-4">
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/meet.gif"
-                            alt="Meeting animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">3 sessions vidéo de 30 minutes</span>
-                        </div>
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/settings.gif"
-                            alt="Analyse du besoin animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Analyse approfondie du besoin</span>
-                        </div>
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/folder.gif"
-                            alt="Cahier des charges animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Formalisation d'un cahier des charges</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/code.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Conseil sur la solution technique</span>
-                        </div>  
-                      </div> 
-                  </div>
-                  <div className="mt-16">
-                    <Image
-                      src="/img/pack-refonte-conseil.png"
-                      alt="Meeting animation"
-                      width={88}
-                      height={120} 
-                      className="mb-4 col-span-2 object-contain"
-                      />
-                      <div className="col-span-6 flex flex-col gap-3 pt-4">
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/meet.gif"
-                            alt="Meeting animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">4 sessions vidéo de 30 minutes</span>
-                        </div>
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/settings.gif"
-                            alt="Analyse du besoin animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Analyse approfondie du besoin</span>
-                        </div>
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/tools.gif"
-                            alt="Audit animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Audit du site actuel</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/folder.gif"
-                            alt="Cahier des charges animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Formalisation d'un cahier des charges</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/code.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Conseil sur la solution technique</span>
-                        </div>  
-                      </div> 
-                  </div>
-                </div>
-                {/*
-                <div className="mt-6">
-                  <p className="text-3xl font-bold">99€</p>
-                  <p className="text-sm text-muted-foreground">Session unique</p>
-                </div>
-                */}
-                <div className="w-full flex justify-center mt-10">
-                  <Link href="/learning-paths/seo">
-                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Accompagnements</Button>
-                  </Link>
-                  </div>
-              </CardContent>
-            </Card>
-            <Card className="relative col-span-1">
-              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
-                <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
-                  <div className="rounded-full p-3 h-full w-1/3 flex justify-center align-center">
-                <LottieAnimation animationPath="/lotties/astronaut-with-flag.json" width="6rem" height="6rem"/>
-                  </div>
-                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">Développement web</h3>
-                </div>
-                <div className="p-4">
-                  <div>
-                    <Image
-                      src="/img/wordpress-dev.png"
-                      alt="Meeting animation"
-                      width={124}
-                      height={120} 
-                      className="mb-4 col-span-2 object-contain"
-                      />
-                        <div className="col-span-6 flex flex-col gap-3 pt-4">
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/site-vitrine.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Site vitrine - 5 à 10 pages</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/site-corporate.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Site corporate - 15 à 50 pages</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/media.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Contenus personnalisés</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/e-learning.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Administration simplifiée</span>
-                        </div>   
-                      </div> 
-                  </div>
-                  <div className="mt-16">
-                    <Image
-                      src="/img/headless-dev.png"
-                      alt="Meeting animation"
-                      width={109}
-                      height={120} 
-                      className="mb-4 col-span-2 object-contain"
-                      />
-                        <div className="col-span-6 flex flex-col gap-3 pt-4">
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/site-corporate.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Site corporate</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/web-app.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Appli web</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/media.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Contenus personnalisés</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/code.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Fonctionnalités dédiées</span>
-                        </div>  
-                        <div className="flex items-center">
-                        <Image 
-                            src="/img/e-learning.gif"
-                            alt="Solution technique animation"
-                            width={20}
-                            height={20}
-                            className="mr-3 text-primary" />
-                          <span className="font-adobetitre text-lg">Administration simplifiée</span>
-                        </div>  
-                      </div> 
-                  </div>
-                </div>
-                {/*}
-                <div className="mt-6">
-                  <p className="text-3xl font-bold">99€</p>
-                  <p className="text-sm text-muted-foreground">Session unique</p>
-                </div>
-                */}
-                <div className="w-full flex justify-center mt-10">
-                  <Link href="/learning-paths/seo">
-                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Créations et refontes</Button>
-                  </Link>
-                  </div>
-              </CardContent>
-            </Card>
-            <Card className="relative col-span-2 overflow-hidden">
-              <CardContent className="gap-6 p-6 relative z-20 mt-auto pt-4">
-                <div className="h-full p-4 mb-4 flex flex-col items-center justify-center">
-                {/*<Image
-                  src="/img/astronauts-meeting.png"
-                  width={100}
-                  height={200}
-                  alt="Consultation"
-                  className="object-contain"
-                /> */}
-                <h3 className="text-2xl font-bold text-center text-regularblue uppercase">consultation</h3>
-                <span className="text-base text-center">Session vidéo unique de 30 minutes</span>
-                </div>
-                {/*}
-                <div className="mt-6">
-                  <p className="text-3xl font-bold">99€</p>
-                  <p className="text-sm text-muted-foreground">Session unique</p>
-                </div>
-                */}
-                <div className="w-full flex justify-center">
-                  <Link href="/learning-paths/seo">
-                    <Button className="gap-1 rounded-3xl bg-regularblue  hover:bg-regularblue/80 text-white transition-all duration-900 ease-in-out">Prendre RDV</Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-           
-          </div>
-          <div className="mt-8">
-            <div className="mx-auto max-w-3xl rounded-lg border p-8">
-              <div className="flex items-start gap-4">
-                <div className="rounded-full p-3">
-                  <Star className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-regularblue">Témoignage client</h3>
-                  <p className="mt-2">
-                    "Échanges constructifs, livrable impeccable, délai respecté ! Combo parfait."
-                  </p>
-                  <div className="mt-4 flex items-center gap-2">
-                    <div className="h-[70px] w-[70px] flex justify-center align-center rounded-full overflow-hidden bg-white">
-                    <Image
-                      src="/img/geofit-logo.jpg"
-                      width={60}
-                      height={60}
-                      alt="logo client Geofit"
-                      className="object-contain"
-                    />
-                    </div>
-                    <div>
-                      <p className="font-medium">Justine Denechere</p>
-                      <p className="text-sm text-muted-foreground">Communicante, Geofit</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
-        {/* About Section */}
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-              <div className="relative">
-                <LottieAnimation animationPath="/lotties/astronaut-with-surprise-box.json" width="20rem" height="20rem"/>
-              </div>
-              <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-6">
-                <TextAnimate animation="blurIn" as="h2">Expertise et éthique</TextAnimate>
-                  <p className="max-w-[600px] text-lg font-regular font-googletitre text-regularblue">
-                    Avec plus de 5 ans d'expérience dans la création de sites WordPress, plus de 20 créations et 
-                    refontes de site, plus de 100 interventions sur des sites WordPress existants, j'ai pu acquérir une solide
-                    expertise dans le domaine.
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <p>
-                    Développeuse freelance spécialisée sur WordPress, le système de création de site le plus utilisé au monde,
-                    j’interviens principalement sur des projets personnalisés : création de sites sur mesure, ajout de fonctionnalités spécifiques, 
-                    adaptation du design, ou optimisation du site pour qu’il soit plus rapide et mieux référencé sur Google. 
-                    <br /><br />
-                    Avec une très bonne connaissance du fonctionnement interne de WordPress, je peux de proposer des solutions fiables, 
-                    efficaces et évolutives. 
-                    <br /><br />
-                    L'objectif est de réaliser un site simple à gérer pour vous, avec un tableau de bord clair, adapté à vos besoins. 
-                    J’accompagne aussi bien des agences web que des entreprises ou des indépendants, sur des projets de refonte, 
-                    des boutiques en ligne ou des sites à fort trafic.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <div className="flex h-12 w-auto items-center justify-center rounded-md border p-2">
-                    <Image
-                      src="/img/logo-wordpress.png"
-                      width={100}
-                      height={40}
-                      alt="WordPress"
-                      className="h-8 object-contain"
-                    />
-                  </div>
-                  <div className="flex h-12 w-auto items-center justify-center rounded-md border p-2">
-                    <Image
-                      src="/img/logo-nextjs.png"
-                      width={100}
-                      height={40}
-                      alt="Next.js"
-                      className="h-8 object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Testimonials Section */}
-        <section className="w-full py-6 md:py-12 lg:py-16">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-              <TextAnimate animation="blurIn" as="h2">Nos clients en parlent</TextAnimate>
-                <p className="mx-auto max-w-[700px] text-lg font-regular font-googletitre text-regularblue">
-                  Découvrez comment nous avons aidé nos clients<br />
-                  à transformer leur présence en ligne.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 lg:grid-cols-3">
-              {[1, 2, 3].map((i) => (
-                <Card key={i} className="overflow-hidden">
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="flex">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star key={star} className="h-4 w-4 fill-regularblue text-regularblue" />
-                        ))}
-                      </div>
-                    </div>
-                    <p>
-                      "Grâce à l'audit marketing et aux conseils personnalisés, nous avons pu augmenter notre trafic de
-                      200% en seulement 6 mois. Un investissement qui a largement porté ses fruits."
-                    </p>
-                    <div className="mt-4 flex items-center gap-2">
-                      <Image
-                        src={`/placeholder.svg?height=40&width=40&text=Client${i}`}
-                        width={40}
-                        height={40}
-                        alt={`Client ${i}`}
-                        className="rounded-full"
-                      />
-                      <div>
-                        <p className="font-medium">Client {i}</p>
-                        <p>Entreprise</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
-        <section className="w-full py-6 md:py-12 lg:py-16">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-              <TextAnimate animation="blurIn" as="h2">Questions fréquentes</TextAnimate>
-                <p className="mx-auto max-w-[700px] text-lg font-regular font-googletitre text-regularblue">
-                  Tout ce que vous devez savoir sur nos services et notre accompagnement.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto max-w-3xl py-12">
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Comment se déroule une consultation vidéo ?</AccordionTrigger>
-                  <AccordionContent>
-                    Nos consultations se déroulent via Zoom ou Google Meet. Avant la session, nous vous envoyons un
-                    questionnaire pour mieux comprendre vos besoins. Pendant la session, nous analysons votre situation
-                    actuelle, identifions les axes d'amélioration et vous proposons des solutions concrètes. Après la
-                    session, vous recevez un résumé des points abordés et un plan d'action.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Quel pack choisir pour mon projet ?</AccordionTrigger>
-                  <AccordionContent>
-                    Si vous débutez ou avez besoin d'un avis ponctuel, la consultation simple est idéale. Pour un projet
-                    en cours de développement ou une refonte, le pack accompagnement vous permettra de bénéficier d'un
-                    suivi sur plusieurs semaines. Pour les projets complexes ou stratégiques, l'accompagnement premium
-                    offre un support complet et personnalisé.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Combien de temps faut-il pour voir des résultats ?</AccordionTrigger>
-                  <AccordionContent>
-                    Les premiers résultats sont généralement visibles dans les 4 à 8 semaines suivant la mise en place
-                    des recommandations. Cependant, cela dépend de nombreux facteurs comme votre secteur d'activité, la
-                    concurrence, et la nature des changements effectués. Nous définissons ensemble des objectifs
-                    réalistes et un calendrier adapté à votre situation.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4">
-                  <AccordionTrigger>Proposez-vous des services de développement web ?</AccordionTrigger>
-                  <AccordionContent>
-                    Nous nous concentrons sur le conseil et l'accompagnement stratégique. Nous ne développons pas
-                    directement les sites web, mais nous pouvons vous recommander des partenaires de confiance selon vos
-                    besoins spécifiques. Notre expertise vous aide à définir précisément vos besoins pour obtenir un
-                    site parfaitement adapté à vos objectifs.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5">
-                  <AccordionTrigger>Comment fonctionne l'audit marketing ?</AccordionTrigger>
-                  <AccordionContent>
-                    Notre audit marketing comprend une analyse approfondie de votre site web, de votre stratégie de
-                    contenu, de votre référencement, et de votre expérience utilisateur. Nous utilisons des outils
-                    professionnels pour évaluer les performances techniques et marketing de votre site. Vous recevez
-                    ensuite un rapport détaillé avec des recommandations concrètes et un plan d'action prioritaire.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </div>
-        </section>
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[5000px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+        <div className="absolute top-[5400px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+      </div>
+      <FAQ />
 
         {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 ">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                  Prêt à transformer votre présence en ligne ?
-                </h2>
-                <p className="mx-auto max-w-[700px] md:text-xl">
-                  Réservez une consultation gratuite de 15 minutes pour discuter de votre projet et découvrir comment
-                  nous pouvons vous aider.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                <Button size="lg" variant="secondary" className="gap-1">
-                  Réserver ma consultation gratuite <ArrowRight className="h-4 w-4" />
-                </Button>
-              </div>
-              <p className="text-sm">Ou inscrivez-vous à notre newsletter pour recevoir nos conseils et astuces</p>
-              <div className="w-full max-w-sm">
-                <div className="flex space-x-2">
-                  <Input
-                    type="email"
-                    placeholder="Votre email"
-                    className="max-w-lg flex-1 bg-primary-foreground text-primary"
-                  />
-                  <Button type="submit" variant="secondary">
-                    S'inscrire
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[5900px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[6200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>
+        <CTASection />
       </main>
 
      {/* Carousel Section 

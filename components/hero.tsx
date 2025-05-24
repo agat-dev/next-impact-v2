@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Hero() {
     return (
-    <section className="relative pt-36 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+    <section className="relative pt-36 pb-24 md:pt-24 md:pb-24 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-brand-700/30 rounded-full blur-[100px]"></div>
@@ -23,7 +23,7 @@ export default function Hero() {
            Sites web & Apps<br /><span className="font-adobetext text-5xl text-regularblue/80">WordPress et Headlesss</span>
           </h1>
           
-          <p className="font-adobetext text-xl text-lightblue max-w-xl">
+          <p className="font-adobetext text-xl text-regularblue/70 max-w-xl">
             Développeuse full-stack et consultante spécialisée en site web corporate WordPress et applications web WordPress Headless.
           </p>
           
@@ -77,13 +77,13 @@ export default function Hero() {
             </div>
             
             {/* Floating badges */}
-            <div className="absolute left-6 top-6 bg-white py-0 px-4 rounded-full shadow-lg flex items-center gap-2 animate-float">
+            <div className="absolute left-6 top-6 bg-white py-2 px-4 rounded-full shadow-lg flex items-center gap-2 animate-float">
               <span className="h-3 w-3 bg-green-500 rounded-full"></span>
               <span className="text-sm font-medium text-black">Disponible</span>
             </div>
             
             <div className="absolute -right-3 bottom-1/4 bg-white py-2 px-4 rounded-full shadow-lg animate-float-delayed">
-              <span className="text-sm font-medium text-black">10+ ans d'expérience</span>
+              <span className="text-sm font-medium text-black">8+ ans d'expérience</span>
             </div>
           </div>
         </div>
