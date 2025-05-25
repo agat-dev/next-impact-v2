@@ -34,7 +34,7 @@ interface CaseStudy {
 const CASE_STUDIES: CaseStudy[] = [
   {
     id: "1",
-    slug: "modeshop",
+    slug: "proditec",
     title: "Refonte du site e-commerce ModeShop",
     description: "Refonte complète du site e-commerce avec intégration de paiement et gestion de stock.",
     imageUrl: "/placeholder.svg?key=qtv3e",
@@ -44,7 +44,7 @@ const CASE_STUDIES: CaseStudy[] = [
       year: 2023,
     },
     tags: ["e-commerce", "Next.js", "Stripe"],
-    url: "/etudes-de-cas/modeshop",
+    url: "/etudes-de-cas/proditec",
   },
   {
     id: "2",

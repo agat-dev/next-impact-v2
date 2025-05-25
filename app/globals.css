@@ -134,7 +134,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-adobetext font-normal  p-4;
+    @apply font-adobetext font-normal;
   }
   a {
     @apply text-regularblue no-underline;

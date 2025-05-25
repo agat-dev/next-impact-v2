@@ -120,7 +120,7 @@ export function MagicCard({
             strokeWidth={1}
             mask={`url(#${maskId})`}
             style={{
-              filter: mouse.inside ? `drop-shadow(0 0 8px ${gradientFrom})` : "none",
+              filter: mouse.inside ? `drop-shadow(0 0 0px ${gradientFrom})` : "none",
               opacity: borderOpacity,
               transition: "opacity 0.8s cubic-bezier(.4,0,.2,1), filter 0.5s",
             }}
@@ -134,7 +134,7 @@ export function MagicCard({
         style={{
           background: useMotionTemplate`
             radial-gradient(${gradientSize}px circle at ${mouse.x}px ${mouse.y}px,
-            #fbcfe8, 
+            white, 
             ${gradientTo}, 
             var(--border) 100%
             )

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { MagicCard } from "@/components/magicui/magic-card"
 
 // Types pour les études de cas
 type ClientType = "PME" | "Association" | "Indépendant" | "Tous"
@@ -47,28 +48,26 @@ interface CaseStudy {
 const CASE_STUDIES: CaseStudy[] = [
   {
     id: "1",
-    slug: "modeshop",
-    title: "Refonte du site e-commerce ModeShop",
-    description: "Refonte complète du site e-commerce avec intégration de paiement et gestion de stock.",
+    slug: "proditec",
+    title: "Refonte du site corporate multilingue",
+    description: "Création d'un site moderne et performant pour une entreprise de l'industrie robotique internationale.",
     imageUrl: "/placeholder.svg?key=yvs6q",
     clientType: "PME",
-    clientName: "ModeShop SAS",
+    clientName: "Proditec",
     date: {
-      month: 3,
-      year: 2023,
+      month: 5,
+      year: 2025,
     },
-    tags: ["e-commerce", "Next.js", "Stripe"],
+    tags: ["Corporate", "WordPress", "Polylang"],
     objectives: [
-      "Augmenter le taux de conversion de 15%",
       "Améliorer l'expérience mobile",
-      "Intégrer un système de paiement sécurisé",
+      "Gérer le contenu multilingue",
       "Optimiser la vitesse de chargement du site",
     ],
     results: [
-      "Augmentation du taux de conversion de 23%",
-      "Réduction du taux de rebond de 35%",
-      "Augmentation du panier moyen de 18%",
-      "Amélioration du score PageSpeed de 45 à 92",
+      "Amélioration du score d'accessibilité de 30%",
+      "Prise en charge de 5 langues",
+      "Amélioration du score PageSpeed de 45 à 98",
     ],
     testimonial: {
       content:
@@ -81,10 +80,18 @@ const CASE_STUDIES: CaseStudy[] = [
       alt: "Page produit du site ModeShop",
     },
     detailedDescription:
-      "ModeShop, une boutique de vêtements en ligne en pleine croissance, nous a contactés pour refondre entièrement leur site e-commerce vieillissant. Le site existant souffrait de problèmes de performance, d'une expérience utilisateur médiocre sur mobile et d'un processus de paiement complexe qui entraînait un taux d'abandon élevé.\n\nNotre approche a commencé par une analyse approfondie des besoins des utilisateurs et des points de friction existants. Nous avons ensuite conçu une architecture moderne basée sur Next.js pour garantir des performances optimales et une expérience utilisateur fluide sur tous les appareils.\n\nLe nouveau site intègre un système de paiement Stripe avec des options multiples (carte, PayPal, Apple Pay), un catalogue produit dynamique avec filtrage avancé, et un tableau de bord administrateur permettant une gestion simplifiée des stocks et des commandes.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Supabase", "Vercel"],
-    duration: "3 mois",
-    website: "https://modeshop-exemple.fr",
+      `Proditec, une entreprise spécialisée dans la robotique industrielle, avait besoin d'une refonte complète de son site web pour 
+      refléter son travail et sa reconnaissance internationale. Leur ancien site était obsolète, difficile à naviguer et à administrer et ne prenait 
+      pas en charge le multilingue.\n\nNous avons créé un site WordPress avec un design responsive et une interface 
+      utilisateur et administrateur technique et efficace pour être utilisées par tous.
+      Le site est entièrement multilingue grâce à l'intégration de Polylang, 
+      permettant aux visiteurs de choisir leur langue préférée.
+      \n\nLe nouveau site met en avant les produits phares de Proditec avec des détails précis sur leurs machines.
+      Des optimisations techniques ont été mises en place pour améliorer la vitesse de chargement du site, 
+      ce qui a permis d'atteindre un score PageSpeed de 98 sur mobile et desktop.`,
+    technologies: ["WordPress", "LiteSpeed", "Polylang", "elementor", "Hostinger"],
+    duration: "1 mois",
+    website: "https://proditec.com",
   },
   {
     id: "2",
@@ -365,26 +372,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
   return (
     <main className="min-h-screen">
       {/* Hero section avec image et titre */}
-      <div className="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src={caseStudy.imageUrl || "/placeholder.svg"}
-            alt={caseStudy.title}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        </div>
-        <div className="container relative h-full flex flex-col justify-end pb-12 px-4 md:px-6">
-          <Link href="/etudes-de-cas" className="text-white mb-4 flex items-center hover:underline">
+        <div className="container relative h-full flex flex-col justify-end py-16 px-4 md:px-6">
+          <Link href="/etudes-de-cas" className="text-regularblue/70 mb-4 flex items-center hover:underline">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Retour aux études de cas
           </Link>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">{caseStudy.title}</h1>
-          <p className="text-xl text-white max-w-3xl">{caseStudy.description}</p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-regularblue mb-4">{caseStudy.title}</h1>
+          <p className="text-xl max-w-3xl text-regularblue/70">{caseStudy.description}</p>
         </div>
-      </div>
 
       {/* Contenu principal */}
       <div className="container px-4 md:px-6 py-12">
@@ -393,10 +388,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <div className="lg:col-span-2 space-y-10">
             {/* Présentation du projet */}
             <section>
-              <h2 className="text-2xl font-bold mb-6">Présentation du projet</h2>
+              <h2 className="text-2xl font-bold mb-6 text-regularblue">Présentation du projet</h2>
               <div className="prose max-w-none">
                 {caseStudy.detailedDescription.split("\n\n").map((paragraph, index) => (
-                  <p key={index} className="mb-4 text-gray-700 leading-relaxed">
+                  <p key={index} className="mb-4 text-regularblue/80 leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
@@ -406,27 +401,27 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             {/* Objectifs et résultats */}
             <section className="grid md:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl font-bold mb-6">Objectifs</h2>
+                <h2 className="text-2xl font-bold mb-6 text-regularblue">Objectifs</h2>
                 <ul className="space-y-3">
                   {caseStudy.objectives.map((objective, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="h-6 w-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mr-3 mt-0.5">
+                      <div className="h-6 w-6 rounded-full bg-lightblue/10 text-lightblue/70 flex items-center justify-center mr-3 mt-0.5">
                         <ChevronRight className="h-4 w-4" />
                       </div>
-                      <span className="text-gray-700">{objective}</span>
+                      <span className=" text-regularblue/80">{objective}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h2 className="text-2xl font-bold mb-6">Résultats</h2>
+                <h2 className="text-2xl font-bold mb-6 text-regularblue">Résultats</h2>
                 <ul className="space-y-3">
                   {caseStudy.results.map((result, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="h-6 w-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mr-3 mt-0.5">
+                      <div className="h-6 w-6 rounded-full bg-lightblue/10 text-lightblue/70 flex items-center justify-center mr-3 mt-0.5">
                         <ChevronRight className="h-4 w-4" />
                       </div>
-                      <span className="text-gray-700">{result}</span>
+                      <span className=" text-regularblue/80">{result}</span>
                     </li>
                   ))}
                 </ul>
@@ -435,7 +430,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
             {/* Galerie */}
             <section>
-              <h2 className="text-2xl font-bold mb-6">Aperçu du projet</h2>
+              <h2 className="text-2xl font-bold mb-6 text-regularblue">Aperçu du projet</h2>
               <div className="rounded-lg overflow-hidden">
                 <Image
                   src={caseStudy.gallery.url || "/placeholder.svg"}
@@ -450,7 +445,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             {/* Témoignage client */}
             {caseStudy.testimonial && (
               <section className="bg-gray-50 p-6 rounded-lg">
-                <h2 className="text-2xl font-bold mb-6">Témoignage client</h2>
+                <h2 className="text-2xl font-bold mb-6 text-regularblue">Témoignage client</h2>
                 <blockquote className="relative">
                   <div className="text-xl italic text-gray-700 mb-4">"{caseStudy.testimonial.content}"</div>
                   <footer className="flex items-center">
@@ -469,51 +464,46 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
           {/* Sidebar avec informations du projet */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-50 p-6 rounded-lg sticky top-8">
-              <h2 className="text-xl font-bold mb-6">Informations du projet</h2>
+            <MagicCard >
+            <div className="bg-white p-6 rounded-lg sticky top-8">
+              <h2 className="text-xl font-bold mb-6 text-regularblue">Informations du projet</h2>
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-1">Client</h3>
+                  <h3 className="text-sm font-medium text-regularblue mb-1">Client</h3>
                   <div className="flex items-center">
                     <Badge
                       variant="outline"
-                      className={
-                        caseStudy.clientType === "PME"
-                          ? "bg-blue-50 text-blue-700 border-blue-200"
-                          : caseStudy.clientType === "Association"
-                            ? "bg-green-50 text-green-700 border-green-200"
-                            : "bg-purple-50 text-purple-700 border-purple-200"
-                      }
+                      className="bg-lightblue/10 text-regularblue font-medium"
                     >
                       {caseStudy.clientType}
                     </Badge>
-                    <span className="ml-2">{caseStudy.clientName}</span>
+                    <span className="ml-2 font-medium font-googletitre text-lg">{caseStudy.clientName}</span>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-1">Date de réalisation</h3>
+                  <h3 className="text-sm font-medium text-regularblue mb-1">Date de réalisation</h3>
                   <div className="flex items-center">
-                    <Calendar className="h-4 w-4 mr-2 text-gray-500" />
-                    <span>
+                    <Calendar className="h-4 w-4 mr-2 text-lightblue" />
+                    <span className="font-medium font-googletitre text-lg">
                       {caseStudy.date.month && monthNames[caseStudy.date.month - 1]} {caseStudy.date.year}
                     </span>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-1">Durée du projet</h3>
-                  <span>{caseStudy.duration}</span>
+                  <h3 className="text-sm font-medium text-regularblue mb-1">Durée du projet</h3>
+                  <span className="font-medium font-googletitre text-lg">{caseStudy.duration}</span>
                 </div>
 
                 <Separator />
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">Technologies utilisées</h3>
+                  <h3 className="text-sm font-medium text-regularblue mb-2">Technologies utilisées</h3>
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.technologies.map((tech, index) => (
-                      <Badge key={index} variant="secondary">
+                      <Badge key={index} variant="secondary" className="bg-lightblue/10 text-regularblue font-medium">
                         {tech}
                       </Badge>
                     ))}
@@ -521,11 +511,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500 mb-2">Tags</h3>
+                  <h3 className="text-sm font-medium text-regularblue mb-2">Tags</h3>
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.tags.map((tag, index) => (
-                      <Badge key={index} variant="outline" className="bg-gray-100">
-                        <Tag className="h-3 w-3 mr-1" />
+                      <Badge key={index} variant="outline" className="bg-lightblue/10 text-regularblue font-medium">
                         {tag}
                       </Badge>
                     ))}
@@ -534,12 +523,12 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
                 {caseStudy.website && (
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500 mb-2">Site web</h3>
+                    <h3 className="text-sm font-medium text-regularblue mb-2">Site web</h3>
                     <a
                       href={caseStudy.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-emerald-600 hover:underline"
+                      className="text-regularblue font-adobetitre hover:underline"
                     >
                       {caseStudy.website}
                     </a>
@@ -549,16 +538,17 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 <Separator />
 
                 <div>
-                  <Button className="w-full" asChild>
+                  <Button className="md:flex gap-1 rounded-full px-6 bg-regularblue hover:bg-regularblue/80 hover:text-white transition-all duration-900 ease-in-out" asChild>
                     <Link href="/contact">Discuter de votre projet</Link>
                   </Button>
                 </div>
               </div>
             </div>
+            </MagicCard>
           </div>
         </div>
 
-        {/* Autres projets similaires */}
+        {/* Autres projets similaires 
         <section className="mt-16">
           <h2 className="text-2xl font-bold mb-8">Projets similaires</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -601,7 +591,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               </Link>
             ))}
           </div>
-        </section>
+        </section>*/}
 
         {/* Call to action */}
         <section className="mt-16 bg-emerald-50 rounded-lg p-8 text-center">

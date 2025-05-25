@@ -68,13 +68,20 @@ export function ExpandableCardNIP() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-[60%] max-w-[80%] h-fit flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-[34rem] max-w-[90%] h-fit flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
 
 
               <div>
-                <div className="flex justify-between items-start p-4">
-                  <div className="">
+                <div className="flex flex-col justify-between items-start p-4">
+                  <div className="w-full">
+                  <motion.a
+                    layoutId={`button-${active.title}-${id}`}
+                    href={active.ctaLink}
+                    className="px-6 py-3 text-sm rounded-full font-medium bg-lightblue/10 text-regularblue hover:bg-lightblue/20 transition-colors duration-200 flex justify-self-end items-center gap-2"
+                  >
+                    {active.ctaText}
+                  </motion.a>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
                       className="font-bold text-regularblue"
@@ -83,19 +90,11 @@ export function ExpandableCardNIP() {
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-regularblue/80 text-xs uppercase font-bold"
+                      className="text-regularblue/70 text-xs uppercase font-bold"
                     >
                       {active.description}
                     </motion.p>
                   </div>
-
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    className="px-6 py-3 text-sm rounded-full font-bold bg-regularblue text-white"
-                  >
-                    {active.ctaText}
-                  </motion.a>
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
@@ -103,7 +102,7 @@ export function ExpandableCardNIP() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-regularblue text-sm pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -203,18 +202,15 @@ export const CloseIcon = () => {
 const cards = [
   {
     description: "Quizz",
-    title: "Quel CMS choisir ?",
+    title: "WordPress CMS ou Headless ?",
     src: "/img/astronaut-doing-fishing.svg",
     ctaText: "Tester en ligne",
-    ctaLink: "/quizz",
+    ctaLink: "/cms-headless",
     content: () => {
       return (
         <p>
-           Outil diagnostique en ligne gratuit qui analyse en profondeur votre projet de site web dans ses aspects techniques, 
-           ergonomiques et marketing.<br /> <br />
-           Conçu pour les professionnels comme pour les novices, 
-           ce quizz propose des recommandations personnalisées et actionnables 
-           pour choisir la meilleure solution technique.
+           Outil diagnostique en ligne gratuit qui analyse votre projet de site web dans ses aspects techniques, 
+           ergonomiques et marketing pour déterminer si la solution la plus appropriée est un WordPress natif ou un WordPress Headless.
         </p>
       );
     },
