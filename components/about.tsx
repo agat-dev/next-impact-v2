@@ -78,34 +78,29 @@ const About = () => {
 
         <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h3 className="text-3xl font-bold mb-6 text-white">Mon Parcours</h3>
-            <p className="text-gray-400 mb-6 text-lg">
+            <h3 className="text-3xl font-bold mb-6 text-regularblue">Mes Résultats</h3>
+            <p className="text-lightblue mb-6 text-lg">
               Avec une formation en informatique et des années d'expérience dans l'industrie, j'ai travaillé avec des startups,
               des agences et des grandes entreprises pour fournir des solutions techniques de haute qualité qui stimulent la croissance.
-            </p>
-            <p className="text-gray-400 text-lg">
-              Mon expertise réside dans la création d'applications évolutives et maintenables, avec un accent sur l'expérience utilisateur,
-              les performances et la qualité du code. Je suis passionnée par les nouvelles technologies et
-              les meilleures pratiques pour offrir des résultats exceptionnels à mes clients.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-brand-400/50 transition-all">
-              <div className="text-4xl font-bold text-brand-400 mb-2">8+</div>
-              <p className="font-medium text-white">Années d'expérience</p>
+              <div className="text-4xl font-bold font-adobetitre mb-2">8+</div>
+              <p className="font-medium text-lightblue">Années d'expérience</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-brand-400/50 transition-all">
-              <div className="text-4xl font-bold text-brand-400 mb-2">50+</div>
-              <p className="font-medium text-white">Projets complétés</p>
+              <div className="text-4xl font-bold font-adobetitre mb-2">50+</div>
+              <p className="font-medium text-lightblue">Projets complétés</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-brand-400/50 transition-all">
-              <div className="text-4xl font-bold text-brand-400 mb-2">20+</div>
-              <p className="font-medium text-white">Clients satisfaits</p>
+              <div className="text-4xl font-bold font-adobetitre mb-2">20+</div>
+              <p className="font-medium text-lightblue">Clients satisfaits</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:border-brand-400/50 transition-all">
-              <div className="text-4xl font-bold text-brand-400 mb-2">5+</div>
-              <p className="font-medium text-white">Secteurs servis</p>
+              <div className="text-4xl font-bold font-adobetitre mb-2">5+</div>
+              <p className="font-medium text-lightblue">Secteurs servis</p>
             </div>
           </div>
         </div>
