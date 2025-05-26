@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import LottieAnimation from "@/components/ui/lottie-animation";
 
 export function ExpandableCardNIP() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -44,21 +44,15 @@ export function ExpandableCardNIP() {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{
                 opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
+                transition: { duration: 0.05 },
               }}
               className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
               onClick={() => setActive(null)}
@@ -70,18 +64,16 @@ export function ExpandableCardNIP() {
               ref={ref}
               className="w-[34rem] max-w-[90%] h-fit flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
-
-
               <div>
                 <div className="flex flex-col justify-between items-start p-4">
                   <div className="w-full">
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    className="px-6 py-3 text-sm rounded-full font-medium bg-lightblue/10 text-regularblue hover:bg-lightblue/20 transition-colors duration-200 flex justify-self-end items-center gap-2"
-                  >
-                    {active.ctaText}
-                  </motion.a>
+                    <motion.a
+                      layoutId={`button-${active.title}-${id}`}
+                      href={active.ctaLink}
+                      className="px-6 py-3 text-sm rounded-full font-medium bg-lightblue/10 text-regularblue hover:bg-lightblue/20 transition-colors duration-200 flex justify-self-end items-center gap-2"
+                    >
+                      {active.ctaText}
+                    </motion.a>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
                       className="font-bold text-regularblue"
@@ -122,20 +114,23 @@ export function ExpandableCardNIP() {
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between items-center bg-white hover:bg-white/70 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row">
+            <div className="flex gap-4 flex-col md:flex-row md:items-center md:justify-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
-                />
+                {/* Remplacement de l'image par Lottie */}
+                <div className="rounded-lg object-contain object-top">
+                  <LottieAnimation
+                    key={`lottie-${card.title}-${id}`}
+                    animationPath={card.lottie}
+                    loop
+                    width={60}
+                    height={60}
+                  />
+                </div>
               </motion.div>
-              <div className="">
+              <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-regular text-xl text-regularblue text-center md:text-left"
+                  className="pt-1 font-regular text-xl text-regularblue text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
@@ -147,18 +142,6 @@ export function ExpandableCardNIP() {
                 </motion.p>
               </div>
             </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="ml-4 px-4 py-2 mt-4 md:mt-0"
-            >
-              <Image
-                width={80}
-                height={80}
-                src="/img/arrow.svg"
-                alt="rocket"
-                className="h-4 w-4"
-              />
-            </motion.button>
           </motion.div>
         ))}
       </ul>
@@ -169,17 +152,11 @@ export function ExpandableCardNIP() {
 export const CloseIcon = () => {
   return (
     <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{
         opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
+        transition: { duration: 0.05 },
       }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -203,71 +180,70 @@ const cards = [
   {
     description: "Quizz",
     title: "WordPress CMS ou Headless ?",
-    src: "/img/astronaut-doing-fishing.svg",
+    lottie: "/lotties/wordpress.json",
     ctaText: "Tester en ligne",
     ctaLink: "/cms-headless",
-    content: () => {
-      return (
-        <p>
-           Outil diagnostique en ligne gratuit qui analyse votre projet de site web dans ses aspects techniques, 
-           ergonomiques et marketing pour déterminer si la solution la plus appropriée est un WordPress natif ou un WordPress Headless.
-        </p>
-      );
-    },
+    content: () => (
+      <p>
+        Outil diagnostique en ligne gratuit qui analyse votre projet de site web
+        dans ses aspects techniques, ergonomiques et marketing pour déterminer
+        si la solution la plus appropriée est un WordPress natif ou un WordPress
+        Headless.
+      </p>
+    ),
   },
   {
     description: "Test en ligne",
     title: "Auditer mon site web",
-    src: "/img/astronaut-playing-rugby.svg",
+    lottie: "/lotties/scan.json",
     ctaText: "Lancer l'audit",
     ctaLink: "/audit",
-    content: () => {
-      return (
-        <p>
-          Outil diagnostique complet en ligne et gratuit qui analyse en profondeur 
-          les aspects techniques, ergonomiques et marketing de votre site web.<br /><br />
-          Sur la base de votre URL, il identifie rapidement l'ensemble des failles 
-          qui freinent sa visibilité et son efficacité. 
-        </p>
-      );
-    },
+    content: () => (
+      <p>
+        Outil diagnostique complet en ligne et gratuit qui analyse en profondeur
+        les aspects techniques, ergonomiques et marketing de votre site web.
+        <br />
+        <br />
+        Sur la base de votre URL, il identifie rapidement l'ensemble des failles
+        qui freinent sa visibilité et son efficacité.
+      </p>
+    ),
   },
-
   {
     description: "Générateur",
     title: "Rédiger mon cahier des charges",
-    src: "/img/astronaut-floating-holding-tools.svg",
+    lottie: "/lotties/document.json",
     ctaText: "Commencer la rédaction",
     ctaLink: "/cahier-des-charges",
-    content: () => {
-      return (
-        <p>
-          Solution de génération de livrable gratuite et en ligne pour structurer et formaliser méthodiquement 
-          votre projet digital de leur conception à leur livraison <br />
-          <br />
-          En guidant l'utilisateur à travers des questions ciblées et personnalisables, il transforme 
-          vos besoins métiers en spécifications techniques précises, complètes et exploitables 
-          par tous les acteurs du projet.
-        </p>
-      );
-    },
+    content: () => (
+      <p>
+        Solution de génération de livrable gratuite et en ligne pour structurer
+        et formaliser méthodiquement votre projet digital de leur conception à
+        leur livraison <br />
+        <br />
+        En guidant l'utilisateur à travers des questions ciblées et
+        personnalisables, il transforme vos besoins métiers en spécifications
+        techniques précises, complètes et exploitables par tous les acteurs du
+        projet.
+      </p>
+    ),
   },
-{
+  {
     description: "Quizz",
-    title: "Quel tarif pour mon site web ?",	
-    src: "/img/astronaut-sitting-on-a-gold-stacks.svg",
+    title: "Quel tarif pour mon site web ?",
+    lottie: "/lotties/cost-calculator.json",
     ctaText: "Lancer l'estimation",
     ctaLink: "/simulateur-tarifs",
-    content: () => {
-      return (
-        <p>
-          Simulateur en ligne et gratuit qui calcule instantanément 
-          le coût précis de votre projet digital en fonction de vos besoins, 
-          et du type de prestataire choisi.<br /><br />
-          Cet outil stratégique aide les décideurs à optimiser leur budget en visualisant 
-          l'impact financier de chaque choix technique..
-        </p>
-      );
-    },
+    content: () => (
+      <p>
+        Simulateur en ligne et gratuit qui calcule instantanément le coût précis
+        de votre projet digital en fonction de vos besoins, et du type de
+        prestataire choisi.
+        <br />
+        <br />
+        Cet outil stratégique aide les décideurs à optimiser leur budget en
+        visualisant l'impact financier de chaque choix technique..
+      </p>
+    ),
   },
 ];

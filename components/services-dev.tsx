@@ -22,53 +22,53 @@ const ServicesDev = () => {
           <span className="uppercase font-adobetitre text-xl">WordPress</span>
           <br />
           <br />
-            <div className="col-span-6 flex flex-col gap-3 pt-4">
+            <div className="col-span-6 flex flex-col gap-6 pt-4">
 
             <div className="flex items-center">
               <Image 
-                  src="/img/media.gif"
+                  src="/img/design.gif"
                   alt="Solution technique animation"
-                  width={20}
-                  height={20}
+                  width={68}
+                  height={68}
                   className="mr-3 text-primary" />
-                <span className="font-adobetitre text-lg text-regularblue/80">Design sur-mesure</span>
+                <span className="font-adobetitre text-xl text-regularblue/80">Design sur-mesure</span>
               </div>  
               <div className="flex items-center">
               <Image 
-                  src="/img/media.gif"
+                  src="/img/database.gif"
                   alt="Solution technique animation"
-                  width={20}
-                  height={20}
+                  width={68}
+                  height={68}
                   className="mr-3 text-primary" />
-                <span className="font-adobetitre text-lg text-regularblue/80">Organisation des contenus dédiée</span>
+                <span className="font-adobetitre text-xl text-regularblue/80">Organisation des contenus dédiée</span>
               </div>  
 
               <div className="flex items-center">
                 <Image 
                     src="/img/code.gif"
                     alt="Solution technique animation"
-                    width={20}
-                    height={20}
+                    width={50}
+                    height={50}
                     className="mr-3 text-primary" />
-                  <span className="font-adobetitre text-lg text-regularblue/80">Fonctionnalités adaptées</span>
+                  <span className="font-adobetitre text-xl text-regularblue/80">Fonctionnalités adaptées</span>
                 </div>  
               <div className="flex items-center">
               <Image 
                   src="/img/e-learning.gif"
                   alt="Solution technique animation"
-                  width={20}
-                  height={20}
+                  width={50}
+                  height={50}
                   className="mr-3 text-primary" />
-                <span className="font-adobetitre text-lg text-regularblue/80">Administration personnalisée</span>
+                <span className="font-adobetitre text-xl text-regularblue/80">Administration personnalisée</span>
               </div>   
               <div className="flex items-center">
               <Image 
                   src="/img/e-learning.gif"
                   alt="Solution technique animation"
-                  width={20}
-                  height={20}
+                  width={50}
+                  height={50}
                   className="mr-3 text-primary" />
-                <span className="font-adobetitre text-lg text-regularblue/80">Gestion SEO native</span>
+                <span className="font-adobetitre text-xl text-regularblue/80">Gestion SEO native</span>
               </div>  
             </div>
         </>
@@ -84,51 +84,51 @@ const ServicesDev = () => {
           </span>
           <br />
           <br />    
-            <div className="col-span-6 flex flex-col gap-3 pt-4">
+            <div className="col-span-6 flex flex-col gap-6 pt-4">
             <div className="flex items-center">
             <Image 
-                src="/img/site-corporate.gif"
+                src="/img/performances.gif"
                 alt="Solution technique animation"
-                width={20}
-                height={20}
-                className="mr-3 text-primary" />
-              <span className="font-adobetitre text-lg text-regularblue/80">Performances accrues</span>
+                width={45}
+                height={45}
+                className="mx-3 text-primary" />
+              <span className="ml-3 font-adobetitre text-xl text-regularblue/80">Performances accrues</span>
             </div>  
             <div className="flex items-center">
             <Image 
-                src="/img/web-app.gif"
+                src="/img/design.gif"
                 alt="Solution technique animation"
-                width={20}
-                height={20}
+                width={68}
+                height={68}
                 className="mr-3 text-primary" />
-              <span className="font-adobetitre text-lg text-regularblue/80">Design moderne</span>
+              <span className="font-adobetitre text-xl text-regularblue/80 jusitfy-self-start">Design moderne</span>
             </div>  
             <div className="flex items-center">
             <Image 
                 src="/img/media.gif"
                 alt="Solution technique animation"
-                width={20}
-                height={20}
+                width={50}
+                height={50}
                 className="mr-3 text-primary" />
-              <span className="font-adobetitre text-lg text-regularblue/80">Interface d'admin familière</span>
+              <span className="font-adobetitre text-xl text-regularblue/80">Interface d'admin familière</span>
             </div>  
             <div className="flex items-center">
             <Image 
                 src="/img/code.gif"
                 alt="Solution technique animation"
-                width={20}
-                height={20}
+                width={50}
+                height={50}
                 className="mr-3 text-primary" />
-              <span className="font-adobetitre text-lg text-regularblue/80">Connexion à des applications extérieures</span>
+              <span className="font-adobetitre text-xl text-regularblue/80">Connexion à des applications extérieures</span>
             </div>  
             <div className="flex items-center">
             <Image 
                 src="/img/e-learning.gif"
                 alt="Solution technique animation"
-                width={20}
-                height={20}
+                width={50}
+                height={50}
                 className="mr-3 text-primary" />
-              <span className="font-adobetitre text-lg text-regularblue/80">Evolutivité vers l'app mobile</span>
+              <span className="font-adobetitre text-xl text-regularblue/80">Evolutivité vers l'app mobile</span>
             </div>  
           </div> 
         </>

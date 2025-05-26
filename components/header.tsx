@@ -79,7 +79,7 @@ export function NavBar() {
               <ListItem href="/audit" title="Audit de site web" className='h-28'>
               <p className='text-xs'>Outil en ligne pour tester globalement la qualité de votre site web.</p>
               </ListItem>                
-              <ListItem href="/quizz" title="Quiz de choix du CMS" className='h-28'>
+              <ListItem href="/cms-headless" title="WordPress CMS ou Headless ?" className='h-28'>
               <p className='text-xs'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
               </ListItem>      
               </div> 

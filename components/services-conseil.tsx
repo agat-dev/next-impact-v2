@@ -1,4 +1,4 @@
-import { ExpandableCardNIP } from "@/components/ui/expandable-cards";
+import { ExpandableCardNIP } from "@/components/conseil/expandable-cards";
 import { Card, CardContent } from "@/components/ui/card";
 import { MagicCard } from "@/components/magicui/magic-card";
 import Image from "next/image";

@@ -7,9 +7,9 @@ export default function Home() {
         <section className="w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">
         <div className="container px-4 md:px-6">
           <div className="flex justify-center space-y-4 py-8">
-            <TextAnimate animation="blurInUp" by="character" once>
-              Auditer son site web
-            </TextAnimate>
+            <h1 className="font-medium">
+              Audit de site web
+            </h1>
           </div>
         </div>
       </section>

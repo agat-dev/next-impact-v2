@@ -14,7 +14,7 @@ import {
   ExpandableCardHeader,
   ExpandableContent,
   ExpandableTrigger,
-} from "@/components/ui/expand-cards"
+} from "@/components/conseil/expand-cards"
 import {
   Tooltip,
   TooltipContent,

@@ -2,9 +2,17 @@ import PricingCalculator from "@/components/pricing-calculator"
 
 export default function Home() {
   return (
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Calculateur de Tarifs pour Sites Web</h1>
+    <main>
+       <section className="w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">
+        <div className="container px-4 md:px-6">
+        <div className="flex justify-center space-y-4 py-8">
+            <h1 className="font-medium">
+              Simulateur de Tarif de site web 
+            </h1>
+          </div>
       <PricingCalculator />
+      </div>
+    </section>
     </main>
   )
 }
