@@ -42,7 +42,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className=
-      "mt-2 rounded-md border p-6 text-base font-adobetext font-normal text-mediumblue/70 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      "mt-2 rounded-md p-6 text-base font-adobetext font-normal text-mediumblue/70 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   />
 ))

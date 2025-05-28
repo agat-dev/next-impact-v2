@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { AuditResults } from "@/components/audit-results"
+import { AuditResults } from "@/components/audit/audit-results"
 import { runAudit } from "@/lib/audit-service"
 import type { AuditData } from "@/lib/types"
 import { Loader2 } from "lucide-react"
@@ -54,22 +54,22 @@ export function WebsiteAuditTool() {
   }
 
   return (
-    <div className="space-y-8">
-      <Card className="p-6">
+    <div className="space-y-8 my-20">
+      <Card className="w-max mx-auto p-6 rounded-3xl">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="url" className="text-sm font-medium">
-              Website URL
+            <label htmlFor="url" className="text-sm font-medium font-adobetext text-regularblue">
+              URL du site
             </label>
-            <div className="flex gap-2">
+            <div className="flex gap-2 w-[40rem]">
               <Input
                 id="url"
-                placeholder="Enter website URL (e.g., example.com)"
+                placeholder="example.com"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className="flex-1"
               />
-              <Button type="submit" disabled={isLoading}>
+              <Button type="submit" disabled={isLoading} className="gap-1 rounded-full text-md font-adobetitre font-regular text-white bg-regularblue hover:bg-regularblue/80">
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

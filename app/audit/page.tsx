@@ -1,5 +1,4 @@
-import { WebsiteAuditTool } from "@/components/website-audit-tool"
-import { TextAnimate } from "@/components/magicui/text-animate"
+import { WebsiteAuditTool } from "@/components/audit/website-audit-tool"
 
 export default function Home() {
   return (

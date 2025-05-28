@@ -106,7 +106,7 @@ export function ExpandableCardNIP() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="w-3xl mx-0 grid grid-cols-2 gap-8">
+      <ul className="w-3xl mx-0 grid grid-cols-2 gap-20">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}

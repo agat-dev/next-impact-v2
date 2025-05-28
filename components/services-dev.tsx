@@ -33,7 +33,7 @@ const ServicesDev = () => {
                   className="mr-3 text-primary" />
                 <span className="font-adobetitre text-xl text-regularblue/80">Design sur-mesure</span>
               </div>  
-              <div className="flex items-center">
+              <div className="flex items-center mt-5">
               <Image 
                   src="/img/database.gif"
                   alt="Solution technique animation"
@@ -43,31 +43,31 @@ const ServicesDev = () => {
                 <span className="font-adobetitre text-xl text-regularblue/80">Organisation des contenus dédiée</span>
               </div>  
 
-              <div className="flex items-center">
+              <div className="flex items-center mt-3">
                 <Image 
-                    src="/img/code.gif"
+                    src="/img/plug.gif"
                     alt="Solution technique animation"
-                    width={50}
-                    height={50}
-                    className="mr-3 text-primary" />
+                    width={60}
+                    height={60}
+                    className="ml-2 mr-3 text-primary" />
                   <span className="font-adobetitre text-xl text-regularblue/80">Fonctionnalités adaptées</span>
                 </div>  
               <div className="flex items-center">
               <Image 
-                  src="/img/e-learning.gif"
+                  src="/img/backend.gif"
                   alt="Solution technique animation"
-                  width={50}
-                  height={50}
+                  width={64}
+                  height={64}
                   className="mr-3 text-primary" />
                 <span className="font-adobetitre text-xl text-regularblue/80">Administration personnalisée</span>
               </div>   
-              <div className="flex items-center">
+              <div className="flex items-center mt-2">
               <Image 
-                  src="/img/e-learning.gif"
+                  src="/img/seo.gif"
                   alt="Solution technique animation"
-                  width={50}
-                  height={50}
-                  className="mr-3 text-primary" />
+                  width={43}                 
+                  height={43}                 
+                  className="ml-2 mr-6 text-primary" />
                 <span className="font-adobetitre text-xl text-regularblue/80">Gestion SEO native</span>
               </div>  
             </div>
@@ -94,40 +94,40 @@ const ServicesDev = () => {
                 className="mx-3 text-primary" />
               <span className="ml-3 font-adobetitre text-xl text-regularblue/80">Performances accrues</span>
             </div>  
-            <div className="flex items-center">
+            <div className="flex items-center mt-4">
             <Image 
                 src="/img/design.gif"
                 alt="Solution technique animation"
-                width={68}
-                height={68}
-                className="mr-3 text-primary" />
+                width={64}
+                height={64}
+                className="ml-1 mr-3 text-primary" />
               <span className="font-adobetitre text-xl text-regularblue/80 jusitfy-self-start">Design moderne</span>
             </div>  
-            <div className="flex items-center">
+            <div className="flex items-center mt-3">
             <Image 
-                src="/img/media.gif"
+                src="/img/backend.gif"
                 alt="Solution technique animation"
-                width={50}
-                height={50}
-                className="mr-3 text-primary" />
+                width={64}
+                height={64}
+                className="mr-4 text-primary" />
               <span className="font-adobetitre text-xl text-regularblue/80">Interface d'admin familière</span>
             </div>  
-            <div className="flex items-center">
+            <div className="flex items-center mt-1">
             <Image 
-                src="/img/code.gif"
+                src="/img/api.gif"
                 alt="Solution technique animation"
                 width={50}
                 height={50}
-                className="mr-3 text-primary" />
+                className="ml-2 mr-5 text-primary" />
               <span className="font-adobetitre text-xl text-regularblue/80">Connexion à des applications extérieures</span>
             </div>  
-            <div className="flex items-center">
+            <div className="flex items-center mt-2">
             <Image 
-                src="/img/e-learning.gif"
+                src="/img/mobile.gif"
                 alt="Solution technique animation"
-                width={50}
-                height={50}
-                className="mr-3 text-primary" />
+                width={54}
+                height={54}
+                className="ml-1 mr-5 text-primary" />
               <span className="font-adobetitre text-xl text-regularblue/80">Evolutivité vers l'app mobile</span>
             </div>  
           </div> 
@@ -157,14 +157,14 @@ const ServicesDev = () => {
               La simplicité de WordPress et la qualité du développement.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 place-items-center place-content-start gap-24 my-16 p-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 justify-start gap-24 my-16 p-8">
           {skills.map((skill, index) => (
             <Card
               key={index}
-              className="w-max bg-white border shadow-none transition-all rounded-2xl overflow-hidden"
+              className="h-fit bg-white border shadow-none transition-all rounded-2xl overflow-hidden"
             >
               <MagicCard className="rounded-2xl">
-                <CardContent className="flex items-center justify-center flex-col text-center p-8">
+                <CardContent className="flex items-center justify-center flex-col text-center pl-8 pr-12 py-8">
                   <h3 className="text-4xl font-bold mb-3 pt-5 text-regularblue">
                     {skill.title}
                   </h3>

@@ -85,7 +85,7 @@ export default function ServicesConseil() {
           {ConseilSkills.map((conseilSkill, index) => (
             <Card
               key={index}
-              className="w-max bg-white border shadow-none transition-all rounded-2xl overflow-hidden"
+              className="w-max bg-white border-none shadow-none transition-all rounded-2xl overflow-hidden"
             >
               <MagicCard className="rounded-2xl">
                 <CardContent className="flex items-center justify-center flex-col text-center p-8">

@@ -72,13 +72,13 @@ export function CahierDesChargesForm() {
     <div className="space-y-8 mb-20">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <div className="flex justify-center mb-6">
-          <TabsList className="grid grid-cols-2 w-[400px]">
+          <TabsList className="grid grid-cols-2 w-[400px] bg-white rounded-full">
             <TabsTrigger value="form" className="flex items-center gap-2">
-              <FileText className="h-4 w-4" />
+              <FileText className="h-4 w-4 mr-4" />
               Formulaire
             </TabsTrigger>
             <TabsTrigger value="preview" className="flex items-center gap-2">
-              <Eye className="h-4 w-4" />
+              <Eye className="h-4 w-4 mr-4" />
               Prévisualisation
             </TabsTrigger>
           </TabsList>
@@ -98,7 +98,7 @@ export function CahierDesChargesForm() {
                             <div key={field.id} className="space-y-2">
                               {field.type === "checkboxGroup" ? (
                                 <>
-                                  <Label className="text-base font-medium">{field.label}</Label>
+                                  <Label className="text-base font-medium text-regularblue">{field.label}</Label>
                                   <div className="grid gap-3 pt-2">
                                   {field.options?.map((option) => (
                                     <div key={option.id} className="flex items-start space-x-2">
@@ -111,7 +111,7 @@ export function CahierDesChargesForm() {
                                       />
                                       <Label
                                         htmlFor={`${field.id}-${option.id}`}
-                                        className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        className="text-sm text-regularblue/90 font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                       >
                                         {option.label}
                                       </Label>
@@ -128,14 +128,14 @@ export function CahierDesChargesForm() {
                                   />
                                   <Label
                                     htmlFor={field.id}
-                                    className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                    className="text-sm text-lightblue font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                   >
                                     {field.label}
                                   </Label>
                                 </div>
                               ) : (
                                 <>
-                                  <Label htmlFor={field.id} className="text-base font-medium">
+                                  <Label htmlFor={field.id} className="text-base font-medium text-regularblue">
                                     {field.label}
                                   </Label>
                                   {field.type === "textarea" ? (
@@ -144,7 +144,7 @@ export function CahierDesChargesForm() {
                                       placeholder={field.placeholder}
                                       value={formData[field.id] || ""}
                                       onChange={(e) => handleInputChange(field.id, e.target.value)}
-                                      className="min-h-[100px]"
+                                      className="min-h-[100px] placeholder:text-lightblue"
                                     />
                                   ) : (
                                     <Input
@@ -167,7 +167,7 @@ export function CahierDesChargesForm() {
             </Accordion>
 
             <div className="flex justify-center pt-6">
-              <Button type="submit" size="lg" disabled={isGenerating}>
+              <Button type="submit" size="lg" className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"disabled={isGenerating}>
                 {isGenerating ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

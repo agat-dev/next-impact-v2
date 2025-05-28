@@ -8,7 +8,7 @@ export default function Home() {
               Générateur de Cahier des Charges
             </h1>
           </div>
-      <p className="text-center mb-8 text-gray-600 max-w-2xl mx-auto">
+      <p className="text-center mb-8 text-regularblue/80 max-w-2xl mx-auto">
         Remplissez le formulaire ci-dessous pour générer un cahier des charges complet pour votre projet de site web.
       </p>
       <CahierDesChargesForm />

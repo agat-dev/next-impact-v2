@@ -53,8 +53,8 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
     if (isLoading) {
       return (
         <div className="space-y-6 p-6">
-          <Skeleton className="h-12 w-3/4 bg-blue-100" />
-          <Skeleton className="h-8 w-1/2 bg-blue-100" />
+          <Skeleton className="h-12 w-3/4 bg-lightblue/10" />
+          <Skeleton className="h-8 w-1/2 bg-lightblue/10" />
           <div className="space-y-4 mt-8">
             <Skeleton className="h-6 w-full" />
             <Skeleton className="h-6 w-full" />
@@ -72,28 +72,28 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
     return (
       <div className="p-6 space-y-8">
         {/* Page de couverture */}
-        <div className="bg-blue-50 p-8 rounded-lg border-t-8 border-blue-600 shadow-md mb-12">
+        <div className="bg-lightblue/10 p-8 rounded-lg border-t-8 border-regularblue shadow-md mb-12">
           <div className="text-center space-y-4">
-            <h1 className="text-3xl font-bold text-blue-800">CAHIER DES CHARGES</h1>
-            <h2 className="text-xl text-blue-600">Refonte de Site Vitrine Institutionnel</h2>
-            <div className="w-24 h-1 bg-orange-500 mx-auto my-6"></div>
+            <h1 className="text-3xl font-bold text-mediumblue">CAHIER DES CHARGES</h1>
+            <h2 className="text-xl text-regularblue font-medium">Refonte de Site Vitrine Institutionnel</h2>
+            <div className="w-24 h-1 bg-pink-500 mx-auto my-6"></div>
 
             <div className="mt-12 space-y-4 text-left max-w-md mx-auto">
               <div className="flex">
-                <span className="font-semibold w-40">Organisation:</span>
-                <span>{formData.organisation_name || "Non spécifié"}</span>
+                <span className="font-adobetitre text-mediumblue w-40">Organisation:</span>
+                <span className="text-sm text-regularblue/80">{formData.organisation_name || "Non spécifié"}</span>
               </div>
               <div className="flex">
-                <span className="font-semibold w-40">Secteur d'activité:</span>
-                <span>{formData.secteur_activite || "Non spécifié"}</span>
+                <span className="font-adobetitre text-mediumblue w-40">Secteur d'activité:</span>
+                <span className="text-sm text-regularblue/80">{formData.secteur_activite || "Non spécifié"}</span>
               </div>
               <div className="flex">
-                <span className="font-semibold w-40">Date de rédaction:</span>
-                <span>{formData.date_redaction || new Date().toLocaleDateString()}</span>
+                <span className="font-adobetitre text-mediumblue w-40">Date de rédaction:</span>
+                <span className="text-sm text-regularblue/80">{formData.date_redaction || new Date().toLocaleDateString()}</span>
               </div>
               <div className="flex">
-                <span className="font-semibold w-40">Rédacteur:</span>
-                <span>{formData.redacteur || "Non spécifié"}</span>
+                <span className="font-adobetitre text-mediumblue w-40">Rédacteur:</span>
+                <span className="text-sm text-regularblue/80">{formData.redacteur || "Non spécifié"}</span>
               </div>
             </div>
 
