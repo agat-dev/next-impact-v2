@@ -13,6 +13,9 @@ export default function CmsQuiz() {
               WordPress ou Headless CMS pour mon projet ? 
             </h1>
           </div>
+            <p className="text-regularblue/70 text-center max-w-3xl mx-auto">
+              Répondez à ce quiz pour déterminer la solution la plus adapté à vos besoins.
+            </p>
       <CmsQuizComponent />
       </div>
     </section>

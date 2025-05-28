@@ -24,18 +24,18 @@ const PROJECTS = [
 		image: "/img/logo_french-touch-seeds.avif",
 		alt: "French Touch Seeds",
 		description: "Site e-commerce multilingue",
-		link: "/realisations/2",
+		link: "/etudes-de-cas/french-touch-seeds",
 		tab: ["tous", "ecommerce"],
 	},
 	{
 		id: 4,
 		title: "Les Doléances",
-		type: "apps",
+		type: "headless",
 		image: "/img/logo-doleances.svg",
-		alt: "Wiki des Doléances",
-		description: "Wiki des Doléances de 2018-2019",
-		link: "/realisations/4",
-		tab: ["tous", "apps"],
+		alt: "Vitrine des Doléances",
+		description: "Vitrine des Doléances de 2018-2019",
+		link: "/etudes-de-cas/doleances",
+		tab: ["tous", "headless"],
 	},
 ];
 
@@ -73,13 +73,13 @@ export default function Realisations() {
 							<TabsTrigger value="ecommerce" className="rounded-full data-[state=active]:bg-background/10">
 								E-commerce
 							</TabsTrigger>
-							<TabsTrigger value="apps" className="rounded-full data-[state=active]:bg-background/10">
-								Applis Web
+							<TabsTrigger value="headless" className="rounded-full data-[state=active]:bg-background/10">
+								Headless
 							</TabsTrigger>
 						</TabsList>
 					</div>
 
-					{["tous", "corporate", "ecommerce", "apps"].map((tab) => (
+					{["tous", "corporate", "ecommerce", "headless"].map((tab) => (
 						<TabsContent value={tab} className="mt-0" key={tab}>
 							<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 								{getProjectsByTab(tab).map((project, index) => (

@@ -51,7 +51,7 @@ const CASE_STUDIES: CaseStudy[] = [
     slug: "proditec",
     title: "Refonte du site corporate multilingue",
     description: "Création d'un site moderne et performant pour une entreprise de l'industrie robotique internationale.",
-    imageUrl: "/placeholder.svg?key=yvs6q",
+    imageUrl: "/logo-proditec.webp",
     clientType: "PME",
     clientName: "Proditec",
     date: {
@@ -95,28 +95,26 @@ const CASE_STUDIES: CaseStudy[] = [
   },
   {
     id: "2",
-    slug: "acl",
-    title: "Site vitrine pour l'Association Culturelle de Lyon",
-    description: "Création d'un site vitrine moderne avec calendrier d'événements et système de don en ligne.",
+    slug: "doleances",
+    title: "Site vitrine de l'Association des Doléances",
+    description: "Création d'un site vitrine inspiré de Wikipédia destiné à promouvoir l'action de l'association.",
     imageUrl: "/placeholder.svg?key=u072i",
     clientType: "Association",
-    clientName: "Association Culturelle de Lyon",
+    clientName: "Association Les Doléances",
     date: {
-      month: 6,
-      year: 2023,
+      month: 5,
+      year: 2025,
     },
-    tags: ["site vitrine", "WordPress", "événements"],
+    tags: ["site vitrine", "WordPress", "Next.js"],
     objectives: [
-      "Créer une présence en ligne moderne et attrayante",
-      "Faciliter la gestion des événements culturels",
-      "Mettre en place un système de dons en ligne",
-      "Améliorer la communication avec les membres",
+      "Présenter les actions et les projets de l'association",
+      "S'inspirer de Wikipédia pour communiquer l'idée de participation libre",
+      "Inciter à l'engagement citoyen",
     ],
     results: [
-      "Augmentation de la participation aux événements de 45%",
-      "Collecte de dons en ligne multipliée par 3",
-      "Réduction du temps de gestion administrative de 60%",
-      "Augmentation du nombre de membres de 28%",
+      "Cartographie interactive des groupes locaux",
+      "Section Agenda pour les événements",
+      "Administration simplifiée via WordPress en Headless",
     ],
     testimonial: {
       content:
@@ -125,14 +123,14 @@ const CASE_STUDIES: CaseStudy[] = [
       position: "Président, Association Culturelle de Lyon",
     },
     gallery: {
-      url: "/placeholder.svg?key=6haaw",
+      url: "/img/lesdoleances-screen-desktop.jpg",
       alt: "Calendrier d'événements de l'ACL",
     },
     detailedDescription:
-      "L'Association Culturelle de Lyon, qui organise plus de 50 événements par an, avait besoin d'un site web moderne pour remplacer leur solution obsolète. Leur ancien site ne permettait pas une gestion efficace des événements et n'offrait pas la possibilité de faire des dons en ligne.\n\nNous avons créé un site WordPress sur mesure avec un thème personnalisé qui met en valeur l'identité visuelle de l'association. Le site intègre un calendrier d'événements interactif, un système de billetterie en ligne, et une plateforme de dons sécurisée.\n\nUne attention particulière a été portée à l'accessibilité du site pour garantir que tous les membres de la communauté puissent y accéder facilement. Nous avons également mis en place un système de newsletter pour améliorer la communication avec les membres et les sympathisants.",
-    technologies: ["WordPress", "PHP", "MySQL", "JavaScript", "Stripe Donations", "The Events Calendar"],
+      "L'association Les Doléances, nouvellement créée a pour vocation de mettre à disposition des citoyens les Doléances de 2018-2019. Pour évoquer l'esprit communautaire et participatif, ainsi que la liberté d'accès à l'information, un template très largement inspiré de Wikipédia a été choisi.\n\nLe site est construit sur WordPress en Headless avec Next.js, permettant une expérience utilisateur fluide et rapide. Le design est épuré, mettant en avant l'action et la démarche.\n\nLe site comprend une cartographie de ses groupes locaux et une section d'articles catégorisés.\n\nLe site est entièrement responsive et optimisé pour le référencement naturel, afin d'attirer un maximum de visiteurs et de sensibiliser le public aux actions de l'association.",
+    technologies: ["WordPress", "Next.js", "Tailwind CSS", "Headless CMS", "Vercel"],
     duration: "2 mois",
-    website: "https://acl-exemple.fr",
+    website: "https://lesdoleances.fr",
   },
   {
     id: "3",
@@ -431,7 +429,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             {/* Galerie */}
             <section>
               <h2 className="text-2xl font-bold mb-6 text-regularblue">Aperçu du projet</h2>
-              <div className="rounded-lg overflow-hidden">
+              <div className="rounded-lg border overflow-hidden">
                 <Image
                   src={caseStudy.gallery.url || "/placeholder.svg"}
                   alt={caseStudy.gallery.alt}
@@ -539,7 +537,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
                 <div>
                   <Button className="md:flex gap-1 rounded-full px-6 bg-regularblue hover:bg-regularblue/80 hover:text-white transition-all duration-900 ease-in-out" asChild>
-                    <Link href="/contact">Discuter de votre projet</Link>
+                    <Link target="_blank" href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress">Discuter de votre projet</Link>
                   </Button>
                 </div>
               </div>
@@ -594,13 +592,13 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         </section>*/}
 
         {/* Call to action */}
-        <section className="mt-16 bg-emerald-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Vous avez un projet similaire ?</h2>
-          <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+        <section className="mt-16 bg-white rounded-lg p-8 text-center">
+          <h2 className="text-2xl md:text-3xl text-regularblue font-bold mb-4">Vous avez un projet similaire ?</h2>
+          <p className="text-lg text-regularblue/80 mb-6 max-w-2xl mx-auto">
             Discutons ensemble de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs.
           </p>
-          <Button size="lg" asChild>
-            <Link href="/contact">Contactez-nous</Link>
+          <Button size="lg" className="gap-1 rounded-full bg-regularblue/90 hover:bg-regularblue/80">
+            <Link target="_blank" href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="text-white hover:text-white">Contactez-nous</Link>
           </Button>
         </section>
       </div>

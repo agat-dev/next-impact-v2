@@ -307,21 +307,21 @@ export default function CmsQuiz() {
 
     return (
       <div className="max-w-4xl mx-auto p-6 space-y-6">
-        <Card className="border-2 border-green-200 bg-green-50">
+        <Card className="border-2 border-regularblue/5 bg-white">
           <CardHeader className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <CheckCircle className="h-12 w-12 text-green-600" />
+              <CheckCircle className="h-12 w-12 text-regularblue/60" />
             </div>
-            <CardTitle className="text-2xl text-green-800">Recommandation : {result.solution}</CardTitle>
+            <CardTitle className="text-2xl text-regularblue font-adobetitre">Recommandation : {result.solution}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-3 text-green-800">Pourquoi cette solution ?</h3>
+              <h3 className="text-lg font-semibold mb-3 text-regularblue">Pourquoi cette solution ?</h3>
               <ul className="space-y-2">
                 {result.reasons.map((reason, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>{reason}</span>
+                    <CheckCircle className="h-5 w-5 text-regularblue/60 mr-4 mt-0.5 flex-shrink-0" />
+                    <span className="text-mediumblue/70">{reason}</span>
                   </li>
                 ))}
               </ul>
@@ -329,11 +329,11 @@ export default function CmsQuiz() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-3 text-green-800">Avantages clés</h4>
-                <ul className="space-y-1 text-sm">
+                <h4 className="font-semibold mb-3 text-regularblue">Avantages clés</h4>
+                <ul className="space-y-1 text-sm text-mediumblue/70">
                   {result.advantages.map((advantage, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-green-600 mr-2">•</span>
+                      <span className=" text-regularblue/60 mr-2">•</span>
                       <span>{advantage}</span>
                     </li>
                   ))}
@@ -341,11 +341,11 @@ export default function CmsQuiz() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3 text-orange-800">Points d'attention</h4>
-                <ul className="space-y-1 text-sm">
+                <h4 className="font-semibold mb-3  text-regularblue">Points d'attention</h4>
+                <ul className="space-y-1 text-sm text-mediumblue/70">
                   {result.considerations.map((consideration, index) => (
                     <li key={index} className="flex items-start">
-                      <span className="text-orange-600 mr-2">•</span>
+                      <span className=" text-regularblue/60 mr-2">•</span>
                       <span>{consideration}</span>
                     </li>
                   ))}
@@ -354,7 +354,7 @@ export default function CmsQuiz() {
             </div>
 
             <div className="pt-4 border-t">
-              <Button onClick={resetQuiz} className="w-full">
+              <Button onClick={resetQuiz} className="w-full gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
                 <RotateCcw className="h-4 w-4 mr-2" />
                 Refaire le quiz
               </Button>
@@ -372,14 +372,14 @@ export default function CmsQuiz() {
       <Card>
         <CardHeader>
           <div className="space-y-4">
-            <div className="flex items-center justify-between text-sm text-muted-foreground">
+            <div className="flex items-center justify-between text-sm text-regularblue/80">
               <span>
                 Question {currentQuestion + 1} sur {questions.length}
               </span>
               <span>{Math.round(progress)}% complété</span>
             </div>
-            <Progress value={progress} className="w-full" />
-            <CardTitle className="text-xl">{question.question}</CardTitle>
+            <Progress value={progress} className="w-full bg-lightblue/10" />
+            <CardTitle className="text-xl text-regularblue">{question.question}</CardTitle>
           </div>
         </CardHeader>
         <CardContent>
@@ -388,17 +388,17 @@ export default function CmsQuiz() {
               <div
                 key={index}
                 className={`border rounded-lg p-4 cursor-pointer transition-all hover:bg-muted/50 ${
-                  selectedAnswer === index.toString() ? "border-primary bg-primary/5" : ""
+                  selectedAnswer === index.toString() ? "border-regularblue/50 bg-regularblue/5" : ""
                 }`}
                 onClick={() => setSelectedAnswer(index.toString())}
               >
                 <div className="flex items-start space-x-3">
                   <RadioGroupItem value={index.toString()} id={`option-${index}`} className="mt-1" />
                   <div className="flex-1">
-                    <Label htmlFor={`option-${index}`} className="cursor-pointer font-medium">
+                    <Label htmlFor={`option-${index}`} className="cursor-pointer font-medium text-regularblue">
                       {option.text}
                     </Label>
-                    <p className="text-sm text-muted-foreground mt-1">{option.explanation}</p>
+                    <p className="text-sm  text-mediumblue/70 mt-1">{option.explanation}</p>
                   </div>
                 </div>
               </div>
@@ -409,7 +409,7 @@ export default function CmsQuiz() {
             <Button
               onClick={() => handleAnswer(question.options[Number.parseInt(selectedAnswer)].value)}
               disabled={selectedAnswer === ""}
-              className="w-full"
+              className="w-full gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
             >
               {currentQuestion < questions.length - 1 ? (
                 <>

@@ -267,13 +267,13 @@ export default function PricingCalculator() {
       {/* Form Section */}
       <Card>
         <CardHeader>
-          <CardTitle>Options du Projet</CardTitle>
-          <CardDescription>Sélectionnez les options pour obtenir une estimation de prix</CardDescription>
+          <CardTitle className="text-regularblue font-adobetitre text-3xl">Options du Projet</CardTitle>
+          <CardDescription  className="text-regularblue/80">Sélectionnez les options pour obtenir une estimation de prix</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Website Type Selection */}
           <div className="space-y-2">
-            <Label htmlFor="website-type">Type de Site Web</Label>
+            <Label htmlFor="website-type" className="text-regularblue font-adobetitre text-xl">Type de Site Web</Label>
             <Select value={websiteType} onValueChange={(value) => setWebsiteType(value as WebsiteType)}>
               <SelectTrigger id="website-type">
                 <SelectValue placeholder="Sélectionnez un type de site" />
@@ -291,7 +291,7 @@ export default function PricingCalculator() {
 
           {/* Provider Selection */}
           <div className="space-y-2">
-            <Label htmlFor="provider">Prestataire</Label>
+            <Label htmlFor="provider" className="text-regularblue font-adobetitre text-xl">Prestataire</Label>
             <Select value={provider} onValueChange={(value) => setProvider(value as ProviderType)}>
               <SelectTrigger id="provider">
                 <SelectValue placeholder="Sélectionnez un prestataire" />
@@ -306,7 +306,7 @@ export default function PricingCalculator() {
 
           {/* Additional Services */}
           <div className="space-y-3">
-            <Label>Services Additionnels</Label>
+            <Label className="text-regularblue font-adobetitre text-lg">Services Additionnels</Label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {Object.entries(additionalServicesData).map(([key, service]) => (
                 <div key={key} className="flex items-start space-x-2">
@@ -318,11 +318,11 @@ export default function PricingCalculator() {
                   <div className="grid gap-1.5">
                     <Label
                       htmlFor={`service-${key}`}
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      className="text-sm font-medium text-mediumblue leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                     >
                       {service.name}
                     </Label>
-                    <p className="text-xs text-muted-foreground">{service.description}</p>
+                    <p className="text-xs text-regularblue/60">{service.description}</p>
                   </div>
                 </div>
               ))}
@@ -334,14 +334,14 @@ export default function PricingCalculator() {
       {/* Results Section */}
       <Card>
         <CardHeader>
-          <CardTitle>Estimation de Prix</CardTitle>
+          <CardTitle className="text-regularblue font-adobetitre text-3xl">Estimation de Prix</CardTitle>
           <CardDescription>Basée sur vos sélections</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Base Price */}
           <div>
-            <h3 className="text-lg font-medium mb-2">Prix de Base</h3>
-            <p className="text-2xl font-bold">
+            <h3 className="text-xl text-regularblue font-adobetitre font-medium mb-2">Prix de Base</h3>
+            <p className="text-2xl font-bold text-mediumblue">
               {formatPrice(basePrice.min)} - {formatPrice(basePrice.max)}
             </p>
             <p className="text-sm text-muted-foreground mt-1">{websiteTypesData[websiteType].comments[provider]}</p>
@@ -350,8 +350,8 @@ export default function PricingCalculator() {
           {/* Additional Services Price */}
           {additionalServices.length > 0 && (
             <div>
-              <h3 className="text-lg font-medium mb-2">Services Additionnels</h3>
-              <p className="text-xl font-semibold">
+              <h3 className="text-xl text-regularblue font-adobetitre font-medium mb-2">Services Additionnels</h3>
+              <p className="text-xl font-semibold text-mediumblue">
                 {formatPrice(additionalPrice.min)} - {formatPrice(additionalPrice.max)}
               </p>
               <ul className="mt-2 space-y-1 text-sm">
@@ -377,18 +377,18 @@ export default function PricingCalculator() {
 
           {/* Total Price */}
           <div>
-            <h3 className="text-lg font-medium mb-2">Prix Total Estimé</h3>
-            <p className="text-3xl font-bold text-primary">
+            <h3 className="text-xl text-regularblue font-adobetitre font-medium mb-2">Prix Total Estimé</h3>
+            <p className="text-3xl font-bold  text-mediumblue">
               {formatPrice(totalPrice.min)} - {formatPrice(totalPrice.max)}
             </p>
           </div>
 
           {/* Timeframe */}
-          <div className="flex items-start gap-2 p-3 bg-muted rounded-md">
-            <InfoIcon className="h-5 w-5 text-muted-foreground mt-0.5" />
+          <div className="flex items-start gap-2 p-3 bg-lightblue/10 rounded-md">
+            <InfoIcon className="h-5 w-5 text-lightblue mt-0.5" />
             <div>
-              <h4 className="font-medium">Délai Estimé</h4>
-              <p className="text-sm">
+              <h4 className="font-medium text-regularblue">Délai Estimé</h4>
+              <p className="text-sm text-mediumblue">
                 {timeframe.min} à {timeframe.max} {timeframe.unit}
               </p>
             </div>

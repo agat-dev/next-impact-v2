@@ -129,7 +129,7 @@ ListItem.displayName = "ListItem"
 
 export default function Header() {
   return (
-<header className="border-b">
+<header className="border-b sticky top-0 z-50 bg-white shadow-sm">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className='basis-1/6 pt-2'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
@@ -141,7 +141,7 @@ export default function Header() {
           </div>
           <div className='basis-1/6 flex justify-end'>
           <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-base text-white hover:text-white font-regular">Prendre RDV</Link>
+            <Link target='_blank' href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="text-base text-white hover:text-white font-regular">Prendre RDV</Link>
           </Button> 
           </div>
         </div>
