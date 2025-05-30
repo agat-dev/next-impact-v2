@@ -17,7 +17,7 @@ import {
   ShoppingBag,
   Lightbulb,
 } from "lucide-react"
-import { CategoryDetail } from "@/components/category-details"
+import { CategoryDetail } from "@/components/audit/category-details"
 
 interface AuditResultsProps {
   data: AuditData
@@ -72,10 +72,10 @@ export function AuditResults({ data }: AuditResultsProps) {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center justify-between">
-            <span>Overall Score</span>
+            <span>Score global</span>
             <span className={getScoreColor(data.overallScore)}>{data.overallScore}/100</span>
           </CardTitle>
-          <CardDescription>Based on analysis of {data.url}</CardDescription>
+          <CardDescription>Basé sur l'analyse de {data.url}</CardDescription>
         </CardHeader>
         <CardContent>
           <Progress
@@ -85,27 +85,29 @@ export function AuditResults({ data }: AuditResultsProps) {
           />
           <p className="mt-4 text-sm text-slate-600">
             {data.overallScore >= 80
-              ? "Excellent! Your website is performing well in most areas."
+              ? "Excellent ! Votre site web est performant dans la plupart des domaines."
               : data.overallScore >= 60
-                ? "Good, but there's room for improvement in several areas."
-                : "Needs significant improvement across multiple areas."}
+                ? "Bon, mais plusieurs axes d'amélioration sont possibles."
+                : "Des améliorations importantes sont nécessaires sur plusieurs aspects."}
           </p>
         </CardContent>
       </Card>
       <div className="text-sm text-right text-slate-500 mt-2">
-        Analysis completed: {new Date(data.timestamp).toLocaleString()}
+        Analyse réalisée le : {new Date(data.timestamp).toLocaleString("fr-FR")}
       </div>
 
       <Tabs defaultValue="scores" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="scores">Category Scores</TabsTrigger>
-          <TabsTrigger value="details">Detailed Analysis</TabsTrigger>
+          <TabsTrigger value="scores">Scores par catégorie</TabsTrigger>
+          <TabsTrigger value="details">Analyse détaillée</TabsTrigger>
         </TabsList>
         <TabsContent value="scores">
           <Card>
             <CardHeader>
-              <CardTitle>Performance by Category</CardTitle>
-              <CardDescription>Click on a category to see detailed recommendations</CardDescription>
+              <CardTitle>Performance par catégorie</CardTitle>
+              <CardDescription>
+                Cliquez sur une catégorie pour voir les recommandations détaillées
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
@@ -142,8 +144,10 @@ export function AuditResults({ data }: AuditResultsProps) {
           ) : (
             <Card>
               <CardHeader>
-                <CardTitle>Select a Category</CardTitle>
-                <CardDescription>Click on a category from the scores tab to view detailed analysis</CardDescription>
+                <CardTitle>Sélectionnez une catégorie</CardTitle>
+                <CardDescription>
+                  Cliquez sur une catégorie dans l'onglet "Scores" pour voir l'analyse détaillée
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {data.categoryScores.map((category) => (

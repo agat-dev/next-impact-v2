@@ -1,4 +1,4 @@
-import CaseStudiesFilter from "@/components/case-studies-filters" 
+import CaseStudiesFilter from "@/components/case-studies/case-studies-filters" 
 
 export const metadata = {
   title: "Études de cas - Next Impact Digital",

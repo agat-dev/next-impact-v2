@@ -276,7 +276,7 @@ export default function PricingCalculator() {
             <Label htmlFor="website-type" className="text-regularblue font-adobetitre text-xl">Type de Site Web</Label>
             <Select value={websiteType} onValueChange={(value) => setWebsiteType(value as WebsiteType)}>
               <SelectTrigger id="website-type">
-                <SelectValue placeholder="Sélectionnez un type de site" />
+                <SelectValue placeholder="Sélectionnez un type de site"/>
               </SelectTrigger>
               <SelectContent>
                 {Object.entries(websiteTypesData).map(([key, data]) => (
@@ -286,7 +286,7 @@ export default function PricingCalculator() {
                 ))}
               </SelectContent>
             </Select>
-            <p className="text-sm text-muted-foreground">{websiteTypesData[websiteType].description}</p>
+            <p className="text-sm text-regularblue/70">{websiteTypesData[websiteType].description}</p>
           </div>
 
           {/* Provider Selection */}
@@ -335,7 +335,7 @@ export default function PricingCalculator() {
       <Card>
         <CardHeader>
           <CardTitle className="text-regularblue font-adobetitre text-3xl">Estimation de Prix</CardTitle>
-          <CardDescription>Basée sur vos sélections</CardDescription>
+          <CardDescription className="text-regularblue/80">Basée sur vos sélections</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Base Price */}
@@ -344,7 +344,7 @@ export default function PricingCalculator() {
             <p className="text-2xl font-bold text-mediumblue">
               {formatPrice(basePrice.min)} - {formatPrice(basePrice.max)}
             </p>
-            <p className="text-sm text-muted-foreground mt-1">{websiteTypesData[websiteType].comments[provider]}</p>
+            <p className="text-sm text-regularblue/80 mt-1">{websiteTypesData[websiteType].comments[provider]}</p>
           </div>
 
           {/* Additional Services Price */}
@@ -394,7 +394,7 @@ export default function PricingCalculator() {
             </div>
           </div>
         </CardContent>
-        <CardFooter className="text-sm text-muted-foreground">
+        <CardFooter className="text-sm text-regularblue/80">
           <p>
             Ces estimations sont basées sur les tendances du marché français en 2025. Les prix réels peuvent varier
             selon la région, l'expérience du prestataire et les fonctionnalités spécifiques demandées.

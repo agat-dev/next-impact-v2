@@ -183,11 +183,11 @@ export function CahierDesChargesForm() {
 
         <TabsContent value="preview">
           <DocumentPreview formData={formData} />
-          <div className="flex justify-center mt-8">
-            <Button onClick={() => setActiveTab("form")} variant="outline" className="mr-4">
+          <div className="flex justify-center mt-8 gap-6">
+            <Button onClick={() => setActiveTab("form")} variant="outline" className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30">
               Retour au formulaire
             </Button>
-            <Button onClick={handleSubmit} disabled={isGenerating}>
+            <Button onClick={handleSubmit} disabled={isGenerating} className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
               {isGenerating ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />

@@ -1,6 +1,6 @@
 "use client";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ const PROJECTS = [
 		type: "corporate",
 		image: "/img/logo-proditec.webp",
 		alt: "Site corporate Proditec",
-		description: "Refonte du site corporate multilingue",
+		description: "Site corporate multilingue",
 		link: "/etudes-de-cas/proditec",
 		tab: ["tous", "corporate"],
 	},
@@ -53,7 +53,7 @@ export default function Realisations() {
 							PROJETS
 						</span>
 						<h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
-							Réalisations récentes
+							Etudes de cas
 						</h2>
 						<p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
 							Chaque projet est unique et conçu pour répondre aux besoins spécifiques de mes clients.

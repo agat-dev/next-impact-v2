@@ -32,22 +32,22 @@ export function CategoryDetail({ category, onBack }: CategoryDetailProps) {
             <ArrowLeft className="h-4 w-4" />
           </Button>
           <div>
-            <CardTitle className="capitalize">{category.name} Analysis</CardTitle>
+            <CardTitle className="capitalize">{category.name} - Analyse</CardTitle>
             <CardDescription>
-              Score: <span className={getScoreColor(category.score)}>{category.score}/100</span>
+              Score : <span className={getScoreColor(category.score)}>{category.score}/100</span>
             </CardDescription>
           </div>
         </div>
       </CardHeader>
       <CardContent className="space-y-6">
         <div>
-          <h3 className="font-medium mb-2">Overview</h3>
+          <h3 className="font-medium mb-2">Résumé</h3>
           <Progress value={category.score} className="h-3 mb-2" indicatorClassName={getProgressColor(category.score)} />
           <p className="text-sm text-slate-600">{category.summary}</p>
         </div>
 
         <div>
-          <h3 className="font-medium mb-2">Key Findings</h3>
+          <h3 className="font-medium mb-2">Points clés</h3>
           <ul className="space-y-2">
             {category.findings.map((finding, index) => (
               <li key={index} className="bg-slate-50 p-3 rounded-md">
@@ -72,7 +72,7 @@ export function CategoryDetail({ category, onBack }: CategoryDetailProps) {
         </div>
 
         <div>
-          <h3 className="font-medium mb-2">Recommendations</h3>
+          <h3 className="font-medium mb-2">Recommandations</h3>
           <ul className="space-y-2">
             {category.recommendations.map((recommendation, index) => (
               <li key={index} className="bg-slate-50 p-3 rounded-md">
@@ -85,7 +85,7 @@ export function CategoryDetail({ category, onBack }: CategoryDetailProps) {
                     rel="noopener noreferrer"
                     className="text-sm text-primary flex items-center mt-1 hover:underline"
                   >
-                    Learn more <ExternalLink className="h-3 w-3 ml-1" />
+                    En savoir plus <ExternalLink className="h-3 w-3 ml-1" />
                   </a>
                 )}
               </li>

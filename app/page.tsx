@@ -1,10 +1,7 @@
-
-import LottieAnimation from "@/components/ui/lottie-animation";
 import ServicesDev from "@/components/services-dev";
-import { HoverEffect } from "@/components/ui/card-hover-effect";
 import Hero from "@/components/hero";
 import ServicesConseil from "@/components/services-conseil";
-import Realisations from "@/components/realisations";
+import Realisations from "@/components/case-studies/realisations";
 import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq"
 import { CTASection } from "@/components/cta-section";

@@ -28,7 +28,7 @@ export default function FAQ() {
                     Headless pour des performances optimales et une expérience utilisateur sur-mesure. 
                     Nous analyserons votre projet pour trouver l'approche la plus adaptée.
                     <br /><br />Quizz en ligne :  
-                    <a href="/quizz" className="text-regularblue font-medium hover:underline"> Choisir mon CMS</a>.
+                    <a href="/cms-headless" className="text-regularblue font-medium hover:underline"> Choisir mon CMS</a>.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">

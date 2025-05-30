@@ -1,24 +1,24 @@
 "use server"
 
 import type { AuditData, CategoryScore } from "@/lib/types"
-import { performanceAudit } from "./audit/performance-audit"
-import { seoAudit } from "./audit/seo-audit"
-import { contentAudit } from "./audit/content-audit"
-import { conversionAudit } from "./audit/conversion-audit"
-import { analyticsAudit } from "./audit/analytics-audit"
-import { acquisitionAudit } from "./audit/acquisition-audit"
-import { socialAudit } from "./audit/social-audit"
-import { commercialAudit } from "./audit/commercial-audit"
-import { recommendationsAudit } from "./audit/recommendations-audit"
+import { performanceAudit } from "./performance-audit"
+import { seoAudit } from "./seo-audit"
+import { contentAudit } from "./content-audit"
+import { conversionAudit } from "./conversion-audit"
+import { analyticsAudit } from "./analytics-audit"
+import { acquisitionAudit } from "./acquisition-audit"
+import { socialAudit } from "./social-audit"
+import { commercialAudit } from "./commercial-audit"
+import { recommendationsAudit } from "./recommendations-audit"
 
 export async function runAudit(url: string): Promise<AuditData> {
   try {
-    // Ensure URL has a protocol 
+    // S'assurer que l'URL a un protocole
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
       url = "https://" + url
     }
 
-    // Run all audits in parallel
+    // Lancer tous les audits en parallèle
     const results = await Promise.allSettled([
       performanceAudit(url),
       seoAudit(url),
@@ -31,15 +31,15 @@ export async function runAudit(url: string): Promise<AuditData> {
       recommendationsAudit(url),
     ])
 
-    // Process results, using fallbacks for any failed audits
+    // Traiter les résultats, utiliser des valeurs de secours pour les audits échoués
     const categoryScores: CategoryScore[] = []
 
     results.forEach((result, index) => {
       if (result.status === "fulfilled") {
         categoryScores.push(result.value)
       } else {
-        console.error(`Audit ${index} failed:`, result.reason)
-        // Add a fallback category with error information
+        console.error(`Échec de l'audit ${index} :`, result.reason)
+        // Ajouter une catégorie de secours avec des informations d'erreur
         const categories = [
           "performance",
           "seo",
@@ -54,18 +54,18 @@ export async function runAudit(url: string): Promise<AuditData> {
         categoryScores.push({
           name: categories[index],
           score: 50,
-          summary: "We encountered an issue while analyzing this aspect of your site.",
+          summary: "Un problème est survenu lors de l'analyse de cet aspect de votre site.",
           findings: [
             {
-              title: "Analysis error",
-              description: "We couldn't complete this part of the audit. Please try again later.",
+              title: "Erreur d'analyse",
+              description: "Nous n'avons pas pu terminer cette partie de l'audit. Veuillez réessayer plus tard.",
               impact: "medium",
             },
           ],
           recommendations: [
             {
-              title: "Try again later",
-              description: "This part of the audit encountered a technical issue.",
+              title: "Réessayez plus tard",
+              description: "Cette partie de l'audit a rencontré un problème technique.",
               link: "",
             },
           ],
@@ -73,7 +73,7 @@ export async function runAudit(url: string): Promise<AuditData> {
       }
     })
 
-    // Calculate overall score (weighted average)
+    // Calculer le score global (moyenne pondérée)
     const weights = {
       performance: 1.5,
       seo: 1.5,
@@ -104,8 +104,8 @@ export async function runAudit(url: string): Promise<AuditData> {
       timestamp: new Date().toISOString(),
     }
   } catch (error) {
-    console.error("Error running audit:", error)
-    throw new Error("Failed to run website audit")
+    console.error("Erreur lors de l'exécution de l'audit :", error)
+    throw new Error("Échec de l'audit du site web")
   }
 }
 

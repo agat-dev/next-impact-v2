@@ -10,7 +10,7 @@ export default function CmsQuiz() {
         <div className="container px-4 md:px-6">
         <div className="flex justify-center space-y-4 py-8">
             <h1 className="font-medium">
-              WordPress ou Headless CMS pour mon projet ? 
+              WordPress ou WordPress Headless pour mon projet ? 
             </h1>
           </div>
             <p className="text-regularblue/70 text-center max-w-3xl mx-auto">

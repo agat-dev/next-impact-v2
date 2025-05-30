@@ -5,7 +5,6 @@ import { ArrowLeft, Calendar, User, Tag, ChevronRight } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { MagicCard } from "@/components/magicui/magic-card"
 
@@ -76,7 +75,7 @@ const CASE_STUDIES: CaseStudy[] = [
       position: "Directrice Marketing, ModeShop",
     },
     gallery: {
-      url: "/placeholder.svg?key=ozcgx",
+      url: "/img/desktop-screen-proditec.jpg",
       alt: "Page produit du site ModeShop",
     },
     detailedDescription:
@@ -105,7 +104,7 @@ const CASE_STUDIES: CaseStudy[] = [
       month: 5,
       year: 2025,
     },
-    tags: ["site vitrine", "WordPress", "Next.js"],
+    tags: ["site vitrine", "WordPress", "Next.js", "headless"],
     objectives: [
       "Présenter les actions et les projets de l'association",
       "S'inspirer de Wikipédia pour communiquer l'idée de participation libre",
@@ -123,7 +122,7 @@ const CASE_STUDIES: CaseStudy[] = [
       position: "Président, Association Culturelle de Lyon",
     },
     gallery: {
-      url: "/img/lesdoleances-screen-desktop.jpg",
+      url: "/img/desktop-screen-lesdoleances.jpg",
       alt: "Calendrier d'événements de l'ACL",
     },
     detailedDescription:

@@ -1,4 +1,4 @@
-import PricingCalculator from "@/components/pricing-calculator"
+import PricingCalculator from "@/components/pricing-calculator/pricing-calculator"
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
           </div>
       <PricingCalculator />
       </div>
-    </section>
+    </section> 
     </main>
   )
 }

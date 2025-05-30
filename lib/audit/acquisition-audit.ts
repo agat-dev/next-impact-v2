@@ -4,58 +4,58 @@ import type { CategoryScore } from "../types"
 
 export async function acquisitionAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would analyze traffic sources and acquisition channels
+    // Dans une vraie implémentation, on analyserait les sources de trafic et les canaux d'acquisition
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 25) + 55 // Random score between 55-80
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 25) + 55 // Score aléatoire entre 55 et 80
 
     return {
       name: "acquisition",
       score: simulatedScore,
       summary:
-        "Traffic acquisition examines how visitors find your site. A balanced mix of channels reduces dependency on any single source and maximizes reach.",
+        "L'acquisition de trafic examine comment les visiteurs trouvent votre site. Un mix équilibré de canaux réduit la dépendance à une seule source et maximise la portée.",
       findings: [
         {
-          title: "Over-reliance on paid traffic",
+          title: "Dépendance excessive au trafic payant",
           description:
-            "More than 70% of your traffic comes from paid sources, creating vulnerability if ad budgets change.",
+            "Plus de 70% de votre trafic provient de sources payantes, ce qui crée une vulnérabilité si les budgets publicitaires changent.",
           impact: "high",
         },
         {
-          title: "Low organic traffic growth",
-          description: "Organic traffic has only grown 5% year-over-year, below the industry average of 15%.",
+          title: "Faible croissance du trafic organique",
+          description: "Le trafic organique n'a augmenté que de 5% sur un an, en dessous de la moyenne du secteur (15%).",
           impact: "high",
         },
         {
-          title: "Poor landing page relevance",
-          description: "Ad landing pages don't align well with ad messaging, leading to high bounce rates.",
+          title: "Pertinence limitée des pages d'atterrissage",
+          description: "Les pages d'atterrissage des annonces ne correspondent pas bien aux messages publicitaires, ce qui entraîne un taux de rebond élevé.",
           impact: "medium",
         },
         {
-          title: "Limited referral sources",
-          description: "Your site receives referral traffic from only a small number of domains.",
+          title: "Sources de référencement limitées",
+          description: "Votre site reçoit du trafic référent depuis un nombre restreint de domaines.",
           impact: "medium",
         },
       ],
       recommendations: [
         {
-          title: "Diversify traffic sources",
-          description: "Develop a multi-channel strategy to reduce dependency on any single traffic source.",
+          title: "Diversifier les sources de trafic",
+          description: "Développez une stratégie multicanale pour réduire la dépendance à une seule source de trafic.",
           link: "https://neilpatel.com/blog/diversify-website-traffic-sources/",
         },
         {
-          title: "Improve landing page relevance",
-          description: "Create dedicated landing pages that align with specific campaign messaging and intent.",
+          title: "Améliorer la pertinence des pages d'atterrissage",
+          description: "Créez des pages d'atterrissage dédiées qui correspondent à chaque campagne et à l'intention des visiteurs.",
           link: "https://unbounce.com/landing-page-articles/landing-page-best-practices/",
         },
         {
-          title: "Develop a content marketing strategy",
-          description: "Create valuable content that attracts organic traffic and establishes thought leadership.",
+          title: "Développer une stratégie de content marketing",
+          description: "Créez du contenu de valeur pour attirer du trafic organique et asseoir votre expertise.",
           link: "https://contentmarketinginstitute.com/developing-a-strategy/",
         },
         {
-          title: "Implement a referral program",
-          description: "Encourage customers to refer others to your site through incentives.",
+          title: "Mettre en place un programme de parrainage",
+          description: "Encouragez vos clients à recommander votre site via des incitations.",
           link: "https://www.referralcandy.com/blog/referral-marketing-guide/",
         },
       ],
@@ -75,8 +75,8 @@ export async function acquisitionAudit(url: string): Promise<CategoryScore> {
       ],
     }
   } catch (error) {
-    console.error("Error in acquisition audit:", error)
-    throw new Error("Failed to run acquisition audit")
+    console.error("Erreur lors de l'audit acquisition :", error)
+    throw new Error("Échec de l'audit acquisition")
   }
 }
 

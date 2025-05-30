@@ -4,58 +4,58 @@ import type { CategoryScore } from "../types"
 
 export async function conversionAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would analyze conversion data from analytics APIs
+    // Dans une vraie implémentation, on analyserait les données de conversion via des APIs analytics
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 25) + 55 // Random score between 55-80
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 25) + 55 // Score aléatoire entre 55 et 80
 
     return {
       name: "conversion",
       score: simulatedScore,
       summary:
-        "Conversion optimization focuses on turning visitors into customers. Your site's conversion funnel, user experience, and persuasive elements all impact conversion rates.",
+        "L'optimisation de la conversion vise à transformer les visiteurs en clients. Le tunnel de conversion, l'expérience utilisateur et les éléments de persuasion de votre site influencent directement vos taux de conversion.",
       findings: [
         {
-          title: "High cart abandonment rate",
+          title: "Taux d'abandon de panier élevé",
           description:
-            "Your checkout process has a 75% abandonment rate, significantly higher than the industry average of 69%.",
+            "Votre processus de commande affiche un taux d'abandon de 75%, bien supérieur à la moyenne du secteur (69%).",
           impact: "high",
         },
         {
-          title: "Complicated form fields",
-          description: "Your forms require too many fields, creating friction in the conversion process.",
+          title: "Champs de formulaire trop complexes",
+          description: "Vos formulaires demandent trop d'informations, ce qui crée des frictions dans le parcours de conversion.",
           impact: "high",
         },
         {
-          title: "Unclear primary call-to-action",
-          description: "Your homepage has multiple competing CTAs, creating decision paralysis for visitors.",
+          title: "Appel à l'action principal peu clair",
+          description: "Votre page d'accueil présente plusieurs CTA concurrents, ce qui crée une hésitation chez les visiteurs.",
           impact: "medium",
         },
         {
-          title: "Missing trust elements",
-          description: "Key pages lack social proof, testimonials, or security indicators that build trust.",
+          title: "Absence d'éléments de réassurance",
+          description: "Les pages clés manquent de preuves sociales, d'avis clients ou d'indicateurs de sécurité pour instaurer la confiance.",
           impact: "medium",
         },
       ],
       recommendations: [
         {
-          title: "Simplify the checkout process",
-          description: "Reduce the number of steps and form fields in your checkout process to decrease abandonment.",
+          title: "Simplifier le processus de commande",
+          description: "Réduisez le nombre d'étapes et de champs dans votre tunnel d'achat pour limiter l'abandon.",
           link: "https://baymard.com/blog/checkout-flow-design",
         },
         {
-          title: "Implement a clear value proposition",
-          description: "Clearly communicate what makes your offering unique and valuable above the fold.",
+          title: "Mettre en avant une proposition de valeur claire",
+          description: "Communiquez clairement ce qui rend votre offre unique et précieuse dès le haut de page.",
           link: "https://www.nngroup.com/articles/value-proposition/",
         },
         {
-          title: "Add social proof elements",
-          description: "Include testimonials, reviews, case studies, and trust badges to build credibility.",
+          title: "Ajouter des éléments de preuve sociale",
+          description: "Intégrez des témoignages, avis, études de cas et badges de confiance pour rassurer les visiteurs.",
           link: "https://www.crazyegg.com/blog/social-proof/",
         },
         {
-          title: "Set up A/B testing",
-          description: "Test different versions of key pages to identify what drives higher conversion rates.",
+          title: "Mettre en place des tests A/B",
+          description: "Testez différentes versions de vos pages clés pour identifier ce qui améliore le taux de conversion.",
           link: "https://vwo.com/ab-testing/",
         },
       ],
@@ -75,8 +75,8 @@ export async function conversionAudit(url: string): Promise<CategoryScore> {
       ],
     }
   } catch (error) {
-    console.error("Error in conversion audit:", error)
-    throw new Error("Failed to run conversion audit")
+    console.error("Erreur lors de l'audit conversion :", error)
+    throw new Error("Échec de l'audit conversion")
   }
 }
 

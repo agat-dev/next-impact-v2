@@ -75,21 +75,18 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <div className='basis-1/3'>
-              <ListItem href="/audit" title="Audit de site web" className='h-28'>
-              <p className='text-xs'>Outil en ligne pour tester globalement la qualité de votre site web.</p>
-              </ListItem>                
+              <div className='basis-1/3'>             
               <ListItem href="/cms-headless" title="WordPress CMS ou Headless ?" className='h-28'>
-              <p className='text-xs'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
+              <p className='text-xs text-regularblue/70'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
               </ListItem>      
-              </div> 
+              <ListItem href="/simulateur-tarifs" title="Simulateur du budget" className='h-28'>
+              <p className='text-xs text-regularblue/70'>Outil interactif pour estimer le budget de votre projet web.</p>
+              </ListItem>  
+              </div>         
               <div className='basis-1/3'>             
               <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-28'>
-              <p className='text-xs'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
-              </ListItem>            
-              <ListItem href="/simulateur-tarifs" title="Simulateur du budget" className='h-28'>
-              <p className='text-xs'>Outil interactif pour estimer le budget de votre projet web.</p>
-              </ListItem>
+              <p className='text-xs text-regularblue/70'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
+              </ListItem>  
               </div>
             </ul>
           </NavigationMenuContent>

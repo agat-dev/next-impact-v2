@@ -72,11 +72,11 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
     return (
       <div className="p-6 space-y-8">
         {/* Page de couverture */}
-        <div className="bg-lightblue/10 p-8 rounded-lg border-t-8 border-regularblue shadow-md mb-12">
+        <div className="bg-lightblue/10 p-8 border-t-8 border-regularblue mb-12">
           <div className="text-center space-y-4">
             <h1 className="text-3xl font-bold text-mediumblue">CAHIER DES CHARGES</h1>
             <h2 className="text-xl text-regularblue font-medium">Refonte de Site Vitrine Institutionnel</h2>
-            <div className="w-24 h-1 bg-pink-500 mx-auto my-6"></div>
+            
 
             <div className="mt-12 space-y-4 text-left max-w-md mx-auto">
               <div className="flex">
@@ -97,7 +97,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
               </div>
             </div>
 
-            <div className="absolute bottom-4 left-0 right-0 text-center text-sm text-gray-500">
+            <div className="absolute bottom-4 left-0 right-0 text-center text-sm text-mediumblue">
               Document confidentiel
             </div>
           </div>
@@ -109,40 +109,31 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           <div className="border-t border-b py-4">
             <ul className="space-y-2">
               <li className="flex justify-between">
-                <span>1. PRÉSENTATION GÉNÉRALE DU PROJET</span>
-                <span className="text-gray-500">3</span>
+                <span className="text-mediumblue">1. PRÉSENTATION GÉNÉRALE DU PROJET</span>
               </li>
               <li className="flex justify-between">
-                <span>2. SPÉCIFICATIONS FONCTIONNELLES</span>
-                <span className="text-gray-500">5</span>
+                <span className="text-mediumblue">2. SPÉCIFICATIONS FONCTIONNELLES</span>
               </li>
               <li className="flex justify-between">
-                <span>3. SPÉCIFICATIONS GRAPHIQUES ET ERGONOMIQUES</span>
-                <span className="text-gray-500">8</span>
+                <span className="text-mediumblue">3. SPÉCIFICATIONS GRAPHIQUES ET ERGONOMIQUES</span>
               </li>
               <li className="flex justify-between">
-                <span>4. SPÉCIFICATIONS TECHNIQUES</span>
-                <span className="text-gray-500">10</span>
+                <span className="text-mediumblue">4. SPÉCIFICATIONS TECHNIQUES</span>
               </li>
               <li className="flex justify-between">
-                <span>5. GESTION DE CONTENU</span>
-                <span className="text-gray-500">12</span>
+                <span className="text-mediumblue">5. GESTION DE CONTENU</span>
               </li>
               <li className="flex justify-between">
-                <span>6. PRESTATIONS ATTENDUES</span>
-                <span className="text-gray-500">13</span>
+                <span className="text-mediumblue">6. PRESTATIONS ATTENDUES</span>
               </li>
               <li className="flex justify-between">
-                <span>7. PLANNING ET BUDGET</span>
-                <span className="text-gray-500">14</span>
+                <span className="text-mediumblue">7. PLANNING ET BUDGET</span>
               </li>
               <li className="flex justify-between">
                 <span>8. MODALITÉS DE RÉPONSE</span>
-                <span className="text-gray-500">15</span>
               </li>
               <li className="flex justify-between">
-                <span>9. ANNEXES</span>
-                <span className="text-gray-500">16</span>
+                <span className="text-mediumblue">9. ANNEXES</span>
               </li>
             </ul>
           </div>
@@ -150,33 +141,33 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 1 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">1. PRÉSENTATION GÉNÉRALE DU PROJET</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">         
+            <h2 className="text-lg font-bold text-regularblue">1. PRÉSENTATION GÉNÉRALE DU PROJET</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">1.1 Contexte</h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">1.1 Contexte</h3>
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Nom de l'organisation: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.organisation_name || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Nom de l'organisation: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.organisation_name || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Secteur d'activité: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.secteur_activite || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Secteur d'activité: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.secteur_activite || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Public cible: </span>
-                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.public_cible || "Non spécifié"}</div>
+                  <span className="font-semibold text-mediumblue">Public cible: </span>
+                  <div className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded mt-1">{formData.public_cible || "Non spécifié"}</div>
                 </div>
                 <div>
-                  <span className="font-semibold">Problématiques identifiées: </span>
-                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.problematiques || "Non spécifié"}</div>
+                  <span className="font-semibold text-mediumblue">Problématiques identifiées: </span>
+                  <div className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded mt-1">{formData.problematiques || "Non spécifié"}</div>
                 </div>
                 <div>
-                  <span className="font-semibold">Objectifs principaux: </span>
-                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">
+                  <span className="font-semibold text-mediumblue">Objectifs principaux: </span>
+                  <div className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded mt-1">
                     {formData.objectifs_refonte || "Non spécifié"}
                   </div>
                 </div>
@@ -184,21 +175,21 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 1.2 Description du site existant
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">URL du site actuel: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.site_url || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">URL du site actuel: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.site_url || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Date de création: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.site_creation_date || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Date de création: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.site_creation_date || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Technologies utilisées: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">
+                  <span className="font-semibold text-mediumblue">Technologies utilisées: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">
                     {formData.technologies_actuelles || "Non spécifié"}
                   </span>
                 </div>
@@ -209,39 +200,39 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 2 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">2. SPÉCIFICATIONS FONCTIONNELLES</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">2. SPÉCIFICATIONS FONCTIONNELLES</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 2.1 Architecture de l'information
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Arborescence proposée: </span>
-                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.arborescence || "Non spécifié"}</div>
+                  <span className="font-semibold text-mediumblue">Arborescence proposée: </span>
+                  <div className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded mt-1">{formData.arborescence || "Non spécifié"}</div>
                 </div>
                 <div>
-                  <span className="font-semibold">Types de contenus: </span>
-                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.types_contenus || "Non spécifié"}</div>
+                  <span className="font-semibold text-mediumblue">Types de contenus: </span>
+                  <div className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded mt-1">{formData.types_contenus || "Non spécifié"}</div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 2.2 Fonctionnalités standards
               </h3>
-              <div className="ml-4 mt-3 bg-gray-50 p-3 rounded">
+              <div className="ml-4 mt-3 bg-lightblue/5 text-mediumblue/90 p-3 rounded">
               {formData.fonctionnalites_standards ? (
                 <ul className="grid grid-cols-2 gap-2">
                   {Object.entries(formData.fonctionnalites_standards).map(([key, value]) => (
                     <li key={key} className="flex items-center">
                       <div
                         className={`w-4 h-4 mr-2 rounded-sm ${
-                          value.checked ? "bg-orange-500" : "border border-gray-300"
+                          value.checked ? "bg-regularblue" : "border border-gray-300"
                         }`}
                       >
                         {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
@@ -251,21 +242,21 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                   ))}
                 </ul>
               ) : (
-                <span className="text-gray-500">Aucune fonctionnalité standard sélectionnée</span>
+                <span className="text-gray-">Aucune fonctionnalité standard sélectionnée</span>
               )}
               </div>
             </div>
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 2.3 Fonctionnalités avancées
               </h3>
-              <div className="ml-4 mt-3 bg-gray-50 p-3 rounded">
+              <div className="ml-4 mt-3 bg-lightblue/5 text-mediumblue/90 p-3 rounded">
                 {formData.fonctionnalites_avancees ? (
                   <ul className="grid grid-cols-2 gap-2">
                     {Object.entries(formData.fonctionnalites_avancees).map(([key, checked]) => (
                       <li key={key} className="flex items-center">
                         <div
-                          className={`w-4 h-4 mr-2 rounded-sm ${checked ? "bg-orange-500" : "border border-gray-300"}`}
+                          className={`w-4 h-4 mr-2 rounded-sm ${checked ? "bg-regularblue" : "border border-gray-300"}`}
                         >
                           {Boolean(checked) && <span className="text-white text-xs flex justify-center">✓</span>}
                         </div>
@@ -274,18 +265,18 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                     ))}
                   </ul>
                 ) : (
-                  <span className="text-gray-500">Aucune fonctionnalité avancée sélectionnée</span>
+                  <span className="text-mediumblue">Aucune fonctionnalité avancée sélectionnée</span>
                 )}
               </div>
             </div>
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 2.4 Contraintes techniques
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Contraintes techniques: </span>
-                  <div className="bg-gray-50 px-2 py-1 rounded mt-1">{formData.contraintes_techniques || "Non spécifié"}</div>
+                  <span className="font-semibold text-mediumblue">Contraintes techniques: </span>
+                  <div className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded mt-1">{formData.contraintes_techniques || "Non spécifié"}</div>
                 </div>
               </div>
               </div>
@@ -294,23 +285,23 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 3 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">3. SPÉCIFICATIONS GRAPHIQUES ET ERGONOMIQUES</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">3. SPÉCIFICATIONS GRAPHIQUES ET ERGONOMIQUES</h2>
           </div>
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 3.1 Charte graphique
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
-              <div className="ml-4 mt-3 bg-gray-50 p-3 rounded">
+              <div className="ml-4 space-y-6 mt-3">
+              <div className="ml-4 mt-3 bg-lightblue/5 text-mediumblue/90 p-3 rounded">
               {formData.charte_graphique ? (
                 <ul className="grid grid-cols-2 gap-2">
                   {Object.entries(formData.charte_graphique).map(([key, value]) => (
                     <li key={key} className="flex items-center">
                       <div
                         className={`w-4 h-4 mr-2 rounded-sm ${
-                          value.checked ? "bg-orange-500" : "border border-gray-300"
+                          value.checked ? "bg-regularblue" : "border border-gray-300"
                         }`}
                       >
                         {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
@@ -320,49 +311,49 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                   ))}
                 </ul>
               ) : (
-                <span className="text-gray-500">Aucune information sur la charte graphique</span>
+                <span className="text-mediumblue">Aucune information sur la charte graphique</span>
               )}
               </div>
                 <div>
-                  <span className="font-semibold">Sites d'inspiration : </span> 
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.inspirations || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Sites d'inspiration : </span> 
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.inspirations || "Non spécifié"}</span>
                 </div>
-
+500
                 <div>
-                  <span className="font-semibold">Couleurs principales: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.couleurs_principales || "Non spécifié"}</span>
-                </div>
-                <div>
-                  <span className="font-semibold">Typographie: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.typographie || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Couleurs principales: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.couleurs_principales || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Ambiance : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.ambiance || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Typographie: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.typographie || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Priorité UX : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.ux_priorites || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Ambiance : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.ambiance || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Responsive : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.responsive || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Priorité UX : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.ux_priorites || "Non spécifié"}</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-mediumblue">Responsive : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.responsive || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 3.2 Ergonomie
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Accessibilité: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.accessibilite || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Accessibilité: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.accessibilite || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Navigation: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.navigation || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Navigation: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.navigation || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -371,60 +362,60 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           
         {/* Section 4 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">4. SPÉCIFICATIONS TECHNIQUES</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">4. SPÉCIFICATIONS TECHNIQUES</h2>
           </div>
 
           <div>
-            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
               4.1 Outils et Technologies
             </h3>
-            <div className="ml-4 space-y-3 mt-3">
+            <div className="ml-4 space-y-6 mt-3">
               <div>
-                <span className="font-semibold">Type de CMS ou Framework: </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.cms_framework || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Type de CMS ou Framework: </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.cms_framework || "Non spécifié"}</span>
               </div>
               <div>
-                <span className="font-semibold">Langages de programmation : </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.langages || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Langages de programmation : </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.langages || "Non spécifié"}</span>
               </div>
               <div>
-                <span className="font-semibold">Base de données : </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.base_donnees || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Base de données : </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.base_donnees || "Non spécifié"}</span>
               </div>
             </div>
 
-            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
               4.2 Hébergement
             </h3>
-            <div className="ml-4 space-y-3 mt-3">
+            <div className="ml-4 space-y-6 mt-3">
               <div>
-                <span className="font-semibold">Type d'hébergement: </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.type_hebergement || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Type d'hébergement: </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.type_hebergement || "Non spécifié"}</span>
               </div>
             </div>
 
-            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
               4.3 Sécurité
             </h3>
-            <div className="ml-4 space-y-3 mt-3">
+            <div className="ml-4 space-y-6 mt-3">
               <div>
-                <span className="font-semibold">Protocoles de sécurité: </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.protocoles_securite || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Protocoles de sécurité: </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.protocoles_securite || "Non spécifié"}</span>
               </div>
             </div>
 
-            <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+            <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
               4.4 Performance et SEO
             </h3>
-            <div className="ml-4 space-y-3 mt-3">
+            <div className="ml-4 space-y-6 mt-3">
               <div>
-                <span className="font-semibold">Temps de chargement : </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.performance || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Temps de chargement : </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.performance || "Non spécifié"}</span>
               </div>
               <div>
-                <span className="font-semibold">Exigeances SEO spécifiques : </span>
-                <span className="bg-gray-50 px-2 py-1 rounded">{formData.seo || "Non spécifié"}</span>
+                <span className="font-semibold text-mediumblue">Exigeances SEO spécifiques : </span>
+                <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.seo || "Non spécifié"}</span>
               </div>
             </div>
           </div>
@@ -432,47 +423,47 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 5 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">5. GESTION DE CONTENU</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">5. GESTION DE CONTENU</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 5.1 Contenus
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Contenus à migrer : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.migration_volume || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Contenus à migrer : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.migration_volume || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Type de migration : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.migration_types || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Type de migration : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.migration_types || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Contenus à créer : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.contenus_creer || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Contenus à créer : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.contenus_creer || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Profils des administrateurs : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.profils_admin || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Profils des administrateurs : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.profils_admin || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 5.2 Formation et support
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Formation proposée: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.formation_proposee || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Formation proposée: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.formation_proposee || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Support technique: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.support_technique || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Support technique: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.support_technique || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -481,16 +472,16 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 6 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">6. PRESTATIONS ATTENDUES</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">6. PRESTATIONS ATTENDUES</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 6.1 Prestations de gestion de projet
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 
               {formData.phases_projet ? (
                 <ul className="grid grid-cols-2 gap-2">
@@ -498,7 +489,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                     <li key={key} className="flex items-center">
                       <div
                         className={`w-4 h-4 mr-2 rounded-sm ${
-                          value.checked ? "bg-orange-500" : "border border-gray-300"
+                          value.checked ? "bg-regularblue" : "border border-gray-300"
                         }`}
                       >
                         {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
@@ -508,15 +499,15 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                   ))}
                 </ul>
               ) : (
-                <span className="text-gray-500">Aucune information sur la gestion du projet</span>
+                <span className="text-mediumblue">Aucune information sur la gestion du projet</span>
               )}
                 <div>
-                  <span className="font-semibold">Méthodologie : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.methodologie || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Méthodologie : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.methodologie || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Garantie : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.garantie || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Garantie : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.garantie || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -525,39 +516,39 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 7 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">7. PLANNING ET BUDGET</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">7. PLANNING ET BUDGET</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 7.1 Planning
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Date de démarrage : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_demarrage || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Date de démarrage : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.date_demarrage || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Date de mise en ligne: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_mise_en_ligne || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Date de mise en ligne: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.date_mise_en_ligne || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 7.2 Budget
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Budget global : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.budget_global || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Budget global : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.budget_global || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Budget de maintenance : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.budget_maintenance || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Budget de maintenance : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.budget_maintenance || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -566,55 +557,55 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 8 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">8. MODALITÉS DE RÉPONSE</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">8. MODALITÉS DE RÉPONSE</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 8.1 Modalités de réponse
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Date limite de réponse: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.date_limite || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Date limite de réponse: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.date_limite || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Mode de réponse: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.mode_reponse || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Mode de réponse: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.mode_reponse || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 8.2 Critères de sélection
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Critères techniques: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.criteres_techniques || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Critères techniques: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.criteres_techniques || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Critères financiers: </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.criteres_financiers || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Critères financiers: </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.criteres_financiers || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 8.2 Contact
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 <div>
-                  <span className="font-semibold">Personne référente : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.contact_nom || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Personne référente : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.contact_nom || "Non spécifié"}</span>
                 </div>
                 <div>
-                  <span className="font-semibold">Adresse email de la personne référente : </span>
-                  <span className="bg-gray-50 px-2 py-1 rounded">{formData.contact_email || "Non spécifié"}</span>
+                  <span className="font-semibold text-mediumblue">Adresse email de la personne référente : </span>
+                  <span className="bg-lightblue/5 text-mediumblue/90 px-2 py-1 rounded">{formData.contact_email || "Non spécifié"}</span>
                 </div>
               </div>
             </div>
@@ -623,23 +614,23 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
         {/* Section 9 */}
         <div className="mb-10">
-          <div className="bg-blue-600 text-white py-2 px-4 rounded-sm mb-4">
-            <h2 className="text-lg font-bold">9. ANNEXES</h2>
+          <div className="bg-lightblue/10 text-white py-2 px-4 rounde rounded-xl mb-4">
+            <h2 className="text-lg font-bold text-regularblue">9. ANNEXES</h2>
           </div>
 
           <div className="ml-4 space-y-6">
             <div>
-              <h3 className="text-blue-800 font-semibold mb-2 border-b border-orange-400 inline-block">
+              <h3 className="text-blue-800 font-semibold mb-2 border-b border-lightblue/50 inline-block">
                 9.1 Annexes
               </h3>
-              <div className="ml-4 space-y-3 mt-3">
+              <div className="ml-4 space-y-6 mt-3">
                 {formData.documents_fournis ? (
                   <ul className="grid grid-cols-2 gap-2">
                     {Object.entries(formData.documents_fournis).map(([key, value]) => (
                       <li key={key} className="flex items-center">
                         <div
                           className={`w-4 h-4 mr-2 rounded-sm ${
-                            value.checked ? "bg-orange-500" : "border border-gray-300"
+                            value.checked ? "bg-regularblue" : "border border-gray-300"
                           }`}
                         >
                           {value.checked && <span className="text-white text-xs flex justify-center">✓</span>}
@@ -649,7 +640,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
                     ))}
                   </ul>
                 ) : (
-                  <span className="text-gray-500">Aucune information sur la gestion du projet</span>
+                  <span className="text-mediumblue">Aucune information sur la gestion du projet</span>
                 )}
               </div>
             </div>
@@ -659,7 +650,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
               
 
         {/* Pied de page */}
-        <div className="border-t pt-4 mt-12 flex justify-between text-sm text-gray-500">
+        <div className="border-t pt-4 mt-12 flex justify-between text-sm text-mediumblue">
           <div>{formData.organisation_name || "Cahier des charges"}</div>
           <div>{formData.redacteur || "Rédigé par"}</div>
           <div>{formData.date_redaction || new Date().toLocaleDateString()}</div>
@@ -671,13 +662,13 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
   };
 
   return (
-    <Card className="border-2 border-blue-200 shadow-lg">
-      <div className="bg-blue-50 p-4 border-b border-blue-200 flex justify-between items-center">
+    <Card className="border-2 border-lightblue/20">
+      <div className="bg-lightblue/20 p-4 border-b border-lightblue/20 flex justify-between items-center">
         <h3 className="text-lg font-semibold text-blue-800">Prévisualisation du document</h3>
-        <span className="text-sm text-blue-600 bg-blue-100 px-2 py-1 rounded">Format A4</span>
+        <span className="text-sm text-lightblue/10 bg-blue-100 px-2 py-1">Forma4</span>
       </div>
       <ScrollArea className="h-[800px] w-full">
-        <div className="bg-white shadow-inner mx-auto my-6" style={{ width: "210mm", minHeight: "297mm" }}>
+        <div className="bg-white mx-auto my-6" style={{ width: "210mm", minHeight: "297mm" }}>
           {renderPreviewContent()}
         </div>
       </ScrollArea>

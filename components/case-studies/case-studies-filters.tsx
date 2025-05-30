@@ -35,30 +35,30 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "1",
     slug: "proditec",
-    title: "Refonte du site e-commerce ModeShop",
-    description: "Refonte complète du site e-commerce avec intégration de paiement et gestion de stock.",
-    imageUrl: "/placeholder.svg?key=qtv3e",
+    title: "Proditec",
+    description: "Site corporate multilingue pour une entreprise de l'industrie robotique internationale.",
+    imageUrl: "/img/desktop-screen-proditec.jpg",
     clientType: "PME",
     date: {
-      month: 3,
-      year: 2023,
+      month: 5,
+      year: 2025,
     },
-    tags: ["e-commerce", "Next.js", "Stripe"],
+    tags: ["Corporate", "WordPress", "Polylang"],
     url: "/etudes-de-cas/proditec",
   },
   {
     id: "2",
-    slug: "acl",
-    title: "Site vitrine pour l'Association Culturelle de Lyon",
-    description: "Création d'un site vitrine moderne avec calendrier d'événements et système de don en ligne.",
-    imageUrl: "/placeholder.svg?key=w2pt8",
+    slug: "doleances",
+    title: "Site vitrine de l'Association des Doléances",
+    description: "Création d'un site vitrine inspiré de Wikipédia destiné à promouvoir l'action de l'association.",
+    imageUrl: "/img/desktop-screen-lesdoleances.jpg",
     clientType: "Association",
     date: {
-      month: 6,
-      year: 2023,
+      month: 5,
+      year: 2025,
     },
-    tags: ["site vitrine", "WordPress", "événements"],
-    url: "/etudes-de-cas/acl",
+    tags: ["site vitrine", "WordPress", "Next.js", "headless"],
+    url: "/etudes-de-cas/doleances",
   },
   {
     id: "3",
@@ -198,7 +198,7 @@ export default function CaseStudiesFilter() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h2 className="text-3xl font-bold mb-4">Nos études de cas</h2>
+        <h2 className="text-3xl font-bold text-regularblue mb-4">Nos études de cas</h2>
         <p className="text-lg text-gray-600">
           Découvrez nos réalisations de sites web pour différents types de clients
         </p>
@@ -313,7 +313,7 @@ export default function CaseStudiesFilter() {
             <a
               key={study.id}
               href={`/etudes-de-cas/${study.slug}`}
-              className="block transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 rounded-lg"
+              className="block transition-transform hover:scale-[1.02] focus:outline-none focus:ring-0 rounded-lg"
             >
               <Card className="h-full overflow-hidden">
                 <div className="aspect-video w-full overflow-hidden">

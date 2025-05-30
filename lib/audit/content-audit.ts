@@ -4,61 +4,60 @@ import type { CategoryScore } from "../types"
 
 export async function contentAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would analyze the content using NLP APIs
-    // or content analysis tools
+    // Dans une vraie implémentation, on analyserait le contenu avec des APIs NLP ou des outils d'analyse de contenu
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 20) + 60 // Random score between 60-80
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 20) + 60 // Score aléatoire entre 60 et 80
 
     return {
       name: "content",
       score: simulatedScore,
       summary:
-        "Content is king in digital marketing. Quality, relevance, and engagement of your content directly impacts user experience and conversion rates.",
+        "Le contenu est roi en marketing digital. La qualité, la pertinence et l'engagement de vos contenus impactent directement l'expérience utilisateur et les taux de conversion.",
       findings: [
         {
-          title: "Thin content on key pages",
+          title: "Contenu insuffisant sur les pages clés",
           description:
-            "Several important pages have less than 300 words, which may not provide enough value to users or search engines.",
+            "Plusieurs pages importantes comportent moins de 300 mots, ce qui peut ne pas apporter assez de valeur aux utilisateurs ou aux moteurs de recherche.",
           impact: "high",
         },
         {
-          title: "Inconsistent content formatting",
+          title: "Mise en forme du contenu incohérente",
           description:
-            "Content structure varies across pages, making it difficult for users to scan and consume information.",
+            "La structure du contenu varie d'une page à l'autre, ce qui complique la lecture et la compréhension pour les utilisateurs.",
           impact: "medium",
         },
         {
-          title: "Low readability score",
+          title: "Lisibilité faible",
           description:
-            "Content uses complex language and long sentences, making it difficult for the average user to understand.",
+            "Le contenu utilise un langage complexe et des phrases longues, ce qui le rend difficile à comprendre pour l'utilisateur moyen.",
           impact: "medium",
         },
         {
-          title: "Missing calls-to-action",
-          description: "Many content pages lack clear CTAs, missing opportunities to guide users to conversion points.",
+          title: "Absence d'appels à l'action",
+          description: "De nombreuses pages de contenu n'ont pas de CTA clairs, manquant des opportunités de conversion.",
           impact: "high",
         },
       ],
       recommendations: [
         {
-          title: "Develop a content strategy",
-          description: "Create a comprehensive content plan that aligns with user needs and business goals.",
+          title: "Développer une stratégie de contenu",
+          description: "Créez un plan de contenu complet aligné sur les besoins des utilisateurs et les objectifs business.",
           link: "https://contentmarketinginstitute.com/developing-a-strategy/",
         },
         {
-          title: "Improve content readability",
-          description: "Use shorter sentences, simpler language, and clear formatting to make content more accessible.",
+          title: "Améliorer la lisibilité du contenu",
+          description: "Utilisez des phrases courtes, un langage simple et une mise en forme claire pour rendre le contenu plus accessible.",
           link: "https://www.nngroup.com/articles/how-users-read-on-the-web/",
         },
         {
-          title: "Add strategic CTAs",
-          description: "Include relevant calls-to-action throughout your content to guide users toward conversion.",
+          title: "Ajouter des appels à l'action stratégiques",
+          description: "Intégrez des CTA pertinents dans vos contenus pour guider les utilisateurs vers la conversion.",
           link: "https://unbounce.com/conversion-rate-optimization/call-to-action-examples/",
         },
         {
-          title: "Create content pillars",
-          description: "Develop comprehensive resources around key topics to establish authority and improve SEO.",
+          title: "Créer des piliers de contenu",
+          description: "Développez des ressources complètes sur des sujets clés pour asseoir votre autorité et améliorer le SEO.",
           link: "https://buffer.com/resources/content-pillars/",
         },
       ],
@@ -74,8 +73,8 @@ export async function contentAudit(url: string): Promise<CategoryScore> {
       ],
     }
   } catch (error) {
-    console.error("Error in content audit:", error)
-    throw new Error("Failed to run content audit")
+    console.error("Erreur lors de l'audit contenu :", error)
+    throw new Error("Échec de l'audit du contenu")
   }
 }
 

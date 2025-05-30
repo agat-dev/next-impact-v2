@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { AuditResults } from "@/components/audit/audit-results"
-import { runAudit } from "@/lib/audit-service"
+import { runAudit } from "@/lib/audit/audit-service"
 import type { AuditData } from "@/lib/types"
 import { Loader2 } from "lucide-react"
 
@@ -22,7 +22,7 @@ export function WebsiteAuditTool() {
 
     // Basic URL validation
     if (!url) {
-      setError("Please enter a URL")
+      setError("Veuillez saisir une URL")
       return
     }
 
@@ -36,7 +36,7 @@ export function WebsiteAuditTool() {
       // Test if it's a valid URL format
       new URL(formattedUrl)
     } catch (e) {
-      setError("Please enter a valid URL")
+      setError("Veuillez saisir une URL valide")
       return
     }
 
@@ -46,7 +46,7 @@ export function WebsiteAuditTool() {
       const data = await runAudit(formattedUrl)
       setAuditData(data)
     } catch (err) {
-      setError("Failed to analyze website. Please check the URL and try again.")
+      setError("Échec de l'analyse du site. Veuillez vérifier l'URL et réessayer.")
       console.error(err)
     } finally {
       setIsLoading(false)
@@ -64,7 +64,7 @@ export function WebsiteAuditTool() {
             <div className="flex gap-2 w-[40rem]">
               <Input
                 id="url"
-                placeholder="example.com"
+                placeholder="exemple.com"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 className="flex-1"
@@ -73,10 +73,10 @@ export function WebsiteAuditTool() {
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Analyzing...
+                    Analyse en cours...
                   </>
                 ) : (
-                  "Analyze"
+                  "Analyser"
                 )}
               </Button>
             </div>
@@ -88,7 +88,7 @@ export function WebsiteAuditTool() {
       {isLoading && (
         <div className="flex flex-col items-center justify-center p-12">
           <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
-          <p className="text-slate-600">Analyzing website... This may take a minute.</p>
+          <p className="text-slate-600">Analyse du site en cours... Cela peut prendre une minute.</p>
         </div>
       )}
 

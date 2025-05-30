@@ -3,7 +3,7 @@ import { ArrowLeft, BookOpen } from "lucide-react"
 import { notFound } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
-import { SearchDocumentation } from "@/components/search-documentation"
+import { SearchDocumentation } from "@/components/documentation/search-documentation"
 import { getArticlesByCategory, getAllCategories } from "@/lib/markdown"
 
 interface CategoryPageProps {

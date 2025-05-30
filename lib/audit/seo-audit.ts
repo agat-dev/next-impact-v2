@@ -4,63 +4,63 @@ import type { CategoryScore } from "../types"
 
 export async function seoAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would use APIs like Google Search Console API
-    // or third-party SEO tools with APIs
+    // Dans une vraie implémentation, on utiliserait des APIs comme Google Search Console API
+    // ou des outils SEO tiers avec API
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 25) + 65 // Random score between 65-90
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 25) + 65 // Score aléatoire entre 65-90
 
     return {
       name: "seo",
       score: simulatedScore,
       summary:
-        "SEO determines how easily users can find your site through search engines. Technical SEO, on-page optimization, and backlinks all contribute to your visibility.",
+        "Le SEO détermine la facilité avec laquelle les utilisateurs peuvent trouver votre site via les moteurs de recherche. Le SEO technique, l’optimisation on-page et les backlinks contribuent tous à votre visibilité.",
       findings: [
         {
-          title: "Missing meta descriptions",
+          title: "Meta descriptions manquantes",
           description:
-            "Several key pages are missing meta descriptions, which reduces click-through rates from search results.",
+            "Plusieurs pages clés n'ont pas de meta description, ce qui réduit le taux de clics depuis les résultats de recherche.",
           impact: "medium",
         },
         {
-          title: "Duplicate title tags",
+          title: "Balises title dupliquées",
           description:
-            "Multiple pages have identical title tags, which confuses search engines about which page to rank for specific queries.",
+            "Plusieurs pages possèdent des balises title identiques, ce qui perturbe les moteurs de recherche sur la page à privilégier pour certaines requêtes.",
           impact: "high",
         },
         {
-          title: "Slow mobile page speed",
-          description: "Mobile page speed is a ranking factor, and your site loads slowly on mobile devices.",
+          title: "Vitesse de chargement mobile lente",
+          description: "La vitesse de chargement sur mobile est un facteur de classement, et votre site est lent sur mobile.",
           impact: "high",
         },
         {
-          title: "Missing structured data",
-          description: "Your site isn't using schema markup to help search engines understand your content.",
+          title: "Données structurées manquantes",
+          description: "Votre site n'utilise pas de balisage schema pour aider les moteurs à comprendre votre contenu.",
           impact: "medium",
         },
       ],
       recommendations: [
         {
-          title: "Add unique meta descriptions to all pages",
+          title: "Ajouter des meta descriptions uniques à chaque page",
           description:
-            "Write compelling, unique meta descriptions for each page to improve click-through rates from search results.",
+            "Rédigez des meta descriptions uniques et attrayantes pour chaque page afin d'améliorer le taux de clics depuis les résultats de recherche.",
           link: "https://developers.google.com/search/docs/appearance/snippet",
         },
         {
-          title: "Fix duplicate title tags",
-          description: "Ensure each page has a unique, descriptive title tag that includes your primary keyword.",
+          title: "Corriger les balises title dupliquées",
+          description: "Assurez-vous que chaque page possède une balise title unique et descriptive incluant votre mot-clé principal.",
           link: "https://developers.google.com/search/docs/appearance/title-link",
         },
         {
-          title: "Implement schema markup",
+          title: "Implémenter le balisage schema",
           description:
-            "Add structured data to help search engines understand your content and potentially get rich results.",
+            "Ajoutez des données structurées pour aider les moteurs de recherche à comprendre votre contenu et obtenir des résultats enrichis.",
           link: "https://schema.org/docs/gs.html",
         },
         {
-          title: "Improve internal linking structure",
+          title: "Améliorer la structure des liens internes",
           description:
-            "Create a logical hierarchy of internal links to help search engines understand your site structure.",
+            "Créez une hiérarchie logique de liens internes pour aider les moteurs à comprendre la structure de votre site.",
           link: "https://moz.com/learn/seo/internal-link",
         },
       ],
@@ -70,18 +70,18 @@ export async function seoAudit(url: string): Promise<CategoryScore> {
           url: "https://search.google.com/search-console/about",
         },
         {
-          name: "Moz SEO Guide",
+          name: "Guide SEO Moz",
           url: "https://moz.com/beginners-guide-to-seo",
         },
         {
-          name: "Google SEO Documentation",
+          name: "Documentation SEO Google",
           url: "https://developers.google.com/search/docs",
         },
       ],
     }
   } catch (error) {
-    console.error("Error in SEO audit:", error)
-    throw new Error("Failed to run SEO audit")
+    console.error("Erreur lors de l'audit SEO :", error)
+    throw new Error("Échec de l'audit SEO")
   }
 }
 

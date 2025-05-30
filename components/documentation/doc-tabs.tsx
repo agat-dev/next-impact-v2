@@ -1,7 +1,7 @@
 
 import { getAllArticles } from "@/lib/markdown";
 
-import { SearchDocumentation } from "@/components/search-documentation";
+import { SearchDocumentation } from "@/components/documentation/search-documentation";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
