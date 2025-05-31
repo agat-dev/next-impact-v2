@@ -106,7 +106,7 @@ export function ExpandableCardNIP() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="w-3xl mx-0 grid grid-cols-2 gap-20">
+      <ul className="w-[50rem] mx-0 flex flex-col gap-4 md:gap-6">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -178,8 +178,8 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Quizz",
-    title: "WordPress CMS ou Headless ?",
+    description: "TESTER EN LIGNE",
+    title: "Choisir entre WordPress CMS et Headless ?",
     lottie: "/lotties/wordpress.json",
     ctaText: "Tester en ligne",
     ctaLink: "/cms-headless",
@@ -193,24 +193,7 @@ const cards = [
     ),
   },
   {
-    description: "Test en ligne",
-    title: "Auditer mon site web",
-    lottie: "/lotties/scan.json",
-    ctaText: "Lancer l'audit",
-    ctaLink: "/audit",
-    content: () => (
-      <p>
-        Outil diagnostique complet en ligne et gratuit qui analyse en profondeur
-        les aspects techniques, ergonomiques et marketing de votre site web.
-        <br />
-        <br />
-        Sur la base de votre URL, il identifie rapidement l'ensemble des failles
-        qui freinent sa visibilité et son efficacité.
-      </p>
-    ),
-  },
-  {
-    description: "Générateur",
+    description: "GENERER GRATUITEMENT",
     title: "Rédiger mon cahier des charges",
     lottie: "/lotties/document.json",
     ctaText: "Commencer la rédaction",
@@ -229,7 +212,7 @@ const cards = [
     ),
   },
   {
-    description: "Quizz",
+    description: "SIMULER MON BUDGET",
     title: "Quel tarif pour mon site web ?",
     lottie: "/lotties/cost-calculator.json",
     ctaText: "Lancer l'estimation",

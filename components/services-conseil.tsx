@@ -72,7 +72,7 @@ export default function ServicesConseil() {
             SERVICES
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
-            Conseil
+            Outils d'analyse de projet
           </h2>
           <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
             Pour savoir, décider et agir sereinement
@@ -81,6 +81,7 @@ export default function ServicesConseil() {
         <div className="flex justify-center align-center px-4 md:px-6 my-16">
           <ExpandableCardNIP />
         </div>
+        {/*}
         <div className="grid grid-cols-1 md:grid-cols-1 place-self-center gap-24 my-16 p-8">
           {ConseilSkills.map((conseilSkill, index) => (
             <Card
@@ -99,7 +100,7 @@ export default function ServicesConseil() {
               </MagicCard>
             </Card>
           ))}
-        </div>
+        </div>*/}
       </section>
     </>
   );

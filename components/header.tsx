@@ -42,11 +42,11 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/services/creation-refonte" title="Création & Refonte" className='h-24'>
-                <p className='text-xs'>Création de sites corporate ou associatifs</p>
+              <ListItem href="/services/wordpress" title="Sites web Corporate" className='h-24'>
+                <p className='text-xs'>Sites web Corporate</p>
               </ListItem>
-              <ListItem href="/services" title="Conseil" className='h-24'>
-                <p className='text-xs'>Accompagnement dans la réalisation de votre projet web</p>
+              <ListItem href="/headless" title="Applis web" className='h-24'>
+                <p className='text-xs'>Appli web Headless</p>
               </ListItem>
             </ul>
           </NavigationMenuContent>
