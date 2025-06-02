@@ -6,7 +6,12 @@ import { CheckCircle, ArrowRight, Clock, Users, Shield, Zap, ArrowLeft } from "l
 
 export default function SitesCorporate() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
+    <>
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[0] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[400px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-5 blur-3xl"></div>
+        </div>
+    <div className="min-h-screen">
       {/* Navigation */}
       <div className="container mx-auto px-4 py-4">
         <Link href="/services" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground">
@@ -16,6 +21,10 @@ export default function SitesCorporate() {
       </div>
 
       {/* Hero Section */}
+      <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[900px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[1200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>
       <section className="container mx-auto px-4 py-16 text-center">
         <Badge variant="outline" className="mb-4 border-green-200 text-green-700">
           Solution recommandée pour 90% des projets
@@ -79,7 +88,7 @@ export default function SitesCorporate() {
       </section>
 
       {/* Applications */}
-      <section className="bg-white py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Applications concrètes</h2>
@@ -130,6 +139,11 @@ export default function SitesCorporate() {
       </section>
 
       {/* Services Details */}
+      
+      <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[1900px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[2200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>s
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Nos services détaillés</h2>
@@ -408,5 +422,6 @@ export default function SitesCorporate() {
         </div>
       </section>
     </div>
+    </>
   )
 }
