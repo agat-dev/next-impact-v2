@@ -4,54 +4,54 @@ import type { CategoryScore } from "../types"
 
 export async function recommendationsAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would aggregate findings from other audits
-    // and prioritize recommendations
+    // Dans une vraie implémentation, on agrégerait les constats des autres audits
+    // et on prioriserait les recommandations
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 20) + 70 // Random score between 70-90
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 20) + 70 // Score aléatoire entre 70-90
 
     return {
       name: "recommendations",
       score: simulatedScore,
       summary:
-        "Based on our comprehensive analysis, we've identified key opportunities to improve your website's marketing effectiveness and prioritized them by potential impact.",
+        "Sur la base de notre analyse complète, nous avons identifié les principales opportunités pour améliorer l'efficacité marketing de votre site et les avons priorisées selon leur impact potentiel.",
       findings: [
         {
-          title: "Critical issues requiring immediate attention",
-          description: "We've identified 5 high-impact issues that should be addressed as soon as possible.",
+          title: "Problèmes critiques nécessitant une attention immédiate",
+          description: "Nous avons identifié 5 problèmes à fort impact qui doivent être traités dès que possible.",
           impact: "high",
         },
         {
-          title: "Medium-priority improvements",
-          description: "There are 8 medium-impact issues that would significantly improve performance.",
+          title: "Améliorations de priorité moyenne",
+          description: "8 points d'amélioration à impact moyen pourraient significativement améliorer la performance.",
           impact: "medium",
         },
         {
-          title: "Long-term strategic opportunities",
-          description: "Several opportunities for long-term growth and optimization have been identified.",
+          title: "Opportunités stratégiques à long terme",
+          description: "Plusieurs axes d'optimisation et de croissance à long terme ont été identifiés.",
           impact: "low",
         },
       ],
       recommendations: [
         {
-          title: "Implement quick wins first",
+          title: "Mettre en œuvre les quick wins en premier",
           description:
-            "Start with high-impact, low-effort improvements like meta tag optimization and image compression.",
+            "Commencez par les améliorations à fort impact et faible effort comme l'optimisation des balises meta et la compression des images.",
           link: "https://moz.com/blog/seo-quick-wins",
         },
         {
-          title: "Develop a 90-day improvement plan",
-          description: "Create a structured plan to address medium-priority issues over the next three months.",
+          title: "Développer un plan d'amélioration sur 90 jours",
+          description: "Créez un plan structuré pour traiter les problèmes de priorité moyenne au cours des trois prochains mois.",
           link: "https://www.crazyegg.com/blog/website-optimization-plan/",
         },
         {
-          title: "Establish ongoing testing",
-          description: "Implement A/B testing for key pages and conversion points to continuously improve performance.",
+          title: "Établir des tests continus",
+          description: "Mettez en œuvre des tests A/B pour les pages clés et les points de conversion afin d'améliorer continuellement les performances.",
           link: "https://vwo.com/ab-testing/",
         },
         {
-          title: "Consider a competitive analysis",
-          description: "Benchmark against competitors to identify additional opportunities and threats.",
+          title: "Envisager une analyse concurrentielle",
+          description: "Comparez-vous à vos concurrents pour identifier d'autres opportunités et menaces.",
           link: "https://ahrefs.com/blog/competitive-analysis/",
         },
       ],

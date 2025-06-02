@@ -4,57 +4,57 @@ import type { CategoryScore } from "../types"
 
 export async function commercialAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would analyze commercial elements and value proposition
+    // Dans une vraie implémentation, on analyserait les éléments commerciaux et la proposition de valeur
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 25) + 55 // Random score between 55-80
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 25) + 55 // Score aléatoire entre 55 et 80
 
     return {
       name: "commercial",
       score: simulatedScore,
       summary:
-        "Commercial aspects of your site include pricing strategy, value proposition, and persuasive elements that drive conversions and sales.",
+        "Les aspects commerciaux de votre site incluent la stratégie de tarification, la proposition de valeur et les éléments de persuasion qui favorisent la conversion et les ventes.",
       findings: [
         {
-          title: "Unclear value proposition",
-          description: "Your unique selling points aren't clearly communicated on key landing pages.",
+          title: "Proposition de valeur peu claire",
+          description: "Vos arguments de vente uniques ne sont pas clairement communiqués sur les pages clés.",
           impact: "high",
         },
         {
-          title: "Pricing information is difficult to find",
-          description: "Users have to click through multiple pages to find pricing details.",
+          title: "Informations tarifaires difficiles à trouver",
+          description: "Les utilisateurs doivent naviguer sur plusieurs pages pour accéder aux détails des prix.",
           impact: "high",
         },
         {
-          title: "Limited payment options",
-          description: "Your checkout only offers credit card payments, potentially limiting conversions.",
+          title: "Options de paiement limitées",
+          description: "Votre tunnel d'achat ne propose que le paiement par carte bancaire, ce qui peut limiter les conversions.",
           impact: "medium",
         },
         {
-          title: "Weak product descriptions",
-          description: "Product descriptions focus on features rather than benefits and use cases.",
+          title: "Descriptions produits peu convaincantes",
+          description: "Les descriptions produits se concentrent sur les caractéristiques plutôt que sur les bénéfices et cas d'usage.",
           impact: "medium",
         },
       ],
       recommendations: [
         {
-          title: "Clarify your value proposition",
-          description: "Clearly communicate what makes your offering unique and valuable above the fold on key pages.",
+          title: "Clarifier la proposition de valeur",
+          description: "Communiquez clairement ce qui rend votre offre unique et précieuse dès le haut de page sur les pages clés.",
           link: "https://www.nngroup.com/articles/value-proposition/",
         },
         {
-          title: "Improve pricing transparency",
-          description: "Make pricing information easily accessible and clearly structured.",
+          title: "Améliorer la transparence des prix",
+          description: "Rendez les informations tarifaires facilement accessibles et bien structurées.",
           link: "https://www.priceintelligently.com/blog/bid/195287/the-value-of-pricing-strategy-transparency",
         },
         {
-          title: "Expand payment options",
-          description: "Add popular payment methods like PayPal, Apple Pay, and buy-now-pay-later options.",
+          title: "Élargir les options de paiement",
+          description: "Ajoutez des moyens de paiement populaires comme PayPal, Apple Pay ou le paiement en plusieurs fois.",
           link: "https://www.bigcommerce.com/blog/online-payment-methods/",
         },
         {
-          title: "Enhance product descriptions",
-          description: "Focus on benefits, use cases, and emotional appeals rather than just technical specifications.",
+          title: "Renforcer les descriptions produits",
+          description: "Mettez l'accent sur les bénéfices, les cas d'usage et les leviers émotionnels plutôt que sur les seules caractéristiques techniques.",
           link: "https://www.shopify.com/blog/8211159-9-simple-ways-to-write-product-descriptions-that-sell",
         },
       ],
@@ -74,8 +74,8 @@ export async function commercialAudit(url: string): Promise<CategoryScore> {
       ],
     }
   } catch (error) {
-    console.error("Error in commercial audit:", error)
-    throw new Error("Failed to run commercial audit")
+    console.error("Erreur lors de l'audit commercial :", error)
+    throw new Error("Échec de l'audit commercial")
   }
 }
 

@@ -110,7 +110,7 @@
     @apply border-border;
   }
   body {
-    @apply text-foreground bg-extralightblue/20;
+    @apply text-regularblue;
   }
   h1, h2, h3, h4, h5, h6, a {
     @apply font-googletitre font-normal py-1;
@@ -119,10 +119,10 @@
     @apply text-4xl text-regularblue;
   }
   h2 {
-    @apply text-3xl text-mediumblue pt-4;
+    @apply text-3xl text-mediumblue pt-10;
   }
   h3 {
-    @apply text-2xl text-mediumblue;
+    @apply text-2xl text-mediumblue pt-6;
   }
   h4 {
     @apply text-xl text-mediumblue;
@@ -134,7 +134,13 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply text-base/6 font-googletexte font-normal text-darkblue/60 ;
+    @apply font-adobetext font-normal;
+  }
+  a {
+    @apply text-regularblue no-underline;
+  }
+  a:hover {
+    @apply text-regularblue/80 no-underline;
   }
   .container {
     @apply mx-auto px-4;

@@ -4,57 +4,57 @@ import type { CategoryScore } from "../types"
 
 export async function socialAudit(url: string): Promise<CategoryScore> {
   try {
-    // In a real implementation, we would analyze social media presence and integration
+    // Dans une vraie implémentation, on analyserait la présence et l'intégration des réseaux sociaux
 
-    // For demo purposes, we'll simulate the API response
-    const simulatedScore = Math.floor(Math.random() * 30) + 50 // Random score between 50-80
+    // Pour la démo, on simule la réponse de l'API
+    const simulatedScore = Math.floor(Math.random() * 30) + 50 // Score aléatoire entre 50-80
 
     return {
       name: "social",
       score: simulatedScore,
       summary:
-        "Social media integration and community building are essential for brand awareness and engagement. Your social strategy affects both traffic and conversions.",
+        "L'intégration des réseaux sociaux et la création d'une communauté sont essentielles pour la notoriété de la marque et l'engagement. Votre stratégie sociale influence à la fois le trafic et les conversions.",
       findings: [
         {
-          title: "Limited social sharing options",
-          description: "Your content lacks easy social sharing functionality, limiting its reach.",
+          title: "Options de partage social limitées",
+          description: "Votre contenu ne propose pas de fonctionnalités de partage social simples, ce qui limite sa portée.",
           impact: "medium",
         },
         {
-          title: "Poor social media integration",
-          description: "Social media profiles aren't prominently displayed or consistently linked across the site.",
+          title: "Intégration des réseaux sociaux insuffisante",
+          description: "Les profils sociaux ne sont pas mis en avant ou ne sont pas liés de manière cohérente sur le site.",
           impact: "medium",
         },
         {
-          title: "Missing Open Graph tags",
-          description: "Content shared on social platforms doesn't display optimized previews due to missing metadata.",
+          title: "Balises Open Graph manquantes",
+          description: "Le contenu partagé sur les réseaux sociaux n'affiche pas d'aperçus optimisés à cause de métadonnées manquantes.",
           impact: "high",
         },
         {
-          title: "No social proof elements",
-          description: "Your site doesn't showcase social engagement metrics or user-generated content.",
+          title: "Absence d'éléments de preuve sociale",
+          description: "Votre site ne met pas en avant les indicateurs d'engagement social ou le contenu généré par les utilisateurs.",
           impact: "medium",
         },
       ],
       recommendations: [
         {
-          title: "Implement Open Graph and Twitter Card tags",
-          description: "Add proper social metadata to ensure content looks great when shared on social platforms.",
+          title: "Implémenter les balises Open Graph et Twitter Card",
+          description: "Ajoutez les métadonnées sociales nécessaires pour garantir un affichage optimal lors du partage sur les réseaux.",
           link: "https://ogp.me/",
         },
         {
-          title: "Add social sharing buttons",
-          description: "Make it easy for visitors to share your content with prominent, non-intrusive sharing buttons.",
+          title: "Ajouter des boutons de partage social",
+          description: "Facilitez le partage de votre contenu grâce à des boutons de partage visibles et non intrusifs.",
           link: "https://blog.hubspot.com/marketing/social-sharing-buttons-list",
         },
         {
-          title: "Display social proof",
-          description: "Showcase follower counts, engagement metrics, or user-generated content to build credibility.",
+          title: "Afficher la preuve sociale",
+          description: "Mettez en avant le nombre d'abonnés, les indicateurs d'engagement ou le contenu généré par les utilisateurs pour renforcer la crédibilité.",
           link: "https://www.socialmediaexaminer.com/how-to-use-social-proof-to-get-more-website-conversions/",
         },
         {
-          title: "Create a social content strategy",
-          description: "Develop a cohesive plan for creating and sharing content across social platforms.",
+          title: "Développer une stratégie de contenu social",
+          description: "Élaborez un plan cohérent pour la création et le partage de contenu sur les réseaux sociaux.",
           link: "https://sproutsocial.com/insights/social-media-content-strategy/",
         },
       ],
@@ -74,8 +74,8 @@ export async function socialAudit(url: string): Promise<CategoryScore> {
       ],
     }
   } catch (error) {
-    console.error("Error in social audit:", error)
-    throw new Error("Failed to run social audit")
+    console.error("Erreur lors de l'audit social :", error)
+    throw new Error("Échec de l'audit social")
   }
 }
 

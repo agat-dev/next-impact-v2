@@ -5,12 +5,12 @@ import "jspdf-autotable"
 
 // Définition des couleurs
 const COLORS = {
-  primary: [41, 98, 255], // Bleu principal
-  secondary: [0, 48, 135], // Bleu foncé
-  accent: [255, 122, 0], // Orange accent
-  light: [240, 245, 255], // Bleu très clair pour les fonds
-  text: [50, 50, 50], // Gris foncé pour le texte
-  lightText: [100, 100, 100], // Gris clair pour le texte secondaire
+  primary: [30,84,191], // Bleu principal
+  secondary: [2,19,115], // Bleu foncé
+  accent: [240,245,251], // Orange accent
+  light: [240,245,251], // Bleu très clair pour les fonds
+  text: [2,19,115], // Gris foncé pour le texte
+  lightText: [32,43,128], // Gris clair pour le texte secondaire
 }
 
 export async function generatePDF(formData: Record<string, any>) {
@@ -170,9 +170,17 @@ export async function generatePDF(formData: Record<string, any>) {
       yPos = 30
     }
 
-    // Rectangle coloré derrière le titre de section
+      // Marge extérieure supérieure pour le rectangle de section
+    const outerMarginTop = 8
+    yPos += outerMarginTop
+
+    // Rectangle coloré derrière le titre de section avec marges internes haut/bas et bordures arrondies
+    const sectionRectHeight = 14 // 10 (original) + 4 de marge interne en bas
+    const sectionRectY = yPos - 7 // 5 (original) + 2 de marge interne en haut
+    const sectionRectRadius = 3   // Rayon pour les coins arrondis
+
     doc.setFillColor(COLORS.primary[0], COLORS.primary[1], COLORS.primary[2])
-    doc.rect(margin - 5, yPos - 5, contentWidth + 10, 10, "F")
+    doc.roundedRect(margin - 5, sectionRectY, contentWidth + 10, sectionRectHeight, sectionRectRadius, sectionRectRadius, "F")
 
     // Titre de section en blanc
     doc.setTextColor(255, 255, 255)
@@ -180,7 +188,7 @@ export async function generatePDF(formData: Record<string, any>) {
     doc.setFont("helvetica", "bold")
     doc.text(title, margin, yPos)
 
-    return yPos + 15
+    return yPos + 15 + 4 // 15 (original) + 4 de marge interne en bas
   }
 
   // Fonction pour ajouter une sous-section
@@ -206,7 +214,6 @@ export async function generatePDF(formData: Record<string, any>) {
 
     return yPos + 8
   }
-
   // Fonction pour ajouter du texte
   const addText = (label: string, value: string, yPos: number): number => {
     // Vérifier s'il reste assez d'espace sur la page
@@ -221,14 +228,16 @@ export async function generatePDF(formData: Record<string, any>) {
     doc.setTextColor(COLORS.text[0], COLORS.text[1], COLORS.text[2])
     doc.setFontSize(normalFontSize)
     doc.setFont("helvetica", "bold")
-    doc.text(`${label}: `, margin, yPos)
+    doc.text(`${label}: `, margin - 5, yPos)
 
     // Valeur en normal
     doc.setFont("helvetica", "normal")
 
     // Gestion du texte long avec retour à la ligne
     const labelWidth = doc.getTextWidth(`${label}: `)
-    const textWidth = contentWidth - labelWidth
+    // Ajout d'une marge à droite de 4rem (~40mm)
+    const rightMargin = 40
+    const textWidth = contentWidth - labelWidth - rightMargin
     const splitText = doc.splitTextToSize(value || "Non spécifié", textWidth)
 
     doc.text(splitText, margin + labelWidth, yPos)
@@ -259,12 +268,24 @@ export async function generatePDF(formData: Record<string, any>) {
     doc.setFontSize(normalFontSize)
     doc.setFont("helvetica", "normal")
     doc.setTextColor(COLORS.text[0], COLORS.text[1], COLORS.text[2])
+    // Fond gris clair pour la liste, élargi dynamiquement selon la largeur du texte le plus long
+    const entries = Object.entries(items || {})
+    let maxTextWidth = 0
+    entries.forEach(([key]) => {
+      const width = doc.getTextWidth(key)
+      if (width > maxTextWidth) maxTextWidth = width
+    })
+    // Largeur totale = largeur case + espace + largeur texte + marge droite
+    const boxWidth = 4
+    const space = 6 // espace entre case et texte
+    const labelTextSpace = 8 // espace entre la case et le texte de l'option (modifié ici)
+    const rightMargin = 20
+    const rectWidth = boxWidth + labelTextSpace + maxTextWidth + rightMargin
 
-    // Fond gris clair pour la liste
-    const itemCount = Object.keys(items || {}).length
+    const itemCount = entries.length
     if (itemCount > 0) {
       doc.setFillColor(248, 249, 250) // Gris très clair
-      doc.roundedRect(margin - 2, yPos - 4, contentWidth - 20, itemCount * 6 + 2, 2, 2, "F")
+      doc.roundedRect(margin - 2, yPos, rectWidth, itemCount * 6 + 2, 2, 2, "F")
     }
 
     Object.entries(items || {}).forEach(([key, checked]) => {
@@ -272,7 +293,7 @@ export async function generatePDF(formData: Record<string, any>) {
       if (checked) {
         // Case cochée avec couleur accent
         doc.setFillColor(COLORS.accent[0], COLORS.accent[1], COLORS.accent[2])
-        doc.roundedRect(margin, yPos - 3, 4, 4, 0.5, 0.5, "F")
+        doc.roundedRect(margin, yPos - 3, boxWidth, boxWidth, 0.5, 0.5, "F")
 
         // Coche blanche
         doc.setTextColor(255, 255, 255)
@@ -280,14 +301,16 @@ export async function generatePDF(formData: Record<string, any>) {
       } else {
         // Case non cochée
         doc.setDrawColor(COLORS.lightText[0], COLORS.lightText[1], COLORS.lightText[2])
-        doc.roundedRect(margin, yPos - 3, 4, 4, 0.5, 0.5, "D")
+        doc.roundedRect(margin, yPos - 3, boxWidth, boxWidth, 0.5, 0.5, "D")
       }
 
-      // Texte de l'option
-      doc.setTextColor(COLORS.text[0], COLORS.text[1], COLORS.text[2])
-      doc.text(key, margin + 7, yPos)
+      // Retour à la ligne pour placer le texte de l'option en dessous de la case
+      yPos += 8
 
-      yPos += 6
+      doc.setTextColor(COLORS.text[0], COLORS.text[1], COLORS.text[2])
+      doc.text(key, margin, yPos)
+
+      yPos += 18
 
       // Vérifier si on doit passer à une nouvelle page
       if (yPos > 260) {
@@ -300,6 +323,7 @@ export async function generatePDF(formData: Record<string, any>) {
 
     return yPos + 2
   }
+
 
   // Création de la page de couverture
   addCoverPage()

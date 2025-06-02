@@ -17,43 +17,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Marketing Digital",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "SEO",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "CMS",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "E-commerce",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Headless CMS",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Développement custom",
-    href: "/docs/primitives/tooltip",
-    description:
-      "receives keyboard focus or the mouse hovers over it.",
-  },
-]
 
 export function NavBar() {
   return (
@@ -72,54 +35,62 @@ export function NavBar() {
                     className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
                     href="/"
                   >
-                    
-                    <Image src="/img/logo.png" alt="MarketingDocs" width={64} height={64} />
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                    <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
+                    <p className="text-sm leading-tight">
+                      Des services de création et refonte de sites web conçus avec et pour vous.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/services" title="Création de site web">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/services/wordpress" title="Sites web Corporate" className='h-24'>
+                <p className='text-xs'>Sites web Corporate</p>
               </ListItem>
-              <ListItem href="/services" title="Conseil">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/headless" title="Applis web" className='h-24'>
+                <p className='text-xs'>Appli web Headless</p>
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem>               
+        <NavigationMenuItem>
+          <Link href="/demo" className='font-googletitre text-regularblue text-lg font-medium px-6'>Démo</Link>
+        </NavigationMenuItem>     
+        <NavigationMenuItem>
+          <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
+        </NavigationMenuItem>      
         <NavigationMenuItem>
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
-              <div className='basis-1/2'>
-              <ListItem href="/audit" title="Audit de site web">
-                How to install dependencies and structure your app.
-              </ListItem>                
-              <ListItem href="/quizz" title="Choix du CMS">
-                Re-usable components built using Radix UI and Tailwind CSS.
+            <li className="basis-1/3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
+                    href="/"
+                  >
+                    
+                    <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
+                    <p className="text-sm leading-tight">
+                      Des outils en ligne pour vous aider à décider et à formaliser votre projet web.
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              <div className='basis-1/3'>             
+              <ListItem href="/cms-headless" title="WordPress CMS ou Headless ?" className='h-28'>
+              <p className='text-xs text-regularblue/70'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
               </ListItem>      
-              </div> 
-              <div className='basis-1/2'>             
-              <ListItem href="/cahier-des-charges" title="Rédaction du cahier des charges">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>            
-              <ListItem href="/simulateur-tarifs" title="Estimation du budget">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
+              <ListItem href="/simulateur-tarifs" title="Simulateur du budget" className='h-28'>
+              <p className='text-xs text-regularblue/70'>Outil interactif pour estimer le budget de votre projet web.</p>
+              </ListItem>  
+              </div>         
+              <div className='basis-1/3'>             
+              <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-28'>
+              <p className='text-xs text-regularblue/70'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
+              </ListItem>  
               </div>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem> 
-        <NavigationMenuItem>
-          <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/blog" className='font-googletitre text-regularblue text-lg font-medium px-6'>Blog</Link>
-        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   )
@@ -155,7 +126,7 @@ ListItem.displayName = "ListItem"
 
 export default function Header() {
   return (
-<header className="border-b">
+<header className="border-b sticky top-0 z-50 bg-white shadow-sm">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className='basis-1/6 pt-2'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
@@ -166,8 +137,8 @@ export default function Header() {
           <NavBar />
           </div>
           <div className='basis-1/6 flex justify-end'>
-          <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/services" className="text-base font-regular">Prendre RDV</Link>
+          <Button className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
+            <Link target='_blank' href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="text-base text-white hover:text-white font-regular">Prendre RDV</Link>
           </Button> 
           </div>
         </div>
