@@ -10,6 +10,7 @@ import { MagicCard } from "@/components/magicui/magic-card"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { motion, AnimatePresence } from "framer-motion"
 import { CTASection } from "@/components/cta-section"
+import TechnicalComparison from "@/components/technical-comparaison"
 
 const applications = [
 	{
@@ -434,10 +435,17 @@ export default function SitesCorporate() {
 					</div>
 				</section>
 
-				{/* CTA Section */}
+				{/* Technical Comparison */}
 				<div className="absolute inset-0 -z-10">
 					<div className="absolute top-[3400px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
 					<div className="absolute top-[3800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+				</div>
+				<TechnicalComparison />
+
+				{/* CTA Section */}
+				<div className="absolute inset-0 -z-10">
+					<div className="absolute top-[4000px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+					<div className="absolute top-[4800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
 				</div>
 				<CTASection />
 

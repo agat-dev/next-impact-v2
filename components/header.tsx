@@ -43,10 +43,10 @@ export function NavBar() {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/services/wordpress" title="Sites web Corporate" className='h-24'>
-                <p className='text-xs'>Sites web Corporate</p>
+                <p className='text-xs text-mediumblue'>Sites web Corporate</p>
               </ListItem>
-              <ListItem href="/headless" title="Applis web" className='h-24'>
-                <p className='text-xs'>Appli web Headless</p>
+              <ListItem href="/services/headless" title="Applis web" className='h-24'>
+                <p className='text-xs text-mediumblue'>Appli web Headless</p>
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -126,7 +126,7 @@ ListItem.displayName = "ListItem"
 
 export default function Header() {
   return (
-<header className="border-b sticky top-0 z-50 bg-white shadow-sm">
+<header className="border-b top-0 z-50 shadow-sm">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className='basis-1/6 pt-2'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">

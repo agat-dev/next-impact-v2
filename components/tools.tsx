@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MagicCard } from "@/components/magicui/magic-card";
 import Image from "next/image";
 
-export default function ServicesConseil() {
+export default function Tools() {
   const ConseilSkills = [
     {
       title: "Accompagnement",
@@ -81,26 +81,6 @@ export default function ServicesConseil() {
         <div className="flex justify-center align-center px-4 md:px-6 my-16">
           <ExpandableCardNIP />
         </div>
-        {/*}
-        <div className="grid grid-cols-1 md:grid-cols-1 place-self-center gap-24 my-16 p-8">
-          {ConseilSkills.map((conseilSkill, index) => (
-            <Card
-              key={index}
-              className="w-max bg-white border-none shadow-none transition-all rounded-2xl overflow-hidden"
-            >
-              <MagicCard className="rounded-2xl">
-                <CardContent className="flex items-center justify-center flex-col text-center p-8">
-                  <h3 className="text-4xl font-bold mb-3 pt-5 text-regularblue">
-                    {conseilSkill.title}
-                  </h3>
-                  <div className="text-regularblue/80">
-                    {conseilSkill.description}
-                  </div>
-                </CardContent>
-              </MagicCard>
-            </Card>
-          ))}
-        </div>*/}
       </section>
     </>
   );

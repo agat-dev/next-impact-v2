@@ -1,18 +1,16 @@
 import Link from "next/link"
+import { ServicesDev } from "@/components/services-dev"
 
 export default function ServicesComparison() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 text-center">
-        <div className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm mb-4">
-          Expertise WordPress
-        </div>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           Développement WordPress :<br />
           <span className="text-blue-600">Traditionnel ou Headless ?</span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        <p className="text-xl text-mediumblue max-w-3xl mx-auto mb-8">
           Nous vous accompagnons dans le choix de l'architecture optimale pour vos besoins. Deux approches techniques,
           une expertise commune.
         </p>
@@ -20,141 +18,14 @@ export default function ServicesComparison() {
           <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
             Analyser mon projet
           </button>
-          <button className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
+          <button className="border border-gray-300 text-mediumblue px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors">
             Télécharger le guide
           </button>
         </div>
       </section>
 
       {/* Types of Projects Section */}
-      <section className="container mx-auto px-4 py-16 bg-white">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Quel type de site pour votre projet ?</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Identifiez immédiatement la solution technique adaptée selon le type de site que vous souhaitez développer.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* WordPress Traditional Projects */}
-          <div className="space-y-6">
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full mb-4">
-                <span className="font-semibold">WordPress Traditionnel</span>
-              </div>
-              <h3 className="text-2xl font-bold text-green-700 mb-2">Sites Web Classiques</h3>
-              <p className="text-gray-600">Pour 90% des besoins web professionnels</p>
-            </div>
-
-            <div className="grid gap-4">
-              {[
-                {
-                  category: "Sites Corporate",
-                  description: "Présentation d'entreprise, services, équipes",
-                  examples: ["Groupes industriels", "PME et startups", "Filiales internationales"],
-                },
-                {
-                  category: "Sites Institutionnels",
-                  description: "Collectivités, associations, fondations",
-                  examples: ["Mairies", "ONG", "Établissements publics"],
-                },
-                {
-                  category: "Sites de Services",
-                  description: "Cabinets, consultants, professions libérales",
-                  examples: ["Cabinets d'avocats", "Consultants", "Centres médicaux"],
-                },
-                {
-                  category: "Portails d'Information",
-                  description: "Actualités, documentation, ressources",
-                  examples: ["Centres de formation", "Médias locaux", "Portails RH"],
-                },
-              ].map((project, index) => (
-                <div
-                  key={index}
-                  className="border border-green-200 rounded-lg p-4 hover:border-green-300 transition-colors"
-                >
-                  <h4 className="font-semibold text-green-700 mb-1">{project.category}</h4>
-                  <p className="text-sm text-gray-600 mb-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {project.examples.map((example, i) => (
-                      <span key={i} className="text-xs border border-green-200 text-green-600 px-2 py-1 rounded">
-                        {example}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center pt-4">
-              <Link href="/services/sites-corporate">
-                <button className="border border-green-600 text-green-600 px-4 py-2 rounded hover:bg-green-50 transition-colors">
-                  Voir tous les détails →
-                </button>
-              </Link>
-            </div>
-          </div>
-
-          {/* WordPress Headless Projects */}
-          <div className="space-y-6">
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full mb-4">
-                <span className="font-semibold">WordPress Headless</span>
-              </div>
-              <h3 className="text-2xl font-bold text-blue-700 mb-2">Applications Web Avancées</h3>
-              <p className="text-gray-600">Pour les projets techniques ambitieux</p>
-            </div>
-
-            <div className="grid gap-4">
-              {[
-                {
-                  category: "E-commerce Avancé",
-                  description: "Catalogues complexes, configurateurs produit",
-                  examples: ["Configurateurs", "Filtres avancés", "Performance critique"],
-                },
-                {
-                  category: "Portails Clients B2B",
-                  description: "Dashboards, espaces de commande, suivi projets",
-                  examples: ["Tableaux de bord", "Intégrations ERP", "Espaces privés"],
-                },
-                {
-                  category: "Applications SaaS",
-                  description: "Interfaces de gestion, analytics temps réel",
-                  examples: ["Plateformes métier", "Analytics avancées", "Multi-tenant"],
-                },
-                {
-                  category: "Applications Multi-Canal",
-                  description: "Web + mobile + kiosques + APIs",
-                  examples: ["Apps mobiles", "PWA", "Systèmes distribués"],
-                },
-              ].map((project, index) => (
-                <div
-                  key={index}
-                  className="border border-blue-200 rounded-lg p-4 hover:border-blue-300 transition-colors"
-                >
-                  <h4 className="font-semibold text-blue-700 mb-1">{project.category}</h4>
-                  <p className="text-sm text-gray-600 mb-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {project.examples.map((example, i) => (
-                      <span key={i} className="text-xs border border-blue-200 text-blue-600 px-2 py-1 rounded">
-                        {example}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center pt-4">
-              <Link href="/services/applications-headless">
-                <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition-colors">
-                  Voir tous les détails →
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+        <ServicesDev />
 
       {/* Services Cards */}
       <section className="container mx-auto px-4 py-16">
