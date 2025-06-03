@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, ArrowRight, Clock, Users, Shield, ArrowLeft } from "lucide-react"
@@ -15,27 +16,31 @@ import TechnicalComparison from "@/components/technical-comparaison"
 const applications = [
 	{
 		key: "corporate",
+    image: "/img/site-corporate.jpg",
 		title: "Sites corporate",
 		description: "Présentation d'entreprise, services, équipes",
-		examples: ["Groupes industriels", "PME", "Startups"],
+		examples: ["Groupes industriels", "PME", "Artisans"],
 	},
 	{
 		key: "institutionnel",
+    image: "/img/site-institutionnel.jpg",
 		title: "Sites institutionnels",
 		description: "Collectivités, associations, fondations",
-		examples: ["Mairies", "ONG", "Fondations"],
+		examples: ["Mairies", "ESS", "Associations"],
 	},
 	{
 		key: "services",
+    image: "/img/site-services.jpg",
 		title: "Sites de services",
 		description: "Cabinets, consultants, professions libérales",
 		examples: ["Avocats", "Consultants", "Médecins"],
 	},
 	{
 		key: "portail",
+    image: "/img/portail-infos.jpg",
 		title: "Portails d'information",
 		description: "Actualités, documentation, ressources",
-		examples: ["Médias", "Écoles", "Centres de formation"],
+		examples: ["Centres de formation", "Médias", "Écoles"],
 	},
 ]
 
@@ -164,20 +169,31 @@ export default function SitesCorporate() {
 												exit={{ opacity: 0, y: -24 }}
 												transition={{ duration: 0.35, ease: "easeOut" }}
 											>
-												<Card>
+												<Card className="w-max flex rounded-2xl mx-auto">
+                          <div className="w-1/4 lg:block">
+                          <Image
+                            src={app.image}
+                            alt={app.title}
+                            className="h-full object-cover rounded-tl-2xl rounded-bl-2xl"
+                            width={300}
+                            height={300}
+                          />
+                          </div>
+                          <div>
 													<CardHeader>
-														<CardTitle className="text-xl text-regularblue font-adobetitre font-medium">{app.title}</CardTitle>
-														<CardDescription className="text-mediumblue">{app.description}</CardDescription>
+														<CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">{app.title}</CardTitle>
+														<CardDescription className="text-regularblue">{app.description}</CardDescription>
 													</CardHeader>
-													<CardContent>
-														<div className="space-y-1">
+													<CardContent>                            
+                            <div className="h-full flex flex-col items-start gap-4 pl-2">
 															{app.examples.map((example, i) => (
-																<div key={i} className="text-sm text-mediumblue">
-																	• {example}
+																<div key={i} className="w-max text-sm font-adobetitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full">
+																	{example}
 																</div>
 															))}
 														</div>
 													</CardContent>
+                          </div>
 												</Card>
 											</motion.div>
 										</TabsContent>
@@ -199,10 +215,10 @@ export default function SitesCorporate() {
 						<p className="text-lg text-mediumblue">Une approche complète pour votre réussite web</p>
 					</div>
 
-					<div className="space-y-8 rounded-2xl">
+					<div className="rounded-2xl grid md:grid-cols-3 place-content-start gap-6">
 						{[
 							{
-								title: "Design sur-mesure adapté à vos contraintes",
+								title: "Design sur-mesure",
 								problem: "Avoir un site unique sans les coûts d'un développement from scratch",
 								features: [
 									"Thème personnalisé respectant votre charte graphique",
@@ -213,7 +229,7 @@ export default function SitesCorporate() {
 								],
 							},
 							{
-								title: "Organisation des contenus dédiée à votre métier",
+								title: "Organisation des contenus dédiée",
 								problem: "Structurer l'information pour vos utilisateurs et les moteurs de recherche",
 								features: [
 									"Architecture de l'information pensée UX et SEO",
@@ -224,7 +240,7 @@ export default function SitesCorporate() {
 								],
 							},
 							{
-								title: "Fonctionnalités adaptées sans surdéveloppement",
+								title: "Fonctionnalités adaptées",
 								problem: "Obtenir les fonctionnalités nécessaires sans complexité inutile",
 								features: [
 									"Formulaires intelligents avec notifications",
@@ -235,10 +251,9 @@ export default function SitesCorporate() {
 								],
 							},
 						].map((service, index) => (
-							<MagicCard key={index}>
-								<Card className="overflow-hidden rounded-2xl shadow-none">
+								<Card className="h-full overflow-hidden rounded-2xl border border-pink-200/40 shadow-none" key={index}>
 									<CardHeader>
-										<CardTitle className="text-2xl text-regularblue font-adobetitre font-medium normal-case">
+										<CardTitle className="mb-8 text-2xl text-center text-regularblue font-adobetitre font-medium normal-case">
 											{service.title}
 										</CardTitle>
 										<CardDescription className="text-mediumblue normal-case">
@@ -246,9 +261,9 @@ export default function SitesCorporate() {
 										</CardDescription>
 									</CardHeader>
 									<CardContent>
-										<div className="grid md:grid-cols-2 gap-4">
+										<div className="mt-4 grid gap-8">
 											{service.features.map((feature, i) => (
-												<div key={i} className="flex items-start gap-2">
+												<div key={i} className="flex items-start gap-4">
 													<CheckCircle className="h-4 w-4 text-regularblue mt-0.5 flex-shrink-0" />
 													<span className="text-sm text-mediumblue normal-case">{feature}</span>
 												</div>
@@ -256,7 +271,6 @@ export default function SitesCorporate() {
 										</div>
 									</CardContent>
 								</Card>
-							</MagicCard>
 						))}
 					</div>
 				</section>
@@ -435,17 +449,11 @@ export default function SitesCorporate() {
 					</div>
 				</section>
 
-				{/* Technical Comparison */}
-				<div className="absolute inset-0 -z-10">
-					<div className="absolute top-[3400px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-					<div className="absolute top-[3800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
-				</div>
-				<TechnicalComparison />
 
 				{/* CTA Section */}
 				<div className="absolute inset-0 -z-10">
-					<div className="absolute top-[4000px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-					<div className="absolute top-[4800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+					<div className="absolute top-[3700px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+					<div className="absolute top-[4800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
 				</div>
 				<CTASection />
 

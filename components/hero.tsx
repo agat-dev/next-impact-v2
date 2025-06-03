@@ -32,7 +32,7 @@ export default function Hero() {
             <Button 
               size="lg" 
               variant="outline"
-              className="relative overflow-hidden rounded-full text-yellow-500 text-md font-googletitre border-blue-100/40"
+              className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100/40"
             >
               Mes services
               <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -1,11 +1,20 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, ArrowRight, Zap, Smartphone, Database, Code, ArrowLeft, TrendingUp } from "lucide-react"
 import TechnicalComparison from "@/components/technical-comparaison"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function ApplicationsHeadless() {
+  // Ajout du state pour le tab sélectionné
+  const [tab, setTab] = useState("tous")
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Navigation */}
@@ -85,11 +94,7 @@ export default function ApplicationsHeadless() {
         </div>
       </section>
 
-      {/* Technical Comparison */}
-      
-      <TechnicalComparison />
-
-      {/* Applications */}
+      {/* Applications (en tabs) */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Applications concrètes</h2>
@@ -98,46 +103,112 @@ export default function ApplicationsHeadless() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
+        {(() => {
+          const APPLICATIONS = [
             {
+              type: "ecommerce",
+              image: "/img/ecommerce.png",
               title: "E-commerce avancé",
               description: "Catalogues avec filtres complexes, configurateurs produit",
               examples: ["Configurateurs", "Filtres avancés", "Performance critique"],
             },
             {
+              type: "b2b",
+              image: "/img/b2b.png",
               title: "Portails clients B2B",
               description: "Dashboards, espaces de commande, suivi de projets",
               examples: ["Tableaux de bord", "Intégrations ERP", "Espaces privés"],
             },
             {
+              type: "saas",
+              image: "/img/saas.png",
               title: "Applications SaaS",
               description: "Interfaces de gestion, tableaux de bord analytiques",
               examples: ["Analytics temps réel", "Interfaces complexes", "Multi-tenant"],
             },
             {
+              type: "mobile",
+              image: "/img/mobile.png",
               title: "Applications mobiles",
               description: "Apps iOS/Android consommant du contenu WordPress",
               examples: ["React Native", "APIs REST", "Synchronisation"],
             },
-          ].map((app, index) => (
-            <Card key={index} className="border-blue-100">
-              <CardHeader>
-                <CardTitle className="text-lg text-blue-700">{app.title}</CardTitle>
-                <CardDescription>{app.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-1">
-                  {app.examples.map((example, i) => (
-                    <div key={i} className="text-sm text-muted-foreground">
-                      • {example}
-                    </div>
+          ];
+
+          const TABS = [
+            { value: "ecommerce", label: "E-commerce" },
+            { value: "b2b", label: "Portails B2B" },
+            { value: "saas", label: "SaaS" },
+            { value: "mobile", label: "Mobile" },
+          ];
+
+            // Affiche le premier tab par défaut
+            if (tab === "tous") setTab(TABS[0].value);
+
+            const getAppsByTab = (tab: string) =>
+            APPLICATIONS.filter((app) => app.type === tab);
+
+          return (
+            <Tabs value={tab} onValueChange={setTab}>
+              <div className="flex justify-center mb-12">
+                <TabsList className="bg-white p-1 rounded-full">
+                  {TABS.map((tabItem) => (
+                    <TabsTrigger
+                      key={tabItem.value}
+                      value={tabItem.value}
+                      className="rounded-full data-[state=active]:bg-background/10"
+                    >
+                      {tabItem.label}
+                    </TabsTrigger>
                   ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                </TabsList>
+              </div>
+              <AnimatePresence mode="wait">
+                {TABS.map((tabItem) =>
+                  tab === tabItem.value ? (
+                    <TabsContent key={tabItem.value} value={tabItem.value} forceMount className="mt-0">
+                      <motion.div
+                        initial={{ opacity: 0, y: 24 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -24 }}
+                        transition={{ duration: 0.35, ease: "easeOut" }}
+                      >
+                          {getAppsByTab(tabItem.value).map((app, index) => (
+                            <Card key={index} className="w-max flex rounded-2xl mx-auto">
+                              <div className="w-1/4 lg:block">
+                                <Image
+                                  src={app.image}
+                                  alt={app.title}
+                                  className="h-full object-cover rounded-tl-2xl rounded-bl-2xl"
+                                  width={300}
+                                  height={300}
+                                />
+                                </div>
+                              <div>
+                              <CardHeader>
+                                <CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">{app.title}</CardTitle>
+                                <CardDescription className="text-regularblue">{app.description}</CardDescription>
+                              </CardHeader>
+                              <CardContent>
+                                <div className="h-full flex flex-col items-start gap-4 pl-2">
+                                  {app.examples.map((example, i) => (
+                                    <div key={i} className="w-max text-sm font-adobetitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full">
+                                      {example}
+                                    </div>
+                                  ))}
+                                </div>
+                              </CardContent>
+                              </div>
+                            </Card>
+                          ))}
+                      </motion.div>
+                    </TabsContent>
+                  ) : null
+                )}
+              </AnimatePresence>
+            </Tabs>
+          );
+        })()}
       </section>
 
       {/* Technical Services */}
