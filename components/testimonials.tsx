@@ -59,7 +59,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 
-              className="h-full flex flex-col bg-white rounded-2xl transition-all overflow-hidden"
+              className="h-full flex flex-col bg-white rounded-2xl transition-all overflow-hidden shadow-none"
             >
               <MagicCard className="h-full">
               <CardContent className="pt-8 flex-grow">

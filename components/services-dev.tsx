@@ -28,10 +28,10 @@ export const ServicesDev = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {[
                 {
-                  category: "Sites Corporate",
+                  category: "Sites Vitrines",
                   description: "Présentation d'entreprise, services, équipes",
                   examples: [
                     "Groupes industriels",
@@ -65,7 +65,7 @@ export const ServicesDev = () => {
               ].map((project, index) => (
                 <div
                   key={index}
-                  className="bg-white/80 border border-white rounded-xl p-4 hover:border-regularblue/10 transition-colors"
+                  className="bg-white/80 col-span-1 border border-pink-400/20 rounded-xl p-4 hover:border-pink-400/80 transition-colors"
                 >
                   <h4 className="font-semibold text-regularblue mb-1">
                     {project.category}
@@ -114,7 +114,7 @@ export const ServicesDev = () => {
               </p>
             </div>
 
-            <div className="grid gap-4">
+            <div className="grid grid-cols-2 gap-4">
               {[
                 {
                   category: "E-commerce Avancé",
@@ -151,7 +151,7 @@ export const ServicesDev = () => {
               ].map((project, index) => (
                 <div
                   key={index}
-                  className="bg-white/80 border border-white rounded-xl p-4 hover:border-lightblue/20 transition-colors"
+                  className="col-span-1 bg-white/80 border border-pink-400/20 rounded-xl p-4 hover:border-pink-400/80 transition-colors"
                 >
                   <h4 className="font-semibold text-regularblue mb-1">
                     {project.category}
