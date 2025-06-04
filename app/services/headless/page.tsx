@@ -10,84 +10,94 @@ import { CheckCircle, ArrowRight, Zap, Smartphone, Database, Code, ArrowLeft, Tr
 import TechnicalComparison from "@/components/technical-comparaison"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { motion, AnimatePresence } from "framer-motion"
+import { CMSQuizCard } from "@/components/tools"
+import { MagicCard } from "@/components/magicui/magic-card"
 
 export default function ApplicationsHeadless() {
   // Ajout du state pour le tab sélectionné
   const [tab, setTab] = useState("tous")
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Navigation */}
-      <div className="container mx-auto px-4 py-4">
-        <Link href="/services" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Retour aux services
-        </Link>
-      </div>
+    <div className="min-h-screen">
 
-      {/* Hero Section */}
+      {/* Hero Section */}      
       <section className="container mx-auto px-4 py-16 text-center">
-        <Badge variant="outline" className="mb-4 border-blue-200 text-blue-700">
+        <Badge variant="outline" className="mb-4 border-regularblue/20 text-regularblue">
           Architecture moderne pour projets ambitieux
         </Badge>
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           Applications Web <span className="text-blue-600">Headless</span>
         </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+        <p className="text-xl text-regularblue/80 max-w-3xl mx-auto mb-8">
           L'architecture qui libère votre contenu de ses contraintes d'affichage. WordPress headless sépare la gestion
           de contenu de son affichage pour une flexibilité maximale.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-            Analyser mon besoin
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="lg">
-            Voir nos réalisations
-          </Button>
-        </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="#services">
+              <Button
+                size="lg"
+                className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
+              >
+                Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="#tarifs">
+              <Button
+                size="lg"
+                className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30"
+              >
+                Tarifs
+              </Button>
+            </Link>
+          </div>
       </section>
 
       {/* When Necessary */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[900px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[1200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Quand est-ce nécessaire ?</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-regularblue">Quand est-ce nécessaire ?</h2>
+          <p className="text-lg text-regularblue/80 max-w-2xl mx-auto">
             WordPress headless répond aux besoins techniques avancés que l'architecture traditionnelle ne peut
             satisfaire.
           </p>
+          <CMSQuizCard />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {[
             {
-              icon: <Zap className="h-8 w-8 text-blue-600" />,
+              icon: <Zap className="h-8 w-8 text-lightblue" />,
               title: "Performances critiques",
               description: "Votre site nécessite des temps de chargement < 2 secondes",
             },
             {
-              icon: <Code className="h-8 w-8 text-blue-600" />,
+              icon: <Code className="h-8 w-8 text-lightblue" />,
               title: "Interfaces complexes",
               description: "Vous avez besoin d'interfaces utilisateur avancées et interactives",
             },
             {
-              icon: <Smartphone className="h-8 w-8 text-blue-600" />,
+              icon: <Smartphone className="h-8 w-8 text-lightblue" />,
               title: "Multi-canal",
               description: "Votre contenu doit être diffusé sur plusieurs canaux (web, mobile, kiosques)",
             },
             {
-              icon: <Database className="h-8 w-8 text-blue-600" />,
+              icon: <Database className="h-8 w-8 text-lightblue" />,
               title: "Intégrations système",
               description: "Vous devez intégrer étroitement vos systèmes métier (CRM, ERP, APIs)",
             },
           ].map((item, index) => (
-            <Card key={index} className="text-center border-blue-100">
+            <Card key={index} className="max-w-3xs col-span-1 bg-transparent border-none text-center shadow-none">
               <CardHeader>
                 <div className="mx-auto mb-4">{item.icon}</div>
-                <CardTitle className="text-lg">{item.title}</CardTitle>
+                <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <p className="text-mediumblue">{item.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -97,8 +107,8 @@ export default function ApplicationsHeadless() {
       {/* Applications (en tabs) */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Applications concrètes</h2>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="text-4xl font-bold text-regularblue mb-4">Applications concrètes</h2>
+          <p className="text-lg text-regularblue/80">
             Des solutions techniques avancées pour des besoins spécifiques
           </p>
         </div>
@@ -212,18 +222,22 @@ export default function ApplicationsHeadless() {
       </section>
 
       {/* Technical Services */}
-      <section className="bg-blue-50 py-16">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[1700px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[2200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Services techniques détaillés</h2>
-            <p className="text-lg text-muted-foreground">Une expertise technique complète pour votre projet</p>
+            <h2 className="text-4xl font-bold text-regularblue mb-4">Services techniques détaillés</h2>
+            <p className="text-lg text-regularblue/80">Une expertise technique complète pour votre projet</p>
           </div>
 
           <div className="space-y-8">
             {[
               {
-                icon: <Zap className="h-6 w-6 text-blue-600" />,
-                title: "⚡ Performances Accrues",
+                icon: <Zap className="h-6 w-6 text-lightblue" />,
+                title: "Performances Accrues",
                 problem: "WordPress traditionnel charge l'ensemble du CMS à chaque page",
                 features: [
                   "Génération statique pour chargement instantané",
@@ -234,8 +248,8 @@ export default function ApplicationsHeadless() {
                 ],
               },
               {
-                icon: <Code className="h-6 w-6 text-blue-600" />,
-                title: "🎨 Design et Expérience Utilisateur Modernes",
+                icon: <Code className="h-6 w-6 text-lightblue" />,
+                title: "Design et Expérience Utilisateur Modernes",
                 problem: "Les thèmes WordPress limitent les possibilités d'interface",
                 features: [
                   "Frameworks modernes (React, Vue.js, Angular)",
@@ -246,8 +260,8 @@ export default function ApplicationsHeadless() {
                 ],
               },
               {
-                icon: <Database className="h-6 w-6 text-blue-600" />,
-                title: "🔗 Intégrations Système Avancées",
+                icon: <Database className="h-6 w-6 text-lightblue" />,
+                title: "Intégrations Système Avancées",
                 problem: "Connecter WordPress à vos outils métier de façon fiable",
                 features: [
                   "APIs RESTful et GraphQL",
@@ -258,13 +272,14 @@ export default function ApplicationsHeadless() {
                 ],
               },
             ].map((service, index) => (
-              <Card key={index} className="overflow-hidden border-blue-200">
+              <MagicCard>
+              <Card key={index} className="overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
                 <CardHeader>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 mb-8">
                     {service.icon}
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                    <CardTitle className="text-xl text-regularblue font-googletitre font-medium">{service.title}</CardTitle>
                   </div>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base text-regularblue">
                     <strong>Le problème résolu :</strong> {service.problem}
                   </CardDescription>
                 </CardHeader>
@@ -272,35 +287,40 @@ export default function ApplicationsHeadless() {
                   <div className="grid md:grid-cols-2 gap-4">
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <CheckCircle className="h-4 w-4 text-lightblue mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-mediumblue">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
+              </MagicCard>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Architecture */}
+      {/* Architecture */}      
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[2600px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[3100px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+        </div>
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Comment ça fonctionne concrètement</h2>
-          <p className="text-lg text-muted-foreground">
+          <h2 className="ext-4xl font-bold text-regularblue mb-4">Comment ça fonctionne concrètement</h2>
+          <p className="text-lg text-muted-foregroundtext-lg text-regularblue/80">
             Architecture technique découplée pour une flexibilité maximale
           </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm p-8">
+        <div className="p-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="space-y-4">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                <Database className="h-8 w-8 text-blue-600" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
+                <Database className="h-8 w-8 text-regularblue" />
               </div>
-              <h3 className="font-semibold">Backend WordPress</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
+              <h3 className="font-semibold text-regularblue">Backend WordPress</h3>
+              <ul className="text-sm text-regularblue/80 space-y-2">
                 <li>• Gestion contenu familière</li>
                 <li>• Plugins de champs personnalisés</li>
                 <li>• Configuration API et sécurité</li>
@@ -309,11 +329,11 @@ export default function ApplicationsHeadless() {
             </div>
 
             <div className="space-y-4">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                <Code className="h-8 w-8 text-blue-600" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
+                <Code className="h-8 w-8 text-regularblue" />
               </div>
-              <h3 className="font-semibold">Couche API</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
+              <h3 className="font-semibold text-regularblue">Couche API</h3>
+              <ul className="text-sm text-regularblue/80 space-y-2">
                 <li>• Endpoints REST automatiques</li>
                 <li>• GraphQL pour requêtes optimisées</li>
                 <li>• Cache Redis/Memcached</li>
@@ -322,11 +342,11 @@ export default function ApplicationsHeadless() {
             </div>
 
             <div className="space-y-4">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                <Smartphone className="h-8 w-8 text-blue-600" />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
+                <Smartphone className="h-8 w-8 text-regularblue" />
               </div>
-              <h3 className="font-semibold">Frontend Découplé</h3>
-              <ul className="text-sm text-muted-foreground space-y-1">
+              <h3 className="font-semibold text-regularblue">Frontend Découplé</h3>
+              <ul className="text-sm text-regularblue/80 space-y-2">
                 <li>• Framework JavaScript moderne</li>
                 <li>• Build tools optimisés</li>
                 <li>• Déploiement CDN global</li>
@@ -338,7 +358,11 @@ export default function ApplicationsHeadless() {
       </section>
 
       {/* Case Studies */}
-      <section className="bg-white py-16">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[3800px] left-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[4200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
+        </div>
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Cas d'usage détaillés</h2>
@@ -415,7 +439,7 @@ export default function ApplicationsHeadless() {
       </section>
 
       {/* Pricing */}
-      <section className="bg-blue-50 py-16">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Investissement réaliste</h2>

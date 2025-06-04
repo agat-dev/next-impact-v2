@@ -1,11 +1,23 @@
 "use client";
+
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import LottieAnimation from "@/components/ui/lottie-animation";
 
-export function ExpandableCardNIP() {
-  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
+type ExpandableCardNIPProps = {
+  cards: {
+    title: string;
+    description: string;
+    lottie: string;
+    ctaText: string;  
+    ctaLink: string;
+    content: string;
+  }[];
+};
+
+export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
+  const [active, setActive] = useState<ExpandableCardNIPProps["cards"][number] | null>(
     null
   );
   const ref = useRef<HTMLDivElement>(null);
@@ -14,11 +26,11 @@ export function ExpandableCardNIP() {
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setActive(false);
+        setActive(null);
       }
     }
 
-    if (active && typeof active === "object") {
+    if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -33,7 +45,7 @@ export function ExpandableCardNIP() {
   return (
     <>
       <AnimatePresence>
-        {active && typeof active === "object" && (
+        {active && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -43,7 +55,7 @@ export function ExpandableCardNIP() {
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {active && typeof active === "object" ? (
+        {active ? (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
@@ -70,6 +82,7 @@ export function ExpandableCardNIP() {
                     <motion.a
                       layoutId={`button-${active.title}-${id}`}
                       href={active.ctaLink}
+                      target="_blank"
                       className="px-6 py-3 text-sm rounded-full font-medium bg-lightblue/10 text-regularblue hover:bg-lightblue/20 transition-colors duration-200 flex justify-self-end items-center gap-2"
                     >
                       {active.ctaText}
@@ -81,7 +94,7 @@ export function ExpandableCardNIP() {
                       {active.title}
                     </motion.h3>
                     <motion.p
-                      layoutId={`description-${active.description}-${id}`}
+                      layoutId={`description-${active.description}-${active.title}-${id}`}
                       className="text-regularblue/70 text-xs uppercase font-bold"
                     >
                       {active.description}
@@ -96,9 +109,7 @@ export function ExpandableCardNIP() {
                     exit={{ opacity: 0 }}
                     className="text-regularblue text-sm pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    {active.content}
                   </motion.div>
                 </div>
               </div>
@@ -107,7 +118,7 @@ export function ExpandableCardNIP() {
         ) : null}
       </AnimatePresence>
       <ul className="w-[50rem] mx-0 flex flex-col gap-4 md:gap-6">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
@@ -135,7 +146,7 @@ export function ExpandableCardNIP() {
                   {card.title}
                 </motion.h3>
                 <motion.p
-                  layoutId={`description-${card.description}-${index}-${id}`}
+                  layoutId={`description-${card.description}-${card.title}-${id}`}
                   className="text-darkblue/70 text-left text-xs"
                 >
                   {card.description}
@@ -176,57 +187,4 @@ export const CloseIcon = () => {
   );
 };
 
-const cards = [
-  {
-    description: "TESTER EN LIGNE",
-    title: "Choisir entre WordPress CMS et Headless ?",
-    lottie: "/lotties/wordpress.json",
-    ctaText: "Tester en ligne",
-    ctaLink: "/cms-headless",
-    content: () => (
-      <p>
-        Outil diagnostique en ligne gratuit qui analyse votre projet de site web
-        dans ses aspects techniques, ergonomiques et marketing pour déterminer
-        si la solution la plus appropriée est un WordPress natif ou un WordPress
-        Headless.
-      </p>
-    ),
-  },
-  {
-    description: "GENERER GRATUITEMENT",
-    title: "Rédiger mon cahier des charges",
-    lottie: "/lotties/document.json",
-    ctaText: "Commencer la rédaction",
-    ctaLink: "/cahier-des-charges",
-    content: () => (
-      <p>
-        Solution de génération de livrable gratuite et en ligne pour structurer
-        et formaliser méthodiquement votre projet digital de leur conception à
-        leur livraison <br />
-        <br />
-        En guidant l'utilisateur à travers des questions ciblées et
-        personnalisables, il transforme vos besoins métiers en spécifications
-        techniques précises, complètes et exploitables par tous les acteurs du
-        projet.
-      </p>
-    ),
-  },
-  {
-    description: "SIMULER MON BUDGET",
-    title: "Quel tarif pour mon site web ?",
-    lottie: "/lotties/cost-calculator.json",
-    ctaText: "Lancer l'estimation",
-    ctaLink: "/simulateur-tarifs",
-    content: () => (
-      <p>
-        Simulateur en ligne et gratuit qui calcule instantanément le coût précis
-        de votre projet digital en fonction de vos besoins, et du type de
-        prestataire choisi.
-        <br />
-        <br />
-        Cet outil stratégique aide les décideurs à optimiser leur budget en
-        visualisant l'impact financier de chaque choix technique..
-      </p>
-    ),
-  },
-];
+

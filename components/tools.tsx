@@ -1,65 +1,134 @@
 import { ExpandableCardNIP } from "@/components/conseil/expandable-cards";
-import { Card, CardContent } from "@/components/ui/card";
-import { MagicCard } from "@/components/magicui/magic-card";
 import Image from "next/image";
 
-export default function Tools() {
+export default async function Tools() {
   const ConseilSkills = [
     {
       title: "Accompagnement",
-      description:   
-      <>     
-            <span className="uppercase font-adobetitre text-xl">CREATION ET REFONTE</span>
-              <br />
-              <br />
-                <div className="col-span-6 flex flex-col justify-center gap-3 pt-4">
-                  <div className="flex items-center">
-                  <Image 
-                      src="/img/meet.gif"
-                      alt="Meeting animation"
-                      width={20}
-                      height={20}
-                      className="mr-3 text-primary" />
-                    <span className="font-adobetitre text-lg">4 sessions vidéo de 30 minutes</span>
-                  </div>
-                  <div className="flex items-center">
-                  <Image 
-                      src="/img/settings.gif"
-                      alt="Analyse du besoin animation"
-                      width={20}
-                      height={20}
-                      className="mr-3 text-primary" />
-                    <span className="font-adobetitre text-lg">Analyse approfondie du besoin</span>
-                  </div>
-                  <div className="flex items-center">
-                  <Image 
-                      src="/img/tools.gif"
-                      alt="Audit animation"
-                      width={20}
-                      height={20}
-                      className="mr-3 text-primary" />
-                    <span className="font-adobetitre text-lg">Audit du site actuel</span>
-                  </div>  
-                  <div className="flex items-center">
-                  <Image 
-                      src="/img/folder.gif"
-                      alt="Cahier des charges animation"
-                      width={20}
-                      height={20}
-                      className="mr-3 text-primary" />
-                    <span className="font-adobetitre text-lg">Formalisation d'un cahier des charges</span>
-                  </div>  
-                  <div className="flex items-center">
-                  <Image 
-                      src="/img/code.gif"
-                      alt="Solution technique animation"
-                      width={20}
-                      height={20}
-                      className="mr-3 text-primary" />
-                    <span className="font-adobetitre text-lg">Conseil sur la solution technique</span>
-                  </div>  
-                </div> 
-            </>,
+      description: (
+        <>
+          <span className="uppercase font-adobetitre text-xl">
+            CREATION ET REFONTE
+          </span>
+          <br />
+          <br />
+          <div className="col-span-6 flex flex-col justify-center gap-3 pt-4">
+            <div className="flex items-center">
+              <Image
+                src="/img/meet.gif"
+                alt="Meeting animation"
+                width={20}
+                height={20}
+                className="mr-3 text-primary"
+              />
+              <span className="font-adobetitre text-lg">
+                4 sessions vidéo de 30 minutes
+              </span>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/img/settings.gif"
+                alt="Analyse du besoin animation"
+                width={20}
+                height={20}
+                className="mr-3 text-primary"
+              />
+              <span className="font-adobetitre text-lg">
+                Analyse approfondie du besoin
+              </span>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/img/tools.gif"
+                alt="Audit animation"
+                width={20}
+                height={20}
+                className="mr-3 text-primary"
+              />
+              <span className="font-adobetitre text-lg">
+                Audit du site actuel
+              </span>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/img/folder.gif"
+                alt="Cahier des charges animation"
+                width={20}
+                height={20}
+                className="mr-3 text-primary"
+              />
+              <span className="font-adobetitre text-lg">
+                Formalisation d'un cahier des charges
+              </span>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/img/code.gif"
+                alt="Solution technique animation"
+                width={20}
+                height={20}
+                className="mr-3 text-primary"
+              />
+              <span className="font-adobetitre text-lg">
+                Conseil sur la solution technique
+              </span>
+            </div>
+          </div>
+        </>
+      ),
+    },
+  ];
+  const cards = [
+    {
+      description: "TESTER EN LIGNE",
+      title: "Choisir entre WordPress CMS et Headless ?",
+      lottie: "/lotties/wordpress.json",
+      ctaText: "Tester en ligne",
+      ctaLink: "/cms-headless",
+      content: `
+      <p>
+        Outil diagnostique en ligne gratuit qui analyse votre projet de site web
+        dans ses aspects techniques, ergonomiques et marketing pour déterminer
+        si la solution la plus appropriée est un WordPress natif ou un WordPress
+        Headless.
+      </p>
+      `, // Using template literals for multiline content
+    },
+    {
+      description: "GENERER GRATUITEMENT",
+      title: "Rédiger mon cahier des charges",
+      lottie: "/lotties/document.json",
+      ctaText: "Commencer la rédaction",
+      ctaLink: "/cahier-des-charges",
+      content: `
+      <p>
+        Solution de génération de livrable gratuite et en ligne pour structurer
+        et formaliser méthodiquement votre projet digital de leur conception à
+        leur livraison <br />
+        <br />
+        En guidant l'utilisateur à travers des questions ciblées et
+        personnalisables, il transforme vos besoins métiers en spécifications
+        techniques précises, complètes et exploitables par tous les acteurs du
+        projet.
+      </p>`,
+    },
+    {
+      description: "SIMULER MON BUDGET",
+      title: "Quel tarif pour mon site web ?",
+      lottie: "/lotties/cost-calculator.json",
+      ctaText: "Lancer l'estimation",
+      ctaLink: "/simulateur-tarifs",
+      content: `
+      <p>
+        Simulateur en ligne et gratuit qui calcule instantanément le coût précis
+        de votre projet digital en fonction de vos besoins, et du type de
+        prestataire choisi.
+        <br />
+        <br />
+        Cet outil stratégique aide les décideurs à optimiser leur budget en
+        visualisant l'impact financier de chaque choix technique..
+      </p>
+      `, // Using template literals for multiline content
     },
   ];
 
@@ -79,9 +148,62 @@ export default function Tools() {
           </p>
         </div>
         <div className="flex justify-center align-center px-4 md:px-6 my-16">
-          <ExpandableCardNIP />
+          <ExpandableCardNIP cards={cards} />
         </div>
       </section>
     </>
+  );
+}
+
+export function CMSQuizCard() {
+  const tool = [
+    {
+      description: "TESTER EN LIGNE",
+      title: "Choisir entre WordPress CMS et Headless ?",
+      lottie: "/lotties/wordpress.json",
+      ctaText: "Tester en ligne",
+      ctaLink: "/cms-headless",
+      content: `
+      <p>
+        Outil diagnostique en ligne gratuit qui analyse votre projet de site web
+        dans ses aspects techniques, ergonomiques et marketing pour déterminer
+        si la solution la plus appropriée est un WordPress natif ou un WordPress
+        Headless.
+      </p>
+      `, // Using template literals for multiline content
+    },
+  ];
+  return (
+    <div className="flex justify-center align-center px-4 md:px-6 my-16">
+      <ExpandableCardNIP cards={tool} />
+    </div>
+  );
+}
+
+export function PriceQuizCard() {
+  const tool = [
+       {
+      description: "SIMULER MON BUDGET",
+      title: "Quel tarif pour mon site web ?",
+      lottie: "/lotties/cost-calculator.json",
+      ctaText: "Lancer l'estimation",
+      ctaLink: "/simulateur-tarifs",
+      content: `
+      <p>
+        Simulateur en ligne et gratuit qui calcule instantanément le coût précis
+        de votre projet digital en fonction de vos besoins, et du type de
+        prestataire choisi.
+        <br />
+        <br />
+        Cet outil stratégique aide les décideurs à optimiser leur budget en
+        visualisant l'impact financier de chaque choix technique..
+      </p>
+      `, // Using template literals for multiline content
+    },
+  ];
+  return (
+    <div className="flex justify-center align-center px-4 md:px-6 my-16">
+      <ExpandableCardNIP cards={tool} />
+    </div>
   );
 }

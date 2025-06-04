@@ -57,13 +57,12 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {testimonials.map((testimonial, index) => (
+          <MagicCard className="h-max rounded-2xl">
             <Card 
               key={index} 
-              className="h-full flex flex-col bg-white rounded-2xl transition-all overflow-hidden shadow-none"
+              className="bg-white border border-pink-200/40 rounded-2xl transition-all overflow-hidden shadow-none"
             >
-              <MagicCard className="h-full">
-              <CardContent className="pt-8 flex-grow">
-                
+              <CardContent className="pt-8 flex-grow">      
                
                 <p className="text-md mb-4 text-regularblue leading-relaxed">{testimonial.quote}</p>
               </CardContent>
@@ -78,8 +77,8 @@ const Testimonials = () => {
                   </p>
                 </div>
               </CardFooter>
-              </MagicCard>
             </Card>
+          </MagicCard>
           ))}
         </div>
       </div>
