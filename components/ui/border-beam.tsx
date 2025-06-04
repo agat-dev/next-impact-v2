@@ -7,7 +7,7 @@ export function BorderBeamEffect() {
       <BorderBeam
         size={60}
         initialOffset={60}
-        className="from-yellow-300 to-orange-700 opacity-50"
+        className="from-pink-300 to-blue-200 opacity-50"
       />
   );
 }
