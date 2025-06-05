@@ -117,28 +117,28 @@ export default function ApplicationsHeadless() {
           const APPLICATIONS = [
             {
               type: "ecommerce",
-              image: "/img/ecommerce.png",
+              image: "/img/ecommerce.jpeg",
               title: "E-commerce avancé",
               description: "Catalogues avec filtres complexes, configurateurs produit",
               examples: ["Configurateurs", "Filtres avancés", "Performance critique"],
             },
             {
               type: "b2b",
-              image: "/img/b2b.png",
+              image: "/img/b2b.jpeg",
               title: "Portails clients B2B",
               description: "Dashboards, espaces de commande, suivi de projets",
               examples: ["Tableaux de bord", "Intégrations ERP", "Espaces privés"],
             },
             {
               type: "saas",
-              image: "/img/saas.png",
+              image: "/img/saas.jpeg",
               title: "Applications SaaS",
               description: "Interfaces de gestion, tableaux de bord analytiques",
               examples: ["Analytics temps réel", "Interfaces complexes", "Multi-tenant"],
             },
             {
               type: "mobile",
-              image: "/img/mobile.png",
+              image: "/img/mobile.jpeg",
               title: "Applications mobiles",
               description: "Apps iOS/Android consommant du contenu WordPress",
               examples: ["React Native", "APIs REST", "Synchronisation"],
@@ -233,10 +233,11 @@ export default function ApplicationsHeadless() {
             <p className="text-lg text-regularblue/80">Une expertise technique complète pour votre projet</p>
           </div>
 
-          <div className="space-y-8">
+          <div className="rounded-2xl grid gap-12">
             {[
               {
                 icon: <Zap className="h-6 w-6 text-lightblue" />,
+                image: "/img/performances.jpeg",
                 title: "Performances Accrues",
                 problem: "WordPress traditionnel charge l'ensemble du CMS à chaque page",
                 features: [
@@ -249,6 +250,7 @@ export default function ApplicationsHeadless() {
               },
               {
                 icon: <Code className="h-6 w-6 text-lightblue" />,
+                image: "/img/ui.jpeg",
                 title: "Design et Expérience Utilisateur Modernes",
                 problem: "Les thèmes WordPress limitent les possibilités d'interface",
                 features: [
@@ -261,6 +263,7 @@ export default function ApplicationsHeadless() {
               },
               {
                 icon: <Database className="h-6 w-6 text-lightblue" />,
+                image: "/img/fonctionnalites.jpg",
                 title: "Intégrations Système Avancées",
                 problem: "Connecter WordPress à vos outils métier de façon fiable",
                 features: [
@@ -273,7 +276,17 @@ export default function ApplicationsHeadless() {
               },
             ].map((service, index) => (
               <MagicCard>
-              <Card key={index} className="overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
+              <Card key={index} className="flex overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
+                  <div className="relative">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full max-h-64 object-cover"
+                      width={100}
+                      height={300}
+                    />
+                    </div>
+                  <div>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-8">
                     {service.icon}
@@ -293,6 +306,7 @@ export default function ApplicationsHeadless() {
                     ))}
                   </div>
                 </CardContent>
+              </div>
               </Card>
               </MagicCard>
             ))}
@@ -399,7 +413,7 @@ export default function ApplicationsHeadless() {
                 icon: <Database className="h-6 w-6 text-blue-600" />,
                 title: "🏢 Intranet Évolutif",
                 need: "Portail collaboratif haute performance",
-                solution: "WordPress + Vue.js + intégrations métier",
+                solution: "WordPress + Next.js + intégrations métier",
                 result: "Interface moderne, données unifiées",
                 metrics: ["Adoption +200%", "Productivité +150%", "Satisfaction équipes"],
               },

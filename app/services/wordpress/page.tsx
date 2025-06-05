@@ -262,10 +262,11 @@ export default function SitesCorporate() {
             </p>
           </div>
 
-          <div className="rounded-2xl grid gap-8">
+          <div className="rounded-2xl grid gap-12">
             {[
               {
                 icon: <Zap className="h-6 w-6 text-lightblue" />,
+                image: "/img/design-sur-mesure.jpg",
                 title: "Design sur-mesure",
                 problem:
                   "Avoir un site unique sans les coûts d'un développement from scratch",
@@ -279,6 +280,7 @@ export default function SitesCorporate() {
               },
               {
                 icon: <Database className="h-6 w-6 text-lightblue" />,
+                image: "/img/organisation-contenu.jpg",
                 title: "Organisation des contenus dédiée",
                 problem:
                   "Structurer l'information pour vos utilisateurs et les moteurs de recherche",
@@ -292,6 +294,7 @@ export default function SitesCorporate() {
               },
               {
                 icon: <Code className="h-6 w-6 text-lightblue" />,
+                image: "/img/fonctionnalites.jpg",
                 title: "Fonctionnalités adaptées",
                 problem:
                   "Obtenir les fonctionnalités nécessaires sans complexité inutile",
@@ -305,7 +308,17 @@ export default function SitesCorporate() {
               },
             ].map((service, index) => (
               <MagicCard>
-              <Card key={index} className="overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
+              <Card key={index} className="flex overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
+              <div className="relative">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  className="h-full max-h-64 object-cover"
+                  width={100}
+                  height={300}
+                />
+                </div>
+                <div>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-8">
                     {service.icon}
@@ -325,6 +338,7 @@ export default function SitesCorporate() {
                     ))}
                   </div>
                 </CardContent>
+                </div>
               </Card>
               </MagicCard>
             ))}
