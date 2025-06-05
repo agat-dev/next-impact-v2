@@ -18,7 +18,7 @@ export const ServicesDev = () => {
           <div className="space-y-6">
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-white text-regularblue px-4 py-2 rounded-full mb-4">
-                <span className="font-semibold">WordPress Traditionnel</span>
+                <span className="font-adobetitre">WordPress Traditionnel</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
                 Sites Web Corporate
@@ -104,7 +104,7 @@ export const ServicesDev = () => {
           <div className="space-y-6">
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-white text-regularblue px-4 py-2 rounded-full mb-4">
-                <span className="font-semibold">WordPress Headless</span>
+                <span className="font-adobetitre">WordPress Headless</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
                 Applications Web Avancées
@@ -117,12 +117,12 @@ export const ServicesDev = () => {
             <div className="grid grid-cols-2 gap-4">
               {[
                 {
-                  category: "E-commerce Avancé",
-                  description: "Catalogues complexes, configurateurs produit",
+                  category: "Intranet Évolutif",
+                  description: "Portail collaboratif haute performance",
                   examples: [
-                    "Configurateurs",
-                    "Filtres avancés",
-                    "Performance critique",
+                    "Interface moderne",
+                    "Données unifiées",
+                    "Connectivité API",
                   ],
                 },
                 {

@@ -5,17 +5,17 @@ import { MagicCard } from './magicui/magic-card';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Agathe s’est distinguée par sa rapidité et sa capacité à comprendre immédiatement mes attentes. Son travail est précis et de grande qualité, le tout réalisé avec professionnalisme. Une collaboration efficace que je recommande vivement !",
-      author: "Juline Vidament",
-      position: "Responsable Marketing",
-      company: "Itavera Assets Management",
+      quote: "Agathe se distingue par sa capacité à comprendre rapidement les enjeux business et à les traduire en solutions techniques efficaces. Pour notre projet, elle a su créer une landing page sur mesure qui reflète parfaitement notre identité de marque, tout en intégrant un système multilingue fluide et intuitif.",
+      author: "Christophe Riboulet",
+      position: "PDG",
+      company: "Proditec",
       rating: 5
     },
     {
-      quote: "Du professionnalisme, un réel esprit d'initiative, le sens du conseil et une réactivité totale ! Ajouter un bon état d'esprit d'une personne qui n'hésite pas à se « dépasser » pour améliorer la qualité de la prestation.",
-      author: "Luc Poigniez",
-      position: "Designer UI/UX",
-      company: "Créaclic",
+      quote: "Nous travaillons exclusivement avec Agathe désormais pour gérer notre site internet. Elle est très pro, de bons conseils et rapide. Ses offres sont claires et adaptées à nos besoins. Nous le recommandons très volontiers !",
+      author: "Laura Schorestene",
+      position: "Fondatrice",
+      company: "Senza Nature",
       rating: 5
     },
     {
@@ -62,7 +62,13 @@ const Testimonials = () => {
               key={index} 
               className="bg-white border border-pink-200/40 rounded-2xl transition-all overflow-hidden shadow-none"
             >
-              <CardContent className="pt-8 flex-grow">      
+              <CardContent className="pt-8 flex-grow">     
+                <div className="flex items-center mb-4">
+                  {renderStars(testimonial.rating)}
+                  <span className="ml-2 text-sm text-regularblue/70">
+                    {testimonial.rating} étoiles
+                  </span>
+                </div>
                
                 <p className="text-md mb-4 text-regularblue leading-relaxed">{testimonial.quote}</p>
               </CardContent>

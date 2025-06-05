@@ -7,15 +7,17 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, ArrowRight, Zap, Smartphone, Database, Code, ArrowLeft, TrendingUp } from "lucide-react"
-import TechnicalComparison from "@/components/technical-comparaison"
+import { PriceQuizCard } from "@/components/tools"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { motion, AnimatePresence } from "framer-motion"
 import { CMSQuizCard } from "@/components/tools"
 import { MagicCard } from "@/components/magicui/magic-card"
+import Process from "@/components/process"
+import { CTASection } from "@/components/cta-section"
+import { DecisionHelper } from "@/components/decision-helper"
 
 export default function ApplicationsHeadless() {
-  // Ajout du state pour le tab sélectionné
-  const [tab, setTab] = useState("tous")
+  const [tab, setTab] = useState("intranet");
 
   return (
     <div className="min-h-screen">
@@ -112,15 +114,14 @@ export default function ApplicationsHeadless() {
             Des solutions techniques avancées pour des besoins spécifiques
           </p>
         </div>
-
         {(() => {
           const APPLICATIONS = [
             {
-              type: "ecommerce",
-              image: "/img/ecommerce.jpeg",
-              title: "E-commerce avancé",
-              description: "Catalogues avec filtres complexes, configurateurs produit",
-              examples: ["Configurateurs", "Filtres avancés", "Performance critique"],
+              type: "intranet",
+              image: "/img/intranet.jpeg",
+              title: "Intranets et Portails Collaboratifs",
+              description: "Interfaces modernes pour la collaboration interne",
+              examples: ["Tableaux de bord", "Gestion de projet", "Réseaux sociaux d'entreprise"],
             },
             {
               type: "b2b",
@@ -146,76 +147,89 @@ export default function ApplicationsHeadless() {
           ];
 
           const TABS = [
-            { value: "ecommerce", label: "E-commerce" },
+            { value: "intranet", label: "Intranet" },
             { value: "b2b", label: "Portails B2B" },
             { value: "saas", label: "SaaS" },
             { value: "mobile", label: "Mobile" },
           ];
 
-            // Affiche le premier tab par défaut
-            if (tab === "tous") setTab(TABS[0].value);
-
-            const getAppsByTab = (tab: string) =>
+          const getAppsByTab = (tab: string) =>
             APPLICATIONS.filter((app) => app.type === tab);
 
           return (
             <Tabs value={tab} onValueChange={setTab}>
               <div className="flex justify-center mb-12">
-                <TabsList className="bg-white p-1 rounded-full">
+                <TabsList className="bg-white p-1 rounded-full flex flex-wrap gap-2">
                   {TABS.map((tabItem) => (
                     <TabsTrigger
                       key={tabItem.value}
                       value={tabItem.value}
-                      className="rounded-full data-[state=active]:bg-background/10"
+                      className="rounded-full px-6 py-2 font-medium data-[state=active]:bg-background/10"
                     >
                       {tabItem.label}
                     </TabsTrigger>
                   ))}
                 </TabsList>
               </div>
-              <AnimatePresence mode="wait">
-                {TABS.map((tabItem) =>
-                  tab === tabItem.value ? (
-                    <TabsContent key={tabItem.value} value={tabItem.value} forceMount className="mt-0">
-                      <motion.div
-                        initial={{ opacity: 0, y: 24 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -24 }}
-                        transition={{ duration: 0.35, ease: "easeOut" }}
-                      >
+              <div style={{ minHeight: 300, position: "relative" }}>
+                <AnimatePresence mode="wait">
+                  {TABS.map((tabItem) =>
+                    tab === tabItem.value ? (
+                        <TabsContent
+                        key={tabItem.value}
+                        value={tabItem.value}
+                        forceMount
+                        className="mt-0 absolute left-0 top-0 w-full min-h-[300px] h-[300px] flex items-center justify-center"
+                        >
+                        <motion.div
+                          initial={{ opacity: 0, y: 24 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -24 }}
+                          transition={{ duration: 0.35, ease: "easeOut" }}
+                          layout
+                          className="w-full flex flex-col items-center"
+                        >
                           {getAppsByTab(tabItem.value).map((app, index) => (
-                            <Card key={index} className="w-max flex rounded-2xl mx-auto">
-                              <div className="w-1/4 lg:block">
-                                <Image
-                                  src={app.image}
-                                  alt={app.title}
-                                  className="h-full object-cover rounded-tl-2xl rounded-bl-2xl"
-                                  width={300}
-                                  height={300}
-                                />
+                          <Card key={index} className="w-max flex rounded-2xl mx-auto mb-6">
+                            <div className="w-1/4 lg:block">
+                            <Image
+                              src={app.image}
+                              alt={app.title}
+                              className="h-[300px] object-cover rounded-tl-2xl rounded-bl-2xl"
+                              width={300}
+                              height={300}
+                            />
+                            </div>
+                            <div className="flex flex-col justify-between">
+                            <CardHeader>
+                              <CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">
+                              {app.title}
+                              </CardTitle>
+                              <CardDescription className="text-regularblue">
+                              {app.description}
+                              </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                              <div className="h-full flex items-start gap-4 pl-2">
+                              {app.examples.map((example, i) => (
+                                <div
+                                key={i}
+                                className="w-max text-sm font-adobetitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full"
+                                >
+                                {example}
                                 </div>
-                              <div>
-                              <CardHeader>
-                                <CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">{app.title}</CardTitle>
-                                <CardDescription className="text-regularblue">{app.description}</CardDescription>
-                              </CardHeader>
-                              <CardContent>
-                                <div className="h-full flex flex-col items-start gap-4 pl-2">
-                                  {app.examples.map((example, i) => (
-                                    <div key={i} className="w-max text-sm font-adobetitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full">
-                                      {example}
-                                    </div>
-                                  ))}
-                                </div>
-                              </CardContent>
+                              ))}
                               </div>
-                            </Card>
+                            </CardContent>
+                            </div>
+                          </Card>
                           ))}
-                      </motion.div>
-                    </TabsContent>
-                  ) : null
-                )}
-              </AnimatePresence>
+                        </motion.div>
+                        </TabsContent>
+                    ) : null
+                  )}
+                </AnimatePresence>
+              </div>
             </Tabs>
           );
         })()}
@@ -321,7 +335,7 @@ export default function ApplicationsHeadless() {
         </div>
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="ext-4xl font-bold text-regularblue mb-4">Comment ça fonctionne concrètement</h2>
+          <h2 className="text-4xl font-bold text-regularblue mb-4">Comment ça fonctionne concrètement</h2>
           <p className="text-lg text-muted-foregroundtext-lg text-regularblue/80">
             Architecture technique découplée pour une flexibilité maximale
           </p>
@@ -335,10 +349,10 @@ export default function ApplicationsHeadless() {
               </div>
               <h3 className="font-semibold text-regularblue">Backend WordPress</h3>
               <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>• Gestion contenu familière</li>
-                <li>• Plugins de champs personnalisés</li>
-                <li>• Configuration API et sécurité</li>
-                <li>• Équipes existantes conservées</li>
+                <li>Gestion contenu familière</li>
+                <li>Plugins de champs personnalisés</li>
+                <li>Configuration API et sécurité</li>
+                <li>Équipes existantes conservées</li>
               </ul>
             </div>
 
@@ -348,10 +362,10 @@ export default function ApplicationsHeadless() {
               </div>
               <h3 className="font-semibold text-regularblue">Couche API</h3>
               <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>• Endpoints REST automatiques</li>
-                <li>• GraphQL pour requêtes optimisées</li>
-                <li>• Cache Redis/Memcached</li>
-                <li>• Authentification JWT sécurisée</li>
+                <li>Endpoints REST automatiques</li>
+                <li>GraphQL pour requêtes optimisées</li>
+                <li>Cache Redis/Memcached</li>
+                <li>Authentification JWT sécurisée</li>
               </ul>
             </div>
 
@@ -361,10 +375,10 @@ export default function ApplicationsHeadless() {
               </div>
               <h3 className="font-semibold text-regularblue">Frontend Découplé</h3>
               <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>• Framework JavaScript moderne</li>
-                <li>• Build tools optimisés</li>
-                <li>• Déploiement CDN global</li>
-                <li>• Monitoring performance</li>
+                <li>Framework JavaScript moderne</li>
+                <li>Build tools optimisés</li>
+                <li>Déploiement CDN global</li>
+                <li>Monitoring performance</li>
               </ul>
             </div>
           </div>
@@ -379,39 +393,39 @@ export default function ApplicationsHeadless() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Cas d'usage détaillés</h2>
-            <p className="text-lg text-muted-foreground">Exemples concrets d'applications réalisées</p>
+            <h2 className="text-4xl font-bold text-regularblue mb-4">Cas d'usage détaillés</h2>
+            <p className="text-lg text-regularblue/80">Exemples concrets d'applications réalisées</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <TrendingUp className="h-6 w-6 text-blue-600" />,
-                title: "📊 Dashboard Analytics B2B",
+                icon: <TrendingUp className="h-6 w-6 text-lightblue" />,
+                title: "Dashboard Analytics B2B",
                 need: "Interface complexe avec graphiques temps réel",
                 solution: "WordPress pour paramétrage, React pour dataviz",
                 result: "Chargement < 1s, mise à jour temps réel",
                 metrics: ["Performance +300%", "UX moderne", "Données temps réel"],
               },
               {
-                icon: <Smartphone className="h-6 w-6 text-blue-600" />,
-                title: "🛒 E-commerce Multi-Marques",
-                need: "Même catalogue, 3 sites différents",
-                solution: "WordPress central, frontends spécialisés",
+                icon: <Smartphone className="h-6 w-6 text-lightblue" />,
+                title: "Multisites Corporate",
+                need: "Même données, 3 sites différents",
+                solution: "WordPress central, Next.js pour chaque site",
                 result: "Gestion centralisée, identités distinctes",
                 metrics: ["3 sites = 1 gestion", "Identités préservées", "Coûts optimisés"],
               },
               {
-                icon: <Code className="h-6 w-6 text-blue-600" />,
-                title: "📱 Application Mobile + Web",
+                icon: <Code className="h-6 w-6 text-lightblue" />,
+                title: "Application Mobile + Web",
                 need: "Contenu synchronisé web/mobile",
                 solution: "WordPress headless + React Native",
                 result: "Une seule base de contenu, 2 interfaces",
                 metrics: ["Sync parfaite", "Développement accéléré", "Maintenance simplifiée"],
               },
               {
-                icon: <Database className="h-6 w-6 text-blue-600" />,
-                title: "🏢 Intranet Évolutif",
+                icon: <Database className="h-6 w-6 text-lightblue" />,
+                title: "Intranet Évolutif",
                 need: "Portail collaboratif haute performance",
                 solution: "WordPress + Next.js + intégrations métier",
                 result: "Interface moderne, données unifiées",
@@ -422,25 +436,25 @@ export default function ApplicationsHeadless() {
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     {caseStudy.icon}
-                    <CardTitle className="text-lg">{caseStudy.title}</CardTitle>
+                    <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{caseStudy.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
-                    <strong className="text-sm text-blue-600">Besoin :</strong>
-                    <p className="text-sm text-muted-foreground">{caseStudy.need}</p>
+                    <strong className="text-sm font-adobetitre text-regularblue">Besoin :</strong>
+                    <p className="text-sm text-regularblue/80">{caseStudy.need}</p>
                   </div>
                   <div>
-                    <strong className="text-sm text-blue-600">Solution :</strong>
-                    <p className="text-sm text-muted-foreground">{caseStudy.solution}</p>
+                    <strong className="text-sm font-adobetitre text-regularblue">Solution :</strong>
+                    <p className="text-sm text-regularblue/80">{caseStudy.solution}</p>
                   </div>
                   <div>
-                    <strong className="text-sm text-blue-600">Résultat :</strong>
-                    <p className="text-sm text-muted-foreground">{caseStudy.result}</p>
+                    <strong className="text-sm font-adobetitre text-regularblue">Résultat :</strong>
+                    <p className="text-sm text-regularblue/80">{caseStudy.result}</p>
                   </div>
                   <div className="flex flex-wrap gap-2 pt-2">
                     {caseStudy.metrics.map((metric, i) => (
-                      <Badge key={i} variant="secondary" className="text-xs">
+                      <Badge key={i} variant="secondary" className="text-xs bg-lightblue/10 text-regularblue">
                         {metric}
                       </Badge>
                     ))}
@@ -453,72 +467,78 @@ export default function ApplicationsHeadless() {
       </section>
 
       {/* Pricing */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[4800px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[5400px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+        </div>
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Investissement réaliste</h2>
-            <p className="text-lg text-muted-foreground">Budgétisation transparente pour projets techniques avancés</p>
+            <h2 className="text-4xl font-bold text-regularblue mb-4">Investissement réaliste</h2>
+            <p className="text-lg text-regularblue/80">Budgétisation transparente pour projets techniques avancés</p>
           </div>
+
+          <PriceQuizCard />
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="relative">
               <CardHeader>
-                <CardTitle className="text-xl">Application Métier</CardTitle>
-                <CardDescription>Interface utilisateur avancée</CardDescription>
-                <div className="text-3xl font-bold text-blue-600">20k€ - 40k€</div>
+                <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">Application Web</CardTitle>
+                <CardDescription className="text-mediumblue">Fonctionnalités dédiées</CardDescription>
+                <div className="text-3xl font-medium text-regularblue font-adobetitre">3k€ - 4.5k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {[
                     "Architecture headless",
-                    "Interface React/Vue.js",
+                    "Interface Next.js",
                     "APIs personnalisées",
                     "Intégrations système",
                     "Performance optimisée",
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-blue-600" />
+                    <li key={i} className="flex items-center gap-2 text-sm text-mediumblue">
+                      <CheckCircle className="h-4 w-4 text-regularblue font-adobetitre" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700">Demander un devis</Button>
+                <Button className="w-full mt-6 bg-regularblue">Demander un devis</Button>
               </CardContent>
             </Card>
 
-            <Card className="relative border-blue-200 shadow-lg">
-              <div className="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+            <Card className="relative border-regularblue shadow-lg">
+              <div className="absolute top-0 left-0 w-full h-1 bg-lightblue"></div>
               <CardHeader>
-                <Badge className="w-fit bg-blue-100 text-blue-700">Recommandé</Badge>
-                <CardTitle className="text-xl">Plateforme E-commerce</CardTitle>
-                <CardDescription>Solution haute performance</CardDescription>
-                <div className="text-3xl font-bold text-blue-600">30k€ - 60k€</div>
+                <Badge className="w-fit bg-blue-100 text-regularblue">Recommandé</Badge>
+                <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">Plateforme Corporate</CardTitle>
+                <CardDescription className="text-mediumblue">Intégration d'outils externes</CardDescription>
+                <div className="text-3xl font-medium text-regularblue font-adobetitre">4k€ - 6k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {[
                     "Architecture scalable",
-                    "Interface e-commerce avancée",
-                    "Intégrations paiement",
-                    "Gestion stock temps réel",
-                    "Analytics avancées",
-                    "Support technique dédié",
+                    "Composants réutilisables",
+                    "APIs REST/GraphQL",
+                    "Intégration CRM/ERP",
+                    "Performance avancée",
+                    "Applications web + mobile",
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-blue-600" />
+                    <li key={i} className="flex items-center gap-2 text-sm text-mediumblue">
+                      <CheckCircle className="h-4 w-4 text-regularblue" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700">Demander un devis</Button>
+                <Button className="w-full mt-6 bg-regularblue">Demander un devis</Button>
               </CardContent>
             </Card>
 
             <Card className="relative">
               <CardHeader>
-                <CardTitle className="text-xl">Système Multi-Canal</CardTitle>
-                <CardDescription>Web + Mobile + APIs</CardDescription>
-                <div className="text-3xl font-bold text-blue-600">40k€ - 80k€</div>
+                <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">Système Multi-Canal</CardTitle>
+                <CardDescription className="text-mediumblue">Web + Mobile + APIs</CardDescription>
+                <div className="text-3xl font-medium text-regularblue font-adobetitre">6k€ - 8k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
@@ -530,138 +550,54 @@ export default function ApplicationsHeadless() {
                     "Évolutivité maximale",
                     "Maintenance évolutive",
                   ].map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm">
-                      <CheckCircle className="h-4 w-4 text-blue-600" />
+                    <li key={i} className="flex items-center gap-2 text-sm text-mediumblue">
+                      <CheckCircle className="h-4 w-4 text-regularblue" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700">Demander un devis</Button>
+                <Button className="w-full mt-6 bg-regularblue">Demander un devis</Button>
               </CardContent>
             </Card>
           </div>
 
-          <div className="text-center mt-8">
-            <p className="text-sm text-muted-foreground">
-              <strong>ROI typique :</strong> 12-36 mois selon les gains de performance •
-              <strong> Coûts récurrents :</strong> Hébergement performant +30% vs standard + maintenance technique
-              spécialisée
-            </p>
-          </div>
-        </div>
+       </div>
       </section>
+
+      {/* Process */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[5600px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[5900px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+        </div>
+
+      <Process />
 
       {/* Decision Helper */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Comment déterminer si le headless vous convient</h2>
-          <p className="text-lg text-muted-foreground">Critères de décision pour une architecture headless</p>
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[6800px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[6900px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="border-blue-200 bg-blue-50">
-            <CardHeader>
-              <CardTitle className="text-blue-700">✅ Headless recommandé si :</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {[
-                  "Performance critique (< 2 secondes impératif)",
-                  "Interface utilisateur complexe requise",
-                  "Multi-canal prévu (web + mobile + autres)",
-                  "Intégrations système nombreuses",
-                  "Équipe technique disponible",
-                  "Budget conséquent acceptable",
-                  "Évolutivité long terme prioritaire",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-blue-600" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card className="border-green-200 bg-green-50">
-            <CardHeader>
-              <CardTitle className="text-green-700">❌ WordPress traditionnel si :</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {[
-                  "Site vitrine ou institutionnel classique",
-                  "Équipe non technique",
-                  "Budget limité",
-                  "Mise en ligne rapide nécessaire",
-                  "Fonctionnalités standard suffisantes",
-                  "Maintenance simple souhaitée",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <DecisionHelper />
 
       {/* CTA Section */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Évaluons ensemble la pertinence technique</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Une architecture headless nécessite une analyse approfondie de vos besoins réels
-          </p>
-
-          <div className="bg-white/10 rounded-lg p-8 mb-8 max-w-2xl mx-auto">
-            <h3 className="text-xl font-semibold mb-4">Audit technique gratuit de 30 minutes</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" />
-                Analyse de vos contraintes actuelles
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" />
-                Évaluation technique headless vs traditionnel
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" />
-                Estimation budgétaire personnalisée
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4" />
-                Recommandations d'architecture
-              </div>
-            </div>
-          </div>
-
-          <div className="space-x-4">
-            <Button size="lg" variant="secondary">
-              Planifier l'audit technique
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
-              Télécharger le guide de décision
-            </Button>
-          </div>
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[7400px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[7400px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
-      </section>
+      <CTASection />
 
       {/* Navigation */}
       <section className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center">
           <Link
-            href="/services/sites-corporate"
-            className="inline-flex items-center text-muted-foreground hover:text-foreground"
+            href="/services/wordpress"
+            className="inline-flex items-center text-regularblue hover:text-regularblue/80"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Découvrir les Sites Corporate
           </Link>
-          <Link href="/services" className="inline-flex items-center text-muted-foreground hover:text-foreground">
-            Retour à la comparaison
+          <Link href="/cms-headless" className="inline-flex items-center text-regularblue hover:text-regularblue/80">
+            Choisir entre WordPress CMS et Headless
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </div>

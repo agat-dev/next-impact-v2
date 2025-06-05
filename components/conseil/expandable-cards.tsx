@@ -109,7 +109,7 @@ export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
                     exit={{ opacity: 0 }}
                     className="text-regularblue text-sm pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {active.content}
+                    <span dangerouslySetInnerHTML={{ __html: active.content }} />
                   </motion.div>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import Realisations from "@/components/case-studies/realisations";
 import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq"
 import { CTASection } from "@/components/cta-section";
+import { DecisionHelper } from "@/components/decision-helper";
 
 
 
@@ -24,7 +25,12 @@ export default function Home() {
         <div className="absolute top-[900px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
         <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
       </div>
+        <div className="text-center mt-12">
+          <h2 className="text-4xl font-bold text-regularblue mb-4">Services</h2>
+          <p className="text-lg text-regularblue/80">La simplicité de WordPress, la qualité du développement</p>
+        </div>
       <ServicesDev />
+      <DecisionHelper />
 
       {/* Tools Section */}
       <div className="absolute inset-0 -z-10">

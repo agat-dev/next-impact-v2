@@ -21,7 +21,7 @@ export function CTASection() {
                   Réserver ma consultation gratuite <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
-              <div className="h-12"></div>
+              {/*}
               <p className="text-sm">Ou inscrivez-vous à notre newsletter pour recevoir nos conseils et astuces</p>
               <div className="w-full max-w-sm">
                 <div className="flex space-x-2">
@@ -35,6 +35,7 @@ export function CTASection() {
                   </Button>
                 </div>
               </div>
+              */}
             </div>
           </div>
         </section>

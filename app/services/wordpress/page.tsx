@@ -28,6 +28,8 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion, AnimatePresence } from "framer-motion";
 import { CTASection } from "@/components/cta-section";
 import { CMSQuizCard, PriceQuizCard } from "@/components/tools";
+import Process from "@/components/process";
+import { DecisionHelper } from "@/components/decision-helper";
 
 const applications = [
   {
@@ -195,17 +197,18 @@ export default function SitesCorporate() {
                         key={app.key}
                         value={app.key}
                         forceMount
-                        className="mt-0 absolute left-0 top-0 w-full"
+                        className="mt-0 absolute left-0 top-0 w-full h-[340px] flex items-center justify-center"
                       >
                         <motion.div
                           initial={{ opacity: 0, y: 24 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -24 }}
                           transition={{ duration: 0.35, ease: "easeOut" }}
-                          layout // <-- permet à Framer Motion d'animer la hauteur
+                          layout
+                          className="h-full flex items-center justify-center"
                         >
-                          <Card className="w-max flex rounded-2xl mx-auto">
-                            <div className="w-1/4 lg:block">
+                          <Card className="w-max flex rounded-2xl mx-auto h-[300px]">
+                            <div className="w-1/4 lg:block h-full">
                               <Image
                                 src={app.image}
                                 alt={app.title}
@@ -214,7 +217,7 @@ export default function SitesCorporate() {
                                 height={300}
                               />
                             </div>
-                            <div className="flex flex-col justify-between">
+                            <div className="flex flex-col justify-between h-full">
                               <CardHeader>
                                 <CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">
                                   {app.title}
@@ -361,7 +364,7 @@ export default function SitesCorporate() {
               </p>
             </div>
 
-			<PriceQuizCard />
+			      <PriceQuizCard />
 
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <Card className="relative">
@@ -373,7 +376,7 @@ export default function SitesCorporate() {
                     Solution complète pour PME
                   </CardDescription>
                   <div className="text-3xl font-medium font-adobetitre text-regularblue">
-                    1.4k€ - 3k€
+                    2.1k€ - 3k€
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -486,101 +489,19 @@ export default function SitesCorporate() {
           <div className="absolute top-[3000px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
           <div className="absolute top-[3500px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
-        <section className="container mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-regularblue mb-4">
-              Méthode éprouvée en 5 étapes
-            </h2>
-            <p className="text-lg text-regularblue/80">
-              Un processus rodé pour votre réussite
-            </p>
-          </div>
+        <Process />
 
-          <div className="relative max-w-4xl mx-auto" ref={timelineRef}>
-            {/* Ligne centrale dégradée */}
-            <div
-              className="absolute left-1/2 top-0 w-[1px] -translate-x-1/2 rounded-full pointer-events-none"
-              style={{
-                height: "100%",
-                background:
-                  "linear-gradient(to bottom, #f9a8d4 0%, #60a5fa 100%)", // pink-300 -> blue-300
-              }}
-            />
-            <ol className="relative z-10 grid md:grid-cols-1 gap-0">
-              {[
-                {
-                  step: "1",
-                  title: "Analyse & Cadrage",
-                  duration: "1 semaine",
-                  description: "Audit de l'existant et définition des besoins",
-                },
-                {
-                  step: "2",
-                  title: "Conception & Validation",
-                  duration: "2 semaines",
-                  description: "Wireframes, maquettes et validation",
-                },
-                {
-                  step: "3",
-                  title: "Développement",
-                  duration: "3-4 semaines",
-                  description: "Développement du thème et intégration",
-                },
-                {
-                  step: "4",
-                  title: "Optimisation & Tests",
-                  duration: "1 semaine",
-                  description: "Performance, SEO et formation équipes",
-                },
-                {
-                  step: "5",
-                  title: "Mise en Ligne",
-                  duration: "1 semaine",
-                  description: "Migration, tests et support",
-                },
-              ].map((phase, index, arr) => (
-                <li
-                  key={index}
-                  className="relative flex md:items-center py-8 group"
-                >
-                  {/* Point de timeline */}
-                  <div className="absolute left-1/2 -translate-x-1/2 z-10">
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center font-adobetitre text-lg text-regularblue">
-                      {phase.step}
-                    </div>
-                  </div>
-                  {/* Contenu */}
-                  <div
-                    className={`w-full md:w-1/2 px-8 ${
-                      index % 2 === 0
-                        ? "ml-auto text-left"
-                        : "mr-auto text-left"
-                    }`}
-                  >
-                    <div className="bg-white rounded-2xl border border-pink-300/30 p-6">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="text-lg font-adobetitre font-medium text-regularblue">
-                          {phase.title}
-                        </span>
-                        <span className="ml-2 text-xs px-2 py-1 rounded-full bg-lightblue/20 text-regularblue font-medium">
-                          {phase.duration}
-                        </span>
-                      </div>
-                      <p className="text-sm text-mediumblue">
-                        {phase.description}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ol>
+        {/* Decision Helper */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-[4400px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+            <div className="absolute top-[4900px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
           </div>
-        </section>
+        <DecisionHelper />
 
         {/* CTA Section */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[3700px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[4800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[5200px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[5800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
         </div>
         <CTASection />
 
@@ -603,6 +524,25 @@ export default function SitesCorporate() {
             </Link>
           </div>
         </section>
+
+      {/* Navigation */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="flex justify-between items-center">
+          <Link
+            href="/cms-headless"
+            className="inline-flex items-center text-regularblue hover:text-regularblue/80"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Choisir entre WordPress CMS et Headless
+          </Link>
+          <Link href="/services/headless" className="inline-flex items-center text-regularblue hover:text-regularblue/80">
+            Découvrir le Headless
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
+
       </div>
     </>
   );
