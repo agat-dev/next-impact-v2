@@ -51,9 +51,9 @@ export function NavBar() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>               
-        <NavigationMenuItem>
+        {/*<NavigationMenuItem>
           <Link href="/demo" className='font-googletitre text-regularblue text-lg font-medium px-6'>Démo</Link>
-        </NavigationMenuItem>     
+        </NavigationMenuItem> */}    
         <NavigationMenuItem>
           <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
         </NavigationMenuItem>      

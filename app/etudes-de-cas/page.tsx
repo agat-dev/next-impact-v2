@@ -1,4 +1,4 @@
-import CaseStudiesFilter from "@/components/case-studies/case-studies-filters" 
+import Realisations from "@/components/case-studies/realisations" 
 
 export const metadata = {
   title: "Études de cas - Next Impact Digital",
@@ -9,7 +9,7 @@ export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen">
       <div className="container mx-auto py-12">
-        <CaseStudiesFilter />
+        <Realisations count={100} />
       </div>
     </main>
   )
