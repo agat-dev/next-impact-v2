@@ -42,11 +42,11 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/services/wordpress" title="Sites web Corporate" className='h-24'>
-                <p className='text-xs text-mediumblue'>Sites web Corporate</p>
+              <ListItem href="/services/wordpress" title="Sites web Corporate" className='h-22'>
+                <p className='text-xs text-regularblue/70'>Sites vitrines, institutionnels, d'information</p>
               </ListItem>
-              <ListItem href="/services/headless" title="Applis web" className='h-24'>
-                <p className='text-xs text-mediumblue'>Appli web Headless</p>
+              <ListItem href="/services/headless" title="Applis web" className='h-22'>
+                <p className='text-xs text-regularblue/70'>Intranet, Connexion à des applications tierces internes ou externes</p>
               </ListItem>
             </ul>
           </NavigationMenuContent>
@@ -60,7 +60,7 @@ export function NavBar() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="flex p-6 md:w-[600px] lg:w-[800px] gap-3">
+            <ul className="flex p-6 md:w-[400px] lg:w-[600px] gap-3">
             <li className="basis-1/3">
                 <NavigationMenuLink asChild>
                   <a
@@ -75,16 +75,14 @@ export function NavBar() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              <div className='basis-1/3'>             
-              <ListItem href="/cms-headless" title="WordPress CMS ou Headless ?" className='h-28'>
+              <div className='basis-2/3'>             
+              <ListItem href="/cms-headless" title="WordPress CMS ou Headless ?" className='h-22'>
               <p className='text-xs text-regularblue/70'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
               </ListItem>      
-              <ListItem href="/simulateur-tarifs" title="Simulateur du budget" className='h-28'>
+              <ListItem href="/simulateur-tarifs" title="Simulateur du budget" className='h-22'>
               <p className='text-xs text-regularblue/70'>Outil interactif pour estimer le budget de votre projet web.</p>
-              </ListItem>  
-              </div>         
-              <div className='basis-1/3'>             
-              <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-28'>
+              </ListItem>             
+              <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-22'>
               <p className='text-xs text-regularblue/70'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
               </ListItem>  
               </div>

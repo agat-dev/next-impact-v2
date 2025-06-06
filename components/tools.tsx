@@ -1,3 +1,5 @@
+"use client";
+
 import { ExpandableCardNIP } from "@/components/conseil/expandable-cards";
 import Image from "next/image";
 

@@ -1,7 +1,5 @@
-"use client";
 
 import Link from "next/link";
-import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -30,6 +28,7 @@ import { CTASection } from "@/components/cta-section";
 import { CMSQuizCard, PriceQuizCard } from "@/components/tools";
 import Process from "@/components/process";
 import { DecisionHelper } from "@/components/decision-helper";
+import { ApplicationsTabs } from "@/components/applications-tabs";
 
 const applications = [
   {
@@ -63,8 +62,6 @@ const applications = [
 ];
 
 export default function SitesCorporate() {
-  const [tab, setTab] = useState(applications[0].key);
-  const timelineRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -144,9 +141,9 @@ export default function SitesCorporate() {
                 description:
                   "Votre budget est maîtrisé avec un ROI rapide attendu",
               },
-            ].map((item, index) => (
+            ].map((item) => (
               <Card
-                key={index}
+                key={item.title} // clé stable et unique
                 className="bg-transparent border-none text-center shadow-none"
               >
                 <CardHeader>
@@ -175,78 +172,7 @@ export default function SitesCorporate() {
               </p>
             </div>
 
-            <Tabs value={tab} onValueChange={setTab}>
-              <div className="flex justify-center mb-12">
-                <TabsList className="bg-white p-1 rounded-full flex flex-wrap gap-2">
-                  {applications.map((app) => (
-                    <TabsTrigger
-                      key={app.key}
-                      value={app.key}
-                      className="rounded-full px-6 py-2 font-medium data-[state=active]:bg-background/10"
-                    >
-                      {app.title}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </div>
-              <div style={{ minHeight: 340, position: "relative" }}>
-                <AnimatePresence mode="wait">
-                  {applications.map((app) =>
-                    tab === app.key ? (
-                      <TabsContent
-                        key={app.key}
-                        value={app.key}
-                        forceMount
-                        className="mt-0 absolute left-0 top-0 w-full h-[340px] flex items-center justify-center"
-                      >
-                        <motion.div
-                          initial={{ opacity: 0, y: 24 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -24 }}
-                          transition={{ duration: 0.35, ease: "easeOut" }}
-                          layout
-                          className="h-full flex items-center justify-center"
-                        >
-                          <Card className="w-max flex rounded-2xl mx-auto h-[300px]">
-                            <div className="w-1/4 lg:block h-full">
-                              <Image
-                                src={app.image}
-                                alt={app.title}
-                                className="h-full object-cover rounded-tl-2xl rounded-bl-2xl"
-                                width={300}
-                                height={300}
-                              />
-                            </div>
-                            <div className="flex flex-col justify-between h-full">
-                              <CardHeader>
-                                <CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">
-                                  {app.title}
-                                </CardTitle>
-                                <CardDescription className="text-regularblue">
-                                  {app.description}
-                                </CardDescription>
-                              </CardHeader>
-                              <CardContent>
-                                <div className="h-full flex items-start gap-4 pl-2">
-                                  {app.examples.map((example) => (
-                                    <div
-                                      key={example}
-                                      className="w-max font-adobetitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full"
-                                    >
-                                      {example}
-                                    </div>
-                                  ))}
-                                </div>
-                              </CardContent>
-                            </div>
-                          </Card>
-                        </motion.div>
-                      </TabsContent>
-                    ) : null
-                  )}
-                </AnimatePresence>
-              </div>
-            </Tabs>
+            <ApplicationsTabs applications={applications} />
           </div>
         </section>
 
@@ -309,40 +235,40 @@ export default function SitesCorporate() {
                   "Intégrations légères (newsletters, analytics, chat)",
                 ],
               },
-            ].map((service, index) => (
-              <MagicCard>
-              <Card key={index} className="flex overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
-              <div className="relative">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  className="h-full max-h-64 object-cover"
-                  width={100}
-                  height={300}
-                />
-                </div>
-                <div>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-8">
-                    {service.icon}
-                    <CardTitle className="text-xl text-regularblue font-googletitre font-medium">{service.title}</CardTitle>
+            ].map((service) => (
+              <MagicCard key={service.title}>
+                <Card className="flex overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
+                  <div className="relative">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full max-h-64 object-cover"
+                      width={100}
+                      height={300}
+                    />
                   </div>
-                  <CardDescription className="text-base text-regularblue">
-                    <strong>Le problème résolu :</strong> {service.problem}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-lightblue mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-mediumblue">{feature}</span>
+                  <div>
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-8">
+                        {service.icon}
+                        <CardTitle className="text-xl text-regularblue font-googletitre font-medium">{service.title}</CardTitle>
                       </div>
-                    ))}
+                      <CardDescription className="text-base text-regularblue">
+                        <strong>Le problème résolu :</strong> {service.problem}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        {service.features.map((feature) => (
+                          <div key={feature} className="flex items-start gap-2">
+                            <CheckCircle className="h-4 w-4 text-lightblue mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-mediumblue">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
                   </div>
-                </CardContent>
-                </div>
-              </Card>
+                </Card>
               </MagicCard>
             ))}
           </div>
@@ -387,8 +313,8 @@ export default function SitesCorporate() {
                       "Formulaire de contact",
                       "SEO de base",
                       "Formation incluse",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm">
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-regularblue" />
                         {feature}
                       </li>
@@ -428,8 +354,8 @@ export default function SitesCorporate() {
                       "SEO avancé",
                       "Intégrations tierces",
                       "Formation équipe complète",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm">
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-regularblue" />
                         {feature}
                       </li>
@@ -465,8 +391,8 @@ export default function SitesCorporate() {
                       "Modules spécialisés",
                       "Intégrations avancées",
                       "Support 12 mois",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm">
+                    ].map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="h-4 w-4 text-regularblue" />
                         {feature}
                       </li>
