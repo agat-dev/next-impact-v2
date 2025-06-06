@@ -505,25 +505,6 @@ export default function SitesCorporate() {
         </div>
         <CTASection />
 
-        {/* Navigation */}
-        <section className="container mx-auto px-4 py-8">
-          <div className="flex justify-between items-center">
-            <Link
-              href="/cms-headless"
-              className="inline-flex items-center text-regularblue hover:text-regularblue/80"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Faire le test
-            </Link>
-            <Link
-              href="/services/applications-headless"
-              className="inline-flex items-center text-regularblue hover:text-regularblue/80"
-            >
-              Découvrir les Applications Headless
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </section>
 
       {/* Navigation */}
       <section className="container mx-auto px-4 py-8">

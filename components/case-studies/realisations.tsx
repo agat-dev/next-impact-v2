@@ -39,7 +39,7 @@ const PROJECTS = [
 	},
 	{
 		id: 5,
-		title: "Section blog de Sowee",
+		title: "Sowee",
 		type: "corporate",
 		image: "/img/logo-sowee.png",
 		alt: "Section blog de Sowee",
@@ -49,22 +49,52 @@ const PROJECTS = [
 	},
 	{
 		id: 6,
-		title: "Site du Salon de la Carrosserie 2024",
+		title: "Salon de la Carrosserie 2024",
 		type: "corporate",
 		image: "/img/logo-salondelacarrosserie.webp",
 		alt: "Site vitrine du Salon de la Carrosserie 2024",
 		description: "Site vitrine du Salon de la Carrosserie 2024",
 		link: "/etudes-de-cas/salon-de-la-carrosserie",
-		tab: ["derniers", "corporate"],
+		tab: [ "corporate"],
 	},
 	{
 		id: 7,
-		title: "Site vitrine du Tiers Lieu L'Hermitage",
+		title: "Tiers Lieu L'Hermitage",
 		type: "corporate",
 		image: "/img/logo-hermitage.png",
 		alt: "Site vitrine du Tiers Lieu L'Hermitage",
 		description: "Site vitrine du Tiers Lieu L'Hermitage",
 		link: "/etudes-de-cas/hermitage",
+		tab: ["corporate"],
+	},
+	{
+		id: 8,
+		title: "ERP Services",
+		type: "corporate",
+		image: "/img/logo-erp-services.webp",
+		alt: "Site vitrine d'ERP Services",
+		description: "Site vitrine d'ERP Services",
+		link: "/etudes-de-cas/erp-services",
+		tab: ["corporate"],
+	},
+	{
+		id: 9,
+		title: "Senza Nature",
+		type: "ecommerce",
+		image: "/img/logo-senza-nature.png",
+		alt: "Site ecommerce Senza Nature",
+		description: "Site ecommerce Senza Nature",
+		link: "/etudes-de-cas/senza-nature",
+		tab: ["ecommerce"],
+	},
+	{
+		id: 10,
+		title: "Wagner Hamisky",
+		type: "corporate",
+		image: "/img/logo-wagner-hamisky.jpeg",
+		alt: "Site vitrine Wagner Hamisky",
+		description: "Site vitrine de la galerie Wagner Hamisky",
+		link: "/etudes-de-cas/wagner-hamisky",
 		tab: ["corporate"],
 	},
 ];
@@ -122,7 +152,7 @@ export default function Realisations({ count }: RealisationsProps) {
 							key={tab}
 						>
 							<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-								{getProjectsByTab(tab, count).map((project, index) => (
+								{getProjectsByTab(tab, count ?? PROJECTS.length).map((project, index) => (
 									<motion.div
 										key={project.id}
 										initial={{ opacity: 0, y: 20 }}

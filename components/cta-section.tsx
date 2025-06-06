@@ -17,7 +17,7 @@ export function CTASection() {
                 </p>
               </div>
               <div className="flex flex-col gap-8 min-[400px]:flex-row">
-                <Button size="lg" className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
+                <Button size="lg" className="gap-1 text-lg font-medium rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
                   Réserver ma consultation gratuite <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>

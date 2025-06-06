@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, User, Tag, ChevronRight } from "lucide-react";
-
+import { ArrowLeft, Calendar, ChevronRight } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { MagicCard } from "@/components/magicui/magic-card";
+import { CTASection } from "@/components/cta-section";
 
 // Types pour les études de cas
 type ClientType =
@@ -53,9 +54,9 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "1",
     slug: "proditec",
-    title: "Refonte du site corporate multilingue",
+    title: "Proditec",
     description:
-      "Création d'un site moderne et performant pour une entreprise de l'industrie robotique internationale.",
+      "Refonte du site vitrine pour une entreprise de l'industrie robotique internationale.",
     imageUrl: "/img/logo-proditec.webp",
     clientType: "PME",
     clientName: "Proditec",
@@ -106,7 +107,7 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "2",
     slug: "doleances",
-    title: "Site vitrine de l'Association des Doléances",
+    title: "Association des Doléances",
     description:
       "Création d'un site vitrine inspiré de Wikipédia destiné à promouvoir l'action de l'association.",
     imageUrl: "/img/logo-doleances.png",
@@ -116,7 +117,7 @@ const CASE_STUDIES: CaseStudy[] = [
       month: 5,
       year: 2025,
     },
-    tags: ["site vitrine", "WordPress", "Next.js", "headless"],
+    tags: ["WordPress", "Next.js", "Association"],
     objectives: [
       "Présenter les actions et les projets de l'association",
       "S'inspirer de Wikipédia pour communiquer l'idée de participation libre",
@@ -146,7 +147,7 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "3",
     slug: "french-touch-seeds",
-    title: "Ecommerce pour la vente de produits CBD",
+    title: "French Touch Seeds",
     description:
       "Refonte d'une boutique en ligne multilingue pour la vente de produits CBD.",
     imageUrl: "/img/logo_french-touch-seeds.avif",
@@ -156,7 +157,7 @@ const CASE_STUDIES: CaseStudy[] = [
       month: 3,
       year: 2025,
     },
-    tags: ["ecommerce", "Woocommerce", "multilingue"],
+    tags: ["Woocommerce", "Ecommerce", "Multilingue"],
     objectives: [
       "Créer rapidement une boutique en ligne",
       "Garder un design épuré et moderne",
@@ -182,17 +183,17 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "4",
     slug: "sowee",
-    title: "Section blog pour le portail de l'entreprise Sowee",
+    title: "Sowee",
     description:
       "Création d'une section blog pour le portail de l'entreprise Sowee, spécialisée dans les solutions énergétiques.",
-    imageUrl: "/img/logo-sowee.jpeg",
+    imageUrl: "/img/logo-sowee.png",
     clientType: "Grande entreprise",
     clientName: "Sowee",
     date: {
       month: 11,
       year: 2023,
     },
-    tags: ["blog", "thème custom", "WordPress"],
+    tags: ["WordPress", "Blog", "Thème custom"],
     objectives: [
       "Créer un thème WordPress personnalisé pour le blog",
       "Respecter les maquettes fournies par l'équipe marketing",
@@ -223,7 +224,7 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     id: "5",
     slug: "salon-de-la-carrosserie",
-    title: "Site vitrine du Salon de la Carrosserie 2024",
+    title: "Salon de la Carrosserie 2024",
     description:
       "Création d'un site vitrine pour le Salon de la Carrosserie 2024, avec un design moderne et un espace d'inscription pour exposants.",
     imageUrl: "/img/logo-salondelacarrosserie.webp",
@@ -233,7 +234,7 @@ const CASE_STUDIES: CaseStudy[] = [
       month: 2,
       year: 2024,
     },
-    tags: ["événementiel", "WordPress", "espace membres"],
+    tags: ["WordPress", "Evénementiel", "Espace membres"],
     objectives: [
       "Communiquer sur l'événement et ses exposants",
       "Créer un espace d'inscription pour les exposants",
@@ -258,63 +259,159 @@ const CASE_STUDIES: CaseStudy[] = [
     },
     detailedDescription:
       "Le Salon de la Carrosserie, un événement majeur pour les professionnels du secteur, avait besoin d'un site vitrine pour promouvoir l'événement et faciliter l'inscription des exposants. L'objectif était de créer un site moderne et fonctionnel qui reflète l'importance de l'événement.\n\nNous avons développé un site WordPress avec un design épuré et une navigation intuitive. La page d'accueil présente les informations clés sur l'événement, les exposants et les partenaires.\n\nUn espace d'inscription pour les exposants a été mis en place, permettant aux entreprises de s'inscrire facilement et de gérer leurs disponibilités. Le site est entièrement responsive et optimisé pour le référencement naturel.",
-    technologies: [
-      "WordPress",
-      "Elementor Pro",
-      "Ultimate Member",
-    ],
+    technologies: ["WordPress", "Elementor Pro", "Ultimate Member"],
     duration: "15 jours",
     website: "https://salondelacarrosserie.com",
   },
   {
     id: "6",
-    slug: "eco-protect",
-    title: "Plateforme de dons pour ONG environnementale",
+    slug: "hermitage",
+    title: "Tiers Lieu L'Hermitage",
     description:
-      "Développement d'une plateforme de dons sécurisée avec rapports d'impact.",
-    imageUrl:
-      "/placeholder.svg?height=600&width=1200&query=environmental+ngo+donation+platform",
+      "Refonte progressive à la marge du site vitrine du Tiers Lieu L'Hermitage.",
+    imageUrl: "/img/logo-hermitage.png",
     clientType: "Association",
-    clientName: "Éco-Protect",
+    clientName: "L'Hermitage",
     date: {
-      month: 4,
-      year: 2024,
+      month: 1,
+      year: 2025,
     },
-    tags: ["dons", "environnement", "impact"],
+    tags: ["Refonte", "Impact", "WordPress"],
     objectives: [
-      "Créer une plateforme de dons sécurisée et transparente",
-      "Mettre en place un système de rapports d'impact pour les donateurs",
+      "Passer du builder Divi à Elementor pour une meilleure performance",
+      "Passer à un design moderne et épuré dans la continuité",
       "Faciliter les dons récurrents et les dons dédiés à des projets spécifiques",
-      "Optimiser l'expérience mobile pour les donateurs",
+      "Stabiliser le site pour éviter les bugs récurrents",
     ],
     results: [
-      "Augmentation des dons en ligne de 120%",
-      "Augmentation des dons récurrents de 85%",
-      "Réduction des coûts de traitement des dons de 35%",
-      "Amélioration de l'engagement des donateurs (taux de rétention +40%)",
+      "Passage réussi de Divi à Elementor avec une meilleure performance",
+      "Design plus moderne et épuré qui reflète l'identité du Tiers Lieu",
+      "Facilitation des dons récurrents et des dons dédiés",
+      "Stabilisation du site avec une réduction significative des bugs",
+      "Hausse des performances du site avec gain de 30pt sur le score PageSpeed",
     ],
     testimonial: {
       content:
-        "Notre nouvelle plateforme de dons a transformé notre capacité à collecter des fonds et à communiquer sur l'impact de nos actions. Les donateurs apprécient particulièrement la transparence et la facilité d'utilisation du site.",
-      author: "Lucas Bertrand",
-      position: "Directeur, Éco-Protect",
+        "Agathe est une remarquable professionnelle, très compétente sur les questions techniques, la veille quant à l'évolution des technologies, et systèmes. Egalement capable de donner des conseils stratégiques, sur le fond et la forme des contenus, Agathe est très attentive aux besoins exprimés, en amont comme dans la réalisation des missions convenues, elle est très réactive pendant l'exécution des missions. Je recommande sans réserves.",
+      author: "Jean Karinthi",
+      position: "Fondateur, Tiers Lieu L'Hermitage",
     },
     gallery: {
-      url: "/placeholder.svg?height=400&width=600&query=environmental+project+impact+report",
-      alt: "Rapport d'impact de projet environnemental",
+      url: "/img/desktop-screen-hermitage.jpg",
+      alt: "Page d'accueil du site Tiers Lieu L'Hermitage",
     },
     detailedDescription:
-      "Éco-Protect, une ONG dédiée à la protection de l'environnement et à la reforestation, avait besoin d'une plateforme moderne pour collecter des dons et communiquer sur l'impact de ses projets. Leur système précédent était complexe et peu transparent, ce qui limitait la confiance des donateurs.\n\nNous avons développé une plateforme complète qui permet aux visiteurs de découvrir les différents projets de l'ONG, de faire des dons ponctuels ou récurrents, et de suivre l'impact de leurs contributions.\n\nChaque projet dispose d'une page détaillée avec des objectifs clairs, un budget transparent et des mises à jour régulières sur les avancées. Les donateurs peuvent choisir de soutenir un projet spécifique ou de faire un don général à l'organisation.\n\nUn tableau de bord personnalisé permet aux donateurs réguliers de suivre l'historique de leurs contributions et l'impact cumulé de leurs dons (arbres plantés, émissions de CO2 évitées, etc.).\n\nLa plateforme intègre également un blog, une newsletter et des fonctionnalités de partage sur les réseaux sociaux pour amplifier la portée des campagnes de l'ONG.",
+      "Le Tiers Lieu L'Hermitage, un espace collaboratif d'innovation rurale, souhaitait moderniser son site vitrine tout en conservant son identité. Le site existant était construit avec Divi, ce qui posait des problèmes de performance et de stabilité.\n\nNous avons entrepris une refonte progressive du site en passant à Elementor, un constructeur de pages plus performant et flexible. Le design a été modernisé pour refléter l'identité du Tiers Lieu tout en restant fidèle à ses valeurs.\n\nDes fonctionnalités ont été ajoutées pour faciliter les dons récurrents et les dons dédiés à des projets spécifiques. Le site est désormais stable, rapide et facile à administrer.",
     technologies: [
-      "Next.js",
-      "Prisma",
-      "PostgreSQL",
-      "Stripe",
-      "SendGrid",
-      "Vercel",
+      "WordPress",
+      "Elementor Pro",
+      "Optimisation des performances",
     ],
-    duration: "3 mois",
-    website: "https://eco-protect.org",
+    duration: "1 mois",
+    website: "https://hermitagelelab.com",
+  },
+  {
+    id: "7",
+    slug: "erp-services",
+    title: "ERP Services",
+    description:
+      "Refonte à l'identique du site vitrine d'ERP Services, bureau d'études en ingénierie.",
+    imageUrl: "/img/logo-erp-services.webp",
+    clientType: "PME",
+    clientName: "ERP Services",
+    date: {
+      month: 7,
+      year: 2024,
+    },
+    tags: ["WordPress", "Site vitrine", "Refonte"],
+    objectives: [
+      "Renover le site vitrine existant",
+      "Améliorer la performance et la sécurité",
+      "Revoir marginalement le design",
+      "Organiser le contenu pour une meilleure lisibilité",
+    ],
+    results: [
+      "Passage des performances de 45 à 99 sur mobile",
+      "Mise en avant des projets phares",
+      "Développement des moyens de contact",
+      "Amélioration de la sécurité du site",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-erp-services.jpg",
+      alt: "Page de service du site ERP Services",
+    },
+    detailedDescription:
+      "ERP Services, un bureau d'études en ingénierie, avait besoin d'une refonte de son site vitrine pour améliorer la performance et la sécurité tout en conservant l'identité visuelle existante. Le site devait également être plus facile à administrer pour l'équipe interne.\n\nNous avons réalisé une refonte à l'identique du site existant, en améliorant les performances et la sécurité. Le design a été légèrement revu pour une meilleure lisibilité et une navigation intuitive.\n\nLe site met en avant les projets phares d'ERP Services avec des descriptions détaillées et des photos de haute qualité. Des moyens de contact ont été développés pour faciliter la prise de contact avec les clients potentiels.",
+    technologies: ["WordPress", "Elementor Pro", "LiteSpeed Cache"],
+    duration: "2 semaines",
+  },
+  {
+    id: "8",
+    slug: "senza-nature",
+    title: "Senza Nature",
+    description:
+      "Création d'un site e-commerce pour la vente de produits naturels et bio.",
+    imageUrl: "/img/logo-senza-nature.png",
+    clientType: "PME",
+    clientName: "Senza Nature",
+    date: {
+      month: 9,
+      year: 2024,
+    },
+    tags: ["Ecommerce", "Woocommerce", "WordPress"],
+    objectives: [
+      "Maintenir une boutique en ligne pour vendre des produits naturels",
+      "Réaliser les évolutions du site en continu",
+      "Optimiser les performances du site",
+    ],
+    results: [
+      "Stabilisation du site avec une réduction significative des bugs",
+      "Amélioration de la vitesse de chargement du site",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-senza-nature.jpg",
+      alt: "Page d'accueil du site Senza Nature",
+    },
+    detailedDescription:
+      "Senza Nature, une entreprise spécialisée dans la vente de produits naturels et bio, avait besoin d'un support et suivi global du site e-commerce pour vendre ses produits en ligne. L'objectif était de maintenir une boutique en ligne stable et performante tout en réalisant des évolutions continues.\n\nNous avons mis en place un suivi global du site, en assurant la maintenance, les mises à jour et les évolutions nécessaires. Le site est construit sur WooCommerce, permettant une gestion facile des produits et des commandes.\n\nDes optimisations techniques ont été mises en place pour améliorer la vitesse de chargement du site, ce qui a permis d'atteindre un score PageSpeed élevé sur mobile et desktop.",
+    technologies: ["WordPress", "Woocommerce", "LiteSpeed Cache"],
+    duration: "depuis 2024",
+    website: "https://senza-nature.com",
+  },
+  {
+    id: "9",
+    slug: "wagner-hamisky",
+    title: "Wagner Hamisky",
+    description:
+      "Création d'un site vitrine pour la galerie d'art Wagner Hamisky.",
+    imageUrl: "/img/logo-wagner-hamisky.jpeg",
+    clientType: "PME",
+    clientName: "Wagner Hamisky",
+    date: {
+      month: 2,
+      year: 2024,
+    },
+    tags: ["WordPress", "Galerie d'art", "Site vitrine"],
+    objectives: [
+      "Présenter les œuvres des artistes et de la galerie",
+      "Créer un espace de gestion des œuvres simple et efficace",
+      "Faciliter la prise de contact pour les acheteurs potentiels",
+    ],
+    results: [
+      "Site vitrine moderne et épuré",
+      "Espace d'exposition des œuvres",
+      "Descriptions détaillées des œuvres",
+      "Facilitation de la prise de contact avec les acheteurs",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-wagner-hamisky.png",
+      alt: "Page d'accueil du site Wagner Hamisky",
+    },
+    detailedDescription:
+      "Wagner Hamisky, une galerie d'art spécialisée dans la restauration d'œuvres d'art, souhaitait créer un site vitrine pour présenter ses artistes et leurs œuvres, à l'occasion de son ouverture. L'objectif était de fournir un espace d'exposition tout en facilitant la prise de contact avec les clients potentiels.\n\nNous avons développé un site WordPress avec un design moderne et épuré, mettant en avant les œuvres des deux artistes. Le site comprend une galerie d'images et des descriptions détaillées des œuvres..\n\nLe site est entièrement optimisé pour une gestion simple du catalogue des œuvres afin de permettre l'autonomie ultérieure.",
+    technologies: ["WordPress", "Thème custom", "ACF Pro"],
+    duration: "3 semaines",
+    website: "https://wagner-hamisky.com",
   },
 ];
 
@@ -384,15 +481,16 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CaseStudyPage({
+export default async function CaseStudyPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  // Trouver l'étude de cas correspondant au slug
-  const caseStudy = CASE_STUDIES.find((study) => study.slug === params.slug);
+  const resolvedParams = await params;
+  const caseStudy = CASE_STUDIES.find(
+    (study) => study.slug === resolvedParams.slug
+  );
 
-  // Si l'étude de cas n'existe pas, afficher une page 404
   if (!caseStudy) {
     notFound();
   }
@@ -421,8 +519,7 @@ export default function CaseStudyPage({
 
       {/* Contenu principal */}
       <div className="container px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Colonne principale */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2 space-y-10">
             {/* Présentation du projet */}
             <section>
@@ -526,11 +623,17 @@ export default function CaseStudyPage({
               </section>
             )}
           </div>
-
           {/* Sidebar avec informations du projet */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 sticky top-16 self-start">
             <MagicCard className="rounded-2xl bg-white border-none">
               <div className="p-6 top-8">
+                <Image 
+                  src={caseStudy.imageUrl}
+                  alt={caseStudy.title}
+                  width={150}
+                  height={150}
+                  className="object-contain mb-4"
+                />
                 <h2 className="text-xl font-bold mb-6 text-regularblue">
                   Informations du projet
                 </h2>
@@ -649,73 +752,54 @@ export default function CaseStudyPage({
           </div>
         </div>
 
-        {/* Autres projets similaires 
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">Projets similaires</h2>
+        {/* Autres projets similaires */}
+        <section className="my-16">
+          <h2 className="text-2xl font-bold text-regularblue mb-8">
+            Projets similaires
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {similarCaseStudies.map((study) => (
               <Link
                 key={study.id}
                 href={`/etudes-de-cas/${study.slug}`}
-                className="block transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 rounded-lg"
+                className="block transition-transform hover:scale-[1.02] rounded-lg"
               >
                 <Card className="h-full overflow-hidden">
-                  <div className="aspect-video w-full overflow-hidden">
+                  <div className="flex items-center justify-center aspect-video p-4 overflow-hidden">
                     <img
                       src={study.imageUrl || "/placeholder.svg"}
                       alt={study.title}
-                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
+                      className="w-10/12 h-full object-contain transition-transform hover:scale-105 duration-300"
                     />
                   </div>
                   <CardContent className="p-5">
                     <div className="flex justify-between items-start mb-3">
                       <Badge
                         variant="outline"
-                        className={
-                          study.clientType === "PME"
-                            ? "bg-blue-50 text-blue-700 border-blue-200"
-                            : study.clientType === "Association"
-                              ? "bg-green-50 text-green-700 border-green-200"
-                              : "bg-purple-50 text-purple-700 border-purple-200"
-                        }
+                        className="bg-lightblue/10 text-regularblue font-medium"
                       >
                         {study.clientType}
                       </Badge>
                       <div className="text-sm text-gray-500">
-                        {study.date.month && monthNames[study.date.month - 1]} {study.date.year}
+                        {study.date.month && monthNames[study.date.month - 1]}{" "}
+                        {study.date.year}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{study.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{study.description}</p>
+                    <h3 className="text-xl font-bold text-regularblue mb-2">
+                      {study.title}
+                    </h3>
+                    <p className="text-regularblue/80 mb-4 line-clamp-3">
+                      {study.description}
+                    </p>
                   </CardContent>
                 </Card>
               </Link>
             ))}
           </div>
-        </section>*/}
+        </section>
 
         {/* Call to action */}
-        <section className="mt-16 bg-white rounded-lg p-8 text-center">
-          <h2 className="text-2xl md:text-3xl text-regularblue font-bold mb-4">
-            Vous avez un projet similaire ?
-          </h2>
-          <p className="text-lg text-regularblue/80 mb-6 max-w-2xl mx-auto">
-            Discutons ensemble de votre projet et voyons comment nous pouvons
-            vous aider à atteindre vos objectifs.
-          </p>
-          <Button
-            size="lg"
-            className="gap-1 rounded-full bg-regularblue/90 hover:bg-regularblue/80"
-          >
-            <Link
-              target="_blank"
-              href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress"
-              className="text-white hover:text-white"
-            >
-              Contactez-nous
-            </Link>
-          </Button>
-        </section>
+        <CTASection />
       </div>
     </main>
   );

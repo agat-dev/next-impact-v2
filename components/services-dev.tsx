@@ -17,7 +17,7 @@ export const ServicesDev = () => {
           {/* WordPress Traditional Projects */}
           <div className="space-y-6">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-white text-regularblue px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full mb-4">
                 <span className="font-adobetitre">WordPress Traditionnel</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
@@ -103,7 +103,7 @@ export const ServicesDev = () => {
           {/* WordPress Headless Projects */}
           <div className="space-y-6">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-white text-regularblue px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full mb-4">
                 <span className="font-adobetitre">WordPress Headless</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
