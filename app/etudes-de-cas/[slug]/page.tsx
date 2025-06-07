@@ -484,26 +484,6 @@ function getSimilarCaseStudies(
   }).slice(0, limit);
 }
 
-// Fonction pour générer les métadonnées de la page
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const caseStudy = CASE_STUDIES.find((study) => study.slug === params.slug);
-
-  if (!caseStudy) {
-    return {
-      title: "Étude de cas non trouvée - Next Impact Digital",
-      description: "L'étude de cas que vous recherchez n'existe pas.",
-    };
-  }
-
-  return {
-    title: `${caseStudy.title} - Next Impact Digital`,
-    description: caseStudy.description,
-  };
-}
 
 // Fonction pour générer les chemins statiques
 export async function generateStaticParams() {
