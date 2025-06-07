@@ -3,7 +3,7 @@
 import { ExpandableCardNIP } from "@/components/conseil/expandable-cards";
 import Image from "next/image";
 
-export default async function Tools() {
+export default function Tools() {
   const ConseilSkills = [
     {
       title: "Accompagnement",
@@ -139,9 +139,6 @@ export default async function Tools() {
       {/* Tools section */}
       <section className="py-12 px-16 md:py-12 lg:py-24">
         <div className="pb-12 text-center">
-          <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full text-lightblue tracking-wider">
-            SERVICES
-          </span>
           <h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
             Outils d'analyse de projet
           </h2>

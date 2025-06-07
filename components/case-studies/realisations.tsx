@@ -95,7 +95,7 @@ const PROJECTS = [
 		alt: "Site vitrine Wagner Hamisky",
 		description: "Site vitrine de la galerie Wagner Hamisky",
 		link: "/etudes-de-cas/wagner-hamisky",
-		tab: ["corporate"],
+		tab: ["derniers", "corporate"],
 	},
 ];
 
@@ -115,9 +115,6 @@ export default function Realisations({ count }: RealisationsProps) {
 			<div className="container relative">
 				<div className="flex flex-col items-center text-center mb-16">
 					<div className="pb-12 text-center">
-						<span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full text-lightblue tracking-wider">
-							PROJETS
-						</span>
 						<h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
 							Etudes de cas
 						</h2>

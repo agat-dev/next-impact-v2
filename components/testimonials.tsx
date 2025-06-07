@@ -1,5 +1,4 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { MagicCard } from './magicui/magic-card';
 
 const Testimonials = () => {

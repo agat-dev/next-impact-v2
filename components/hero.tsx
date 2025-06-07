@@ -28,7 +28,7 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
-            <Link href="/services" className="group">
+            <Link href="#services" className="group">
             <Button 
               size="lg" 
               variant="outline"
@@ -39,7 +39,7 @@ export default function Hero() {
               <BorderBeamEffect />
             </Button>
             </Link>
-            <Link href="/contact" className="group">
+            <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress?month=2025-06" target="_blank" className="group">
             <Button 
               size="lg" 
               variant="outline" 

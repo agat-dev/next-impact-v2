@@ -1,21 +1,17 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle, ArrowRight, Zap, Smartphone, Database, Code, ArrowLeft, TrendingUp } from "lucide-react"
 import { PriceQuizCard } from "@/components/tools"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { motion, AnimatePresence } from "framer-motion"
 import { CMSQuizCard } from "@/components/tools"
-import { MagicCard } from "@/components/magicui/magic-card"
 import Process from "@/components/process"
 import { CTASection } from "@/components/cta-section"
 import { DecisionHelper } from "@/components/decision-helper"
 import { ApplicationsTabs } from "@/components/applications-tabs"
+import { FeaturesTabs } from "@/components/services/features"
 
 export default function ApplicationsHeadless() {
 
@@ -49,6 +45,40 @@ export default function ApplicationsHeadless() {
               examples: ["React Native", "APIs REST", "Synchronisation"],
             },
           ];
+const features = [
+  {
+    icon: Database,
+    title: "Intégrations Système Avancées",
+    description: "APIs RESTful, GraphQL, synchronisation CRM/ERP",
+    detailedDescription: "Intégration transparente avec vos systèmes métier pour une gestion centralisée.",
+    benefits: ["Webhooks", "Single Sign-On (SSO)", "Middleware custom"],
+    color: "transparent",
+  },
+  {
+    icon: Code,
+    title: "Design et Expérience Utilisateur Modernes",
+    description: "Interfaces avancées avec animations et PWA",
+    detailedDescription: "Création d'interfaces utilisateur modernes et interactives pour une expérience optimale.",
+    benefits: ["Frameworks modernes", "Composants réutilisables", "Accessibilité intégrée"],
+    color: "transparent",
+  },
+  {
+    icon: Smartphone,
+    title: "Administration WordPress personnalisée",
+    description: "Interface d'administration sur mesure pour les équipes",
+    detailedDescription: "Personnalisation de l'interface d'administration WordPress pour une gestion simplifiée.",
+    benefits: ["Champs personnalisés", "Menus simplifiés", "Rôles et permissions avancés"],
+    color: "transparent",
+  },
+  {
+    icon: Zap,
+    title: "Performances Accrues",
+    description: "Chargement instantané, cache intelligent, CDN global",
+    detailedDescription: "Optimisation des performances pour un chargement ultra-rapide et une expérience utilisateur fluide.",
+    benefits: ["Génération statique", "Lazy loading", "Monitoring temps réel"],
+    color: "transparent",
+  },
+]
 
   return (
     <div className="min-h-screen">
@@ -160,84 +190,7 @@ export default function ApplicationsHeadless() {
             <p className="text-lg text-regularblue/80">Une expertise technique complète pour votre projet</p>
           </div>
 
-          <div className="rounded-2xl grid gap-12">
-            {[
-              {
-                icon: <Zap className="h-6 w-6 text-lightblue" />,
-                image: "/img/performances.jpeg",
-                title: "Performances Accrues",
-                problem: "WordPress traditionnel charge l'ensemble du CMS à chaque page",
-                features: [
-                  "Génération statique pour chargement instantané",
-                  "Cache intelligent au niveau composant",
-                  "CDN global pour distribution optimale",
-                  "Lazy loading et bundle optimization",
-                  "Monitoring performance temps réel",
-                ],
-              },
-              {
-                icon: <Code className="h-6 w-6 text-lightblue" />,
-                image: "/img/ui.jpeg",
-                title: "Design et Expérience Utilisateur Modernes",
-                problem: "Les thèmes WordPress limitent les possibilités d'interface",
-                features: [
-                  "Frameworks modernes (React, Vue.js, Angular)",
-                  "Composants interactifs avec animations",
-                  "Progressive Web App (PWA)",
-                  "Responsive avancé multi-dispositifs",
-                  "Accessibilité native WCAG intégrée",
-                ],
-              },
-              {
-                icon: <Database className="h-6 w-6 text-lightblue" />,
-                image: "/img/fonctionnalites.jpg",
-                title: "Intégrations Système Avancées",
-                problem: "Connecter WordPress à vos outils métier de façon fiable",
-                features: [
-                  "APIs RESTful et GraphQL",
-                  "Synchronisation bidirectionnelle CRM/ERP",
-                  "Webhooks et actions automatiques",
-                  "Single Sign-On (SSO)",
-                  "Middleware custom pour protocoles propriétaires",
-                ],
-              },
-            ].map((service, index) => (
-              <MagicCard>
-              <Card key={index} className="flex overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
-                  <div className="relative">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full max-h-64 object-cover"
-                      width={100}
-                      height={300}
-                    />
-                    </div>
-                  <div>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-8">
-                    {service.icon}
-                    <CardTitle className="text-xl text-regularblue font-googletitre font-medium">{service.title}</CardTitle>
-                  </div>
-                  <CardDescription className="text-base text-regularblue">
-                    <strong>Le problème résolu :</strong> {service.problem}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {service.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-lightblue mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-mediumblue">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </div>
-              </Card>
-              </MagicCard>
-            ))}
-          </div>
+          <FeaturesTabs features={features} />
         </div>
       </section>
 

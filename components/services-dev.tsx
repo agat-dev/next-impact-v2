@@ -17,11 +17,11 @@ export const ServicesDev = () => {
           {/* WordPress Traditional Projects */}
           <div className="space-y-6">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full mb-4">
-                <span className="font-adobetitre">WordPress Traditionnel</span>
+              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full">
+                <span className="font-adobetitre">Sites corporate</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
-                Sites Web Corporate
+                WordPress
               </h3>
               <p className="text-regularblue/70">
                 Pour 90% des besoins web professionnels
@@ -103,11 +103,11 @@ export const ServicesDev = () => {
           {/* WordPress Headless Projects */}
           <div className="space-y-6">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full mb-4">
-                <span className="font-adobetitre">WordPress Headless</span>
+              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full">
+                <span className="font-adobetitre">Applications web</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
-                Applications Web Avancées
+                WordPress Headless Next.js
               </h3>
               <p className="text-regularblue/80">
                 Pour les projets techniques ambitieux
@@ -144,9 +144,13 @@ export const ServicesDev = () => {
                   ],
                 },
                 {
-                  category: "Applications Multi-Canal",
-                  description: "Web + mobile + kiosques + APIs",
-                  examples: ["Apps mobiles", "PWA", "Systèmes distribués"],
+                  category: "Portails d'Information",
+                  description: "Actualités, documentation, ressources",
+                  examples: [
+                    "Centres de formation",
+                    "Médias locaux",
+                    "Portails RH",
+                  ],
                 },
               ].map((project, index) => (
                 <div

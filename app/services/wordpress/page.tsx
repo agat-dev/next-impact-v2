@@ -1,7 +1,8 @@
 
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -12,8 +13,6 @@ import {
 import { Badge } from "@/components/ui/badge";
 import {
   Zap,
-  Database,
-  Code,
   CheckCircle,
   ArrowRight,
   Clock,
@@ -21,14 +20,12 @@ import {
   Shield,
   ArrowLeft,
 } from "lucide-react";
-import { MagicCard } from "@/components/magicui/magic-card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { motion, AnimatePresence } from "framer-motion";
 import { CTASection } from "@/components/cta-section";
 import { CMSQuizCard, PriceQuizCard } from "@/components/tools";
 import Process from "@/components/process";
 import { DecisionHelper } from "@/components/decision-helper";
 import { ApplicationsTabs } from "@/components/applications-tabs";
+import { FeaturesTabs } from "@/components/services/features";
 
 const applications = [
   {
@@ -60,6 +57,73 @@ const applications = [
     examples: ["Centres de formation", "Médias", "Écoles"],
   },
 ];
+
+const features = [
+    {
+      icon: Zap,
+      title: "Design sur-mesure",
+      description: "Avoir un site unique sans les coûts d'un développement from scratch",
+      detailedDescription:
+        "Un design personnalisé qui respecte votre charte graphique et vos valeurs. Chaque site est conçu pour refléter l'identité de votre marque tout en offrant une expérience utilisateur optimale.",
+      benefits: [
+        "Thème personnalisé respectant votre charte graphique",
+        "Responsive natif avec adaptation automatique",
+        "Composants modulaires réutilisables",
+        "Templates spécialisés optimisés",
+        "Évolutivité visuelle facilitée",
+      ],
+      metrics: {
+        improvement: "300%",
+        metric: "faster load times",
+      },
+      color: "from-blue-500/10 to-blue-600/5",
+    },
+    {
+      icon: Clock,
+      title: "Organisation des contenus dédiée",
+      description: "Structurer l'information pour vos utilisateurs et les moteurs de recherche",
+      detailedDescription:
+        "Une architecture de site optimisée pour une navigation fluide et intuitive. La structuration personnalisée des contenus permet aux utilisateurs de trouver rapidement l'information recherchée, tout en simplifiant grandeement le travail d'administration du site.",
+      benefits: [
+        "Architecture de l'information pensée UX et SEO",
+        "Types de contenus personnalisés",
+        "Taxonomies adaptées à votre secteur",
+        "Menus dynamiques et adaptatifs",
+        "Facilite la gestion des contenus",
+      ],
+      color: "from-green-500/10 to-green-600/5",
+    },
+    {
+      icon: Shield,
+      title: "Fonctionnalités personnalisées",
+      description: "Intégrer des outils et services adaptés à vos besoins",
+      detailedDescription:
+        "Des fonctionnalités sur-mesure pour répondre aux besoins spécifiques de votre entreprise. Que ce soit des formulaires avancés, des intégrations tierces ou des outils internes, chaque site est conçu pour être fonctionnel et efficace.",
+      benefits: [
+        "Intégrations tierces (CRM, ERP, etc.)",
+        "Formulaires avancés et automatisation",
+        "Outils internes personnalisés",
+        "Modules spécifiques à votre secteur",
+        "Support technique dédié",
+      ],
+      color: "from-purple-500/10 to-purple-600/5",
+    },
+    {
+      icon: Users,
+      title: "Gestion des utilisateurs",
+      description: "Gérer les accès et les rôles de vos équipes",
+      detailedDescription:
+        "Un système de gestion des utilisateurs flexible qui permet de définir des rôles et des permissions spécifiques. Idéal pour les sites avec plusieurs contributeurs ou pour les organisations nécessitant un contrôle d'accès granulaire.",
+      benefits: [
+        "Rôles personnalisables (administrateurs, éditeurs, contributeurs)",
+        "Gestion des permissions fine",
+        "Accès restreint aux contenus sensibles",
+        "Support multi-utilisateurs",
+        "Audit des actions des utilisateurs",
+      ],
+      color: "from-yellow-500/10 to-yellow-600/5",
+    },
+  ]
 
 export default function SitesCorporate() {
 
@@ -176,7 +240,11 @@ export default function SitesCorporate() {
           </div>
         </section>
 
-        {/* Services Details */}
+        {/* Services Details */} 
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[1600px] left-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[2200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-[1700px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[2200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
@@ -190,88 +258,8 @@ export default function SitesCorporate() {
               Une approche complète pour votre réussite web
             </p>
           </div>
+            <FeaturesTabs features={features} />
 
-          <div className="rounded-2xl grid gap-12">
-            {[
-              {
-                icon: <Zap className="h-6 w-6 text-lightblue" />,
-                image: "/img/design-sur-mesure.jpg",
-                title: "Design sur-mesure",
-                problem:
-                  "Avoir un site unique sans les coûts d'un développement from scratch",
-                features: [
-                  "Thème personnalisé respectant votre charte graphique",
-                  "Responsive natif avec adaptation automatique",
-                  "Composants modulaires réutilisables",
-                  "Templates spécialisés optimisés",
-                  "Évolutivité visuelle facilitée",
-                ],
-              },
-              {
-                icon: <Database className="h-6 w-6 text-lightblue" />,
-                image: "/img/organisation-contenu.jpg",
-                title: "Organisation des contenus dédiée",
-                problem:
-                  "Structurer l'information pour vos utilisateurs et les moteurs de recherche",
-                features: [
-                  "Architecture de l'information pensée UX et SEO",
-                  "Types de contenus personnalisés",
-                  "Navigation intuitive avec menus optimisés",
-                  "Hiérarchisation selon vos priorités business",
-                  "Parcours utilisateur de la découverte à la conversion",
-                ],
-              },
-              {
-                icon: <Code className="h-6 w-6 text-lightblue" />,
-                image: "/img/fonctionnalites.jpg",
-                title: "Fonctionnalités adaptées",
-                problem:
-                  "Obtenir les fonctionnalités nécessaires sans complexité inutile",
-                features: [
-                  "Formulaires intelligents avec notifications",
-                  "Gestion multimédia complète",
-                  "Blog/actualités avec système de publication",
-                  "Pages dynamiques (équipe, services)",
-                  "Intégrations légères (newsletters, analytics, chat)",
-                ],
-              },
-            ].map((service) => (
-              <MagicCard key={service.title}>
-                <Card className="flex overflow-hidden border-pink-200/40 rounded-2xl shadow-none">
-                  <div className="relative">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full max-h-64 object-cover"
-                      width={100}
-                      height={300}
-                    />
-                  </div>
-                  <div>
-                    <CardHeader>
-                      <div className="flex items-center gap-3 mb-8">
-                        {service.icon}
-                        <CardTitle className="text-xl text-regularblue font-googletitre font-medium">{service.title}</CardTitle>
-                      </div>
-                      <CardDescription className="text-base text-regularblue">
-                        <strong>Le problème résolu :</strong> {service.problem}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {service.features.map((feature) => (
-                          <div key={feature} className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-lightblue mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-mediumblue">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </div>
-                </Card>
-              </MagicCard>
-            ))}
-          </div>
         </section>
 
         {/* Pricing */}

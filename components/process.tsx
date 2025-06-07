@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 
-export default async function Process() {
+export default function Process() {
 
   const timelineRef = useRef<HTMLDivElement>(null);
 
