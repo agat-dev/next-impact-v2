@@ -48,6 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
   };
+}
 
 const applications = [
   {

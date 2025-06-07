@@ -1,4 +1,4 @@
-// app/contact/page.tsx (Next.js 13+ app router)
+
 import Link from "next/link";
 import ContactForm from "@/components/contact-form";
 import { MagicCard } from "@/components/magicui/magic-card";
@@ -24,6 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
   };
+}
 
 export default function ContactPage() {
   return (
