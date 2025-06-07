@@ -12,6 +12,28 @@ import { CTASection } from "@/components/cta-section"
 import { DecisionHelper } from "@/components/decision-helper"
 import { ApplicationsTabs } from "@/components/applications-tabs"
 import { FeaturesTabs } from "@/components/services/features"
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Service de création de site web WordPress Headless Next.js | Next Impact",
+    description: "Service de création de site web WordPress Headless Next.js pour les entreprises. Solutions adaptées aux sites à fonctionnalités avancées, exigeances de qualité ou appplications web.",
+    openGraph: {
+      title: "Service de création de site web WordPress Headless Next.js | Next Impact",
+      url: "https://next-impact.digital/services/headless",
+      siteName: "Next Impact - Développeuse WordPress Freelance",
+      description: "Service de création de site web WordPress pour les entreprises. Solutions adaptées aux sites à fonctionnalités avancées, exigeances de qualité ou appplications web.",
+      type: "website",
+      images: [
+        {
+          url: "/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: "Next Impact - Développeuse WordPress Freelance",
+        },
+      ],
+    },
+  };
 
 export default function ApplicationsHeadless() {
 

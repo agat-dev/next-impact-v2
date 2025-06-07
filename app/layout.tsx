@@ -21,7 +21,6 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />    
-        <meta name="description" content="Développeuse web freelance spécialisée en création de sites WordPress et applications web headless. Contactez-moi pour un projet sur-mesure." /> 
         <link rel="icon" href="/img/logo-small.png" />
 
         <title>Next Impact - Tout pour lancer son site</title> 

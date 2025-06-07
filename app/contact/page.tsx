@@ -2,11 +2,28 @@
 import Link from "next/link";
 import ContactForm from "@/components/contact-form";
 import { MagicCard } from "@/components/magicui/magic-card";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Contact | Next Impact",
-  description: "Discutons de votre projet web. Réservez un appel ou envoyez un message pour démarrer une collaboration sur-mesure.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Contact | Next Impact",
+    description: "Contactez-moi pour discuter de votre projet web WordPress. Prise de rendez-vous et formulaire de contact disponibles.",
+    openGraph: {
+      title: "Contact | Next Impact",
+      url: "https://next-impact.digital/contact",
+      siteName: "Next Impact - Développeuse WordPress Freelance",
+      description: "Contactez-moi pour discuter de votre projet web WordPress. Prise de rendez-vous et formulaire de contact disponibles.",
+      type: "website",
+      images: [
+        {
+          url: "/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: "Next Impact - Développeuse WordPress Freelance",
+        },
+      ],
+    },
+  };
 
 export default function ContactPage() {
   return (

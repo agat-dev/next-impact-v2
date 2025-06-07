@@ -2,6 +2,29 @@
 
 // Update the import path if the file is named differently or located elsewhere
 import CmsQuizComponent from "@/components/cms-choice-quiz"
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Aide au choix d'une solution technique pour son projet de site web | Next Impact",
+    description: "Outil d'évaluation pour le choix d'une solution technique pour votre projet web selon les prestataires et fonctionnalités souhaitées.",
+    openGraph: {
+      title: "Aide au choix d'une solution technique pour son projet de site web | Next Impact",
+      url: "https://next-impact.digital/cms-headless",
+      description: "Outil d'évaluation pour le choix d'une solution technique pour votre projet web selon les prestataires et fonctionnalités souhaitées.",
+      type: "website",
+      siteName: "Next Impact - Développeuse WordPress Freelance",
+      images: [
+        {
+          url: "/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: "Next Impact - Développeuse WordPress Freelance",
+        },
+      ],
+    },
+  };
+}
 
 export default function CmsQuiz() {
   return (
