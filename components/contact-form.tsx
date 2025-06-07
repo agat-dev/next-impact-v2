@@ -37,7 +37,7 @@ export default function ContactForm() {
     >
 
       {status === "sent" ? (
-        <p className="text-green-600">Merci, votre message a bien été envoyé.</p>
+        <p className="text-pink-600">Merci, votre message a bien été envoyé.</p>
       ) : (
         
         <div className="flex flex-col gap-6">
@@ -75,7 +75,7 @@ export default function ContactForm() {
             {status === "loading" ? "Envoi en cours..." : "Envoyer"}
           </motion.button>
           {status === "error" && (
-            <p className="text-red-600 mt-2">Une erreur est survenue.</p>
+            <p className="text-pink-600 mt-2">Une erreur est survenue.</p>
           )}
         </form>
         </div>
