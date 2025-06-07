@@ -183,7 +183,7 @@ const features = [
           <div className="absolute top-[1700px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[2200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
-      <section className="py-16">
+      <section className="py-16" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-regularblue mb-4">Services techniques détaillés</h2>
@@ -368,7 +368,9 @@ const features = [
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-regularblue">Demander un devis</Button>
+                <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="w-full">
+                <Button className="w-full mt-6 bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -396,7 +398,9 @@ const features = [
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-regularblue">Demander un devis</Button>
+                <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="w-full">
+                <Button className="w-full mt-6 bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -422,8 +426,10 @@ const features = [
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full mt-6 bg-regularblue">Demander un devis</Button>
-              </CardContent>
+                  <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="w-full">
+                <Button className="w-full mt-6 bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
+                </Link>              
+                </CardContent>
             </Card>
           </div>
 

@@ -49,7 +49,7 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
                         }`}
                         onClick={() => setSelectedFeature(index)}
                       >
-                        <CardContent className="p-0 text-center">
+                        <CardContent className="md:p-4 p-0 text-center">
                           <h4 className={`font-medium text-lg text-regularblue ${isSelected ? "text-regularblue" : ""}`}>{feature.title}</h4>
                         </CardContent>
                       </Card>

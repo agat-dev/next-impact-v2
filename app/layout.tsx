@@ -5,6 +5,8 @@ import Header from '@/components/header'
 import './globals.css'
 import { Particles } from "@/components/magicui/particles";
 import Footer from '@/components/footer';
+import CalendlyBadge from '@/components/ui/calendly-widget';
+
 
 
 
@@ -40,6 +42,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <CalendlyBadge />
         </body>
     </html>
   )

@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function CTASection() {
     return (
@@ -16,9 +17,11 @@ export function CTASection() {
                 </p>
               </div>
               <div className="flex flex-col gap-8 min-[400px]:flex-row">
+                <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="gap-1 text-lg font-medium rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
                   Réserver ma consultation gratuite <ArrowRight className="h-4 w-4" />
                 </Button>
+                </Link>
               </div>
               {/*}
               <p className="text-sm">Ou inscrivez-vous à notre newsletter pour recevoir nos conseils et astuces</p>

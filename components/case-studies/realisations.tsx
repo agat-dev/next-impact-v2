@@ -15,7 +15,7 @@ const PROJECTS = [
 		alt: "Site corporate Proditec",
 		description: "Site corporate multilingue",
 		link: "/etudes-de-cas/proditec",
-		tab: ["corporate"],
+		tab: ["derniers", "corporate"],
 	},
 	{
 		id: 2,
@@ -25,7 +25,7 @@ const PROJECTS = [
 		alt: "French Touch Seeds",
 		description: "Site e-commerce multilingue",
 		link: "/etudes-de-cas/french-touch-seeds",
-		tab: ["ecommerce"],
+		tab: ["derniers", "ecommerce"],
 	},
 	{
 		id: 4,
@@ -35,7 +35,7 @@ const PROJECTS = [
 		alt: "Vitrine des Doléances",
 		description: "Vitrine des Doléances de 2018-2019",
 		link: "/etudes-de-cas/doleances",
-		tab: ["derniers", "headless"],
+		tab: ["derniers", "derniers", "headless"],
 	},
 	{
 		id: 5,
@@ -45,7 +45,7 @@ const PROJECTS = [
 		alt: "Section blog de Sowee",
 		description: "Section blog de Sowee",
 		link: "/etudes-de-cas/sowee",
-		tab: ["derniers", "corporate"],
+		tab: ["derniers", "derniers", "corporate"],
 	},
 	{
 		id: 6,
@@ -55,7 +55,7 @@ const PROJECTS = [
 		alt: "Site vitrine du Salon de la Carrosserie 2024",
 		description: "Site vitrine du Salon de la Carrosserie 2024",
 		link: "/etudes-de-cas/salon-de-la-carrosserie",
-		tab: [ "corporate"],
+		tab: ["derniers",  "corporate"],
 	},
 	{
 		id: 7,
@@ -65,7 +65,7 @@ const PROJECTS = [
 		alt: "Site vitrine du Tiers Lieu L'Hermitage",
 		description: "Site vitrine du Tiers Lieu L'Hermitage",
 		link: "/etudes-de-cas/hermitage",
-		tab: ["corporate"],
+		tab: ["derniers", "corporate"],
 	},
 	{
 		id: 8,
@@ -75,7 +75,7 @@ const PROJECTS = [
 		alt: "Site vitrine d'ERP Services",
 		description: "Site vitrine d'ERP Services",
 		link: "/etudes-de-cas/erp-services",
-		tab: ["corporate"],
+		tab: ["derniers", "corporate"],
 	},
 	{
 		id: 9,
@@ -85,7 +85,7 @@ const PROJECTS = [
 		alt: "Site ecommerce Senza Nature",
 		description: "Site ecommerce Senza Nature",
 		link: "/etudes-de-cas/senza-nature",
-		tab: ["ecommerce"],
+		tab: ["derniers", "ecommerce"],
 	},
 	{
 		id: 10,

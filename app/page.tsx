@@ -54,7 +54,7 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-      <Realisations count={3} />
+      <Realisations count={18} />
       
 
       {/* Testimonials Section */}

@@ -8,16 +8,11 @@ export default function Footer() {
       <p className="text-center text-sm leading-loose text-meidumblue md:text-left">
         2025
       </p>
-      <nav className="flex gap-4 sm:gap-6">
+      <nav className="flex gap-4 sm:gap-6 mr-24">
         <Link
-          href="/privacy"
+          href="/mentions-legales"
           className="text-sm font-medium hover:underline underline-offset-4">
           Mentions légales
-        </Link>
-        <Link
-          href="/contact"
-          className="text-sm font-medium hover:underline underline-offset-4">
-          Contact
         </Link>
       </nav>
     </div>
