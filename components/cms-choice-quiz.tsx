@@ -306,8 +306,8 @@ export default function CmsQuiz() {
     const result = calculateResult()
 
     return (
-      <div className="max-w-4xl mx-auto p-6 space-y-6">
-        <Card className="border-2 border-regularblue/5 bg-white">
+      <div className="max-w-4xl mx-auto md:p-6 pt-12 space-y-6">
+        <Card>
           <CardHeader className="text-center">
             <div className="flex items-center justify-center mb-4">
               <CheckCircle className="h-12 w-12 text-regularblue/60" />
@@ -368,7 +368,7 @@ export default function CmsQuiz() {
   const question = questions[currentQuestion]
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-2xl mx-auto md:p-6 pt-12">
       <Card>
         <CardHeader>
           <div className="space-y-4">

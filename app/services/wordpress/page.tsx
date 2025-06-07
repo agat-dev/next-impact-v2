@@ -132,14 +132,14 @@ export default function SitesCorporate() {
       <div className="min-h-screen">
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-16 text-center">
+        <section className="container mx-auto px-4 md:py-16 pt-16 text-center">
           <Badge
             variant="outline"
             className="mb-4 border-regularblue/20 text-regularblue"
           >
             Solution recommandée pour 90% des projets
           </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
             Sites Corporate <span className="text-regularblue">WordPress</span>
           </h1>
           <p className="text-xl text-regularblue/80 max-w-3xl mx-auto mb-8">
@@ -267,7 +267,7 @@ export default function SitesCorporate() {
           <div className="absolute top-[2600px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
           <div className="absolute top-[3100px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
-        <section id="tarifs" className="py-16">
+        <section id="tarifs" className="md:py-16 py-4">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-regularblue mb-4">

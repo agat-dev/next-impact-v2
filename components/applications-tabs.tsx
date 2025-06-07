@@ -54,12 +54,12 @@ export function ApplicationsTabs({ applications }: ApplicationsTabsProps) {
                   layout
                   className="h-full flex items-center justify-center"
                 >
-                  <Card className="w-max flex rounded-2xl mx-auto h-[300px]">
-                    <div className="w-1/4 lg:block h-full">
+                  <Card className="w-max flex md:flex-row flex-col rounded-2xl mx-auto md:h-[300px] h-[550px]">
+                    <div className="md:w-1/4 w-full lg:block md:h-full h-52">
                       <Image
                         src={app.image}
                         alt={app.title}
-                        className="h-full object-cover rounded-tl-2xl rounded-bl-2xl"
+                        className="h-full w-full object-cover md:object-center object-top rounded-tl-2xl md:rounded-bl-2xl"
                         width={300}
                         height={300}
                       />
@@ -74,7 +74,7 @@ export function ApplicationsTabs({ applications }: ApplicationsTabsProps) {
                         </CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <div className="h-full flex items-start gap-4 pl-2">
+                        <div className="h-full flex md:flex-row flex-col items-start gap-4 pl-2">
                           {app.examples.map((example) => (
                             <div
                               key={example}

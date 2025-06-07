@@ -72,14 +72,14 @@ export default function Process() {
                   </div>
                   {/* Contenu */}
                   <div
-                    className={`w-full md:w-1/2 px-8 ${
+                    className={`w-full md:pt-0 pt-4 md:w-1/2 px-8 ${
                       index % 2 === 0
                         ? "ml-auto text-left"
                         : "mr-auto text-left"
                     }`}
                   >
                     <div className="bg-white rounded-2xl border border-pink-300/30 p-6">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex md:flex-row flex-col items-center gap-2 mb-2">
                         <span className="text-lg font-adobetitre font-medium text-regularblue">
                           {phase.title}
                         </span>
@@ -87,7 +87,7 @@ export default function Process() {
                           {phase.duration}
                         </span>
                       </div>
-                      <p className="text-sm text-mediumblue">
+                      <p className="text-sm text-mediumblue md:text-left text-center">
                         {phase.description}
                       </p>
                     </div>

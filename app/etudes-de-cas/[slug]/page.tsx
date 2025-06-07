@@ -515,10 +515,17 @@ export default async function CaseStudyPage({
         <p className="text-xl max-w-3xl text-regularblue/70">
           {caseStudy.description}
         </p>
+        <Image 
+            src={caseStudy.imageUrl}
+            alt={caseStudy.title}
+            width={150}
+            height={150}
+            className="object-contain mt-12"
+          />
       </div>
 
       {/* Contenu principal */}
-      <div className="container px-4 md:px-6 py-12">
+      <div className="container px-4 md:px-6 py-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2 space-y-10">
             {/* Présentation du projet */}
@@ -632,7 +639,7 @@ export default async function CaseStudyPage({
                   alt={caseStudy.title}
                   width={150}
                   height={150}
-                  className="object-contain mb-4"
+                  className="object-contain mb-4 md:block hidden"
                 />
                 <h2 className="text-xl font-bold mb-6 text-regularblue">
                   Informations du projet

@@ -74,7 +74,7 @@ export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-[34rem] max-w-[90%] h-fit flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="md:w-[34rem] max-w-[90%] h-fit flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
             >
               <div>
                 <div className="flex flex-col justify-between items-start p-4">

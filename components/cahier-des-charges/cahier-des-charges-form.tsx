@@ -71,7 +71,7 @@ export function CahierDesChargesForm() {
   return (
     <div className="space-y-8 mb-20">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-        <div className="flex justify-center mb-6">
+        <div className="hidden md:flex justify-center mb-6">
           <TabsList className="grid grid-cols-2 w-[400px] bg-white rounded-full">
             <TabsTrigger value="form" className="flex items-center gap-2">
               <FileText className="h-4 w-4 mr-4" />
@@ -91,8 +91,8 @@ export function CahierDesChargesForm() {
                 <AccordionItem key={section.id} value={section.id}>
                   <AccordionTrigger className="text-xl font-semibold">{section.title}</AccordionTrigger>
                   <AccordionContent>
-                    <Card>
-                      <CardContent className="pt-6">
+                    <Card className="p-0 bg-transparent border-none">
+                      <CardContent className="pt-6 px-0">
                         <div className="grid gap-6">
                           {section.fields.map((field) => (
                             <div key={field.id} className="space-y-2">

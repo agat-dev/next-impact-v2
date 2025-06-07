@@ -44,6 +44,16 @@ export default function Home() {
         <div className="absolute top-[3200px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
         <div className="absolute top-[3600px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
       </div>
+        <div className="flex flex-col items-center text-center md:mb-16 mb-2">
+					<div className="pb-6 text-center">
+						<h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
+							Etudes de cas
+						</h2>
+						<p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
+							Chaque projet est unique et conçu pour répondre aux besoins spécifiques de mes clients.
+						</p>
+					</div>
+				</div>
       <Realisations count={3} />
       
 

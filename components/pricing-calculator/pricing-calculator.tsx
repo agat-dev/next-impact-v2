@@ -359,7 +359,7 @@ export default function PricingCalculator() {
                   const serviceData = additionalServicesData[service]
                   const servicePrices = serviceData.prices[provider] || serviceData.prices.fixed
                   return (
-                    <li key={service} className="flex justify-between">
+                    <li key={service} className="flex md:flex-row flex-col justify-between gap-2">
                       <span>{serviceData.name}</span>
                       <span>
                         {servicePrices

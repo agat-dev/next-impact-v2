@@ -26,8 +26,8 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
       <div className="container mx-auto max-w-7xl">
 
         {/* Main Content Frame */}
-        <div className="px-8 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 min-h-[600px]">
+        <div className="px-0 md:px-12 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-16 gap-4 min-h-[600px]">
             {/* Left Sidebar - Features Grid */}
             <div className="lg:col-span-5">
               <div className="grid grid-cols-1 gap-4">
@@ -49,7 +49,7 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
                         }`}
                         onClick={() => setSelectedFeature(index)}
                       >
-                        <CardContent className="p-4 text-center">
+                        <CardContent className="p-0 text-center">
                           <h4 className={`font-medium text-lg text-regularblue ${isSelected ? "text-regularblue" : ""}`}>{feature.title}</h4>
                         </CardContent>
                       </Card>
@@ -70,7 +70,7 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
                   transition={{ duration: 0.3 }}
                   className="h-full"
                 >
-                  <div className={`h-full rounded-xl ${features[selectedFeature].color} px-8`}>
+                  <div className={`h-full rounded-xl ${features[selectedFeature].color} md:px-8 px-0`}>
                     {/* Feature Header */}
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-transparent flex items-center justify-center">

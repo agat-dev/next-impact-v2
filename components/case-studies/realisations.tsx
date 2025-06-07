@@ -112,21 +112,12 @@ export default function Realisations({ count }: RealisationsProps) {
 	return (
 		<section id="realisations" className="py-12 relative overflow-hidden">
 			<div className="absolute"></div>
-			<div className="container relative">
-				<div className="flex flex-col items-center text-center mb-16">
-					<div className="pb-12 text-center">
-						<h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
-							Etudes de cas
-						</h2>
-						<p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
-							Chaque projet est unique et conçu pour répondre aux besoins spécifiques de mes clients.
-						</p>
-					</div>
-				</div>
+			<div className="container relative p-0">
+
 
 				<Tabs defaultValue="derniers" className="w-full">
 					<div className="flex justify-center mb-12">
-						<TabsList className="bg-white p-1 rounded-full">
+						<TabsList className="flex flex-wrap md:bg-white bg-transparent p-1 rounded-full">
 							<TabsTrigger value="derniers" className="rounded-full data-[state=active]:bg-background/10">
 								Réalisations marquantes
 							</TabsTrigger>

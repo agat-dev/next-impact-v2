@@ -5,10 +5,7 @@ export default function FAQ() {
     return (
         <section id="faq" className="py-24 md:py-32">
             <div className="container">
-                <div className="text-center mb-16">
-                    <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full bg-brand-500/20 tracking-wider mb-4">
-                        FAQ
-                    </span>
+                <div className="text-center md:mb-16">
                     <h2 className="text-4xl md:text-5xl text-regularblue font-bold mb-6">Questions fréquentes</h2>
                     <p className="text-xl max-w-3xl mx-auto text-regularblue/70">
                         Vous avez des questions ? Voici les réponses aux questions les plus fréquentes que je reçois.

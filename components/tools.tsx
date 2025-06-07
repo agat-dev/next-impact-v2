@@ -137,7 +137,7 @@ export default function Tools() {
   return (
     <>
       {/* Tools section */}
-      <section className="py-12 px-16 md:py-12 lg:py-24">
+      <section className="py-12 md:px-16 px-0 md:py-12 lg:py-24">
         <div className="pb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
             Outils d'analyse de projet

@@ -45,9 +45,6 @@ const Testimonials = () => {
     <section id="testimonials" className="py-24 md:py-32 ">
       <div className="container">
         <div className="text-center mb-16">
-          <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full text-lightblue tracking-wider mb-4">
-            TÉMOIGNAGES
-          </span>
           <h2 className="text-4xl md:text-5xl text-regularblue font-bold mb-6">Ce qu'en disent mes clients</h2>
           <p className="text-xl max-w-3xl mx-auto text-regularblue/70">
             Découvrez les retours de clients avec lesquels j'ai eu le plaisir de collaborer sur divers projets technologiques.

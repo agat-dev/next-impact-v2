@@ -84,11 +84,11 @@ const features = [
     <div className="min-h-screen">
 
       {/* Hero Section */}      
-      <section className="container mx-auto px-4 py-16 text-center">
+      <section className="container mx-auto px-4 md:py-16 pt-16 text-center">
         <Badge variant="outline" className="mb-4 border-regularblue/20 text-regularblue">
           Architecture moderne pour projets ambitieux
         </Badge>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
           Applications Web <span className="text-blue-600">Headless</span>
         </h1>
         <p className="text-xl text-regularblue/80 max-w-3xl mx-auto mb-8">
