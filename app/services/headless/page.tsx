@@ -49,17 +49,17 @@ const features = [
   {
     icon: Database,
     title: "Intégrations Système Avancées",
-    description: "APIs RESTful, GraphQL, synchronisation CRM/ERP",
+    description: "APIs, synchronisation CRM/ERP",
     detailedDescription: "Intégration transparente avec vos systèmes métier pour une gestion centralisée.",
-    benefits: ["Webhooks", "Single Sign-On (SSO)", "Middleware custom"],
+    benefits: ["Webhooks", "Connexion API externes", "Authentification sécurisée"],
     color: "transparent",
   },
   {
     icon: Code,
     title: "Design et Expérience Utilisateur Modernes",
-    description: "Interfaces avancées avec animations et PWA",
+    description: "Interfaces avancées avec animations ",
     detailedDescription: "Création d'interfaces utilisateur modernes et interactives pour une expérience optimale.",
-    benefits: ["Frameworks modernes", "Composants réutilisables", "Accessibilité intégrée"],
+    benefits: ["Animations fluides", "Composants réutilisables", "Accessibilité renforcée"],  
     color: "transparent",
   },
   {
@@ -180,10 +180,10 @@ const features = [
 
       {/* Technical Services */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[1700px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[2200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[1700px] left-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[2200px] right-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
-      <section className="py-16" id="services">
+      <section className="pt-16" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-regularblue mb-4">Services techniques détaillés</h2>
@@ -194,69 +194,13 @@ const features = [
         </div>
       </section>
 
-      {/* Architecture */}      
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[2600px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[3100px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
-        </div>
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-regularblue mb-4">Comment ça fonctionne concrètement</h2>
-          <p className="text-lg text-muted-foregroundtext-lg text-regularblue/80">
-            Architecture technique découplée pour une flexibilité maximale
-          </p>
-        </div>
-
-        <div className="p-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
-                <Database className="h-8 w-8 text-regularblue" />
-              </div>
-              <h3 className="font-semibold text-regularblue">Backend WordPress</h3>
-              <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>Gestion contenu familière</li>
-                <li>Plugins de champs personnalisés</li>
-                <li>Configuration API et sécurité</li>
-                <li>Équipes existantes conservées</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
-                <Code className="h-8 w-8 text-regularblue" />
-              </div>
-              <h3 className="font-semibold text-regularblue">Couche API</h3>
-              <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>Endpoints REST automatiques</li>
-                <li>GraphQL pour requêtes optimisées</li>
-                <li>Cache Redis/Memcached</li>
-                <li>Authentification JWT sécurisée</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
-                <Smartphone className="h-8 w-8 text-regularblue" />
-              </div>
-              <h3 className="font-semibold text-regularblue">Frontend Découplé</h3>
-              <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>Framework JavaScript moderne</li>
-                <li>Build tools optimisés</li>
-                <li>Déploiement CDN global</li>
-                <li>Monitoring performance</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Case Studies */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[3800px] left-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-10 blur-3xl"></div>
-          <div className="absolute top-[4200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[2800px] left-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[3200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
         </div>
-      <section className="py-16">
+      <section className="pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-regularblue mb-4">Cas d'usage détaillés</h2>
@@ -446,16 +390,12 @@ const features = [
 
       {/* Decision Helper */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[6800px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[6900px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[6800px] left-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[6900px] right-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
       <DecisionHelper />
 
       {/* CTA Section */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[7400px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[7400px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
-        </div>
       <CTASection />
 
       {/* Navigation */}

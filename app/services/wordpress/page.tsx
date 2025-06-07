@@ -69,8 +69,6 @@ const features = [
         "Thème personnalisé respectant votre charte graphique",
         "Responsive natif avec adaptation automatique",
         "Composants modulaires réutilisables",
-        "Templates spécialisés optimisés",
-        "Évolutivité visuelle facilitée",
       ],
       metrics: {
         improvement: "300%",
@@ -83,13 +81,11 @@ const features = [
       title: "Organisation des contenus dédiée",
       description: "Structurer l'information pour vos utilisateurs et les moteurs de recherche",
       detailedDescription:
-        "Une architecture de site optimisée pour une navigation fluide et intuitive. La structuration personnalisée des contenus permet aux utilisateurs de trouver rapidement l'information recherchée, tout en simplifiant grandeement le travail d'administration du site.",
+        "Une architecture de site optimisée pour une navigation fluide et intuitive. La structuration personnalisée des contenus permet aux utilisateurs de trouver rapidement l'information recherchée, tout en simplifiant grandement le travail d'administration du site.",
       benefits: [
         "Architecture de l'information pensée UX et SEO",
         "Types de contenus personnalisés",
-        "Taxonomies adaptées à votre secteur",
-        "Menus dynamiques et adaptatifs",
-        "Facilite la gestion des contenus",
+        "Gestion des contenus facilitée",
       ],
       color: "from-green-500/10 to-green-600/5",
     },
@@ -102,9 +98,7 @@ const features = [
       benefits: [
         "Intégrations tierces (CRM, ERP, etc.)",
         "Formulaires avancés et automatisation",
-        "Outils internes personnalisés",
         "Modules spécifiques à votre secteur",
-        "Support technique dédié",
       ],
       color: "from-purple-500/10 to-purple-600/5",
     },
@@ -116,10 +110,8 @@ const features = [
         "Un système de gestion des utilisateurs flexible qui permet de définir des rôles et des permissions spécifiques. Idéal pour les sites avec plusieurs contributeurs ou pour les organisations nécessitant un contrôle d'accès granulaire.",
       benefits: [
         "Rôles personnalisables (administrateurs, éditeurs, contributeurs)",
-        "Gestion des permissions fine",
         "Accès restreint aux contenus sensibles",
         "Support multi-utilisateurs",
-        "Audit des actions des utilisateurs",
       ],
       color: "from-yellow-500/10 to-yellow-600/5",
     },
@@ -405,8 +397,8 @@ export default function SitesCorporate() {
 
         {/* CTA Section */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[5200px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[5800px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[5200px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[5800px] right-0 h-[200px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
         </div>
         <CTASection />
 

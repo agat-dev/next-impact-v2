@@ -39,7 +39,7 @@ export default function Hero() {
               <BorderBeamEffect />
             </Button>
             </Link>
-            <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress?month=2025-06" target="_blank" className="group">
+            <Link href="/contact" target="_blank" className="group">
             <Button 
               size="lg" 
               variant="outline" 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
+import { CDCCard } from "@/components/tools";
 
 export default function Process() {
 
@@ -16,6 +17,7 @@ export default function Process() {
               Un processus rodé pour votre réussite
             </p>
           </div>
+          <CDCCard />
 
           <div className="relative max-w-4xl mx-auto" ref={timelineRef}>
             {/* Ligne centrale dégradée */}
@@ -96,6 +98,8 @@ export default function Process() {
               ))}
             </ol>
           </div>
+
+
         </section>
     );
 }

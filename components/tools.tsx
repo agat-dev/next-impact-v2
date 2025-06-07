@@ -206,3 +206,31 @@ export function PriceQuizCard() {
     </div>
   );
 }
+
+export function CDCCard() {
+  const tool = [
+          {
+      description: "GENERER GRATUITEMENT",
+      title: "Rédiger mon cahier des charges",
+      lottie: "/lotties/document.json",
+      ctaText: "Commencer la rédaction",
+      ctaLink: "/cahier-des-charges",
+      content: `
+      <p>
+        Solution de génération de livrable gratuite et en ligne pour structurer
+        et formaliser méthodiquement votre projet digital de leur conception à
+        leur livraison <br />
+        <br />
+        En guidant l'utilisateur à travers des questions ciblées et
+        personnalisables, il transforme vos besoins métiers en spécifications
+        techniques précises, complètes et exploitables par tous les acteurs du
+        projet.
+      </p>`,
+    },
+  ];
+  return (
+    <div className="flex justify-center align-center px-4 md:px-6 my-16">
+      <ExpandableCardNIP cards={tool} />
+    </div>
+  );
+}
