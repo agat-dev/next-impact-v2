@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -70,7 +68,6 @@ export default function ApplicationsHeadless() {
           ];
 const features = [
   {
-    icon: Database,
     title: "Intégrations Système Avancées",
     description: "APIs, synchronisation CRM/ERP",
     detailedDescription: "Intégration transparente avec vos systèmes métier pour une gestion centralisée.",
@@ -78,7 +75,6 @@ const features = [
     color: "transparent",
   },
   {
-    icon: Code,
     title: "Design et Expérience Utilisateur Modernes",
     description: "Interfaces avancées avec animations ",
     detailedDescription: "Création d'interfaces utilisateur modernes et interactives pour une expérience optimale.",
@@ -86,7 +82,6 @@ const features = [
     color: "transparent",
   },
   {
-    icon: Smartphone,
     title: "Administration WordPress personnalisée",
     description: "Interface d'administration sur mesure pour les équipes",
     detailedDescription: "Personnalisation de l'interface d'administration WordPress pour une gestion simplifiée.",
@@ -94,7 +89,6 @@ const features = [
     color: "transparent",
   },
   {
-    icon: Zap,
     title: "Performances Accrues",
     description: "Chargement instantané, cache intelligent, CDN global",
     detailedDescription: "Optimisation des performances pour un chargement ultra-rapide et une expérience utilisateur fluide.",
@@ -157,29 +151,24 @@ const features = [
         <div className="grid md:grid-cols-2 gap-6">
           {[
             {
-              icon: <Zap className="h-8 w-8 text-lightblue" />,
               title: "Performances critiques",
               description: "Votre site nécessite des temps de chargement < 2 secondes",
             },
             {
-              icon: <Code className="h-8 w-8 text-lightblue" />,
               title: "Interfaces complexes",
               description: "Vous avez besoin d'interfaces utilisateur avancées et interactives",
             },
             {
-              icon: <Smartphone className="h-8 w-8 text-lightblue" />,
               title: "Multi-canal",
               description: "Votre contenu doit être diffusé sur plusieurs canaux (web, mobile, kiosques)",
             },
             {
-              icon: <Database className="h-8 w-8 text-lightblue" />,
               title: "Intégrations système",
               description: "Vous devez intégrer étroitement vos systèmes métier (CRM, ERP, APIs)",
             },
           ].map((item, index) => (
             <Card key={index} className="max-w-3xs col-span-1 bg-transparent border-none text-center shadow-none">
               <CardHeader>
-                <div className="mx-auto mb-4">{item.icon}</div>
                 <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -233,7 +222,6 @@ const features = [
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <TrendingUp className="h-6 w-6 text-lightblue" />,
                 title: "Dashboard Analytics B2B",
                 need: "Interface complexe avec graphiques temps réel",
                 solution: "WordPress pour paramétrage, React pour dataviz",
@@ -241,7 +229,6 @@ const features = [
                 metrics: ["Performance +300%", "UX moderne", "Données temps réel"],
               },
               {
-                icon: <Smartphone className="h-6 w-6 text-lightblue" />,
                 title: "Multisites Corporate",
                 need: "Même données, 3 sites différents",
                 solution: "WordPress central, Next.js pour chaque site",
@@ -249,7 +236,6 @@ const features = [
                 metrics: ["3 sites = 1 gestion", "Identités préservées", "Coûts optimisés"],
               },
               {
-                icon: <Code className="h-6 w-6 text-lightblue" />,
                 title: "Application Mobile + Web",
                 need: "Contenu synchronisé web/mobile",
                 solution: "WordPress headless + React Native",
@@ -257,7 +243,6 @@ const features = [
                 metrics: ["Sync parfaite", "Développement accéléré", "Maintenance simplifiée"],
               },
               {
-                icon: <Database className="h-6 w-6 text-lightblue" />,
                 title: "Intranet Évolutif",
                 need: "Portail collaboratif haute performance",
                 solution: "WordPress + Next.js + intégrations métier",
@@ -268,7 +253,6 @@ const features = [
               <Card key={index} className="border-blue-100">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    {caseStudy.icon}
                     <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{caseStudy.title}</CardTitle>
                   </div>
                 </CardHeader>

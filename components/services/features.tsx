@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle } from "lucide-react"
 
 type Feature = {
-  icon: React.ElementType
   title: string
   description: string
   detailedDescription: string
@@ -32,7 +31,6 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
             <div className="lg:col-span-5">
               <div className="grid grid-cols-1 gap-4">
                 {features.map((feature, index) => {
-                  const IconComponent = feature.icon
                   const isSelected = selectedFeature === index
                   return (
                     <motion.div
@@ -74,9 +72,6 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
                     {/* Feature Header */}
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-transparent flex items-center justify-center">
-                        {React.createElement(features[selectedFeature].icon, {
-                          className: "w-8 h-8 text-lightblue",
-                        })}
                       </div>
                       <div className="mb-4">
                         <h3 className="text-2xl font-bold text-regularblue mb-1">{features[selectedFeature].title}</h3>

@@ -1,6 +1,4 @@
 
-"use client";
-
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -83,7 +81,6 @@ const applications = [
 
 const features = [
     {
-      icon: Zap,
       title: "Design sur-mesure",
       description: "Avoir un site unique sans les coûts d'un développement from scratch",
       detailedDescription:
@@ -100,7 +97,6 @@ const features = [
       color: "from-blue-500/10 to-blue-600/5",
     },
     {
-      icon: Clock,
       title: "Organisation des contenus dédiée",
       description: "Structurer l'information pour vos utilisateurs et les moteurs de recherche",
       detailedDescription:
@@ -113,7 +109,6 @@ const features = [
       color: "from-green-500/10 to-green-600/5",
     },
     {
-      icon: Shield,
       title: "Fonctionnalités personnalisées",
       description: "Intégrer des outils et services adaptés à vos besoins",
       detailedDescription:
@@ -126,7 +121,6 @@ const features = [
       color: "from-purple-500/10 to-purple-600/5",
     },
     {
-      icon: Users,
       title: "Gestion des utilisateurs",
       description: "Gérer les accès et les rôles de vos équipes",
       detailedDescription:
@@ -203,19 +197,16 @@ export default function SitesCorporate() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 rounded-2xl">
             {[
               {
-                icon: <Users className="h-8 w-8 text-lightblue" />,
                 title: "Équipes non-techniques",
                 description:
                   "Vos équipes doivent gérer le contenu facilement sans formation complexe",
               },
               {
-                icon: <Clock className="h-8 w-8 text-lightblue" />,
                 title: "Mise en ligne rapide",
                 description:
                   "Vous souhaitez une mise en ligne rapide (4-8 semaines)",
               },
               {
-                icon: <Shield className="h-8 w-8 text-lightblue" />,
                 title: "Budget maîtrisé",
                 description:
                   "Votre budget est maîtrisé avec un ROI rapide attendu",
@@ -226,7 +217,6 @@ export default function SitesCorporate() {
                 className="bg-transparent border-none text-center shadow-none"
               >
                 <CardHeader>
-                  <div className="mx-auto mb-4">{item.icon}</div>
                   <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">
                     {item.title}
                   </CardTitle>
