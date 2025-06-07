@@ -7,17 +7,17 @@ export const ServicesDev = () => {
   return (
     <section
       id="about"
-      className="py-24 md:py-12 relative overflow-hidden bg-gradient-to-b"
+      className="py-12 relative overflow-hidden bg-gradient-to-b"
     >
       <div className="absolute top-0 left-1/4 -z-10 w-96 h-96 bg-brand-500/10 rounded-full blur-[150px]"></div>
       <div className="absolute bottom-0 right-1/4 -z-10 w-80 h-80 bg-brand-700/20 rounded-full blur-[120px]"></div>
       <div className="container">
 
-        <div className="grid lg:grid-cols-2 gap-12 p-12">
+        <div className="grid lg:grid-cols-2 gap-12 md:p-12 p-0">
           {/* WordPress Traditional Projects */}
           <div className="space-y-6">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full">
+              <div className="inline-flex items-center gap-2 text-regularblue px-4 md:py-2 py-0 rounded-full">
                 <span className="font-adobetitre">Sites corporate</span>
               </div>
               <h3 className="text-2xl font-bold text-regularblue mb-2">
@@ -101,7 +101,7 @@ export const ServicesDev = () => {
           </div>
 
           {/* WordPress Headless Projects */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:mt-0 mt-8">
             <div className="text-center">
               <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full">
                 <span className="font-adobetitre">Applications web</span>

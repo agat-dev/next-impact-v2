@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Hero() {
     return (
-    <section className="relative pt-36 pb-24 md:pt-24 md:pb-24 overflow-hidden">
+    <section className="relative pt-12 pb-24 md:pt-24 md:pb-24 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-brand-700/30 rounded-full blur-[100px]"></div>
@@ -20,7 +20,7 @@ export default function Hero() {
           </span>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter">
-           Sites web & Apps<br /><span className="font-adobetext text-5xl text-regularblue/80">WordPress et Headlesss</span>
+           Sites web & Apps<br /><span className="font-adobetext md:text-5xl text-4xl text-regularblue/80">WordPress et Headlesss</span>
           </h1>
           
           <p className="font-adobetext text-xl text-regularblue/70 max-w-xl">
