@@ -184,7 +184,7 @@ export default function SitesCorporate() {
             </p>
             <CMSQuizCard />
           </div>
-
+          {/*}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 rounded-2xl">
             {[
               {
@@ -221,12 +221,11 @@ export default function SitesCorporate() {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </div>*/}
         </section>
 
         {/* Applications en Tabs */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
+          <section className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-regularblue mb-4">
                 Applications concrètes
@@ -237,7 +236,6 @@ export default function SitesCorporate() {
             </div>
 
             <ApplicationsTabs applications={applications} />
-          </div>
         </section>
 
         {/* Services Details */} 

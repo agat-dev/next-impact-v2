@@ -13,18 +13,17 @@ export const ServicesDev = () => {
       <div className="absolute bottom-0 right-1/4 -z-10 w-80 h-80 bg-brand-700/20 rounded-full blur-[120px]"></div>
       <div className="container">
 
-        <div className="grid lg:grid-cols-2 gap-12 md:p-12 p-0">
+        <div className="grid lg:grid-cols-2 gap-12 md:p-0 p-0">
           {/* WordPress Traditional Projects */}
           <div className="space-y-6">
             <div className="text-center">
               <div className="inline-flex items-center gap-2 text-regularblue px-4 md:py-2 py-0 rounded-full">
-                <span className="font-adobetitre">Sites corporate</span>
               </div>
-              <h3 className="text-2xl font-bold text-regularblue mb-2">
-                WordPress
+              <h3 className="text-3xl font-bold text-regularblue mb-2">
+                Sites corporate
               </h3>
               <p className="text-regularblue/70">
-                Pour 90% des besoins web professionnels
+                WordPress
               </p>
             </div>
 
@@ -104,13 +103,13 @@ export const ServicesDev = () => {
           <div className="space-y-6 lg:mt-0 mt-8">
             <div className="text-center">
               <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full">
-                <span className="font-adobetitre">Applications web</span>
+                <span className="font-adobetitre"></span>
               </div>
-              <h3 className="text-2xl font-bold text-regularblue mb-2">
-                WordPress Headless Next.js
+              <h3 className="text-3xl font-bold text-regularblue mb-2">
+                Applications web
               </h3>
               <p className="text-regularblue/80">
-                Pour les projets techniques ambitieux
+                WordPress Headless Next.js
               </p>
             </div>
 

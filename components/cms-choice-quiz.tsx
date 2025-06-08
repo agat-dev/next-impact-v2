@@ -398,7 +398,7 @@ export default function CmsQuiz() {
                     <Label htmlFor={`option-${index}`} className="cursor-pointer font-medium text-regularblue">
                       {option.text}
                     </Label>
-                    <p className="text-sm  text-mediumblue/70 mt-1">{option.explanation}</p>
+                    <p className="text-xs text-mediumblue/70 mt-1">{option.explanation}</p>
                   </div>
                 </div>
               </div>

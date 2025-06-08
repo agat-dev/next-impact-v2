@@ -131,7 +131,7 @@ const features = [
           <CMSQuizCard />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        {/*<div className="grid md:grid-cols-2 gap-6">
           {[
             {
               icon: <Zap className="h-8 w-8 text-lightblue" />,
@@ -164,11 +164,11 @@ const features = [
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
       </section>
 
       {/* Applications (en tabs) */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-regularblue mb-4">Applications concrètes</h2>
           <p className="text-lg text-regularblue/80">
@@ -337,7 +337,7 @@ const features = [
           <div className="absolute top-[4800px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
           <div className="absolute top-[5400px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
-      <section className="py-16">
+      <section className="py-16" id="tarifs">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-regularblue mb-4">Investissement réaliste</h2>
