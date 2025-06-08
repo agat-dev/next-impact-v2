@@ -1,8 +1,26 @@
 import Realisations from "@/components/case-studies/realisations" 
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Études de cas - Next Impact Digital",
-  description: "Découvrez nos réalisations de sites web pour PME, associations et indépendants",
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Réalisations de site web WordPress | Next Impact",
+    description: "Découvrez nos études de cas de création de sites web WordPress pour les entreprises. Solutions adaptées aux sites à fonctionnalités avancées, exigences de qualité ou applications web.",
+    openGraph: {
+      title: "Réalisations de site web WordPress  | Next Impact",
+      url: "https://next-impact.digital/etudes-de-cas",
+      siteName: "Next Impact - Développeuse WordPress Freelance",
+      description: "Découvrez nos études de cas de création de sites web WordPress pour les entreprises. Solutions adaptées aux sites à fonctionnalités avancées, exigences de qualité ou applications web.",
+      type: "website",
+      images: [
+        {
+          url: "/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: "Next Impact - Développeuse WordPress Freelance",
+        },
+      ],
+    },
+  };
 }
 
 export default function CaseStudiesPage() {

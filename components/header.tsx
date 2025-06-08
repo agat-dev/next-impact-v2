@@ -293,7 +293,7 @@ export default function Header() {
         </div>
         <div className='md:basis-1/6 md:flex justify-end hidden'>
           <Button className="hidden md:flex gap-1 rounded-full pL-6 bg-regularblue hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link target='_blank' href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="text-base text-white hover:text-white font-regular">Prendre RDV</Link>
+            <Link href="/contact" className="text-base text-white hover:text-white font-regular">Contact</Link>
           </Button>
         </div>
       </div>

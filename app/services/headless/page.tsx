@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,6 +10,29 @@ import { CTASection } from "@/components/cta-section"
 import { DecisionHelper } from "@/components/decision-helper"
 import { ApplicationsTabs } from "@/components/applications-tabs"
 import { FeaturesTabs } from "@/components/services/features"
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Service de création de site web WordPress Headless Next.js | Next Impact",
+    description: "Service de création de site web WordPress Headless Next.js pour les entreprises. Solutions adaptées aux sites à fonctionnalités avancées, exigeances de qualité ou appplications web.",
+    openGraph: {
+      title: "Service de création de site web WordPress Headless Next.js | Next Impact",
+      url: "https://next-impact.digital/services/headless",
+      siteName: "Next Impact - Développeuse WordPress Freelance",
+      description: "Service de création de site web WordPress pour les entreprises. Solutions adaptées aux sites à fonctionnalités avancées, exigeances de qualité ou appplications web.",
+      type: "website",
+      images: [
+        {
+          url: "/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: "Next Impact - Développeuse WordPress Freelance",
+        },
+      ],
+    },
+  };
+}
 
 export default function ApplicationsHeadless() {
 
@@ -47,23 +68,20 @@ export default function ApplicationsHeadless() {
           ];
 const features = [
   {
-    icon: Database,
     title: "Intégrations Système Avancées",
-    description: "APIs RESTful, GraphQL, synchronisation CRM/ERP",
+    description: "APIs, synchronisation CRM/ERP",
     detailedDescription: "Intégration transparente avec vos systèmes métier pour une gestion centralisée.",
-    benefits: ["Webhooks", "Single Sign-On (SSO)", "Middleware custom"],
+    benefits: ["Webhooks", "Connexion API externes", "Authentification sécurisée"],
     color: "transparent",
   },
   {
-    icon: Code,
     title: "Design et Expérience Utilisateur Modernes",
-    description: "Interfaces avancées avec animations et PWA",
+    description: "Interfaces avancées avec animations ",
     detailedDescription: "Création d'interfaces utilisateur modernes et interactives pour une expérience optimale.",
-    benefits: ["Frameworks modernes", "Composants réutilisables", "Accessibilité intégrée"],
+    benefits: ["Animations fluides", "Composants réutilisables", "Accessibilité renforcée"],  
     color: "transparent",
   },
   {
-    icon: Smartphone,
     title: "Administration WordPress personnalisée",
     description: "Interface d'administration sur mesure pour les équipes",
     detailedDescription: "Personnalisation de l'interface d'administration WordPress pour une gestion simplifiée.",
@@ -71,7 +89,6 @@ const features = [
     color: "transparent",
   },
   {
-    icon: Zap,
     title: "Performances Accrues",
     description: "Chargement instantané, cache intelligent, CDN global",
     detailedDescription: "Optimisation des performances pour un chargement ultra-rapide et une expérience utilisateur fluide.",
@@ -134,29 +151,24 @@ const features = [
         {/*<div className="grid md:grid-cols-2 gap-6">
           {[
             {
-              icon: <Zap className="h-8 w-8 text-lightblue" />,
               title: "Performances critiques",
               description: "Votre site nécessite des temps de chargement < 2 secondes",
             },
             {
-              icon: <Code className="h-8 w-8 text-lightblue" />,
               title: "Interfaces complexes",
               description: "Vous avez besoin d'interfaces utilisateur avancées et interactives",
             },
             {
-              icon: <Smartphone className="h-8 w-8 text-lightblue" />,
               title: "Multi-canal",
               description: "Votre contenu doit être diffusé sur plusieurs canaux (web, mobile, kiosques)",
             },
             {
-              icon: <Database className="h-8 w-8 text-lightblue" />,
               title: "Intégrations système",
               description: "Vous devez intégrer étroitement vos systèmes métier (CRM, ERP, APIs)",
             },
           ].map((item, index) => (
             <Card key={index} className="max-w-3xs col-span-1 bg-transparent border-none text-center shadow-none">
               <CardHeader>
-                <div className="mx-auto mb-4">{item.icon}</div>
                 <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -180,10 +192,10 @@ const features = [
 
       {/* Technical Services */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[1700px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[2200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[1700px] left-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[2200px] right-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
-      <section className="py-16" id="services">
+      <section className="pt-16" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-regularblue mb-4">Services techniques détaillés</h2>
@@ -194,69 +206,13 @@ const features = [
         </div>
       </section>
 
-      {/* Architecture */}      
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[2600px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[3100px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
-        </div>
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-regularblue mb-4">Comment ça fonctionne concrètement</h2>
-          <p className="text-lg text-muted-foregroundtext-lg text-regularblue/80">
-            Architecture technique découplée pour une flexibilité maximale
-          </p>
-        </div>
-
-        <div className="p-8">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
-                <Database className="h-8 w-8 text-regularblue" />
-              </div>
-              <h3 className="font-semibold text-regularblue">Backend WordPress</h3>
-              <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>Gestion contenu familière</li>
-                <li>Plugins de champs personnalisés</li>
-                <li>Configuration API et sécurité</li>
-                <li>Équipes existantes conservées</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
-                <Code className="h-8 w-8 text-regularblue" />
-              </div>
-              <h3 className="font-semibold text-regularblue">Couche API</h3>
-              <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>Endpoints REST automatiques</li>
-                <li>GraphQL pour requêtes optimisées</li>
-                <li>Cache Redis/Memcached</li>
-                <li>Authentification JWT sécurisée</li>
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center mx-auto">
-                <Smartphone className="h-8 w-8 text-regularblue" />
-              </div>
-              <h3 className="font-semibold text-regularblue">Frontend Découplé</h3>
-              <ul className="text-sm text-regularblue/80 space-y-2">
-                <li>Framework JavaScript moderne</li>
-                <li>Build tools optimisés</li>
-                <li>Déploiement CDN global</li>
-                <li>Monitoring performance</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Case Studies */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[3800px] left-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-10 blur-3xl"></div>
-          <div className="absolute top-[4200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[2800px] left-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[3200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
         </div>
-      <section className="py-16">
+      <section className="pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-regularblue mb-4">Cas d'usage détaillés</h2>
@@ -266,7 +222,6 @@ const features = [
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: <TrendingUp className="h-6 w-6 text-lightblue" />,
                 title: "Dashboard Analytics B2B",
                 need: "Interface complexe avec graphiques temps réel",
                 solution: "WordPress pour paramétrage, React pour dataviz",
@@ -274,7 +229,6 @@ const features = [
                 metrics: ["Performance +300%", "UX moderne", "Données temps réel"],
               },
               {
-                icon: <Smartphone className="h-6 w-6 text-lightblue" />,
                 title: "Multisites Corporate",
                 need: "Même données, 3 sites différents",
                 solution: "WordPress central, Next.js pour chaque site",
@@ -282,7 +236,6 @@ const features = [
                 metrics: ["3 sites = 1 gestion", "Identités préservées", "Coûts optimisés"],
               },
               {
-                icon: <Code className="h-6 w-6 text-lightblue" />,
                 title: "Application Mobile + Web",
                 need: "Contenu synchronisé web/mobile",
                 solution: "WordPress headless + React Native",
@@ -290,7 +243,6 @@ const features = [
                 metrics: ["Sync parfaite", "Développement accéléré", "Maintenance simplifiée"],
               },
               {
-                icon: <Database className="h-6 w-6 text-lightblue" />,
                 title: "Intranet Évolutif",
                 need: "Portail collaboratif haute performance",
                 solution: "WordPress + Next.js + intégrations métier",
@@ -301,7 +253,6 @@ const features = [
               <Card key={index} className="border-blue-100">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    {caseStudy.icon}
                     <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{caseStudy.title}</CardTitle>
                   </div>
                 </CardHeader>
@@ -446,16 +397,12 @@ const features = [
 
       {/* Decision Helper */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[6800px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[6900px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[6800px] left-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[6900px] right-0 h-[300px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>
       <DecisionHelper />
 
       {/* CTA Section */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[7400px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[7400px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
-        </div>
       <CTASection />
 
       {/* Navigation */}

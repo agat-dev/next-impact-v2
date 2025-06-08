@@ -8,6 +8,37 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { CTASection } from "@/components/cta-section";
+import { Metadata } from "next";
+
+// meta données dynamiques pour la page d'étude de cas
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const caseStudy = CASE_STUDIES.find(study => study.slug === params.slug);
+  if (!caseStudy) {
+    return {
+      title: "Étude de cas introuvable",
+      description: "L'étude de cas demandée n'existe pas.",
+    };
+  }
+
+  return {
+    title: `${caseStudy.title} | Next Impact`,
+    description: caseStudy.description,
+    openGraph: {
+      title: `${caseStudy.title} | Next Impact`,
+      description: caseStudy.description,
+      url: `https://next-impact.digital/etudes-de-cas/${caseStudy.slug}`,
+      type: "article",
+      images: [
+        {
+          url: caseStudy.imageUrl,
+          width: 1200,
+          height: 630,
+          alt: caseStudy.title,
+        },
+      ],
+    },
+  };
+}
 
 // Types pour les études de cas
 type ClientType =
@@ -453,26 +484,6 @@ function getSimilarCaseStudies(
   }).slice(0, limit);
 }
 
-// Fonction pour générer les métadonnées de la page
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const caseStudy = CASE_STUDIES.find((study) => study.slug === params.slug);
-
-  if (!caseStudy) {
-    return {
-      title: "Étude de cas non trouvée - Next Impact Digital",
-      description: "L'étude de cas que vous recherchez n'existe pas.",
-    };
-  }
-
-  return {
-    title: `${caseStudy.title} - Next Impact Digital`,
-    description: caseStudy.description,
-  };
-}
 
 // Fonction pour générer les chemins statiques
 export async function generateStaticParams() {

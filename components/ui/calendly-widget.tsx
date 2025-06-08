@@ -14,7 +14,7 @@ const CalendlyBadge = () => {
       if (window.Calendly) {
         window.Calendly.initBadgeWidget({
           url: 'https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress',
-          text: 'Contact',
+          text: 'RDV Conseil gratuit',
           color: '#1f54bf',
           textColor: '#ffffff',
           branding: false,

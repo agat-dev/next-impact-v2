@@ -20,7 +20,9 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <head>
         <meta charSet="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />     
+        <meta name="viewport" content="width=device-width, initial-scale=1" />    
+        <link rel="icon" href="/img/logo-small.png" />
+
         <title>Next Impact - Tout pour lancer son site</title> 
         <link rel="stylesheet" href="https://use.typekit.net/ilu1rkm.css"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>

@@ -20,7 +20,7 @@ export default function Hero() {
           </span>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter">
-           Sites web & Apps<br /><span className="font-adobetext md:text-5xl text-4xl text-regularblue/80">WordPress et Headlesss</span>
+           Sites web & Apps<br /><span className="font-adobetext md:text-5xl text-4xl text-regularblue/80">WordPress et Headless</span>
           </h1>
           
           <p className="font-adobetext text-xl text-regularblue/70 max-w-xl">
@@ -39,7 +39,7 @@ export default function Hero() {
               <BorderBeamEffect />
             </Button>
             </Link>
-            <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress?month=2025-06" target="_blank" className="group">
+            <Link href="/contact" target="_blank" className="group">
             <Button 
               size="lg" 
               variant="outline" 
