@@ -74,6 +74,10 @@ const wordpressFeatures = [
     badge: "Headless WordPress",
     details: ["Wikis", "Forums", "Intranets et Extranets"],
   },
+]
+
+{/*
+  
   {
     id: "6",
     title: "Applications Web",
@@ -82,7 +86,7 @@ const wordpressFeatures = [
     badge: "Headless WordPress",
     details: ["Applications métiers", "Portails clients", "Intranets"],
   },
-]
+  */}
 
   return (
     <>

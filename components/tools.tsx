@@ -184,7 +184,7 @@ export function PriceQuizCard() {
        {
       description: "SIMULER MON BUDGET",
       title: "Quel tarif pour mon site web ?",
-      lottie: "/lotties/cost-calculator.json",
+      lottie: "/img/simulateur-tarifs.jpg",
       ctaText: "Lancer l'estimation",
       ctaLink: "/simulateur-tarifs",
       content: `
