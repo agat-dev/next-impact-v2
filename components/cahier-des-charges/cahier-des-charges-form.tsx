@@ -1,72 +1,84 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Card, CardContent } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { generatePDF } from "@/lib/pdf-generator"
-import { DocumentPreview } from "@/components/cahier-des-charges/document-preview"
-import { Loader2, FileText, Eye } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { generatePDF } from "@/lib/pdf-generator";
+import { DocumentPreview } from "@/components/cahier-des-charges/document-preview";
+import { Loader2, FileText, Eye } from "lucide-react";
 
 type FormSection = {
-  id: string
-  title: string
-  fields: FormField[]
-}
+  id: string;
+  title: string;
+  fields: FormField[];
+};
 
 type FormField = {
-  id: string
-  label: string
-  type: "text" | "textarea" | "checkbox" | "checkboxGroup"
-  options?: { id: string; label: string }[]
-  placeholder?: string
-}
+  id: string;
+  label: string;
+  type: "text" | "textarea" | "checkbox" | "checkboxGroup";
+  options?: { id: string; label: string }[];
+  placeholder?: string;
+};
 
 export function CahierDesChargesForm() {
-  const [formData, setFormData] = useState<Record<string, any>>({})
-  const [isGenerating, setIsGenerating] = useState(false)
-  const [activeTab, setActiveTab] = useState<string>("form")
+  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("form");
 
   const handleInputChange = (id: string, value: string | boolean) => {
     setFormData((prev) => ({
       ...prev,
       [id]: value,
-    }))
-  }
+    }));
+  };
 
-  const handleCheckboxGroupChange = (groupId: string, itemId: string, checked: boolean, label: string) => {
+  const handleCheckboxGroupChange = (
+    groupId: string,
+    itemId: string,
+    checked: boolean,
+    label: string
+  ) => {
     setFormData((prev) => {
       const currentGroup = prev[groupId] || {};
       return {
         ...prev,
         [groupId]: {
           ...currentGroup,
-          [itemId]: checked ? { checked: true, label } : { checked: false, label },
+          [itemId]: checked
+            ? { checked: true, label }
+            : { checked: false, label },
         },
       };
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsGenerating(true)
+    e.preventDefault();
+    setIsGenerating(true);
 
     try {
-      await generatePDF(formData)
+      await generatePDF(formData);
     } catch (error) {
-      console.error("Erreur lors de la génération du PDF:", error)
-      alert("Une erreur est survenue lors de la génération du PDF.")
+      console.error("Erreur lors de la génération du PDF:", error);
+      alert("Une erreur est survenue lors de la génération du PDF.");
     } finally {
-      setIsGenerating(false)
+      setIsGenerating(false);
     }
-  }
+  };
 
   return (
     <div className="space-y-8 mb-20">
@@ -86,10 +98,16 @@ export function CahierDesChargesForm() {
 
         <TabsContent value="form">
           <form onSubmit={handleSubmit} className="space-y-8">
-            <Accordion type="multiple" defaultValue={["section-1"]} className="w-full">
+            <Accordion
+              type="multiple"
+              defaultValue={["section-1"]}
+              className="w-full"
+            >
               {formSections.map((section) => (
                 <AccordionItem key={section.id} value={section.id}>
-                  <AccordionTrigger className="text-xl font-semibold">{section.title}</AccordionTrigger>
+                  <AccordionTrigger className="text-xl font-semibold">
+                    {section.title}
+                  </AccordionTrigger>
                   <AccordionContent>
                     <Card className="p-0 bg-transparent border-none">
                       <CardContent className="pt-6 px-0">
@@ -98,25 +116,38 @@ export function CahierDesChargesForm() {
                             <div key={field.id} className="space-y-2">
                               {field.type === "checkboxGroup" ? (
                                 <>
-                                  <Label className="text-base font-medium text-regularblue">{field.label}</Label>
+                                  <Label className="text-base font-medium text-regularblue">
+                                    {field.label}
+                                  </Label>
                                   <div className="grid gap-3 pt-2">
-                                  {field.options?.map((option) => (
-                                    <div key={option.id} className="flex items-start space-x-2">
-                                      <Checkbox
-                                        id={`${field.id}-${option.id}`}
-                                        checked={formData[field.id]?.[option.id]?.checked || false}
-                                        onCheckedChange={(checked) =>
-                                          handleCheckboxGroupChange(field.id, option.id, checked as boolean, option.label)
-                                        }
-                                      />
-                                      <Label
-                                        htmlFor={`${field.id}-${option.id}`}
-                                        className="text-sm text-regularblue/90 font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                    {field.options?.map((option) => (
+                                      <div
+                                        key={option.id}
+                                        className="flex items-start space-x-2"
                                       >
-                                        {option.label}
-                                      </Label>
-                                    </div>
-                                  ))}
+                                        <Checkbox
+                                          id={`${field.id}-${option.id}`}
+                                          checked={
+                                            formData[field.id]?.[option.id]
+                                              ?.checked || false
+                                          }
+                                          onCheckedChange={(checked) =>
+                                            handleCheckboxGroupChange(
+                                              field.id,
+                                              option.id,
+                                              checked as boolean,
+                                              option.label
+                                            )
+                                          }
+                                        />
+                                        <Label
+                                          htmlFor={`${field.id}-${option.id}`}
+                                          className="text-sm text-regularblue/90 font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                        >
+                                          {option.label}
+                                        </Label>
+                                      </div>
+                                    ))}
                                   </div>
                                 </>
                               ) : field.type === "checkbox" ? (
@@ -124,7 +155,12 @@ export function CahierDesChargesForm() {
                                   <Checkbox
                                     id={field.id}
                                     checked={formData[field.id] || false}
-                                    onCheckedChange={(checked) => handleInputChange(field.id, checked as boolean)}
+                                    onCheckedChange={(checked) =>
+                                      handleInputChange(
+                                        field.id,
+                                        checked as boolean
+                                      )
+                                    }
                                   />
                                   <Label
                                     htmlFor={field.id}
@@ -135,7 +171,10 @@ export function CahierDesChargesForm() {
                                 </div>
                               ) : (
                                 <>
-                                  <Label htmlFor={field.id} className="text-base font-medium text-regularblue">
+                                  <Label
+                                    htmlFor={field.id}
+                                    className="text-base font-medium text-regularblue"
+                                  >
                                     {field.label}
                                   </Label>
                                   {field.type === "textarea" ? (
@@ -143,7 +182,12 @@ export function CahierDesChargesForm() {
                                       id={field.id}
                                       placeholder={field.placeholder}
                                       value={formData[field.id] || ""}
-                                      onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                      onChange={(e) =>
+                                        handleInputChange(
+                                          field.id,
+                                          e.target.value
+                                        )
+                                      }
                                       className="min-h-[100px] placeholder:text-lightblue"
                                     />
                                   ) : (
@@ -151,7 +195,12 @@ export function CahierDesChargesForm() {
                                       id={field.id}
                                       placeholder={field.placeholder}
                                       value={formData[field.id] || ""}
-                                      onChange={(e) => handleInputChange(field.id, e.target.value)}
+                                      onChange={(e) =>
+                                        handleInputChange(
+                                          field.id,
+                                          e.target.value
+                                        )
+                                      }
                                     />
                                   )}
                                 </>
@@ -167,7 +216,12 @@ export function CahierDesChargesForm() {
             </Accordion>
 
             <div className="flex justify-center pt-6">
-              <Button type="submit" size="lg" className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"disabled={isGenerating}>
+              <Button
+                type="submit"
+                size="lg"
+                className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
+                disabled={isGenerating}
+              >
                 {isGenerating ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -184,10 +238,18 @@ export function CahierDesChargesForm() {
         <TabsContent value="preview">
           <DocumentPreview formData={formData} />
           <div className="flex justify-center mt-8 gap-6">
-            <Button onClick={() => setActiveTab("form")} variant="outline" className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30">
+            <Button
+              onClick={() => setActiveTab("form")}
+              variant="outline"
+              className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30"
+            >
               Retour au formulaire
             </Button>
-            <Button onClick={handleSubmit} disabled={isGenerating} className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
+            <Button
+              onClick={handleSubmit}
+              disabled={isGenerating}
+              className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
+            >
               {isGenerating ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -201,7 +263,7 @@ export function CahierDesChargesForm() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }
 
 const formSections: FormSection[] = [
@@ -237,7 +299,8 @@ const formSections: FormSection[] = [
         id: "objectifs_refonte",
         label: "Objectifs principaux de la refonte",
         type: "textarea",
-        placeholder: "Ex: Améliorer l'expérience utilisateur, augmenter les conversions...",
+        placeholder:
+          "Ex: Améliorer l'expérience utilisateur, augmenter les conversions...",
       },
       {
         id: "site_url",
@@ -281,13 +344,19 @@ const formSections: FormSection[] = [
         type: "checkboxGroup",
         options: [
           { id: "accueil", label: "Page d'accueil personnalisée" },
-          { id: "pages_contenu", label: "Pages de contenu standard (qui/quoi/pourquoi)" },
+          {
+            id: "pages_contenu",
+            label: "Pages de contenu standard (qui/quoi/pourquoi)",
+          },
           { id: "blog", label: "Actualités/Blog" },
           { id: "contact", label: "Formulaire(s) de contact" },
           { id: "galerie", label: "Galerie photos/vidéos" },
           { id: "faq", label: "FAQ" },
           { id: "plan_site", label: "Page plan du site" },
-          { id: "mentions", label: "Mentions légales et politique de confidentialité" },
+          {
+            id: "mentions",
+            label: "Mentions légales et politique de confidentialité",
+          },
           { id: "recherche", label: "Moteur de recherche interne" },
           { id: "partage", label: "Partage sur réseaux sociaux" },
           { id: "newsletter", label: "Newsletter/inscription" },
@@ -301,11 +370,17 @@ const formSections: FormSection[] = [
         type: "checkboxGroup",
         options: [
           { id: "espace_membres", label: "Espace membres/extranet" },
-          { id: "reservation", label: "Système de réservation/prise de rendez-vous" },
+          {
+            id: "reservation",
+            label: "Système de réservation/prise de rendez-vous",
+          },
           { id: "ecommerce", label: "E-commerce/paiement en ligne" },
           { id: "bdd", label: "Base de données consultable" },
           { id: "multilangues", label: "Multisites/multilangues" },
-          { id: "applications", label: "Applications interactives personnalisées" },
+          {
+            id: "applications",
+            label: "Applications interactives personnalisées",
+          },
           { id: "chatbot", label: "Chatbot/assistant virtuel" },
           { id: "personnalisation", label: "Personnalisation utilisateur" },
           { id: "crm", label: "Intégration CRM/ERP" },
@@ -316,7 +391,8 @@ const formSections: FormSection[] = [
         id: "contraintes_techniques",
         label: "Contraintes techniques spécifiques",
         type: "textarea",
-        placeholder: "Ex: Compatibilité avec systèmes existants, sécurité spécifique...",
+        placeholder:
+          "Ex: Compatibilité avec systèmes existants, sécurité spécifique...",
       },
     ],
   },
@@ -324,15 +400,18 @@ const formSections: FormSection[] = [
     id: "section-3",
     title: "3. Spécifications Graphiques et Ergonomiques",
     fields: [
-      { 
+      {
         id: "charte_graphique",
         label: "Création de charte graphique",
         type: "checkboxGroup",
         options: [
-          { id: "charte_existante", label: "Charte graphique existante à respecter" },
+          {
+            id: "charte_existante",
+            label: "Charte graphique existante à respecter",
+          },
           { id: "nouvelle_charte", label: "Nouvelle charte graphique à créer" },
         ],
-        },
+      },
       {
         id: "inspirations",
         label: "Inspirations/références",
@@ -427,7 +506,8 @@ const formSections: FormSection[] = [
         id: "seo",
         label: "Exigences SEO spécifiques",
         type: "textarea",
-        placeholder: "Ex: Optimisation pour mots-clés spécifiques, balisage schema.org...",
+        placeholder:
+          "Ex: Optimisation pour mots-clés spécifiques, balisage schema.org...",
       },
     ],
   },
@@ -470,7 +550,7 @@ const formSections: FormSection[] = [
         label: "Support technique proposé",
         type: "textarea",
         placeholder: "Ex: Hotline, chat en ligne, email...",
-      }
+      },
     ],
   },
   {
@@ -613,4 +693,4 @@ const formSections: FormSection[] = [
       },
     ],
   },
-]
+];

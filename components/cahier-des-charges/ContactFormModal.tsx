@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { generatePDF } from "@/lib/pdf-generator";
 
 type ContactFormModalProps = {
   formData: Record<string, any>;
@@ -22,19 +23,34 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
     setFields({ ...fields, [e.target.name]: e.target.value });
   };
 
+  // Utilitaire pour convertir un Blob en base64
+  async function blobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve((reader.result as string).split(",")[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
     setError(null);
 
     try {
+      // Génère le PDF (doit retourner un Blob)
+      const pdfBlob = await generatePDF(formData);
+      const pdfBase64 = await blobToBase64(pdfBlob);
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: fields.nom,
           email: fields.email,
-          message: fields.message + "\n\n---\nDonnées du document :\n" + JSON.stringify(formData, null, 2),
+          message: fields.message,
+          pdfBase64, // on envoie le PDF encodé
         }),
       });
 
