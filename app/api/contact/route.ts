@@ -10,7 +10,7 @@ export async function POST(req: Request) {
       from: "Next Impact <contact@next-impact.digital>",
       to: ["agathe@next-impact.digital"],
       subject: `Nouveau message de ${name}`,
-      reply_to: email,
+      replyTo: email,
       html: `
         <h3>Message reçu via le site</h3>
         <p><strong>Nom :</strong> ${name}</p>
