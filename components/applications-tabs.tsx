@@ -66,7 +66,7 @@ export function ApplicationsTabs({ applications }: ApplicationsTabsProps) {
                     </div>
                     <div className="flex flex-col justify-between h-full">
                       <CardHeader>
-                        <CardTitle className="text-3xl text-regularblue font-adobetitre font-medium">
+                        <CardTitle className="text-3xl text-regularblue font-googletitre font-medium">
                           {app.title}
                         </CardTitle>
                         <CardDescription className="text-regularblue">
@@ -78,7 +78,7 @@ export function ApplicationsTabs({ applications }: ApplicationsTabsProps) {
                           {app.examples.map((example) => (
                             <div
                               key={example}
-                              className="w-max font-adobetitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full"
+                              className="w-max font-googletitre text-regularblue bg-lightblue/10 px-3 py-1 rounded-full"
                             >
                               {example}
                             </div>

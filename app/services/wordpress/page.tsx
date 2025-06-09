@@ -217,7 +217,7 @@ export default function SitesCorporate() {
                 className="bg-transparent border-none text-center shadow-none"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">
+                  <CardTitle className="text-2xl font-googletitre text-regularblue font-medium">
                     {item.title}
                   </CardTitle>
                 </CardHeader>
@@ -286,13 +286,13 @@ export default function SitesCorporate() {
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <Card className="relative">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">
+                  <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">
                     Site Vitrine
                   </CardTitle>
                   <CardDescription className="text-mediumblue">
                     Solution complète pour PME
                   </CardDescription>
-                  <div className="text-3xl font-medium font-adobetitre text-regularblue">
+                  <div className="text-3xl font-medium font-googletitre text-regularblue">
                     2.1k€ - 3k€
                   </div>
                 </CardHeader>
@@ -323,13 +323,13 @@ export default function SitesCorporate() {
                   <Badge className="w-fit mb-4 font-medium uppercase bg-lightblue/10 text-mediumblue">
                     Populaire
                   </Badge>
-                  <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">
+                  <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">
                     Site Corporate
                   </CardTitle>
                   <CardDescription className=" text-mediumblue">
                     Solution avancée pour entreprises
                   </CardDescription>
-                  <div className="text-3xl font-medium text-regularblue font-adobetitre">
+                  <div className="text-3xl font-medium text-regularblue font-googletitre">
                     2.4k€ - 5k€
                   </div>
                 </CardHeader>
@@ -357,13 +357,13 @@ export default function SitesCorporate() {
 
               <Card className="relative">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">
+                  <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">
                     Portail Institutionnel
                   </CardTitle>
                   <CardDescription className="text-mediumblue">
                     Solution complète multi-niveaux
                   </CardDescription>
-                  <div className="text-3xl font-medium text-regularblue font-adobetitre">
+                  <div className="text-3xl font-medium text-regularblue font-googletitre">
                     3.5k€ - 6k€
                   </div>
                 </CardHeader>

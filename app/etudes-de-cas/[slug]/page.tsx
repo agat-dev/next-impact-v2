@@ -629,7 +629,7 @@ export default async function CaseStudyPage({
                       />
                     </div>
                     <div>
-                      <div className="font-adobetitre">
+                      <div className="font-googletitre">
                         {caseStudy.testimonial.author}
                       </div>
                       <div className="text-sm text-regularblue">
@@ -742,7 +742,7 @@ export default async function CaseStudyPage({
                         href={caseStudy.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-regularblue font-adobetitre hover:underline"
+                        className="text-regularblue font-googletitre hover:underline"
                       >
                         {caseStudy.website}
                       </a>

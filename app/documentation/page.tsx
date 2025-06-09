@@ -18,10 +18,10 @@ export default function DocumentationPage() {
                  </div>
                  <div className="col-span-4 place-self-center">
                    <div className="py-2 text-center">
-                     <TextAnimate className="text-xl font-googletitre" animation="blurIn" as="h1">Savoir comment créer son site web</TextAnimate>
+                     <TextAnimate className="text-xl fontgoogletitre" animation="blurIn" as="h1">Savoir comment créer son site web</TextAnimate>
                    </div>
                    <div className="w-10/12 py-8 space-y-2 mx-auto text-center">  
-                     <p className="text-xl font-regular font-googletitre text-lightblue">
+                     <p className="text-xl font-regular fontgoogletitre text-lightblue">
                         Des ressources et des infos pour vous orienter avant et pendant votre projet web.        
                      </p> 
                    </div>

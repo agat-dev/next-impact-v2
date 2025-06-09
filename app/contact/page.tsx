@@ -62,7 +62,7 @@ export default function ContactPage() {
       <div className="mt-12 text-sm text-mediumblue text-center">
         <p>Basée en France - Disponible à distance</p>
         <p>Freelance WordPress, Next.js</p>
-        <p className="pt-4 "><a href="mailto:agathe@next-impact.digital" className="text-medium font-adobetitre text-lg">agathe@next-impact.digital</a></p>
+        <p className="pt-4 "><a href="mailto:agathe@next-impact.digital" className="text-medium font-googletitre text-lg">agathe@next-impact.digital</a></p>
       </div>
     </section>
   );

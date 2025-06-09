@@ -103,7 +103,7 @@ export const ServicesDev = () => {
           <div className="space-y-6 lg:mt-0 mt-8">
             <div className="text-center">
               <div className="inline-flex items-center gap-2 text-regularblue px-4 py-2 rounded-full">
-                <span className="font-adobetitre"></span>
+                <span className="font-googletitre"></span>
               </div>
               <h3 className="text-3xl font-bold text-regularblue mb-2">
                 Applications web

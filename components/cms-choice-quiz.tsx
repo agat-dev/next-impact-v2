@@ -312,7 +312,7 @@ export default function CmsQuiz() {
             <div className="flex items-center justify-center mb-4">
               <CheckCircle className="h-12 w-12 text-regularblue/60" />
             </div>
-            <CardTitle className="text-2xl text-regularblue font-adobetitre">Recommandation : {result.solution}</CardTitle>
+            <CardTitle className="text-2xl text-regularblue font-googletitre">Recommandation : {result.solution}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>

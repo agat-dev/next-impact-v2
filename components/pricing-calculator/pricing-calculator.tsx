@@ -267,13 +267,13 @@ export default function PricingCalculator() {
       {/* Form Section */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-regularblue font-adobetitre text-3xl">Options du Projet</CardTitle>
+          <CardTitle className="text-regularblue font-googletitre text-3xl">Options du Projet</CardTitle>
           <CardDescription  className="text-regularblue/80">Sélectionnez les options pour obtenir une estimation de prix</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Website Type Selection */}
           <div className="space-y-2">
-            <Label htmlFor="website-type" className="text-regularblue font-adobetitre text-xl">Type de Site Web</Label>
+            <Label htmlFor="website-type" className="text-regularblue font-googletitre text-xl">Type de Site Web</Label>
             <Select value={websiteType} onValueChange={(value) => setWebsiteType(value as WebsiteType)}>
               <SelectTrigger id="website-type">
                 <SelectValue placeholder="Sélectionnez un type de site"/>
@@ -291,7 +291,7 @@ export default function PricingCalculator() {
 
           {/* Provider Selection */}
           <div className="space-y-2">
-            <Label htmlFor="provider" className="text-regularblue font-adobetitre text-xl">Prestataire</Label>
+            <Label htmlFor="provider" className="text-regularblue font-googletitre text-xl">Prestataire</Label>
             <Select value={provider} onValueChange={(value) => setProvider(value as ProviderType)}>
               <SelectTrigger id="provider">
                 <SelectValue placeholder="Sélectionnez un prestataire" />
@@ -306,7 +306,7 @@ export default function PricingCalculator() {
 
           {/* Additional Services */}
           <div className="space-y-3">
-            <Label className="text-regularblue font-adobetitre text-lg">Services Additionnels</Label>
+            <Label className="text-regularblue font-googletitre text-lg">Services Additionnels</Label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {Object.entries(additionalServicesData).map(([key, service]) => (
                 <div key={key} className="flex items-start space-x-2">
@@ -334,13 +334,13 @@ export default function PricingCalculator() {
       {/* Results Section */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-regularblue font-adobetitre text-3xl">Estimation de Prix</CardTitle>
+          <CardTitle className="text-regularblue font-googletitre text-3xl">Estimation de Prix</CardTitle>
           <CardDescription className="text-regularblue/80">Basée sur vos sélections</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Base Price */}
           <div>
-            <h3 className="text-xl text-regularblue font-adobetitre font-medium mb-2">Prix de Base</h3>
+            <h3 className="text-xl text-regularblue font-googletitre font-medium mb-2">Prix de Base</h3>
             <p className="text-2xl font-bold text-mediumblue">
               {formatPrice(basePrice.min)} - {formatPrice(basePrice.max)}
             </p>
@@ -350,7 +350,7 @@ export default function PricingCalculator() {
           {/* Additional Services Price */}
           {additionalServices.length > 0 && (
             <div>
-              <h3 className="text-xl text-regularblue font-adobetitre font-medium mb-2">Services Additionnels</h3>
+              <h3 className="text-xl text-regularblue font-googletitre font-medium mb-2">Services Additionnels</h3>
               <p className="text-xl font-semibold text-mediumblue">
                 {formatPrice(additionalPrice.min)} - {formatPrice(additionalPrice.max)}
               </p>
@@ -377,7 +377,7 @@ export default function PricingCalculator() {
 
           {/* Total Price */}
           <div>
-            <h3 className="text-xl text-regularblue font-adobetitre font-medium mb-2">Prix Total Estimé</h3>
+            <h3 className="text-xl text-regularblue font-googletitre font-medium mb-2">Prix Total Estimé</h3>
             <p className="text-3xl font-bold  text-mediumblue">
               {formatPrice(totalPrice.min)} - {formatPrice(totalPrice.max)}
             </p>

@@ -71,8 +71,8 @@ const Testimonials = () => {
               
               <CardFooter className="pt-2">
                 <div>
-                  <p className="font-medium font-adobetitre text-base text-regularblue">{testimonial.author}</p>
-                  <p className="text-sm font-adobetitre text-regularblue/70">
+                  <p className="font-medium font-googletitre text-base text-regularblue">{testimonial.author}</p>
+                  <p className="text-sm font-googletitre text-regularblue/70">
                     {testimonial.position}</p>
                   <p className="mt-2 text-xs text-regularblue/70 uppercase">
                      {testimonial.company}

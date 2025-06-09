@@ -9,7 +9,7 @@ export default function Tools() {
       title: "Accompagnement",
       description: (
         <>
-          <span className="uppercase font-adobetitre text-xl">
+          <span className="uppercase font-googletitre text-xl">
             CREATION ET REFONTE
           </span>
           <br />
@@ -23,7 +23,7 @@ export default function Tools() {
                 height={20}
                 className="mr-3 text-primary"
               />
-              <span className="font-adobetitre text-lg">
+              <span className="font-googletitre text-lg">
                 4 sessions vidéo de 30 minutes
               </span>
             </div>
@@ -35,7 +35,7 @@ export default function Tools() {
                 height={20}
                 className="mr-3 text-primary"
               />
-              <span className="font-adobetitre text-lg">
+              <span className="font-googletitre text-lg">
                 Analyse approfondie du besoin
               </span>
             </div>
@@ -47,7 +47,7 @@ export default function Tools() {
                 height={20}
                 className="mr-3 text-primary"
               />
-              <span className="font-adobetitre text-lg">
+              <span className="font-googletitre text-lg">
                 Audit du site actuel
               </span>
             </div>
@@ -59,7 +59,7 @@ export default function Tools() {
                 height={20}
                 className="mr-3 text-primary"
               />
-              <span className="font-adobetitre text-lg">
+              <span className="font-googletitre text-lg">
                 Formalisation d'un cahier des charges
               </span>
             </div>
@@ -71,7 +71,7 @@ export default function Tools() {
                 height={20}
                 className="mr-3 text-primary"
               />
-              <span className="font-adobetitre text-lg">
+              <span className="font-googletitre text-lg">
                 Conseil sur la solution technique
               </span>
             </div>

@@ -84,19 +84,19 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
 
             <div className="mt-12 space-y-4 text-left max-w-md mx-auto">
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Organisation:</span>
+                <span className="font-googletitre text-mediumblue w-40">Organisation:</span>
                 <span className="text-sm text-regularblue/80">{formData.organisation_name || "Non spécifié"}</span>
               </div>
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Secteur d'activité:</span>
+                <span className="font-googletitre text-mediumblue w-40">Secteur d'activité:</span>
                 <span className="text-sm text-regularblue/80">{formData.secteur_activite || "Non spécifié"}</span>
               </div>
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Date de rédaction:</span>
+                <span className="font-googletitre text-mediumblue w-40">Date de rédaction:</span>
                 <span className="text-sm text-regularblue/80">{formData.date_redaction || new Date().toLocaleDateString()}</span>
               </div>
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Rédacteur:</span>
+                <span className="font-googletitre text-mediumblue w-40">Rédacteur:</span>
                 <span className="text-sm text-regularblue/80">{formData.redacteur || "Non spécifié"}</span>
               </div>
             </div>

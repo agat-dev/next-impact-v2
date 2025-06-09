@@ -115,13 +115,13 @@
     @apply text-regularblue;
   }
   h1, h2, h3, h4, h5, h6, a {
-    @apply font-googletitre font-normal py-1;
+    @apply font-normal py-1 font-googletitre;
   }
   h1 {
-    @apply text-4xl text-regularblue;
+    @apply text-4xl text-regularblue font-googletitre;
   }
   h2 {
-    @apply text-3xl text-mediumblue pt-10;
+    @apply text-3xl text-mediumblue pt-10 font-googletitre;
   }
   h3 {
     @apply text-2xl text-mediumblue pt-6;
@@ -136,7 +136,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-adobetext font-normal;
+    @apply font-googletexte font-normal;
   }
   a {
     @apply text-regularblue no-underline;
@@ -146,6 +146,9 @@
   }
   .container {
     @apply mx-auto px-4;
+  }
+  .google-titre {
+    font-family: 'Quicksand', sans-serif;
   }
 }
 

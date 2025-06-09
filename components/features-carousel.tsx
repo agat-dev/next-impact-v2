@@ -99,7 +99,7 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
                         <h4 className="font-medium text-regularblue text-lg">{feature.title}</h4>
                         <p className="text-xs text-regularblue/80 line-clamp-1">{feature.description}</p>
                       </div>
-                      <Badge className={index === activeFeature ? "text-sm bg-regularblue font-light font-adobetitre" : "text-sm bg-extralightblue/30  font-light font-adobetitre text-regularblue/70"}>
+                      <Badge className={index === activeFeature ? "text-sm bg-regularblue font-light font-googletitre" : "text-sm bg-extralightblue/30  font-light font-googletitre text-regularblue/70"}>
                         {feature.badge}
                       </Badge>
                     </div>

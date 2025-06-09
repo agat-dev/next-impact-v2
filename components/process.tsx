@@ -68,7 +68,7 @@ export default function Process() {
                 >
                   {/* Point de timeline */}
                   <div className="absolute left-1/2 -translate-x-1/2 z-10">
-                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center font-adobetitre text-lg text-regularblue">
+                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center font-googletitre text-lg text-regularblue">
                       {phase.step}
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export default function Process() {
                   >
                     <div className="bg-white rounded-2xl border border-pink-300/30 p-6">
                       <div className="flex md:flex-row flex-col items-center gap-2 mb-2">
-                        <span className="text-lg font-adobetitre font-medium text-regularblue">
+                        <span className="text-lg font-googletitre font-medium text-regularblue">
                           {phase.title}
                         </span>
                         <span className="ml-2 text-xs px-2 py-1 rounded-full bg-lightblue/20 text-regularblue font-medium">

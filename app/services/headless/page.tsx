@@ -169,7 +169,7 @@ const features = [
           ].map((item, index) => (
             <Card key={index} className="max-w-3xs col-span-1 bg-transparent border-none text-center shadow-none">
               <CardHeader>
-                <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{item.title}</CardTitle>
+                <CardTitle className="text-2xl font-googletitre text-regularblue font-medium">{item.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-mediumblue">{item.description}</p>
@@ -253,20 +253,20 @@ const features = [
               <Card key={index} className="border-blue-100">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <CardTitle className="text-2xl font-adobetitre text-regularblue font-medium">{caseStudy.title}</CardTitle>
+                    <CardTitle className="text-2xl font-googletitre text-regularblue font-medium">{caseStudy.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div>
-                    <strong className="text-sm font-adobetitre text-regularblue">Besoin :</strong>
+                    <strong className="text-sm font-googletitre text-regularblue">Besoin :</strong>
                     <p className="text-sm text-regularblue/80">{caseStudy.need}</p>
                   </div>
                   <div>
-                    <strong className="text-sm font-adobetitre text-regularblue">Solution :</strong>
+                    <strong className="text-sm font-googletitre text-regularblue">Solution :</strong>
                     <p className="text-sm text-regularblue/80">{caseStudy.solution}</p>
                   </div>
                   <div>
-                    <strong className="text-sm font-adobetitre text-regularblue">Résultat :</strong>
+                    <strong className="text-sm font-googletitre text-regularblue">Résultat :</strong>
                     <p className="text-sm text-regularblue/80">{caseStudy.result}</p>
                   </div>
                   <div className="flex flex-wrap gap-2 pt-2">
@@ -300,9 +300,9 @@ const features = [
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="relative">
               <CardHeader>
-                <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">Application Web</CardTitle>
+                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Application Web</CardTitle>
                 <CardDescription className="text-mediumblue">Fonctionnalités dédiées</CardDescription>
-                <div className="text-3xl font-medium text-regularblue font-adobetitre">3k€ - 4.5k€</div>
+                <div className="text-3xl font-medium text-regularblue font-googletitre">3k€ - 4.5k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
@@ -314,7 +314,7 @@ const features = [
                     "Performance optimisée",
                   ].map((feature, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-mediumblue">
-                      <CheckCircle className="h-4 w-4 text-regularblue font-adobetitre" />
+                      <CheckCircle className="h-4 w-4 text-regularblue font-googletitre" />
                       {feature}
                     </li>
                   ))}
@@ -329,9 +329,9 @@ const features = [
               <div className="absolute top-0 left-0 w-full h-1 bg-lightblue"></div>
               <CardHeader>
                 <Badge className="w-fit bg-blue-100 text-regularblue">Recommandé</Badge>
-                <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">Plateforme Corporate</CardTitle>
+                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Plateforme Corporate</CardTitle>
                 <CardDescription className="text-mediumblue">Intégration d'outils externes</CardDescription>
-                <div className="text-3xl font-medium text-regularblue font-adobetitre">4k€ - 6k€</div>
+                <div className="text-3xl font-medium text-regularblue font-googletitre">4k€ - 6k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
@@ -357,9 +357,9 @@ const features = [
 
             <Card className="relative">
               <CardHeader>
-                <CardTitle className="text-2xl font-adobetitre font-medium text-regularblue">Système Multi-Canal</CardTitle>
+                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Système Multi-Canal</CardTitle>
                 <CardDescription className="text-mediumblue">Web + Mobile + APIs</CardDescription>
-                <div className="text-3xl font-medium text-regularblue font-adobetitre">6k€ - 8k€</div>
+                <div className="text-3xl font-medium text-regularblue font-googletitre">6k€ - 8k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">

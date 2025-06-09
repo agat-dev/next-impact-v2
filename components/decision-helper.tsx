@@ -16,7 +16,7 @@ export async function DecisionHelper() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <Card className="border-regularblue/10 bg-extralightblue/10">
             <CardHeader>
-              <CardTitle className="text-regularblue font-adobetitre">Headless recommandé si :</CardTitle>
+              <CardTitle className="text-regularblue font-googletitre">Headless recommandé si :</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
@@ -40,7 +40,7 @@ export async function DecisionHelper() {
 
           <Card className="border-pink-200/40 bg-pink-50/20">
             <CardHeader>
-              <CardTitle className="text-regularblue font-adobetitre">WordPress traditionnel si :</CardTitle>
+              <CardTitle className="text-regularblue font-googletitre">WordPress traditionnel si :</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">

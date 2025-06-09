@@ -15,15 +15,15 @@ export default function Hero() {
       <div className="container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Text Content */}
         <div className="flex flex-col space-y-8 lg:col-span-7">
-          <span className="w-max inline-flex items-center px-3 py-1 text-xs font-adobetext font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
+          <span className="w-max inline-flex items-center px-3 py-1 text-xs font-googletexte font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
             services et conseil
           </span>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter">
-           Sites web & Apps<br /><span className="font-adobetext md:text-5xl text-4xl text-regularblue/80">WordPress et Headless</span>
+           Sites web & Apps<br /><span className="font-googletexte md:text-5xl text-4xl text-regularblue/80">WordPress et Headless</span>
           </h1>
           
-          <p className="font-adobetext text-xl text-regularblue/70 max-w-xl">
+          <p className="font-googletexte text-xl text-regularblue/70 max-w-xl">
             Développeuse full-stack et consultante spécialisée en site web corporate WordPress et applications web WordPress Headless.
           </p>
           
@@ -55,9 +55,9 @@ export default function Hero() {
           <div className="pt-8 border-t border-white/10">
             <p className="text-sm font-regular  text-lightblue mb-4">Entreprises qui me font confiance :</p>
             <div className="flex flex-wrap items-center gap-8">
-              <div className="text-lg font-adobetitre text-regularblue/80">SOWEE</div>
-              <div className="text-lg font-adobetitre text-regularblue/80">PRODITEC</div>
-              <div className="text-lg font-adobetitre text-regularblue/80">INFRALLIANCE</div>
+              <div className="text-lg font-googletitre text-regularblue/80">SOWEE</div>
+              <div className="text-lg font-googletitre text-regularblue/80">PRODITEC</div>
+              <div className="text-lg font-googletitre text-regularblue/80">INFRALLIANCE</div>
             </div>
           </div>
         </div>

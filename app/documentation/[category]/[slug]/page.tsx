@@ -70,7 +70,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
               </Link>
               <span className="text-regularblue">/</span>
-              <span className="font-adobetitre text-mediumblue/70">{article.title}</span>
+              <span className="font-googletitre text-mediumblue/70">{article.title}</span>
               </div>
             <div className="flex justify-between items-center mb-6">
               <Link href={`/documentation/${article.category}`}>

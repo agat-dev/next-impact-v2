@@ -101,21 +101,21 @@ const steps = [
               <div className="flex flex-col basis-[75%] gap-2">
                   <div className="flex flex-col gap-2">
                     <div className="w-full h-full p-2">
-                      <div className="text-xl font-adobetitre text-regularblue">Les étapes de création d'un site web</div>
+                      <div className="text-xl font-googletitre text-regularblue">Les étapes de création d'un site web</div>
                       <p className="text-xs">De l'expression des besoins à la mise en ligne</p>
                     </div>
                     <div className="w-full h-full p-2">
-                      <div className="text-xl font-adobetitre text-regularblue">Les types de sites web</div>
+                      <div className="text-xl font-googletitre text-regularblue">Les types de sites web</div>
                       <p className="text-xs">Vitrine, e-commerce, blog, plateforme</p>
                     </div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <div className="w-full h-full p-2">
-                      <div className="text-xl font-adobetitre text-regularblue">Les technologies de création de site web</div>
+                      <div className="text-xl font-googletitre text-regularblue">Les technologies de création de site web</div>
                       <p className="text-xs">CMS, no-code, développement sur mesure, headless CMS…</p>
                     </div>
                     <div className="w-full h-full p-2">
-                      <div className="text-xl font-adobetitre text-regularblue">Les bonnes pratiques</div>
+                      <div className="text-xl font-googletitre text-regularblue">Les bonnes pratiques</div>
                       <p className="text-xs">Design, SEO et performances</p>
                     </div>
                   </div>
@@ -529,7 +529,7 @@ function Steps({
                     ) : (
                       <span
                         className={cn(
-                          "text-xs font-adobetitre text-white",
+                          "text-xs font-googletitre text-white",
                           !isCurrent && "text-white"
                         )}
                       >
@@ -541,7 +541,7 @@ function Steps({
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     className={clsx(
-                      "px-4 py-2 text-lg font-adobetitre duration-300",
+                      "px-4 py-2 text-lg font-googletitre duration-300",
                       isCompleted && "text-regularblue",
                       isCurrent && "text-regularblue border-b-2 border-regularblue",
                       isFuture && "text-regularblue",
