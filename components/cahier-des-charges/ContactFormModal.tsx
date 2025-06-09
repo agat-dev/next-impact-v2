@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generatePDF } from "@/lib/pdf-generator";
+import { jsPDF } from "jspdf";
 
 type ContactFormModalProps = {
   formData: Record<string, any>;
@@ -177,4 +178,14 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
       </motion.div>
     </AnimatePresence>
   );
+}
+
+export async function generatePDF(formData: any): Promise<Blob> {
+  const doc = new jsPDF();
+  doc.text("Votre contenu PDF", 10, 10);
+  // ...ajoute le contenu à partir de formData...
+
+  // Ne fais PAS doc.save("fichier.pdf");
+  // Retourne juste le Blob :
+  return doc.output("blob");
 }
