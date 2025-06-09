@@ -48,7 +48,8 @@ async function sendContactFormWithPdf({
   });
 
   if (!res.ok) {
-    throw new Error("Erreur lors de l'envoi du message.");
+    const errorText = await res.text();
+    throw new Error(errorText || "Erreur lors de l'envoi du message.");
   }
 }
 
