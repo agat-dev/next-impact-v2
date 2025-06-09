@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Skeleton } from "@/components/ui/skeleton"
+import { ContactFormModal } from "./ContactFormModal" // Assure-toi que ce composant existe et est importé
 
 interface DocumentPreviewProps {
   formData: Record<string, any>
@@ -11,6 +12,7 @@ interface DocumentPreviewProps {
 
 export function DocumentPreview({ formData }: DocumentPreviewProps) {
   const [isLoading, setIsLoading] = useState(true)
+  const [showContactForm, setShowContactForm] = useState(false) // Ajout de l'état
 
   useEffect(() => {
     // Simuler un temps de chargement pour l'effet visuel
@@ -665,7 +667,18 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
     <Card className="border-2 border-lightblue/20">
       <div className="bg-lightblue/20 p-4 border-b border-lightblue/20 flex justify-between items-center">
         <h3 className="text-lg font-semibold text-blue-800">Prévisualisation du document</h3>
-        <span className="text-sm text-lightblue/10 bg-blue-100 px-2 py-1">Forma4</span>
+        <button
+          className="bg-regularblue hover:bg-mediumblue text-white text-sm font-semibold px-4 py-2 rounded transition"
+          onClick={() => setShowContactForm(true)}
+        >
+          Envoyer ce document
+        </button>
+        {showContactForm && (
+          <ContactFormModal
+            formData={formData}
+            onClose={() => setShowContactForm(false)}
+          />
+        )}
       </div>
       <ScrollArea className="h-[800px] w-full">
         <div className="bg-white mx-auto my-6" style={{ width: "210mm", minHeight: "297mm" }}>
@@ -674,4 +687,4 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
       </ScrollArea>
     </Card>
   );
-};
+}

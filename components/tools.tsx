@@ -99,7 +99,7 @@ export default function Tools() {
     {
       description: "GENERER GRATUITEMENT",
       title: "Rédiger mon cahier des charges",
-      lottie: "/lotties/document.json",
+      lottie: "/img/cdc.jpg",
       ctaText: "Commencer la rédaction",
       ctaLink: "/cahier-des-charges",
       content: `
@@ -117,7 +117,7 @@ export default function Tools() {
     {
       description: "SIMULER MON BUDGET",
       title: "Quel tarif pour mon site web ?",
-      lottie: "/lotties/cost-calculator.json",
+      lottie: "/img/simulateur-tarifs.jpg",
       ctaText: "Lancer l'estimation",
       ctaLink: "/simulateur-tarifs",
       content: `
@@ -159,7 +159,7 @@ export function CMSQuizCard() {
     {
       description: "TESTER EN LIGNE",
       title: "Choisir entre WordPress CMS et Headless ?",
-      lottie: "/lotties/wordpress.json",
+      lottie: "/img/quiz-cms.jpeg",
       ctaText: "Tester en ligne",
       ctaLink: "/cms-headless",
       content: `
@@ -212,7 +212,7 @@ export function CDCCard() {
           {
       description: "GENERER GRATUITEMENT",
       title: "Rédiger mon cahier des charges",
-      lottie: "/lotties/document.json",
+      lottie: "/img/cdc.jpg",
       ctaText: "Commencer la rédaction",
       ctaLink: "/cahier-des-charges",
       content: `
