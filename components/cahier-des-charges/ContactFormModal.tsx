@@ -9,6 +9,49 @@ type ContactFormModalProps = {
   onClose: () => void;
 };
 
+// Fonction dédiée pour envoyer le PDF et les infos du formulaire
+async function sendContactFormWithPdf({
+  nom,
+  email,
+  message,
+  formData,
+}: {
+  nom: string;
+  email: string;
+  message: string;
+  formData: Record<string, any>;
+}) {
+  // Génère le PDF (doit retourner un Blob)
+  const pdfBlob = await generatePDF(formData);
+  if (!(pdfBlob instanceof Blob)) {
+    throw new Error("La génération du PDF a échoué.");
+  }
+
+  // Convertit le Blob PDF en base64 pur
+  const pdfBase64 = await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve((reader.result as string).split(",")[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(pdfBlob);
+  });
+
+  // Envoie la requête à l'API
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: nom,
+      email,
+      message,
+      pdfBase64,
+    }),
+  });
+
+  if (!res.ok) {
+    throw new Error("Erreur lors de l'envoi du message.");
+  }
+}
+
 export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -23,44 +66,18 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
     setFields({ ...fields, [e.target.name]: e.target.value });
   };
 
-  // Utilitaire pour convertir un Blob en base64
-  async function blobToBase64(blob: Blob): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve((reader.result as string).split(",")[1]);
-      reader.onerror = reject;
-      reader.readAsDataURL(blob);
-    });
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
     setError(null);
 
     try {
-      // Génère le PDF (doit retourner un Blob)
-      const pdfBlob = await generatePDF(formData);
-      if (!(pdfBlob instanceof Blob)) {
-        throw new Error("La génération du PDF a échoué.");
-      }
-      const pdfBase64 = await blobToBase64(pdfBlob);
-
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: fields.nom,
-          email: fields.email,
-          message: fields.message,
-          pdfBase64, // on envoie le PDF encodé
-        }),
+      await sendContactFormWithPdf({
+        nom: fields.nom,
+        email: fields.email,
+        message: fields.message,
+        formData,
       });
-
-      if (!res.ok) {
-        throw new Error("Erreur lors de l'envoi du message.");
-      }
-
       setSent(true);
     } catch (err) {
       setError("Erreur lors de l'envoi. Merci de réessayer.");
