@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <main className="container mx-auto py-8 px-4">
-        <div className="flex justify-center space-y-4 py-8">
+        <div className="flex justify-center space-y-4 py-12">
             <h1 className="font-medium text-center">
               Générateur de Cahier des Charges
             </h1>

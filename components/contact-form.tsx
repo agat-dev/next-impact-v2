@@ -37,7 +37,7 @@ export default function ContactForm() {
     >
 
       {status === "sent" ? (
-        <p className="text-pink-600">Merci, votre message a bien été envoyé.</p>
+        <p className="text-regularblue">Merci, votre message a bien été envoyé.</p>
       ) : (
         
         <div className="flex flex-col gap-6">

@@ -670,10 +670,10 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
       <div className="bg-lightblue/20 p-4 border-b border-lightblue/20 flex justify-between items-center">
         <h3 className="text-lg font-semibold text-blue-800">Prévisualisation du document</h3>
         <button
-          className="bg-regularblue hover:bg-mediumblue text-white text-sm font-semibold px-4 py-2 rounded transition"
+          className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
           onClick={() => setShowContactForm(true)}
         >
-          Envoyer ce document
+          Envoyer pour devis
         </button>
         {showContactForm && (
           <ContactFormModal
@@ -681,8 +681,10 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
             onClose={() => setShowContactForm(false)}
           />
         )}
+      <button 
+      className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+      onClick={() => downloadPDF(formData)}>Télécharger le PDF</button>
       </div>
-      <button onClick={() => downloadPDF(formData)}>Télécharger le PDF</button>
 
 
       <ScrollArea className="h-[800px] w-full">

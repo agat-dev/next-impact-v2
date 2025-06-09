@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { generatePDFBlob } from "@/lib/pdf-generator";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 type ContactFormModalProps = {
   formData: Record<string, any>;
@@ -126,10 +128,10 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <h2 className="text-xl font-bold text-regularblue mb-2">Envoyer ce document</h2>
+              <h2 className="text-xl font-bold text-regularblue mb-2">Demander le devis pour ce cahier des charges</h2>
               <div>
-                <label className="block text-sm font-medium text-mediumblue mb-1">Votre nom</label>
-                <input
+                <label className="block text-sm text-mediumblue mb-1">Votre nom</label>
+                <Input
                   type="text"
                   name="nom"
                   value={fields.nom}
@@ -140,8 +142,8 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-mediumblue mb-1">Votre email</label>
-                <input
+                <label className="block text-sm text-mediumblue mb-1">Votre email</label>
+                <Input
                   type="email"
                   name="email"
                   value={fields.email}
@@ -152,8 +154,8 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-mediumblue mb-1">Message (optionnel)</label>
-                <textarea
+                <label className="block text-sm text-mediumblue mb-1">Message (optionnel)</label>
+                <Textarea
                   name="message"
                   value={fields.message}
                   onChange={handleChange}
@@ -165,7 +167,7 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
               {error && <div className="text-red-600 text-sm">{error}</div>}
               <button
                 type="submit"
-                className="w-full bg-regularblue hover:bg-mediumblue text-white font-semibold py-2 rounded transition"
+                className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
                 disabled={sending}
               >
                 {sending ? "Envoi en cours..." : "Envoyer"}
