@@ -4,9 +4,7 @@ import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { Search, X } from "lucide-react"
 import { useRouter } from "next/navigation"
-
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import type { ArticleMeta } from "@/lib/markdown"
@@ -90,7 +88,6 @@ export function SearchDocumentation({ articles, categories }: SearchDocumentatio
   return (
     <div className="relative w-full max-w-md" ref={searchRef}>
       <div className="relative">
-        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
           ref={inputRef}
           type="search"
@@ -101,34 +98,29 @@ export function SearchDocumentation({ articles, categories }: SearchDocumentatio
           onFocus={() => setIsSearching(true)}
           onKeyDown={handleKeyDown}
         />
-        {searchQuery && (
-          <Button variant="ghost" size="icon" className="absolute right-0 top-0 h-9 w-9" onClick={clearSearch}>
-            <X className="h-4 w-4" />
-            <span className="sr-only">Clear search</span>
-          </Button>
-        )}
+        {/* Croix supprimée */}
       </div>
 
       {isSearching && (searchQuery || filteredCategories.length > 0 || filteredArticles.length > 0) && (
-        <div className="absolute top-full z-10 mt-2 w-full rounded-md bg-background shadow-md">
+        <div className="absolute top-full z-10 mt-2 w-full rounded-md bg-white shadow-md">
           <div className="p-4">
             {filteredCategories.length === 0 && filteredArticles.length === 0 ? (
-              <p className="text-center text-sm text-muted-foreground py-6">No results found</p>
+              <p className="text-center text-sm py-6">No results found</p>
             ) : (
               <>
                 {filteredCategories.length > 0 && (
                   <div className="mb-4">
-                    <h3 className="text-sm font-medium text-muted-foreground mb-2">Categories</h3>
+                    <h3 className="text-sm font-medium text-mediumblue mb-2">Categories</h3>
                     <ul className="space-y-2">
                       {filteredCategories.map((category) => (
                         <li key={category.id}>
                           <Link
                             href={category.url}
-                            className="block rounded-md p-2 hover:bg-muted"
+                            className="block rounded-md p-2 hover:bg-extralightblue/20"
                             onClick={() => setIsSearching(false)}
                           >
                             <div className="font-medium">{category.title}</div>
-                            <div className="text-sm text-muted-foreground">{category.description}</div>
+                            <div className="text-sm text-mediumblue">{category.description}</div>
                           </Link>
                         </li>
                       ))}
@@ -138,19 +130,19 @@ export function SearchDocumentation({ articles, categories }: SearchDocumentatio
 
                 {filteredArticles.length > 0 && (
                   <div>
-                    <h3 className="text-sm font-medium text-muted-foreground mb-2">Articles</h3>
+                    <h3 className="text-sm font-medium text-mediumblue mb-2">Articles</h3>
                     <ul className="space-y-2">
                       {filteredArticles.map((article) => (
                         <li key={article.slug}>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="block rounded-md p-2 hover:bg-muted"
+                            className="block rounded-md p-2 hover:bg-extralightblue/20"
                             onClick={() => setIsSearching(false)}
                           >
                             <div className="font-medium">{article.title}</div>
-                            <div className="text-sm text-muted-foreground">{article.description}</div>
-                            <div className="mt-1 text-xs text-muted-foreground">
-                              Category: {categories.find((c) => c.id === article.category)?.title || article.category}
+                            <div className="text-sm text-mediumblue">{article.description}</div>
+                            <div className="mt-1 text-xs text-regularblue/80">
+                              Categorie: {categories.find((c) => c.id === article.category)?.title || article.category}
                             </div>
                           </Link>
                         </li>

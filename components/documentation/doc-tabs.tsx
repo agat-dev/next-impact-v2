@@ -148,16 +148,16 @@ export default function DocTabs() {
                       {articles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left ">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -170,16 +170,16 @@ export default function DocTabs() {
                       {marketingArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -192,16 +192,16 @@ export default function DocTabs() {
                       {uxuiArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -214,16 +214,16 @@ export default function DocTabs() {
                       {projetArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -236,16 +236,16 @@ export default function DocTabs() {
                       {cmsArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -258,16 +258,16 @@ export default function DocTabs() {
                       {wordpressArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -280,16 +280,16 @@ export default function DocTabs() {
                       {headlessCmsArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -302,16 +302,16 @@ export default function DocTabs() {
                       {frameworksArticles.map((article) => ( 
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -324,16 +324,16 @@ export default function DocTabs() {
                       {seoArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>

@@ -121,10 +121,10 @@
     @apply text-4xl text-regularblue font-googletitre;
   }
   h2 {
-    @apply text-3xl text-mediumblue pt-10 font-googletitre;
+    @apply text-mediumblue pt-4 pb-4 font-googletitre;
   }
   h3 {
-    @apply text-2xl text-mediumblue pt-6;
+    @apply text-2xl pt-6 pb-2;
   }
   h4 {
     @apply text-xl text-mediumblue;
@@ -136,7 +136,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-googletexte font-normal;
+    @apply font-googletexte font-normal text-mediumblue;
   }
   a {
     @apply text-regularblue no-underline;

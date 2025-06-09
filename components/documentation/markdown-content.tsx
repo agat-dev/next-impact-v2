@@ -23,17 +23,18 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         .replace(/[^\wÀ-ÖØ-öø-ÿ-]/g, "");
 
       let className = "";
+      let border = "";
       if (depth === 1) {
-        className = "text-3xl font-medium text-regularblue"; // Marges pour h1
+        className = "text-4xl font-medium text-regularblue";
       } else if (depth === 2) {
-        className = "text-2xl font-medium text-regularblue md-h2"; // Marges pour h2
+        className = "text-3xl font-medium text-regularblue";
+        border = `<hr class="border-t-2 border-extralightblue my-10" />`;
       } else {
-        className = "text-xl font-medium text-regularblue/80"; // Marges pour h3
+        className = "text-2xl font-medium text-regularblue";
       }
 
-      return `<h${depth} id="${anchor}" class="${className}">${text}</h${depth}>`;
+      return `${border}<h${depth} id="${anchor}" class="${className}">${text}</h${depth}>`;
     };
-
 
     marked.setOptions({
       gfm: true, // GitHub Flavored Markdown
