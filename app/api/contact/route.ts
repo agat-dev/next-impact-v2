@@ -27,12 +27,13 @@ export async function POST(req: Request) {
     });
 
     if (error) {
-      console.error(error);
-      return new Response("Erreur Resend", { status: 500 });
+      console.error("Resend error:", error);
+      return new Response("Erreur Resend: " + JSON.stringify(error), { status: 500 });
     }
 
     return new Response("Message envoyé", { status: 200 });
   } catch (err) {
-    return new Response("Erreur serveur", { status: 500 });
+    console.error("Server error:", err);
+    return new Response("Erreur serveur: " + String(err), { status: 500 });
   }
 }

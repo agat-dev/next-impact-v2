@@ -41,6 +41,9 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
     try {
       // Génère le PDF (doit retourner un Blob)
       const pdfBlob = await generatePDF(formData);
+      if (!(pdfBlob instanceof Blob)) {
+        throw new Error("La génération du PDF a échoué.");
+      }
       const pdfBase64 = await blobToBase64(pdfBlob);
 
       const res = await fetch("/api/contact", {
