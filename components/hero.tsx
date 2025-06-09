@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function Hero() {
     return (
-    <section className="relative pt-12 pb-24 md:pt-24 md:pb-24 overflow-hidden">
+    <section className="h-[90vh] relative pt-12 pb-24 md:pt-24 md:pb-24 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px]"></div>
       <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-brand-700/30 rounded-full blur-[100px]"></div>

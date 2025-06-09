@@ -3,13 +3,13 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import LottieAnimation from "@/components/ui/lottie-animation";
+import Image from "next/image";
 
 type ExpandableCardNIPProps = {
   cards: {
     title: string;
     description: string;
-    lottie: string;
+    image: string;
     ctaText: string;  
     ctaLink: string;
     content: string;
@@ -128,26 +128,26 @@ export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
             <div className="flex gap-4 flex-col md:flex-row md:items-center md:justify-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 {/* Remplacement de l'image par Lottie */}
-                <div className="rounded-lg object-contain object-top">
-                  <LottieAnimation
-                    key={`lottie-${card.title}-${id}`}
-                    animationPath={card.lottie}
-                    loop
-                    width={60}
-                    height={60}
-                  />
+                <div className="rounded-lg object-contain object-top mr-4">
+                  <Image
+                    src={card.lottie}
+                    alt={card.title}
+                    width={100}
+                    height={100}
+                    className="w-24 h-24 md:w-32 md:h-32 rounded-lg" 
+                    />
                 </div>
               </motion.div>
               <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="pt-1 font-regular text-xl text-regularblue text-center md:text-left"
+                  className="pt-1 pb-4 font-regular text-2xl text-regularblue text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${card.title}-${id}`}
-                  className="text-darkblue/70 text-left text-xs"
+                  className="text-regularblue text-left font-medium text-sm"
                 >
                   {card.description}
                 </motion.p>

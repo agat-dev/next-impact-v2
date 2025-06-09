@@ -6,6 +6,8 @@ import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq"
 import { CTASection } from "@/components/cta-section";
 import { DecisionHelper } from "@/components/decision-helper";
+import { Zap, Shield, Smartphone, Globe, Users, BarChart } from "lucide-react";
+import FeatureCarousel from "@/components/features-carousel";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -31,7 +33,56 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-
+const wordpressFeatures = [
+  {
+    id: "1",
+    title: "Sites Corporate",
+    description: "Présentation d'entreprise, services, équipes et réalisations.",
+    image: "/img/desktop-screen-sowee.png?height=400&width=400",
+    badge: "WordPress",
+    details: ["Groupes industriels", "PME et startups", "Filiales internationales"],
+  },
+  {
+    id: "2",
+    title: "Sites Institutionnels",
+    description: "Collectivités, associations, fondations.",
+    image: "/img/desktop-screen-hermitage.jpg?height=400&width=400",
+    badge: "WordPress",
+    details: ["Mairies", "ONG", "Établissements publics"],
+  },
+  {
+    id: "3",
+    title: "Sites de Services",
+    description: "Cabinets, consultants, professions libérales.",
+    image: "/img/desktop-screen-itavera-am.jpg?height=400&width=400",
+    badge: "WordPress",
+    details: ["Cabinets d'avocats", "Consultants", "Centres médicaux"],
+  },
+  {
+    id: "4",
+    title: "Portails d'Information",
+    description: "Actualités, documentation, ressources",
+    image: "/img/desktop-screen-mediatico.jpg?height=400&width=600",
+    badge: "WordPress",
+    details: ["Centres de formation", "Médias locaux", "Portails RH"],
+  },
+  {
+    id: "5",
+    title: "Plateformes collaboratives",
+    description: "Wikis, forums, intranets et extranets.",
+    image: "/img/desktop-screen-lesdoleances.jpg?height=400&width=600",
+    badge: "Headless WordPress",
+    details: ["Wikis", "Forums", "Intranets et Extranets"],
+  },
+  {
+    id: "6",
+    title: "Applications Web",
+    description: "Solutions sur-mesure, intégrations API, gestion de données.",
+    image: "/img/desktop-screen-application-web.jpg?height=400&width=600",
+    badge: "Headless WordPress",
+    details: ["Applications métiers", "Portails clients", "Intranets"],
+  },
+]
 
   return (
     <>
@@ -45,12 +96,15 @@ export default function Home() {
         <div className="absolute top-[900px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
         <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
       </div>
-        <div className="text-center mt-12" id="services">
-          <h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-4">Services</h2>
-          <p className="text-lg text-regularblue/80">La simplicité de WordPress, la qualité du développement</p>
-        </div>
-      <ServicesDev />
-      <DecisionHelper />
+      <div className="w-full max-w-7xl mx-auto p-6">
+        <div className="text-center mb-12">
+        <h2 className="text-5xl font-bold tracking-tight text-regularblue mb-4">Services</h2>
+        <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
+          WordPress natif ou Headless pour une présence en ligne professionnelle et efficace, réalisable rapidement et possédant une administration adaptée aux équipes.
+        </p>
+      </div>
+      <FeatureCarousel features={wordpressFeatures} />
+      </div>
 
       {/* Tools Section */}
       <div className="absolute inset-0 -z-10">

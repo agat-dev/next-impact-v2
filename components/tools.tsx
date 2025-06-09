@@ -82,10 +82,10 @@ export default function Tools() {
   ];
   const cards = [
     {
-      description: "TESTER EN LIGNE",
+      description: "TEST EN LIGNE",
       title: "Choisir entre WordPress CMS et Headless ?",
-      lottie: "/lotties/wordpress.json",
-      ctaText: "Tester en ligne",
+      lottie: "/img/quiz-cms.jpeg",
+      ctaText: "Test en ligne",
       ctaLink: "/cms-headless",
       content: `
       <p>
@@ -140,8 +140,8 @@ export default function Tools() {
       <section className="py-12 md:px-16 px-0 md:py-12 lg:py-24">
         <div className="pb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-regularblue mb-6">
-            Outils d'analyse de projet
-          </h2>
+            Outils gratuits en ligne
+                      </h2>
           <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
             Pour savoir, décider et agir sereinement
           </p>
