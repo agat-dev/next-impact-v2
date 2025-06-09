@@ -707,7 +707,7 @@ export function FeatureCarousel({
             >
               <AnimatedStepImage
                 alt={image.alt}
-                className="pointer-events-none top-[50%] w-[90%] overflow-hidden rounded-2xl border border-neutral-100/10 md:left-[35px] md:top-[30%] md:w-full dark:border-zinc-700"
+                className="pointer-events-none top-[50%] w-[400px] overflow-hidden rounded-2xl border border-neutral-100/10 md:left-[35px] md:top-[30%] md:w-full dark:border-zinc-700"
                 src={image.step4light}
                 preset="fadeInScale"
                 delay={0.1}

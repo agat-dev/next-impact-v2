@@ -237,7 +237,7 @@ const CASE_STUDIES: CaseStudy[] = [
       "Administration simplifiée pour l'équipe marketing",
     ],
     gallery: {
-      url: "/img/desktop-screen-sowee.png",
+      url: "/img/desktop-screen-sowee.webp",
       alt: "Interface de la section blog Sowee",
     },
     detailedDescription:
@@ -435,7 +435,7 @@ const CASE_STUDIES: CaseStudy[] = [
       "Facilitation de la prise de contact avec les acheteurs",
     ],
     gallery: {
-      url: "/img/desktop-screen-wagner-hamisky.png",
+      url: "/img/desktop-screen-wagner-hamisky.jpg",
       alt: "Page d'accueil du site Wagner Hamisky",
     },
     detailedDescription:

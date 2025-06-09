@@ -1,12 +1,9 @@
-import ServicesDev from "@/components/services-dev";
 import Hero from "@/components/hero";
 import Tools from "@/components/tools";
 import Realisations from "@/components/case-studies/realisations";
 import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq"
 import { CTASection } from "@/components/cta-section";
-import { DecisionHelper } from "@/components/decision-helper";
-import { Zap, Shield, Smartphone, Globe, Users, BarChart } from "lucide-react";
 import FeatureCarousel from "@/components/features-carousel";
 import { Metadata } from "next";
 
@@ -38,7 +35,7 @@ const wordpressFeatures = [
     id: "1",
     title: "Sites Corporate",
     description: "Présentation d'entreprise, services, équipes et réalisations.",
-    image: "/img/desktop-screen-sowee.png?height=400&width=400",
+    image: "/img/desktop-screen-sowee.webp?height=400&width=400",
     badge: "WordPress",
     details: ["Groupes industriels", "PME et startups", "Filiales internationales"],
   },

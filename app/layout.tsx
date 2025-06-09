@@ -24,7 +24,7 @@ export default function RootLayout({
         <link rel="icon" href="/img/logo-small.png" />
 
         <title>Next Impact - Tout pour lancer son site</title> 
-        <link rel="stylesheet" href="https://use.typekit.net/ilu1rkm.css"></link>
+        <link rel="preload" href="https://use.typekit.net/ilu1rkm.css" as="style"></link>
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&family=Inter:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"></link>
