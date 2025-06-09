@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 import type { ArticleMeta } from "@/lib/markdown"
 
 interface Category {

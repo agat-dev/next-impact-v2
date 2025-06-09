@@ -1,7 +1,7 @@
 ---
 title: Identité visuelle
 description: Qu'est-ce que l'identité visuelle, pourquoi est-elle essentielle, et comment la développer efficacement ? 
-category: design
+category: design-ui-ux
 author: Next Impact
 date: "2025-03-15"
 order: 1
@@ -121,22 +121,3 @@ Les marchés évoluent, tout comme les attentes des clients. Il est crucial de r
 
 Une identité visuelle forte n'est pas qu'un détail esthétique ; c'est un outil stratégique. Elle améliore la reconnaissance de la marque, la perception des clients et la capacité de votre entreprise à prospérer dans un environnement concurrentiel.
 
-<aside>
-🛠️
-
-## Outils
-
-[Stratégie Marketing](https://www.notion.so/Strat-gie-Marketing-17b3c8ef34fa8092ba67c23109cf8085?pvs=21) 
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Cours en Ligne et Formation Marketing - Google Ateliers Numériques- Grow with Google](https://grow.google/intl/fr_fr/courses-and-tools/?category=career&topic=digital-marketing)
-
-[https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA](https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA)
-
-</aside>

@@ -99,12 +99,13 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   </span>
                 </div>
             </div>
-              <aside className="hidden lg:block pl-8">
+            <Separator className="my-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-4 mt-8">
+              <aside className="col-span-1 hidden lg:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto pr-4">
               <TableOfContentsPopup tableOfContents={tableOfContents} />
               </aside>
-            <Separator />
-          <div className="flex flex-col">      
-            <div className="w-10/12 lg:w-8/12 mx-auto">
+          <div className="col-span-3 grow flex flex-col">      
+            <div className="w-10/12 lg:w-8/12 mx-auto pb-12">
             <MarkdownContent content={article.content} />
             </div>
             <Separator />
@@ -116,15 +117,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                     <Link
                       key={relatedArticle.slug}
                       href={`/documentation/${relatedArticle.category}/${relatedArticle.slug}`}
-                      className="group rounded-lg border p-4 hover:bg-muted/50"
+                      className="group rounded-lg border p-4 hover:border-lightblue/20 transition-colors hover:bg-extralightblue/5"
                     >
                       <h4 className="font-medium text-regularblue hover:text-regularblue/80">{relatedArticle.title}</h4>
-                      <p className="text-sm text-muted-foreground">{relatedArticle.description}</p>
+                      <p className="text-sm text-mediumblue">{relatedArticle.description}</p>
                     </Link>
                   ))}
                 </div>
               </div>
             )}
+          </div>
           </div>
               </div>
             </div>

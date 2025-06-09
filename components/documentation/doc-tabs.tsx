@@ -3,7 +3,6 @@ import { getAllArticles } from "@/lib/markdown";
 
 import { SearchDocumentation } from "@/components/documentation/search-documentation";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function DocTabs() {
@@ -17,8 +16,8 @@ export default function DocTabs() {
         url: "/documentation/marketing-digital",
       },
       {
-        id: "Design et UI/UX",
-        title: "Design et UI/UX",
+        id: "Design & UI/UX",
+        title: "Design & UI/UX",
         description: "Principes et concepts du design et de l'UI/UX",
         url: "/documentation/design-ui-ux",
       },
@@ -35,23 +34,11 @@ export default function DocTabs() {
         url: "/documentation/wordpress",
       },
       {
-        id: "CMS",
-        title: "Choisir un CMS",
-        description: "Choisir un CMS pour votre site web",
-        url: "/documentation/cms",
-      },
-      {
         id: "Headless CMS",
         title: "Headless CMS",
         description: "Choisir Headless CMS pour votre site web",
         url: "/documentation/headless-cms",
       },      
-      {
-        id: "Frameworks",
-        title: "Frameworks",
-        description: "Choisir Frameworks", 
-        url: "/documentation/frameworks",
-      },
       {
         id: "SEO",
         title: "SEO",
@@ -64,23 +51,17 @@ export default function DocTabs() {
     const marketingArticles = articles.filter(
       (article) => article.category === "marketing-digital"
     );
-    const uxuiArticles = articles.filter(
-      (article) => article.category === "design"
+    const designArticles = articles.filter(
+      (article) => article.category === "design-ui-ux"
     );
     const projetArticles = articles.filter(
       (article) => article.category === "projet-site-web"
     );
     const wordpressArticles = articles.filter(
       (article) => article.category === "wordpress"
-    ); 
-    const cmsArticles = articles.filter(
-      (article) => article.category === "cms"
     );
     const headlessCmsArticles = articles.filter(
       (article) => article.category === "headless-cms"
-    );
-    const frameworksArticles = articles.filter(
-      (article) => article.category === "frameworks"
     );
     const seoArticles = articles.filter(
       (article) => article.category === "seo");
@@ -113,19 +94,14 @@ export default function DocTabs() {
                       Marketing
                     </TabsTrigger>
                     <TabsTrigger
-                      value="design"
+                      value="design-ui-ux"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Design
+                      Design & UI/UX
                     </TabsTrigger>              
                     <TabsTrigger
                       value="seo"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
                       SEO
-                    </TabsTrigger>
-                    <TabsTrigger
-                      value="cms"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      CMS
                     </TabsTrigger>                 
                     <TabsTrigger
                       value="wordpress"
@@ -136,12 +112,7 @@ export default function DocTabs() {
                       value="headless-cms"
                       className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
                       Headless CMS
-                    </TabsTrigger> 
-                    <TabsTrigger
-                      value="frameworks"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Frameworks
-                    </TabsTrigger>                    
+                    </TabsTrigger>                 
                   </TabsList>
                   <TabsContent value="all" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -187,9 +158,9 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="design" className="pt-6">
+                  <TabsContent value="design-ui-ux" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {uxuiArticles.map((article) => (
+                      {designArticles.map((article) => (
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
@@ -231,28 +202,6 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="cms" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {cmsArticles.map((article) => (
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
-                          <div className="space-y-2 text-left">
-                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
-                            <p className="text-mediumblue">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
                   <TabsContent value="wordpress" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {wordpressArticles.map((article) => (
@@ -278,28 +227,6 @@ export default function DocTabs() {
                   <TabsContent value="headless-cms" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {headlessCmsArticles.map((article) => (
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
-                          <div className="space-y-2 text-left">
-                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
-                            <p className="text-mediumblue text-sm">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="frameworks" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {frameworksArticles.map((article) => ( 
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">

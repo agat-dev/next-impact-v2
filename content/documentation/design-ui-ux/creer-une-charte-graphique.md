@@ -1,7 +1,7 @@
 ---
 title: Créer une charte graphique
 description: comment créer une charte graphique qui reflète fidèlement votre identité tout en étant professionnelle et impactante ? 
-category: design
+category: design-ui-ux
 author: Next Impact
 date: "2025-03-15"
 order: 4
@@ -100,22 +100,3 @@ Explorez ces ressources pour créer une charte graphique soignée, même avec un
 
 Une charte graphique bien pensée est un investissement précieux pour le positionnement de votre marque et la construction d’une identité forte. Elle garantit la cohérence visuelle et renforce la relation de confiance avec vos clients. En suivant ces étapes et en tirant parti des outils disponibles, vous aurez tous les atouts pour réussir.
 
-<aside>
-🛠️
-
-## Outils
-
-[Stratégie Marketing](https://www.notion.so/Strat-gie-Marketing-17b3c8ef34fa8092ba67c23109cf8085?pvs=21) 
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Cours en Ligne et Formation Marketing - Google Ateliers Numériques- Grow with Google](https://grow.google/intl/fr_fr/courses-and-tools/?category=career&topic=digital-marketing)
-
-[https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA](https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA)
-
-</aside>

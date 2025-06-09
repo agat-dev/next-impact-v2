@@ -1,7 +1,7 @@
 ---
 title: Créer son identité visuelle
 description: Les bases d’une identité visuelle efficace
-category: design
+category: design-ui-ux
 author: Next Impact
 date: "2025-03-15"
 order: 3
@@ -93,22 +93,3 @@ Une fois votre identité visuelle définie, la clé est de l’appliquer systém
 
 Créer une identité visuelle ne se résume pas à choisir un joli logo ou des couleurs tendance. C’est un processus stratégique qui influence profondément la perception de votre marque. Avec ce guide, vous êtes maintenant équipé pour bâtir une identité forte et cohérente.
 
-<aside>
-🛠️
-
-## Outils
-
-[Stratégie Marketing](https://www.notion.so/Strat-gie-Marketing-17b3c8ef34fa8092ba67c23109cf8085?pvs=21) 
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Cours en Ligne et Formation Marketing - Google Ateliers Numériques- Grow with Google](https://grow.google/intl/fr_fr/courses-and-tools/?category=career&topic=digital-marketing)
-
-[https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA](https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA)
-
-</aside>

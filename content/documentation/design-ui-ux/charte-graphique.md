@@ -1,7 +1,7 @@
 ---
 title: Charte graphique
 description: Qu'est-ce qu'une charte graphique, pourquoi est-elle indispensable, et comment la définir ? 
-category: design
+category: design-ui-ux
 author: Next Impact
 date: "2025-03-15"
 order: 2
@@ -121,22 +121,3 @@ Une fois terminée, diffusez la charte à tous vos collaborateurs. Assurez-vous 
 
 Une charte graphique robuste est bien plus qu’un simple document ; elle est une déclaration stratégique de ce que représente votre entreprise. Maintenir une cohérence visuelle et éditoriale à travers toutes les interactions avec votre public renforce votre marque, rend vos messages plus efficaces et vous permet de vous démarquer durablement.
 
-<aside>
-🛠️
-
-## Outils
-
-[Stratégie Marketing](https://www.notion.so/Strat-gie-Marketing-17b3c8ef34fa8092ba67c23109cf8085?pvs=21) 
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Cours en Ligne et Formation Marketing - Google Ateliers Numériques- Grow with Google](https://grow.google/intl/fr_fr/courses-and-tools/?category=career&topic=digital-marketing)
-
-[https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA](https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA)
-
-</aside>

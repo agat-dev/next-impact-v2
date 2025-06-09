@@ -20,7 +20,7 @@ export function generateStaticParams() {
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { category } = await params
+  const { category } = params
   const articles =  getArticlesByCategory(category)
 
   if (articles.length === 0) {
@@ -77,7 +77,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               {articles.map((article) => (
                 <div
                   key={article.slug}
-                  className="group relative rounded-lg bg-white border p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                  className="group relative rounded-lg bg-white border p-6 border border-lightblue/10 hover:border-lightblue/20 hover:bg-extrelightblue/ transition-colors">
                   <div className="space-y-2">
                     <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
                     <p className="text-mediumblue text-sm">{article.description}</p>

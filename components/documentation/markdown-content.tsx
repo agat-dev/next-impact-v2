@@ -28,7 +28,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         className = "text-4xl font-medium text-regularblue";
       } else if (depth === 2) {
         className = "text-3xl font-medium text-regularblue";
-        border = `<hr class="border-t-2 border-extralightblue my-10" />`;
+        border = `<hr class="border-t-[1px] border-extralightblue mt-12 mb-2" />`;
       } else {
         className = "text-2xl font-medium text-regularblue";
       }

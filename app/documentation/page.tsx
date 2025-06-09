@@ -1,12 +1,4 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
 import DocTabs from "@/components/documentation/doc-tabs";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import LottieAnimation from "@/components/ui/lottie-animation";
-import { ExpandableCardNIP } from "@/components/conseil/expandable-cards";
-
 export default function DocumentationPage() {
   return (
     <main className="min-h-screen">
