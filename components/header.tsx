@@ -68,9 +68,6 @@ export function NavBar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
               <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
@@ -100,6 +97,12 @@ export function NavBar() {
                   </div>
                 </ul>
               </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
