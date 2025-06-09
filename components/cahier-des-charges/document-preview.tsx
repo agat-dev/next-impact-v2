@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Skeleton } from "@/components/ui/skeleton"
 import { ContactFormModal } from "./ContactFormModal" // Assure-toi que ce composant existe et est importé
+import { downloadPDF } from "@/lib/pdf-generator"
+
 
 interface DocumentPreviewProps {
   formData: Record<string, any>
@@ -680,6 +682,9 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           />
         )}
       </div>
+      <button onClick={() => downloadPDF(formData)}>Télécharger le PDF</button>
+
+
       <ScrollArea className="h-[800px] w-full">
         <div className="bg-white mx-auto my-6" style={{ width: "210mm", minHeight: "297mm" }}>
           {renderPreviewContent()}

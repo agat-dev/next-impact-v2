@@ -215,23 +215,6 @@ export function CahierDesChargesForm() {
               ))}
             </Accordion>
 
-            <div className="flex justify-center pt-6">
-              <Button
-                type="submit"
-                size="lg"
-                className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
-                disabled={isGenerating}
-              >
-                {isGenerating ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Génération en cours...
-                  </>
-                ) : (
-                  "Générer le Cahier des Charges (PDF)"
-                )}
-              </Button>
-            </div>
           </form>
         </TabsContent>
 
