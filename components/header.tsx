@@ -99,10 +99,10 @@ export function NavBar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-6'>Ressources</Link>
+              <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-2'>Ressources</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-6'>Réalisations</Link>
+              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
