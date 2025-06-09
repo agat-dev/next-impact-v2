@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { generatePDF } from "@/lib/pdf-generator";
-import { jsPDF } from "jspdf";
+import { generatePDFBlob } from "@/lib/pdf-generator";
 
 type ContactFormModalProps = {
   formData: Record<string, any>;
@@ -22,8 +21,7 @@ async function sendContactFormWithPdf({
   message: string;
   formData: Record<string, any>;
 }) {
-  // Génère le PDF (doit retourner un Blob)
-  const pdfBlob = await generatePDF(formData);
+  const pdfBlob = await generatePDFBlob(formData);
   if (!(pdfBlob instanceof Blob)) {
     throw new Error("La génération du PDF a échoué.");
   }
@@ -178,14 +176,4 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
       </motion.div>
     </AnimatePresence>
   );
-}
-
-export async function generatePDF(formData: any): Promise<Blob> {
-  const doc = new jsPDF();
-  doc.text("Votre contenu PDF", 10, 10);
-  // ...ajoute le contenu à partir de formData...
-
-  // Ne fais PAS doc.save("fichier.pdf");
-  // Retourne juste le Blob :
-  return doc.output("blob");
 }
