@@ -28,6 +28,21 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&family=Inter:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"></link>
         </head>
+{/* Google tag (gtag.js) */}
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-3D5PKXEN72"
+></script>
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3D5PKXEN72');
+    `,
+  }}
+/>
       <body>
       <Particles
         className="absolute inset-0 z-0 h-screen w-full mx-auto"
