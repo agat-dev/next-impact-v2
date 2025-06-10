@@ -4,6 +4,57 @@ import { notFound } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 import { getArticlesByCategory, getAllCategories } from "@/lib/markdown"
+import { Metadata } from "next";
+
+// meta données dynamiques pour la page d'étude de cas
+export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
+  const categoryInfo = {
+    bases: {
+      title: "Marketing Digital",
+      description: "Découvrez les principes et concepts de base du marketing digital",
+    },
+    seo: {
+      title: "Search Engine Optimization (SEO)",
+      description: "Comprehensive guides and resources to help you master SEO for your website.",
+    },
+    "ux-ui": {
+      title: "UX/UI Design",
+      description: "Learn how to create user-friendly and engaging website experiences.",
+    },
+    content: {
+      title: "Content Strategy",
+      description: "Develop effective content strategies to engage and convert your audience.",
+    },
+    analytics: {
+      title: "Analytics",
+      description: "Understand how to measure and analyze your website's performance.",
+    },
+  };
+
+  const info = categoryInfo[params.category as keyof typeof categoryInfo];
+  const title = info?.title || params.category.charAt(0).toUpperCase() + params.category.slice(1).replace(/-/g, " ");
+  const description = info?.description || `Articles et ressources sur ${title}.`;
+
+  return {
+    title: `${title} | Documentation | Next Impact`,
+    description,
+    openGraph: {
+      title: `${title} | Documentation | Next Impact`,
+      description,
+      url: `https://next-impact.digital/documentation/${params.category}`,
+      type: "website",
+      images: [
+        {
+          url: "https://next-impact.digital/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+  };
+}
+
 
 interface CategoryPageProps {
   params: {

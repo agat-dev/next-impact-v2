@@ -24,7 +24,7 @@ export default function Hero() {
           </h1>
           
           <p className="font-googletexte text-xl text-regularblue/70 max-w-xl">
-            Développeuse full-stack et consultante spécialisée en site web corporate WordPress et applications web WordPress Headless.
+            Développeuse full-stack et consultante spécialisée en sites web corporate WordPress et applications web WordPress Headless.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
