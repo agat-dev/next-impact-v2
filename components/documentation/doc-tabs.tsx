@@ -1,4 +1,3 @@
-
 import { getAllArticles } from "@/lib/markdown";
 
 import { SearchDocumentation } from "@/components/documentation/search-documentation";
@@ -80,39 +79,48 @@ export default function DocTabs() {
               </div>
             </section>
             <section className="w-full py-8">
-              <div className="container px-4 md:px-6">
+              <div className="container lg:px-4 md:px-6 px-0">
                 <Tabs defaultValue="projet-site-web" className="w-full">
-                  <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
+                  <TabsList
+                    className="w-full h-full justify-start rounded-none border-b bg-transparent p-0 overflow-x-auto lg:flex-nowrap flex-wrap flex gap-4 scrollbar-thin scrollbar-thumb-lightblue/40 scrollbar-track-transparent "
+                    style={{ WebkitOverflowScrolling: "touch" }}
+                  >
                     <TabsTrigger
                       value="projet-site-web"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Projet web
-                    </TabsTrigger>  
+                    </TabsTrigger>
                     <TabsTrigger
                       value="marketing-digital"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Marketing
                     </TabsTrigger>
                     <TabsTrigger
                       value="design-ui-ux"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Design & UI/UX
-                    </TabsTrigger>              
+                    </TabsTrigger>
                     <TabsTrigger
                       value="seo"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       SEO
-                    </TabsTrigger>                 
+                    </TabsTrigger>
                     <TabsTrigger
                       value="wordpress"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       WordPress
-                    </TabsTrigger>   
+                    </TabsTrigger>
                     <TabsTrigger
                       value="headless-cms"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Headless CMS
-                    </TabsTrigger>                 
+                    </TabsTrigger>
                   </TabsList>
                   <TabsContent value="all" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

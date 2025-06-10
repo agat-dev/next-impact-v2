@@ -105,7 +105,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               <TableOfContentsPopup tableOfContents={tableOfContents} />
               </aside>
           <div className="col-span-3 grow flex flex-col">      
-            <div className="w-10/12 lg:w-8/12 mx-auto pb-12">
+            <div className="lg:w-10/12 w-full mx-auto pb-12">
             <MarkdownContent content={article.content} />
             </div>
             <Separator />
