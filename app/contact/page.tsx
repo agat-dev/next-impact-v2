@@ -3,6 +3,7 @@ import Link from "next/link";
 import ContactForm from "@/components/contact-form";
 import { MagicCard } from "@/components/magicui/magic-card";
 import { Metadata } from "next";
+import { CDCCard } from "@/components/tools";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -28,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function ContactPage() {
   return (
-    <section className="w-4/6 container mx-auto px-4 md:py-16 pt-16 text-center">
+    <section className="lg:w-4/6 w-full container mx-auto px-4 md:py-16 pt-16 text-center">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-12 mb-6">
                 Contact</h1>
 
@@ -53,6 +54,8 @@ export default function ContactPage() {
           </Link>
         </div>
         </MagicCard>
+
+        <CDCCard />
 
         <MagicCard className="rounded-2xl">
           <ContactForm />

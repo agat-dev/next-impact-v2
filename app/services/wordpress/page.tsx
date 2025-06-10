@@ -311,8 +311,8 @@ export default function SitesCorporate() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="w-full">
-                <Button className="w-full mt-6 bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
+                  <Link href="/contact" className="w-full">
+                <Button className="w-full mt-6 rounded-full bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
                 </Link>
                 </CardContent>
               </Card>
@@ -349,8 +349,8 @@ export default function SitesCorporate() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="w-full">
-                <Button className="w-full mt-6 bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
+                  <Link href="/contact" className="w-full">
+                <Button className="w-full mt-6 rounded-full bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
                 </Link>
                 </CardContent>
               </Card>
@@ -383,8 +383,8 @@ export default function SitesCorporate() {
                       </li>
                     ))}
                   </ul>
-                  <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" className="w-full">
-                <Button className="w-full mt-6 bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
+                  <Link href="/contact" className="w-full">
+                <Button className="w-full mt-6 rounded-full bg-regularblue hover:bg-regularblue/80">Demander un devis</Button>
                 </Link>
                 </CardContent>
               </Card>

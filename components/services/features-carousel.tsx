@@ -34,7 +34,7 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
   const currentFeature = features[activeFeature]
 
   return (
-      <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 items-center">
         <div className="col-span-1 space-y-6">
         {/* Image Section */}
         <div className="relative">

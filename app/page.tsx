@@ -4,7 +4,7 @@ import Realisations from "@/components/case-studies/realisations";
 import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq"
 import { CTASection } from "@/components/cta-section";
-import FeatureCarousel from "@/components/features-carousel";
+import FeatureCarousel from "@/components/services/features-carousel";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -41,7 +41,7 @@ export default function ContactForm() {
       ) : (
         
         <div className="flex flex-col gap-6">
-            <h2 className="text-2xl font-semibold text-regularblue mb-2">M'envoyer un message</h2>
+            <h2 className="text-2xl font-semibold text-regularblue mb-2">Envoyer un message</h2>
             <p className="mb-4">Vous préférez m'écrire&nbsp;? Remplissez le formulaire ci-dessous.</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
