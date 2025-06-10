@@ -28,18 +28,18 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
-            <Link href="#services" className="group">
+            <Link href="/etudes-de-cas" className="group">
             <Button 
               size="lg" 
               variant="outline"
               className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100/40"
             >
-              Mes services
+              Réalisations
               <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               <BorderBeamEffect />
             </Button>
             </Link>
-            <Link href="/contact" target="_blank" className="group">
+            <Link href="/contact" className="group">
             <Button 
               size="lg" 
               variant="outline" 

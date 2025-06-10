@@ -1,5 +1,5 @@
 ---
-title: Gestion de projet web
+title: Gestion de projet web - Pourquoi
 description: Pourquoi mettre en place un processus de gestion de projet pour un projet web WordPress ?
 category: projet-site-web
 author: Next Impact

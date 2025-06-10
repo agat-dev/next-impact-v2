@@ -1,5 +1,5 @@
 ---
-title: Gestion de projet web
+title: Gestion de projet web - Comment
 description: Guide pratique
 category: projet-site-web
 author: Next Impact
