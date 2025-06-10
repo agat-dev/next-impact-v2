@@ -84,7 +84,7 @@ export default function Tools() {
     {
       description: "TEST EN LIGNE",
       title: "Choisir entre WordPress CMS et Headless ?",
-      lottie: "/img/quiz-cms.jpeg",
+      lottie: "/img/quiz-cms.jpg",
       ctaText: "Test en ligne",
       ctaLink: "/cms-headless",
       content: `
@@ -159,7 +159,7 @@ export function CMSQuizCard() {
     {
       description: "TESTER EN LIGNE",
       title: "Choisir entre WordPress CMS et Headless ?",
-      lottie: "/img/quiz-cms.jpeg",
+      lottie: "/img/quiz-cms.jpg",
       ctaText: "Tester en ligne",
       ctaLink: "/cms-headless",
       content: `
