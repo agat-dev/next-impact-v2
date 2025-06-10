@@ -5,6 +5,38 @@ import { MarkdownContent } from "@/components/documentation/markdown-content"
 import { getArticleBySlug, getArticlesByCategory } from "@/lib/markdown"
 import TableOfContentsPopup from "@/components/documentation/table-of-content-popup"
 import ShareSocial from "@/components/share-social"
+import { Metadata } from "next";
+
+// meta données dynamiques pour la page d'étude de cas
+export async function generateMetadata({ params }: { params: { category: string; slug: string } }): Promise<Metadata> {
+  const post = await getArticleBySlug(params.category, params.slug);
+  if (!post) {
+    return {
+      title: "Article introuvable",
+      description: "L'article demandé n'existe pas.",
+    };
+  }
+
+  return {
+    title: `${post.title} | Next Impact`,
+    description: post.description,
+    openGraph: {
+      title: `${post.title} | Next Impact`,
+      description: post.description,
+      url: `https://next-impact.digital/documentation/${post.category}/${post.slug}`,
+      type: "article",
+      images: [
+        {
+          url: "https://next-impact.digital/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+  };
+}
+
 
 interface ArticlePageProps {
   params: {
