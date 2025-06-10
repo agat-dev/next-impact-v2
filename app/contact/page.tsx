@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "/img/logo.png",
+          url: "/img/avatar.png",
           width: 1200,
           height: 630,
           alt: "Next Impact - Développeuse WordPress Freelance",
