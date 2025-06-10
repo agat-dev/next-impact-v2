@@ -189,10 +189,6 @@ export function NavBar() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </div>
-                  <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
-                  {/* Outils sous-menu */}
-                  <div>
                     <button
                       className={cn(
                         "w-full text-left block py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
@@ -222,6 +218,14 @@ export function NavBar() {
                         </motion.div>
                       )}
                     </AnimatePresence>
+                  </div>
+                  <MobileMenuLink href="/documentation" onClick={handleMenuClick}>Ressources</MobileMenuLink>
+                  {/* Outils sous-menu */}
+                  <div>
+                  </div>
+                  <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
+                  {/* Outils sous-menu */}
+                  <div>
                   </div>
                 </div>
               </motion.div>
