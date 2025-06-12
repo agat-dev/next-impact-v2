@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const content = `
 User-agent: *
-Allow: /
+Disallow:
 
 Sitemap: https://next-impact.digital/sitemap.xml
   `.trim();
