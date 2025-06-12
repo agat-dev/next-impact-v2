@@ -13,7 +13,7 @@ const CalendlyBadge = () => {
       script.onload = () => {
         if (window.Calendly) {
           window.Calendly.initBadgeWidget({
-            url: 'https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress',
+            url: 'https://calendly.com/agat-dev',
             text: 'RDV Conseil gratuit',
             color: '#1f54bf',
             textColor: '#ffffff',
