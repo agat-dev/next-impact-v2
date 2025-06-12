@@ -63,7 +63,7 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
     description: "Site de présentation pour une entreprise ou un professionnel",
     prices: {
       self: { min: 0, max: 200 },
-      freelance: { min: 800, max: 3500 },
+      freelance: { min: 800, max: 2500 },
       agency: { min: 2500, max: 10000 },
     },
     timeframes: {
@@ -82,8 +82,8 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
     description: "Boutique en ligne pour vendre des produits ou services",
     prices: {
       self: { min: 100, max: 500 },
-      freelance: { min: 2000, max: 8000 },
-      agency: { min: 8000, max: 30000 },
+      freelance: { min: 2000, max: 4000 },
+      agency: { min: 8000, max: 15000 },
     },
     timeframes: {
       self: { min: 1, max: 3, unit: "mois" },
@@ -101,7 +101,7 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
     description: "Site institutionnel complet pour une entreprise",
     prices: {
       self: { min: 200, max: 800 },
-      freelance: { min: 3500, max: 12000 },
+      freelance: { min: 3000, max: 8000 },
       agency: { min: 10000, max: 40000 },
     },
     timeframes: {
@@ -120,7 +120,7 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
     description: "Application web ou site avec fonctionnalités avancées",
     prices: {
       self: { min: 500, max: 3000 },
-      freelance: { min: 8000, max: 25000 },
+      freelance: { min: 6000, max: 15000 },
       agency: { min: 25000, max: 100000 },
     },
     timeframes: {
