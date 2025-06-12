@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Aide au choix d'une solution technique pour son projet de site web | Next Impact",
+    title: "Aide au choix de solution technique pour son projet de site web | Next Impact",
     description: "Outil d'évaluation pour le choix d'une solution technique pour votre projet web selon les prestataires et fonctionnalités souhaitées.",
     openGraph: {
       title: "Aide au choix d'une solution technique pour son projet de site web | Next Impact",
