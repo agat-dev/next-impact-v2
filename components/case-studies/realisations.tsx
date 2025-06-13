@@ -18,7 +18,7 @@ const PROJECTS = [
 		tab: ["derniers", "corporate"],
 	},
 	{
-		id: 2,
+		id: 6,
 		title: "French Touch Seeds",
 		type: "ecommerce",
 		image: "/img/logo_french-touch-seeds.avif",
@@ -38,7 +38,7 @@ const PROJECTS = [
 		tab: ["derniers", "derniers", "headless"],
 	},
 	{
-		id: 5,
+		id: 2,
 		title: "Sowee",
 		type: "corporate",
 		image: "/img/logo-sowee.png",
