@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function ContactPage() {
   return (
     <section className="lg:w-4/6 w-full container mx-auto px-4 md:py-16 pt-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-12 mb-6">
+          <h1 className="text-5xl md:text-6xl tracking-tight mt-12 mb-6">
                 Contact</h1>
 
       <p className="my-4 text-lg text-center">
@@ -54,8 +54,6 @@ export default function ContactPage() {
           </Link>
         </div>
         </MagicCard>
-
-        <CDCCard />
 
         <MagicCard className="rounded-2xl">
           <ContactForm />

@@ -31,7 +31,7 @@ export default function DocumentationPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="container mx-auto px-4 md:py-16 pt-16 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-12 mb-6">
+        <h1 className="text-5xl md:text-6xl tracking-tight mt-12 mb-6">
           Ressources
         </h1>
         <p className="text-xl text-regularblue/80 max-w-3xl mx-auto">

@@ -26,7 +26,7 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
 
         {/* Main Content Frame */}
         <div className="px-0 md:px-12 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-16 gap-4 min-h-[600px]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-16 gap-4">
             {/* Left Sidebar - Features Grid */}
             <div className="lg:col-span-5">
               <div className="grid grid-cols-1 gap-4">
@@ -60,51 +60,53 @@ export function FeaturesTabs({ features }: FeaturesTabsProps) {
             {/* Right Content Area */}
             <div className="lg:col-span-7">
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={selectedFeature}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className="h-full"
+              <motion.div
+                key={selectedFeature}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="h-full"
+              >
+
+                <div
+                className={`h-max rounded-xl ${features[selectedFeature].color} md:px-8 px-0`}
+
                 >
-                  <div className={`h-full rounded-xl ${features[selectedFeature].color} md:px-8 px-0`}>
-                    {/* Feature Header */}
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-transparent flex items-center justify-center">
-                      </div>
-                      <div className="mb-4">
-                        <h3 className="text-2xl font-bold text-regularblue mb-1">{features[selectedFeature].title}</h3>
-                        <p className="text-mediumblue text-lg">{features[selectedFeature].description}</p>
-                      </div>
-                    </div>
-
-                    {/* Detailed Description */}
-                    <div className="mb-6">
-                      <p className="text-mediumblue leading-relaxed">
-                        {features[selectedFeature].detailedDescription}
-                      </p>
-                    </div>
-
-                    {/* Benefits */}
-                    <div className="mb-8">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        {features[selectedFeature].benefits.map((benefit) => (
-                          <motion.div
-                            key={benefit}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.1 }}
-                            className="flex items-center gap-3 bg-white/30 backdrop-blur-sm rounded-lg p-3"
-                          >
-                            <CheckCircle className="w-5 h-5 text-lightblue flex-shrink-0" />
-                            <span className="text-sm font-medium">{benefit}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
+                {/* Feature Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="mb-4">
+                  <h3 className="text-2xl font-medium text-regularblue mb-1">{features[selectedFeature].title}</h3>
+                  <p className="text-mediumblue text-lg">{features[selectedFeature].description}</p>
                   </div>
-                </motion.div>
+                </div>
+
+                {/* Detailed Description */}
+                <div className="mb-6">
+                  <p className="text-mediumblue leading-relaxed">
+                  {features[selectedFeature].detailedDescription}
+                  </p>
+                </div>
+
+                {/* Benefits */}
+                <div className="mb-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {features[selectedFeature].benefits.map((benefit) => (
+                    <motion.div
+                    key={benefit}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="flex items-center gap-3 backdrop-blur-sm rounded-lg p-3"
+                    >
+                    <CheckCircle className="w-5 h-5 text-lightblue flex-shrink-0" />
+                    <span className="text-sm font-medium">{benefit}</span>
+                    </motion.div>
+                  ))}
+                  </div>
+                </div>
+                </div>
+              </motion.div>
               </AnimatePresence>
             </div>
           </div>

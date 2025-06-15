@@ -100,7 +100,7 @@ export default function Tools() {
       description: "GENERER GRATUITEMENT",
       title: "Rédiger mon cahier des charges",
       lottie: "/img/cdc.jpg",
-      ctaText: "Commencer la rédaction",
+      ctaText: "Générateur en ligne",
       ctaLink: "/cahier-des-charges",
       content: `
       <p>
@@ -118,7 +118,7 @@ export default function Tools() {
       description: "SIMULER MON BUDGET",
       title: "Quel tarif pour mon site web ?",
       lottie: "/img/simulateur-tarifs.jpg",
-      ctaText: "Lancer l'estimation",
+      ctaText: "Simulateur",
       ctaLink: "/simulateur-tarifs",
       content: `
       <p>
@@ -160,7 +160,7 @@ export function CMSQuizCard() {
       description: "TESTER EN LIGNE",
       title: "Choisir entre WordPress CMS et Headless ?",
       lottie: "/img/quiz-cms.jpg",
-      ctaText: "Tester en ligne",
+      ctaText: "Test en ligne",
       ctaLink: "/cms-headless",
       content: `
       <p>
@@ -173,7 +173,7 @@ export function CMSQuizCard() {
     },
   ];
   return (
-    <div className="flex justify-center align-center px-4 md:px-6 my-16">
+    <div className="flex justify-center align-center px-4 md:px-6 mb-24">
       <ExpandableCardNIP cards={tool} />
     </div>
   );
@@ -185,7 +185,7 @@ export function PriceQuizCard() {
       description: "SIMULER MON BUDGET",
       title: "Quel tarif pour mon site web ?",
       lottie: "/img/simulateur-tarifs.jpg",
-      ctaText: "Lancer l'estimation",
+      ctaText: "Simulateur",
       ctaLink: "/simulateur-tarifs",
       content: `
       <p>
@@ -213,7 +213,7 @@ export function CDCCard() {
       description: "GENERER GRATUITEMENT",
       title: "Rédiger mon cahier des charges",
       lottie: "/img/cdc.jpg",
-      ctaText: "Commencer la rédaction",
+      ctaText: "Générer",
       ctaLink: "/cahier-des-charges",
       content: `
       <p>

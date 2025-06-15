@@ -8,7 +8,7 @@ export default function Process() {
   const timelineRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section className="container mx-auto px-4 py-16">
+        <section className="container mx-auto px-4 py-24">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-medium text-regularblue mb-4">
               Méthode éprouvée en 5 étapes

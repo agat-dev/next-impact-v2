@@ -27,8 +27,8 @@ export default function CaseStudiesPage() {
   return (
     <main>
               {/* Hero Section */}
-        <section className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mt-12">
+        <section className="container mx-auto px-4 text-center py-16">
+          <h1 className="text-5xl md:text-6xl tracking-tight mt-12 mb-6">
             Etudes de cas 
           </h1>
           <p className="text-xl text-regularblue/80 max-w-3xl mx-auto">

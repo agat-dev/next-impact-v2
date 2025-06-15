@@ -152,9 +152,8 @@ export default function SitesCorporate() {
             Sites web <span className="text-regularblue">WordPress</span>
           </h1>
           <p className="text-xl text-regularblue/80 max-w-3xl mx-auto mb-8">
-            L'efficacité d'une solution intégrée pour vos besoins web
-            classiques. WordPress traditionnel unit la gestion de contenu et
-            l'affichage dans une solution complète.
+            WordPress traditionnel unit la gestion de contenu et
+            l'affichage dans une solution intégrée et globale.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="#services">
@@ -177,64 +176,13 @@ export default function SitesCorporate() {
           </div>
         </section>
 
-        {/* When to Choose */}        
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[900px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[1200px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
-        </div>
-        <section className="container mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-medium mb-4 text-regularblue">
-              Quand est-ce la solution optimale ?
-            </h2>
-            <p className="text-lg text-regularblue/80 max-w-2xl mx-auto">
-              WordPress traditionnel excelle pour les projets web classiques
-              nécessitant efficacité et simplicité.
-            </p>
-            <CMSQuizCard />
-          </div>
-          {/*}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 rounded-2xl">
-            {[
-              {
-                title: "Équipes non-techniques",
-                description:
-                  "Vos équipes doivent gérer le contenu facilement sans formation complexe",
-              },
-              {
-                title: "Mise en ligne rapide",
-                description:
-                  "Vous souhaitez une mise en ligne rapide (4-8 semaines)",
-              },
-              {
-                title: "Budget maîtrisé",
-                description:
-                  "Votre budget est maîtrisé avec un ROI rapide attendu",
-              },
-            ].map((item) => (
-              <Card
-                key={item.title} // clé stable et unique
-                className="bg-transparent border-none text-center shadow-none"
-              >
-                <CardHeader>
-                  <CardTitle className="text-2xl font-googletitre text-regularblue font-medium">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-mediumblue">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>*/}
-        </section>
 
         {/* Applications en Tabs */}
-          <section className="container mx-auto px-4">
+          <section className="container mx-auto px-4 py-24">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-medium text-regularblue mb-4">
-                Applications concrètes
-              </h2>
+                Offre de sites web WordPress
+               </h2>
               <p className="text-lg text-regularblue/80">
                 Des solutions éprouvées pour tous les secteurs d'activité
               </p>
@@ -404,11 +352,12 @@ export default function SitesCorporate() {
             <div className="absolute top-[4900px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
           </div>
         <DecisionHelper />
+        <CMSQuizCard />
 
         {/* CTA Section */}
         <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[5200px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
-          <div className="absolute top-[5800px] right-0 h-[200px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
+          <div className="absolute top-[4800px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
+          <div className="absolute top-[5000px] right-0 h-[200px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-10 blur-3xl"></div>
         </div>
         <CTASection />
 

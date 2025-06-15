@@ -108,11 +108,11 @@ export default function Home() {
           <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-6 py-12">
-          <div className="mb-6">
+          <div className="mb-6 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4 line-clamp-5">
               WordPress et Développement
             </h2>
-            <p className="text-regularblue/80 text-lg max-w-3xl">
+            <p className="text-regularblue/80 text-lg max-w-3xl mx-auto">
               Grâce à des développements spécifiques alignés sur vos besoins,
               nous créons des sites web WordPress qui allient performance, design actuel,
               puissance et évolutivité.
@@ -129,11 +129,11 @@ export default function Home() {
           <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
-          <div className="mb-6">
+          <div className="mb-6 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
               Accessible grâce à l'IA
             </h2>
-            <p className="text-regularblue/80 text-lg max-w-2xl">
+            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
               Grâce à l'essor de l'IA comme assistant de développement, des solutions plus avancées sont 
               désormais accessibles à toutes les organisations, même avec des budgets limités.
             </p>
@@ -148,15 +148,16 @@ export default function Home() {
           <div className="absolute top-[2200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Types de sites web
+              Offre de sites web
             </h2>
-            <p className="text-regularblue/80 text-lg max-w-2xl">
+            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
               WordPress natif ou Headless pour une présence en ligne
               professionnelle et efficace, réalisable rapidement et possédant
               une administration adaptée aux équipes.
             </p>
+            <h3 className="text-2xl mb-8"><strong>Résultat </strong>: Un site web totalement aligné sur le besoin</h3>
           </div>
           <FeatureCarousel features={wordpressFeatures} />
         </div>
@@ -167,11 +168,11 @@ export default function Home() {
           <div className="absolute top-[3600px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
-          <div className="pb-12">
+          <div className="pb-12 text-center">
             <h2 className="text-4xl md:text-5xl text-regularblue mb-6">
               Etudes de cas
             </h2>
-            <p className="text-xl text-regularblue/70 max-w-3xl">
+            <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
               Chaque projet est unique et conçu pour répondre aux besoins
               spécifiques de mes clients.
             </p>

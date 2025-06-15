@@ -89,16 +89,10 @@ export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
                     </motion.a>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-regularblue"
+                      className="font-medium text-regularblue"
                     >
                       {active.title}
                     </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${active.title}-${id}`}
-                      className="text-regularblue/70 text-xs uppercase font-bold"
-                    >
-                      {active.description}
-                    </motion.p>
                   </div>
                 </div>
                 <div className="pt-4 relative px-4">
@@ -125,10 +119,10 @@ export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
             onClick={() => setActive(card)}
             className="p-4 flex flex-col md:flex-row justify-between items-center bg-white hover:bg-white/70 border border-pink-200/40 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row md:items-center md:justify-center">
+            <div className="flex gap-4 flex-col md:flex-row items-center md:justify-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 {/* Remplacement de l'image par Lottie */}
-                <div className="rounded-lg object-contain object-top mr-4">
+                <div className="rounded-lg object-contain object-top mr-">
                   <Image
                     src={card.lottie}
                     alt={card.title}
@@ -147,7 +141,7 @@ export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${card.title}-${id}`}
-                  className="text-regularblue text-left font-medium text-sm"
+                  className="text-regularblue md:text-left text-center font-medium text-lg"
                 >
                   {card.description}
                 </motion.p>

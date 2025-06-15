@@ -484,7 +484,7 @@ export default async function CaseStudyPage({
           <ArrowLeft className="h-4 w-4 mr-2" />
           Retour aux réalisations
         </Link>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-regularblue mb-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-regularblue mb-4">
           {caseStudy.title}
         </h1>
         <p className="text-xl max-w-3xl text-regularblue/70">
@@ -505,7 +505,7 @@ export default async function CaseStudyPage({
           <div className="lg:col-span-2 space-y-10">
             {/* Présentation du projet */}
             <section>
-              <h2 className="text-2xl font-bold mb-6 text-regularblue">
+              <h2 className="text-2xl  mb-6 text-regularblue">
                 Présentation du projet
               </h2>
               <div className="prose max-w-none">
@@ -525,7 +525,7 @@ export default async function CaseStudyPage({
             {/* Objectifs et résultats */}
             <section className="grid md:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl font-bold mb-6 text-regularblue">
+                <h2 className="text-2xl  mb-6 text-regularblue">
                   Objectifs
                 </h2>
                 <ul className="space-y-3">
@@ -540,7 +540,7 @@ export default async function CaseStudyPage({
                 </ul>
               </div>
               <div>
-                <h2 className="text-2xl font-bold mb-6 text-regularblue">
+                <h2 className="text-2xl  mb-6 text-regularblue">
                   Résultats
                 </h2>
                 <ul className="space-y-3">
@@ -558,7 +558,7 @@ export default async function CaseStudyPage({
 
             {/* Galerie */}
             <section>
-              <h2 className="text-2xl font-bold mb-6 text-regularblue">
+              <h2 className="text-2xl  mb-6 text-regularblue">
                 Aperçu du projet
               </h2>
               <div className="rounded-lg border overflow-hidden">
@@ -575,7 +575,7 @@ export default async function CaseStudyPage({
             {/* Témoignage client */}
             {caseStudy.testimonial && (
               <section className="bg-extralightblue/10 p-6 rounded-2xl">
-                <h2 className="text-2xl font-bold mb-6 text-regularblue">
+                <h2 className="text-2xl  mb-6 text-regularblue">
                   Témoignage client
                 </h2>
                 <blockquote className="relative">
@@ -616,7 +616,7 @@ export default async function CaseStudyPage({
                   height={150}
                   className="object-contain mb-4 md:block hidden"
                 />
-                <h2 className="text-xl font-bold mb-6 text-regularblue">
+                <h2 className="text-xl  mb-6 text-regularblue">
                   Informations du projet
                 </h2>
 
@@ -736,7 +736,7 @@ export default async function CaseStudyPage({
 
         {/* Autres projets similaires */}
         <section className="my-16">
-          <h2 className="text-2xl font-bold text-regularblue mb-8">
+          <h2 className="text-2xl  text-regularblue mb-8">
             Projets similaires
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -767,7 +767,7 @@ export default async function CaseStudyPage({
                         {study.date.year}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-regularblue mb-2">
+                    <h3 className="text-xl  text-regularblue mb-2">
                       {study.title}
                     </h3>
                     <p className="text-regularblue/80 mb-4 line-clamp-3">

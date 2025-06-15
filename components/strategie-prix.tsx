@@ -118,15 +118,15 @@ export default function StrategiePrix() {
             <MagicCard className="rounded-2xl" key={index}>
             <Card key={index} className="rounded-2xl flex justify-between">
               <CardContent className="w-full p-6">
-                <div className="flex justify-between"> 
+                <div className="flex md:flex-row flex-col justify-between md:gap-0 gap-4 items-center"> 
                     <Image
                     src={addon.image}
                     alt={addon.title}
                     width={50}
                     height={50}
-                    className="rounded-lg h-18 w-18 object-contain"
+                    className="h-18 w-18 object-contain"
                     />
-                  <div className="flex-1 ml-8">
+                  <div className="flex-1 ml-8 md:text-left text-center">
                     <h4 className="text-2xl text-regularblue font-medium mb-1">
                       {addon.title}
                     </h4>
@@ -134,7 +134,7 @@ export default function StrategiePrix() {
                       {addon.description}
                     </p>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div className="flex md:flex-row flex-col items-center gap-4">
                     <div className="text-right">
                       <span className="text-2xl font-heading text-regularblue">{addon.price}</span>
                       <span className="text-mediumblue text-sm">
