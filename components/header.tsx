@@ -58,10 +58,10 @@ export function NavBar() {
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  <ListItem href="/services/wordpress" title="Sites web Corporate" className='h-22'>
+                  <ListItem href="/services/wordpress" title="Sites web WordPress" className='h-22'>
                     <p className='text-xs text-regularblue/70'>Sites vitrines, institutionnels, d'information</p>
                   </ListItem>
-                  <ListItem href="/services/headless" title="Applis web" className='h-22'>
+                  <ListItem href="/services/headless" title="Sites web WP Headless" className='h-22'>
                     <p className='text-xs text-regularblue/70'>Intranet, Connexion à des applications tierces internes ou externes</p>
                   </ListItem>
                 </ul>
@@ -185,7 +185,7 @@ export function NavBar() {
                           className="pl-4 overflow-hidden"
                         >
                           <MobileMenuLink href="/services/wordpress" onClick={handleMenuClick} className="pl-4">Sites web Corporate</MobileMenuLink>
-                          <MobileMenuLink href="/services/headless" onClick={handleMenuClick} className="pl-4">Applis web</MobileMenuLink>
+                          <MobileMenuLink href="/services/headless" onClick={handleMenuClick} className="pl-4">Sites web</MobileMenuLink>
                         </motion.div>
                       )}
                     </AnimatePresence>

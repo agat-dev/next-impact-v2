@@ -8,7 +8,7 @@ export function CTASection() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-8 text-center">
               <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tighter text-regularblue md:text-4xl/tight">
+                <h2 className="text-4xl font-MEDIUM tracking-tighter text-regularblue md:text-4xl/tight">
                   Prêt à transformer votre présence en ligne ?
                 </h2>
                 <p className="mx-auto max-w-[700px] text-lg text-regularblue/70">

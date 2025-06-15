@@ -9,7 +9,7 @@ export async function DecisionHelper() {
         
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-regularblue mb-4">Comment déterminer si le headless vous convient</h2>
+          <h2 className="text-4xl font-medium text-regularblue mb-4">Comment déterminer si le headless vous convient</h2>
           <p className="text-lg text-regularblue/80">Critères de décision pour une architecture headless</p>
         </div>
 

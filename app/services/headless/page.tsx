@@ -105,8 +105,8 @@ const features = [
         <Badge variant="outline" className="mb-4 border-regularblue/20 text-regularblue">
           Architecture moderne pour projets ambitieux
         </Badge>
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-          Applications Web <span className="text-blue-600">Headless</span>
+        <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-6">
+          Sites web <span className="text-regularblue/80">Headless</span>
         </h1>
         <p className="text-xl text-regularblue/80 max-w-3xl mx-auto mb-8">
           L'architecture qui libère votre contenu de ses contraintes d'affichage. WordPress headless sépare la gestion
@@ -140,7 +140,7 @@ const features = [
         </div>
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-regularblue">Quand est-ce nécessaire ?</h2>
+          <h2 className="text-4xl font-medium mb-4 text-regularblue">Quand est-ce nécessaire ?</h2>
           <p className="text-lg text-regularblue/80 max-w-2xl mx-auto">
             WordPress headless répond aux besoins techniques avancés que l'architecture traditionnelle ne peut
             satisfaire.
@@ -182,7 +182,7 @@ const features = [
       {/* Applications (en tabs) */}
       <section className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-regularblue mb-4">Applications concrètes</h2>
+          <h2 className="text-4xl font-medium text-regularblue mb-4">Applications concrètes</h2>
           <p className="text-lg text-regularblue/80">
             Des solutions techniques avancées pour des besoins spécifiques
           </p>
@@ -198,7 +198,7 @@ const features = [
       <section className="pt-16" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-regularblue mb-4">Services techniques détaillés</h2>
+            <h2 className="text-4xl font-medium text-regularblue mb-4">Services techniques détaillés</h2>
             <p className="text-lg text-regularblue/80">Une expertise technique complète pour votre projet</p>
           </div>
 
@@ -215,7 +215,7 @@ const features = [
       <section className="pb-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-regularblue mb-4">Cas d'usage détaillés</h2>
+            <h2 className="text-4xl font-medium text-regularblue mb-4">Cas d'usage détaillés</h2>
             <p className="text-lg text-regularblue/80">Exemples concrets d'applications réalisées</p>
           </div>
 
@@ -291,7 +291,7 @@ const features = [
       <section className="py-16" id="tarifs">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-regularblue mb-4">Investissement réaliste</h2>
+            <h2 className="text-4xl font-medium text-regularblue mb-4">Investissement réaliste</h2>
             <p className="text-lg text-regularblue/80">Budgétisation transparente pour projets techniques avancés</p>
           </div>
 

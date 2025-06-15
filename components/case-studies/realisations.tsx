@@ -18,16 +18,6 @@ const PROJECTS = [
 		tab: ["derniers", "corporate"],
 	},
 	{
-		id: 6,
-		title: "French Touch Seeds",
-		type: "ecommerce",
-		image: "/img/logo_french-touch-seeds.avif",
-		alt: "French Touch Seeds",
-		description: "Site e-commerce multilingue",
-		link: "/etudes-de-cas/french-touch-seeds",
-		tab: ["derniers", "ecommerce"],
-	},
-	{
 		id: 4,
 		title: "Les Doléances",
 		type: "headless",

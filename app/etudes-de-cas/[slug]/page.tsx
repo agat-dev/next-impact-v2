@@ -176,42 +176,6 @@ const CASE_STUDIES: CaseStudy[] = [
     website: "https://lesdoleances.fr",
   },
   {
-    id: "3",
-    slug: "french-touch-seeds",
-    title: "French Touch Seeds",
-    description:
-      "Refonte d'une boutique en ligne multilingue pour la vente de produits CBD.",
-    imageUrl: "/img/logo_french-touch-seeds.avif",
-    clientType: "PME",
-    clientName: "French Touch Seeds",
-    date: {
-      month: 3,
-      year: 2025,
-    },
-    tags: ["Woocommerce", "Ecommerce", "Multilingue"],
-    objectives: [
-      "Créer rapidement une boutique en ligne",
-      "Garder un design épuré et moderne",
-      "Optimiser les performances du site",
-      "Faciliter la mise à jour du contenu",
-    ],
-    results: [
-      "Augmentation des backlinks de 150%",
-      "Mise en valeur des produits phares",
-      "Stabilité et rapidité du site grandement améliorées",
-      "Augmentation du temps passé sur le site",
-    ],
-    gallery: {
-      url: "/img/desktop-screen-frenchtouchseeds.jpg",
-      alt: "Interface de la boutique en ligne French Touch Seeds",
-    },
-    detailedDescription:
-      "French Touch Seeds, une entreprise spécialisée dans la vente de produits CBD, avait besoin d'une refonte complète de sa boutique en ligne pour améliorer l'expérience utilisateur et optimiser les performances du site.\n\nNous avons créé un site e-commerce sur mesure avec WooCommerce, en mettant l'accent sur un design épuré et moderne. Le site est entièrement multilingue, permettant aux clients internationaux de naviguer facilement.\n\nLe site met en avant les produits phares avec des descriptions détaillées et des photos haute qualité. Un système de filtrage avancé permet aux clients de trouver rapidement les produits qui les intéressent.",
-    technologies: ["WordPress", "Woocommerce", "Polylang"],
-    duration: "10 jours",
-    website: "https://frenchtouchseeds.com/",
-  },
-  {
     id: "4",
     slug: "sowee",
     title: "Sowee",

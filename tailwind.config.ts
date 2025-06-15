@@ -11,7 +11,7 @@ const config: Config = {
   theme: {
   	extend: {
 		fontFamily: {
-			googletitre: ['"Quicksand"', 'sans-serif'],
+			googletitre: ['"Nunito"', 'sans-serif'],
 			googletexte: ['"Inter"', 'sans-serif'],
 		},
 		fontWeight: {

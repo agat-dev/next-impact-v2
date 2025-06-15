@@ -48,9 +48,6 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
                   className="object-cover object-top transition-all duration-500"
                 />
                 <div className="absolute bottom-4 left-4">
-                  <Badge variant="secondary" className="bg-regularblue text-white">
-                    {currentFeature.badge}
-                  </Badge>
                 </div>
               </div>
             </CardContent>
@@ -99,9 +96,6 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
                         <h4 className="font-medium text-regularblue text-lg">{feature.title}</h4>
                         <p className="text-xs text-regularblue/80 line-clamp-1">{feature.description}</p>
                       </div>
-                      <Badge className={index === activeFeature ? "text-sm bg-regularblue font-light font-googletitre" : "text-sm bg-extralightblue/30  font-light font-googletitre text-regularblue/70"}>
-                        {feature.badge}
-                      </Badge>
                     </div>
                   </CardContent>
                 </Card>

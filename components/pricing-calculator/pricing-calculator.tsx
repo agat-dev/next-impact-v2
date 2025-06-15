@@ -101,7 +101,7 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
     description: "Site institutionnel complet pour une entreprise",
     prices: {
       self: { min: 200, max: 800 },
-      freelance: { min: 3000, max: 8000 },
+      freelance: { min: 3000, max: 5000 },
       agency: { min: 10000, max: 40000 },
     },
     timeframes: {
@@ -120,8 +120,8 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
     description: "Application web ou site avec fonctionnalités avancées",
     prices: {
       self: { min: 500, max: 3000 },
-      freelance: { min: 6000, max: 15000 },
-      agency: { min: 25000, max: 100000 },
+      freelance: { min: 6000, max: 10000 },
+      agency: { min: 25000, max: 50000 },
     },
     timeframes: {
       self: { min: 3, max: 12, unit: "mois" },
