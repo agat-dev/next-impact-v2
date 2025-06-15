@@ -51,7 +51,7 @@ const PROJECTS = [
 		id: 7,
 		title: "Tiers Lieu L'Hermitage",
 		type: "corporate",
-		image: "/img/logo-hermitage.png",
+		image: "/img/logo-hermitage.webp",
 		alt: "Site vitrine du Tiers Lieu L'Hermitage",
 		description: "Site vitrine du Tiers Lieu L'Hermitage",
 		link: "/etudes-de-cas/hermitage",
@@ -151,12 +151,15 @@ export default function Realisations({ count }: RealisationsProps) {
 												/>
 											</div>
 											<div className="p-6 flex flex-col flex-1">
-												<h3 className="text-xl font-bold transition-colors duration-300 text-regularblue group-hover:text-regularblue/70">
+												<Link 
+												href={project.link}>										
+												<h3 className="text-2xl font-medium transition-colors duration-300 text-regularblue group-hover:text-regularblue/70">
 													{project.title}
 												</h3>
 												<p className="mt-2 text-regularblue/70 text-sm group-hover:text-regularblue/50">
 													{project.description}
 												</p>
+												</Link>		
 												<div className="mt-4 mt-auto">
 													<Link
 														href={project.link}

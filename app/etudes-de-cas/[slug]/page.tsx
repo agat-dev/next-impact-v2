@@ -264,7 +264,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: "Tiers Lieu L'Hermitage",
     description:
       "Refonte progressive à la marge du site vitrine du Tiers Lieu L'Hermitage.",
-    imageUrl: "/img/logo-hermitage.png",
+    imageUrl: "/img/logo-hermitage.webp",
     clientType: "Association",
     clientName: "L'Hermitage",
     date: {

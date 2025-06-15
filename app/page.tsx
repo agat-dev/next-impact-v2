@@ -8,6 +8,8 @@ import FeatureCarousel from "@/components/services/features-carousel";
 import { Metadata } from "next";
 import Advantages from "@/components/advantages";
 import StrategiePrix from "@/components/strategie-prix";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -120,8 +122,73 @@ export default function Home() {
             <h3 className="text-2xl mb-8"><strong>Résultat</strong> : Un site alliant performance et le back-office le plus utilisé
             </h3>
           </div>
-          
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+            <div className="flex flex-col items-center p-6 bg-white rounded-2xl border border-extrlightblue/30">
+              <img
+                src="/img/logo-wordpress.png"
+                alt="WordPress Logo"
+                className="h-16 mb-4"
+              />
+              <h3 className="text-xl font-semibold text-regularblue mb-2">
+                WordPress
+              </h3>
+              <p className="text-mediumblue/80 text-center">
+                Le CMS le plus utilisé au monde, idéal pour les sites vitrine,
+                corporate et institutionnels.
+              </p>
+              <Link
+                href="/services/wordpress"
+                className="mt-4 text-blue-500 hover:underline"
+              >
+                <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
+                En savoir plus
+                </Button>
+              </Link>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-white rounded-2xl border border-extrlightblue/30">
+              <img
+                src="/img/logo-nextjs.png"
+                alt="Next.js Logo"
+                className="h-16 mb-4"
+              />
+              <h3 className="text-xl font-semibold text-regularblue mb-2">
+                Headless WordPress
+              </h3>
+              <p className="text-mediumblue/80 text-center">
+                Pour des applications web modernes, performantes et évolutives.
+              </p>
+              <Link
+                href="/services/headless"
+                className="mt-4 text-blue-500 hover:underline"
+              >
+                <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
+                En savoir plus
+                </Button>
+              </Link>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-white rounded-2xl border border-extrlightblue/30">
+              <img
+                src="/img/logo-code.jpg"
+                alt="WordPress Custom Logo"
+                className="h-16 mb-4"
+              />
+              <h3 className="text-xl font-semibold text-regularblue mb-2">
+                WordPress Custom
+              </h3>
+              <p className="text-mediumblue/80 text-center">
+                Pour des sites web sur-mesure avec des fonctionnalités avancées.
+              </p>
+              <Link
+                href="/services/wordpress"
+                className="mt-4 text-blue-500 hover:underline"
+              >
+                <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
+                En savoir plus
+                </Button>
+              </Link>
+            </div>
+          </div>
 
           <Advantages />
         </div>
