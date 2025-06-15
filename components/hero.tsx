@@ -3,6 +3,7 @@ import { BorderBeamEffect } from "@/components/ui/border-beam";
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Logos } from "./logos";
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
           </span>
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tighter">
-            Sites web
+            Freelance
             <br />
             <span className="font-googletexte md:text-5xl text-4xl text-regularblue/80">
               WordPress et Headless
@@ -53,24 +54,6 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
-
-          {/* Social proof */}
-          <div className="pt-8 border-t border-white/10">
-            <p className="text-sm font-regular  text-lightblue mb-4">
-              Entreprises qui me font confiance :
-            </p>
-            <div className="flex flex-wrap items-center gap-8">
-              <div className="text-lg font-googletitre text-regularblue/80">
-                SOWEE
-              </div>
-              <div className="text-lg font-googletitre text-regularblue/80">
-                PRODITEC
-              </div>
-              <div className="text-lg font-googletitre text-regularblue/80">
-                INFRALLIANCE
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Hero Image */}
@@ -87,6 +70,8 @@ export default function Hero() {
               />
             </div>
 
+
+
             {/* Floating badges */}
             <div className="absolute left-6 top-6 bg-white py-2 px-4 rounded-full shadow-lg flex items-center gap-2 animate-float">
               <span className="h-3 w-3 bg-green-500 rounded-full"></span>
@@ -101,6 +86,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      <Logos className="mt-16 max-w-6xl mx-auto grid gap-8" />
     </section>
   );
 }

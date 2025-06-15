@@ -110,16 +110,19 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-6 py-12">
           <div className="mb-6 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4 line-clamp-5">
-              WordPress et Développement
+              Offre de services WordPress
             </h2>
             <p className="text-regularblue/80 text-lg max-w-3xl mx-auto">
               Grâce à des développements spécifiques alignés sur vos besoins,
-              nous créons des sites web WordPress qui allient performance, design actuel,
+              nous créons des sites web WordPress, WordPress custom et des WordPress Headless qui allient performance, design actuel,
               puissance et évolutivité.
             </p>
-            <h3 className="text-2xl mb-8"><strong>Résultat</strong> : Un site performant, avec un back-office reconnu
+            <h3 className="text-2xl mb-8"><strong>Résultat</strong> : Un site alliant performance et le back-office le plus utilisé
             </h3>
           </div>
+          
+
+
           <Advantages />
         </div>
 
@@ -131,7 +134,7 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
           <div className="mb-6 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Accessible grâce à l'IA
+              Moins chers grâce à l'IA
             </h2>
             <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
               Grâce à l'essor de l'IA comme assistant de développement, des solutions plus avancées sont 
@@ -150,7 +153,7 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
           <div className="mb-12 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Offre de sites web
+              Solutions offertes
             </h2>
             <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
               WordPress natif ou Headless pour une présence en ligne
@@ -170,7 +173,7 @@ export default function Home() {
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
           <div className="pb-12 text-center">
             <h2 className="text-4xl md:text-5xl text-regularblue mb-6">
-              Etudes de cas
+              Réalisations
             </h2>
             <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
               Chaque projet est unique et conçu pour répondre aux besoins

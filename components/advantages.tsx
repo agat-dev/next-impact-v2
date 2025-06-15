@@ -43,6 +43,9 @@ const features = [
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Features List */}
         <div className="space-y-4">
+          <h4 className="text-3xl mb-6 text-center text-regularblue">
+            Détails des solutions
+          </h4>
           <div className="space-y-2">
             {features.map((feature) => (
               <button
