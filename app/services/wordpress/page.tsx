@@ -293,13 +293,12 @@ export default function SitesCorporate() {
                     Solution complète pour PME
                   </CardDescription>
                   <div className="text-3xl font-medium font-googletitre text-regularblue">
-                    2.1k€ - 3k€
+                    1 200€ - 3 000€
                   </div>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 text-mediumblue">
                     {[
-                      "Design sur-mesure",
                       "5-10 pages optimisées",
                       "Formulaire de contact",
                       "SEO de base",
@@ -330,7 +329,7 @@ export default function SitesCorporate() {
                     Solution avancée pour entreprises
                   </CardDescription>
                   <div className="text-3xl font-medium text-regularblue font-googletitre">
-                    2.4k€ - 5k€
+                    2 000€ - 3 500€
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -364,7 +363,7 @@ export default function SitesCorporate() {
                     Solution complète multi-niveaux
                   </CardDescription>
                   <div className="text-3xl font-medium text-regularblue font-googletitre">
-                    3.5k€ - 6k€
+                    3 000k€ - 5 000€
                   </div>
                 </CardHeader>
                 <CardContent>

@@ -300,17 +300,16 @@ const features = [
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <Card className="relative">
               <CardHeader>
-                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Application Web</CardTitle>
+                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Headless</CardTitle>
                 <CardDescription className="text-mediumblue">Fonctionnalités dédiées</CardDescription>
-                <div className="text-3xl font-medium text-regularblue font-googletitre">3k€ - 4.5k€</div>
+                <div className="text-3xl font-medium text-regularblue font-googletitre">2 500€ - 4 500k€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {[
-                    "Architecture headless",
+                    "Architecture headless WordPress",
                     "Interface Next.js",
-                    "APIs personnalisées",
-                    "Intégrations système",
+                    "Structure de contenus dédiée",
                     "Performance optimisée",
                   ].map((feature, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-mediumblue">
@@ -331,7 +330,7 @@ const features = [
                 <Badge className="w-fit bg-blue-100 text-regularblue">Recommandé</Badge>
                 <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Plateforme Corporate</CardTitle>
                 <CardDescription className="text-mediumblue">Intégration d'outils externes</CardDescription>
-                <div className="text-3xl font-medium text-regularblue font-googletitre">4k€ - 6k€</div>
+                <div className="text-3xl font-medium text-regularblue font-googletitre">3 500€ - 6 000€</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
@@ -357,17 +356,16 @@ const features = [
 
             <Card className="relative">
               <CardHeader>
-                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Système Multi-Canal</CardTitle>
+                <CardTitle className="text-2xl font-googletitre font-medium text-regularblue">Appli web & Mobile</CardTitle>
                 <CardDescription className="text-mediumblue">Web + Mobile + APIs</CardDescription>
-                <div className="text-3xl font-medium text-regularblue font-googletitre">6k€ - 8k€</div>
+                <div className="text-3xl font-medium text-regularblue font-googletitre">Sur devis</div>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   {[
                     "Architecture microservices",
-                    "Applications web + mobile",
                     "APIs publiques",
-                    "Intégrations complexes",
+                    "Application mobile React Native",
                     "Évolutivité maximale",
                     "Maintenance évolutive",
                   ].map((feature, i) => (

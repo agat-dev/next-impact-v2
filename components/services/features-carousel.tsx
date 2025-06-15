@@ -57,7 +57,7 @@ export default function FeatureCarousel({ features }: FeatureCarouselProps) {
         {/* Features List */}
         <div className="space-y-4">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-regularblue mb-2">{currentFeature.title}</h3>
+            <h3 className="text-2xl font-medium text-regularblue mb-2">{currentFeature.title}</h3>
             <p className="text-regularblue/80 mb-4">{currentFeature.description}</p>
             <ul className="flex content-center">
               {currentFeature.details.map((detail, index) => (

@@ -18,14 +18,14 @@ const features = [
   },
   {
     id: "automation",
-    title: "Expérience utilisateur actuelle",
+    title: "Interface au design moderne",
     description: "Des front-end adaptés aux exigeances du web moderne et de vos visiteurs développées sur-mesure avec les dernières technologies.",
     image: "/img/beautiful-ui.jpg?height=400&width=600",
   },
   {
     id: "collaboration",
     title: "Fonctionnalités puissantes",
-    description: "Work together seamlessly with real-time collaboration tools and shared workspaces.",
+    description: "Des fonctionnalités développées sur vos besoins ni plus ni moins.",
     image: "/img/functionnalities.jpg?height=400&width=600",
   },
 ]
@@ -36,10 +36,10 @@ const features = [
  
   return (
     <>
-    <div className="container px-4 md:px-6 py-16">
+    <div className="container py-16 px-0">
 
 
-    <div className="w-full max-w-7xl mx-auto px-4">
+    <div className="mx-auto">
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         {/* Features List */}
         <div className="space-y-4">
@@ -51,7 +51,7 @@ const features = [
                 className={cn(
                   "w-full text-left p-4 rounded-lg border transition-all duration-200 group",
                   selectedFeature === feature.id
-                    ? "bg-white/60 border-lightblue/10 shadow-sm"
+                    ? "bg-white/60 border-regularblue/20"
                     : "bg-white/50 border-border hover:bg-white/40",
                 )}
               >

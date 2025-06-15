@@ -100,7 +100,7 @@ interface RealisationsProps {
 export default function Realisations({ count }: RealisationsProps) {
 	// Limiter le nombre de réalisations affichées par tab
 	return (
-		<section id="realisations" className="py-12 relative overflow-hidden">
+		<section id="realisations" className="relative overflow-hidden">
 			<div className="absolute"></div>
 			<div className="container relative p-0">
 

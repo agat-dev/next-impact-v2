@@ -108,15 +108,17 @@ export default function Home() {
           <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
         <div className="w-full max-w-7xl mx-auto px-6 py-12">
-          <div className="text-center mb-6">
-            <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Simplicité et exigeance
+          <div className="mb-6">
+            <h2 className="text-5xl tracking-tight text-regularblue mb-4 line-clamp-5">
+              WordPress et Développement
             </h2>
-            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
-              Grâce à des développements spécifiques alignés sur vos besoins, 
-              nous créons des sites web qui allient performance, design actuel, puissance et évolutivité. 
-
+            <p className="text-regularblue/80 text-lg max-w-3xl">
+              Grâce à des développements spécifiques alignés sur vos besoins,
+              nous créons des sites web WordPress qui allient performance, design actuel,
+              puissance et évolutivité.
             </p>
+            <h3 className="text-2xl mb-8"><strong>Résultat</strong> : Un site performant, avec un back-office reconnu
+            </h3>
           </div>
           <Advantages />
         </div>
@@ -126,18 +128,18 @@ export default function Home() {
           <div className="absolute top-[900px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
-        <div className="w-full max-w-7xl mx-auto px-6 py-12">
-          <div className="text-center mb-6">
+        <div className="w-full max-w-7xl mx-auto px-6 py-24">
+          <div className="mb-6">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Accessible à toutes les organisations
+              Accessible grâce à l'IA
             </h2>
-            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
-              Pour un site performant et élégant, sans complexité inutile grâce
-              à WordPress et la qualité d'un développement puissant et
-              totalement sur-mesure.
+            <p className="text-regularblue/80 text-lg max-w-2xl">
+              Grâce à l'essor de l'IA comme assistant de développement, des solutions plus avancées sont 
+              désormais accessibles à toutes les organisations, même avec des budgets limités.
             </p>
+            <h3 className="text-2xl mb-8"><strong>Résultat </strong>: Des sites complexes enfin abordables</h3>
           </div>
-          <StrategiePrix/>
+          <StrategiePrix />
         </div>
 
         {/* Advantages Section */}
@@ -145,12 +147,12 @@ export default function Home() {
           <div className="absolute top-[1900px] left-0 h-[1000px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[2200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
-        <div className="w-full max-w-7xl mx-auto px-6 py-12">
-          <div className="text-center mb-12">
+        <div className="w-full max-w-7xl mx-auto px-6 py-24">
+          <div className="mb-12">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Services
+              Types de sites web
             </h2>
-            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
+            <p className="text-regularblue/80 text-lg max-w-2xl">
               WordPress natif ou Headless pour une présence en ligne
               professionnelle et efficace, réalisable rapidement et possédant
               une administration adaptée aux équipes.
@@ -164,18 +166,18 @@ export default function Home() {
           <div className="absolute top-[3200px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[3600px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
         </div>
-        <div className="flex flex-col items-center text-center md:mb-16 mb-2">
-          <div className="pb-6 text-center">
+        <div className="w-full max-w-7xl mx-auto px-6 py-24">
+          <div className="pb-12">
             <h2 className="text-4xl md:text-5xl text-regularblue mb-6">
               Etudes de cas
             </h2>
-            <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
+            <p className="text-xl text-regularblue/70 max-w-3xl">
               Chaque projet est unique et conçu pour répondre aux besoins
               spécifiques de mes clients.
             </p>
           </div>
-        </div>
         <Realisations count={18} />
+        </div>
 
         {/* Testimonials Section */}
         <div className="absolute inset-0 -z-10">
