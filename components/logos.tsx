@@ -3,7 +3,7 @@ import Image from "next/image"; //
 
 export function Logos({ className }: { className?: string }) {
   const logos = [
-    { src: "/img/logo-sowee.png", alt: "Sowee" },
+    { src: "/img/logo-sowee.svg", alt: "Sowee" },
     { src: "/img/logo-itavera.png", alt: "Itavera" },
     { src: "/img/logo-wagner-hamisky.png", alt: "Wagner Hamisky" },    
     { src: "/img/logo-geofit.png", alt: "Geofit" },
