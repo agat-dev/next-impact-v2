@@ -61,7 +61,7 @@ export default function StrategiePrix() {
       price: "à partir de 1200€",
       period: "",
       image: "/img/logo-wordpress-small.png",
-      link: "/services/wordpress",
+      link: "/services/wordpress#tarifs",
     },
     {
       title: "Site web Headless WordPress",
@@ -69,7 +69,7 @@ export default function StrategiePrix() {
       price: "à partir de 2500€",
       period: "",
       image: "/img/logo-nextjs.png",
-      link: "/services/headless",
+      link: "/services/headless#tarifs",
     },
   ];
 

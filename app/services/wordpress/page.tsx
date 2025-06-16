@@ -214,7 +214,7 @@ export default function SitesCorporate() {
         </section>
 
         {/* Pricing */}
-        <div className="absolute inset-0 -z-10">
+        <div id="pricing" className="absolute inset-0 -z-10">
           <div className="absolute top-[2600px] left-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-pink-400 to-blue-400 opacity-5 blur-3xl"></div>
           <div className="absolute top-[3100px] right-0 h-[400px] w-[50vw] rounded-full bg-gradient-to-r from-blue-400 to-pink-400 opacity-5 blur-3xl"></div>
         </div>

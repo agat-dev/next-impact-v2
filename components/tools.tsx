@@ -116,7 +116,7 @@ export default function Tools() {
     },
     {
       description: "SIMULER MON BUDGET",
-      title: "Quel tarif pour mon site web ?",
+      title: "Tarifs courants selon projet et prestataire ?",
       lottie: "/img/simulateur-tarifs.jpg",
       ctaText: "Simulateur",
       ctaLink: "/simulateur-tarifs",
@@ -183,7 +183,7 @@ export function PriceQuizCard() {
   const tool = [
        {
       description: "SIMULER MON BUDGET",
-      title: "Quel tarif pour mon site web ?",
+      title: "Tarifs courants selon projet et prestataire ?",
       lottie: "/img/simulateur-tarifs.jpg",
       ctaText: "Simulateur",
       ctaLink: "/simulateur-tarifs",

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { category: string 
       title: "Search Engine Optimization (SEO)",
       description: "Comprehensive guides and resources to help you master SEO for your website.",
     },
-    "ux-ui": {
+    uxui: {
       title: "UX/UI Design",
       description: "Learn how to create user-friendly and engaging website experiences.",
     },
