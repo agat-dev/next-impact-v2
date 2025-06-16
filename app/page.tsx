@@ -128,7 +128,7 @@ export default function Home() {
               <img
                 src="/img/logo-wordpress.png"
                 alt="WordPress Logo"
-                className="h-16 mb-4"
+                className="h-12 mb-4"
               />
               <h3 className="text-xl font-semibold text-regularblue mb-2">
                 WordPress
@@ -150,7 +150,7 @@ export default function Home() {
               <img
                 src="/img/logo-nextjs.png"
                 alt="Next.js Logo"
-                className="h-16 mb-4"
+                className="h-12 mb-4"
               />
               <h3 className="text-xl font-semibold text-regularblue mb-2">
                 Headless WordPress
@@ -171,7 +171,7 @@ export default function Home() {
               <img
                 src="/img/logo-code.jpg"
                 alt="WordPress Custom Logo"
-                className="h-16 mb-4"
+                className="h-12 mb-4"
               />
               <h3 className="text-xl font-semibold text-regularblue mb-2">
                 WordPress Custom

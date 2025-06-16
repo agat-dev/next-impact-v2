@@ -11,7 +11,7 @@ const PROJECTS = [
 		id: 1,
 		title: "Proditec",
 		type: "corporate",
-		image: "/img/logo-proditec.webp",
+		image: "/img/desktop-screen-proditec.jpg",
 		alt: "Site corporate Proditec",
 		description: "Site corporate multilingue",
 		link: "/etudes-de-cas/proditec",
@@ -21,7 +21,7 @@ const PROJECTS = [
 		id: 4,
 		title: "Les Doléances",
 		type: "headless",
-		image: "/img/logo-doleances.png",
+		image: "/img/desktop-screen-lesdoleances.webp",
 		alt: "Vitrine des Doléances",
 		description: "Vitrine des Doléances de 2018-2019",
 		link: "/etudes-de-cas/doleances",
@@ -31,7 +31,7 @@ const PROJECTS = [
 		id: 2,
 		title: "Sowee",
 		type: "corporate",
-		image: "/img/logo-sowee.png",
+		image: "/img/desktop-screen-sowee.jpg",
 		alt: "Section blog de Sowee",
 		description: "Section blog de Sowee",
 		link: "/etudes-de-cas/sowee",
@@ -41,7 +41,7 @@ const PROJECTS = [
 		id: 6,
 		title: "Salon de la Carrosserie 2024",
 		type: "corporate",
-		image: "/img/logo-salondelacarrosserie.webp",
+		image: "/img/desktop-screen-salondelacarrosserie.jpg",
 		alt: "Site vitrine du Salon de la Carrosserie 2024",
 		description: "Site vitrine du Salon de la Carrosserie 2024",
 		link: "/etudes-de-cas/salon-de-la-carrosserie",
@@ -51,7 +51,7 @@ const PROJECTS = [
 		id: 7,
 		title: "Tiers Lieu L'Hermitage",
 		type: "corporate",
-		image: "/img/logo-hermitage.webp",
+		image: "/img/desktop-screen-hermitage.jpg",
 		alt: "Site vitrine du Tiers Lieu L'Hermitage",
 		description: "Site vitrine du Tiers Lieu L'Hermitage",
 		link: "/etudes-de-cas/hermitage",
@@ -61,7 +61,7 @@ const PROJECTS = [
 		id: 8,
 		title: "ERP Services",
 		type: "corporate",
-		image: "/img/logo-erp-services.webp",
+		image: "/img/desktop-screen-erp-services.jpg",
 		alt: "Site vitrine d'ERP Services",
 		description: "Site vitrine d'ERP Services",
 		link: "/etudes-de-cas/erp-services",
@@ -71,7 +71,7 @@ const PROJECTS = [
 		id: 9,
 		title: "Senza Nature",
 		type: "ecommerce",
-		image: "/img/logo-senza-nature.png",
+		image: "/img/desktop-screen-senza-nature.jpg",
 		alt: "Site ecommerce Senza Nature",
 		description: "Site ecommerce Senza Nature",
 		link: "/etudes-de-cas/senza-nature",
@@ -81,7 +81,7 @@ const PROJECTS = [
 		id: 10,
 		title: "Wagner Hamisky",
 		type: "corporate",
-		image: "/img/logo-wagner-hamisky.jpeg",
+		image: "/img/desktop-screen-wagner-hamisky.jpg",
 		alt: "Site vitrine Wagner Hamisky",
 		description: "Site vitrine de la galerie Wagner Hamisky",
 		link: "/etudes-de-cas/wagner-hamisky",
@@ -147,7 +147,7 @@ export default function Realisations({ count }: RealisationsProps) {
 													height={200}
 													width={200}
 													loading="lazy"
-													className="w-6/12 mx-auto pt-8 object-contain transition-transform duration-500 group-hover:scale-105"
+													className="w-full mx-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
 												/>
 											</div>
 											<div className="p-6 flex flex-col flex-1">

@@ -181,7 +181,7 @@ const CASE_STUDIES: CaseStudy[] = [
     title: "Sowee",
     description:
       "Création d'une section blog pour le portail de l'entreprise Sowee, spécialisée dans les solutions énergétiques.",
-    imageUrl: "/img/logo-sowee.png",
+    imageUrl: "/img/logo-sowee.svg",
     clientType: "Grande entreprise",
     clientName: "Sowee",
     date: {
@@ -609,13 +609,6 @@ export default async function CaseStudyPage({
           <div className="lg:col-span-1 sticky top-16 self-start">
             <MagicCard className="rounded-2xl bg-white border-none">
               <div className="p-6 top-8">
-                <Image 
-                  src={caseStudy.imageUrl}
-                  alt={caseStudy.title}
-                  width={150}
-                  height={150}
-                  className="object-contain mb-4 md:block hidden"
-                />
                 <h2 className="text-xl  mb-6 text-regularblue">
                   Informations du projet
                 </h2>
@@ -747,11 +740,11 @@ export default async function CaseStudyPage({
                 className="block transition-transform hover:scale-[1.02] rounded-lg"
               >
                 <Card className="h-full overflow-hidden">
-                  <div className="flex items-center justify-center aspect-video p-4 overflow-hidden">
+                  <div className="flex items-center justify-center aspect-video overflow-hidden">
                     <img
-                      src={study.imageUrl || "/placeholder.svg"}
+                      src={study.gallery.url || "/placeholder.svg"}
                       alt={study.title}
-                      className="w-10/12 h-full object-contain transition-transform hover:scale-105 duration-300"
+                      className="w-full h-full object-cover object-top transition-transform hover:scale-105 duration-300"
                     />
                   </div>
                   <CardContent className="p-5">
