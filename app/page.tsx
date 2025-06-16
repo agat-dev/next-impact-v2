@@ -189,8 +189,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          <Advantages />
         </div>
 
         {/* Démarche de tarification Section */}
@@ -230,6 +228,8 @@ export default function Home() {
             <h3 className="text-2xl mb-8"><strong>Résultat </strong>: Un site web totalement aligné sur le besoin</h3>
           </div>
           <FeatureCarousel features={wordpressFeatures} />
+
+          <Advantages />
         </div>
 
         {/* Realisation Section */}
