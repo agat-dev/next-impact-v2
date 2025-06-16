@@ -42,7 +42,7 @@ export default function Home() {
       title: "Sites Corporate",
       description:
         "Présentation d'entreprise, services, équipes et réalisations.",
-      image: "/img/desktop-screen-sowee.webp?height=400&width=400",
+      image: "/img/desktop-screen-sowee.png?height=400&width=400",
       badge: "WordPress",
       details: [
         "Groupes industriels",
@@ -78,7 +78,7 @@ export default function Home() {
       id: "5",
       title: "Plateformes collaboratives",
       description: "Wikis, forums, intranets et extranets.",
-      image: "/img/desktop-screen-lesdoleances.jpg?height=400&width=600",
+      image: "/img/desktop-screen-lesdoleances.png?height=400&width=600",
       badge: "Headless WordPress",
       details: ["Wikis", "Forums", "Intranets et Extranets"],
     },

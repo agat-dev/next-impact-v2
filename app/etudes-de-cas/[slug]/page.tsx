@@ -201,7 +201,7 @@ const CASE_STUDIES: CaseStudy[] = [
       "Administration simplifiée pour l'équipe marketing",
     ],
     gallery: {
-      url: "/img/desktop-screen-sowee.webp",
+      url: "/img/desktop-screen-sowee.png",
       alt: "Interface de la section blog Sowee",
     },
     detailedDescription:
