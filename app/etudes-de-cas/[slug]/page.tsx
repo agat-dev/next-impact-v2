@@ -265,7 +265,7 @@ const CASE_STUDIES: CaseStudy[] = [
     description:
       "Refonte progressive à la marge du site vitrine du Tiers Lieu L'Hermitage.",
     imageUrl: "/img/logo-hermitage.webp",
-    clientType: "Association",
+    clientType: "ESS",
     clientName: "L'Hermitage",
     date: {
       month: 1,
@@ -408,6 +408,141 @@ const CASE_STUDIES: CaseStudy[] = [
     duration: "3 semaines",
     website: "https://wagner-hamisky.com",
   },
+  {
+    id: "10",
+    slug: "mediatico",
+    title: "Mediatico",
+    description:
+      "Création d'un Média en ligne pour Mediatico, toute l'actualité de l'ESS.",
+    imageUrl: "/img/logo-mediatico.png",
+    clientType: "ESS",
+    clientName: "Mediatico",
+    date: {
+      month: 12,
+      year: 2024,
+    },
+    tags: ["WordPress", "Media en ligne", "Full Site Editing"],
+    objectives: [
+      "Moderniser le thème WordPress existant",
+      "Améliorer l'expérience utilisateur",
+      "Permettre la publication d'articles par les visiteurs",
+    ],
+    results: [
+      "Site moderne et professionnel",
+      "Espace dédié aux partenaires et sponsors",
+      "Stabilisation du site avec une réduction significative des bugs",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-mediatico.jpg",
+      alt: "Page d'accueil du site Mediatico",
+    },
+    detailedDescription:
+      "Mediatico, un média en ligne dédié à l'actualité de l'économie sociale et solidaire, souhaitait refondre son média pour présenter ses articles et ses partenaires. L'objectif était de fournir un espace d'information accessible et attrayant pour les lecteurs.\n\nNous avons développé un site WordPress avec un design moderne et une navigation intuitive. Le site met en avant les articles récents, les partenaires et sponsors, ainsi qu'un espace dédié aux publications des visiteurs.\n\nLe site est entièrement responsive et optimisé pour le référencement naturel, permettant à Mediatico d'attirer un large public intéressé par l'ESS.",
+    technologies: ["WordPress", "Gutenberg", "Thème custom"],
+    duration: "4 semaines",
+    website: "https://mediatico.fr",
+  },
+  {
+    id: "11",
+    slug: "infralliance",
+    title: "Infralliance",
+    description:
+      "Création d'un site vitrine pour Infralliance, Think and Do Thank des opérateurs d'infrastructures numériques.",
+    imageUrl: "/img/logo-infralliance.png",
+    clientType: "Groupement",
+    clientName: "Infralliance",
+    date: {
+      month: 4,
+      year: 2023,
+    },
+    tags: ["WordPress", "Advanced Custom Fields", "Elementor Pro"],
+    objectives: [
+      "Présenter les actions et les projets de l'association",  
+      "Mettre en avant le réseau des opérateurs d'infrastructures numériques",
+      "Communiquer sur les enjeux de l'infrastructure numérique",
+    ],
+    results: [
+      "Site vitrine moderne et professionnel",
+      "Mise en ligne avant l'événement de lancement de l'association",
+      "Simple à administrer pour l'équipe interne",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-infralliance.jpg",
+      alt: "Page d'accueil du site Connexion Plus",
+    },
+    detailedDescription:
+      "Infralliance, un think and do tank des opérateurs d'infrastructures numériques, souhaitait créer un site vitrine pour présenter ses actions et ses membres.\n\nNous avons développé un site WordPress avec un design épuré et une navigation intuitive. Le site met en avant les actions de l'association, ainsi que son réseau d'opérateurs d'infrastructures numériques.\n\nLe site a été mis en ligne avant l'événement de lancement de l'association, permettant à Infralliance de communiquer efficacement sur ses enjeux et ses projets.",
+    technologies: ["WordPress", "Elementor Pro", "Advanced Custom Fields"],
+    duration: "2 semaines",
+    website: "https://infralliance.net",
+  },
+  {
+    id: "12",
+    slug: "connexion-plus",
+    title: "GEM Connexion",
+    description:
+      "Création d'un site vitrine pour le GEM Connexion Plus, association socio-culturelle parisienne.",
+    imageUrl: "/img/logo-connexion-plus.jpg",
+    clientType: "ESS",
+    clientName: "GEM Connexion",
+    date: {
+      month: 5,
+      year: 2022,
+    },
+    tags: ["WordPress", "Site vitrine", "Association"],
+    objectives: [
+      "Donner de la visibilité à GEM Connexion aux partenaires et au public",
+      "Permettre aux membres de l'association de publier leur actualité",
+      "Rendre accessible les informations sur les activités et les projets",
+    ],
+    results: [
+      "Site vitrine moderne et professionnel",
+      "Espace dédié aux membres pour publier des actualités",
+      "Facilitation de la prise de contact pour les partenaires et le public",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-gem-connexion.jpg",
+      alt: "Page d'accueil du site GEM Connexion",
+    },
+    detailedDescription:
+      "GEM Connexion Plus, un groupe d'entraide mutuelle (GEM) parisien, souhaitait créer un site vitrine pour donner de la visibilité à ses activités et à ses projets. L'objectif était de fournir un espace professionnel et moderne pour attirer de nouveaux membres et partenaires.\n\nNous avons développé un site WordPress avec un design épuré et une navigation intuitive. Le site met en avant les activités du GEM, ainsi que les projets en cours.\n\nUn espace dédié aux membres a été intégré, permettant à chacun de publier ses actualités et de partager ses expériences. Le site est entièrement responsive et optimisé pour le référencement naturel.",
+    technologies: ["WordPress", "Thème communautaire", "Co-construction par ateliers"],
+    duration: "4 semaines",
+    website: "https://gem-connexion.fr",
+  },
+  {
+    id: "13",
+    slug: "sdevo",
+    title: "SDEVO",
+    description:
+      "Création d'un plugin de gestion des demandes de subventions pour le Syndicat départemental des énergies du Val d'Oise.",
+    imageUrl: "/img/logo-sdevo.png",
+    clientType: "Institutionnel",
+    clientName: "SDEVO",
+    date: {
+      month: 8,
+      year: 2024,
+    },
+    tags: ["WordPress", "Plugin custom", "Gestion des subventions"],
+    objectives: [
+      "Permettre aux communes de soumettre des demandes de subventions en ligne",
+      "Gérer les demandes de subventions de manière centralisée",
+      "Faciliter le suivi des demandes pour les communes et le SDEVO",
+    ],
+    results: [
+      "Plugin WordPress personnalisé pour la gestion des subventions",
+      "Interface utilisateur intuitive pour les communes",
+      "Suivi des demandes de subventions simplifié pour le SDEVO",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-sdevo.png",
+      alt: "Page de gestion des subventions du SDEVO",
+    },
+    detailedDescription:
+      "Le Syndicat départemental des énergies du Val d'Oise (SDEVO) souhaitait créer un plugin WordPress pour gérer les demandes de subventions des communes. L'objectif était de permettre aux communes de soumettre leurs demandes en ligne et de faciliter le suivi pour le SDEVO.\n\nNous avons développé un plugin personnalisé qui permet aux communes de soumettre leurs demandes de subventions via une interface utilisateur intuitive. Le plugin gère également le suivi des demandes, permettant au SDEVO de centraliser et de suivre les demandes de manière efficace.\n\nLe plugin est entièrement intégré à WordPress, ce qui permet une gestion facile et une administration simplifiée pour les utilisateurs du SDEVO.",
+    technologies: ["WordPress", "PHP", "Plugin custom"],
+    duration: "3 semaines",
+  },
 ];
 
 // Noms des mois en français
@@ -500,9 +635,26 @@ export default async function CaseStudyPage({
       </div>
 
       {/* Contenu principal */}
-      <div className="container px-4 md:px-6 py-6">
+      <div className="container px-4 md:px-6 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2 space-y-10">
+
+            {/* Galerie */}
+            <section>
+              <h2 className="text-2xl  mb-6 text-regularblue">
+                Aperçu du projet
+              </h2>
+              <div className="rounded-lg border overflow-hidden">
+                <Image
+                  src={caseStudy.gallery.url || "/placeholder.svg"}
+                  alt={caseStudy.gallery.alt}
+                  width={800}
+                  height={500}
+                  className="w-full object-cover"
+                />
+              </div>
+            </section>
+
             {/* Présentation du projet */}
             <section>
               <h2 className="text-2xl  mb-6 text-regularblue">
@@ -553,22 +705,6 @@ export default async function CaseStudyPage({
                     </li>
                   ))}
                 </ul>
-              </div>
-            </section>
-
-            {/* Galerie */}
-            <section>
-              <h2 className="text-2xl  mb-6 text-regularblue">
-                Aperçu du projet
-              </h2>
-              <div className="rounded-lg border overflow-hidden">
-                <Image
-                  src={caseStudy.gallery.url || "/placeholder.svg"}
-                  alt={caseStudy.gallery.alt}
-                  width={800}
-                  height={500}
-                  className="w-full object-cover"
-                />
               </div>
             </section>
 
