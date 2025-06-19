@@ -44,6 +44,12 @@ export default function DocTabs() {
         description: "Optimisation pour les moteurs de recherche",
         url: "/documentation/seo",
       },
+      {
+        id: "Blog",
+        title: "Blog",
+        description: "Les derniers actualités du blog",
+        url: "/documentation/blog",
+      },
     ];
   
     // Filtrer les articles par catégorie
@@ -64,6 +70,9 @@ export default function DocTabs() {
     );
     const seoArticles = articles.filter(
       (article) => article.category === "seo");
+    const blogArticles = articles.filter(
+      (article) => article.category === "blog"
+    );
   
 
         return (
@@ -121,7 +130,13 @@ export default function DocTabs() {
                     >
                       Headless CMS
                     </TabsTrigger>
-                  </TabsList>
+                    <TabsTrigger
+                      value="blog"
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
+                      Blog
+                    </TabsTrigger>
+                      </TabsList>
                   <TabsContent value="all" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {articles.map((article) => (
@@ -257,6 +272,28 @@ export default function DocTabs() {
                   <TabsContent value="seo" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {seoArticles.map((article) => (
+                        <div
+                          key={article.slug}
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
+                              {article.description}
+                            </p>
+                          </div>
+                          <Link
+                            href={`/documentation/${article.category}/${article.slug}`}
+                            className="absolute inset-0 rounded-lg"
+                            aria-label={article.title}>
+                            <span className="sr-only">{article.title}</span>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="blog" className="pt-6">
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {blogArticles.map((article) => (
                         <div
                           key={article.slug}
                           className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
