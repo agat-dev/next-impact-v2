@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu as MenuIcon, X as CloseIcon } from "lucide-react"
+import { Menu as MenuIcon, X as CloseIcon, List } from "lucide-react"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
@@ -68,7 +68,10 @@ export function NavBar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
+              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Ressources</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
                   <li className="lg:basis-1/3">
@@ -79,30 +82,27 @@ export function NavBar() {
                       >
                         <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
                         <p className="text-sm leading-tight">
-                          Des outils en ligne pour vous aider à décider et à formaliser votre projet web.
+                          Des ressources en ligne pour vous aider à décider et à formaliser votre projet web.
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
                   <div className='lg:basis-2/3'>
-                    <ListItem href="/cms-headless" title="WordPress CMS ou Headless ?" className='h-22'>
+                    <ListItem href="/cms-headless" title="Quiz WordPress ou Headless ?" className='h-22'>
                       <p className='text-xs text-regularblue/70'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
                     </ListItem>
-                    <ListItem href="/simulateur-tarifs" title="Simulateur du budget" className='h-22'>
+                    <ListItem href="/simulateur-tarifs" title="Simulateur de budget" className='h-22'>
                       <p className='text-xs text-regularblue/70'>Outil interactif pour estimer le budget de votre projet web.</p>
                     </ListItem>
                     <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-22'>
                       <p className='text-xs text-regularblue/70'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
                     </ListItem>
+                    <ListItem href="/documentation" title="Documentation & Blog" className='h-22'>
+                      <p className='text-xs text-regularblue/70'>Base de ressources et articles pour réussir votre projet.</p>
+                    </ListItem>
                   </div>
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/documentation" className='font-googletitre text-regularblue text-lg font-medium px-2'>Ressources</Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -184,28 +184,30 @@ export function NavBar() {
                           transition={{ duration: 0.25 }}
                           className="pl-4 overflow-hidden"
                         >
-                          <MobileMenuLink href="/services/wordpress" onClick={handleMenuClick} className="pl-4">Sites web Corporate</MobileMenuLink>
-                          <MobileMenuLink href="/services/headless" onClick={handleMenuClick} className="pl-4">Sites web</MobileMenuLink>
+                          <MobileMenuLink href="/services/wordpress" onClick={handleMenuClick} className="pl-4">WordPress</MobileMenuLink>
+                          <MobileMenuLink href="/services/headless" onClick={handleMenuClick} className="pl-4">WordPress Headless</MobileMenuLink>
                         </motion.div>
                       )}
                     </AnimatePresence>
+                    <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
+
                     <button
                       className={cn(
                         "w-full text-left block py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
-                        openSubMenu === "outils" && "bg-lightblue/10"
+                        openSubMenu === "ressources" && "bg-lightblue/10"
                       )}
-                      onClick={() => handleToggleSubMenu("outils")}
-                      aria-expanded={openSubMenu === "outils"}
+                      onClick={() => handleToggleSubMenu("ressources")}
+                      aria-expanded={openSubMenu === "ressources"}
                     >
-                      Outils
-                      <span className={cn("transition-transform", openSubMenu === "outils" ? "rotate-180" : "")}>
+                      Ressources
+                      <span className={cn("transition-transform", openSubMenu === "ressources" ? "rotate-180" : "")}>
                         <ChevronDown className="inline w-5 h-5 ml-2" />
                       </span>
                     </button>
                     <AnimatePresence initial={false}>
-                      {openSubMenu === "outils" && (
+                      {openSubMenu === "ressources" && (
                         <motion.div
-                          key="outils-sub"
+                          key="ressources-sub"
                           initial={{ y: -20, opacity: 0, height: 0 }}
                           animate={{ y: 0, opacity: 1, height: "auto" }}
                           exit={{ y: -20, opacity: 0, height: 0 }}
@@ -215,16 +217,14 @@ export function NavBar() {
                           <MobileMenuLink href="/cms-headless" onClick={handleMenuClick} className="pl-4">WordPress CMS ou Headless ?</MobileMenuLink>
                           <MobileMenuLink href="/simulateur-tarifs" onClick={handleMenuClick} className="pl-4">Simulateur du budget</MobileMenuLink>
                           <MobileMenuLink href="/cahier-des-charges" onClick={handleMenuClick} className="pl-4">Générateur de cahier des charges</MobileMenuLink>
+                          <MobileMenuLink href="/documentation" onClick={handleMenuClick} className="pl-4">Documentation & Blog</MobileMenuLink>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
-                  <MobileMenuLink href="/documentation" onClick={handleMenuClick}>Ressources</MobileMenuLink>
-                  {/* Outils sous-menu */}
                   <div>
                   </div>
-                  <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
-                  {/* Outils sous-menu */}
+
                   <div>
                   </div>
                 </div>
