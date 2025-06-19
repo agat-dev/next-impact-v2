@@ -21,7 +21,7 @@ const PROJECTS = [
     id: 4,
     title: "Les Doléances",
     type: "headless",
-    image: "/img/desktop-screen-lesdoleances.webp",
+    image: "/img/desktop-screen-lesdoleances.png",
     alt: "Vitrine des Doléances",
     description: "Vitrine des Doléances de 2018-2019",
     link: "/etudes-de-cas/doleances",

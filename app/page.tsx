@@ -8,8 +8,10 @@ import FeatureCarousel from "@/components/services/features-carousel";
 import { Metadata } from "next";
 import Advantages from "@/components/advantages";
 import StrategiePrix from "@/components/strategie-prix";
+import QuizNiveauWordpress from "@/components/quiz-niveau-wordpress";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -42,7 +44,7 @@ export default function Home() {
       title: "Sites Corporate",
       description:
         "Présentation d'entreprise, services, équipes et réalisations.",
-      image: "/img/desktop-screen-sowee.webp?height=400&width=400",
+      image: "/img/desktop-screen-sowee.png?height=400&width=400",
       badge: "WordPress",
       details: [
         "Groupes industriels",
@@ -78,7 +80,7 @@ export default function Home() {
       id: "5",
       title: "Plateformes collaboratives",
       description: "Wikis, forums, intranets et extranets.",
-      image: "/img/desktop-screen-lesdoleances.jpg?height=400&width=600",
+      image: "/img/desktop-screen-lesdoleances.png?height=400&width=600",
       badge: "Headless WordPress",
       details: ["Wikis", "Forums", "Intranets et Extranets"],
     },
@@ -124,18 +126,21 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
-            <div className="flex flex-col items-center p-6 bg-white rounded-2xl border border-extrlightblue/30">
+            <div className="flex flex-col items-center p-6 justify-between bg-white rounded-2xl border border-extrlightblue/30">
               <img
                 src="/img/logo-wordpress.png"
                 alt="WordPress Logo"
                 className="h-12 mb-4"
               />
-              <h3 className="text-xl font-semibold text-regularblue mb-2">
+              <h3 className="text-xl font-semibold text-regularblue mb-3">
                 WordPress
               </h3>
+              <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
+              Site professionnel, rapide et fiable
+              </p>
               <p className="text-mediumblue/80 text-center">
-                Le CMS le plus utilisé au monde, idéal pour les sites vitrine,
-                corporate et institutionnels.
+               <ArrowRight className="inline h-4 w-4 mr-1" />
+                Parfait pour : PME, artisans, professions libérales
               </p>
               <Link
                 href="/services/wordpress"
@@ -146,17 +151,21 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="flex flex-col items-center p-6 bg-white rounded-2xl border border-extrlightblue/30">
+            <div className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl border border-extrlightblue/30">
               <img
                 src="/img/logo-nextjs.png"
                 alt="Next.js Logo"
                 className="h-12 mb-4"
               />
-              <h3 className="text-xl font-semibold text-regularblue mb-2">
+              <h3 className="text-xl font-semibold text-regularblue mb-3">
                 Headless WordPress
               </h3>
+              <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
+              Solution métier sur-mesure
+              </p>
               <p className="text-mediumblue/80 text-center">
-                Pour des applications web modernes, performantes et évolutives.
+               <ArrowRight className="inline h-4 w-4 mr-1" />
+                Parfait pour : PME industrie, services B2B
               </p>
               <Link
                 href="/services/headless"
@@ -167,17 +176,21 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="flex flex-col items-center p-6 bg-white rounded-2xl border border-extrlightblue/30">
+            <div className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl border border-extrlightblue/30">
               <img
                 src="/img/logo-code.jpg"
                 alt="WordPress Custom Logo"
                 className="h-12 mb-4"
               />
-              <h3 className="text-xl font-semibold text-regularblue mb-2">
+              <h3 className="text-xl font-semibold text-regularblue mb-3">
                 WordPress Custom
               </h3>
+              <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
+              Performance enterprise accessible
+              </p>
               <p className="text-mediumblue/80 text-center">
-                Pour des sites web sur-mesure avec des fonctionnalités avancées.
+               <ArrowRight className="inline h-4 w-4 mr-1" />
+                Parfait pour : PME ambitieuses, forte croissance
               </p>
               <Link
                 href="/services/wordpress"
@@ -189,6 +202,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          <div>
+          <QuizNiveauWordpress />
+          </div>
+
         </div>
 
         {/* Démarche de tarification Section */}
