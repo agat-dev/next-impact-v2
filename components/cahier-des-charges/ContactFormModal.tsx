@@ -117,7 +117,7 @@ export function ContactFormModal({ formData, onClose }: ContactFormModalProps) {
           </button>
           {sent ? (
             <div className="text-center space-y-4 py-8">
-              <div className="text-2xl text-green-600 font-bold">Merci !</div>
+              <div className="text-2xl text-regularblue font-googletitre font-bold">Merci !</div>
               <div className="text-regularblue">Votre demande a bien été envoyée.</div>
               <button
                 className="mt-4 px-6 py-2 bg-regularblue text-white rounded hover:bg-mediumblue"

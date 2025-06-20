@@ -17,7 +17,7 @@ export default async function handler(req, res) {
   } = req.body;
 
   const userEmail = contact?.email;
-  const adminEmail = process.env.ADMIN_EMAIL || 'agathe@next-impact.digital';
+  const adminEmail = 'agathe@next-impact.digital';
 
   const list = (items) => (Array.isArray(items) ? items.join(', ') : 'Non précisé');
 
@@ -54,14 +54,14 @@ export default async function handler(req, res) {
   try {
     await Promise.all([
       resend.emails.send({
-        from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+        from: adminEmail || 'onboarding@resend.dev',
         to: userEmail,
         subject: 'Votre estimation personnalisée – Next Impact Digital',
         html: clientHtml,
       }),
       resend.emails.send({
-        from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
-        to: adminEmail,
+        from: adminEmail || 'onboarding@resend.dev',
+        to: 'agathe@next-impact.digital',
         subject: `Nouvelle estimation reçue de ${userEmail}`,
         html: adminHtml,
       }),
