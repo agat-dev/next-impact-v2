@@ -144,7 +144,7 @@ export default function EstimationForm() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col justify-center space-y-4 py-8">
             <h1 className="font-medium text-center">
-              Demander un devis WordPress
+              Simuler un devis WordPress
             </h1>
             <p className="text-regularblue/70 text-center max-w-3xl mx-auto">
               Obtenez une estimation personnalisée pour la création de votre site WordPress selon vos besoins et vos contenus.
@@ -355,7 +355,7 @@ export default function EstimationForm() {
                       className="bg-regularblue text-white px-4 py-2 rounded-full hover:bg-regularblue/90 w-full"
                       disabled={sending}
                     >
-                      {sending ? "Envoi en cours..." : "Recevoir mon estimation par email"}
+                      {sending ? "Envoi en cours..." : "Envoyer mon estimation pour devis"}
                     </button>
                     {error && (
                       <div className="mt-2 p-2 bg-red-100 border border-red-300 rounded">
