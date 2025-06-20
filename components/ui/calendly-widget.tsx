@@ -15,7 +15,7 @@ const CalendlyBadge = () => {
           window.Calendly.initBadgeWidget({
             url: 'https://calendly.com/agat-dev',
             text: 'RDV Conseil',
-            color: '#1f54bf',
+            color: '#ec407a',
             textColor: '#ffffff',
             branding: false,
           });

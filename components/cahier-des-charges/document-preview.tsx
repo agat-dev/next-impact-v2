@@ -79,7 +79,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
         <div className="bg-lightblue/10 p-8 border-t-8 border-regularblue mb-12">
           <div className="text-center space-y-4">
             <h1 className="text-3xl font-bold text-mediumblue">CAHIER DES CHARGES</h1>
-            <h2 className="text-xl text-regularblue font-medium">Refonte de Site Vitrine Institutionnel</h2>
+            <h2 className="text-xl text-regularblue font-medium">Création / Refonte de site web</h2>
             
 
             <div className="mt-12 space-y-4 text-left max-w-md mx-auto">

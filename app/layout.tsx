@@ -30,7 +30,7 @@ export default function RootLayout({
         </head>
 {/* Google tag (gtag.js) */}
 <script
-  defer
+  async
   src="https://www.googletagmanager.com/gtag/js?id=G-3D5PKXEN72"
 ></script>
 <script
