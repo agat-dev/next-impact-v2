@@ -16,7 +16,7 @@ export async function POST(req: Request) {
     } = await req.json();
 
     const userEmail = contact?.email;
-    const adminEmail = process.env.ADMIN_EMAIL || 'agathe@next-impact.digital';
+    const adminEmail = "agathe@next-impact.digital"; // Adresse fixe
 
     const list = (items: any) => (Array.isArray(items) ? items.join(', ') : 'Non précisé');
 
@@ -52,13 +52,13 @@ export async function POST(req: Request) {
 
     await Promise.all([
       resend.emails.send({
-        from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+        from: "Next Impact <agathe@next-impact.digital>", // Adresse fixe
         to: userEmail,
         subject: 'Votre estimation personnalisée – Next Impact Digital',
         html: clientHtml,
       }),
       resend.emails.send({
-        from: process.env.FROM_EMAIL || 'onboarding@resend.dev',
+        from: "Next Impact <agathe@next-impact.digital>", // Adresse fixe
         to: adminEmail,
         subject: `Nouvelle estimation reçue de ${userEmail}`,
         html: adminHtml,
