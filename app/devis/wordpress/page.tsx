@@ -16,6 +16,8 @@ export default function EstimationForm() {
     estimation: null,
     sent: false,
   });
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(null);
 
   // Ajout : recalcul dynamique de l'estimation
   useEffect(() => {
@@ -44,8 +46,10 @@ export default function EstimationForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSending(true);
+    setError(null);
 
-    const response = await fetch('/api/send-estimation', {
+    const response = await fetch('/api/devis/send-estimation', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -56,7 +60,10 @@ export default function EstimationForm() {
 
     if (response.ok) {
       setFormData(prev => ({ ...prev, sent: true }));
+    } else {
+      setError("Une erreur est survenue lors de l'envoi de l'e-mail. Veuillez réessayer.");
     }
+    setSending(false);
   };
 
   // Déplace estimatePrice ici pour qu'il soit accessible dans useEffect
@@ -241,8 +248,9 @@ export default function EstimationForm() {
       <button
         type="submit"
         className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        disabled={sending}
       >
-        Recevoir mon estimation
+        {sending ? "Envoi en cours..." : "Recevoir mon estimation"}
       </button>
 
       {formData.sent && (
@@ -260,6 +268,12 @@ export default function EstimationForm() {
               Planifier un appel gratuit de 30 min avec notre équipe
             </a>
           </p>
+        </div>
+      )}
+
+      {error && (
+        <div className="mt-6 p-4 bg-red-100 border border-red-300 rounded">
+          <p className="text-red-700 font-semibold">{error}</p>
         </div>
       )}
     </form>
