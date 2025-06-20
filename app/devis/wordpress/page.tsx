@@ -49,7 +49,7 @@ export default function EstimationForm() {
     setSending(true);
     setError(null);
 
-    const response = await fetch('/api/devis/route', {
+    const response = await fetch('/api/devis', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
