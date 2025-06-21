@@ -123,8 +123,7 @@ export default function Tools() {
       content: `
       <p>
         Simulateur en ligne et gratuit qui calcule instantanément le coût précis
-        de votre projet digital en fonction de vos besoins, et du type de
-        prestataire choisi.
+        de votre projet digital en fonction de vos besoins.
         <br />
         <br />
         Cet outil stratégique aide les décideurs à optimiser leur budget en
@@ -190,8 +189,7 @@ export function PriceQuizCard() {
       content: `
       <p>
         Simulateur en ligne et gratuit qui calcule instantanément le coût précis
-        de votre projet digital en fonction de vos besoins, et du type de
-        prestataire choisi.
+        de votre projet digital en fonction de vos besoins.
         <br />
         <br />
         Cet outil stratégique aide les décideurs à optimiser leur budget en

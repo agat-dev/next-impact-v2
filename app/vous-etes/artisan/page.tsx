@@ -1,5 +1,4 @@
 
-import LandingCard from "@/components/ui/landing-cards";
 import HeroLanding from "@/components/ui/hero-landing";
 import SolutionLanding from "@/components/ui/solution-landing";
 import GainsLanding from "@/components/ui/gains-landing";
@@ -17,6 +16,9 @@ const Hero =
       buttonText: "Faire une estimation",
       buttonLink: "/devis/wordpress",
       buttonVariant: "primary",
+      button2Link: "https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress",
+        button2Text: "Prendre rendez-vous",
+        button2Variant: "secondary",
     }
 
 const solution = {

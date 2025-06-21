@@ -33,7 +33,7 @@ export default function Home() {
               Simulateur de Tarif de site web 
             </h1>            
             <p className="text-regularblue/70 text-center max-w-3xl mx-auto">
-              Estimez le coût de votre projet web selon les prestataires et fonctionnalités souhaitées.
+              Estimez le coût de votre projet web selon le type de projet.
             </p>
           </div>
       <PricingCalculator />
