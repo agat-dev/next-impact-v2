@@ -1,15 +1,4 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight } from "lucide-react";
+
 import LandingCard from "@/components/ui/landing-cards";
 import HeroLanding from "@/components/ui/hero-landing";
 import SolutionLanding from "@/components/ui/solution-landing";
@@ -46,14 +35,14 @@ const gains = {
     subtitle: "Une véritable démonstration de votre savoir-faire pour attirer et convaincre de nouveaux clients.",
     landingCards: [
         {
+            imageUrl: "/img/realisations-artisan.jpg",
+            title: "Démontrer la qualité de votre travail",
+            text: "Mettre en avant ses réalisations pour convaincre plus rapidement",
+        },
+        {
             imageUrl: "/img/notoriete-artisan.jpg",
             title: "Toucher de nouveaux clients",
             text: "Elargir sa clientèle potentielle et être découvert par de nouveaux types de clients",
-        },
-        {
-            imageUrl: "/img/artisan.jpg",
-            title: "Démontrer la qualité de votre travail",
-            text: "Mettre en avant ses réalisations pour convaincre plus rapidement",
         },
         {
             imageUrl: "/img/google-map.webp",
@@ -128,6 +117,8 @@ const tarifs = {
 
 const Faq = {
     title: "Foire aux questions",
+    image: "/img/artisan-mobile.jpg",
+    imageAlt: "Foire aux questions pour artisans",
     questions: [
         {
             question: "Combien de temps pour créer mon site ?",
@@ -211,6 +202,8 @@ const cta = {
         </div>
        <FaqLanding
             title={Faq.title}
+            image={Faq.image}
+            imageAlt={Faq.imageAlt}
             items={Faq.questions}
         />  
 
