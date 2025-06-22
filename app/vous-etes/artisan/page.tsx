@@ -12,7 +12,7 @@ const Hero =
     {
       badgeText: "Spécial Artisans & TPE locales",
       title: "Site vitrine pour artisans",
-      subtitle: "Valorisez votre savoir-faire, gagnez en visibilité et élargissez votre potentiel client.",
+      subtitle: "Artisans, valorisez votre savoir-faire, gagnez en visibilité et élargissez votre potentiel client.",
       buttonText: "Faire une estimation",
       buttonLink: "/devis/wordpress",
       buttonVariant: "primary",
@@ -24,7 +24,7 @@ const Hero =
 const solution = {
     title: "Pourquoi un site vitrine quand on est artisan ?",
     subtitle: "Une vitrine de démonstration de votre savoir-faire pour attirer et convaincre de nouveaux clients.",
-    imageUrl: "/img/desktop-screen-artisan.jpg",
+    imageUrl: "/img/artisan-plombier.jpg",
     features: [
         "Un site professionnel qui démontre votre savoir-faire",
         "Un formulaire de contact efficace",
@@ -37,22 +37,22 @@ const gains = {
     subtitle: "Une véritable démonstration de votre savoir-faire pour attirer et convaincre de nouveaux clients.",
     landingCards: [
         {
-            imageUrl: "/img/realisations-artisan.jpg",
+            imageUrl: "/img/artisan-paysagiste.jpg",
             title: "Démontrer la qualité de votre travail",
             text: "Mettre en avant ses réalisations pour convaincre plus rapidement",
         },
         {
-            imageUrl: "/img/notoriete-artisan.jpg",
+            imageUrl: "/img/artisan-coiffeur.jpg",
             title: "Toucher de nouveaux clients",
             text: "Elargir sa clientèle potentielle et être découvert par de nouveaux types de clients",
         },
         {
-            imageUrl: "/img/google-map.webp",
+            imageUrl: "/img/artisan-ebeniste.jpg",
             title: "Être visible localement sur Google",
             text: "Etre trouvé rapidement par des clients locaux ou distants",
         },
         {
-            imageUrl: "/img/contact-facilitation.jpg",
+            imageUrl: "/img/desktop-screen-artisan.jpg",
             title: "Être contacté facilement",
             text: "Donner la possibilité à vos clients de demander vos services immédiatement",
         },

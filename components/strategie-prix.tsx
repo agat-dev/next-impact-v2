@@ -58,7 +58,7 @@ export default function StrategiePrix() {
     {
       title: "Site web WordPress",
       description: "Vitrine, Corporate, Institutionnel",
-      price: "à partir de 1200€",
+      price: "à partir de 900€",
       period: "",
       image: "/img/logo-wordpress-small.png",
       link: "/services/wordpress#tarifs",
@@ -66,7 +66,7 @@ export default function StrategiePrix() {
     {
       title: "Site web Headless WordPress",
       description: "Communautaire, Intranet, Application web",
-      price: "à partir de 2500€",
+      price: "à partir de 2200€",
       period: "",
       image: "/img/logo-nextjs.png",
       link: "/services/headless#tarifs",

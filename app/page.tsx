@@ -41,38 +41,39 @@ export default function Home() {
   const wordpressFeatures = [
     {
       id: "1",
-      title: "Sites Corporate",
+      title: "Sites Vitrine",
       description:
-        "Présentation d'entreprise, services, équipes et réalisations.",
-      image: "/img/desktop-screen-sowee.png?height=400&width=400",
+        "Présentation de l'entreprise, services, équipes et réalisations.",
+      image: "/img/tourisme-valeur.jpg?height=400&width=400",
       badge: "WordPress",
       details: [
-        "Groupes industriels",
-        "PME et startups",
-        "Filiales internationales",
+        "Artisans et professions libérales",
+        "PME et TPE",
+        "Associations et ESS",
       ],
     },
     {
       id: "2",
       title: "Sites Institutionnels",
       description: "Collectivités, associations, fondations.",
-      image: "/img/desktop-screen-hermitage.jpg?height=400&width=400",
+      image: "/img/asso-solidarite.jpg?height=400&width=400",
       badge: "WordPress",
       details: ["Mairies", "ONG", "Établissements publics"],
     },
     {
       id: "3",
-      title: "Sites de Services",
-      description: "Cabinets, consultants, professions libérales.",
-      image: "/img/desktop-screen-itavera-am.jpg?height=400&width=400",
+      title: "Sites Corporate",
+      description:
+        "Site vitrine et fonctionnalités complémentaires.",
+      image: "/img/pme-indus-homepage.jpg",
       badge: "WordPress",
-      details: ["Cabinets d'avocats", "Consultants", "Centres médicaux"],
+      details: ["PME commerciales", "PME industrielles", "Sociétés de services"],
     },
     {
       id: "4",
       title: "Portails d'Information",
       description: "Actualités, documentation, ressources",
-      image: "/img/desktop-screen-mediatico.jpg?height=400&width=600",
+      image: "/img/portail-infos.jpg?height=400&width=600",
       badge: "WordPress",
       details: ["Centres de formation", "Médias locaux", "Portails RH"],
     },
@@ -80,7 +81,7 @@ export default function Home() {
       id: "5",
       title: "Plateformes collaboratives",
       description: "Wikis, forums, intranets et extranets.",
-      image: "/img/desktop-screen-lesdoleances.png?height=400&width=600",
+      image: "/img/intranet.jpg?height=400&width=600",
       badge: "Headless WordPress",
       details: ["Wikis", "Forums", "Intranets et Extranets"],
     },
@@ -106,7 +107,34 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
-        {/* Dev Section */}
+        {/* Offre */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-[1900px] left-0 h-[1000px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
+          <div className="absolute top-[2200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
+        </div>
+        <div className="w-full max-w-7xl mx-auto px-6 py-24">
+          <div className="mb-12 text-center">
+            <h2 className="text-5xl tracking-tight text-regularblue mb-4">
+              Quel types de site web ?
+            </h2>
+            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
+              WordPress natif ou Headless pour une présence en ligne
+              professionnelle et efficace, réalisable rapidement et possédant
+              une administration adaptée aux équipes.
+            </p>
+            <h3 className="text-2xl mb-8">
+              <strong>Résultat </strong>: Un site web totalement aligné sur le
+              besoin
+            </h3>
+          </div>
+          <FeatureCarousel features={wordpressFeatures} />
+
+          {/*
+          <Advantages />
+          */}
+        </div>
+
+        {/* Détails techniques */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-[900px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[1200px] right-0 h-[600px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
@@ -118,10 +146,13 @@ export default function Home() {
             </h2>
             <p className="text-regularblue/80 text-lg max-w-3xl mx-auto">
               Grâce à des développements spécifiques alignés sur vos besoins,
-              nous créons des sites web WordPress, WordPress custom et des WordPress Headless qui allient performance, design actuel,
+              nous créons des sites web WordPress, WordPress custom et des
+              WordPress Headless qui allient performance, design actuel,
               puissance et évolutivité.
             </p>
-            <h3 className="text-2xl mb-8"><strong>Résultat</strong> : Un site alliant performance et le back-office le plus utilisé
+            <h3 className="text-2xl mb-8">
+              <strong>Résultat</strong> : Un site alliant performance et le
+              back-office le plus utilisé
             </h3>
           </div>
 
@@ -136,10 +167,10 @@ export default function Home() {
                 WordPress
               </h3>
               <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
-              Site professionnel, rapide et fiable
+                Site professionnel, rapide et fiable
               </p>
               <p className="text-mediumblue/80 text-center">
-               <ArrowRight className="inline h-4 w-4 mr-1" />
+                <ArrowRight className="inline h-4 w-4 mr-1" />
                 Parfait pour : PME, artisans, professions libérales
               </p>
               <Link
@@ -147,7 +178,7 @@ export default function Home() {
                 className="mt-4 text-blue-500 hover:underline"
               >
                 <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
-                En savoir plus
+                  En savoir plus
                 </Button>
               </Link>
             </div>
@@ -161,10 +192,10 @@ export default function Home() {
                 Headless WordPress
               </h3>
               <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
-              Solution métier sur-mesure
+                Solution métier sur-mesure
               </p>
               <p className="text-mediumblue/80 text-center">
-               <ArrowRight className="inline h-4 w-4 mr-1" />
+                <ArrowRight className="inline h-4 w-4 mr-1" />
                 Parfait pour : PME industrie, services B2B
               </p>
               <Link
@@ -172,7 +203,7 @@ export default function Home() {
                 className="mt-4 text-blue-500 hover:underline"
               >
                 <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
-                En savoir plus
+                  En savoir plus
                 </Button>
               </Link>
             </div>
@@ -186,10 +217,10 @@ export default function Home() {
                 WordPress Custom
               </h3>
               <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
-              Performance enterprise accessible
+                Performance enterprise accessible
               </p>
               <p className="text-mediumblue/80 text-center">
-               <ArrowRight className="inline h-4 w-4 mr-1" />
+                <ArrowRight className="inline h-4 w-4 mr-1" />
                 Parfait pour : PME ambitieuses, forte croissance
               </p>
               <Link
@@ -197,53 +228,33 @@ export default function Home() {
                 className="mt-4 text-blue-500 hover:underline"
               >
                 <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
-                En savoir plus
+                  En savoir plus
                 </Button>
               </Link>
             </div>
           </div>
 
           <div id="quiz-niveau-wordpress">
-          <QuizNiveauWordpress />
+            <QuizNiveauWordpress />
           </div>
-
         </div>
 
-        {/* Démarche de tarification Section */}
+        {/* Support de l'IA */}
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
           <div className="mb-6 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
               Moins chers grâce à l'IA
             </h2>
             <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
-              Grâce à l'essor de l'IA comme assistant de développement, des solutions plus avancées sont 
-              désormais accessibles à toutes les organisations, même avec des budgets limités.
+              Grâce à l'essor de l'IA comme assistant de développement, des
+              solutions plus avancées sont désormais accessibles à toutes les
+              organisations, même avec des budgets limités.
             </p>
-            <h3 className="text-2xl mb-8"><strong>Résultat </strong>: Des sites complexes enfin abordables</h3>
+            <h3 className="text-2xl mb-8">
+              <strong>Résultat </strong>: Des sites complexes enfin abordables
+            </h3>
           </div>
           <StrategiePrix />
-        </div>
-
-        {/* Advantages Section */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[1900px] left-0 h-[1000px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[2200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
-        </div>
-        <div className="w-full max-w-7xl mx-auto px-6 py-24">
-          <div className="mb-12 text-center">
-            <h2 className="text-5xl tracking-tight text-regularblue mb-4">
-              Solutions offertes
-            </h2>
-            <p className="text-regularblue/80 text-lg max-w-2xl mx-auto">
-              WordPress natif ou Headless pour une présence en ligne
-              professionnelle et efficace, réalisable rapidement et possédant
-              une administration adaptée aux équipes.
-            </p>
-            <h3 className="text-2xl mb-8"><strong>Résultat </strong>: Un site web totalement aligné sur le besoin</h3>
-          </div>
-          <FeatureCarousel features={wordpressFeatures} />
-
-          <Advantages />
         </div>
 
         {/* Realisation Section */}
@@ -261,7 +272,7 @@ export default function Home() {
               spécifiques de mes clients.
             </p>
           </div>
-        <Realisations count={18} />
+          <Realisations count={18} />
         </div>
 
         {/* Testimonials Section */}

@@ -54,13 +54,13 @@ export function ApplicationsTabs({ applications }: ApplicationsTabsProps) {
                   layout
                   className="h-full flex items-center justify-center"
                 >
-                  <Card className="w-max flex md:flex-row flex-col rounded-2xl mx-auto md:h-[300px] h-[550px]">
-                    <div className="md:w-1/4 w-full lg:block md:h-full h-52">
+                  <Card className="w-10/12 flex md:flex-row flex-col rounded-2xl mx-auto md:h-[300px] h-[550px]">
+                    <div className="md:w-1/2 w-full lg:block md:h-full h-52">
                       <Image
                         src={app.image}
                         alt={app.title}
-                        className="h-full w-full object-cover md:object-center object-top rounded-tl-2xl md:rounded-bl-2xl"
-                        width={300}
+                        className="h-full w-full object-cover object-left-top rounded-tl-2xl md:rounded-bl-2xl"
+                        width={500}
                         height={300}
                       />
                     </div>

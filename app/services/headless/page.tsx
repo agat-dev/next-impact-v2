@@ -57,23 +57,23 @@ export default function ApplicationsHeadless() {
   const applications = [
     {
       key: "intranet",
-      image: "/img/intranet.jpeg",
+      image: "/img/intranet.jpg",
       title: "Intranets et Collaboratif",
       description: "Interfaces modernes pour la collaboration",
       examples: ["Extranets", "Intranets", "Plateformes collaboratives"],
     },
     {
       key: "b2b",
-      image: "/img/b2b.jpeg",
-      title: "Portails clients B2B",
+      image: "/img/portail-infos.jpg",
+      title: "Portails clients",
       description: "Dashboards, espaces de commande, suivi de projets",
-      examples: ["Marketplace", "E-commerce", "Services en ligne"],
+      examples: ["Sass", "B2B", "B2C"],
     },
     {
       key: "saas",
-      image: "/img/saas.jpeg",
-      title: "Contenu et performances",
-      description: "Interfaces de gestion, tableaux de bord analytiques",
+      image: "/img/pme-commerciale-luxe.jpg",
+      title: "Design abouti et performances",
+      description: "Conception d'interfaces utilisateur modernes et performantes",
       examples: ["Site à fort trafic", "Site avec enjeu d'image"],
     },
   ];

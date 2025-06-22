@@ -21,7 +21,7 @@ const Hero = {
 const solution = {
     title: " Pourquoi investir dans un site vitrine industriel ?",
     subtitle: "Votre professionnalisme, votre expertise et vos compétences techniques se doivent d'être mis en avant avec un site reflétant la qualité et la précision de vow services et produits.",
-    imageUrl: "/img/pme-homepage.jpg",
+    imageUrl: "/img/pme-indus-homepage.jpg",
     features: [
         "Un design professionnel, aligné sur votre identité visuelle",  
         "Un site optimisé pour le référencement naturel (SEO) afin d'être visible sur Google",
@@ -106,8 +106,8 @@ const tarifs = {
                 "interconnexion avec vos systèmes",
             ],
             button: {
-                label: "Choisir cette formule",
-                href: "/simulateur-tarifs",
+                label: "Prendre rendez-vous",
+                href: "https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress",
             },
             highlighted: false,
         },

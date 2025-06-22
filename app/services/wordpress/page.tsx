@@ -51,22 +51,22 @@ export async function generateMetadata(): Promise<Metadata> {
 const applications = [
   {
     key: "corporate",
-    image: "/img/site-corporate.jpg",
+    image: "/img/pme-homepage.jpg",
     title: "Sites corporate",
     description: "Présentation d'entreprise, services, équipes",
     examples: ["Groupes industriels", "PME", "Artisans"],
   },
   {
     key: "institutionnel",
-    image: "/img/site-institutionnel.jpg",
+    image: "/img/tourisme.jpg",
     title: "Sites institutionnels",
     description: "Collectivités, associations, fondations",
     examples: ["Mairies", "ESS", "Associations"],
   },
   {
     key: "services",
-    image: "/img/site-services.jpg",
-    title: "Sites de services",
+    image: "/img/rh.jpg",
+    title: "Sites de société de services",
     description: "Cabinets, consultants, professions libérales",
     examples: ["Avocats", "Consultants", "Médecins"],
   },
