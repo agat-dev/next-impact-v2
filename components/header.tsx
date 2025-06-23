@@ -221,6 +221,37 @@ export function NavBar() {
                         </motion.div>
                       )}
                     </AnimatePresence>
+                    {/*
+                    <button
+                      className={cn(
+                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
+                        openSubMenu === "vous-etes" && "bg-lightblue/10"
+                      )}
+                      onClick={() => handleToggleSubMenu("vous-etes")}
+                      aria-expanded={openSubMenu === "vous-etes"}
+                    >
+                      Vous êtes
+                      <span className={cn("transition-transform", openSubMenu === "vous-etes" ? "rotate-180" : "")}>
+                        <ChevronDown className="inline w-5 h-5 ml-2" />
+                      </span>
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {openSubMenu === "vous-etes" && (
+                        <motion.div
+                          key="vous-etes-sub"
+                          initial={{ y: -20, opacity: 0, height: 0 }}
+                          animate={{ y: 0, opacity: 1, height: "auto" }}
+                          exit={{ y: -20, opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25 }}
+                          className="pl-4 overflow-hidden"
+                        >
+                          <MobileMenuLink href="/vous-etes/artisan" onClick={handleMenuClick} className="pl-4">Artisan</MobileMenuLink>
+                          <MobileMenuLink href="/vous-etes/pme-industrielle" onClick={handleMenuClick} className="pl-4">PME industrielle</MobileMenuLink>
+                          <MobileMenuLink href="/vous-etes/acteur-tourisme" onClick={handleMenuClick} className="pl-4">Acteur du tourisme</MobileMenuLink>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                    */}
                   </div>
                   <div>
                   </div>
@@ -298,10 +329,45 @@ export default function Header() {
         <div className='basis-4/6 flex lg:justify-center justify-start'>
           <NavBar />
         </div>
+
         <div className='md:basis-1/6 md:flex justify-end hidden'>
-          <Button className="hidden md:flex gap-1 rounded-full pL-6 bg-regularblue hover:bg-regularblue/80 transition-all duration-900 ease-in-out">
-            <Link href="/contact" className="text-base text-white hover:text-white font-regular">Contact</Link>
-          </Button>
+                {/*
+            <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+              <NavigationMenuTrigger className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out font-regular">
+                Vous êtes
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="bg-lightblue/5 p-2 min-w-[180px]">
+                <li>
+                  <NavigationMenuLink asChild>
+                  <Link href="/vous-êtes/artisan" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
+                    Artisan
+                  </Link>
+                  </NavigationMenuLink>
+                </li>
+                <li>
+                  <NavigationMenuLink asChild>
+                  <Link href="/vous-etes/acteur-tourisme" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
+                    Acteur du tourisme
+                  </Link>
+                  </NavigationMenuLink>
+                </li>
+                <li>
+                  <NavigationMenuLink asChild>
+                  <Link href="/vous-etes/pme-industrielle" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
+                    PME industrielle
+                  </Link>
+                  </NavigationMenuLink>
+                </li>
+                </ul>
+              </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+            </NavigationMenu>
+            
+        */}
         </div>
       </div>
     </header>
