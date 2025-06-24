@@ -66,7 +66,7 @@ export default function StrategiePrix() {
     {
       title: "Site web Headless WordPress",
       description: "Communautaire, Intranet, Application web",
-      price: "à partir de 2200€",
+      price: "à partir de 1600€",
       period: "",
       image: "/img/logo-nextjs.png",
       link: "/services/headless#tarifs",

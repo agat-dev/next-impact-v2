@@ -42,35 +42,35 @@ const websiteTypesData: Record<WebsiteType, WebsiteTypeData> = {
   vitrine: {
     name: "Site Vitrine (5-10 pages)",
     description: "Site de présentation pour une entreprise ou un professionnel",
-    prices: { min: 900, max: 1700 },
+    prices: { min: 900, max: 1400 },
     timeframes: { min: 1, max: 3, unit: "semaines" },
     comments: "Prix variable selon l'expérience et la personnalisation demandée",
   },
   ecommerce: {
     name: "Site E-commerce (jusqu'à 100 produits)",
     description: "Boutique en ligne pour vendre des produits ou services",
-    prices: { min: 2000, max: 4000 },
+    prices: { min: 1400, max: 2000 },
     timeframes: { min: 2, max: 4, unit: "mois" },
     comments: "Dépend du nombre de produits, des fonctionnalités de paiement et de la personnalisation",
   },
   corporate: {
     name: "Site Corporate (15-30 pages)",
     description: "Site institutionnel complet pour une entreprise",
-    prices: { min: 2000, max: 3500 },
+    prices: { min: 1600, max: 2500 },
     timeframes: { min: 2, max: 4, unit: "mois" },
     comments: "Design professionnel, optimisation SEO, contenu sur mesure",
   },
   application: {
     name: "Application Web / Site Complexe",
     description: "Application web ou site avec fonctionnalités avancées",
-    prices: { min: 3500, max: 6000 },
+    prices: { min: 1800, max: 3500 },
     timeframes: { min: 3, max: 8, unit: "mois" },
     comments: "Tarification généralement basée sur un TJM de 300€-600€",
   },
   blog: {
     name: "Blog / Site de Contenu",
     description: "Site axé sur la publication de contenu régulier",
-    prices: { min: 600, max: 2500 },
+    prices: { min: 600, max: 1300 },
     timeframes: { min: 2, max: 6, unit: "semaines" },
     comments: "Mise en place de la structure, personnalisation du design",
   },
@@ -86,13 +86,13 @@ const additionalServicesData: Record<AdditionalService, AdditionalServiceData> =
   seo: {
     name: "Référencement (SEO)",
     description: "Optimisation pour les moteurs de recherche",
-    prices: { min: 500, max: 3000 },
+    prices: { min: 200, max: 1000 },
     unit: "pour l'optimisation initiale",
   },
   training: {
     name: "Formation à l'utilisation",
     description: "Formation pour gérer votre site",
-    prices: { min: 300, max: 900 },
+    prices: { min: 100, max: 300 },
   },
 }
 

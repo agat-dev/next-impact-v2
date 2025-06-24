@@ -344,7 +344,7 @@ export default function ApplicationsHeadless() {
                   Fonctionnalités dédiées
                 </CardDescription>
                 <div className="text-3xl font-medium text-regularblue font-googletitre">
-                  2 500€ - 4 500€
+                  1 500€ - 2 500€
                 </div>
               </CardHeader>
               <CardContent>
@@ -385,7 +385,7 @@ export default function ApplicationsHeadless() {
                   Intégration d'outils externes
                 </CardDescription>
                 <div className="text-3xl font-medium text-regularblue font-googletitre">
-                  3 500€ - 6 000€
+                  2 000€ - 3 500€
                 </div>
               </CardHeader>
               <CardContent>
