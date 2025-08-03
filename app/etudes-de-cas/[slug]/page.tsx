@@ -11,8 +11,12 @@ import { CTASection } from "@/components/cta-section";
 import { Metadata } from "next";
 
 // meta données dynamiques pour la page d'étude de cas
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const caseStudy = CASE_STUDIES.find(study => study.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const caseStudy = CASE_STUDIES.find((study) => study.slug === params.slug);
   if (!caseStudy) {
     return {
       title: "Étude de cas introuvable",
@@ -82,6 +86,39 @@ interface CaseStudy {
 
 // Données d'exemple (à remplacer par vos vraies données)
 const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: "3",
+    slug: "next-event",
+    title: "Next Event",
+    description: "Démo de Site vitrine événementiel",
+    imageUrl: "/img/logo-next-event.png",
+    clientType: "PME",
+    clientName: "Next Event",
+    date: {
+      month: 8,
+      year: 2025,
+    },
+    tags: ["Corporate", "WordPress", "Headless"],
+    objectives: [
+      "Présenter l'événement de manière professionnelle",
+      "Faciliter l'inscription des participants",
+      "Mettre en avant les intervenants et le programme",
+    ],
+    results: [
+      "Site en ligne avant la date de l'événement",
+      "Augmentation du nombre d'inscriptions",
+      "Navigation fluide et responsive",
+    ],
+    gallery: {
+      url: "/img/desktop-screen-next-event.jpg",
+      alt: "Page d'accueil du site Next Event",
+    },
+    detailedDescription:
+      "Next Event est un site vitrine conçu pour promouvoir un événement professionnel. Le site met en avant le programme, les intervenants et propose un formulaire d'inscription en ligne. Il est optimisé pour le référencement et l'expérience utilisateur sur mobile.",
+    technologies: ["WordPress", "Headless CMS", "Tailwind CSS", "Next.js", "ACF Pro"],
+    duration: "3 semaines",
+    website: "https://next-event.fr",
+  },
   {
     id: "1",
     slug: "proditec",
@@ -457,7 +494,7 @@ const CASE_STUDIES: CaseStudy[] = [
     },
     tags: ["WordPress", "Advanced Custom Fields", "Elementor Pro"],
     objectives: [
-      "Présenter les actions et les projets de l'association",  
+      "Présenter les actions et les projets de l'association",
       "Mettre en avant le réseau des opérateurs d'infrastructures numériques",
       "Communiquer sur les enjeux de l'infrastructure numérique",
     ],
@@ -506,7 +543,11 @@ const CASE_STUDIES: CaseStudy[] = [
     },
     detailedDescription:
       "GEM Connexion Plus, un groupe d'entraide mutuelle (GEM) parisien, souhaitait créer un site vitrine pour donner de la visibilité à ses activités et à ses projets. L'objectif était de fournir un espace professionnel et moderne pour attirer de nouveaux membres et partenaires.\n\nNous avons développé un site WordPress avec un design épuré et une navigation intuitive. Le site met en avant les activités du GEM, ainsi que les projets en cours.\n\nUn espace dédié aux membres a été intégré, permettant à chacun de publier ses actualités et de partager ses expériences. Le site est entièrement responsive et optimisé pour le référencement naturel.",
-    technologies: ["WordPress", "Thème communautaire", "Co-construction par ateliers"],
+    technologies: [
+      "WordPress",
+      "Thème communautaire",
+      "Co-construction par ateliers",
+    ],
     duration: "4 semaines",
     website: "https://gem-connexion.fr",
   },
@@ -583,7 +624,6 @@ function getSimilarCaseStudies(
   }).slice(0, limit);
 }
 
-
 // Fonction pour générer les chemins statiques
 export async function generateStaticParams() {
   return CASE_STUDIES.map((study) => ({
@@ -625,20 +665,19 @@ export default async function CaseStudyPage({
         <p className="text-xl max-w-3xl text-regularblue/70">
           {caseStudy.description}
         </p>
-        <Image 
-            src={caseStudy.imageUrl}
-            alt={caseStudy.title}
-            width={150}
-            height={150}
-            className="object-contain mt-12"
-          />
+        <Image
+          src={caseStudy.imageUrl}
+          alt={caseStudy.title}
+          width={150}
+          height={150}
+          className="object-contain mt-12"
+        />
       </div>
 
       {/* Contenu principal */}
       <div className="container px-4 md:px-6 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           <div className="lg:col-span-2 space-y-10">
-
             {/* Galerie */}
             <section>
               <h2 className="text-2xl  mb-6 text-regularblue">
@@ -677,9 +716,7 @@ export default async function CaseStudyPage({
             {/* Objectifs et résultats */}
             <section className="grid md:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl  mb-6 text-regularblue">
-                  Objectifs
-                </h2>
+                <h2 className="text-2xl  mb-6 text-regularblue">Objectifs</h2>
                 <ul className="space-y-3">
                   {caseStudy.objectives.map((objective, index) => (
                     <li key={index} className="flex items-start">
@@ -692,9 +729,7 @@ export default async function CaseStudyPage({
                 </ul>
               </div>
               <div>
-                <h2 className="text-2xl  mb-6 text-regularblue">
-                  Résultats
-                </h2>
+                <h2 className="text-2xl  mb-6 text-regularblue">Résultats</h2>
                 <ul className="space-y-3">
                   {caseStudy.results.map((result, index) => (
                     <li key={index} className="flex items-start">

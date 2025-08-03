@@ -8,6 +8,16 @@ import Link from "next/link";
 // Définition des projets
 const PROJECTS = [
   {
+    id: 3,
+    title: "Next Event",
+    type: "Démo",
+    image: "/img/desktop-screen-next-event.jpg",
+    alt: "Démo de site vitrine événementiel",
+    description: "Site vitrine événementiel",
+    link: "/etudes-de-cas/next-event",
+    tab: ["derniers", "corporate"],
+  },
+  {
     id: 1,
     title: "Proditec",
     type: "corporate",
