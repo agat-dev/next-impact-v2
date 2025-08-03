@@ -107,7 +107,7 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
-        {/* Offre */}
+        {/* Offre 
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-[1900px] left-0 h-[1000px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
           <div className="absolute top-[2200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
@@ -131,8 +131,8 @@ export default function Home() {
 
           {/*
           <Advantages />
-          */}
-        </div>
+
+        </div>          */}
 
         {/* Détails techniques */}
         <div className="absolute inset-0 -z-10">
@@ -234,12 +234,13 @@ export default function Home() {
             </div>
           </div>
 
+{/*
           <div id="quiz-niveau-wordpress">
             <QuizNiveauWordpress />
-          </div>
+          </div> */}
         </div>
 
-        {/* Support de l'IA */}
+        {/* Support de l'IA 
         <div className="w-full max-w-7xl mx-auto px-6 py-24">
           <div className="mb-6 text-center">
             <h2 className="text-5xl tracking-tight text-regularblue mb-4">
@@ -255,7 +256,7 @@ export default function Home() {
             </h3>
           </div>
           <StrategiePrix />
-        </div>
+        </div> */}
 
         {/* Realisation Section */}
         <div className="absolute inset-0 -z-10">
