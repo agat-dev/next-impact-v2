@@ -4,6 +4,9 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Skeleton } from "@/components/ui/skeleton"
+import { ContactFormModal } from "./ContactFormModal" // Assure-toi que ce composant existe et est importé
+import { downloadPDF } from "@/lib/pdf-generator"
+
 
 interface DocumentPreviewProps {
   formData: Record<string, any>
@@ -11,6 +14,7 @@ interface DocumentPreviewProps {
 
 export function DocumentPreview({ formData }: DocumentPreviewProps) {
   const [isLoading, setIsLoading] = useState(true)
+  const [showContactForm, setShowContactForm] = useState(false) // Ajout de l'état
 
   useEffect(() => {
     // Simuler un temps de chargement pour l'effet visuel
@@ -75,24 +79,24 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
         <div className="bg-lightblue/10 p-8 border-t-8 border-regularblue mb-12">
           <div className="text-center space-y-4">
             <h1 className="text-3xl font-bold text-mediumblue">CAHIER DES CHARGES</h1>
-            <h2 className="text-xl text-regularblue font-medium">Refonte de Site Vitrine Institutionnel</h2>
+            <h2 className="text-xl text-regularblue font-medium">Création / Refonte de site web</h2>
             
 
             <div className="mt-12 space-y-4 text-left max-w-md mx-auto">
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Organisation:</span>
+                <span className="font-googletitre text-mediumblue w-40">Organisation:</span>
                 <span className="text-sm text-regularblue/80">{formData.organisation_name || "Non spécifié"}</span>
               </div>
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Secteur d'activité:</span>
+                <span className="font-googletitre text-mediumblue w-40">Secteur d'activité:</span>
                 <span className="text-sm text-regularblue/80">{formData.secteur_activite || "Non spécifié"}</span>
               </div>
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Date de rédaction:</span>
+                <span className="font-googletitre text-mediumblue w-40">Date de rédaction:</span>
                 <span className="text-sm text-regularblue/80">{formData.date_redaction || new Date().toLocaleDateString()}</span>
               </div>
               <div className="flex">
-                <span className="font-adobetitre text-mediumblue w-40">Rédacteur:</span>
+                <span className="font-googletitre text-mediumblue w-40">Rédacteur:</span>
                 <span className="text-sm text-regularblue/80">{formData.redacteur || "Non spécifié"}</span>
               </div>
             </div>
@@ -665,8 +669,24 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
     <Card className="border-2 border-lightblue/20">
       <div className="bg-lightblue/20 p-4 border-b border-lightblue/20 flex justify-between items-center">
         <h3 className="text-lg font-semibold text-blue-800">Prévisualisation du document</h3>
-        <span className="text-sm text-lightblue/10 bg-blue-100 px-2 py-1">Forma4</span>
+        <button
+          className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+          onClick={() => setShowContactForm(true)}
+        >
+          Envoyer pour devis
+        </button>
+        {showContactForm && (
+          <ContactFormModal
+            formData={formData}
+            onClose={() => setShowContactForm(false)}
+          />
+        )}
+      <button 
+      className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+      onClick={() => downloadPDF(formData)}>Télécharger le PDF</button>
       </div>
+
+
       <ScrollArea className="h-[800px] w-full">
         <div className="bg-white mx-auto my-6" style={{ width: "210mm", minHeight: "297mm" }}>
           {renderPreviewContent()}
@@ -674,4 +694,4 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
       </ScrollArea>
     </Card>
   );
-};
+}

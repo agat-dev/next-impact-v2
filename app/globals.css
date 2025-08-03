@@ -68,6 +68,8 @@
     --extralightblue: #D0DCF2;
     --white: #FFFFFF;
     --orange: #E68415;
+    --rose: #C22D8B;
+
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -113,16 +115,16 @@
     @apply text-regularblue;
   }
   h1, h2, h3, h4, h5, h6, a {
-    @apply font-googletitre font-normal py-1;
+    @apply font-normal py-1 font-googletitre;
   }
   h1 {
-    @apply text-4xl text-regularblue;
+    @apply text-4xl text-regularblue font-googletitre;
   }
   h2 {
-    @apply text-3xl text-mediumblue pt-10;
+    @apply text-mediumblue pt-4 pb-4 font-googletitre;
   }
   h3 {
-    @apply text-2xl text-mediumblue pt-6;
+    @apply text-2xl pt-6 pb-2;
   }
   h4 {
     @apply text-xl text-mediumblue;
@@ -134,7 +136,7 @@
     @apply text-base text-darkblue;
   }
   p, span, li, input, textarea, label {
-    @apply font-adobetext font-normal;
+    @apply font-googletexte font-normal text-mediumblue;
   }
   a {
     @apply text-regularblue no-underline;
@@ -144,6 +146,9 @@
   }
   .container {
     @apply mx-auto px-4;
+  }
+  .google-titre {
+    font-family: 'Quicksand', sans-serif;
   }
 }
 

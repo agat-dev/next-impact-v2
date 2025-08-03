@@ -1,21 +1,20 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { MagicCard } from './magicui/magic-card';
 
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Agathe s’est distinguée par sa rapidité et sa capacité à comprendre immédiatement mes attentes. Son travail est précis et de grande qualité, le tout réalisé avec professionnalisme. Une collaboration efficace que je recommande vivement !",
-      author: "Juline Vidament",
-      position: "Responsable Marketing",
-      company: "Itavera Assets Management",
+      quote: "Agathe se distingue par sa capacité à comprendre rapidement les enjeux business et à les traduire en solutions techniques efficaces. Pour notre projet, elle a su créer une landing page sur mesure qui reflète parfaitement notre identité de marque, tout en intégrant un système multilingue fluide et intuitif.",
+      author: "Christophe Riboulet",
+      position: "PDG",
+      company: "Proditec",
       rating: 5
     },
     {
-      quote: "Du professionnalisme, un réel esprit d'initiative, le sens du conseil et une réactivité totale ! Ajouter un bon état d'esprit d'une personne qui n'hésite pas à se « dépasser » pour améliorer la qualité de la prestation.",
-      author: "Luc Poigniez",
-      position: "Designer UI/UX",
-      company: "Créaclic",
+      quote: "Nous travaillons exclusivement avec Agathe désormais pour gérer notre site internet. Elle est très pro, de bons conseils et rapide. Ses offres sont claires et adaptées à nos besoins. Nous le recommandons très volontiers !",
+      author: "Laura Schorestene",
+      position: "Fondatrice",
+      company: "Senza Nature",
       rating: 5
     },
     {
@@ -45,41 +44,40 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-24 md:py-32 ">
       <div className="container">
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full text-lightblue tracking-wider mb-4">
-            TÉMOIGNAGES
-          </span>
-          <h2 className="text-4xl md:text-5xl text-regularblue font-bold mb-6">Ce qu'en disent mes clients</h2>
-          <p className="text-xl max-w-3xl mx-auto text-regularblue/70">
-            Découvrez les retours de clients avec lesquels j'ai eu le plaisir de collaborer sur divers projets technologiques.
-          </p>
+        <div className='text-center'>
+          <h2 className="text-4xl md:text-5xl text-regularblue mb-6">Ce qu'en disent mes clients</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {testimonials.map((testimonial, index) => (
+          <MagicCard className="h-max rounded-2xl">
             <Card 
               key={index} 
-              className="h-full flex flex-col bg-white rounded-2xl transition-all overflow-hidden"
+              className="bg-white border border-pink-200/40 rounded-2xl transition-all overflow-hidden shadow-none"
             >
-              <MagicCard className="h-full">
-              <CardContent className="pt-8 flex-grow">
-                
+              <CardContent className="pt-8 flex-grow">     
+                <div className="flex items-center mb-4">
+                  {renderStars(testimonial.rating)}
+                  <span className="ml-2 text-sm text-regularblue/70">
+                    {testimonial.rating} étoiles
+                  </span>
+                </div>
                
                 <p className="text-md mb-4 text-regularblue leading-relaxed">{testimonial.quote}</p>
               </CardContent>
               
               <CardFooter className="pt-2">
                 <div>
-                  <p className="font-medium font-adobetitre text-base text-regularblue">{testimonial.author}</p>
-                  <p className="text-sm font-adobetitre text-regularblue/70">
+                  <p className="font-medium font-googletitre text-base text-regularblue">{testimonial.author}</p>
+                  <p className="text-sm font-googletitre text-regularblue/70">
                     {testimonial.position}</p>
                   <p className="mt-2 text-xs text-regularblue/70 uppercase">
                      {testimonial.company}
                   </p>
                 </div>
               </CardFooter>
-              </MagicCard>
             </Card>
+          </MagicCard>
           ))}
         </div>
       </div>

@@ -13,7 +13,7 @@ const COLORS = {
   lightText: [32,43,128], // Gris clair pour le texte secondaire
 }
 
-export async function generatePDF(formData: Record<string, any>) {
+export function generatePDF(formData: any): jsPDF {
   // Création du document PDF
   const doc = new jsPDF({
     orientation: "portrait",
@@ -501,8 +501,17 @@ export async function generatePDF(formData: Record<string, any>) {
     yPosition = addCheckboxList(formData.documents_fournis, yPosition)
   }
 
-  // Sauvegarde du PDF
-  doc.save("cahier-des-charges.pdf")
+  return doc;
+}
 
-  return true
+// Pour téléchargement
+export function downloadPDF(formData: any) {
+  const doc = generatePDF(formData);
+  doc.save("cahier-des-charges.pdf");
+}
+
+// Pour envoi
+export async function generatePDFBlob(formData: any): Promise<Blob> {
+  const doc = generatePDF(formData);
+  return doc.output("blob");
 }

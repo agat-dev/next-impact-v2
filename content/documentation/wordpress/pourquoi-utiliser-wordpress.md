@@ -211,13 +211,4 @@ Ses atouts, comme ses milliers de plugins et thèmes, font de lui une solution i
 
 Il ne vous reste plus qu’à passer à l’action : explorez, testez et laissez-vous séduire par les possibilités offertes par WordPress. Ce choix pourrait bien être le premier pas vers la réussite de votre projet en ligne. Alors, pourquoi attendre ? Plongez dans l’univers WordPress et donnez vie à vos idées dès aujourd’hui !
 
-<aside>
-🗃️
 
-Exemples de sites réalisés avec WordPress :
-
-[All Showcase Sites | WordPress.org](https://wordpress.org/showcase/archives/)
-
-</aside>
-
----

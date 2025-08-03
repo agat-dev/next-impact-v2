@@ -97,20 +97,3 @@ Utilisez des outils comme Google Analytics, Hootsuite ou les insights natifs de 
 
 Développer une stratégie de médias sociaux efficace demande du temps et une planification rigoureuse, mais les résultats en valent la peine. De la définition des objectifs SMART à l’élaboration d’un contenu engageant et au suivi des performances, chaque étape joue un rôle clé dans votre succès en ligne.
 
-<aside>
-🛠️
-
-## Outils
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Cours en Ligne et Formation Marketing - Google Ateliers Numériques- Grow with Google](https://grow.google/intl/fr_fr/courses-and-tools/?category=career&topic=digital-marketing)
-
-[https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA](https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA)
-
-</aside>

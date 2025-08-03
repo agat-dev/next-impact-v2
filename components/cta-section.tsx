@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function CTASection() {
     return (
@@ -8,7 +8,7 @@ export function CTASection() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-8 text-center">
               <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tighter text-regularblue md:text-4xl/tight">
+                <h2 className="text-4xl font-MEDIUM tracking-tighter text-regularblue md:text-4xl/tight">
                   Prêt à transformer votre présence en ligne ?
                 </h2>
                 <p className="mx-auto max-w-[700px] text-lg text-regularblue/70">
@@ -17,11 +17,13 @@ export function CTASection() {
                 </p>
               </div>
               <div className="flex flex-col gap-8 min-[400px]:flex-row">
-                <Button size="lg" className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
+                <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="gap-1 text-lg font-medium rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
                   Réserver ma consultation gratuite <ArrowRight className="h-4 w-4" />
                 </Button>
+                </Link>
               </div>
-              <div className="h-12"></div>
+              {/*}
               <p className="text-sm">Ou inscrivez-vous à notre newsletter pour recevoir nos conseils et astuces</p>
               <div className="w-full max-w-sm">
                 <div className="flex space-x-2">
@@ -35,6 +37,7 @@ export function CTASection() {
                   </Button>
                 </div>
               </div>
+              */}
             </div>
           </div>
         </section>

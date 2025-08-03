@@ -1,11 +1,23 @@
 "use client";
+
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import LottieAnimation from "@/components/ui/lottie-animation";
+import Image from "next/image";
 
-export function ExpandableCardNIP() {
-  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
+type ExpandableCardNIPProps = {
+  cards: {
+    title: string;
+    description: string;
+    image: string;
+    ctaText: string;  
+    ctaLink: string;
+    content: string;
+  }[];
+};
+
+export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
+  const [active, setActive] = useState<ExpandableCardNIPProps["cards"][number] | null>(
     null
   );
   const ref = useRef<HTMLDivElement>(null);
@@ -14,11 +26,11 @@ export function ExpandableCardNIP() {
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setActive(false);
+        setActive(null);
       }
     }
 
-    if (active && typeof active === "object") {
+    if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -33,7 +45,7 @@ export function ExpandableCardNIP() {
   return (
     <>
       <AnimatePresence>
-        {active && typeof active === "object" && (
+        {active && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -43,7 +55,7 @@ export function ExpandableCardNIP() {
         )}
       </AnimatePresence>
       <AnimatePresence>
-        {active && typeof active === "object" ? (
+        {active ? (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
@@ -62,7 +74,7 @@ export function ExpandableCardNIP() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-[34rem] max-w-[90%] h-fit flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="md:w-[34rem] max-w-[90%] h-fit flex flex-col bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden"
             >
               <div>
                 <div className="flex flex-col justify-between items-start p-4">
@@ -70,22 +82,17 @@ export function ExpandableCardNIP() {
                     <motion.a
                       layoutId={`button-${active.title}-${id}`}
                       href={active.ctaLink}
+                      target="_blank"
                       className="px-6 py-3 text-sm rounded-full font-medium bg-lightblue/10 text-regularblue hover:bg-lightblue/20 transition-colors duration-200 flex justify-self-end items-center gap-2"
                     >
                       {active.ctaText}
                     </motion.a>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-regularblue"
+                      className="font-medium text-regularblue"
                     >
                       {active.title}
                     </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-regularblue/70 text-xs uppercase font-bold"
-                    >
-                      {active.description}
-                    </motion.p>
                   </div>
                 </div>
                 <div className="pt-4 relative px-4">
@@ -96,9 +103,7 @@ export function ExpandableCardNIP() {
                     exit={{ opacity: 0 }}
                     className="text-regularblue text-sm pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    <span dangerouslySetInnerHTML={{ __html: active.content }} />
                   </motion.div>
                 </div>
               </div>
@@ -107,36 +112,36 @@ export function ExpandableCardNIP() {
         ) : null}
       </AnimatePresence>
       <ul className="w-[50rem] mx-0 flex flex-col gap-4 md:gap-6">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center bg-white hover:bg-white/70 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center bg-white hover:bg-white/70 border border-pink-200/40 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col md:flex-row md:items-center md:justify-center">
+            <div className="flex gap-4 flex-col md:flex-row items-center md:justify-center">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 {/* Remplacement de l'image par Lottie */}
-                <div className="rounded-lg object-contain object-top">
-                  <LottieAnimation
-                    key={`lottie-${card.title}-${id}`}
-                    animationPath={card.lottie}
-                    loop
-                    width={60}
-                    height={60}
-                  />
+                <div className="rounded-lg object-contain object-top mr-">
+                  <Image
+                    src={card.lottie}
+                    alt={card.title}
+                    width={100}
+                    height={100}
+                    className="w-24 h-24 md:w-32 md:h-32 rounded-lg" 
+                    />
                 </div>
               </motion.div>
               <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="pt-1 font-regular text-xl text-regularblue text-center md:text-left"
+                  className="pt-1 pb-4 font-regular text-2xl text-regularblue text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
-                  layoutId={`description-${card.description}-${index}-${id}`}
-                  className="text-darkblue/70 text-left text-xs"
+                  layoutId={`description-${card.description}-${card.title}-${id}`}
+                  className="text-regularblue md:text-left text-center font-medium text-lg"
                 >
                   {card.description}
                 </motion.p>
@@ -176,57 +181,4 @@ export const CloseIcon = () => {
   );
 };
 
-const cards = [
-  {
-    description: "TESTER EN LIGNE",
-    title: "Choisir entre WordPress CMS et Headless ?",
-    lottie: "/lotties/wordpress.json",
-    ctaText: "Tester en ligne",
-    ctaLink: "/cms-headless",
-    content: () => (
-      <p>
-        Outil diagnostique en ligne gratuit qui analyse votre projet de site web
-        dans ses aspects techniques, ergonomiques et marketing pour déterminer
-        si la solution la plus appropriée est un WordPress natif ou un WordPress
-        Headless.
-      </p>
-    ),
-  },
-  {
-    description: "GENERER GRATUITEMENT",
-    title: "Rédiger mon cahier des charges",
-    lottie: "/lotties/document.json",
-    ctaText: "Commencer la rédaction",
-    ctaLink: "/cahier-des-charges",
-    content: () => (
-      <p>
-        Solution de génération de livrable gratuite et en ligne pour structurer
-        et formaliser méthodiquement votre projet digital de leur conception à
-        leur livraison <br />
-        <br />
-        En guidant l'utilisateur à travers des questions ciblées et
-        personnalisables, il transforme vos besoins métiers en spécifications
-        techniques précises, complètes et exploitables par tous les acteurs du
-        projet.
-      </p>
-    ),
-  },
-  {
-    description: "SIMULER MON BUDGET",
-    title: "Quel tarif pour mon site web ?",
-    lottie: "/lotties/cost-calculator.json",
-    ctaText: "Lancer l'estimation",
-    ctaLink: "/simulateur-tarifs",
-    content: () => (
-      <p>
-        Simulateur en ligne et gratuit qui calcule instantanément le coût précis
-        de votre projet digital en fonction de vos besoins, et du type de
-        prestataire choisi.
-        <br />
-        <br />
-        Cet outil stratégique aide les décideurs à optimiser leur budget en
-        visualisant l'impact financier de chaque choix technique..
-      </p>
-    ),
-  },
-];
+

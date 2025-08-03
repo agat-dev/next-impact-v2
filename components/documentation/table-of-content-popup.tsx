@@ -1,17 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface TableOfContentsPopupProps {
   tableOfContents: { id: string; text: string; level: number }[];
 }
 
 export default function TableOfContentsPopup({ tableOfContents }: TableOfContentsPopupProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Function to generate classes based on the heading level
+  // Affichage direct de la table des matières, sans bouton et sans puces
   const getClassByLevel = (level: number) => {
     switch (level) {
       case 1:
@@ -26,40 +22,19 @@ export default function TableOfContentsPopup({ tableOfContents }: TableOfContent
   };
 
   return (
-    <div className="relative w-full">
-      {/* Trigger Button */}
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center justify-between mb-4 px-4 py-2 rounded-full shadow-md hover:bg-white/30"
-      >
-        <span className="text-regularblue font-medium">Sommaire</span>
-        {isOpen ? <ChevronUp className="w-5 h-5 ml-4" /> : <ChevronDown className="w-5 h-5 ml-4" />}
-      </button>
-
-      {/* Animated Table of Contents */}
-      <motion.div
-        className="absolute left-0 top-full mt-4 bg-gray-50 p-4 rounded-lg shadow-lg z-10"
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        variants={{
-          open: { height: "auto", opacity: 1 },
-          closed: { height: 0, opacity: 0 },
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      >
-        <ul className="space-y-2">
-          {tableOfContents.map((item) => (
-            <li key={item.id} className={getClassByLevel(item.level)}>
-              <a
-                href={`#${item.id}`}
-                className="hover:text-regularblue/80 transition-colors duration-200"
-              >
-                {item.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-    </div>
+    <nav className="relative w-full">
+      <ul className="space-y-2 list-none m-0 p-0">
+        {tableOfContents.map((item) => (
+          <li key={item.id} className={getClassByLevel(item.level)}>
+            <a
+              href={`#${item.id}`}
+              className="hover:text-regularblue/80 transition-colors duration-200"
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

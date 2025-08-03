@@ -1,12 +1,42 @@
 import Link from "next/link"
-import { ArrowLeft, BookOpen, Copy, Share2 } from "lucide-react"
-import { notFound } from "next/navigation"
-
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 import { MarkdownContent } from "@/components/documentation/markdown-content"
 import { getArticleBySlug, getArticlesByCategory } from "@/lib/markdown"
 import TableOfContentsPopup from "@/components/documentation/table-of-content-popup"
+import ShareSocial from "@/components/share-social"
+import { Metadata } from "next";
+
+// meta données dynamiques pour la page d'étude de cas
+export async function generateMetadata({ params }: { params: { category: string; slug: string } }): Promise<Metadata> {
+  const post = await getArticleBySlug(params.category, params.slug);
+  if (!post) {
+    return {
+      title: "Article introuvable",
+      description: "L'article demandé n'existe pas.",
+    };
+  }
+
+  return {
+    title: `${post.title} | Next Impact`,
+    description: post.description,
+    openGraph: {
+      title: `${post.title} | Next Impact`,
+      description: post.description,
+      url: `https://next-impact.digital/documentation/${post.category}/${post.slug}`,
+      type: "article",
+      images: [
+        {
+          url: "https://next-impact.digital/img/avatar.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+  };
+}
+
 
 interface ArticlePageProps {
   params: {
@@ -62,54 +92,52 @@ export default function ArticlePage({ params }: ArticlePageProps) {
               <Link href="/documentation" className="text-sm text-regularblue hover:text-regularblue/80">
                 Documentation
               </Link>
-              <span className="text-muted-foreground">/</span>
+              <span className="text-regularblue text-xs">/</span>
               <Link
                 href={`/documentation/${article.category}`}
                 className="text-sm text-regularblue hover:text-regularblue/80"
               >
-                {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
+                {article.category.charAt(0).toUpperCase() + article.category.slice(1).replace(/-/g, " ")}
               </Link>
-              <span className="text-regularblue">/</span>
-              <span className="font-adobetitre text-mediumblue/70">{article.title}</span>
+              <span className="text-regularblue text-xs">/</span>
+              <span className="font-googletitre text-regularblue text-xs font-medium">{article.title}</span>
               </div>
             <div className="flex justify-between items-center mb-6">
-              <Link href={`/documentation/${article.category}`}>
-                <Button size="sm" className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full">
-                  <ArrowLeft className="mr-2 h-4 w-4" />
-                  {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
-                </Button>
-              </Link>
+
               <div className="flex gap-2">
-                <Button size="icon" className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full">
-                  <Copy className="h-4 w-4" />
-                  <span className="sr-only">Copier</span>
-                </Button>
-                <Button size="icon" className="text-regularblue bg-transparent hover:bg-lightblue/10 rounded-full">
-                  <Share2 className="h-4 w-4" />
-                  <span className="sr-only">Partager</span>
-                </Button>
+                <ShareSocial url={`/documentation/${article.category}/${article.slug}`} />
               </div>
               </div>
             <div className="space-y-8">
               <div>
-                <h1 className="text-4xl tracking-tight mb-4">{article.title}</h1>
-                <p className="text-xl text-muted-foreground">{article.description}</p>
+                <h1 className="text-4xl tracking-tight font-medium mb-4">{article.title}</h1>
+                <p className="text-lg text-mediumblue font-light">{article.description}</p>
                 <div className="flex items-center gap-4 mt-6">
                   <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-full bg-primary/10"></div>
-                    <span className="text-sm font-medium">By {article.author}</span>
+                    <div>
+                      <Image 
+                        src="/img/logo-small.png"
+                        alt="Logo"
+                        width={22}
+                        height={22}
+                        className="object-contain"
+                      />
+
+                    </div>
+
                   </div>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-sm text-ligthblue">
                     Mise à jour : {typeof article.date === "string" ? article.date : "Recently"}
                   </span>
                 </div>
             </div>
-              <aside className="hidden lg:block pl-8">
+            <Separator className="my-6" />
+            <div className="grid grid-cols-1 lg:grid-cols-4 mt-8">
+              <aside className="col-span-1 hidden lg:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto pr-4">
               <TableOfContentsPopup tableOfContents={tableOfContents} />
               </aside>
-            <Separator />
-          <div className="flex flex-col">      
-            <div className="w-10/12 lg:w-8/12 mx-auto">
+          <div className="col-span-3 grow flex flex-col">      
+            <div className="lg:w-10/12 w-full mx-auto pb-12">
             <MarkdownContent content={article.content} />
             </div>
             <Separator />
@@ -121,15 +149,16 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                     <Link
                       key={relatedArticle.slug}
                       href={`/documentation/${relatedArticle.category}/${relatedArticle.slug}`}
-                      className="group rounded-lg border p-4 hover:bg-muted/50"
+                      className="group rounded-lg border p-4 hover:border-lightblue/20 transition-colors hover:bg-extralightblue/5"
                     >
                       <h4 className="font-medium text-regularblue hover:text-regularblue/80">{relatedArticle.title}</h4>
-                      <p className="text-sm text-muted-foreground">{relatedArticle.description}</p>
+                      <p className="text-sm text-mediumblue">{relatedArticle.description}</p>
                     </Link>
                   ))}
                 </div>
               </div>
             )}
+          </div>
           </div>
               </div>
             </div>

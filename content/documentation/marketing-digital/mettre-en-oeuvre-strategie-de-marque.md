@@ -108,18 +108,3 @@ Les analyses régulières vous aident à ajuster vos actions selon ce qui foncti
 
 Envie d'aller plus loin dans la planification stratégique ? Prenez le temps d'affiner chaque étape mentionnée ci-dessus et explorez des ressources supplémentaires pour vous perfectionner. Avec une méthodologie solide, vos efforts marketing porteront rapidement leurs fruits.
 
-<aside>
-🛠️
-
-## Outils
-
-[Stratégie de marque](https://www.notion.so/Strat-gie-de-marque-17b3c8ef34fa807b8153f0c7aa28af00?pvs=21) 
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-</aside>

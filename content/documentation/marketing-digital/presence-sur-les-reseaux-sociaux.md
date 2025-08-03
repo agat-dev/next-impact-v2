@@ -77,22 +77,3 @@ Voici quelques actions à inclure dans votre processus d’optimisation :
 
 Mettre en place une stratégie sur les médias sociaux n’est pas une tâche simple, mais les avantages pour votre entreprise sont indéniables : accroissement de la visibilité, meilleure fidélité client, génération de leads... 
 
-<aside>
-🛠️
-
-## Outils
-
-[Stratégie Marketing](https://www.notion.so/Strat-gie-Marketing-17b3c8ef34fa8092ba67c23109cf8085?pvs=21) 
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Cours en Ligne et Formation Marketing - Google Ateliers Numériques- Grow with Google](https://grow.google/intl/fr_fr/courses-and-tools/?category=career&topic=digital-marketing)
-
-[https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA](https://youtu.be/y-sL44hjw6s?si=i6ZPrew7NvIcAcvA)
-
-</aside>

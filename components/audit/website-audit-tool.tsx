@@ -69,7 +69,7 @@ export function WebsiteAuditTool() {
                 onChange={(e) => setUrl(e.target.value)}
                 className="flex-1"
               />
-              <Button type="submit" disabled={isLoading} className="gap-1 rounded-full text-md font-adobetitre font-regular text-white bg-regularblue hover:bg-regularblue/80">
+              <Button type="submit" disabled={isLoading} className="gap-1 rounded-full text-md font-googletitre font-regular text-white bg-regularblue hover:bg-regularblue/80">
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

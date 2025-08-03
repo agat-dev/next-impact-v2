@@ -99,22 +99,4 @@ Utilisez ces apprentissages pour raffiner vos messages, visuels, et actions stra
 
 Maîtriser la stratégie de marque, c’est embrasser la possibilité de vous démarquer dans un monde saturé d’offres concurrentielles. En établissant les bases solides et en restant attentif à votre audience, vous vous positionnerez comme une marque de choix.
 
-<aside>
-🛠️
 
-## Outils
-
-[Stratégie de marque](https://www.notion.so/Strat-gie-de-marque-17b3c8ef34fa807b8153f0c7aa28af00?pvs=21)
-
-</aside>
-
-<aside>
-🗃️
-
-## Ressources à la une
-
-[Construire son image de marque](https://youtu.be/1sLcOd3hC0E?si=266F31aIzymhwaCx)
-
-[Storytelling : Raconter l'histoire d'une marque](https://youtu.be/XOr5__wRHDo?si=-msS_xtJUyRJsYtg)
-
-</aside>

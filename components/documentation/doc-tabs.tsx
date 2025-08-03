@@ -1,9 +1,7 @@
-
 import { getAllArticles } from "@/lib/markdown";
 
 import { SearchDocumentation } from "@/components/documentation/search-documentation";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function DocTabs() {
@@ -17,8 +15,8 @@ export default function DocTabs() {
         url: "/documentation/marketing-digital",
       },
       {
-        id: "Design et UI/UX",
-        title: "Design et UI/UX",
+        id: "Design & UI/UX",
+        title: "Design & UI/UX",
         description: "Principes et concepts du design et de l'UI/UX",
         url: "/documentation/design-ui-ux",
       },
@@ -35,28 +33,22 @@ export default function DocTabs() {
         url: "/documentation/wordpress",
       },
       {
-        id: "CMS",
-        title: "Choisir un CMS",
-        description: "Choisir un CMS pour votre site web",
-        url: "/documentation/cms",
-      },
-      {
         id: "Headless CMS",
         title: "Headless CMS",
         description: "Choisir Headless CMS pour votre site web",
         url: "/documentation/headless-cms",
       },      
       {
-        id: "Frameworks",
-        title: "Frameworks",
-        description: "Choisir Frameworks", 
-        url: "/documentation/frameworks",
-      },
-      {
         id: "SEO",
         title: "SEO",
         description: "Optimisation pour les moteurs de recherche",
         url: "/documentation/seo",
+      },
+      {
+        id: "Blog",
+        title: "Blog",
+        description: "Les derniers actualités du blog",
+        url: "/documentation/blog",
       },
     ];
   
@@ -64,26 +56,23 @@ export default function DocTabs() {
     const marketingArticles = articles.filter(
       (article) => article.category === "marketing-digital"
     );
-    const uxuiArticles = articles.filter(
-      (article) => article.category === "design"
+    const designArticles = articles.filter(
+      (article) => article.category === "design-ui-ux"
     );
     const projetArticles = articles.filter(
       (article) => article.category === "projet-site-web"
     );
     const wordpressArticles = articles.filter(
       (article) => article.category === "wordpress"
-    ); 
-    const cmsArticles = articles.filter(
-      (article) => article.category === "cms"
     );
     const headlessCmsArticles = articles.filter(
       (article) => article.category === "headless-cms"
     );
-    const frameworksArticles = articles.filter(
-      (article) => article.category === "frameworks"
-    );
     const seoArticles = articles.filter(
       (article) => article.category === "seo");
+    const blogArticles = articles.filter(
+      (article) => article.category === "blog"
+    );
   
 
         return (
@@ -99,65 +88,70 @@ export default function DocTabs() {
               </div>
             </section>
             <section className="w-full py-8">
-              <div className="container px-4 md:px-6">
+              <div className="container lg:px-4 md:px-6 px-0">
                 <Tabs defaultValue="projet-site-web" className="w-full">
-                  <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
+                  <TabsList
+                    className="w-full h-full justify-start rounded-none border-b bg-transparent p-0 overflow-x-auto lg:flex-nowrap flex-wrap flex gap-4 scrollbar-thin scrollbar-thumb-lightblue/40 scrollbar-track-transparent "
+                    style={{ WebkitOverflowScrolling: "touch" }}
+                  >
                     <TabsTrigger
                       value="projet-site-web"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Projet web
-                    </TabsTrigger>  
+                    </TabsTrigger>
                     <TabsTrigger
                       value="marketing-digital"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Marketing
                     </TabsTrigger>
                     <TabsTrigger
-                      value="design"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Design
-                    </TabsTrigger>              
+                      value="design-ui-ux"
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
+                      Design & UI/UX
+                    </TabsTrigger>
                     <TabsTrigger
                       value="seo"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       SEO
                     </TabsTrigger>
                     <TabsTrigger
-                      value="cms"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      CMS
-                    </TabsTrigger>                 
-                    <TabsTrigger
                       value="wordpress"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       WordPress
-                    </TabsTrigger>   
+                    </TabsTrigger>
                     <TabsTrigger
                       value="headless-cms"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
                       Headless CMS
-                    </TabsTrigger> 
+                    </TabsTrigger>
                     <TabsTrigger
-                      value="frameworks"
-                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue">
-                      Frameworks
-                    </TabsTrigger>                    
-                  </TabsList>
+                      value="blog"
+                      className="rounded-none text-base font-regular text-regularblue border-b-2 border-transparent px-4 py-2 data-[state=active]:border-lightblue whitespace-nowrap"
+                    >
+                      Blog
+                    </TabsTrigger>
+                      </TabsList>
                   <TabsContent value="all" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                       {articles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left ">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -170,16 +164,16 @@ export default function DocTabs() {
                       {marketingArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -187,21 +181,21 @@ export default function DocTabs() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="design" className="pt-6">
+                  <TabsContent value="design-ui-ux" className="pt-6">
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {uxuiArticles.map((article) => (
+                      {designArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -214,38 +208,16 @@ export default function DocTabs() {
                       {projetArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="cms" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {cmsArticles.map((article) => (
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -258,16 +230,16 @@ export default function DocTabs() {
                       {wordpressArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -280,38 +252,16 @@ export default function DocTabs() {
                       {headlessCmsArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                            aria-label={article.title}>
-                            <span className="sr-only">{article.title}</span>
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="frameworks" className="pt-6">
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {frameworksArticles.map((article) => ( 
-                        <div
-                          key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
-                              {article.description}
-                            </p>
-                          </div>
-                          <Link
-                            href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
@@ -324,16 +274,38 @@ export default function DocTabs() {
                       {seoArticles.map((article) => (
                         <div
                           key={article.slug}
-                          className="group relative rounded-xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                          <div className="space-y-2">
-                            <h3 className="text-xl font-regular">{article.title}</h3>
-                            <p className="text-muted-foreground text-sm">
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
                               {article.description}
                             </p>
                           </div>
                           <Link
                             href={`/documentation/${article.category}/${article.slug}`}
-                            className="absolute inset-0 rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                            className="absolute inset-0 rounded-lg"
+                            aria-label={article.title}>
+                            <span className="sr-only">{article.title}</span>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="blog" className="pt-6">
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                      {blogArticles.map((article) => (
+                        <div
+                          key={article.slug}
+                          className="group relative rounded-xl bg-white p-6 border border-lightblue/10 hover:border-lightblue/20 transition-colors">
+                          <div className="space-y-2 text-left">
+                            <h3 className="text-xl font-medium text-regularblue">{article.title}</h3>
+                            <p className="text-mediumblue text-sm">
+                              {article.description}
+                            </p>
+                          </div>
+                          <Link
+                            href={`/documentation/${article.category}/${article.slug}`}
+                            className="absolute inset-0 rounded-lg"
                             aria-label={article.title}>
                             <span className="sr-only">{article.title}</span>
                           </Link>
