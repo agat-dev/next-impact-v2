@@ -117,7 +117,7 @@ const CASE_STUDIES: CaseStudy[] = [
       "Les Etats Généraux Communaux est un site vitrine conçu pour promouvoir un événement citoyen visant à encourager la participation locale. Le site met en avant les ressources, les actualités et facilite la constitution des groupes locaux.\n\nNous avons développé un site WordPress en Headless avec Next.js, permettant une expérience utilisateur fluide et rapide. Le design est épuré, mettant en avant l'événement et ses objectifs.\n\nLe site comprend une section de ressources téléchargeables, un calendrier des événements et une carte interactive des groupes locaux constitués.\n\nLe site est entièrement responsive et optimisé pour le référencement naturel, afin d'attirer un maximum de visiteurs et de sensibiliser le public à l'initiative.",
     technologies: ["WordPress", "Headless CMS", "Next.js", "Tailwind CSS", "Vercel"],
     duration: "4 semaines",
-    website: "https://lesetatsgenerauxcommunaux.fr",
+    website: "https://lesetatsgenerauxcommunaux.org",
   },
   {
     id: "1",
