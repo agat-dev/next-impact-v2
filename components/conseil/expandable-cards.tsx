@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import Image from "next/image";
 
+{/* comment */}
+
 type ExpandableCardNIPProps = {
   cards: {
     title: string;
@@ -13,7 +15,7 @@ type ExpandableCardNIPProps = {
     ctaText: string;  
     ctaLink: string;
     content: string;
-  }[];
+  }[];   
 };
 
 export function ExpandableCardNIP({ cards }: ExpandableCardNIPProps) {
