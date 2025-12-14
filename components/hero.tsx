@@ -54,6 +54,17 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
+
+          <Button
+            className="w-full md:flex gap-1 rounded-full px-6 border-pink-600 text-pink-600 hover:bg-transparent hover:text-pink-600"
+            variant="outline"
+            asChild
+          >
+            <a href="mailto:agathe@next-impact.digital">
+              Contactez-moi
+              <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
         </div>
 
         {/* Hero Image */}

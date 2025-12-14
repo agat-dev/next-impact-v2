@@ -16,12 +16,26 @@ export function CTASection() {
                   nous pouvons vous aider.
                 </p>
               </div>
-              <div className="flex flex-col gap-8 min-[400px]:flex-row">
-                <Link href="https://calendly.com/agat-dev/brief-de-creation-de-site-web-wordpress" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="gap-1 text-lg font-medium rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
-                  Réserver ma consultation gratuite <ArrowRight className="h-4 w-4" />
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <Button
+                  size="lg"
+                  className="gap-1 text-lg font-medium rounded-full text-white bg-pink-700 hover:bg-pink-700/90 hover:text-white"
+                  asChild
+                >
+                  <a href="tel:0673981638">
+                    Appeler maintenant <ArrowRight className="h-4 w-4" />
+                  </a>
                 </Button>
-                </Link>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="gap-1 text-lg font-medium rounded-full border-pink-600 text-pink-600 hover:bg-transparent hover:text-pink-600"
+                  asChild
+                >
+                  <a href="mailto:agathe@next-impact.digital">
+                    Envoyer un e-mail <ArrowRight className="h-4 w-4" />
+                  </a>
+                </Button>
               </div>
               {/*}
               <p className="text-sm">Ou inscrivez-vous à notre newsletter pour recevoir nos conseils et astuces</p>

@@ -16,6 +16,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Logo } from "./logo"
 
 export function NavBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -221,42 +223,24 @@ export function NavBar() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-                    {/*
-                    <button
-                      className={cn(
-                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
-                        openSubMenu === "vous-etes" && "bg-lightblue/10"
-                      )}
-                      onClick={() => handleToggleSubMenu("vous-etes")}
-                      aria-expanded={openSubMenu === "vous-etes"}
+                  </div>
+                </div>
+                <div className="p-4">
+                  <div className="mt-6 flex flex-col gap-2">
+                    <Button
+                      className="w-full md:flex gap-1 rounded-full px-6 bg-pink-700 hover:bg-pink-700/90 text-white transition-all duration-900 ease-in-out"
+                      asChild
                     >
-                      Vous êtes
-                      <span className={cn("transition-transform", openSubMenu === "vous-etes" ? "rotate-180" : "")}>
-                        <ChevronDown className="inline w-5 h-5 ml-2" />
-                      </span>
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {openSubMenu === "vous-etes" && (
-                        <motion.div
-                          key="vous-etes-sub"
-                          initial={{ y: -20, opacity: 0, height: 0 }}
-                          animate={{ y: 0, opacity: 1, height: "auto" }}
-                          exit={{ y: -20, opacity: 0, height: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="pl-4 overflow-hidden"
-                        >
-                          <MobileMenuLink href="/vous-etes/artisan" onClick={handleMenuClick} className="pl-4">Artisan</MobileMenuLink>
-                          <MobileMenuLink href="/vous-etes/pme-industrielle" onClick={handleMenuClick} className="pl-4">PME industrielle</MobileMenuLink>
-                          <MobileMenuLink href="/vous-etes/acteur-tourisme" onClick={handleMenuClick} className="pl-4">Acteur du tourisme</MobileMenuLink>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                    */}
-                  </div>
-                  <div>
-                  </div>
-
-                  <div>
+                      <a href="tel:0673981638">Appeler</a>
+                    </Button>
+                    <Button
+                      className="md:flex gap-1 rounded-full px-6 border-pink-600 text-pink-600 hover:bg-transparent hover:text-pink-600"
+                      variant="outline"
+                      asChild
+                      size="sm"
+                    >
+                      <a href="mailto:agathe@next-impact.digital">E-mail</a>
+                    </Button>
                   </div>
                 </div>
               </motion.div>

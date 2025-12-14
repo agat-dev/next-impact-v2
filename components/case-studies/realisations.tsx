@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 // Définition des projets
 const PROJECTS = [
@@ -240,6 +241,18 @@ export default function Realisations({ count }: RealisationsProps) {
             </TabsContent>
           ))}
         </Tabs>
+        <div className="mt-16 text-center">
+          <Button
+            className="w-full md:flex gap-1 rounded-full px-4 text-xs border-pink-600 text-pink-600 hover:bg-transparent hover:text-pink-600"
+            variant="outline"
+            asChild
+            size="sm"
+          >
+            <a href="mailto:agathe@next-impact.digital">
+              Travaillons ensemble
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   );
