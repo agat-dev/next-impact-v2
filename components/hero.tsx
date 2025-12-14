@@ -56,7 +56,7 @@ export default function Hero() {
           </div>
 
           <Button
-            className="w-full md:flex gap-1 rounded-full px-6 border-pink-600 text-pink-600 hover:bg-transparent hover:text-pink-600"
+            className="w-fit md:flex gap-1 rounded-full px-6 bg-pink-600 text-white hover:bg-transparent hover:text-pink-600 transition-all duration-300"
             variant="outline"
             asChild
           >
