@@ -241,18 +241,6 @@ export default function Realisations({ count }: RealisationsProps) {
             </TabsContent>
           ))}
         </Tabs>
-        <div className="mt-16 text-center">
-          <Button
-            className="w-fit mx-auto md:flex gap-1 rounded-full px-4 bg-pink-600 text-white hover:bg-transparent hover:text-pink-600 transition-all duration-300"
-            variant="outline"
-            asChild
-            size="sm"
-          >
-            <a href="mailto:agathe@next-impact.digital">
-              Travaillons ensemble
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
