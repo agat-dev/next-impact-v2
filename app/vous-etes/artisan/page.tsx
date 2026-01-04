@@ -208,17 +208,7 @@ const cta = {
             items={Faq.questions}
         />  
 
-      {/* Call to action final */}
-      <CtaLanding
-            title={cta.title}   
-            description={cta.description}
-            buttonText={cta.buttonText}
-            buttonLink={cta.buttonLink}
-            buttonVariant={cta.buttonVariant}
-            button2Text={cta.button2Text}
-            button2Link={cta.button2Link}
-            button2Variant={cta.button2Variant}
-        />
+
     </div>
   );
 }
