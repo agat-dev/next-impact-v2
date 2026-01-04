@@ -1,7 +1,5 @@
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-
 export function CTASection() {
     return (
         <section className="w-full py-12 ">
@@ -19,7 +17,7 @@ export function CTASection() {
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button
                   size="lg"
-                  className="gap-1 text-lg font-medium rounded-full text-white bg-pink-600 hover:text-pink-600/90 hover:bg-transparent transition-all duration-300"
+                  className="gap-1 text-lg font-medium rounded-full text-white bg-pink-600 hover:text-white hover:bg-pink-600/80 transition-all duration-300"
                   asChild
                 >
                   <a href="tel:0673981638">
@@ -28,8 +26,7 @@ export function CTASection() {
                 </Button>
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="gap-1 text-lg font-medium rounded-full border-pink-600 text-pink-600 hover:bg-transparent hover:bg-pink-600 hover:text-white transition-all duration-300"
+                  className="gap-1 text-lg font-medium rounded-full bg-white border-pink-600 text-pink-600 hover:text-pink-600/80 hover:bg-white transition-all duration-600"
                   asChild
                 >
                   <a href="mailto:agathe@next-impact.digital">

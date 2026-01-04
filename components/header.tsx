@@ -6,7 +6,7 @@ import { Button } from './ui/button'
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu as MenuIcon, X as CloseIcon, List } from "lucide-react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, ArrowRightIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
@@ -16,8 +16,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Logo } from "./logo"
 
 export function NavBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -73,7 +71,7 @@ export function NavBar() {
               <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Ressources</NavigationMenuTrigger>
+              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
                   <li className="lg:basis-1/3">
@@ -84,13 +82,13 @@ export function NavBar() {
                       >
                         <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
                         <p className="text-sm leading-tight">
-                          Des ressources en ligne pour vous aider à décider et à formaliser votre projet web.
+                          Des outils en ligne pour vous aider à décider et à formaliser votre projet web.
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
                   <div className='lg:basis-2/3'>
-                    <ListItem href="/cms-headless" title="Quiz WordPress ou Headless ?" className='h-22'>
+                    <ListItem href="/cms-headless" title="WordPress ou Headless ? Décider" className='h-22'>
                       <p className='text-xs text-regularblue/70'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
                     </ListItem>
                     <ListItem href="/simulateur-tarifs" title="Simulateur de budget" className='h-22'>
@@ -98,9 +96,6 @@ export function NavBar() {
                     </ListItem>
                     <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-22'>
                       <p className='text-xs text-regularblue/70'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
-                    </ListItem>
-                    <ListItem href="/documentation" title="Documentation & Blog" className='h-22'>
-                      <p className='text-xs text-regularblue/70'>Base de ressources et articles pour réussir votre projet.</p>
                     </ListItem>
                   </div>
                 </ul>
@@ -165,7 +160,7 @@ export function NavBar() {
                   <div>
                     <button
                       className={cn(
-                        "w-full text-left block py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
+                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
                         openSubMenu === "services" && "bg-lightblue/10"
                       )}
                       onClick={() => handleToggleSubMenu("services")}
@@ -195,7 +190,7 @@ export function NavBar() {
 
                     <button
                       className={cn(
-                        "w-full text-left block py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
+                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
                         openSubMenu === "ressources" && "bg-lightblue/10"
                       )}
                       onClick={() => handleToggleSubMenu("ressources")}
@@ -223,24 +218,6 @@ export function NavBar() {
                         </motion.div>
                       )}
                     </AnimatePresence>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="mt-6 flex flex-col gap-2">
-                    <Button
-                      className="w-full md:flex gap-1 rounded-full px-6 bg-pink-700 hover:bg-pink-700/90 text-white transition-all duration-900 ease-in-out"
-                      asChild
-                    >
-                      <a href="tel:0673981638">Appeler</a>
-                    </Button>
-                    <Button
-                      className="md:flex gap-1 rounded-full px-6 border-pink-600 text-pink-600 hover:bg-transparent hover:text-pink-600"
-                      variant="outline"
-                      asChild
-                      size="sm"
-                    >
-                      <a href="mailto:agathe@next-impact.digital">E-mail</a>
-                    </Button>
                   </div>
                 </div>
               </motion.div>
@@ -303,7 +280,7 @@ ListItem.displayName = "ListItem"
 
 export default function Header() {
   return (
-    <header className="border-b top-0 z-50 shadow-sm">
+    <header className="border-b top-0 z-50 shadow-sm sticky bg-white">
       <div className="container flex h-16 items-center justify-between px-2">
         <div className='basis-1/6 pt-2 md:pl-0 pl-4'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
@@ -315,43 +292,19 @@ export default function Header() {
         </div>
 
         <div className='md:basis-1/6 md:flex justify-end hidden'>
-                {/*
-            <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-              <NavigationMenuTrigger className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out font-regular">
-                Vous êtes
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="bg-lightblue/5 p-2 min-w-[180px]">
-                <li>
-                  <NavigationMenuLink asChild>
-                  <Link href="/vous-êtes/artisan" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
-                    Artisan
-                  </Link>
-                  </NavigationMenuLink>
-                </li>
-                <li>
-                  <NavigationMenuLink asChild>
-                  <Link href="/vous-etes/acteur-tourisme" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
-                    Acteur du tourisme
-                  </Link>
-                  </NavigationMenuLink>
-                </li>
-                <li>
-                  <NavigationMenuLink asChild>
-                  <Link href="/vous-etes/pme-industrielle" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
-                    PME industrielle
-                  </Link>
-                  </NavigationMenuLink>
-                </li>
-                </ul>
-              </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-            </NavigationMenu>
-            
-        */}
+
+
+        <Button
+          className="w-fit md:flex gap-1 rounded-full px-4 py-2 bg-pink-600 text-white hover:bg-pink-600/80 hover:text-white transition-all duration-300"
+          variant="outline"
+          asChild
+        >
+          <a href="mailto:agathe@next-impact.digital">
+            Contactez-moi
+            <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        </Button> 
+
         </div>
       </div>
     </header>

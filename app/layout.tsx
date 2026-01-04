@@ -5,7 +5,6 @@ import Header from '@/components/header'
 import './globals.css'
 import { Particles } from "@/components/magicui/particles";
 import Footer from '@/components/footer';
-import FloatingCTA from '@/components/ui/floating-cta';
 
 
 
@@ -58,7 +57,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <FloatingCTA />
         </body>
     </html>
   )

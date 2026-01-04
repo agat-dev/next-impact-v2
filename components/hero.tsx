@@ -19,52 +19,28 @@ export default function Hero() {
             services et conseil
           </span>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tighter">
-            Freelance
-            <br />
-            <span className="font-googletexte md:text-5xl text-4xl text-regularblue/80">
-              WordPress et Headless
-            </span>
-          </h1>
+            <h1 className="tracking-tighter">
+            <div className="text-2xl md:text-3xl lg:text-4xl text-regularblue font-googletexte">Développeuse</div>
+            <div className="mt-4 text-3xl md:text-4xl lg:text-5xl text-regularblue font-googletitre font-medium">Next.js & WordPress</div> 
+            </h1>
 
-          <p className="font-googletexte text-xl text-regularblue/70 max-w-xl">
-            La simplicité de WordPress, la qualité du développement pour toutes les entreprises et organisations.
+          <p className="font-googletexte text-2xl text-regularblue/70 max-w-xl">
+            Pour un site web moderne et performant en conservant la simplicité de
+            WordPress
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
-            <Link href="/services/wordpress" className="group">
+            <Link href="/cms-headless" className="group">
               <Button
                 size="lg"
-                variant="outline"
-                className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100/40"
+                className="relative overflow-hidden rounded-full text-lg font-googletitre border-blue-100/40"
               >
-                WordPress
+                Choisir le headless ?
                 <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 <BorderBeamEffect />
               </Button>
             </Link>
-            <Link href="/services/headless" className="group">
-              <Button
-                size="lg"
-                variant="outline"
-                className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100/40"
-              >
-                Headless
-                <BorderBeamEffect />
-              </Button>
-            </Link>
           </div>
-
-          <Button
-            className="w-fit md:flex gap-1 rounded-full px-6 bg-pink-600 text-white hover:bg-transparent hover:text-pink-600 transition-all duration-300"
-            variant="outline"
-            asChild
-          >
-            <a href="mailto:agathe@next-impact.digital">
-              Contactez-moi
-              <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
         </div>
 
         {/* Hero Image */}
@@ -80,8 +56,6 @@ export default function Hero() {
                 height={500} // Adjust height as needed
               />
             </div>
-
-
 
             {/* Floating badges */}
             <div className="absolute left-6 top-6 bg-white py-2 px-4 rounded-full shadow-lg flex items-center gap-2 animate-float">

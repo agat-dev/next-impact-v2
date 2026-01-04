@@ -8,12 +8,30 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
-  theme: {
-  	extend: {
-		fontFamily: {
-			googletitre: ['"Nunito"', 'sans-serif'],
-			googletexte: ['"Inter"', 'sans-serif'],
-		},
+   theme: {
+	   lineHeight: {
+		   none: '1.25', // 1 * 1.25
+		   tight: '1.375', // 1.1 * 1.25
+		   snug: '1.5', // 1.2 * 1.25
+		   normal: '1.75', // 1.4 * 1.25
+		   relaxed: '2', // 1.6 * 1.25
+		   loose: '2.25', // 2 * 1.25
+		   '3': '.9375rem', // 0.75rem * 1.25
+		   '4': '1.25rem', // 1rem * 1.25
+		   '5': '1.5rem', // 1.25rem * 1.25
+		   '6': '1.75rem', // 1.5rem * 1.25
+		   '7': '2.25rem', // 1.75rem * 1.25
+		   '8': '2.5rem', // 2rem * 1.25
+		   '9': '2.75rem', // 2.25rem * 1.25
+		   '10': '3.125rem', // 2.5rem * 1.25
+		   '5xl': '2', // text-5xl
+	   },
+	   extend: {
+		   fontFamily: {
+			   sans: ['Open Sans', 'Arial', 'Helvetica', 'sans-serif'],
+			   googletitre: ['"Nunito"', 'sans-serif'],
+			   googletexte: ['"Inter"', 'sans-serif'],
+		   },
 		fontWeight: {
 			light: '300',
 			normal: '400',

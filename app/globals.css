@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Importation de la police Open Sans depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+html, body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -116,27 +123,35 @@
   }
   h1, h2, h3, h4, h5, h6, a {
     @apply font-normal py-1 font-googletitre;
+    line-height: 2;
   }
   h1 {
     @apply text-4xl text-regularblue font-googletitre;
+    line-height: 1.3;
   }
   h2 {
     @apply text-mediumblue pt-4 pb-4 font-googletitre;
+    line-height: 1.35;
   }
   h3 {
     @apply text-2xl pt-6 pb-2;
+    line-height: 1.4;
   }
   h4 {
     @apply text-xl text-mediumblue;
+    line-height: 1.45;
   }
   h5 {
     @apply text-xl text-darkblue;
+    line-height: 1.5;
   }
   h6 {
     @apply text-base text-darkblue;
+    line-height: 1.5;
   }
   p, span, li, input, textarea, label {
     @apply font-googletexte font-normal text-mediumblue;
+    line-height: 1.7;
   }
   a {
     @apply text-regularblue no-underline;
