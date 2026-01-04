@@ -3,6 +3,7 @@ import SolutionLanding from "@/components/ui/solution-landing";
 import GainsLanding from "@/components/ui/gains-landing";
 import { TarifsLanding } from "@/components/ui/tarifs-landing";
 import { FaqLanding } from "@/components/ui/faq-landing";
+import { CTASection } from "@/components/cta-section";
 
 export default function LandingPMEIndustrielle() {
 
@@ -200,6 +201,8 @@ const cta = {
                     items={Faq.questions}
                 />  
         
+                {/* CTA final */}
+                <CTASection/>
             </div>
           );
 }

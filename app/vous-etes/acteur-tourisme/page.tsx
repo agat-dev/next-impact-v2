@@ -3,6 +3,7 @@ import SolutionLanding from "@/components/ui/solution-landing";
 import GainsLanding from "@/components/ui/gains-landing";
 import { TarifsLanding } from "@/components/ui/tarifs-landing";
 import { FaqLanding } from "@/components/ui/faq-landing";
+import { CTASection } from "@/components/cta-section";
 
 export default function LandingTourisme() {
   const Hero = {
@@ -228,17 +229,8 @@ export default function LandingTourisme() {
         items={Faq.questions}
       />
 
-      {/* Call to action final */}
-      <CtaLanding
-        title={cta.title}
-        description={cta.description}
-        buttonText={cta.buttonText}
-        buttonLink={cta.buttonLink}
-        buttonVariant={cta.buttonVariant}
-        button2Text={cta.button2Text}
-        button2Link={cta.button2Link}
-        button2Variant={cta.button2Variant}
-      />
+      {/* CTA */}
+      <CTASection />
     </div>
   );
 }
