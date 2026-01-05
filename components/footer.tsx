@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
+import { Logos } from "./logos";
 
 
 export default function Footer() {
@@ -16,6 +17,7 @@ export default function Footer() {
         </Link>
       </nav>
     </div>
+    <Logos /> 
   </footer>
     )
 }

@@ -1,18 +1,24 @@
-import { Button } from "@/components/ui/button";
-import { BorderBeamEffect } from "@/components/ui/border-beam";
-import { ArrowRightIcon } from "lucide-react";
-import Link from "next/link";
+import GrokSearchBlock from "@/components/client-grok-block";
 import Image from "next/image";
 import { Logos } from "./logos";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const grokSectionY = useTransform(scrollY, [0, 800], [200, -50]);
+  const grokSectionScale = useTransform(scrollY, [0, 400], [0.8, 1]);
+
   return (
-    <section className="h-full relative pt-12 pb-24 md:pt-24 md:pb-24 overflow-hidden">
+    <section className="h-full relative pb-24 pt-8 md:pb-24 overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-brand-700/30 rounded-full blur-[100px]"></div>
+      <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-brand-700/30 rounded-full blur-[100px]"></div> 
 
-      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="h-[75vh] container flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-12 lg:gap-24">
+
         {/* Text Content */}
         <div className="flex flex-col space-y-8 lg:col-span-7">
           <span className="w-max inline-flex items-center px-3 py-1 text-xs font-googletexte font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
@@ -28,9 +34,12 @@ export default function Hero() {
             Pour un site web moderne et performant en conservant la simplicité de
             WordPress
           </p>
-
+          
+          {/* Logos Section */}
+          <Logos className="mt-40 mx-0 grid gap-8" />
+{/*
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
-            <Link href="/cms-headless" className="group">
+            <Link href="/#grok-search-form" className="group">
               <Button
                 size="lg"
                 className="relative overflow-hidden rounded-full text-lg font-googletitre border-blue-100/40"
@@ -41,7 +50,9 @@ export default function Hero() {
               </Button>
             </Link>
           </div>
+        */}
         </div>
+
 
         {/* Hero Image */}
         <div className="relative lg:col-span-5">
@@ -69,10 +80,25 @@ export default function Hero() {
               </span>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
 
-      <Logos className="mt-16 max-w-6xl mx-auto grid gap-8" />
+      {/*Grok Search Section */}
+      <motion.div 
+        id="grok-search-form" 
+        className="flex flex-col gap-4 w-3/4 -mt-32 mx-auto px-6 pb-12"
+        style={{ y: grokSectionY, scale: grokSectionScale }}
+        initial={{ opacity: 0, y: 200, scale: 0.5, rotateX: 45 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+        transition={{   
+          duration: 1.2, 
+          ease: "easeOut"
+        }}
+        viewport={{ once: true, margin: "-150px" }}
+      >
+        <GrokSearchBlock />
+      </motion.div>
+
     </section>
   );
 }
