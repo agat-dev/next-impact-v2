@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image"; // 
+import Image from "next/image"; 
+import LogoLoop from "./logo-loop";
 
 export function Logos({ className }: { className?: string }) {
   const logos = [
@@ -15,11 +16,7 @@ export function Logos({ className }: { className?: string }) {
 
   return (
     <div className={cn("max-w-xl mx-auto grid gap-4", className)} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))" }}>
-      {logos.map((logo) => (
-        <div key={logo.src} className="flex items-center justify-center px-4">
-          <Image src={logo.src} alt={logo.alt} width={110} height={50} quality={100} />
-        </div>
-      ))}
+      <LogoLoop logos={logos} />
     </div>
   );
 }

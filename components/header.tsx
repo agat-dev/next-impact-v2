@@ -101,6 +101,34 @@ export function NavBar() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+                        <NavigationMenuItem>
+              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Vous êtes</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
+                  <li className="lg:basis-1/3">
+                    <NavigationMenuLink asChild>
+                      <a
+                        className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
+                        href="/"
+                      >
+                        <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
+                        <p className="text-sm leading-tight">
+                          Des solutions adaptées à votre profil et vos besoins spécifiques.
+                        </p>
+                      </a>
+                    </NavigationMenuLink>
+                  </li>
+                  <div className='lg:basis-2/3'>
+                    <ListItem href="/pme" title="PME" className='h-22'>
+                      <p className='text-xs text-regularblue/70'>Entreprise cherchant à renforcer sa présence en ligne avec une stratégie exigeante.</p>
+                    </ListItem>
+                    <ListItem href="/ess" title="ESS" className='h-22'>
+                      <p className='text-xs text-regularblue/70'>Association ou entreprise à mission nécessitant une image solide et engagée.</p>
+                    </ListItem>
+                  </div>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </nav>
