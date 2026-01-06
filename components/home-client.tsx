@@ -9,6 +9,7 @@ import Realisations from "@/components/case-studies/realisations";
 import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq";
 import { CTASection } from "@/components/cta-section";
+import { Logos } from "./logos";
 
 export default function HomeClient() {
 

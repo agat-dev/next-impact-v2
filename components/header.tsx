@@ -39,10 +39,10 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" className='font-googletitre text-regularblue text-lg font-medium px-6'>Accueil</Link>
+              <Link href="/" className='font-googletitre text-white/90 text-lg px-6'>Accueil</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Services</NavigationMenuTrigger>
+              <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -68,10 +68,10 @@ export function NavBar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
+              <Link href="/etudes-de-cas" className='font-googletitre text-white/90 text-lg text-regular px-2'>Réalisations</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Outils</NavigationMenuTrigger>
+              <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Outils</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
                   <li className="lg:basis-1/3">
@@ -102,7 +102,7 @@ export function NavBar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
                         <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Vous êtes</NavigationMenuTrigger>
+              <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Vous êtes</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
                   <li className="lg:basis-1/3">
@@ -308,11 +308,11 @@ ListItem.displayName = "ListItem"
 
 export default function Header() {
   return (
-    <header className="border-b top-0 z-50 shadow-sm sticky bg-white">
+    <header className="border-b top-0 z-50 shadow-sm sticky bg-darkblue">
       <div className="container flex h-16 items-center justify-between px-2">
         <div className='basis-1/6 pt-2 md:pl-0 pl-4'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Image src="/img/logo-small.png" alt="Next Impact Digital" width={40} height={40} />
+            <Image src="/img/logo-blanc-carre.png" alt="Next Impact Digital" width={40} height={40} />
           </Link>
         </div>
         <div className='basis-4/6 flex lg:justify-center justify-start'>
@@ -323,7 +323,7 @@ export default function Header() {
 
 
         <Button
-          className="w-fit md:flex gap-1 rounded-full px-4 py-2 bg-pink-600 text-white hover:bg-pink-600/80 hover:text-white transition-all duration-300"
+          className="w-fit md:flex gap-1 rounded-full px-4 py-2 bg-yellow-500 text-white hover:bg-pink-600/80 hover:text-white transition-all duration-300"
           variant="outline"
           asChild
         >

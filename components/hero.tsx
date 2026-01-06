@@ -1,6 +1,6 @@
 import GrokSearchBlock from "@/components/client-grok-block";
 import Image from "next/image";
-import { Logos } from "./logos";
+import Threads from "@/components/ui/threads";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -13,25 +13,49 @@ export default function Hero() {
 
   return (
     <>
-      <section className="h-full relative pb-24 pt-8 md:pb-24 overflow-hidden">
-        <div className="h-[95vh] container flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-12 lg:gap-24">
+      <section className="h-[115vh] relative overflow-hidden">
+        <div className="absolute mt-[40vh] inset-0 z-10">
+        <Threads
+          color={[239/255, 242/255, 167/255]} // #F0F2A7
+          amplitude={2}
+          distance={0.6}
+          enableMouseInteraction={false}
+          height="45vh" // ou toute autre valeur souhaitée
+        />
+      </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-b from-darkblue via-mediumblue to-white"
+      />
+        <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-12 lg:gap-24 pt-[10vh]">
           {/* Text Content */}
-          <div className="flex flex-col lg:col-span-7">
-            <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-mediumblue font-googletexte">
+          <div className="flex flex-col lg:col-span-7 z-20">
+            <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-white/90 font-googletexte">
               Développeuse headless
             </div>
-            <div className="mt-2 mb-12 text-3xl md:text-4xl lg:text-5xl text-mediumblue font-googletitre font-medium">
+            <div className="mt-2 mb-12 text-3xl md:text-4xl lg:text-5xl text-white/90 font-googletitre font-medium">
               WordPress & Next.js
             </div>
 
-            <p className="font-googletexte text-xl text-mediumblue/70 max-w-xl">
-              Pour un WordPress <strong>ultra-rapide</strong>,{" "}
-              <strong>moderne</strong> et <strong>flexible</strong> grâce au
+            <p className="font-googletexte text-xl text-white/80 max-w-xl">
+              Pour un WordPress ultra-rapide, moderne et flexible grâce au
               headless CMS.
             </p>
 
-            {/* Logos Section */}
-            <Logos className="mt-8 mx-0 grid gap-8" />
+            <div className="flex items-center gap-6 mt-6">
+              <Image
+                src="/img/logo-wordpress-blanc.png"
+                alt="Logo WordPress"
+                width={70}
+                height={40}
+              />
+              <Image
+                src="/img/logo-nextjs-blanc.png"
+                alt="Logo Next.js"
+                width={170}
+                height={80}
+              />
+            </div>
             {/*
           <div className="flex flex-col sm:flex-row gap-5 pt-4">
             <Link href="/#grok-search-form" className="group">
@@ -49,7 +73,7 @@ export default function Hero() {
           </div>
 
           {/* Hero Image */}
-          <div className="relative lg:col-span-5">
+          <div className="relative lg:col-span-5 z-20">
             <div className="relative rounded-xl overflow-hidden aspect-square max-w-md mx-auto">
               {/* Placeholder for profile image - replace with actual image */}
               <div className="bg-gradient-to-br from-brand-400/80 to-brand-600/80 w-full h-full flex items-center justify-center">
@@ -70,32 +94,19 @@ export default function Hero() {
                 </span>
               </div>
 
-              <div className="absolute -right-3 bottom-1/4 bg-white py-2 px-4 rounded-full shadow-lg animate-float-delayed">
+              <div className="absolute right-4 bottom-12 bg-white py-2 px-4 rounded-full shadow-lg animate-float-delayed">
                 <span className="text-sm font-medium text-black">
                   8+ ans d'expérience
                 </span>
               </div>
             </div>
           </div>
-        </div>
+      </div>
       </section>
 
       {/*Grok Search Section */}
-      <section className="relative bg-darkblue">
-        <motion.div
-          id="grok-search-form"
-          className="flex flex-col gap-4 w-3/4 -mt-32 mx-auto px-6 pb-12"
-          style={{ y: grokSectionY, scale: grokSectionScale }}
-          initial={{ opacity: 0, y: 200, scale: 0.5, rotateX: 45 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
-          transition={{
-            duration: 1.2,
-            ease: "easeOut",
-          }}
-          viewport={{ once: true, margin: "-150px" }}
-        >
-          <GrokSearchBlock />
-        </motion.div>
+      <section className="relative -mt-[55vh] xxl:mt-[63vh] w-2/3 mx-auto z-40">
+          <GrokSearchBlock />       
       </section>
     </>
   );

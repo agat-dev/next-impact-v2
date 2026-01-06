@@ -15,7 +15,7 @@ export function Logos({ className }: { className?: string }) {
   ];
 
   return (
-    <div className={cn("max-w-xl mx-auto grid gap-4", className)} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))" }}>
+    <div className={cn("w-full mx-auto grid gap-4 py-4", className)} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))" }}>
       <LogoLoop logos={logos} />
     </div>
   );
