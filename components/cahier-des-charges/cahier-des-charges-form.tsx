@@ -18,7 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { generatePDF } from "@/lib/pdf-generator";
 import { DocumentPreview } from "@/components/cahier-des-charges/document-preview";
-import { Loader2, FileText, Eye } from "lucide-react";
+import { Loader2, FileText, Eye, ArrowBigDown } from "lucide-react";
 
 type FormSection = {
   id: string;
@@ -97,10 +97,10 @@ export function CahierDesChargesForm() {
         </div>
 
         <TabsContent value="form">
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8 bg-extralightblue rounded-2xl p-6 md:p-8">
             <Accordion
               type="multiple"
-              defaultValue={["section-1"]}
+              defaultValue={formSections.length > 0 ? [formSections[0].id] : []}
               className="w-full"
             >
               {formSections.map((section) => (
@@ -224,14 +224,14 @@ export function CahierDesChargesForm() {
             <Button
               onClick={() => setActiveTab("form")}
               variant="outline"
-              className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30"
+              className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30 text-base font-regular"
             >
               Retour au formulaire
             </Button>
             <Button
               onClick={handleSubmit}
               disabled={isGenerating}
-              className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
+              className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80 text-base font-regular"
             >
               {isGenerating ? (
                 <>

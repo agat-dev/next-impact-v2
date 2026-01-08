@@ -14,13 +14,13 @@ export default function Hero() {
   return (
     <>
       <section className="h-[115vh] relative overflow-hidden">
-        <div className="absolute mt-[40vh] inset-0 z-10">
+        <div className="absolute inset-0 z-10">
         <Threads
           color={[239/255, 242/255, 167/255]} // #F0F2A7
           amplitude={2}
           distance={0.6}
           enableMouseInteraction={false}
-          height="45vh" // ou toute autre valeur souhaitée
+          height="100vh" // ou toute autre valeur souhaitée
         />
       </div>
       <div

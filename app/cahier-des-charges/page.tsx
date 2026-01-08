@@ -1,3 +1,4 @@
+import PageLayout from "@/components/page-layout";
 import { CahierDesChargesForm } from "@/components/cahier-des-charges/cahier-des-charges-form"
 import { Metadata } from "next";
 
@@ -25,16 +26,15 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <main className="container mx-auto py-8 px-4">
-        <div className="flex justify-center space-y-4 py-12">
-            <h1 className="font-medium text-center">
-              Générateur de Cahier des Charges
-            </h1>
-          </div>
-      <p className="text-center mb-8 text-regularblue/80 max-w-2xl mx-auto">
-        Remplissez le formulaire ci-dessous pour générer un cahier des charges complet pour votre projet de site web.
-      </p>
+    <main>
+      <PageLayout
+        titre="Générateur de cahier des charges"
+        sousTitre="Remplissez le formulaire pour obtenir votre cahier des charges complet."
+      >
+      <div className="mt-8">
       <CahierDesChargesForm />
+      </div>
+      </PageLayout>
     </main>
   )
 }

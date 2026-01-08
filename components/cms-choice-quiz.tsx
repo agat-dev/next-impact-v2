@@ -306,22 +306,22 @@ export default function CmsQuiz() {
     const result = calculateResult()
 
     return (
-      <div className="w-5xl mx-auto md:p-6 pt-12 space-y-6">
-        <Card>
+      <div className="max-w-3xl mx-auto md:p-6 pt-12">
+        <Card className="bg-extralightblue rounded-2xl">
           <CardHeader className="text-center">
             <div className="flex items-center justify-center mb-4">
-              <CheckCircle className="h-12 w-12 text-regularblue/60" />
+              <CheckCircle className="h-12 w-12 text-regularblue" />
             </div>
-            <CardTitle className="text-2xl text-regularblue font-googletitre">Recommandation : {result.solution}</CardTitle>
+            <CardTitle className="text-3xl text-regularblue font-semibold font-googletitre">Recommandation :<br/>{result.solution}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-3 text-regularblue">Pourquoi cette solution ?</h3>
+              <h3 className="text-xl font-semibold mb-3 text-darkblue">Pourquoi cette solution ?</h3>
               <ul className="space-y-2">
                 {result.reasons.map((reason, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-regularblue/60 mr-4 mt-0.5 flex-shrink-0" />
-                    <span className="text-mediumblue/70">{reason}</span>
+                    <CheckCircle className="h-5 w-5 text-darkblue mr-4 mt-0.5 flex-shrink-0" />
+                    <span className="text-darkblue">{reason}</span>
                   </li>
                 ))}
               </ul>
@@ -329,32 +329,32 @@ export default function CmsQuiz() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold mb-3 text-regularblue">Avantages clés</h4>
+                <h4 className="font-semibold mb-3 text-mediumblue">Avantages clés</h4>
                 <ul className="space-y-1 text-sm text-mediumblue/70">
                   {result.advantages.map((advantage, index) => (
                     <li key={index} className="flex items-start">
-                      <span className=" text-regularblue/60 mr-2">•</span>
-                      <span>{advantage}</span>
+                      <span className=" text-mediumblue/60 mr-2">•</span>
+                      <span className="text-base">{advantage}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3  text-regularblue">Points d'attention</h4>
+                <h4 className="font-semibold mb-3  text-mediumblue">Points d'attention</h4>
                 <ul className="space-y-1 text-sm text-mediumblue/70">
                   {result.considerations.map((consideration, index) => (
                     <li key={index} className="flex items-start">
-                      <span className=" text-regularblue/60 mr-2">•</span>
-                      <span>{consideration}</span>
+                      <span className=" text-mediumblue/60 mr-2">•</span>
+                      <span className="text-base">{consideration}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            <div className="pt-4 border-t">
-              <Button onClick={resetQuiz} className="w-full gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80">
+            <div className="pt-4 border-t border-white/10">
+              <Button onClick={resetQuiz} className="w-full gap-1 rounded-full text-lg font-medium text-regularblue bg-transparent hover:bg-transparent hover:text-regularblue/80 transition-all ease-in-out">
                 <RotateCcw className="h-4 w-4 mr-2" />
                 Refaire le quiz
               </Button>
@@ -368,18 +368,18 @@ export default function CmsQuiz() {
   const question = questions[currentQuestion]
 
   return (
-    <div className="w-5xl mx-auto md:p-6 pt-12">
-      <Card>
+    <div className="max-w-3xl mx-auto md:p-6 pt-12">
+      <Card className="bg-extralightblue rounded-2xl">
         <CardHeader>
           <div className="space-y-4">
-            <div className="flex items-center justify-between text-sm text-regularblue/80">
-              <span>
+            <div className="flex items-center justify-between text-sm text-mediumblue/80">
+              <span className="text-mediumblue/60">
                 Question {currentQuestion + 1} sur {questions.length}
               </span>
-              <span>{Math.round(progress)}% complété</span>
+              <span className="text-mediumblue/60">{Math.round(progress)}% complété</span>
             </div>
-            <Progress value={progress} className="w-full bg-lightblue/10" />
-            <CardTitle className="text-xl text-regularblue">{question.question}</CardTitle>
+            <Progress value={progress} className="w-full bg-mediumblue/10" />
+            <CardTitle className="text-2xl font-semibold font-googletitre text-regularblue/80">{question.question}</CardTitle>
           </div>
         </CardHeader>
         <CardContent>
@@ -387,7 +387,7 @@ export default function CmsQuiz() {
             {question.options.map((option, index) => (
               <div
                 key={index}
-                className={`border rounded-lg p-4 cursor-pointer transition-all hover:bg-muted/50 ${
+                className={`border rounded-lg p-4 cursor-pointer transition-all bg-white/0 hover:bg-muted/50 ${
                   selectedAnswer === index.toString() ? "border-regularblue/50 bg-regularblue/5" : ""
                 }`}
                 onClick={() => setSelectedAnswer(index.toString())}
@@ -395,7 +395,7 @@ export default function CmsQuiz() {
                 <div className="flex items-start space-x-3">
                   <RadioGroupItem value={index.toString()} id={`option-${index}`} className="mt-1" />
                   <div className="flex-1">
-                    <Label htmlFor={`option-${index}`} className="cursor-pointer font-medium text-regularblue">
+                    <Label htmlFor={`option-${index}`} className="cursor-pointer font-regular text-mediumblue text-base">
                       {option.text}
                     </Label>
                     <p className="text-xs text-mediumblue/70 mt-1">{option.explanation}</p>
@@ -409,7 +409,7 @@ export default function CmsQuiz() {
             <Button
               onClick={() => handleAnswer(question.options[Number.parseInt(selectedAnswer)].value)}
               disabled={selectedAnswer === ""}
-              className="w-full gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
+              className="w-full gap-1 rounded-full text-xl font-semibold font-googletitre text-regularblue transition-all ease-in-out bg-transparent hover:bg-transparent "
             >
               {currentQuestion < questions.length - 1 ? (
                 <>

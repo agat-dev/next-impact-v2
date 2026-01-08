@@ -74,7 +74,7 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
     }
 
     return (
-      <div className="p-6 space-y-8">
+      <div className="w-full p-6 space-y-8 rounded-2xl">
         {/* Page de couverture */}
         <div className="bg-lightblue/10 p-8 border-t-8 border-regularblue mb-12">
           <div className="text-center space-y-4">
@@ -666,11 +666,11 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
   };
 
   return (
-    <Card className="border-2 border-lightblue/20">
+    <Card className="border-2 border-lightblue/20 rounded-2xl">
       <div className="bg-lightblue/20 p-4 border-b border-lightblue/20 flex justify-between items-center">
         <h3 className="text-lg font-semibold text-blue-800">Prévisualisation du document</h3>
         <button
-          className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+          className="bg-regularblue hover:bg-regularblue/80 text-white text-base font-regular px-4 py-2 rounded-full transition"
           onClick={() => setShowContactForm(true)}
         >
           Envoyer pour devis
@@ -682,13 +682,13 @@ export function DocumentPreview({ formData }: DocumentPreviewProps) {
           />
         )}
       <button 
-      className="bg-regularblue hover:bg-regularblue/80 text-white text-sm font-semibold px-4 py-2 rounded-full transition"
+      className="bg-regularblue hover:bg-regularblue/80 text-white text-base font-regular px-4 py-2 rounded-full transition"
       onClick={() => downloadPDF(formData)}>Télécharger le PDF</button>
       </div>
 
 
-      <ScrollArea className="h-[800px] w-full">
-        <div className="bg-white mx-auto my-6" style={{ width: "210mm", minHeight: "297mm" }}>
+      <ScrollArea className="h-[800px]">
+        <div className="bg-white mx-auto my-6 px-24" style={{ minHeight: "297mm" }}>
           {renderPreviewContent()}
         </div>
       </ScrollArea>

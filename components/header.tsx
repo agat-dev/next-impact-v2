@@ -39,7 +39,7 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" className='font-googletitre text-white/90 text-lg px-6'>Accueil</Link>
+              <Link href="/services" className='font-googletitre text-white/90 text-lg px-6'>Accueil</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Services</NavigationMenuTrigger>
@@ -49,7 +49,7 @@ export function NavBar() {
                     <NavigationMenuLink asChild>
                       <a
                         className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
-                        href="/"
+                        href="/services"
                       >
                         <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
                         <p className="text-sm leading-tight">
@@ -323,8 +323,8 @@ export default function Header() {
 
 
         <Button
-          className="w-fit md:flex gap-1 rounded-full px-4 py-2 bg-yellow-500 text-white hover:bg-pink-600/80 hover:text-white transition-all duration-300"
-          variant="outline"
+          className="w-fit md:flex gap-1 rounded-full px-4 py-0 bg-[--complementary3] text-darkblue text-base font-medium hover:bg-[--complentary3] hover:text-darkblue/80 transition-all duration-300"
+          variant="default"
           asChild
         >
           <a href="mailto:agathe@next-impact.digital">
