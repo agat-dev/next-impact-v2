@@ -1,10 +1,10 @@
-import GrokSearchBlock from "@/components/client-grok-block";
 import Image from "next/image";
 import Threads from "@/components/ui/threads";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
+import ClientGeminiBlock from "./client-gemini-block";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -106,7 +106,7 @@ export default function Hero() {
 
       {/*Grok Search Section */}
       <section className="relative -mt-[55vh] xxl:mt-[63vh] w-2/3 mx-auto z-40">
-          <GrokSearchBlock />       
+          <ClientGeminiBlock />       
       </section>
     </>
   );
