@@ -50,34 +50,33 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {testimonials.map((testimonial, index) => (
-          <MagicCard className="h-max rounded-2xl">
-            <Card 
-              key={index} 
-              className="bg-white border border-pink-200/40 rounded-2xl transition-all overflow-hidden shadow-none"
-            >
-              <CardContent className="pt-8 flex-grow">     
-                <div className="flex items-center mb-4">
-                  {renderStars(testimonial.rating)}
-                  <span className="ml-2 text-sm text-regularblue/70">
-                    {testimonial.rating} étoiles
-                  </span>
-                </div>
-               
-                <p className="text-md mb-4 text-regularblue leading-relaxed">{testimonial.quote}</p>
-              </CardContent>
-              
-              <CardFooter className="pt-2">
-                <div>
-                  <p className="font-medium font-googletitre text-base text-regularblue">{testimonial.author}</p>
-                  <p className="text-sm font-googletitre text-regularblue/70">
-                    {testimonial.position}</p>
-                  <p className="mt-2 text-xs text-regularblue/70 uppercase">
-                     {testimonial.company}
-                  </p>
-                </div>
-              </CardFooter>
-            </Card>
-          </MagicCard>
+            <MagicCard key={index} className="h-max rounded-2xl">
+              <Card 
+                className="bg-white border border-pink-200/40 rounded-2xl transition-all overflow-hidden shadow-none"
+              >
+                <CardContent className="pt-8 flex-grow">     
+                  <div className="flex items-center mb-4">
+                    {renderStars(testimonial.rating)}
+                    <span className="ml-2 text-sm text-regularblue/70">
+                      {testimonial.rating} étoiles
+                    </span>
+                  </div>
+                
+                  <p className="text-md mb-4 text-regularblue leading-relaxed">{testimonial.quote}</p>
+                </CardContent>
+                
+                <CardFooter className="pt-2">
+                  <div>
+                    <p className="font-medium font-googletitre text-base text-regularblue">{testimonial.author}</p>
+                    <p className="text-sm font-googletitre text-regularblue/70">
+                      {testimonial.position}</p>
+                    <p className="mt-2 text-xs text-regularblue/70 uppercase">
+                      {testimonial.company}
+                    </p>
+                  </div>
+                </CardFooter>
+              </Card>
+            </MagicCard>
           ))}
         </div>
       </div>

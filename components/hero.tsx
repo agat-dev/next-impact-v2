@@ -33,11 +33,11 @@ export default function Hero() {
             <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-white/90 font-googletexte">
               Développeuse headless
             </div>
-            <div className="mt-2 mb-12 text-3xl md:text-4xl lg:text-5xl text-white/90 font-googletitre font-medium">
+            <div className="mt-2 mb-4 md:mb-12 text-3xl md:text-4xl lg:text-5xl text-white/90 font-googletitre font-medium">
               WordPress & Next.js
             </div>
 
-            <p className="font-googletexte text-xl text-white/80 max-w-xl">
+            <p className="font-googletexte md:text-xl text-white/80 max-w-xl">
               Pour un WordPress ultra-rapide, moderne et flexible grâce au
               headless CMS.
             </p>
@@ -105,7 +105,7 @@ export default function Hero() {
       </section>
 
       {/*Grok Search Section */}
-      <section className="relative -mt-[55vh] xxl:mt-[63vh] w-2/3 mx-auto z-40">
+      <section className="relative -mt-[20vh] lg:-mt-[51vh] xl:-mt-[55vh] xxl:mt-[63vh] w-full mx-auto p-4 z-40">
           <ClientGeminiBlock />       
       </section>
     </>

@@ -20,10 +20,6 @@ export default function HomeClient() {
         {/* Hero Section */}
         <Hero />
 
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[800px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-transparent to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[1200px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-transparent opacity-10 blur-3xl"></div>
-        </div>
 
         {/* Whats's Headless Section */}
         <ExpandableCardDemo />

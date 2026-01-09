@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TypewriterLoading } from "../ui/typewriter-loading";
 import { marked } from "marked";
+import { Button } from "react-day-picker";
 
 interface GeminiSearchProps {
   onResult: (result: any) => void;
@@ -12,6 +13,16 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
+  const resultRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (result && resultRef.current) {
+      const rect = resultRef.current.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const offset = rect.top + scrollTop - 50;
+      window.scrollTo({ top: offset, behavior: "smooth" });
+    }
+  }, [result]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,66 +56,72 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
 
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className="w-full max-w-xl mx-auto flex flex-col gap-4 p-6 bg-white/80 rounded-2xl shadow"
-      >
-        <h2 className="font-semibold text-3xl text-mediumblue text-center">
-          Passer votre site WordPress en headless ?
-        </h2>
-        <label
-          htmlFor="gemini_url"
-          className="font-regular text-lg font-googletexte text-mediumblue/80"
+      {!loading && (
+        <form
+          onSubmit={handleSubmit}
+          className="w-full max-w-xl mx-auto flex flex-col gap-4 p-6 bg-white/80 rounded-2xl shadow"
         >
-          URL WordPress à analyser
-        </label>
-        <input
-          id="gemini_url"
-          className="border rounded p-2 -mt-2.5"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="https://test.com"
-          required
-          disabled={loading}
-          type="url"
-          pattern="https?://.+"
-        />
-        <button
-          type="submit"
-          className="w-max mx-auto mt-6 bg-regularblue rounded-full text-white font-googletitre text-lg font-regular px-4 py-2 disabled:transparent min-h-[44px] flex items-center justify-center"
-          disabled={loading || !url.trim()}
-        >
-          {loading ? (
-            <TypewriterLoading
-              messages={[
-                "Analyse en cours avec Gemini...",
-                "Traitement de votre audit...",
-                "Génération du rapport...",
-              ]}
-              speed={40}
-              className="h-6 mt-12"
-            />
-          ) : (
-            "Lancer l'analyse"
-          )}
-        </button>
-        {error && <div className="text-red-500">{error}</div>}
-      </form>
+          <h2 className="font-semibold text-2xl lg:text-3xl text-mediumblue text-center">
+            Passer votre site WordPress en headless ?
+          </h2>
+          <label
+            htmlFor="gemini_url"
+            className="font-regular text-lg font-googletexte text-mediumblue/80"
+          >
+            URL WordPress à analyser
+          </label>
+          <input
+            id="gemini_url"
+            className="border rounded p-2 -mt-2.5"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="https://test.com"
+            required
+            disabled={loading}
+            type="url"
+            pattern="https?://.+"
+          />
+          <button
+            type="submit"
+            className="w-max mx-auto mt-6 bg-regularblue rounded-full text-white font-googletitre text-lg font-regular px-4 py-2 disabled:transparent min-h-[44px] flex items-center justify-center"
+            disabled={loading || !url.trim()}
+          >
+            Lancer l'analyse
+          </button>
+          {error && <div className="text-red-500">{error}</div>}
+        </form>
+      )}
+
+      {loading && (
+        <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-center p-6">
+          <TypewriterLoading
+            messages={[
+              "Analyse en cours...",
+              "Traitement de votre audit...",
+              "Génération du rapport...",
+            ]}
+            speed={40}
+            className="h-6 mt-12"
+          />
+        </div>
+      )}
 
       {result && (
-        <AuditPreview
-          markdown={
-            result.candidates?.[0]?.content?.parts?.[0]?.text ||
-            JSON.stringify(result, null, 2)
-          }
-        />
+        <div ref={resultRef}>
+          <AuditPreview
+            markdown={
+              result.candidates?.[0]?.content?.parts?.[0]?.text ||
+              JSON.stringify(result, null, 2)
+            }
+          />
+        </div>
       )}
     </>
   );
 }
 
+// Affiche toute la réponse sans prévisualisation ni opt-in
 function AuditPreview({ markdown }: { markdown: string }) {
-
   const htmlContent = React.useMemo(() => {
     let textToParse = markdown;
 
@@ -117,7 +134,6 @@ function AuditPreview({ markdown }: { markdown: string }) {
     }
 
     try {
-      // Tentative de détection si c'est du JSON pur pour le formater en markdown
       const isJson = (str: string) => {
         try {
           const obj = JSON.parse(str);
@@ -129,7 +145,6 @@ function AuditPreview({ markdown }: { markdown: string }) {
 
       if (isJson(textToParse)) {
         const obj = JSON.parse(textToParse);
-        // Si c'est un objet, on le convertit en un affichage markdown propre
         textToParse = "```json\n" + JSON.stringify(obj, null, 2) + "\n```";
       }
 
@@ -145,10 +160,6 @@ function AuditPreview({ markdown }: { markdown: string }) {
       id="gemini-search-result"
       className="mt-8 w-full h-max max-w-4xl mx-auto p-8 bg-white/60 rounded-3xl shadow-xl text-left relative overflow-hidden ring-1 ring-black/5"
     >
-      <h3 className="font-bold text-3xl mb-6 text-mediumblue border-b pb-4">
-        Résultat de l'analyse
-      </h3>
-
       <div className="relative">
         <div
           className="prose prose-blue prose-p:leading-relaxed prose-headings:text-blue-900 max-w-none text-slate-700"
@@ -157,6 +168,32 @@ function AuditPreview({ markdown }: { markdown: string }) {
           }}
         />
       </div>
+      <div>
+        <button
+          className="absolute top-4 right-4 text-mediumblue hover:text-regularblue"
+          onClick={() => {
+            navigator.clipboard.writeText(markdown);
+          }}
+        >
+          Copier le texte brut
+        </button>
+        <button
+          className="absolute top-12 right-4 text-mediumblue hover:text-regularblue"
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Nouvelle analyse
+        </button>
+        <div className="absolute bottom-4 right-4 text-xs text-mediumblue/70">
+          <a 
+            className="text-mediumblue hover:text-regularblue"
+            href="mailto:agathe@next-impact.digital"
+          >
+            Lancer mon projet
+          </a>
+        </div>
+      </div>
     </div>
   );
-}
+      };
