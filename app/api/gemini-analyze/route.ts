@@ -31,7 +31,12 @@ export async function POST(req: NextRequest) {
           temperature: 0.1,
           topP: 0.8,
           topK: 40,
-        }
+        },
+        tools: [
+          {
+            googleSearch: {}
+          }
+        ]
       }),
     });
     console.log('Requête envoyée à Gemini');
