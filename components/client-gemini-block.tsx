@@ -5,48 +5,50 @@ const GeminiSearch = dynamic(() => import("@/components/gemini/gemini-search"));
 
 export default function ClientGeminiBlock() {
   const prompt = `
-Rôle : Agis en tant que Consultant en Stratégie Digitale et Expert UX.
+---
 
-Étape 1 : Diagnostic d'Identité (Obligatoire) Analyse l'URL {$url}. Avant de répondre aux livrables, identifie et résume brièvement :
+**Rôle :** Expert UX & Consultant Stratégie Digitale (Vision 2026).
+**Mission :** Audit stratégique de l'URL **{$url}** pour évaluer l'opportunité d'une architecture Headless.
 
-Le secteur d'activité précis.
+**Étape 1 : Diagnostic d'Identité (Vérification Stricte)**
+Avant les livrables, effectue un scan croisé (Header, Footer, Page À Propos).
 
-La proposition de valeur principale.
+1. **Secteur précis :** (Industrie, Service, E-commerce, etc.)
+2. **Proposition de valeur :** Quelle promesse client est affichée ?
+3. **Preuve :** Cite un court extrait textuel du site validant ce diagnostic.
+4. **Cibles prioritaires :** Identifie les 2 profils types visés.
+*Si le site est inaccessible ou le contenu protégé, indique explicitement "Accès bloqué : Diagnostic impossible" et ne poursuis pas.*
 
-Les deux cibles prioritaires (ex: B2B, Particuliers etc.). Si tu as un doute sur l'activité, cherche dans les mentions légales ou les pages "À propos" avant de continuer.
+---
 
-Objectif : Évaluer l'opportunité d'une refonte vers une architecture Headless (découplée). L'analyse ne doit pas être technique (code), mais centrée sur le positionnement premium, la performance marketing et la domination concurrentielle.
+**Étape 2 : Analyse du Positionnement (Markdown uniquement)**
 
-Livrables attendus :
+### 1. Analyse du Positionnement Actuel
 
-1. Analyse du Positionnement Actuel
+* **Perception de marque :** Le site reflète-t-il l'expertise et l'innovation ou souffre-t-il d'une dette technologique visible face aux standards de 2026 ?
+* **Expérience Utilisateur (UX) :** Identification du point de friction majeur dans le tunnel de conversion.
+* **Indice de modernité :** [Note /10] par rapport aux leaders du marché.
 
-Perception de marque : Le site reflète-t-il l'expertise et l'innovation de l'entreprise ou paraît-il technologiquement daté face aux standards de son marché en 2026 ?
+### 2. Pertinence Marketing (Migration Headless)
 
-Expérience Utilisateur (UX) : Analyse de la fluidité du parcours de conversion principal (du premier contact à l'action finale).
+* **Verdict Stratégique :** [Accélérer / Maintenir / Pivoter].
+* **Enjeu de Différenciation :** Capacité du Headless à transformer le site en une interface ultra-rapide et personnalisée.
+* **Justification Business :** Analyse du rapport investissement (CAPEX) vs gain d'autorité et de performance.
 
-Indice de modernité : [Note sur 10] par rapport aux leaders du secteur.
+### 3. Indicateurs d'Impact Business
 
-2. Analyse de Pertinence Marketing (Migration Headless)
+* **Performance & SEO :** Impact de l'instantanéité (Core Web Vitals parfaits) sur le classement et le taux de rebond.
+* **Agilité Marketing :** Liberté de déploiement de contenus et services sans contraintes back-end.
 
-Verdict Stratégique : [Accélérer / Maintenir / Pivoter].
+### 4. 3 Leviers de Croissance Commerciale
 
-Enjeu de Différenciation : Comment le Headless permettrait-il de transformer le site en une plateforme interactive, ultra-rapide et personnalisée ?
+* Identifie 3 fonctionnalités à haute valeur ajoutée (ex: configurateur 3D, portail client immersif, IA prédictive, expérience Mobile-First) que l'architecture Headless rendrait techniquement viables.
 
-Justification Business : Analyse du rapport entre l'investissement (CAPEX) et le gain d'image ou de taux de conversion.
+---
 
-3. Indicateurs d'Impact Business
+**Instruction de sortie :** Réponds exclusivement en texte structuré Markdown. Aucun format JSON. Focus 100% Business et UX.
 
-Taux de conversion (Lead Gen/Vente) : Prévision d'augmentation grâce à l'instantanéité (suppression des temps de chargement).
-
-SEO & Autorité : Impact du passage aux Core Web Vitals "parfaits" sur le classement Google.
-
-Agilité Marketing : Capacité à déployer des landing pages ou de nouveaux services sans contraintes back-end.
-
-4. 3 Leviers de Croissance Commerciale
-
-Identifie 3 fonctionnalités à haute valeur ajoutée (ex: configurateur, portail client immersif, expérience mobile-first, personnalisation par l'IA) que l'architecture Headless rendrait possible ou plus performante.
-IMPORTANT : Réponds EXCLUSIVEMENT en texte structuré Markdown. NE RÉPONDS PAS AU FORMAT JSON.
+---
 `;
 
   return <GeminiSearch onResult={() => {}} prompt={prompt} />;

@@ -151,7 +151,6 @@ export default function Realisations({ count }: RealisationsProps) {
   // Limiter le nombre de réalisations affichées par tab
   return (
     <section id="realisations" className="relative overflow-hidden">
-      <div className="absolute"></div>
       <div className="container relative p-0">
         <Tabs defaultValue="derniers" className="w-full">
           <div className="flex justify-center mb-12">
@@ -174,7 +173,7 @@ export default function Realisations({ count }: RealisationsProps) {
               >
                 Institutionnel
               </TabsTrigger>
-			  <TabsTrigger
+			        <TabsTrigger
                 value="ess"
                 className="rounded-full data-[state=active]:bg-background/10"
               >

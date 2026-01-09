@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { TypewriterLoading } from "../ui/typewriter-loading";
-import { marked } from "marked";
-import { Button } from "react-day-picker";
+import AuditSendForm from "./audit-send-form";
 
 interface GeminiSearchProps {
   onResult: (result: any) => void;
@@ -13,14 +12,11 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
-  const resultRef = React.useRef<HTMLDivElement>(null);
+  const [showResultPage, setShowResultPage] = useState(false);
 
   React.useEffect(() => {
-    if (result && resultRef.current) {
-      const rect = resultRef.current.getBoundingClientRect();
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const offset = rect.top + scrollTop - 50;
-      window.scrollTo({ top: offset, behavior: "smooth" });
+    if (result) {
+      setShowResultPage(true);
     }
   }, [result]);
 
@@ -47,6 +43,7 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
       const data = await res.json();
       setResult(data);
       onResult(data);
+      setShowResultPage(true);
     } catch (err: any) {
       setError(err.message || "Erreur inconnue");
     } finally {
@@ -56,7 +53,7 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
 
   return (
     <>
-      {!loading && (
+      {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-xl mx-auto flex flex-col gap-4 p-6 bg-white/80 rounded-2xl shadow"
@@ -93,7 +90,7 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
       )}
 
       {loading && (
-        <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-center p-6">
+        <div className="w-full max-w-xl mt-36 mx-auto flex flex-col items-center justify-center p-6">
           <TypewriterLoading
             messages={[
               "Analyse en cours...",
@@ -106,94 +103,22 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
         </div>
       )}
 
-      {result && (
-        <div ref={resultRef}>
-          <AuditPreview
-            markdown={
-              result.candidates?.[0]?.content?.parts?.[0]?.text ||
-              JSON.stringify(result, null, 2)
+      {showResultPage && result && (
+        <>
+          <AuditSendForm
+            markdownPreview={
+              (result.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(result, null, 2))
+                .split('\n').slice(0, 8).join('\n')
             }
+            markdownFull={
+              result.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(result, null, 2)
+            }
+            url={url}
           />
-        </div>
+        </>
       )}
     </>
   );
 }
 
-// Affiche toute la réponse sans prévisualisation ni opt-in
-function AuditPreview({ markdown }: { markdown: string }) {
-  const htmlContent = React.useMemo(() => {
-    let textToParse = markdown;
-
-    // Si la réponse est entourée de balises ```json et ```, on essaie d'extraire le contenu
-    // ou si c'est du JSON brut, on le formate pour qu'il soit lisible
-    if (textToParse.trim().startsWith("```json")) {
-      textToParse = textToParse
-        .replace(/^```json\n?/, "")
-        .replace(/\n?```$/, "");
-    }
-
-    try {
-      const isJson = (str: string) => {
-        try {
-          const obj = JSON.parse(str);
-          return !!obj && typeof obj === "object";
-        } catch (e) {
-          return false;
-        }
-      };
-
-      if (isJson(textToParse)) {
-        const obj = JSON.parse(textToParse);
-        textToParse = "```json\n" + JSON.stringify(obj, null, 2) + "\n```";
-      }
-
-      return marked.parse(textToParse) as string;
-    } catch (e) {
-      console.error("Erreur parsing markdown:", e);
-      return textToParse;
-    }
-  }, [markdown]);
-
-  return (
-    <div
-      id="gemini-search-result"
-      className="mt-8 w-full h-max max-w-4xl mx-auto p-8 bg-white/60 rounded-3xl shadow-xl text-left relative overflow-hidden ring-1 ring-black/5"
-    >
-      <div className="relative">
-        <div
-          className="prose prose-blue prose-p:leading-relaxed prose-headings:text-blue-900 max-w-none text-slate-700"
-          dangerouslySetInnerHTML={{
-            __html: htmlContent,
-          }}
-        />
-      </div>
-      <div>
-        <button
-          className="absolute top-4 right-4 text-mediumblue hover:text-regularblue"
-          onClick={() => {
-            navigator.clipboard.writeText(markdown);
-          }}
-        >
-          Copier le texte brut
-        </button>
-        <button
-          className="absolute top-12 right-4 text-mediumblue hover:text-regularblue"
-          onClick={() => {
-            window.location.reload();
-          }}
-        >
-          Nouvelle analyse
-        </button>
-        <div className="absolute bottom-4 right-4 text-xs text-mediumblue/70">
-          <a 
-            className="text-mediumblue hover:text-regularblue"
-            href="mailto:agathe@next-impact.digital"
-          >
-            Lancer mon projet
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-      };
+// ...existing code...

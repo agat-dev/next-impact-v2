@@ -41,7 +41,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ titre, sousTitre, children }) =
             </div>
         </section>
         {/* Contenu principal de la page */}
-        <main className="relative z-10 flex-1 flex flex-col">
+        <main className="relative z-20 flex-1 flex flex-col">
             {children}
         </main>
     </div>

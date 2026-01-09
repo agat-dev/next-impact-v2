@@ -1,4 +1,5 @@
 import Realisations from "@/components/case-studies/realisations" 
+import PageLayout from "@/components/page-layout";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,18 +27,15 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function CaseStudiesPage() {
   return (
     <main>
-              {/* Hero Section */}
-        <section className="container mx-auto px-4 text-center py-16">
-          <h1 className="text-5xl md:text-6xl tracking-tight mt-12 mb-6">
-            Réalisations 
-          </h1>
-          <p className="text-xl text-regularblue/80 max-w-3xl mx-auto">
-            Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à des sites web performants et adaptés à leurs besoins.
-          </p>
-        </section>
-      <div className="container mx-auto">
-        <Realisations count={100} />
+      <PageLayout 
+        titre="Études de cas"
+        sousTitre="Découvrez nos réalisations de sites web WordPress pour divers secteurs d'activité."
+      >
+      <div className="mt-8 mb-16">
+        <Realisations count={30} />
       </div>
+
+      </PageLayout>
     </main>
   )
 }
