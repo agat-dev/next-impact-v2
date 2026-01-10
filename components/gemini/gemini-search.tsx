@@ -4,10 +4,11 @@ import AuditSendForm from "./audit-send-form";
 
 interface GeminiSearchProps {
   onResult: (result: any) => void;
-  prompt?: string;
+  prompt: string; // Rendu obligatoire
+  systemInstruction: string; // Ajout de la prop
 }
 
-export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
+export default function GeminiSearch({ onResult, prompt, systemInstruction }: GeminiSearchProps) {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -25,21 +26,18 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
     setLoading(true);
     setError(null);
     setResult(null);
-    let finalPrompt = "";
-    if (typeof prompt === "string" && prompt.includes("{$url}")) {
-      finalPrompt = prompt.replaceAll("{$url}", url);
-    } else if (typeof prompt === "string") {
-      finalPrompt = `${prompt}\nURL: ${url}`;
-    } else {
-      finalPrompt = `Analyse le site WordPress suivant : ${url}`;
-    }
+    
     try {
+      // Correction : Envoi des 3 propriétés attendues par l'API
       const res = await fetch("/api/gemini-analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: finalPrompt }),
+        body: JSON.stringify({ url, prompt, systemInstruction }),
       });
-      if (!res.ok) throw new Error("Erreur lors de l'appel à Gemini");
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Erreur lors de l'appel à Gemini");
+      }
       const data = await res.json();
       setResult(data);
       onResult(data);
@@ -80,7 +78,7 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
           />
           <button
             type="submit"
-            className="w-max mx-auto mt-6 bg-regularblue rounded-full text-white font-googletitre text-lg font-regular px-4 py-2 disabled:transparent min-h-[44px] flex items-center justify-center"
+            className="w-max mx-auto mt-6 bg-regularblue rounded-full text-white font-googletitre text-lg font-regular px-4 py-2 disabled:bg-gray-400 min-h-[44px] flex items-center justify-center"
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse
@@ -90,7 +88,7 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
       )}
 
       {loading && (
-        <div className="w-full max-w-xl mt-36 mx-auto flex flex-col items-center justify-center p-6">
+        <div className="w-full max-w-xl mt-36 mx-auto flex flex-col items-center justify-center p-6 bg-white/30 backdrop-blur-xl rounded-2xl shadow">
           <TypewriterLoading
             messages={[
               "Analyse en cours...",
@@ -106,12 +104,13 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
       {showResultPage && result && (
         <>
           <AuditSendForm
+            // Correction : Accès direct à la propriété 'text' retournée par l'API
             markdownPreview={
-              (result.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(result, null, 2))
+              (result.text || JSON.stringify(result, null, 2))
                 .split('\n').slice(0, 8).join('\n')
             }
             markdownFull={
-              result.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(result, null, 2)
+              result.text || JSON.stringify(result, null, 2)
             }
             url={url}
           />
@@ -120,5 +119,3 @@ export default function GeminiSearch({ onResult, prompt }: GeminiSearchProps) {
     </>
   );
 }
-
-// ...existing code...

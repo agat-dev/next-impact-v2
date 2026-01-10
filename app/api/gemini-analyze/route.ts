@@ -1,62 +1,56 @@
-// Fichier déplacé depuis app/api/grok-analyze/route.ts
+import { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   console.log('API /api/gemini-analyze called');
   try {
-    const { prompt } = await req.json();
-    console.log('Prompt reçu:', prompt);
+    const { url, prompt, systemInstruction } = await req.json();
+
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      console.error('Clé API Gemini manquante');
       return NextResponse.json({ error: "Clé API Gemini manquante" }, { status: 500 });
     }
-    const geminiRes = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": apiKey,
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            parts: [
-              {
-                text: prompt
-              }
-            ]
-          }
-        ],
-        generationConfig: {
-          temperature: 0.1,
-          topP: 0.8,
-          topK: 40,
-        },
-        tools: [
-          {
-            googleSearch: {}
-          }
-        ]
-      }),
-    });
-    console.log('Requête envoyée à Gemini');
-    
-    if (!geminiRes.ok) {
-      const error = await geminiRes.text();
-      console.error('Gemini API error:', error);
-      return NextResponse.json({ error }, { status: geminiRes.status });
+
+    // 1) Diagnostic: liste des modèles disponibles pour ta clé
+    const listRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+    const listJson = await listRes.json();
+    const names: string[] = Array.isArray(listJson.models) ? listJson.models.map((m: any) => m.name) : [];
+    console.log("Models disponibles:", names);
+
+    // Choix REST IDs
+    const preferredRest = [
+      "models/gemini-2.5-flash",
+      "models/gemini-2.5-pro",
+      "models/gemini-2.0-flash-lite"
+    ];
+    const restModelId = preferredRest.find(id => names.includes(id));
+    if (!restModelId) {
+      return NextResponse.json({ error: "Aucun modèle texte accessible.", models: names }, { status: 400 });
     }
 
-    const data = await geminiRes.json();
-    const fullContent = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+    // SDK attend le nom sans "models/"
+    const sdkModelName = restModelId.replace(/^models\//, "");
 
-    return NextResponse.json({
-      candidates: [{
-        content: {
-          parts: [{ text: fullContent }]
-        }
-      }]
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({
+      model: sdkModelName, // ex: "gemini-2.5-flash"
+      systemInstruction,
+      // Correction : googleSearch est un objet vide, sans paramètres
+      tools: [{ googleSearch: {} }],
     });
+
+    const generationConfig = { temperature: 0.1, topP: 0.8, topK: 1, maxOutputTokens: 8192 };
+    const safetySettings = [
+      { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+      { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
+      { category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_NONE },
+      { category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_NONE },
+    ];
+
+    const fullPrompt = prompt.replace("{$url}", url);
+    const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
+    return NextResponse.json({ text: result.response.text() });
+
   } catch (err: any) {
     console.error('Server error:', err);
     return NextResponse.json({ error: err.message || "Erreur serveur" }, { status: 500 });
