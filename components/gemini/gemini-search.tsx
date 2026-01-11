@@ -93,7 +93,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       )}
 
       {loading && (
-        <div className="w-full max-w-xl mt-36 mx-auto flex flex-col items-center justify-center p-6 bg-white/30 backdrop-blur-xl rounded-2xl shadow">
+        <div className="w-full max-w-xl mt-4 mx-auto flex flex-col items-center justify-center p-6 rounded-2xl shadow">
           <TypewriterLoading
             messages={[
               "Analyse en cours...",

@@ -49,15 +49,17 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
 
   const htmlPreview = React.useMemo(() => marked.parse(markdownPreview), [markdownPreview]);
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col gap-4 p-6 bg-white/5 rounded-2xl shadow mt-8">
-      <h2 className="font-semibold text-2xl text-extralightblue text-center mb-2">Recevoir l'audit par email</h2>
-        <div className="text-center text-extralightblue/90 mb-4">Veuillez remplir le formulaire ci-dessous pour recevoir l'audit complet de votre site web ({url}) à l'adresse email indiquée.</div>
-      <div className="bg-slate-100 rounded p-4 text-sm text-extralightblue/80 mb-4 prose prose-blue max-w-none" dangerouslySetInnerHTML={{ __html: htmlPreview }} />
+    <div className="w-full max-w-4xl mx-auto flex flex-col gap-4 p-6 bg-slate-100/10 rounded-2xl shadow mt-8">
+        <h2 className="font-medium font-googletitre text-3xl text-white mb-2">Opportunité de migration pour {url}</h2>
+      <div className="rounded-xl p-4 text-white/80 mb-4 prose prose-blue max-w-none" dangerouslySetInnerHTML={{ __html: htmlPreview }} />
+      
+      <div className="font-semibold text-2xl font-googletitre text-white text-center mb-2">Recevoir l'audit par email</div>
+      <div className="text-center text-white mb-4">Veuillez remplir le formulaire ci-dessous pour recevoir l'audit complet de votre site web ({url}) à l'adresse email indiquée.</div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
           placeholder="Nom et prénom"
-          className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
+          className="w-full bg-white/70 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
           value={name}
           onChange={e => setName(e.target.value)}
           required
@@ -65,7 +67,7 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
         <input
           type="text"
           placeholder="Entreprise"
-          className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
+          className="w-full bg-white/70 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
           value={company}
           onChange={e => setCompany(e.target.value)}
           required
@@ -73,7 +75,7 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
         <input
           type="email"
           placeholder="Email"
-          className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
+          className="w-full bg-white/70 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
           value={email}
           onChange={e => setEmail(e.target.value)}
           required
