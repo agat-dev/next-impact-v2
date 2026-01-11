@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { marked } from "marked";
+import { Button } from "../ui/button";
 
 interface AuditSendFormProps {
   markdownPreview: string;
@@ -48,15 +49,15 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
 
   const htmlPreview = React.useMemo(() => marked.parse(markdownPreview), [markdownPreview]);
   return (
-    <div className="w-full max-w-xl mx-auto flex flex-col gap-4 p-6 bg-white/80 rounded-2xl shadow mt-8">
-      <h2 className="font-semibold text-2xl text-mediumblue text-center mb-2">Recevoir l'audit par email</h2>
-        <div className="text-center text-mediumblue/90 mb-4">Veuillez remplir le formulaire ci-dessous pour recevoir l'audit complet de votre site web ({url}) à l'adresse email indiquée.</div>
-      <div className="bg-slate-100 rounded p-4 text-sm text-mediumblue/80 mb-4 prose prose-blue max-w-none" dangerouslySetInnerHTML={{ __html: htmlPreview }} />
+    <div className="w-full max-w-4xl mx-auto flex flex-col gap-4 p-6 bg-white/5 rounded-2xl shadow mt-8">
+      <h2 className="font-semibold text-2xl text-extralightblue text-center mb-2">Recevoir l'audit par email</h2>
+        <div className="text-center text-extralightblue/90 mb-4">Veuillez remplir le formulaire ci-dessous pour recevoir l'audit complet de votre site web ({url}) à l'adresse email indiquée.</div>
+      <div className="bg-slate-100 rounded p-4 text-sm text-extralightblue/80 mb-4 prose prose-blue max-w-none" dangerouslySetInnerHTML={{ __html: htmlPreview }} />
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
           placeholder="Nom et prénom"
-          className="border rounded p-2"
+          className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
           value={name}
           onChange={e => setName(e.target.value)}
           required
@@ -64,7 +65,7 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
         <input
           type="text"
           placeholder="Entreprise"
-          className="border rounded p-2"
+          className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
           value={company}
           onChange={e => setCompany(e.target.value)}
           required
@@ -72,18 +73,18 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
         <input
           type="email"
           placeholder="Email"
-          className="border rounded p-2"
+          className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
           value={email}
           onChange={e => setEmail(e.target.value)}
           required
         />
-        <button
+        <Button
           type="submit"
-          className="w-max mx-auto mt-2 bg-regularblue rounded-full text-white font-googletitre text-lg font-regular px-4 py-2 min-h-[44px] flex items-center justify-center"
+          className="mt-4 shadow-md shadow-white/20"
           disabled={loading}
         >
           Accéder l'audit complet
-        </button>
+        </Button>
         {error && <div className="text-red-500 text-center">{error}</div>}
         {success && <div className="text-green-600 text-center">Audit envoyé avec succès !</div>}
       </form>

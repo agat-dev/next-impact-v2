@@ -1,13 +1,12 @@
-"use client"
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from './ui/button'
-import * as React from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu as MenuIcon, X as CloseIcon, List } from "lucide-react"
-import { ChevronDown, ArrowRightIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu as MenuIcon, X as CloseIcon, List } from "lucide-react";
+import { ChevronDown, PhoneCallIcon, MailIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,7 +14,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
 export function NavBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -39,10 +38,11 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/services" className='font-googletitre text-white/90 text-lg px-6'>Accueil</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Services</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-googletitre text-white/90 text-lg">
+                Services
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -51,27 +51,53 @@ export function NavBar() {
                         className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
                         href="/services"
                       >
-                        <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
+                        <Image
+                          src="/img/logo-small.png"
+                          alt="Logo Next Impact Digital"
+                          width={48}
+                          height={48}
+                        />
                         <p className="text-sm leading-tight">
-                          Des services de création et refonte de sites web conçus avec et pour vous.
+                          Des services de création et refonte de sites web
+                          conçus avec et pour vous.
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  <ListItem href="/services/wordpress" title="Sites web WordPress" className='h-22'>
-                    <p className='text-xs text-regularblue/70'>Sites vitrines, institutionnels, d'information</p>
+                  <ListItem
+                    href="/services/wordpress"
+                    title="Sites web WordPress"
+                    className="h-22"
+                  >
+                    <p className="text-xs text-regularblue/70">
+                      Sites vitrines, institutionnels, d'information
+                    </p>
                   </ListItem>
-                  <ListItem href="/services/headless" title="Sites web WP Headless" className='h-22'>
-                    <p className='text-xs text-regularblue/70'>Intranet, Connexion à des applications tierces internes ou externes</p>
+                  <ListItem
+                    href="/services/headless"
+                    title="Sites web WP Headless"
+                    className="h-22"
+                  >
+                    <p className="text-xs text-regularblue/70">
+                      Intranet, Connexion à des applications tierces internes ou
+                      externes
+                    </p>
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className='font-googletitre text-white/90 text-lg text-regular px-2'>Réalisations</Link>
+              <Link
+                href="/etudes-de-cas"
+                className="font-googletitre text-white/90 text-lg text-regular px-2"
+              >
+                Réalisations
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Outils</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="font-googletitre text-white/90 text-lg">
+                Outils
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
                   <li className="lg:basis-1/3">
@@ -80,50 +106,49 @@ export function NavBar() {
                         className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
                         href="/"
                       >
-                        <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
+                        <Image
+                          src="/img/logo-small.png"
+                          alt="Logo Next Impact Digital"
+                          width={48}
+                          height={48}
+                        />
                         <p className="text-sm leading-tight">
-                          Des outils en ligne pour vous aider à décider et à formaliser votre projet web.
+                          Des outils en ligne pour vous aider à décider et à
+                          formaliser votre projet web.
                         </p>
                       </a>
                     </NavigationMenuLink>
                   </li>
-                  <div className='lg:basis-2/3'>
-                    <ListItem href="/cms-headless" title="WordPress ou Headless ? Décider" className='h-22'>
-                      <p className='text-xs text-regularblue/70'>Quiz pour vous aider à choisir le CMS le plus adapté à votre projet.</p>
+                  <div className="lg:basis-2/3">
+                    <ListItem
+                      href="/cms-headless"
+                      title="WordPress ou Headless ? Décider"
+                      className="h-22"
+                    >
+                      <p className="text-xs text-regularblue/70">
+                        Quiz pour vous aider à choisir le CMS le plus adapté à
+                        votre projet.
+                      </p>
                     </ListItem>
-                    <ListItem href="/simulateur-tarifs" title="Simulateur de budget" className='h-22'>
-                      <p className='text-xs text-regularblue/70'>Outil interactif pour estimer le budget de votre projet web.</p>
+                    <ListItem
+                      href="/simulateur-tarifs"
+                      title="Simulateur de budget"
+                      className="h-22"
+                    >
+                      <p className="text-xs text-regularblue/70">
+                        Outil interactif pour estimer le budget de votre projet
+                        web.
+                      </p>
                     </ListItem>
-                    <ListItem href="/cahier-des-charges" title="Générateur de cahier des charges" className='h-22'>
-                      <p className='text-xs text-regularblue/70'>Outil interactif pour vous guider dans la rédaction d'un cahier des charges.</p>
-                    </ListItem>
-                  </div>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-                        <NavigationMenuItem>
-              <NavigationMenuTrigger className='font-googletitre text-white/90 text-lg'>Vous êtes</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
-                  <li className="lg:basis-1/3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
-                        href="/"
-                      >
-                        <Image src="/img/logo-small.png" alt="Logo Next Impact Digital" width={48} height={48} />
-                        <p className="text-sm leading-tight">
-                          Des solutions adaptées à votre profil et vos besoins spécifiques.
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <div className='lg:basis-2/3'>
-                    <ListItem href="/pme" title="PME" className='h-22'>
-                      <p className='text-xs text-regularblue/70'>Entreprise cherchant à renforcer sa présence en ligne avec une stratégie exigeante.</p>
-                    </ListItem>
-                    <ListItem href="/ess" title="ESS" className='h-22'>
-                      <p className='text-xs text-regularblue/70'>Association ou entreprise à mission nécessitant une image solide et engagée.</p>
+                    <ListItem
+                      href="/cahier-des-charges"
+                      title="Générateur de cahier des charges"
+                      className="h-22"
+                    >
+                      <p className="text-xs text-regularblue/70">
+                        Outil interactif pour vous guider dans la rédaction d'un
+                        cahier des charges.
+                      </p>
                     </ListItem>
                   </div>
                 </ul>
@@ -183,7 +208,6 @@ export function NavBar() {
                   </button>
                 </div>
                 <div className="p-4 space-y-0">
-                  <MobileMenuLink href="/" onClick={handleMenuClick}>Accueil</MobileMenuLink>
                   {/* Services sous-menu */}
                   <div>
                     <button
@@ -195,7 +219,12 @@ export function NavBar() {
                       aria-expanded={openSubMenu === "services"}
                     >
                       Services
-                      <span className={cn("transition-transform", openSubMenu === "services" ? "rotate-180" : "")}>
+                      <span
+                        className={cn(
+                          "transition-transform",
+                          openSubMenu === "services" ? "rotate-180" : ""
+                        )}
+                      >
                         <ChevronDown className="inline w-5 h-5 ml-2" />
                       </span>
                     </button>
@@ -209,12 +238,29 @@ export function NavBar() {
                           transition={{ duration: 0.25 }}
                           className="pl-4 overflow-hidden"
                         >
-                          <MobileMenuLink href="/services/wordpress" onClick={handleMenuClick} className="pl-4">WordPress</MobileMenuLink>
-                          <MobileMenuLink href="/services/headless" onClick={handleMenuClick} className="pl-4">WordPress Headless</MobileMenuLink>
+                          <MobileMenuLink
+                            href="/services/wordpress"
+                            onClick={handleMenuClick}
+                            className="pl-4"
+                          >
+                            WordPress
+                          </MobileMenuLink>
+                          <MobileMenuLink
+                            href="/services/headless"
+                            onClick={handleMenuClick}
+                            className="pl-4"
+                          >
+                            WordPress Headless
+                          </MobileMenuLink>
                         </motion.div>
                       )}
                     </AnimatePresence>
-                    <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
+                    <MobileMenuLink
+                      href="/etudes-de-cas"
+                      onClick={handleMenuClick}
+                    >
+                      Réalisations
+                    </MobileMenuLink>
 
                     <button
                       className={cn(
@@ -225,7 +271,12 @@ export function NavBar() {
                       aria-expanded={openSubMenu === "ressources"}
                     >
                       Ressources
-                      <span className={cn("transition-transform", openSubMenu === "ressources" ? "rotate-180" : "")}>
+                      <span
+                        className={cn(
+                          "transition-transform",
+                          openSubMenu === "ressources" ? "rotate-180" : ""
+                        )}
+                      >
                         <ChevronDown className="inline w-5 h-5 ml-2" />
                       </span>
                     </button>
@@ -239,10 +290,34 @@ export function NavBar() {
                           transition={{ duration: 0.25 }}
                           className="pl-4 overflow-hidden"
                         >
-                          <MobileMenuLink href="/cms-headless" onClick={handleMenuClick} className="pl-4">WordPress CMS ou Headless ?</MobileMenuLink>
-                          <MobileMenuLink href="/simulateur-tarifs" onClick={handleMenuClick} className="pl-4">Simulateur du budget</MobileMenuLink>
-                          <MobileMenuLink href="/cahier-des-charges" onClick={handleMenuClick} className="pl-4">Générateur de cahier des charges</MobileMenuLink>
-                          <MobileMenuLink href="/documentation" onClick={handleMenuClick} className="pl-4">Documentation & Blog</MobileMenuLink>
+                          <MobileMenuLink
+                            href="/cms-headless"
+                            onClick={handleMenuClick}
+                            className="pl-4"
+                          >
+                            WordPress CMS ou Headless ?
+                          </MobileMenuLink>
+                          <MobileMenuLink
+                            href="/simulateur-tarifs"
+                            onClick={handleMenuClick}
+                            className="pl-4"
+                          >
+                            Simulateur du budget
+                          </MobileMenuLink>
+                          <MobileMenuLink
+                            href="/cahier-des-charges"
+                            onClick={handleMenuClick}
+                            className="pl-4"
+                          >
+                            Générateur de cahier des charges
+                          </MobileMenuLink>
+                          <MobileMenuLink
+                            href="/documentation"
+                            onClick={handleMenuClick}
+                            className="pl-4"
+                          >
+                            Documentation & Blog
+                          </MobileMenuLink>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -263,10 +338,10 @@ const MobileMenuLink = ({
   onClick,
   className,
 }: {
-  href: string
-  children: React.ReactNode
-  onClick?: () => void
-  className?: string
+  href: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
 }) => (
   <Link
     href={href}
@@ -278,7 +353,7 @@ const MobileMenuLink = ({
   >
     {children}
   </Link>
-)
+);
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -295,46 +370,79 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-lg font-regular text-regularblue leading-none">{title}</div>
+          <div className="text-lg font-regular text-regularblue leading-none">
+            {title}
+          </div>
           <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
+  );
+});
+ListItem.displayName = "ListItem";
 
 export default function Header() {
   return (
-    <header className="border-b top-0 z-50 shadow-sm sticky bg-darkblue">
+    <header className="border-b top-0 z-50 shadow-sm sticky bg-mediumblue/40 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between px-2">
-        <div className='basis-1/6 pt-2 md:pl-0 pl-4'>
+        <div className="basis-1/6 pt-2 md:pl-0 pl-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Image src="/img/logo-blanc-carre.png" alt="Next Impact Digital" width={40} height={40} />
+            <Image
+              src="/img/logo-blanc-carre.png"
+              alt="Next Impact Digital"
+              width={40}
+              height={40}
+            />
           </Link>
         </div>
-        <div className='basis-4/6 flex lg:justify-center justify-start'>
+        <div className="basis-4/6 flex lg:justify-center justify-start">
           <NavBar />
         </div>
 
-        <div className='md:basis-1/6 md:flex justify-end hidden'>
-
-
-        <Button
-          className="w-fit md:flex gap-1 rounded-full px-4 py-0 bg-[--complementary3] text-darkblue text-base font-medium hover:bg-[--complentary3] hover:text-darkblue/80 transition-all duration-300"
-          variant="default"
-          asChild
-        >
-          <a href="mailto:agathe@next-impact.digital">
-            Contactez-moi
-            <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-        </Button> 
-
+        <div className="md:basis-1/6 md:flex justify-end items-center gap-4 hidden">
+          <div className="relative group">
+            <button
+              className="flex items-center gap-2 px-3 py-2 text-white"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span className="font-normal text-white">Vous êtes</span>
+              <ChevronDown className="w-4 h-4" />
+            </button>
+            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-lightblue/40 to-mediumblue/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
+              <ul role="listbox">
+                <li>
+                  <Link
+                    href="/vous-etes/pme"
+                    className="block px-4 py-2 hover:bg-lightblue/30 text-white rounded transition"
+                    role="option"
+                  >
+                    PME
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/vous-etes/ess"
+                    className="block px-4 py-2 text-regularblue hover:bg-lightblue/30 hover:text-white rounded transition"
+                    role="option"
+                  >
+                    ESS
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <Link href="/contact" className="hidden md:inline-block">
+            <PhoneCallIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
+          </Link>
+          <Link href="/contact">
+            <MailIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
+          </Link>
         </div>
       </div>
     </header>
-  )
+  );
 }

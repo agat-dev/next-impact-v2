@@ -1,39 +1,25 @@
 import Image from "next/image";
-import Threads from "@/components/ui/threads";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { useScroll } from "framer-motion";
 import ClientGeminiBlock from "./client-gemini-block";
+import { Zap, Shield, TrendingUp } from "lucide-react";
 
 export default function Hero() {
   const { scrollY } = useScroll();
-  const grokSectionY = useTransform(scrollY, [0, 800], [200, -50]);
-  const grokSectionScale = useTransform(scrollY, [0, 400], [0.8, 1]);
 
   return (
     <>
-      <section className="h-[115vh] relative overflow-hidden">
-        <div className="absolute inset-0 z-10">
-        <Threads
-          color={[239/255, 242/255, 167/255]} // #F0F2A7
-          amplitude={2}
-          distance={0.6}
-          enableMouseInteraction={false}
-          height="100vh" // ou toute autre valeur souhaitée
-        />
-      </div>
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-darkblue via-mediumblue to-white"
-      />
-        <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-12 lg:gap-24 pt-[10vh]">
+      <section className="h-screen flex items-center relative overflow-hidden">
+        {/* Background SVG */}
+        <div className="fixed inset-0 z-0">
+            <img src="/img/chipset-tech-background.svg" alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-end gap-12 lg:gap-24 px-4 md:px-6 relative">
           {/* Text Content */}
-          <div className="flex flex-col lg:col-span-7 z-20">
+          <div className="flex flex-col lg:col-span-7 bg-mediumblue/70 backdrop-blur-md border border-white/20 p-6 md:p-10 rounded-2xl mt-12 lg:mt-0">
             <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-white/90 font-googletexte">
               Développeuse headless
             </div>
-            <div className="mt-2 mb-4 md:mb-12 text-3xl md:text-4xl lg:text-5xl text-white/90 font-googletitre font-medium">
+            <div className="mt-2 mb-4 md:mb-12 text-3xl md:text-4xl lg:text-5xl text-coral font-googletitre font-medium">
               WordPress & Next.js
             </div>
 
@@ -56,24 +42,10 @@ export default function Hero() {
                 height={80}
               />
             </div>
-            {/*
-          <div className="flex flex-col sm:flex-row gap-5 pt-4">
-            <Link href="/#grok-search-form" className="group">
-              <Button
-                size="lg"
-                className="relative overflow-hidden rounded-full text-lg font-googletitre border-blue-100/40"
-              >
-                Choisir le headless ?
-                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                <BorderBeamEffect />
-              </Button>
-            </Link>
-          </div>
-        */}
           </div>
 
           {/* Hero Image */}
-          <div className="relative lg:col-span-5 z-20">
+          <div className="relative lg:col-span-5">
             <div className="relative rounded-xl overflow-hidden aspect-square max-w-md mx-auto">
               {/* Placeholder for profile image - replace with actual image */}
               <div className="bg-gradient-to-br from-brand-400/80 to-brand-600/80 w-full h-full flex items-center justify-center">
@@ -104,9 +76,26 @@ export default function Hero() {
       </div>
       </section>
 
-      {/*Grok Search Section */}
-      <section className="relative -mt-[20vh] lg:-mt-[51vh] xl:-mt-[55vh] xxl:mt-[63vh] w-full mx-auto p-4 z-40">
-          <ClientGeminiBlock />       
+      {/*Gemini Search Section */}
+      <section className="bg-white/5 w-3/4 mx-auto flex flex-col gap-8 backdrop-blur-xl border border-white/20 rounded-xl p-12">
+          {/* Background image for GeminiBlock container
+          <img 
+            src="/illustrations/data-flow-animated.svg" 
+            alt="Arrière-plan Gemini" 
+            className="absolute left-[65%] top-16 inset-0 h-full object-cover z-0 pointer-events-none select-none opacity-20" 
+            aria-hidden="true"
+          /> */}
+          <h2 className="font-googletexte font-medium text-3xl lg:text-4xl text-white text-center mb-2">
+            Passer votre site en WordPress <span className="font-googletitre text-coral text-5xl font-medium"> headless</span><div>maintenant ?</div>
+          </h2>
+          <p className="text-white/70 text-2xl text-center mb-4">
+            Audit gratuit détaillé en 10 secondes
+          </p>
+        <div className="relative h-full overflow-hidden">
+          <div className="relative flex items-center justify-center z-10 p-6">
+            <ClientGeminiBlock />    
+          </div>
+        </div>
       </section>
     </>
   );

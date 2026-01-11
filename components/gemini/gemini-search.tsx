@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import { TypewriterLoading } from "../ui/typewriter-loading";
 import AuditSendForm from "./audit-send-form";
+import { Button } from "../ui/button";
+import { ArrowRight, Target, TargetIcon } from "lucide-react";
+import { Arrow } from "@radix-ui/react-select";
 
 interface GeminiSearchProps {
   onResult: (result: any) => void;
@@ -54,20 +58,17 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-xl mx-auto flex flex-col gap-4 p-6 bg-white/80 rounded-2xl shadow"
+          className="flex flex-col gap-6 w-5/6 max-w-xl mx-auto"
         >
-          <h2 className="font-semibold text-2xl lg:text-3xl text-mediumblue text-center">
-            Passer votre site WordPress en headless ?
-          </h2>
           <label
             htmlFor="gemini_url"
-            className="font-regular text-lg font-googletexte text-mediumblue/80"
+            className="font-googletexte text-white/80"
           >
             URL WordPress à analyser
           </label>
           <input
             id="gemini_url"
-            className="border rounded p-2 -mt-2.5"
+            className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://test.com"
@@ -76,13 +77,17 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
             type="url"
             pattern="https?://.+"
           />
-          <button
+          <Button
             type="submit"
-            className="w-max mx-auto mt-6 bg-regularblue rounded-full text-white font-googletitre text-lg font-regular px-4 py-2 disabled:bg-gray-400 min-h-[44px] flex items-center justify-center"
+            variant="default"
+            className="w-full text-xl font-googletitre font-medium flex items-center justify-center shadow-lg shadow-white/20"
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse
-          </button>
+            <span className="ml-2 flex items-center text-darkblue">              
+              <ArrowRight className="size-5"/>
+            </span>
+          </Button>
           {error && <div className="text-red-500">{error}</div>}
         </form>
       )}

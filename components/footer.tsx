@@ -4,7 +4,7 @@ import { Logos } from "./logos";
 
 export default function Footer() {
     return (
-    <footer className="w-full border-t py-6 md:py-0">
+    <footer className="w-full p-4 md:p-24 bg-white/10 backdrop-blur-xl border-t border-white/20">
     <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
       <p className="text-center text-sm leading-loose text-meidumblue md:text-left">
         2025

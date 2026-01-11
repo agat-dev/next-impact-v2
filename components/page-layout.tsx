@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Threads from "@/components/ui/threads";
 
 interface PageLayoutProps {
     titre: string;
@@ -11,23 +10,9 @@ interface PageLayoutProps {
 
 const PageLayout: React.FC<PageLayoutProps> = ({ titre, sousTitre, children }) => (
     <div className="relative w-full h-[125vh] flex flex-col">
-        {/* Décorations en arrière-plan */}
-        <div className="absolute inset-0 pointer-events-none">
-            {/* Gradient en arrière-plan */}
-            <div
-                aria-hidden="true"
-                className="absolute inset-0 z-0 bg-gradient-to-b from-darkblue via-mediumblue to-white"
-            />
-            {/* Threads au-dessus du gradient */}
-            <div className="absolute inset-0 z-10">
-                <Threads
-                    color={[239/255, 242/255, 167/255]} // #F0F2A7
-                    amplitude={2}
-                    distance={0.6}
-                    enableMouseInteraction={false}
-                    height="100vh" // occupe toute la hauteur visible
-                />
-            </div>
+        {/* Background SVG */}
+        <div className="fixed inset-0 z-0">
+            <img src="/img/chipset-tech-background.svg" alt="" className="w-full h-full object-cover" />
         </div>
         {/* Layout principal */}
         <section className="relative w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">

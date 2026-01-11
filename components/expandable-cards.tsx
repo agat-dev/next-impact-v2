@@ -3,6 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+// import { ArrowTopRightIcon } from "@/components/icons/arrow-top-right-icon";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -102,15 +103,6 @@ export function ExpandableCardDemo() {
                       {active.description}
                     </motion.p>
                   </div>
-
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
-                  >
-                    {active.ctaText}
-                  </motion.a>
                 </div>
                 <div className="pt-4 relative px-4">
                   <motion.div
@@ -157,18 +149,24 @@ export function ExpandableCardDemo() {
                 </motion.h3>
               </div>
             </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
-            >
-              {card.ctaText}
-            </motion.button>
+          <motion.button
+            layoutId={`button-${card.title}-${id}`}
+            className="px-4 pt-4 text-sm flex items-center gap-2"
+          >
+            <ArrowTopRightIcon />
+          </motion.button>
           </motion.div>
         ))}
       </ul>
     </section>
   );
 }
+
+export const ArrowTopRightIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#021373" strokeWidth="2" className="inline-block">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+  </svg>
+);
 
 export const CloseIcon = () => {
   return (
@@ -208,21 +206,19 @@ const cards = [
     description: "",
     title: "Qu'est ce que WordPress Headless ?",
     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "?",
+    ctaText: "",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          Le "Headless" (ou "sans tête") est une manière moderne de concevoir un site web en séparant totalement deux éléments qui, auparavant, étaient soudés ensemble:
+           <ul> 
+            <li>Le centre de gestion : C’est l’espace privé où votre équipe saisit les textes et télécharge les images3333. Dans cette architecture, son seul rôle est de stocker et d'organiser l'information de manière "pure", sans s'occuper de l'apparence
+            </li>
+            <li>L’interface de consultation : C’est la partie visible par vos clients (votre site, votre application mobile)5. Elle est construite de façon indépendante et va "piocher" les informations dans le centre de gestion via un connecteur numérique.
+            </li>
+          </ul>
+          Le principe clé : Au lieu d'avoir un outil rigide qui fait tout, vous avez deux systèmes spécialisés qui communiquent entre eux. Cela permet de changer le design de votre site sans jamais toucher à vos données, ou de diffuser le même contenu sur plusieurs écrans différents simultanément.
         </p>
       );
     },
