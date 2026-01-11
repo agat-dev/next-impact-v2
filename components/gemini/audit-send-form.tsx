@@ -49,9 +49,9 @@ export default function AuditSendForm({ markdownPreview, markdownFull, url }: Au
 
   const htmlPreview = React.useMemo(() => marked.parse(markdownPreview), [markdownPreview]);
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-col gap-4 p-6 bg-slate-100/10 rounded-2xl shadow mt-8">
+    <div className="w-full max-w-4xl mx-auto flex flex-col gap-4 p-6 bg-slate-100 rounded-2xl shadow mt-8">
         <h2 className="font-medium font-googletitre text-3xl text-white mb-2">Opportunité de migration pour {url}</h2>
-      <div className="rounded-xl p-4 text-white/80 mb-4 prose prose-blue max-w-none" dangerouslySetInnerHTML={{ __html: htmlPreview }} />
+      <div className="rounded-xl p-4 mb-4 prose prose-blue max-w-none" dangerouslySetInnerHTML={{ __html: htmlPreview }} />
       
       <div className="font-semibold text-2xl font-googletitre text-white text-center mb-2">Recevoir l'audit par email</div>
       <div className="text-center text-white mb-4">Veuillez remplir le formulaire ci-dessous pour recevoir l'audit complet de votre site web ({url}) à l'adresse email indiquée.</div>
