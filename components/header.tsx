@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu as MenuIcon, X as CloseIcon, List } from "lucide-react";
+import { Menu as MenuIcon, X as CloseIcon, List, EuroIcon, FormInputIcon, PenBoxIcon, File, BadgeEuro, Euro, DatabaseIcon, Presentation, UserCheck } from "lucide-react";
 import { ChevronDown, PhoneCallIcon, MailIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -38,121 +38,29 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-googletitre text-white/90 text-lg">
+              <Link href="/services" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Services
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                  <li className="row-span-3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
-                        href="/services"
-                      >
-                        <Image
-                          src="/img/logo-small.png"
-                          alt="Logo Next Impact Digital"
-                          width={48}
-                          height={48}
-                        />
-                        <p className="text-sm leading-tight">
-                          Des services de création et refonte de sites web
-                          conçus avec et pour vous.
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <ListItem
-                    href="/services/wordpress"
-                    title="Sites web WordPress"
-                    className="h-22"
-                  >
-                    <p className="text-xs text-regularblue/70">
-                      Sites vitrines, institutionnels, d'information
-                    </p>
-                  </ListItem>
-                  <ListItem
-                    href="/services/headless"
-                    title="Sites web WP Headless"
-                    className="h-22"
-                  >
-                    <p className="text-xs text-regularblue/70">
-                      Intranet, Connexion à des applications tierces internes ou
-                      externes
-                    </p>
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link
-                href="/etudes-de-cas"
-                className="font-googletitre text-white/90 text-lg text-regular px-2"
-              >
+              <Link href="/etudes-de-cas" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Réalisations
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="font-googletitre text-white/90 text-lg">
-                Outils
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="flex lg:flex-row flex-col p-6 md:w-[500px] lg:w-[600px] gap-3">
-                  <li className="lg:basis-1/3">
-                    <NavigationMenuLink asChild>
-                      <a
-                        className="flex h-full w-full select-none gap-8 flex-col justify-end rounded-md bg-gradient-to-b from-lightblue/10 to-lightblue/10 p-6 no-underline outline-none focus:shadow-md"
-                        href="/"
-                      >
-                        <Image
-                          src="/img/logo-small.png"
-                          alt="Logo Next Impact Digital"
-                          width={48}
-                          height={48}
-                        />
-                        <p className="text-sm leading-tight">
-                          Des outils en ligne pour vous aider à décider et à
-                          formaliser votre projet web.
-                        </p>
-                      </a>
-                    </NavigationMenuLink>
-                  </li>
-                  <div className="lg:basis-2/3">
-                    <ListItem
-                      href="/cms-headless"
-                      title="WordPress ou Headless ? Décider"
-                      className="h-22"
-                    >
-                      <p className="text-xs text-regularblue/70">
-                        Quiz pour vous aider à choisir le CMS le plus adapté à
-                        votre projet.
-                      </p>
-                    </ListItem>
-                    <ListItem
-                      href="/simulateur-tarifs"
-                      title="Simulateur de budget"
-                      className="h-22"
-                    >
-                      <p className="text-xs text-regularblue/70">
-                        Outil interactif pour estimer le budget de votre projet
-                        web.
-                      </p>
-                    </ListItem>
-                    <ListItem
-                      href="/cahier-des-charges"
-                      title="Générateur de cahier des charges"
-                      className="h-22"
-                    >
-                      <p className="text-xs text-regularblue/70">
-                        Outil interactif pour vous guider dans la rédaction d'un
-                        cahier des charges.
-                      </p>
-                    </ListItem>
-                  </div>
-                </ul>
-              </NavigationMenuContent>
+              <Link href="/demonstration-headless" className="font-googletitre text-white/90 text-lg text-regular px-2">
+                Démo
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/ressources" className="font-googletitre text-white/90 text-lg text-regular px-2">
+                Audit
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/simulateur-tarifs" className="font-googletitre text-white/90 text-lg text-regular px-2">
+                Tarifs
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -189,7 +97,7 @@ export function NavBar() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -300, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="fixed top-0 left-0 z-50 h-full w-full bg-white shadow-lg"
+                className="fixed top-0 left-0 z-50 h-full w-full bg-gradient-to-b from-mediumblue/20 to-mediumblue/60 bg-opacity-80 backdrop-blur-md shadow-lg"
               >
                 <div className="flex items-center justify-between px-6 py-2 border-b">
                   <Image
@@ -208,120 +116,42 @@ export function NavBar() {
                   </button>
                 </div>
                 <div className="p-4 space-y-0">
-                  {/* Services sous-menu */}
-                  <div>
-                    <button
-                      className={cn(
-                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
-                        openSubMenu === "services" && "bg-lightblue/10"
-                      )}
-                      onClick={() => handleToggleSubMenu("services")}
-                      aria-expanded={openSubMenu === "services"}
-                    >
-                      Services
-                      <span
-                        className={cn(
-                          "transition-transform",
-                          openSubMenu === "services" ? "rotate-180" : ""
-                        )}
+                  <MobileMenuLink href="/services" onClick={handleMenuClick}>Services</MobileMenuLink>
+                  <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
+                  <MobileMenuLink href="/demonstration-headless" onClick={handleMenuClick}>Démo</MobileMenuLink>
+                  <MobileMenuLink href="/ressources" onClick={handleMenuClick}>Audit</MobileMenuLink>
+                  <MobileMenuLink href="/simulateur-tarifs" onClick={handleMenuClick}>Tarifs</MobileMenuLink>
+                  {/* Sous-menu "Vous êtes" */}
+                  <button
+                    className={cn(
+                      "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
+                      openSubMenu === "vous-etes" && "bg-lightblue/10"
+                    )}
+                    onClick={() => handleToggleSubMenu("vous-etes")}
+                    aria-expanded={openSubMenu === "vous-etes"}
+                  >
+                    Vous êtes
+                    <span className={cn("transition-transform", openSubMenu === "vous-etes" ? "rotate-180" : "")}> <ChevronDown className="inline w-5 h-5 ml-2" /> </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openSubMenu === "vous-etes" && (
+                      <motion.div
+                        key="vous-etes-sub"
+                        initial={{ y: -20, opacity: 0, height: 0 }}
+                        animate={{ y: 0, opacity: 1, height: "auto" }}
+                        exit={{ y: -20, opacity: 0, height: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="pl-4 overflow-hidden"
                       >
-                        <ChevronDown className="inline w-5 h-5 ml-2" />
-                      </span>
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {openSubMenu === "services" && (
-                        <motion.div
-                          key="services-sub"
-                          initial={{ y: -20, opacity: 0, height: 0 }}
-                          animate={{ y: 0, opacity: 1, height: "auto" }}
-                          exit={{ y: -20, opacity: 0, height: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="pl-4 overflow-hidden"
-                        >
-                          <MobileMenuLink
-                            href="/services/wordpress"
-                            onClick={handleMenuClick}
-                            className="pl-4"
-                          >
-                            WordPress
-                          </MobileMenuLink>
-                          <MobileMenuLink
-                            href="/services/headless"
-                            onClick={handleMenuClick}
-                            className="pl-4"
-                          >
-                            WordPress Headless
-                          </MobileMenuLink>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                    <MobileMenuLink
-                      href="/etudes-de-cas"
-                      onClick={handleMenuClick}
-                    >
-                      Réalisations
-                    </MobileMenuLink>
-
-                    <button
-                      className={cn(
-                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
-                        openSubMenu === "ressources" && "bg-lightblue/10"
-                      )}
-                      onClick={() => handleToggleSubMenu("ressources")}
-                      aria-expanded={openSubMenu === "ressources"}
-                    >
-                      Ressources
-                      <span
-                        className={cn(
-                          "transition-transform",
-                          openSubMenu === "ressources" ? "rotate-180" : ""
-                        )}
-                      >
-                        <ChevronDown className="inline w-5 h-5 ml-2" />
-                      </span>
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {openSubMenu === "ressources" && (
-                        <motion.div
-                          key="ressources-sub"
-                          initial={{ y: -20, opacity: 0, height: 0 }}
-                          animate={{ y: 0, opacity: 1, height: "auto" }}
-                          exit={{ y: -20, opacity: 0, height: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="pl-4 overflow-hidden"
-                        >
-                          <MobileMenuLink
-                            href="/cms-headless"
-                            onClick={handleMenuClick}
-                            className="pl-4"
-                          >
-                            WordPress CMS ou Headless ?
-                          </MobileMenuLink>
-                          <MobileMenuLink
-                            href="/simulateur-tarifs"
-                            onClick={handleMenuClick}
-                            className="pl-4"
-                          >
-                            Simulateur du budget
-                          </MobileMenuLink>
-                          <MobileMenuLink
-                            href="/cahier-des-charges"
-                            onClick={handleMenuClick}
-                            className="pl-4"
-                          >
-                            Générateur de cahier des charges
-                          </MobileMenuLink>
-                          <MobileMenuLink
-                            href="/documentation"
-                            onClick={handleMenuClick}
-                            className="pl-4"
-                          >
-                            Documentation & Blog
-                          </MobileMenuLink>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
+                        <MobileMenuLink href="/vous-etes/pme" onClick={handleMenuClick} className="pl-4">PME</MobileMenuLink>
+                        <MobileMenuLink href="/vous-etes/ess" onClick={handleMenuClick} className="pl-4">ESS</MobileMenuLink>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                  {/* Liens directs */}
+                  <MobileMenuLink href="/a-propos" onClick={handleMenuClick}>A propos</MobileMenuLink>
+                  <MobileMenuLink href="/documentation" onClick={handleMenuClick}>Documentation</MobileMenuLink>
+                  <MobileMenuLink href="/contact" onClick={handleMenuClick}>Contact</MobileMenuLink>
                 </div>
               </motion.div>
             </>
@@ -387,7 +217,7 @@ export default function Header() {
   return (
     <header className="border-b top-0 z-50 shadow-sm sticky bg-mediumblue/40 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between px-2">
-        <div className="basis-1/6 pt-2 md:pl-0 pl-4">
+        <div className="basis-3/12 pt-2 md:pl-0 pl-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Image
               src="/img/logo-blanc-carre.png"
@@ -397,11 +227,11 @@ export default function Header() {
             />
           </Link>
         </div>
-        <div className="basis-4/6 flex lg:justify-center justify-start">
+        <div className="basis-6/12 flex lg:justify-center justify-start">
           <NavBar />
         </div>
 
-        <div className="md:basis-1/6 md:flex justify-end items-center gap-4 hidden">
+        <div className="md:basis-3/12 md:flex justify-end items-center gap-4 hidden">
           <div className="relative group">
             <button
               className="flex items-center gap-2 px-3 py-2 text-white"
@@ -412,7 +242,7 @@ export default function Header() {
               <span className="font-normal text-white">Vous êtes</span>
               <ChevronDown className="w-4 h-4" />
             </button>
-            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-lightblue/40 to-mediumblue/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
+            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-mediumblue/40 to-mediumblue/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
               <ul role="listbox">
                 <li>
                   <Link
@@ -426,7 +256,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/vous-etes/ess"
-                    className="block px-4 py-2 text-regularblue hover:bg-lightblue/30 hover:text-white rounded transition"
+                    className="block px-4 py-2 text-white hover:bg-lightblue/30 hover:text-white rounded transition"
                     role="option"
                   >
                     ESS
@@ -435,6 +265,12 @@ export default function Header() {
               </ul>
             </div>
           </div>
+          <Link href="/a-propos" className="hidden md:inline-block">
+            <UserCheck className="w-6 h-6 text-white/90 hover:text-white transition" />
+          </Link>
+          <Link href="/documentation" className="hidden md:inline-block">
+            <DatabaseIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
+          </Link>
           <Link href="/contact" className="hidden md:inline-block">
             <PhoneCallIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>

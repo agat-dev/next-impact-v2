@@ -80,7 +80,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
           <Button
             type="submit"
             variant="default"
-            className="w-full text-xl font-googletitre font-medium flex items-center justify-center shadow-lg shadow-white/20"
+            className="px-6 py-2 text-2xl font-googletitre font-semibold flex items-center justify-center shadow-lg shadow-white/20"
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse
@@ -101,7 +101,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
               "Génération du rapport...",
             ]}
             speed={40}
-            className="h-6 mt-12"
+            className="h-6 mt-12 text-2xl"
           />
         </div>
       )}

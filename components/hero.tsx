@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useScroll } from "framer-motion";
 import ClientGeminiBlock from "./client-gemini-block";
-import { Zap, Shield, TrendingUp } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowDownLeft, ArrowLeftRightIcon, ArrowRightLeftIcon, ArrowRightSquare, LucideArrowUpRight, PresentationIcon } from "lucide-react";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -11,7 +13,11 @@ export default function Hero() {
       <section className="h-screen flex items-center relative overflow-hidden">
         {/* Background SVG */}
         <div className="fixed inset-0 z-0">
-            <img src="/img/chipset-tech-background.svg" alt="" className="w-full h-full object-cover" />
+          <img
+            src="/img/chipset-tech-background.svg"
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-end gap-12 lg:gap-24 px-4 md:px-6 relative">
           {/* Text Content */}
@@ -41,6 +47,17 @@ export default function Hero() {
                 width={170}
                 height={80}
               />
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row content-start justify-start gap-4">
+              <Button className="mx-0 inline-flex bg-lightyellow py-1 px-6 rounded-2xl shadow-lg hover:bg-lightyellow/80 transition duration-300 ease-in">
+                <Link
+                  href="/demo"
+                  className="gap-2 text-darkblue font-googletitre font-semibold text-xl"
+                >
+                  Démo Headless
+                </Link>
+                  <LucideArrowUpRight className="w-8 h-8 text-darkblue" />
+              </Button>
             </div>
           </div>
 
@@ -73,27 +90,32 @@ export default function Hero() {
               </div>
             </div>
           </div>
-      </div>
+        </div>
       </section>
 
       {/*Gemini Search Section */}
       <section className="bg-white/5 w-3/4 mx-auto flex flex-col gap-8 backdrop-blur-xl border border-white/20 rounded-xl p-12">
-          {/* Background image for GeminiBlock container
+        {/* Background image for GeminiBlock container
           <img 
             src="/illustrations/data-flow-animated.svg" 
             alt="Arrière-plan Gemini" 
             className="absolute left-[65%] top-16 inset-0 h-full object-cover z-0 pointer-events-none select-none opacity-20" 
             aria-hidden="true"
           /> */}
-          <h2 className="font-googletexte font-medium text-3xl lg:text-4xl text-white text-center mb-2">
-            Passer votre site en WordPress <span className="font-googletitre text-coral text-5xl font-medium"> headless</span><div>maintenant ?</div>
-          </h2>
-          <p className="text-white/70 text-2xl text-center mb-4">
-            Audit gratuit détaillé en 10 secondes
-          </p>
+        <h2 className="font-googletexte font-medium text-3xl lg:text-4xl text-white text-center mb-2">
+          Passer votre site en WordPress{" "}
+          <span className="font-googletitre text-coral text-5xl font-medium">
+            {" "}
+            headless
+          </span>
+          <div>maintenant ?</div>
+        </h2>
+        <p className="text-white/70 text-2xl text-center mb-4">
+          Audit gratuit détaillé en 10 secondes
+        </p>
         <div className="relative h-full overflow-hidden">
           <div className="relative flex items-center justify-center z-10 p-6">
-            <ClientGeminiBlock />    
+            <ClientGeminiBlock />
           </div>
         </div>
       </section>

@@ -19,7 +19,7 @@ export default function ClientGeminiBlock() {
 
 1.  **Secteur d'activité :** (Ex: E-commerce B2C, SaaS B2B, Média, etc.)
 2.  **Proposition de valeur :** Quelle est la promesse principale faite au client ?
-3.  **Preuve textuelle :** Cite un court extrait du site qui valide cette proposition.
+3.  **Mission :** Cite un court extrait du site qui valide cette proposition.
 4.  **Cibles prioritaires :** Identifie les 2 profils d'utilisateurs les plus évidents.
 *Si le site est inaccessible ou le contenu protégé, réponds uniquement : "Accès bloqué : Diagnostic impossible." et arrête l'analyse.*
 
