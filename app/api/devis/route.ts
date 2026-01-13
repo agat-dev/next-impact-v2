@@ -1,6 +1,4 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendMail } from "@/lib/sendMail";
 
 export async function POST(req: Request) {
   try {
@@ -50,24 +48,22 @@ export async function POST(req: Request) {
       </ul>
     `;
 
-    await Promise.all([
-      resend.emails.send({
-        from: "Next Impact <agathe@next-impact.digital>", // Adresse fixe
-        to: userEmail,
-        subject: 'Votre estimation personnalisée – Next Impact Digital',
-        html: clientHtml,
-      }),
-      resend.emails.send({
-        from: "Next Impact <agathe@next-impact.digital>", // Adresse fixe
-        to: adminEmail,
-        subject: `Nouvelle estimation reçue de ${userEmail}`,
-        html: adminHtml,
-      }),
-    ]);
-
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (error) {
-    console.error('Erreur envoi estimation Resend:', error);
-    return new Response(JSON.stringify({ error: 'Erreur lors de l’envoi des e-mails.' }), { status: 500 });
+    try {
+      await Promise.all([
+        sendMail({
+          to: userEmail,
+          subject: 'Votre estimation personnalisée – Next Impact Digital',
+          html: clientHtml,
+        }),
+        sendMail({
+          to: adminEmail,
+          subject: `Nouvelle estimation reçue de ${userEmail}`,
+          html: adminHtml,
+        })
+      ]);
+      return new Response(JSON.stringify({ success: true }), { status: 200 });
+    } catch (error) {
+      console.error('Erreur envoi estimation mail:', error);
+      return new Response(JSON.stringify({ error: 'Erreur lors de l’envoi des e-mails.' }), { status: 500 });
+    }
   }
-}

@@ -62,13 +62,13 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
         >
           <label
             htmlFor="gemini_url"
-            className="font-googletexte text-white/80"
+            className="font-googletexte text-darkblue/80"
           >
             URL WordPress à analyser
           </label>
           <input
             id="gemini_url"
-            className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
+            className="w-full bg-white/80 border rounded-2xl p-2 -mt-4 mb-2 focus-visible:bg-white"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://test.com"
@@ -80,7 +80,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
           <Button
             type="submit"
             variant="default"
-            className="px-6 py-2 text-2xl font-googletitre font-semibold flex items-center justify-center shadow-lg shadow-white/20"
+            className="px-6 py-2 text-xl font-googletitre font-medium flex items-center justify-center shadow-lg"
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse

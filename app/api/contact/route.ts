@@ -1,6 +1,4 @@
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendMail } from "@/lib/sendMail";
 
 export async function POST(req: Request) {
   const { name, email, message, pdfBase64, pdfName } = await req.json();
@@ -61,19 +59,23 @@ export async function POST(req: Request) {
 
   try {
     // Envoi en parallèle
-    const [adminRes, userRes] = await Promise.all([
-      resend.emails.send(emailData),
-      resend.emails.send(confirmationEmail),
-    ]);
-
-    if (adminRes.error || userRes.error) {
-      console.error("Resend error:", adminRes.error || userRes.error);
-      return new Response("Erreur Resend: " + JSON.stringify(adminRes.error || userRes.error), { status: 500 });
+    try {
+      await Promise.all([
+        sendMail({
+          to: emailData.to,
+          subject: emailData.subject,
+          html: emailData.html,
+          attachments: emailData.attachments,
+        }),
+        sendMail({
+          to: confirmationEmail.to,
+          subject: confirmationEmail.subject,
+          html: confirmationEmail.html,
+        })
+      ]);
+      return new Response("Message envoyé", { status: 200 });
+    } catch (err) {
+      console.error("Mail error:", err);
+      return new Response("Erreur mail: " + String(err), { status: 500 });
     }
-
-    return new Response("Message envoyé", { status: 200 });
-  } catch (err) {
-    console.error("Server error:", err);
-    return new Response("Erreur serveur: " + String(err), { status: 500 });
   }
-}
