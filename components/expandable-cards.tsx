@@ -32,26 +32,26 @@ export function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <section>
-      <div className="pb-24 ">
-        <h2 className="text-4xl tracking-tight text-center font-medium text-regularblue">
+    <section className="relative my-48 py-24 bg-white/5 backdrop-blur-lg border border-white/10 mb-12 px-4 md:px-8 lg:px-16">
+      <div className="pb-24">
+        <h2 className="text-4xl tracking-tight text-center font-medium text-white mb-2">
             WordPress Headless : quelques explications ?
         </h2>
-        <p className="font-normal text-lg text-center text-foreground/80">Un site combinant performance et le back-office le plus utilisé.</p>
-        </div>
+        <p className="font-normal text-lg text-center text-white/80">Un site combinant performance et le back-office le plus utilisé.</p>
+      </div>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            className="fixed top-20 inset-0 bg-black/20 h-full w-full z-10"
           />
         )}
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="absolute inset-0 grid items-center pt-12 z-[100] overflow-y-auto">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -75,7 +75,7 @@ export function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-[80%] h-max max-h-[80vh] overflow-y-auto flex flex-row bg-white dark:bg-neutral-900 sm:rounded-3xl"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
@@ -83,7 +83,7 @@ export function ExpandableCardDemo() {
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="w-full h-full sm:rounded-tr-lg sm:rounded-tl-lg object-contain object-center"
                 />
               </motion.div>
 
@@ -122,13 +122,13 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-2xl mx-auto w-full flex flex-col gap-12">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-white/50 backdrop-blur-lg rounded-xl cursor-pointer"
+            className="p-4 flex flex-col md:flex-row justify-between items-center bg-extralightblue hover:bg-extralightblue/90 backdrop-blur-lg rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -137,13 +137,13 @@ export function ExpandableCardDemo() {
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-full w-40 md:h-14 md:w-14 rounded-lg object-cover object-top hover:blur-sm transition-all duration-300"
+                  className="h-full w-40 md:h-24 md:w-24 rounded-lg object-cover object-top hover:blur-sm transition-all duration-300"
                 />
               </motion.div>
               <div className="flex flex-col gap-2 items-center md:items-start justify-center">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-regularblue text-center md:text-left"
+                  className="font-medium text-darkblue text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>
@@ -205,7 +205,7 @@ const cards = [
   {
     description: "",
     title: "Qu'est ce que WordPress Headless ?",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/icons/database-icon.svg",
     ctaText: "",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -231,17 +231,28 @@ const cards = [
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
+        <>
+          <p>
+            Opter pour WordPress en mode Headless permet de combiner la puissance de l'outil de gestion le plus utilisé au monde avec les performances technologiques de demain.
+          </p>
+          <ul className="list-disc pl-5 mt-4 space-y-2">
+            <li>
+              <strong>Conservation de l'admin WordPress :</strong> Vos équipes conservent leurs habitudes de travail sur une interface familière, garantissant une adoption immédiate et sans coût de formation supplémentaire.
+            </li>
+            <li>
+              <strong>Liberté de design :</strong> Vous bénéficiez d'une interface sur mesure, totalement libre, sans les limites ni la lourdeur des "page builders" (constructeurs de pages) classiques qui ralentissent souvent les sites traditionnels.
+            </li>
+            <li>
+              <strong>Vitesse fulgurante :</strong> En séparant l'affichage de la gestion, le chargement des pages devient instantané, garantissant des indicateurs de performance (Core Web Vitals) au vert, ce qui est crucial pour retenir vos visiteurs.
+            </li>
+            <li>
+              <strong>SEO de haut niveau :</strong> Grâce aux techniques de rendu moderne (statique ou côté serveur), les moteurs de recherche indexent votre contenu plus efficacement, boostant votre visibilité naturelle.
+            </li>
+            <li>
+              <strong>Sécurité totale :</strong> Votre base de données devient invisible et inaccessible depuis l'interface publique, rendant les attaques de bots WordPress traditionnelles impossibles
+            </li>
+          </ul>
+        </>
       );
     },
   },
