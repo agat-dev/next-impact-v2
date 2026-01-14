@@ -21,29 +21,50 @@ export default function Hero() {
         {/* Background SVG */}
         <div className="fixed inset-0 z-0">
           <img
-            src="/img/chipset-background-light.svg"
+            src="/img/chipset-tech-background.svg"
             alt=""
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-center gap-12 lg:gap-24 px-4 md:px-6 relative">
+        <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-end gap-12 lg:gap-24 px-4 md:px-6 relative">
           {/* Text Content */}
-          <div className="flex flex-col lg:col-span-7 bg-white backdrop-blur-md border border-mediumblue/20 p-6 md:p-10 rounded-2xl mt-12 lg:mt-0">
-            <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-mediumblue/80 font-googletexte">
-              Développeuse WordPress
+          <div className="flex flex-col lg:col-span-7 bg-regularblue backdrop-blur-md border border-white/10 p-6 md:p-10 rounded-2xl mt-12 lg:mt-0">
+            <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-white/80 font-googletexte">
+              Développeuse 
             </div>
             <div className="mt-2 text-3xl md:text-4xl lg:text-5xl text-coral font-googletitre font-medium">
-               Headless
-            </div>        
-            <p className="mt-16 font-googletexte md:text-xl text-mediumblue/80 max-w-xl">
+              WordPress Headless
+            </div>            
+            <div className="mt-5 flex items-center justify-start gap-4">
+              <Image
+                src="/img/logo-wordpress-blanc.png"
+                alt="Logo WordPress"
+                width={45}
+                height={60}
+              />
+              <Image
+                src="/img/logo-nextjs-blanc.png"
+                alt="Logo Next.js"
+                width={80}
+                height={80}
+              />
+              <Image
+                src="/img/logo-astro-blanc.png"
+                alt="Logo Astro"
+                width={90}
+                height={80}
+                className="mt-1.5"
+              />
+            </div>
+            <p className="mt-16 font-googletexte md:text-xl text-white/80 max-w-xl">
               Pour un WordPress ultra-rapide, moderne et flexible grâce au
               headless CMS.
             </p>
 
 
-            <p className="mt-4 mb-4 font-googletitre font-semibold text-mediumblue text-lg">Prêt à passer en headless ?</p>
+            <p className="mt-4 mb-4 font-googletitre font-semibold text-white text-lg">Prêt à passer en headless ?</p>
             <div className="flex flex-col sm:flex-row content-start justify-start gap-4">
-              <Button className="mx-0 inline-flex bg-white border-2 border-lightyellow py-1 px-6 rounded-2xl hover:border-lightyellow/80 transition duration-300 ease-in">
+              <Button className="mx-0 inline-flex bg-lightyellow py-1 px-6 rounded-2xl shadow-lg hover:bg-lightyellow/80 transition duration-300 ease-in">
                 <Link
                   href="/demo"
                   className="gap-2 text-darkblue font-googletitre font-semibold text-lg"
@@ -52,7 +73,7 @@ export default function Hero() {
                 </Link>
                 <LucideArrowUpRight className="w-8 h-8 text-darkblue" />
               </Button>
-              <Button className="mx-0 inline-flex bg-white border-2 border-coral py-1 px-6 rounded-2xl hover:border-coral/80 transition duration-300 ease-in">
+              <Button className="mx-0 inline-flex bg-coral py-1 px-6 rounded-2xl shadow-lg hover:bg-coral/80 transition duration-300 ease-in">
                 <Link
                   href="#audit"
                   className="gap-2 text-darkblue font-googletitre font-semibold text-lg"
@@ -81,59 +102,66 @@ export default function Hero() {
               </div>
 
               {/* Floating badges */}
-              <div className="absolute left-6 top-6 bg-white py-2 px-4 rounded-full shadow-lg flex items-center gap-2 animate-float">
+              <div className="absolute left-6 top-6 bg-extralightblue py-2 px-4 rounded-full shadow-lg flex items-center gap-2 animate-float">
                 <span className="h-3 w-3 bg-green-500 rounded-full"></span>
                 <span className="text-sm font-medium text-black">
                   Disponible
                 </span>
               </div>
 
-              <div className="absolute right-4 bottom-12 bg-white py-2 px-4 rounded-full shadow-lg animate-float-delayed">
+              <div className="absolute right-4 bottom-12 bg-extralightblue py-2 px-4 rounded-full shadow-lg animate-float-delayed">
                 <span className="text-sm font-medium text-black">
                   8+ ans d'expérience
                 </span>
               </div>
-            </div>    
-            <div className="mt-5 flex items-center justify-start gap-6">
-              <Image
-                src="/img/logo-wordpress-small.png"
-                alt="Logo WordPress"
-                width={45}
-                height={60}
-              />
-              <Image
-                src="/img/logo-nextjs.png"
-                alt="Logo Next.js"
-                width={80}
-                height={80}
-              />
-              <Image
-                src="/img/logo-astro.png"
-                alt="Logo Astro"
-                width={90}
-                height={80}
-                className="mt-1.5"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/*Gemini Search Section */}
-      <section id="audit" className="bg-white w-3/4 max-w-4xl mx-auto flex flex-col gap-8 backdrop-blur-xl border border-coral rounded-xl p-12 pt-20">
+      <section id="audit" className="bg-lightblue w-full mx-auto flex flex-col gap-8 backdrop-blur-xl border-y border-white/10 p-12 py-24 relative">
 
-          <h2 className="text-center font-googletitre text-mediumblue/80 text-5xl font-medium">
-            {" "}
-             Faut-il migrer en headless ?
-          <div className="font-googletexte text-2xl lg:text-3xl text-mediumblue/80 font-regular text-center mt-6 mb-2"><span className="text-3xl font-googletexte text-coral font-medium">Audit gratuit</span> en 10 secondes</div>
+          <h2 className="font-googletitre text-darkblue text-5xl font-medium flex items-end justify-center gap-4">
+            Faut-il migrer en headless ?
           </h2>
-        <p className="max-w-3xl mx-auto text-mediumblue/70 text-xl text-center mb-4">
-          Analysez votre site WordPress et recevez un rapport complet avec des recommandations personnalisées pour une migration en headless CMS.
-        </p>
-        <div className="relative h-full overflow-hidden">
-          <div className="relative flex items-center justify-center z-10 p-6">
-            <ClientGeminiBlock />
+
+        <div className="w-full mb-12">
+        <div className="w-full">
+          {/* Illustration animée en arrière-plan à droite, ajustée pour éviter le débordement */}
+          <img
+            src="/illustrations/data-flow-animated.svg"
+            alt=""
+            className="absolute right-0 top-0 h-full w-1/2 max-w-lg object-contain opacity-30 pointer-events-none select-none z-0 hidden md:block"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="w-full">
+          {/* Illustration animée en arrière-plan à gauche, ajustée pour éviter le débordement */}
+          <img
+            src="/illustrations/data-flow-animated.svg"
+            alt=""
+            className="absolute left-0 bottom-0 h-full w-1/4 max-w-xs object-contain opacity-30 pointer-events-none select-none z-0 hidden md:block"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="flex flex-col md:flex-row justify-between lg:justify-center items-center gap-12 lg:gap-24 px-4 md:px-6 relative">
+          <div className="basis-7/12 max-w-2xl font-googletexte text-2xl lg:text-3xl text-darkblue font-regular border-t-4 border-lightyellow pt-4">
+            <span className="text-4xl font-googletitre text-lightyellow font-medium flex items-center gap-2">
+              Audit gratuit
+            </span>
+            en 10 secondes
+            <p className="text-darkblue/70 text-xl my-4">
+              Analysez votre site WordPress et recevez un rapport complet avec des recommandations personnalisées pour une migration en headless CMS.
+            </p>
           </div>
+          <div className="basis-5/12 max-w-xl relative h-full overflow-hidden">
+            <div className="relative z-10">
+              <ClientGeminiBlock />
+            </div>
+          </div>
+        </div>
+        
         </div>
       </section>
     </>

@@ -7,7 +7,7 @@ export function ExpandableCardDemo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative my-48 py-24 bg-white/5 backdrop-blur-lg border border-white/10 mb-12 px-4 md:px-8 lg:px-16">
+    <section className="relative my-48 py-24 bg-regularblue backdrop-blur-lg border border-white/10 mb-12 px-4 md:px-8 lg:px-16">
       <div className="pb-24">
         <h2 className="font-googletexte text-4xl tracking-tight text-center text-white mb-2">
           WordPress Headless : <span className="font-googletitre text-coral text-5xl font-medium">quelques explications ?</span>
@@ -18,7 +18,7 @@ export function ExpandableCardDemo() {
         {cards.map((card, idx) => (
           <li key={card.title} className="w-full">
             <button
-              className="w-full p-4 flex flex-col md:flex-row justify-between items-center bg-extralightblue hover:bg-mediumblue/70 backdrop-blur-xl rounded-xl cursor-pointer focus:outline-none"
+              className="w-full p-4 flex flex-col md:flex-row justify-between items-center bg-regularblue hover:bg-regularblue backdrop-blur-xl rounded-xl cursor-pointer focus:outline-none"
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               aria-expanded={openIndex === idx}
               aria-controls={`panel-${idx}`}
@@ -32,8 +32,8 @@ export function ExpandableCardDemo() {
                   className="h-full w-40 md:h-24 md:w-24 rounded-lg object-cover object-top hover:blur-sm transition-all duration-300"
                 />
                 <div className="flex flex-col items-center md:items-start justify-center flex-1">
-                  <h3 className="font-medium text-white/80 text-center md:text-left">{card.title}</h3>
-                  <p className="text-white/70 text-sm text-left">{card.description}</p>
+                  <h3 className="font-medium text-white/80 text-center md:text-left text-3xl">{card.title}</h3>
+                  <p className="text-white/70 text-base text-left">{card.description}</p>
                 </div>
               </div>
             </button>
@@ -46,7 +46,7 @@ export function ExpandableCardDemo() {
                   exit={{ height: 0, opacity: 0, scale: 0.98 }}
                   transition={{ height: { duration: 0.35, ease: "easeInOut" }, opacity: { duration: 0.25 }, scale: { duration: 0.25 } }}
                   style={{ originY: 0.1 }}
-                  className="overflow-hidden bg-white/10 rounded-xl shadow-inner"
+                  className="overflow-hidden bg-extralightblue rounded-xl shadow-inner mt-4"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -56,12 +56,12 @@ export function ExpandableCardDemo() {
                   >
                     <div className="flex flex-col md:flex-row p-6 gap-6">
                       <div className="flex-1 flex flex-col justify-center min-w-0">
-                        <div className="text-xs md:text-sm lg:text-base overflow-auto text-white/80 flex flex-col gap-4">
+                        <div className="overflow-auto flex flex-col gap-4">
                           {typeof card.content === "function" ? card.content() : card.content}
                           {card.ctaText && card.ctaLink && (
                             <a
                               href={card.ctaLink}
-                              className="mt-4 self-start inline-block px-5 py-1 rounded-2xl bg-coral text-white font-semibold shadow hover:bg-coral/90 transition"
+                              className="mt-4 self-start inline-block px-5 py-1 rounded-2xl bg-coral text-lg text-white font-medium shadow hover:bg-coral/90 transition"
                             >
                               {card.ctaText}
                             </a>
@@ -129,25 +129,25 @@ const cards = [
     content: () => {
       return (
         <div className="flex flex-col gap-12">
-          <div className="mb-2">Le "Headless" (ou "sans tête") est une manière moderne de concevoir un site web en séparant totalement deux éléments qui, auparavant, étaient soudés ensemble :</div>
+          <div className="mb-2 text-lg">Le "Headless" (ou "sans tête") est une manière moderne de concevoir un site web en séparant totalement deux éléments qui, auparavant, étaient soudés ensemble :</div>
           <div className="flex items-center justify-center gap-6">
             {/* Carte Backoffice */}
-            <div className="flex flex-col items-center bg-white/10 rounded-xl p-4 w-60 shadow-md">
+            <div className="flex flex-col items-center bg-regularblue rounded-xl p-4 w-60 shadow-md">
               <img src="/icons/dashboard-icon.svg" alt="Backoffice" className="w-10 h-10 mb-2" />
-              <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1">Backoffice</span>
-              <span className="text-sm text-white/70 text-center">Gestion des contenus, médias, utilisateurs...</span>
+              <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">Backoffice</span>
+              <span className="text-base text-white/80 text-center">Gestion des contenus, médias, utilisateurs...</span>
             </div>
             {/* Icône plugin */}
             <img src="/icons/plugin-icon.svg" alt="Plugin" className="w-24 h-24" />
             {/* Carte Interface Visiteur */}
-            <div className="flex flex-col items-center bg-white/10 rounded-xl p-4 w-60 shadow-md">
+            <div className="flex flex-col items-center bg-mediumblue rounded-xl p-4 w-60 shadow-md">
               <img src="/icons/desktop-headless-icon.svg" alt="Interface web" className="w-10 h-10 mb-2" />
-              <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1">Interface web</span>
-              <span className="text-sm text-white/70 text-center">Site, application, affichage public...</span>
+              <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">Interface web</span>
+              <span className="text-base text-white/80 text-center">Site, application, affichage public...</span>
             </div>
           </div>
-          <div>
-            <span className="font-semibold text-yellow-500 font-googletitre text-xl">Le principe clé</span><br />
+          <div className="text-lg">
+            <div className="mb-2 font-medium text-regularblue font-googletitre text-3xl">Le principe clé</div>
             Au lieu d'avoir un outil rigide qui fait tout, vous avez deux systèmes spécialisés qui communiquent entre eux. Cela permet de changer le design de votre site sans jamais toucher à vos données, ou de diffuser le même contenu sur plusieurs écrans différents simultanément.
           </div>
         </div>
@@ -164,36 +164,38 @@ const cards = [
     content: () => {
       return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>Opter pour une architecture Headless permet à vos équipes de bénéficier de l'administration de WordPress tout en offrant une flexibilité maximale pour l'interface client, des performances, des normes SEO et un sécurité optimisées.</div>
+          <div className="text-lg text-darkblue">
+            <div className="font-googletitre text-3xl font-medium text-regularblue">Le principe clé</div><br />
+            Bénéficier de l'administration de WordPress tout en offrant une flexibilité maximale pour l'interface client, des performances, des normes SEO et un sécurité optimisées.</div>
           {/* Carte 1 */}
-          <div className="flex flex-col items-center bg-white/10 rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-col items-center bg-lightblue rounded-xl p-6 shadow-md h-full">
             <img src="/icons/dashboard-icon.svg" alt="Admin WordPress" className="w-10 h-10 mb-2" />
-            <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1 text-center">Conservation de l'admin WordPress</span>
+            <span className="font-medium text-mediumblue font-googletitre text-2xl mb-1 text-center">Admin WordPress</span>
             <span className="text-sm text-white/80 text-center">Une interface familière garantissant une adoption immédiate et sans coût de formation supplémentaire.</span>
           </div>
           {/* Carte 2 */}
-          <div className="flex flex-col items-center bg-white/10 rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-col items-center bg-lightblue rounded-xl p-6 shadow-md h-full">
             <img src="/icons/desktop-headless-icon.svg" alt="Liberté de design" className="w-10 h-10 mb-2" />
-            <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1 text-center">Liberté de design</span>
+            <span className="font-medium text-mediumblue font-googletitre text-2xl mb-1 text-center">Liberté de design</span>
             <span className="text-sm text-white/80 text-center">Interface développée sur mesure, totalement libre, sans les limites ni la lourdeur des "page builders".</span>
           </div>
+          {/* Carte 5 */}
+          <div className="flex flex-col items-center bg-regularblue rounded-xl p-6 shadow-md h-full">
+            <img src="/icons/shield-icon.svg" alt="Sécurité totale" className="w-10 h-10 mb-2" />
+            <span className="font-medium text-darkblue font-googletitre text-2xl mb-1 text-center">Sécurité totale</span>
+            <span className="text-sm text-white/80 text-center">Votre base de données devient invisible et inaccessible rendant les attaques traditionnelles impossibles.</span>
+          </div>
           {/* Carte 3 */}
-          <div className="flex flex-col items-center bg-white/10 rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-col items-center bg-regularblue rounded-xl p-6 shadow-md h-full">
             <img src="/icons/speed-icon.svg" alt="Vitesse fulgurante" className="w-10 h-10 mb-2" />
-            <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1 text-center">Vitesse fulgurante</span>
+            <span className="font-medium text-darkblue font-googletitre text-2xl mb-1 text-center">Vitesse fulgurante</span>
             <span className="text-sm text-white/80 text-center">Chargement des pages instantané, garantissant des indicateurs de performance (Core Web Vitals) au vert.</span>
           </div>
           {/* Carte 4 */}
-          <div className="flex flex-col items-center bg-white/10 rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-col items-center bg-lightblue rounded-xl p-6 shadow-md h-full">
             <img src="/icons/globe-network-icon.svg" alt="SEO de haut niveau" className="w-10 h-10 mb-2" />
-            <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1 text-center">SEO de haut niveau</span>
+            <span className="font-medium text-orange font-googletitre text-2xl mb-1 text-center">SEO de haut niveau</span>
             <span className="text-sm text-white/80 text-center">Grâce aux techniques de rendu moderne, les moteurs de recherche indexent votre contenu plus efficacement.</span>
-          </div>
-          {/* Carte 5 */}
-          <div className="flex flex-col items-center bg-white/10 rounded-xl p-6 shadow-md h-full">
-            <img src="/icons/shield-icon.svg" alt="Sécurité totale" className="w-10 h-10 mb-2" />
-            <span className="font-semibold text-yellow-500 font-googletitre text-lg mb-1 text-center">Sécurité totale</span>
-            <span className="text-sm text-white/80 text-center">Votre base de données devient invisible et inaccessible rendant les attaques traditionnelles impossibles.</span>
           </div>
         </div>
       );

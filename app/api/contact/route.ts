@@ -79,3 +79,8 @@ export async function POST(req: Request) {
       return new Response("Erreur mail: " + String(err), { status: 500 });
     }
   }
+  catch (error) {
+    console.error('Erreur traitement estimation:', error);
+    return new Response(JSON.stringify({ error: 'Erreur lors du traitement de la demande.' }), { status: 500 });
+  }
+}

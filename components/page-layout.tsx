@@ -12,7 +12,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ titre, sousTitre, children }) =
     <div className="relative w-full h-[125vh] flex flex-col">
         {/* Background SVG */}
         <div className="fixed inset-0 z-0">
-            <img src="/img/chipset-background-light.svg" alt="" className="w-full h-full object-cover opacity-25" />
+            <img src="/img/chipset-tech-background.svg" alt="" className="w-full h-full object-cover" />
         </div>
         {/* Layout principal */}
         <section className="relative w-full pt-4 md:pt-8 lg:pt-12 xl:pt-12">

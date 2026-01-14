@@ -38,30 +38,30 @@ export function NavBar() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/services" className="font-googletitre text-mediumblue/90 text-lg text-regular px-2">
+              <Link href="/services" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Services
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className="font-googletitre text-mediumblue/90 text-lg text-regular px-2">
+              <Link href="/etudes-de-cas" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Réalisations
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/demonstration-headless" className="font-googletitre text-mediumblue/90 text-lg text-regular px-2">
+              <Link href="/demonstration-headless" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Démo
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/ressources" className="font-googletitre text-mediumblue/90 text-lg text-regular px-2">
+              <Link href="/ressources" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Audit
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/wp-headless" className="font-googletitre text-mediumblue/90 text-lg text-regular px-2">Le Headless</Link>
+              <Link href="/wp-headless" className="font-googletitre text-white/90 text-lg text-regular px-2">WP Headless</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/simulateur-tarifs" className="font-googletitre text-mediumblue/90 text-lg text-regular px-2">
+              <Link href="/simulateur-tarifs" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Tarifs
               </Link>
             </NavigationMenuItem>
@@ -237,20 +237,20 @@ export default function Header() {
         <div className="md:basis-3/12 md:flex justify-end items-center gap-4 hidden">
           <div className="relative group">
             <button
-              className="flex items-center gap-2 px-3 py-2 text-mediumblue"
+              className="flex items-center gap-2 px-3 py-2 text-white"
               type="button"
               aria-haspopup="listbox"
               aria-expanded="false"
             >
-              <span className="font-normal text-mediumblue">Vous êtes</span>
+              <span className="font-normal text-white">Vous êtes</span>
               <ChevronDown className="w-4 h-4" />
             </button>
-            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-mediumblue/40 to-mediumblue/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
+            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-white/40 to-white/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
               <ul role="listbox">
                 <li>
                   <Link
                     href="/vous-etes/pme"
-                    className="block px-4 py-2 hover:bg-lightblue/30 text-mediumblue rounded transition"
+                    className="block px-4 py-2 hover:bg-lightblue/30 text-white rounded transition"
                     role="option"
                   >
                     PME
@@ -259,7 +259,7 @@ export default function Header() {
                 <li>
                   <Link
                     href="/vous-etes/ess"
-                    className="block px-4 py-2 text-mediumblue hover:bg-lightblue/30 hover:text-mediumblue rounded transition"
+                    className="block px-4 py-2 text-white hover:bg-lightblue/30 hover:text-white rounded transition"
                     role="option"
                   >
                     ESS
@@ -269,16 +269,16 @@ export default function Header() {
             </div>
           </div>
           <Link href="/a-propos" className="hidden md:inline-block">
-            <UserCheck className="w-6 h-6 text-mediumblue/90 hover:text-mediumblue transition" />
+            <UserCheck className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
           <Link href="/documentation" className="hidden md:inline-block">
-            <DatabaseIcon className="w-6 h-6 text-mediumblue/90 hover:text-mediumblue transition" />
+            <DatabaseIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
           <Link href="/contact" className="hidden md:inline-block">
-            <PhoneCallIcon className="w-6 h-6 text-mediumblue/90 hover:text-mediumblue transition" />
+            <PhoneCallIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
           <Link href="/contact">
-            <MailIcon className="w-6 h-6 text-mediumblue/90 hover:text-mediumblue transition" />
+            <MailIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
         </div>
       </div>
