@@ -120,13 +120,11 @@ export default function Hero() {
       </section>
 
       {/*Gemini Search Section */}
-      <section id="audit" className="bg-lightblue w-full mx-auto flex flex-col gap-8 backdrop-blur-xl border-y border-white/10 p-12 py-24 relative">
+      <section id="audit" className="bg-lightblue w-full mx-auto flex flex-col backdrop-blur-xl border-y border-white/10 p-12 py-24 relative">
 
           <h2 className="font-googletitre text-darkblue text-5xl font-medium flex items-end justify-center gap-4">
             Faut-il migrer en headless ?
           </h2>
-
-        <div className="w-full mb-12">
         <div className="w-full">
           {/* Illustration animée en arrière-plan à droite, ajustée pour éviter le débordement */}
           <img
@@ -145,23 +143,24 @@ export default function Hero() {
             aria-hidden="true"
           />
         </div>
-        <div className="flex flex-col md:flex-row justify-between lg:justify-center items-center gap-12 lg:gap-24 px-4 md:px-6 relative">
-          <div className="basis-7/12 max-w-2xl font-googletexte text-2xl lg:text-3xl text-darkblue font-regular border-t-4 border-lightyellow pt-4">
-            <span className="text-4xl font-googletitre text-lightyellow font-medium flex items-center gap-2">
-              Audit gratuit
+        <div className="flex flex-col justify-between lg:justify-center items-center gap-2 lg:gap-4 relative">
+          <div className="basis-7/12 max-w-2xl mx-auto text-center font-googletexte text-2xl lg:text-3xl text-darkblue font-regular pt-2">
+            <span className="text-4xl font-googletitre text-lightyellow font-medium">
+              Audit gratuit 
             </span>
-            en 10 secondes
-            <p className="text-darkblue/70 text-xl my-4">
+            {" "}
+            <span>
+             en 10 secondes
+            </span>
+            <p className="text-darkblue/70 text-xl mt-2">
               Analysez votre site WordPress et recevez un rapport complet avec des recommandations personnalisées pour une migration en headless CMS.
             </p>
           </div>
-          <div className="basis-5/12 max-w-xl relative h-full overflow-hidden">
+          <div className="max-w-3xl relative h-full overflow-hidden">
             <div className="relative z-10">
               <ClientGeminiBlock />
             </div>
           </div>
-        </div>
-        
         </div>
       </section>
     </>

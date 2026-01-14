@@ -316,7 +316,7 @@ const cards = [
   {
     description:
       "Voir si le Headless est adapté à votre projet et comprendre les avantages concrets qu'il peut offrir à votre site web.",
-    title: "Pour quels projets ?",
+    title: "Pour quels objectifs ?",
     src: "https://assets.aceternity.com/demos/metallica.jpeg",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
@@ -328,7 +328,7 @@ const cards = [
             nécessaire pour tous. Elle s'adresse aux projets où le site web est
             un moteur de croissance critique et non une simple carte de visite.
           </div>
-          <div className="grid grid-cols-2 content-center gap-6">
+          <div className="grid grid-cols-2 content-center place-items-center gap-6">
             {/* Cartes pme */}
             <div className="col-span-1 flex flex-col items-center bg-regularblue rounded-xl p-4 w-full max-w-96 shadow-md">
               <Badge className="mb-2 bg-orange text-white font-googletitre">
@@ -345,7 +345,7 @@ const cards = [
               <Badge className="mb-2 bg-orange text-white font-googletitre">
                 PME
               </Badge>
-              <span className="text-center font-medium text-orange font-googletitre text-2xl mb-1">
+              <span className="text-center font-medium text-lightyellow font-googletitre text-2xl mb-1">
                 Proposer des services en ligne
               </span>
               <span className="text-base text-white/80 text-center border-t-2 border-orange pt-2">
@@ -354,11 +354,9 @@ const cards = [
             </div>
             {/* Cartes ess */}
             <div className="col-span-1 flex flex-col items-center bg-mediumblue rounded-xl p-4 w-full max-w-96 shadow-md">
-              <img
-                src="/icons/desktop-headless-icon.svg"
-                alt="Interface web"
-                className="w-10 h-10 mb-2"
-              />
+              <Badge className="mb-2 bg-orange text-white font-googletitre">
+                ESS
+              </Badge>
               <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">
                 Interface web
               </span>
@@ -367,16 +365,14 @@ const cards = [
               </span>
             </div>
             <div className="col-span-1 flex flex-col items-center bg-mediumblue rounded-xl p-4 w-full max-w-96 shadow-md">
-              <img
-                src="/icons/desktop-headless-icon.svg"
-                alt="Interface web"
-                className="w-10 h-10 mb-2"
-              />
+              <Badge className="mb-2 bg-orange text-white font-googletitre">
+                ESS
+              </Badge>
               <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">
-                Interface web
+                Utiliser l'écoconception
               </span>
               <span className="text-base text-white/80 text-center">
-                Site, application, affichage public...
+                Construire un site optimisé qui n'affiche que le strict nécessaire
               </span>
             </div>
           </div>

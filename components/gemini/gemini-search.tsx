@@ -58,7 +58,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6 w-5/6 max-w-xl mx-auto"
+          className="flex flex-col gap-6 min-w-[40vw] mx-auto"
         >
           <div className="flex items-end">
           <img src="/icons/optimize-icon.svg" alt="" className="w-16 h-16 pt-6" aria-hidden="true" />    
