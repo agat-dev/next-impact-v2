@@ -12,7 +12,7 @@ export function ExpandableCardDemo() {
       <div className="pb-24">
         <h2 className="font-googletexte text-4xl tracking-tight text-center text-white mb-2">
           WordPress Headless :{" "}
-          <span className="font-googletitre text-coral text-5xl font-medium">
+          <span className="font-googletitre text-lightyellow text-5xl font-medium">
             quelques explications ?
           </span>
         </h2>
@@ -24,7 +24,7 @@ export function ExpandableCardDemo() {
         {cards.map((card, idx) => (
           <li key={card.title} className="w-full">
             <button
-              className="w-full p-4 flex flex-col md:flex-row justify-between items-center bg-mediumblue/10 hover:bg-mediumblue/60 backdrop-blur-xl rounded-xl cursor-pointer focus:outline-none"
+              className="w-full p-4 flex flex-col md:flex-row justify-between items-center bg-mediumblue/60 hover:bg-mediumblue/50 backdrop-blur-xl rounded-xl cursor-pointer focus:outline-none"
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               aria-expanded={openIndex === idx}
               aria-controls={`panel-${idx}`}
@@ -38,7 +38,7 @@ export function ExpandableCardDemo() {
                   className="h-full w-40 md:h-14 md:w-14 rounded-lg object-cover object-top hover:blur-sm transition-all duration-300"
                 />
                 <div className="flex flex-col items-center md:items-start justify-center flex-1">
-                  <h3 className="font-medium text-white/80 text-center md:text-left text-3xl">
+                  <h3 className="font-medium text-lightyellow text-center md:text-left text-3xl">
                     {card.title}
                   </h3>
                   <p className="text-white/70 text-base text-left">
@@ -74,14 +74,15 @@ export function ExpandableCardDemo() {
                           {typeof card.content === "function"
                             ? card.content()
                             : card.content}
+                            {/*}
                           {card.ctaText && card.ctaLink && (
                             <a
                               href={card.ctaLink}
-                              className="mt-4 self-start inline-block px-5 py-1 rounded-2xl bg-coral text-lg text-white font-medium shadow hover:bg-coral/90 transition"
+                              className="mt-4 self-start inline-block px-5 py-1 rounded-2xl bg-white text-lg text-darkblue font-medium shadow hover:bg-lightyellow/90 transition"
                             >
                               {card.ctaText}
                             </a>
-                          )}
+                          )} */}
                         </div>
                       </div>
                     </div>
@@ -153,7 +154,7 @@ const cards = [
     description:
       "Comprendre les principes fondamentaux du Headless et comment cette architecture révolutionne la manière dont les sites web sont conçus et gérés.",
     title: "Fonctionnement du Headless",
-    src: "/icons/scale-icon.svg",
+    src: "/icons/desktop-headless-icon.svg",
     ctaText: "En savoir plus",
     ctaLink: "/wp-headless-fonctionnement",
     content: () => {
@@ -201,7 +202,7 @@ const cards = [
             </div>
           </div>
           <div className="text-lg text-white/80">
-            <div className="mb-2 font-medium text-coral font-googletitre text-3xl">
+            <div className="mb-2 font-medium text-white font-googletitre text-3xl">
               Le principe clé
             </div>
             Au lieu d'avoir un outil rigide qui fait tout, vous avez deux
@@ -218,14 +219,14 @@ const cards = [
     description:
       "Voir si le Headless est adapté à votre projet et comprendre les avantages concrets qu'il peut offrir à votre site web.",
     title: "Pourquoi choisir le Headless ?",
-    src: "/icons/api-icon.svg",
+    src: "/icons/scan-icon.svg",
     ctaText: "En savoir plus",
     ctaLink: "/wp-headless-advantages",
     content: () => {
       return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="text-lg text-darkblue">
-            <div className="font-googletitre text-3xl font-medium text-regularblue">
+          <div className="text-lg text-white/80">
+            <div className="font-googletitre text-3xl font-medium text-white">
               Le principe clé
             </div>
             <br />
@@ -234,79 +235,89 @@ const cards = [
             normes SEO et un sécurité optimisées.
           </div>
           {/* Carte 1 */}
-          <div className="flex flex-col items-center bg-lightblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-row items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/dashboard-icon.svg"
               alt="Admin WordPress"
-              className="w-10 h-10 mb-2"
+              className="w-36 h-36 object-contain"
             />
-            <span className="font-medium text-mediumblue font-googletitre text-2xl mb-1 text-center">
+            <div className="ml-6 flex flex-col">
+            <span className="font-medium text-white font-googletitre text-2xl mb-4">
               Admin WordPress
             </span>
-            <span className="text-sm text-white/80 text-center">
+            <span className="text-sm text-white/80">
               Une interface familière garantissant une adoption immédiate et
               sans coût de formation supplémentaire.
             </span>
+            </div>
           </div>
           {/* Carte 2 */}
-          <div className="flex flex-col items-center bg-lightblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-row items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/desktop-headless-icon.svg"
               alt="Liberté de design"
-              className="w-10 h-10 mb-2"
+              className="w-36 h-36 object-contain"
             />
-            <span className="font-medium text-mediumblue font-googletitre text-2xl mb-1 text-center">
+            <div className="ml-6 flex flex-col">
+            <span className="font-medium text-white font-googletitre text-2xl mb-4">
               Liberté de design
             </span>
-            <span className="text-sm text-white/80 text-center">
+            <span className="text-sm text-white/80">
               Interface développée sur mesure, totalement libre, sans les
               limites ni la lourdeur des "page builders".
             </span>
+            </div>
           </div>
           {/* Carte 5 */}
-          <div className="flex flex-col items-center bg-regularblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/shield-icon.svg"
               alt="Sécurité totale"
-              className="w-10 h-10 mb-2"
+              className="w-36 h-36 mb-2"
             />
-            <span className="font-medium text-darkblue font-googletitre text-2xl mb-1 text-center">
+            <div className="ml-6 flex flex-col">
+            <span className="font-medium text-white font-googletitre text-2xl mb-1">
               Sécurité totale
             </span>
-            <span className="text-sm text-white/80 text-center">
+            <span className="text-sm text-white/80">
               Votre base de données devient invisible et inaccessible rendant
               les attaques traditionnelles impossibles.
             </span>
+            </div>
           </div>
           {/* Carte 3 */}
-          <div className="flex flex-col items-center bg-regularblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/speed-icon.svg"
               alt="Vitesse fulgurante"
-              className="w-10 h-10 mb-2"
+              className="w-36 h-36 mb-2"
             />
-            <span className="font-medium text-darkblue font-googletitre text-2xl mb-1 text-center">
+            <div className="ml-6 flex flex-col">
+            <span className="font-medium text-white font-googletitre text-2xl mb-1">
               Vitesse fulgurante
             </span>
-            <span className="text-sm text-white/80 text-center">
+            <span className="text-sm text-white/80">
               Chargement des pages instantané, garantissant des indicateurs de
               performance (Core Web Vitals) au vert.
             </span>
+            </div>
           </div>
           {/* Carte 4 */}
-          <div className="flex flex-col items-center bg-lightblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/globe-network-icon.svg"
               alt="SEO de haut niveau"
-              className="w-10 h-10 mb-2"
+              className="w-36 h-36 mb-2"
             />
-            <span className="font-medium text-orange font-googletitre text-2xl mb-1 text-center">
+            <div className="ml-6 flex flex-col">
+            <span className="font-medium text-white font-googletitre text-2xl mb-1">
               SEO de haut niveau
             </span>
-            <span className="text-sm text-white/80 text-center">
+            <span className="text-sm text-white/80">
               Grâce aux techniques de rendu moderne, les moteurs de recherche
               indexent votre contenu plus efficacement.
             </span>
+            </div>
           </div>
         </div>
       );
@@ -323,34 +334,40 @@ const cards = [
     content: () => {
       return (
         <div className="flex flex-col gap-12">
-          <div className="mb-2 text-lg">
+          <div className="mb-2 text-lg text-white/80">
             L'architecture Headless WordPress est puissante, mais elle n'est pas
             nécessaire pour tous. Elle s'adresse aux projets où le site web est
             un moteur de croissance critique et non une simple carte de visite.
           </div>
-          <div className="grid grid-cols-2 content-center place-items-center gap-6">
+          <div className="grid grid-cols-2 gap-6">
             {/* Cartes pme */}
-            <div className="col-span-1 flex flex-col items-center bg-regularblue rounded-xl p-4 w-full max-w-96 shadow-md">
-              <Badge className="mb-2 bg-orange text-white font-googletitre">
+            <div className="col-span-1">
+            <div className="flex flex-col gap-2 bg-darkblue rounded-xl w-full max-w-96 h-max shadow-md">
+              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-lightyellow text-darkblue font-googletitre font-semibold text-xl text-center">
                 PME
-              </Badge>
-              <span className="text-centerfont-medium text-lightyellow font-googletitre text-2xl mb-1">
+              </div>
+              <div className="flex flex-col gap-2 px-4 py-6">
+              <h4 className="text-center font-medium text-white font-googletitre text-2xl mb-1">
                 Passer à l'échelle
-              </span>
-              <span className="text-base text-white/80 text-center">
+              </h4>
+              <span className="text-base text-white/80 text-center border-t-2 border-lightyellow pt-2">
                 Pour répondre ou provoquer une croissance de l'activité en alignant le site web avec les objectifs commerciaux.
               </span>
+              </div>
             </div>
-            <div className="col-span-1 flex flex-col items-center gap-2 bg-regularblue rounded-xl p-4 w-full max-w-96 shadow-md">
-              <Badge className="mb-2 bg-orange text-white font-googletitre">
+            <div className="flex flex-col gap-2 bg-darkblue rounded-xl w-full max-w-96 h-max shadow-md">
+              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-lightyellow text-darkblue font-googletitre font-semibold text-xl text-center">
                 PME
-              </Badge>
-              <span className="text-center font-medium text-lightyellow font-googletitre text-2xl mb-1">
+              </div>
+              <div className="flex flex-col gap-2 px-4 py-6">
+              <h4 className="text-center font-medium text-white font-googletitre text-2xl mb-1">
                 Proposer des services en ligne
-              </span>
-              <span className="text-base text-white/80 text-center border-t-2 border-orange pt-2">
+              </h4>
+              <span className="text-base text-white/80 text-center border-t-2 border-lightyellow pt-2">
                 Pour créer des offres en ligne ou des services associés, et renforcer l'expérience client.
               </span>
+              </div>
+            </div>
             </div>
             {/* Cartes ess */}
             <div className="col-span-1 flex flex-col items-center bg-mediumblue rounded-xl p-4 w-full max-w-96 shadow-md">
@@ -376,8 +393,8 @@ const cards = [
               </span>
             </div>
           </div>
-          <div className="text-lg">
-            <div className="mb-2 font-medium text-regularblue font-googletitre text-3xl">
+          <div className="text-lg text-white/80">
+            <div className="mb-2 font-medium text-white font-googletitre text-3xl">
               Le principe clé
             </div>
             Idéal pour les PME et les organisations de l'ESS cherchant à
