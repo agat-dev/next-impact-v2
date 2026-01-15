@@ -134,7 +134,7 @@ html, body {
     line-height: 2;
   }
   h1 {
-    @apply text-3xl text-regularblue font-googletitre;
+    @apply text-4xl text-regularblue font-googletitre;
     line-height: 1.3;
   }
   h2 {

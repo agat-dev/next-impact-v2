@@ -1,16 +1,14 @@
 "use client";
-import { Shield, TrendingUp, Zap } from "lucide-react";
+import PageLayout from "@/components/page-layout";
 import dynamic from "next/dynamic";
+import { Shield, TrendingUp, Zap } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
-const GeminiSearch = dynamic(() => import("@/components/gemini/gemini-search"));
+const GeminiSearch = dynamic(() => import("@/components/gemini/gemini-search"), { ssr: false });
 
-export default function ClientGeminiBlock() {
-  // L'instruction système définit le "rôle" et le contexte global.
-  // Elle doit être passée séparément du prompt dans l'appel API.
-  const system_instruction = `Tu es un expert en stratégie digitale et UX. Ton analyse est factuelle, basée sur les standards technologiques et marketing actuels. Tu fournis des recommandations claires et justifiées pour un public de décideurs (CEO, CTO).`;
-
-  // Le prompt se concentre sur les tâches à accomplir.
-  const prompt = `
+// Prompt et instruction identiques à ClientGeminiBlock
+const system_instruction = `Tu es un expert en stratégie digitale et UX. Ton analyse est factuelle, basée sur les standards technologiques et marketing actuels. Tu fournis des recommandations claires et justifiées pour un public de décideurs (CEO, CTO).`;
+const prompt = `
 **Mission :** Audit stratégique de l'URL **{$url}** pour évaluer la pertinence d'une migration vers une architecture Headless.
 
 ---
@@ -27,6 +25,10 @@ export default function ClientGeminiBlock() {
 ---
 
 **Étape 2 : Analyse Stratégique (Format Markdown)**
+
+### Syntèse de l'Audit d'opportunité de migration vers WordPress Headless pour **{$url}**
+* **Conseil Principal :** Recommande si une migration vers une architecture Headless est pertinente ou non, avec une justification concise.
+* **Résumé :** Fournis un bref résumé des points clés de l'analyse.
 
 ### 1. Positionnement Actuel
 *   **Perception de marque :** Le design et la navigation du site inspirent-ils confiance et modernité, ou montrent-ils des signes de retard technologique (lenteur, design daté) ?
@@ -53,31 +55,42 @@ export default function ClientGeminiBlock() {
 **Instruction de sortie :** Réponds exclusivement en Markdown. La structure doit suivre les titres et les points de l'étape 2.
 `;
 
+export default function AuditSiteIaClient() {
+  const searchParams = useSearchParams();
+  const url = searchParams.get("url") || undefined;
+
   return (
-    <>
-      <div className="w-[70%] mx-auto mt-8 mb-16 bg-white/5 backdrop-blur-md border border-white/10 pt-12 md:pt-20 rounded-2xl relative">
-        <div className="relative max-w-2xl mx-auto px-4 md:px-6">
-                <span className="text-white/90 text-lg">Testez gratuitement en 10 secondes si votre site WordPress est prêt pour une migration headless grâce à notre audit IA.</span>
-                <GeminiSearch onResult={() => {}} prompt={prompt} systemInstruction={system_instruction} />
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-20">
-                    {[
-                      { icon: Zap, text: "3x plus rapide", color: "#F29F05" },
-                      { icon: Shield, text: "Sécurité renforcée", color: "#719ED9" },
-                      { icon: TrendingUp, text: "SEO optimisé", color: "#FF6B6B" },
-                    ].map((benefit, idx) => (
-                      <div
-                        key={idx}
-                        className="flex flex-col items-center gap-3 backdrop-blur-sm rounded-xl px-4 py-4 border border-white/20 hover:bg-white/15 transition-all hover:scale-105"
-                      >
-                        <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                          <benefit.icon className="h-5 w-5" style={{ color: benefit.color }} />
-                        </div>
-                        <span className="text-sm font-semibold text-white text-center">{benefit.text}</span>
-                      </div>
-                    ))}
+    <main>
+      <PageLayout 
+        titre="Faut-il migrer vers WordPress Headless ?"
+        sousTitre="Tester gratuitement en 10 secondes si votre site WordPress est prêt pour une migration headless grâce à notre audit IA."
+      >
+        <div className="relative max-w-5xl my-16 mx-auto bg-white/10 backdrop-blur-md border p-12 border-1 border-white/10 rounded-2xl">
+        <GeminiSearch
+          onResult={() => {}}
+          prompt={prompt}
+          systemInstruction={system_instruction}
+          defaultUrl={url}
+        />
+        <div className="mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12">
+          {[
+            { icon: Zap, text: "3x plus rapide", color: "#F29F05" },
+            { icon: Shield, text: "Sécurité renforcée", color: "#719ED9" },
+            { icon: TrendingUp, text: "SEO optimisé", color: "#FF6B6B" },
+          ].map((benefit, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center gap-3 backdrop-blur-sm rounded-xl px-4 py-4 border border-white/20 hover:bg-white/15 transition-all hover:scale-105"
+            >
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+                <benefit.icon className="h-5 w-5" style={{ color: benefit.color }} />
+              </div>
+              <span className="text-sm font-semibold text-white text-center">{benefit.text}</span>
             </div>
+          ))}
         </div>
-      </div>
-    </>
+        </div>
+      </PageLayout>
+    </main>
   );
 }

@@ -16,16 +16,16 @@ export function VideoDemo() {
 
   return (
     <>
-      <section className="bg-mediumblue/30 backdrop-blur-md relative w-full min-h-screen flex items-center justify-center px-4 py-16 overflow-hidden">
+      <section className="bg-white/5 backdrop-blur-md relative w-full min-h-screen flex items-center justify-center mt-48 px-4 py-16 overflow-hidden border-y border-white/10">
         <div className="max-w-6xl w-full space-y-8">
           {/* Header with animation */}
           <div className="text-center space-y-4 animate-fade-in">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-lightyellow font-medium text-balance animate-slide-up delay-200">       
-              Démo vidéo
+              Démo <span className="text-white font-googletexte text-2xl md:text-3xl lg:text-4xl">WordPress Headless</span>
             </h2>
 
             <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto text-pretty animate-slide-up delay-200">
-              Découvrez comment fonctionne en pratique un WordPress headless.
+              Découvrez comment ça fonctionne en pratique un WordPress headless pour une billeterie événementielle.
              </p>
           </div>
 
@@ -76,15 +76,15 @@ export function VideoDemo() {
               <div className="p-6 bg-mediumblue backdrop-blur-sm">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div className="space-y-1">
-                    <h3 className="font-medium text-3xl text-white/90">Démo complète d'un WordPress Headless</h3>
-                    <p className="text-lg text-white/80">Site d'une billeterie événementielle</p>
+                    <h3 className="font-medium text-3xl text-white/90">Billeterie événementielle</h3>
+                    <p className="text-lg text-white/80">WordPress Headless Next.js</p>
                   </div>
                 </div>
               </div>
 
               {/* CTA Section */}
               <div className="p-6 bg-darkblue backdrop-blur-sm text-center">
-                <Link href="/demo" target="_blank" rel="noopener noreferrer">
+                <Link href="https://calendar.app.google/Cw7TGQBzeZ1szKU86" target="_blank" rel="noopener noreferrer">
                   <Button className="bg-lightyellow hover:bg-lightyellow/90 text-darkblue px-6 py-3 text-xl font-googletitre font-medium">
                     Réserver une visio
                   </Button>

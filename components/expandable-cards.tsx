@@ -8,7 +8,7 @@ export function ExpandableCardDemo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative my-48 py-24 bg-mediumblue/10 backdrop-blur-lg border border-white/10 mb-12 px-4 md:px-8 lg:px-16">
+    <section className="relative my-48 py-24 bg-white/5 backdrop-blur-lg border-y border-white/10 mb-12 px-4 md:px-8 lg:px-16">
       <div className="pb-24">
         <h2 className="font-googletexte text-4xl tracking-tight text-center text-white mb-2">
           WordPress Headless :{" "}

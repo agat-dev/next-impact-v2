@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu as MenuIcon, X as CloseIcon, List, EuroIcon, FormInputIcon, PenBoxIcon, File, BadgeEuro, Euro, DatabaseIcon, Presentation, UserCheck } from "lucide-react";
+import { Menu as MenuIcon, X as CloseIcon, ScreenShareIcon, File, BadgeEuro, Euro, DatabaseIcon, Presentation, UserCheck } from "lucide-react";
 import { ChevronDown, PhoneCallIcon, MailIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -44,7 +44,7 @@ export function NavBar() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/etudes-de-cas" className="font-googletitre text-white/90 text-lg text-regular px-2">
-                Réalisations
+                Etudes de cas
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -53,12 +53,9 @@ export function NavBar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/ressources" className="font-googletitre text-white/90 text-lg text-regular px-2">
+              <Link href="/audit-site-ia" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Audit
               </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/wp-headless" className="font-googletitre text-white/90 text-lg text-regular px-2">WP Headless</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/simulateur-tarifs" className="font-googletitre text-white/90 text-lg text-regular px-2">
@@ -235,7 +232,7 @@ export default function Header() {
         </div>
 
         <div className="md:basis-3/12 md:flex justify-end items-center gap-4 hidden">
-          <div className="relative group">
+          {/*<div className="relative group">
             <button
               className="flex items-center gap-2 px-3 py-2 text-white"
               type="button"
@@ -267,18 +264,21 @@ export default function Header() {
                 </li>
               </ul>
             </div>
-          </div>
           <Link href="/a-propos" className="hidden md:inline-block">
             <UserCheck className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
           <Link href="/documentation" className="hidden md:inline-block">
             <DatabaseIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
+          </div>*/}
           <Link href="/contact" className="hidden md:inline-block">
             <PhoneCallIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
           </Link>
           <Link href="/contact">
             <MailIcon className="w-6 h-6 text-white/90 hover:text-white transition" />
+          </Link>
+          <Link href="/contact" className="hidden md:inline-block">
+            <ScreenShareIcon className="w-6 h-6 text-white/90 hover:text-white transition" />         
           </Link>
         </div>
       </div>

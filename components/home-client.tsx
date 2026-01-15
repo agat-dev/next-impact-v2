@@ -21,41 +21,12 @@ export default function HomeClient() {
         {/* Hero Section */}
         <Hero />
 
-
         {/* Whats's Headless Section */}
         <ExpandableCardDemo />
 
         {/* Video Demo Section */}
         <VideoDemo />
 
-
-        {/* Realisation Section */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[3200px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[3600px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
-        </div>
-        <div className="w-full max-w-7xl mx-auto px-6 py-24">
-          <div className="pb-12 text-center">
-            <h2 className="text-4xl md:text-5xl text-regularblue mb-6">
-              Réalisations
-            </h2>
-            <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
-              Chaque projet est unique et conçu pour répondre aux besoins
-              spécifiques de mes clients.
-            </p>
-          </div>
-          <Realisations count={3} />
-        </div>
-        {/* Testimonials Section */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-[4000px] left-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-pink-200 to-blue-200 opacity-20 blur-3xl"></div>
-          <div className="absolute top-[4300px] right-0 h-[800px] w-[50vw] rounded-full bg-gradient-to-r from-blue-200 to-pink-200 opacity-10 blur-3xl"></div>
-        </div>
-        <Testimonials />
-        {/* FAQ Section */}
-        <FAQ />
-        {/* CTA Section */}
-        <CTASection />
       </main>
     </>
   );

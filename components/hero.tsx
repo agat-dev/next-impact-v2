@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import DataFlowAnimatedSVG from "./DataFlowAnimatedSVG";
 import AiAuditBannerSVG from "./AiAuditBannerSVG";
+import GeminiSearchHomepage from "./gemini/gemini-search-homepage";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -30,7 +31,7 @@ export default function Hero() {
         </div>
         <div className="container flex flex-col lg:flex-row justify-between lg:justify-evenly items-end gap-12 lg:gap-24 px-4 md:px-6 relative">
           {/* Text Content */}
-          <div className="flex flex-col lg:col-span-7 bg-mediumblue/10 backdrop-blur-md border border-white/10 p-6 md:p-10 rounded-2xl mt-12 lg:mt-0">
+          <div className="flex flex-col lg:col-span-7 bg-white/10 backdrop-blur-md border border-white/10 p-6 md:p-10 rounded-2xl mt-12 lg:mt-0">
             <div className="mb-1 text-2xl md:text-3xl lg:text-4xl text-white/80 font-googletexte">
               Développeuse 
             </div>
@@ -80,7 +81,7 @@ export default function Hero() {
                   href="#audit"
                   className="gap-2 text-darkblue font-googletitre font-semibold text-lg"
                 >
-                  Audit 
+                  Tester mon site 
                 </Link>
                 <LucideArrowUpRight className="w-8 h-8 text-darkblue" />
               </Button>
@@ -122,13 +123,13 @@ export default function Hero() {
       </section>
 
       {/*Gemini Search Section */}
-      <section id="audit" className="bg-mediumblue/20 w-full mx-auto flex flex-col backdrop-blur-xl border-y border-white/10 py-32 relative">
+      <section id="audit" className="bg-white/5 w-full mx-auto flex flex-col backdrop-blur-xl border-y border-white/10 py-32 relative">
 
           <h2 className="font-googletitre text-white text-5xl font-medium flex items-end justify-center gap-4">
             Faut-il migrer en headless ?
           </h2>
-        <div className="max-w-4xl flex flex-col relative pl-72">
-          <div className="text-left font-googletexte text-2xl lg:text-3xl text-darkblue font-regular mt-24 lg:pt-6 z-10">
+        <div className="max-w-3xl xxl:max-w-4xl flex flex-col relative md:pl-48 xxl:pl-72 mt-8 xxl:mt-0">
+          <div className="text-left font-googletexte text-2xl lg:text-3xl text-darkblue font-regular mt-1 xxl:mt-24 lg:pt-6 z-10">
             <span className="text-5xl font-googletitre text-lightyellow font-medium">
               Audit gratuit 
             </span>
@@ -153,7 +154,7 @@ export default function Hero() {
           </div>
           <div className="max-w-2xl relative h-full overflow-hidden">
             <div className="relative z-10">
-              <ClientGeminiBlock />
+              <GeminiSearchHomepage />
             </div>
           </div>
         </div>

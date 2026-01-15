@@ -1,23 +1,34 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TypewriterLoading } from "../ui/typewriter-loading";
-import AuditSendForm from "./audit-send-form";
+import dynamic from "next/dynamic";
+const AuditSendFormClient = dynamic(() => import("./AuditSendFormClient"), { ssr: false });
 import { Button } from "../ui/button";
 import { ArrowRight, Target, TargetIcon } from "lucide-react";
 import { Arrow } from "@radix-ui/react-select";
 
+
 interface GeminiSearchProps {
   onResult: (result: any) => void;
-  prompt: string; // Rendu obligatoire
-  systemInstruction: string; // Ajout de la prop
+  prompt: string;
+  systemInstruction: string;
+  defaultUrl?: string;
 }
 
-export default function GeminiSearch({ onResult, prompt, systemInstruction }: GeminiSearchProps) {
-  const [url, setUrl] = useState("");
+export default function GeminiSearch({ onResult, prompt, systemInstruction, defaultUrl }: GeminiSearchProps) {
+  const [url, setUrl] = useState(defaultUrl || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<any>(null);
   const [showResultPage, setShowResultPage] = useState(false);
+
+  // Lance l'audit automatiquement si defaultUrl est fourni
+  React.useEffect(() => {
+    if (defaultUrl && defaultUrl.trim() && !result && !loading) {
+      handleSubmit(undefined, true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultUrl]);
 
   React.useEffect(() => {
     if (result) {
@@ -25,14 +36,13 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
     }
   }, [result]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e?: React.FormEvent, auto = false) => {
+    if (e) e.preventDefault();
+    if (!url.trim()) return;
     setLoading(true);
     setError(null);
     setResult(null);
-    
     try {
-      // Correction : Envoi des 3 propriétés attendues par l'API
       const res = await fetch("/api/gemini-analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -58,19 +68,19 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
-          className="mt-8 flex flex-col gap-6 mx-auto"
-        >          
+          className="flex flex-col gap-6 mx-auto"
+        >
           <div className="flex items-end">
-          <label
-            htmlFor="gemini_url"
-            className="font-googletexte text-white/80 "
-          >        
-          URL WordPress à analyser
-          </label>
+            <label
+              htmlFor="gemini_url"
+              className="font-googletexte text-white/80 "
+            >
+              URL WordPress à analyser
+            </label>
           </div>
           <input
             id="gemini_url"
-            className="w-2xl bg-white/80 border rounded-2xl p-2 -mt-4 mb-2 focus-visible:bg-white"
+            className="w-xl bg-white/80 border rounded-2xl p-2 -mt-4 mb-2 focus-visible:bg-white"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://test.com"
@@ -86,7 +96,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse
-            <span className="ml-2 flex items-center text-darkblue">              
+            <span className="ml-2 flex items-center text-darkblue">
               <ArrowRight className="size-5"/>
             </span>
           </Button>
@@ -109,19 +119,12 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       )}
 
       {showResultPage && result && (
-        <>
-          <AuditSendForm
-            // Correction : Accès direct à la propriété 'text' retournée par l'API
-            markdownPreview={
-              (result.text || JSON.stringify(result, null, 2))
-                .split('\n').slice(0, 8).join('\n')
-            }
-            markdownFull={
-              result.text || JSON.stringify(result, null, 2)
-            }
-            url={url}
-          />
-        </>
+        <AuditSendFormClient
+          markdownFull={
+            result.text || JSON.stringify(result, null, 2)
+          }
+          url={url}
+        />
       )}
     </>
   );
