@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
     const fullPrompt = prompt.replace("{$url}", url);
 
     try {
-      // Appel direct à Gemini, sans fetch inutile
+      // Suppression du fetch inutile sur l'URL cible
       const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
       return NextResponse.json({ text: result.response.text() });
     } catch (error: any) {
