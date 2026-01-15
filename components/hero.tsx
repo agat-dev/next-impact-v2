@@ -124,12 +124,12 @@ export default function Hero() {
       {/*Gemini Search Section */}
       <section id="audit" className="bg-mediumblue/20 w-full mx-auto flex flex-col backdrop-blur-xl border-y border-white/10 py-32 relative">
 
-          <h2 className="mb-12 font-googletitre text-white text-5xl font-medium flex items-end justify-center gap-4">
+          <h2 className="font-googletitre text-white text-5xl font-medium flex items-end justify-center gap-4">
             Faut-il migrer en headless ?
           </h2>
-        <div className="max-w-3xl flex flex-col relative pl-48">
-          <div className="text-left font-googletexte text-2xl lg:text-3xl text-darkblue font-regular pt-3 lg:pt-6 z-10">
-            <span className="text-4xl font-googletitre text-lightyellow font-medium">
+        <div className="max-w-4xl flex flex-col relative pl-72">
+          <div className="text-left font-googletexte text-2xl lg:text-3xl text-darkblue font-regular mt-24 lg:pt-6 z-10">
+            <span className="text-5xl font-googletitre text-lightyellow font-medium">
               Audit gratuit 
             </span>
             {" "}

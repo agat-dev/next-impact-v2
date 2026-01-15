@@ -58,7 +58,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
-          className="mt-8 flex flex-col gap-6 min-w-[40vw] mx-auto"
+          className="mt-8 flex flex-col gap-6 mx-auto"
         >          
           <div className="flex items-end">
           <label
@@ -70,7 +70,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
           </div>
           <input
             id="gemini_url"
-            className="w-full bg-white/80 border rounded-2xl p-2 -mt-4 mb-2 focus-visible:bg-white"
+            className="w-2xl bg-white/80 border rounded-2xl p-2 -mt-4 mb-2 focus-visible:bg-white"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://test.com"

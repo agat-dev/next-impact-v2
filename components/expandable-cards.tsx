@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export function ExpandableCardDemo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -167,7 +167,7 @@ const cards = [
           </div>
           <div className="flex items-center justify-center gap-6">
             {/* Carte Backoffice */}
-            <div className="flex flex-col items-center bg-darkblue rounded-xl p-4 w-60 shadow-md">
+            <div className="flex flex-col items-center bg-darkblue/70 rounded-xl p-4 w-60 shadow-md">
               <img
                 src="/icons/dashboard-icon.svg"
                 alt="Backoffice"
@@ -187,7 +187,7 @@ const cards = [
               className="w-24 h-24"
             />
             {/* Carte Interface Visiteur */}
-            <div className="flex flex-col items-center bg-darkblue rounded-xl p-4 w-60 shadow-md">
+            <div className="flex flex-col items-center bg-darkblue/70 rounded-xl p-4 w-60 shadow-md">
               <img
                 src="/icons/desktop-headless-icon.svg"
                 alt="Interface web"
@@ -235,7 +235,7 @@ const cards = [
             normes SEO et un sécurité optimisées.
           </div>
           {/* Carte 1 */}
-          <div className="flex flex-row items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-row items-center bg-darkblue/70 rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/dashboard-icon.svg"
               alt="Admin WordPress"
@@ -252,7 +252,7 @@ const cards = [
             </div>
           </div>
           {/* Carte 2 */}
-          <div className="flex flex-row items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex flex-row items-center bg-darkblue/70 rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/desktop-headless-icon.svg"
               alt="Liberté de design"
@@ -269,7 +269,7 @@ const cards = [
             </div>
           </div>
           {/* Carte 5 */}
-          <div className="flex items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex items-center bg-darkblue/70 rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/shield-icon.svg"
               alt="Sécurité totale"
@@ -286,7 +286,7 @@ const cards = [
             </div>
           </div>
           {/* Carte 3 */}
-          <div className="flex items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex items-center bg-darkblue/70 rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/speed-icon.svg"
               alt="Vitesse fulgurante"
@@ -303,7 +303,7 @@ const cards = [
             </div>
           </div>
           {/* Carte 4 */}
-          <div className="flex items-center bg-darkblue rounded-xl p-6 shadow-md h-full">
+          <div className="flex items-center bg-darkblue/70 rounded-xl p-6 shadow-md h-full">
             <img
               src="/icons/globe-network-icon.svg"
               alt="SEO de haut niveau"
@@ -339,58 +339,96 @@ const cards = [
             nécessaire pour tous. Elle s'adresse aux projets où le site web est
             un moteur de croissance critique et non une simple carte de visite.
           </div>
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-6 place-items-center items-start">
             {/* Cartes pme */}
-            <div className="col-span-1">
-            <div className="flex flex-col gap-2 bg-darkblue rounded-xl w-full max-w-96 h-max shadow-md">
-              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-lightyellow text-darkblue font-googletitre font-semibold text-xl text-center">
+            <div className="col-span-1 space-y-12">
+            <div className="flex flex-col gap-2 bg-mediumblue/10 rounded-xl w-full max-w-96 h-max shadow-md border border-lightyellow/20">
+              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-lightyellow text-darkblue font-googletitre font-semibold text-xl">
                 PME
               </div>
-              <div className="flex flex-col gap-2 px-4 py-6">
-              <h4 className="text-center font-medium text-white font-googletitre text-2xl mb-1">
+              <div className="flex flex-col gap-2 px-4 pb-6">
+              <div className="flex justify-end">
+                <Image 
+                  src="/icons/growth-icon.svg"
+                  alt="Passer à l'échelle"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <h4 className="font-medium text-white font-googletitre text-2xl -mt-2 mb-1">
                 Passer à l'échelle
               </h4>
-              <span className="text-base text-white/80 text-center border-t-2 border-lightyellow pt-2">
+              <span className="text-base text-white/80 border-t-2 border-lightyellow pt-2">
                 Pour répondre ou provoquer une croissance de l'activité en alignant le site web avec les objectifs commerciaux.
               </span>
               </div>
             </div>
-            <div className="flex flex-col gap-2 bg-darkblue rounded-xl w-full max-w-96 h-max shadow-md">
-              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-lightyellow text-darkblue font-googletitre font-semibold text-xl text-center">
+            <div className="flex flex-col gap-2 bg-mediumblue/10 rounded-xl w-full max-w-96 h-max shadow-md border border-lightyellow/20">
+              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-lightyellow text-darkblue font-googletitre font-semibold text-xl ">
                 PME
               </div>
-              <div className="flex flex-col gap-2 px-4 py-6">
-              <h4 className="text-center font-medium text-white font-googletitre text-2xl mb-1">
+              <div className="flex flex-col gap-2 px-4 pb-6">
+              <div className="flex justify-end">
+                <Image 
+                  src="/icons/saas-features-icon.svg"
+                  alt="Proposer des services en ligne"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <h4 className="font-medium text-white font-googletitre text-2xl -mt-2 mb-1">
                 Proposer des services en ligne
               </h4>
-              <span className="text-base text-white/80 text-center border-t-2 border-lightyellow pt-2">
+              <span className="text-base text-white/80 border-t-2 border-lightyellow pt-2">
                 Pour créer des offres en ligne ou des services associés, et renforcer l'expérience client.
               </span>
               </div>
             </div>
             </div>
             {/* Cartes ess */}
-            <div className="col-span-1 flex flex-col items-center bg-mediumblue rounded-xl p-4 w-full max-w-96 shadow-md">
-              <Badge className="mb-2 bg-orange text-white font-googletitre">
+            <div className="col-span-1 space-y-12">
+            <div className="flex flex-col bg-mediumblue rounded-xl w-full max-w-96 shadow-md border border-lightyellow/20">
+              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-coral text-darkblue font-googletitre font-semibold text-xl">
                 ESS
-              </Badge>
-              <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">
-                Interface web
+              </div>
+              <div className="flex flex-col gap-2 px-4 pb-6">
+              <div className="flex justify-end">
+                <Image 
+                  src="/icons/brand-reach-icon.svg"
+                  alt="Gagner en autorité"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <h4 className="font-medium text-coral font-googletitre text-2xl mb-1">
+                Gagner en autorité
+              </h4>
+              <span className="text-base text-white/80 border-t-2 border-coral pt-2">
+                Développer une image forte et crédible pour attirer des soutiens, partenaires et financements.
               </span>
-              <span className="text-base text-white/80 text-center">
-                Site, application, affichage public...
-              </span>
+              </div>
             </div>
-            <div className="col-span-1 flex flex-col items-center bg-mediumblue rounded-xl p-4 w-full max-w-96 shadow-md">
-              <Badge className="mb-2 bg-orange text-white font-googletitre">
+            <div className="flex flex-col bg-mediumblue rounded-xl w-full max-w-96 shadow-md border border-lightyellow/20">
+              <div className="w-full mb-2 px-2 py-1 rounded-t-xl bg-coral text-darkblue font-googletitre font-semibold text-xl">
                 ESS
-              </Badge>
-              <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">
-                Utiliser l'écoconception
+              </div>
+              <div className="flex flex-col gap-2 px-4 pb-6">
+              <div className="flex justify-end">
+                <Image 
+                  src="/icons/eco-design-icon.svg"
+                  alt="Montrer son engagement écologique"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <h4 className="font-medium text-coral font-googletitre text-2xl mb-1">
+                Montrer son engagement
+              </h4>
+              <span className="text-base text-white/80 border-t-2 border-coral pt-2">
+                Réduire l'empreinte environnementale numérique avec l'écoconception.
               </span>
-              <span className="text-base text-white/80 text-center">
-                Construire un site optimisé qui n'affiche que le strict nécessaire
-              </span>
+              </div>
+            </div>
             </div>
           </div>
           <div className="text-lg text-white/80">

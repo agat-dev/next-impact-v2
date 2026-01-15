@@ -10,6 +10,7 @@ import Testimonials from "@/components/testimonials";
 import FAQ from "@/components/faq";
 import { CTASection } from "@/components/cta-section";
 import { Logos } from "./logos";
+import { VideoDemo } from "./video-demo";
 
 export default function HomeClient() {
 
@@ -24,11 +25,9 @@ export default function HomeClient() {
         {/* Whats's Headless Section */}
         <ExpandableCardDemo />
 
-        
-      {/* Détails services */}
-      <section className="py-24">
-        <DetailsServices />
-      </section>
+        {/* Video Demo Section */}
+        <VideoDemo />
+
 
         {/* Realisation Section */}
         <div className="absolute inset-0 -z-10">
