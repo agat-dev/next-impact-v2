@@ -19,8 +19,7 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction, defa
   const [url, setUrl] = useState(defaultUrl || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [result, setResult] = useState<any>(null);
-  const [showResultPage, setShowResultPage] = useState(false);
+  const [result, setResult] = useState<string | null>(null);
 
   // Lance l'audit automatiquement si defaultUrl est fourni
   React.useEffect(() => {
@@ -63,6 +62,25 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction, defa
     }
   };
 
+  const handleAnalyze = async () => {
+    setError(null);
+    setResult(null);
+    // ...préparation des données...
+    const res = await fetch("/api/gemini-analyze", {
+      method: "POST",
+      body: JSON.stringify({ url, prompt, systemInstruction }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await res.json();
+    if (data.error) {
+      setError(data.error);
+    } else if (!data.text || !data.text.trim()) {
+      setError("Aucune analyse générée. Essayez avec une autre URL ou plus tard.");
+    } else {
+      setResult(data.text);
+    }
+  };
+
   return (
     <>
       {!loading && !showResultPage && (
@@ -100,7 +118,11 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction, defa
               <ArrowRight className="size-5"/>
             </span>
           </Button>
-          {error && <div className="text-red-500">{error}</div>}
+          {error && (
+            <div className="bg-red-100 text-red-700 p-4 rounded mb-4">
+              {error}
+            </div>
+          )}
         </form>
       )}
 
