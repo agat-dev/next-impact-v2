@@ -1,5 +1,4 @@
-
-
+import { Suspense } from "react";
 import AuditSiteIaClient from "@/components/gemini/audit-site-ia-client";
 
 export async function generateMetadata() {
@@ -21,9 +20,14 @@ export async function generateMetadata() {
         },
       ],
     },
+    metadataBase: new URL("https://next-impact.digital"),
   };
 }
 
 export default function AuditSiteIaPage() {
-  return <AuditSiteIaClient />;
+  return (
+    <Suspense>
+      <AuditSiteIaClient />
+    </Suspense>
+  );
 }
