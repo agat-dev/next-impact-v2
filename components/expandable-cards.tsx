@@ -8,7 +8,7 @@ export function ExpandableCardDemo() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative my-48 py-24 bg-regularblue backdrop-blur-lg border border-white/10 mb-12 px-4 md:px-8 lg:px-16">
+    <section className="relative my-48 py-24 bg-mediumblue/10 backdrop-blur-lg border border-white/10 mb-12 px-4 md:px-8 lg:px-16">
       <div className="pb-24">
         <h2 className="font-googletexte text-4xl tracking-tight text-center text-white mb-2">
           WordPress Headless :{" "}
@@ -24,7 +24,7 @@ export function ExpandableCardDemo() {
         {cards.map((card, idx) => (
           <li key={card.title} className="w-full">
             <button
-              className="w-full p-4 flex flex-col md:flex-row justify-between items-center bg-regularblue hover:bg-regularblue backdrop-blur-xl rounded-xl cursor-pointer focus:outline-none"
+              className="w-full p-4 flex flex-col md:flex-row justify-between items-center bg-mediumblue/10 hover:bg-mediumblue/60 backdrop-blur-xl rounded-xl cursor-pointer focus:outline-none"
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               aria-expanded={openIndex === idx}
               aria-controls={`panel-${idx}`}
@@ -60,7 +60,7 @@ export function ExpandableCardDemo() {
                     scale: { duration: 0.25 },
                   }}
                   style={{ originY: 0.1 }}
-                  className="overflow-hidden bg-extralightblue rounded-xl shadow-inner mt-4"
+                  className="overflow-hidden bg-mediumblue rounded-xl shadow-inner mt-4"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -159,21 +159,21 @@ const cards = [
     content: () => {
       return (
         <div className="flex flex-col gap-12">
-          <div className="mb-2 text-lg">
+          <div className="mb-2 text-lg text-white/80">
             Le "Headless" (ou "sans tête") est une manière moderne de concevoir
             un site web en séparant totalement deux éléments qui, auparavant,
             étaient soudés ensemble :
           </div>
           <div className="flex items-center justify-center gap-6">
             {/* Carte Backoffice */}
-            <div className="flex flex-col items-center bg-regularblue rounded-xl p-4 w-60 shadow-md">
+            <div className="flex flex-col items-center bg-darkblue rounded-xl p-4 w-60 shadow-md">
               <img
                 src="/icons/dashboard-icon.svg"
                 alt="Backoffice"
                 className="w-10 h-10 mb-2"
               />
-              <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">
-                Backoffice
+              <span className="font-medium text-white font-googletitre text-2xl mb-1">
+                Admin WordPress
               </span>
               <span className="text-base text-white/80 text-center">
                 Gestion des contenus, médias, utilisateurs...
@@ -186,13 +186,13 @@ const cards = [
               className="w-24 h-24"
             />
             {/* Carte Interface Visiteur */}
-            <div className="flex flex-col items-center bg-mediumblue rounded-xl p-4 w-60 shadow-md">
+            <div className="flex flex-col items-center bg-darkblue rounded-xl p-4 w-60 shadow-md">
               <img
                 src="/icons/desktop-headless-icon.svg"
                 alt="Interface web"
                 className="w-10 h-10 mb-2"
               />
-              <span className="font-medium text-lightyellow font-googletitre text-2xl mb-1">
+              <span className="font-medium text-white font-googletitre text-2xl mb-1">
                 Interface web
               </span>
               <span className="text-base text-white/80 text-center">
@@ -200,8 +200,8 @@ const cards = [
               </span>
             </div>
           </div>
-          <div className="text-lg">
-            <div className="mb-2 font-medium text-regularblue font-googletitre text-3xl">
+          <div className="text-lg text-white/80">
+            <div className="mb-2 font-medium text-coral font-googletitre text-3xl">
               Le principe clé
             </div>
             Au lieu d'avoir un outil rigide qui fait tout, vous avez deux
@@ -317,7 +317,7 @@ const cards = [
     description:
       "Voir si le Headless est adapté à votre projet et comprendre les avantages concrets qu'il peut offrir à votre site web.",
     title: "Pour quels objectifs ?",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
+    src: "/icons/analytics-icon.svg",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {

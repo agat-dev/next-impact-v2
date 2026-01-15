@@ -58,13 +58,12 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6 min-w-[40vw] mx-auto"
-        >
+          className="mt-8 flex flex-col gap-6 min-w-[40vw] mx-auto"
+        >          
           <div className="flex items-end">
-          <img src="/icons/optimize-icon.svg" alt="" className="w-16 h-16 pt-6" aria-hidden="true" />    
           <label
             htmlFor="gemini_url"
-            className="font-googletexte text-darkblue/80 "
+            className="font-googletexte text-white/80 "
           >        
           URL WordPress à analyser
           </label>
@@ -83,11 +82,11 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
           <Button
             type="submit"
             variant="default"
-            className="bg-coral text-white px-6 py-2 text-xl font-googletitre font-medium flex items-center justify-center"
+            className="bg-lightyellow hover:bg-lightyellow/90 text-darkblue px-6 py-2 text-xl font-googletitre font-medium flex items-center justify-center"
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse
-            <span className="ml-2 flex items-center text-white">              
+            <span className="ml-2 flex items-center text-darkblue">              
               <ArrowRight className="size-5"/>
             </span>
           </Button>
