@@ -35,7 +35,6 @@ export async function POST(req: NextRequest) {
     const model = genAI.getGenerativeModel({
       model: sdkModelName, // ex: "gemini-2.5-flash"
       systemInstruction,
-      // Correction : googleSearch est un objet vide, sans paramètres
       tools: [{ googleSearch: {} }],
     });
 
@@ -48,22 +47,14 @@ export async function POST(req: NextRequest) {
     ];
 
     const fullPrompt = prompt.replace("{$url}", url);
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12000);
 
     try {
-      const response = await fetch(url, {
-        ...options,
-        signal: controller.signal,
-      });
-      clearTimeout(timeout);
-
+      // Appel direct à Gemini, sans fetch inutile
       const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
       return NextResponse.json({ text: result.response.text() });
-    } catch (error) {
-      clearTimeout(timeout);
+    } catch (error: any) {
       // Gère l’erreur proprement
-      return NextResponse.json({ error: "Timeout ou erreur Gemini" }, { status: 504 });
+      return NextResponse.json({ error: error.message || "Timeout ou erreur Gemini" }, { status: 504 });
     }
 
   } catch (err: any) {
