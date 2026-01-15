@@ -20,8 +20,7 @@ export async function POST(req: NextRequest) {
     // Choix REST IDs
     const preferredRest = [
       "models/gemini-2.5-flash",
-      "models/gemini-2.5-pro",
-      "models/gemini-2.0-flash-lite"
+      "models/gemini-flash-latest"
     ];
     const restModelId = preferredRest.find(id => names.includes(id));
     if (!restModelId) {
@@ -38,7 +37,7 @@ export async function POST(req: NextRequest) {
       tools: [{ googleSearch: {} }],
     });
 
-    const generationConfig = { temperature: 0.1, topP: 0.8, topK: 1, maxOutputTokens: 8192 };
+    const generationConfig = { temperature: 0.1, topP: 0.8, topK: 1, maxOutputTokens: 2048};
     const safetySettings = [
       { category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_NONE },
       { category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_NONE },
@@ -48,12 +47,14 @@ export async function POST(req: NextRequest) {
 
     const fullPrompt = prompt.replace("{$url}", url);
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
     try {
-      // Suppression du fetch inutile sur l'URL cible
-      const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
+      const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings, signal: controller.signal });
+      clearTimeout(timeout);
       return NextResponse.json({ text: result.response.text() });
     } catch (error: any) {
-      // Gère l’erreur proprement
+      clearTimeout(timeout);
       return NextResponse.json({ error: error.message || "Timeout ou erreur Gemini" }, { status: 504 });
     }
 
