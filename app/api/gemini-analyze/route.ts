@@ -19,8 +19,9 @@ export async function POST(req: NextRequest) {
 
     // Choix REST IDs
     const preferredRest = [
-      "models/gemini-2.5-flash",
-      "models/gemini-flash-latest"
+       "models/gemini-2.5-flash",
+      "models/gemini-2.5-pro",
+      "models/gemini-2.0-flash-lite"
     ];
     const restModelId = preferredRest.find(id => names.includes(id));
     if (!restModelId) {
@@ -48,7 +49,7 @@ export async function POST(req: NextRequest) {
     const fullPrompt = prompt.replace("{$url}", url);
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12000);
+    const timeout = setTimeout(() => controller.abort(), 18000);
     try {
       const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings, signal: controller.signal });
       clearTimeout(timeout);
