@@ -48,8 +48,23 @@ export async function POST(req: NextRequest) {
     ];
 
     const fullPrompt = prompt.replace("{$url}", url);
-    const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
-    return NextResponse.json({ text: result.response.text() });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+
+      const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
+      return NextResponse.json({ text: result.response.text() });
+    } catch (error) {
+      clearTimeout(timeout);
+      // Gère l’erreur proprement
+      return NextResponse.json({ error: "Timeout ou erreur Gemini" }, { status: 504 });
+    }
 
   } catch (err: any) {
     console.error('Server error:', err);
