@@ -58,6 +58,9 @@ export function NavBar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <Link href="/wp-headless" className="font-googletitre text-white/90 text-lg text-regular px-2">WP Headless</Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <Link href="/simulateur-tarifs" className="font-googletitre text-white/90 text-lg text-regular px-2">
                 Tarifs
               </Link>
@@ -215,7 +218,7 @@ ListItem.displayName = "ListItem";
 
 export default function Header() {
   return (
-    <header className="border-b top-0 z-50 shadow-sm sticky bg-mediumblue/40 backdrop-blur-md">
+    <header className="border-b top-0 z-50 shadow-sm sticky backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between px-2">
         <div className="basis-3/12 pt-2 md:pl-0 pl-4">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
@@ -242,7 +245,7 @@ export default function Header() {
               <span className="font-normal text-white">Vous êtes</span>
               <ChevronDown className="w-4 h-4" />
             </button>
-            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-mediumblue/40 to-mediumblue/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
+            <div className="absolute right-0 w-44 rounded-lg shadow-xl bg-gradient-to-b from-white/40 to-white/90 bg-opacity-90 backdrop-blur-sm border border-lightblue/30 z-50 hidden group-hover:block group-focus-within:block">
               <ul role="listbox">
                 <li>
                   <Link

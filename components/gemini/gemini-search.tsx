@@ -58,17 +58,20 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
       {!loading && !showResultPage && (
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6 w-5/6 max-w-xl mx-auto"
+          className="flex flex-col gap-6 min-w-[40vw] mx-auto"
         >
+          <div className="flex items-end">
+          <img src="/icons/optimize-icon.svg" alt="" className="w-16 h-16 pt-6" aria-hidden="true" />    
           <label
             htmlFor="gemini_url"
-            className="font-googletexte text-white/80"
-          >
-            URL WordPress à analyser
+            className="font-googletexte text-darkblue/80 "
+          >        
+          URL WordPress à analyser
           </label>
+          </div>
           <input
             id="gemini_url"
-            className="w-full bg-white/80 border rounded-2xl p-2 -mt-2.5 focus-visible:bg-white"
+            className="w-full bg-white/80 border rounded-2xl p-2 -mt-4 mb-2 focus-visible:bg-white"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="https://test.com"
@@ -80,11 +83,11 @@ export default function GeminiSearch({ onResult, prompt, systemInstruction }: Ge
           <Button
             type="submit"
             variant="default"
-            className="px-6 py-2 text-2xl font-googletitre font-semibold flex items-center justify-center shadow-lg shadow-white/20"
+            className="bg-coral text-white px-6 py-2 text-xl font-googletitre font-medium flex items-center justify-center"
             disabled={loading || !url.trim()}
           >
             Lancer l'analyse
-            <span className="ml-2 flex items-center text-darkblue">              
+            <span className="ml-2 flex items-center text-white">              
               <ArrowRight className="size-5"/>
             </span>
           </Button>
