@@ -51,12 +51,7 @@ export async function POST(req: NextRequest) {
     try {
       // Appel direct à Gemini, sans fetch inutile
       const result = await model.generateContent(fullPrompt, { generationConfig, safetySettings });
-      console.log("Gemini raw response:", result.response);
-      const text = result.response.text();
-      if (!text || !text.trim()) {
-        return NextResponse.json({ error: "Aucune analyse générée. Essayez avec une autre URL ou plus tard." }, { status: 200 });
-      }
-      return NextResponse.json({ text });
+      return NextResponse.json({ text: result.response.text() });
     } catch (error: any) {
       // Gère l’erreur proprement
       return NextResponse.json({ error: error.message || "Timeout ou erreur Gemini" }, { status: 504 });
