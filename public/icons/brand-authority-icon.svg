@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Background circle -->
+  <circle cx="40" cy="40" r="38" fill="#020F59" opacity="0.1"/>
+  
+  <!-- Shield base -->
+  <path d="M40 10 L58 18 L58 35 Q58 50 40 62 Q22 50 22 35 L22 18 Z" 
+        fill="#719ED9" stroke="#1F54BF" stroke-width="2">
+    <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Inner shield -->
+  <path d="M40 18 L52 24 L52 36 Q52 46 40 54 Q28 46 28 36 L28 24 Z" 
+        fill="#1F54BF" opacity="0.3"/>
+  
+  <!-- Star/badge center -->
+  <path d="M40 28 L42.5 35 L50 36 L45 41 L46.5 48.5 L40 44.5 L33.5 48.5 L35 41 L30 36 L37.5 35 Z" 
+        fill="#F29F05" stroke="#FFFFFF" stroke-width="0.5">
+    <animateTransform attributeName="transform" type="rotate" from="0 40 40" to="360 40 40" dur="20s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Decorative particles -->
+  <circle cx="25" cy="25" r="2" fill="#F29F05" opacity="0.6">
+    <animate attributeName="cy" values="25;23;25" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="55" cy="25" r="2" fill="#F29F05" opacity="0.6">
+    <animate attributeName="cy" values="25;23;25" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Glow lines -->
+  <line x1="30" y1="30" x2="34" y2="34" stroke="#719ED9" stroke-width="1.5" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="50" y1="30" x2="46" y2="34" stroke="#719ED9" stroke-width="1.5" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="1s" repeatCount="indefinite"/>
+  </line>
+</svg>

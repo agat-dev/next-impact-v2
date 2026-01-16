@@ -1,0 +1,18 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light mode team icon -->
+  <g transform="translate(40, 40)">
+    <circle cx="0" cy="-12" r="8" fill="#1F54BF"/>
+    <path d="M -12,8 Q -12,-2 0,-2 Q 12,-2 12,8 L 12,15 L -12,15 Z" fill="#1F54BF"/>
+    
+    <circle cx="-20" cy="-8" r="6" fill="#021373"/>
+    <path d="M -28,10 Q -28,2 -20,2 Q -12,2 -12,10 L -12,15 L -28,15 Z" fill="#021373"/>
+    
+    <circle cx="20" cy="-8" r="6" fill="#F29F05"/>
+    <path d="M 12,10 Q 12,2 20,2 Q 28,2 28,10 L 28,15 L 12,15 Z" fill="#F29F05"/>
+    
+    <circle cx="0" cy="-12" r="10" fill="none" stroke="#1F54BF" stroke-width="1" opacity="0.3">
+      <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

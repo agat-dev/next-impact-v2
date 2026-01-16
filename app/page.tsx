@@ -8,6 +8,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Logos } from "@/components/logos";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -93,11 +94,14 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Logos Section */}
+      <Logos className="max-w-6xl mx-auto grid gap-8" />
+
         {/* Détails offre */}
-        <div className="w-full max-w-7xl mx-auto px-6 py-12">
-          <div className="mb-6 text-center">
-            <h2 className="text-5xl tracking-tight text-regularblue font-medium mb-4 line-clamp-5">
-              Services WordPress & Headless
+        <div className="w-full max-w-7xl mx-auto mt-24 px-6 py-12">
+          <div className="mb-6 text-center bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-extralightblue/30">
+            <h2 className="text-4xl tracking-tight text-coral/80 font-googletexte mb-4 line-clamp-5">
+              <div className="text-5xl text-regularblue font-googletitre font-medium">Services</div> WordPress & Headless
             </h2>
             <p className="text-regularblue/80 text-lg max-w-3xl mx-auto">
               Grâce à des développements spécifiques alignés sur vos besoins,
@@ -112,80 +116,95 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
-            <div className="flex flex-col items-center p-6 justify-between bg-white rounded-2xl border border-extrlightblue/30">
+            {/* Première carte */}
+            <div className="flex flex-col p-6 justify-start items-start bg-white/10 backdrop-blur-lg rounded-2xl border border-extrlightblue/30">
               <img
-                src="/img/logo-wordpress.png"
+                src="/icons/frontend-icon-light.svg"
                 alt="WordPress Logo"
-                className="h-14 mb-5"
+                className="h-24 mb-5 object-contain"
               />
-              <h3 className="text-xl font-semibold text-regularblue mb-4">
+              <h3 className="text-3xl font-semibold text-regularblue ">
+                Site vitrine standard
+              </h3>
+              <p className="text-coral font-googletitre text-2xl font-medium pb-12">
                 WordPress
-              </h3>
-              <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
-                Site vitrine standard rapide à déployer
               </p>
-              <p className="text-mediumblue/80 text-center">
-                <ArrowRight className="inline h-4 w-4 mr-1" />
-                Parfait pour : TPE, PME, blogueurs, ou services marketing souhaitant une autonomie totale.
-              </p>
-              <Link
-                href="/services/wordpress"
-                className="mt-4 text-blue-500 hover:underline"
-              >
-                <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
-                  En savoir plus
-                </Button>
-              </Link>
+              <div className="text-mediumblue/80">
+                <div className="text-xl font-medium font-googletitre text-regularblue border-b border-coral pb-1 mb-4">
+                  Type d'entreprise
+                </div>
+                <p>
+                  TPE, PME, blogueurs, ou services marketing souhaitant une autonomie totale.
+                </p>
+              </div>
+              <div className="mt-8 text-mediumblue/80">
+                <div className="text-xl font-medium font-googletitre text-regularblue border-b border-orange pb-1 mb-4">
+                  Type de projets
+                </div>
+                <p>
+                  Blogs classiques, E-commerce avec WooCommerce (le plus simple à mettre en place), Projets avec un budget limité et des délais courts.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl border border-extrlightblue/30">
+            {/* Deuxième carte */}
+            <div className="flex flex-col p-6 justify-start items-start bg-white/10 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
               <img
-                src="/img/logo-astro.png"
+                src="/icons/brand-reach-icon-light.svg"
                 alt="Astro Logo"
-                className="h-14 mb-4"
+                className="h-24 mb-5 object-contain"
               />
-              <h3 className="text-xl font-semibold text-regularblue mb-4">
-                Headless Astro WordPress
+              <h3 className="text-3xl font-semibold text-regularblue ">
+                Sites vitrines Premium
               </h3>
-              <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium pb-5">
-                Sites vitrines haut de gamme
+              <p className="text-coral font-googletitre text-2xl font-medium pb-12">
+                WordPress Headless + Astro
               </p>
-              <p className="text-mediumblue/80 text-center">
-                <ArrowRight className="inline h-4 w-4 mr-1" />
-                Parfait pour : Entreprises soucieuses de leur image, du SEO et de la vitesse de chargement
-              </p>
-              <Link
-                href="/services/wordpress"
-                className="mt-4 text-blue-500 hover:underline"
-              >
-                <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
-                  En savoir plus
-                </Button>
-              </Link>
+              <div className="text-mediumblue/70">
+                <div className="text-xl font-medium font-googletitre text-regularblue border-b border-coral pb-1 mb-4">
+                  Idéal pour
+                </div>
+                <p>
+                  Entreprises soucieuses de leur image, du SEO et de la vitesse de chargement
+                </p>
+              </div>
+              <div className="mt-8 text-mediumblue/80">
+                <div className="text-xl font-medium font-googletitre text-regularblue border-b border-orange pb-1 mb-4">
+                  Type de projets
+                </div>
+                <p>
+                  Sites vitrines haut de gamme où l'expérience visuelle est centrale, Projets à gros volumes de contenus à charger rapidement.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl border border-extrlightblue/30">
+            {/* Troisième carte */}
+            <div className="flex flex-col p-6 justify-start items-start bg-white/10 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
               <img
-                src="/img/logo-nextjs.png"
+                src="/icons/saas-features-icon-light.svg"
                 alt="Next.js Logo"
-                className="h-12 mb-1"
+                className="h-24 mb-5 object-contain"
               />
-              <h3 className="text-xl font-semibold text-regularblue">
-                Headless Next.js WordPress
+              <h3 className="text-3xl font-semibold text-regularblue ">
+                Web Applications
               </h3>
-              <p className="text-mediumblue/80 text-center font-googletitre text-lg font-medium">
-                Site avec services en ligne
+              <p className="text-coral font-googletitre text-2xl font-medium pb-12">
+                WordPress Headless + Next.js
               </p>
-              <p className="text-mediumblue/80 text-center">
-                <ArrowRight className="inline h-4 w-4 mr-1" />
-                Parfait pour : Entreprises ayant besoin de fonctionnalités sur-mesure très spécifiques
-              </p>
-              <Link
-                href="/services/headless"
-                className="mt-4 text-blue-500 hover:underline"
-              >
-                <Button className="text-sm rounded-full bg-regularblue text-white px-4 py-2 hover:bg-regularblue/90">
-                  En savoir plus
-                </Button>
-              </Link>
+              <div className="text-mediumblue/80">
+                <div className="text-xl font-medium font-googletitre text-regularblue border-b border-coral pb-1 mb-4">
+                  Idéal pour
+                </div>
+                <p>
+                  Entreprises ayant besoin de fonctionnalités sur-mesure très spécifiques
+                </p>
+              </div>
+              <div className="mt-8 text-mediumblue/80">
+                <div className="text-xl font-medium font-googletitre text-regularblue border-b border-orange pb-1 mb-4">
+                  Type de projets
+                </div>
+                <p>
+                  Sites hybrides avec éléments d'interaction avancés (recherche temps réel, compte client), Web Apps complexes avec portails clients, simulateurs ou tableaux de bord etc.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -197,16 +216,16 @@ export default function Home() {
 
 
         {/* Advantages Section */}
-        <section className="w-full max-w-7xl mx-auto px-6 py-24">
+        <section className="w-full mx-auto px-6 py-24 mt-24 mb-36 bg-white/10 backdrop-blur-lg border-y border-extralightblue/30">
         <Advantages />
         </section>
 
 
         {/* Realisation Section */}
 
-        <div className="w-full max-w-7xl mx-auto px-6 py-24">
+        <div className="w-full mx-auto px-6 py-24 my-24 bg-white/10 backdrop-blur-lg border-y border-extralightblue/30">
           <div className="pb-12 text-center">
-            <h2 className="text-4xl md:text-5xl text-regularblue mb-6">
+            <h2 className="text-4xl md:text-5xl text-regularblue mb-6 font-medium">
               Réalisations
             </h2>
             <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
@@ -214,14 +233,17 @@ export default function Home() {
               spécifiques de mes clients.
             </p>
           </div>
-          <Realisations count={18} />
+          <Realisations count={6} />
         </div>
 
         {/* Testimonials Section */}
         <Testimonials />
 
         {/* FAQ Section */}
+
+        <div className="w-full mx-auto px-6 py-24 my-24 bg-white/10 backdrop-blur-lg border-y border-extralightblue/30">
         <FAQ />
+        </div>
 
         {/* CTA Section */}
         <CTASection />

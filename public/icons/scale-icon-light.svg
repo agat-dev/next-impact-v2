@@ -1,0 +1,21 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light mode scale icon -->
+  <g transform="translate(40, 40)">
+    <line x1="0" y1="-28" x2="0" y2="20" stroke="#021373" stroke-width="3"/>
+    <line x1="-25" y1="-20" x2="25" y2="-20" stroke="#021373" stroke-width="3"/>
+    
+    <g transform="translate(-20, -20)">
+      <animate attributeName="transform" values="translate(-20,-20);translate(-20,-15);translate(-20,-20)" dur="2s" repeatCount="indefinite"/>
+      <path d="M -8,0 L 0,15 L 8,0 Z" fill="#1F54BF"/>
+      <line x1="0" y1="0" x2="0" y2="-10" stroke="#021373" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(20, -20)">
+      <animate attributeName="transform" values="translate(20,-20);translate(20,-25);translate(20,-20)" dur="2s" repeatCount="indefinite"/>
+      <path d="M -8,0 L 0,15 L 8,0 Z" fill="#F29F05"/>
+      <line x1="0" y1="0" x2="0" y2="-10" stroke="#021373" stroke-width="2"/>
+    </g>
+    
+    <rect x="-8" y="20" width="16" height="8" rx="2" fill="#021373"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light mode analytics icon -->
+  <g transform="translate(40, 40)">
+    <line x1="-25" y1="20" x2="25" y2="20" stroke="#1F54BF" stroke-width="2"/>
+    <line x1="-25" y1="20" x2="-25" y2="-20" stroke="#1F54BF" stroke-width="2"/>
+    
+    <rect x="-20" y="5" width="8" height="15" rx="1" fill="#1F54BF">
+      <animate attributeName="height" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="5;0;5" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="-8" y="-5" width="8" height="25" rx="1" fill="#F29F05">
+      <animate attributeName="height" values="25;30;25" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="-5;-10;-5" dur="2.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="4" y="0" width="8" height="20" rx="1" fill="#021373">
+      <animate attributeName="height" values="20;25;20" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="0;-5;0" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="16" y="-10" width="8" height="30" rx="1" fill="#1F54BF">
+      <animate attributeName="height" values="30;35;30" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="-10;-15;-10" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+    
+    <circle cx="25" cy="-15" r="3" fill="#F29F05">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

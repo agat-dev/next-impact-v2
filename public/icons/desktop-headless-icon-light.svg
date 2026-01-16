@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Light mode desktop headless icon with Next.js -->
+  <rect x="10" y="8" width="60" height="42" rx="3" fill="#1F54BF" opacity="0.1" stroke="#1F54BF" stroke-width="2"/>
+  <rect x="13" y="11" width="54" height="34" rx="1" fill="#021373"/>
+  
+  <g transform="translate(40, 28)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">N</text>
+    <circle r="12" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+  </g>
+  
+  <rect x="35" y="50" width="10" height="6" fill="#021373"/>
+  <rect x="28" y="56" width="24" height="4" rx="2" fill="#1F54BF"/>
+  
+  <circle cx="58" cy="16" r="3" fill="#F29F05">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="50" cy="16" r="2" fill="#1F54BF">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -66,10 +66,17 @@ export function NavBar() {
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
+            </NavigationMenuItem>         
+            <NavigationMenuItem>
+              <Link href="/demo" className='font-googletitre text-regularblue text-lg font-medium px-6'>Démo</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
-            </NavigationMenuItem>
+            </NavigationMenuItem>         
+            <NavigationMenuItem>
+              <Link href="/tarifs" className='font-googletitre text-regularblue text-lg font-medium px-6'>Tarifs</Link>
+            </NavigationMenuItem>    
+            {/*}
             <NavigationMenuItem>
               <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Ressources</NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -104,6 +111,7 @@ export function NavBar() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
+            */}
           </NavigationMenuList>
         </NavigationMenu>
       </nav>
@@ -316,17 +324,17 @@ export default function Header() {
           <div className="flex items-center gap-4 pr-4">
             <Link
               href="tel:0673981638">
-                <PhoneIcon className="text-regularblue" />
+                <PhoneIcon className="text-mediumblue h-5" />
             </Link>
             <Link
             href="mailto:agathe@next-impact.digital"
             >
-              <MailIcon className="text-regularblue" />
+              <MailIcon className="text-mediumblue h-5" />
             </Link>
             <Link
               href="https://calendar.app.google/HuwRpoVGoKBj2PkX8"
             >
-              <CalendarIcon className="text-regularblue" />
+              <CalendarIcon className="text-mediumblue h-5" />
             </Link>
           </div>
 

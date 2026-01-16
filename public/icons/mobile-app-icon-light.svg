@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Light mode mobile app icon -->
+  <rect x="22" y="5" width="36" height="70" rx="5" fill="#1F54BF" opacity="0.1" stroke="#1F54BF" stroke-width="2"/>
+  <rect x="25" y="12" width="30" height="50" rx="1" fill="#021373"/>
+  
+  <g transform="translate(40, 37)">
+    <circle r="8" fill="#1F54BF" opacity="0.3"/>
+    <circle r="3" fill="#61DAFB"/>
+    <ellipse rx="12" ry="4" fill="none" stroke="#61DAFB" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="12" ry="4" fill="none" stroke="#61DAFB" stroke-width="1" transform="rotate(60)">
+      <animateTransform attributeName="transform" type="rotate" from="60" to="420" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse rx="12" ry="4" fill="none" stroke="#61DAFB" stroke-width="1" transform="rotate(120)">
+      <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  
+  <circle cx="40" cy="68" r="3" fill="#1F54BF"/>
+  <rect x="36" y="7" width="8" height="2" rx="1" fill="#1F54BF" opacity="0.5"/>
+</svg>

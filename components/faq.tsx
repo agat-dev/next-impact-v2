@@ -3,7 +3,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./
 export default function FAQ() {
 
     return (
-        <section id="faq" className="py-24 md:py-32">
+        <section id="faq">
             <div className="container">
                 <div className="text-center md:mb-16">
                     <h2 className="text-4xl md:text-5xl text-regularblue mb-6">Questions fréquentes</h2>

@@ -19,7 +19,7 @@ export function CTASection() {
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button
                   size="lg"
-                  className="gap-1 text-lg font-medium rounded-full text-white bg-pink-600 hover:text-pink-600/90 hover:bg-transparent transition-all duration-300"
+                  className="gap-1 text-lg font-medium rounded-full text-white bg-coral hover:bg-coral/90 hover:text-white transition-all duration-300"
                   asChild
                 >
                   <a href="tel:0673981638">
@@ -29,7 +29,7 @@ export function CTASection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-1 text-lg font-medium rounded-full border-pink-600 text-pink-600 hover:bg-transparent hover:bg-pink-600 hover:text-white transition-all duration-300"
+                  className="gap-1 text-lg font-medium rounded-full border-coral text-coral hover:bg-white/90 hover:text-coral/90 transition-all duration-300"
                   asChild
                 >
                   <a href="mailto:agathe@next-impact.digital">

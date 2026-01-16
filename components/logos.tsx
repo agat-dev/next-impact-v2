@@ -18,7 +18,7 @@ export function Logos({ className }: { className?: string }) {
   ];
 
   return (
-    <div className={cn("max-w-6xl mx-auto grid gap-8", className)} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
+    <div className={cn("w-full mx-auto py-8 grid gap-8 bg-white/30 backdrop-blur-md border-slate-200/60 border-y", className)} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
       {logos.map((logo) => (
         <div key={logo.src} className="flex items-center justify-center p-4">
           <Image src={logo.src} alt={logo.alt} width={110} height={50} quality={100} />

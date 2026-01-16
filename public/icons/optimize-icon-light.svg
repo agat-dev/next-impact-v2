@@ -1,0 +1,23 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light mode optimize icon -->
+  <g transform="translate(40, 40)">
+    <circle r="25" fill="none" stroke="#1F54BF" stroke-width="2"/>
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+      <circle cx="25" cy="0" r="4" fill="#F29F05"/>
+      <circle cx="-25" cy="0" r="3" fill="#1F54BF"/>
+      <circle cx="0" cy="25" r="3" fill="#021373"/>
+      <circle cx="0" cy="-25" r="3" fill="#1F54BF"/>
+    </g>
+    
+    <circle r="15" fill="none" stroke="#021373" stroke-width="1.5" opacity="0.5"/>
+    
+    <g transform="rotate(-45)">
+      <rect x="-3" y="-12" width="6" height="24" rx="3" fill="#1F54BF"/>
+      <circle cy="-12" r="5" fill="#F29F05">
+        <animate attributeName="cy" values="-12;12;-12" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>

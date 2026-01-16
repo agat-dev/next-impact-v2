@@ -41,8 +41,8 @@ export default function RootLayout({
   }}
 />
       <body>
-        <div className="fixed inset-0 z-0">
-        <img src="/bg/chipset-tech-background-light.svg" alt="" className="w-full h-full object-cover opacity-20" />
+        <div className="fixed inset-0 -z-10">
+        <img src="/bg/chipset-tech-background-light.svg" alt="" className="w-full h-full object-cover opacity-40" />
         </div>
         <Header />   
         {children}
