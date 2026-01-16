@@ -8,63 +8,71 @@ import { Logos } from "./logos";
 export default function Hero() {
   return (
     <section className="h-full relative pt-12 pb-24 md:pt-24 md:pb-24 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-brand-500/20 rounded-full blur-[120px]"></div>
-      <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-brand-700/30 rounded-full blur-[100px]"></div>
 
       <div className="container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Text Content */}
-        <div className="flex flex-col space-y-8 lg:col-span-7">
+        <div className="flex flex-col lg:col-span-7 bg-white/5 p-8 rounded-xl shadow-lg backdrop-blur-sm">
           <span className="w-max inline-flex items-center px-3 py-1 text-xs font-googletexte font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
             services et conseil
           </span>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight tracking-tighter">
-            Freelance
-            <br />
-            <span className="font-googletexte md:text-5xl text-4xl text-regularblue/80">
-              WordPress et Headless
-            </span>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-googletitre leading-tight tracking-tighter">
+            Développeuse
+            <div className="mt-2 font-googletitre md:text-5xl text-4xl text-mediumblue font-medium">
+              WordPress Headless
+            </div>
           </h1>
+          <div className="mt-4 flex gap-8">
+            <Image
+              src="/img/logo-wordpress-small.png"
+              alt="Logo WordPress"
+              width={36}
+              height={36}
+              className="object-contain"
+            />
+            <Image
+              src="/img/logo-astro.png"
+              alt="Logo Astro"
+              width={100}
+              height={48}
+              className="object-contain"
+            />
+            <Image
+              src="/img/logo-nextjs.png"
+              alt="Logo Next.js"
+              width={100}
+              height={48}
+              className="object-contain"
+            />
+          </div>
 
-          <p className="font-googletexte text-xl text-regularblue/70 max-w-xl">
-            La simplicité de WordPress, la qualité du développement pour toutes les entreprises et organisations.
+          <p className="mt-16 font-googletexte text-xl text-regularblue max-w-xl">
+            Pour un WordPress ultra-rapide, moderne et flexible grâce au headless CMS.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-5 pt-4">
+          <div className="mt-4 flex flex-col sm:flex-row gap-5">
             <Link href="/services/wordpress" className="group">
               <Button
                 size="lg"
                 variant="outline"
-                className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100/40"
+                className="relative overflow-hidden rounded-full text-md font-googletitre text-white/90 bg-regularblue border-blue-100/40 hover:bg-regularblue/90 hover:text-white/80"
               >
                 WordPress
-                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                <BorderBeamEffect />
               </Button>
             </Link>
             <Link href="/services/headless" className="group">
               <Button
                 size="lg"
                 variant="outline"
-                className="relative overflow-hidden rounded-full text-md font-googletitre border-blue-100/40"
+                className="relative overflow-hidden rounded-full text-md font-googletitre text-white/90 bg-regularblue border-blue-100/40 hover:bg-regularblue/90 hover:text-white/80"
               >
                 Headless
-                <BorderBeamEffect />
+              <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+
               </Button>
             </Link>
           </div>
 
-          <Button
-            className="w-fit md:flex gap-1 rounded-full px-6 bg-pink-600 text-white hover:bg-transparent hover:text-pink-600 transition-all duration-300"
-            variant="outline"
-            asChild
-          >
-            <a href="mailto:agathe@next-impact.digital">
-              Contactez-moi
-              <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
         </div>
 
         {/* Hero Image */}

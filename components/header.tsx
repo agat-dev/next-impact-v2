@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from './ui/button'
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu as MenuIcon, X as CloseIcon, List } from "lucide-react"
+import { Menu as MenuIcon, X as CloseIcon, PhoneIcon, MailIcon, CalendarIcon } from "lucide-react"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
@@ -16,8 +16,6 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Logo } from "./logo"
 
 export function NavBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -314,44 +312,24 @@ export default function Header() {
           <NavBar />
         </div>
 
-        <div className='md:basis-1/6 md:flex justify-end hidden'>
-                {/*
-            <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-              <NavigationMenuTrigger className="hidden md:flex gap-1 rounded-full px-6 bg-regularblue text-white hover:bg-regularblue/80 transition-all duration-900 ease-in-out font-regular">
-                Vous êtes
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="bg-lightblue/5 p-2 min-w-[180px]">
-                <li>
-                  <NavigationMenuLink asChild>
-                  <Link href="/vous-êtes/artisan" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
-                    Artisan
-                  </Link>
-                  </NavigationMenuLink>
-                </li>
-                <li>
-                  <NavigationMenuLink asChild>
-                  <Link href="/vous-etes/acteur-tourisme" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
-                    Acteur du tourisme
-                  </Link>
-                  </NavigationMenuLink>
-                </li>
-                <li>
-                  <NavigationMenuLink asChild>
-                  <Link href="/vous-etes/pme-industrielle" className="block px-3 py-2 rounded-md text-regularblue hover:bg-lightblue/10 transition">
-                    PME industrielle
-                  </Link>
-                  </NavigationMenuLink>
-                </li>
-                </ul>
-              </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-            </NavigationMenu>
-            
-        */}
+        <div className='md:basis-1/6 md:flex justify-end items-end hidden'>
+          <div className="flex items-center gap-4 pr-4">
+            <Link
+              href="tel:0673981638">
+                <PhoneIcon className="text-regularblue" />
+            </Link>
+            <Link
+            href="mailto:agathe@next-impact.digital"
+            >
+              <MailIcon className="text-regularblue" />
+            </Link>
+            <Link
+              href="https://calendar.app.google/HuwRpoVGoKBj2PkX8"
+            >
+              <CalendarIcon className="text-regularblue" />
+            </Link>
+          </div>
+
         </div>
       </div>
     </header>
