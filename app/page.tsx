@@ -226,7 +226,7 @@ export default function Home() {
         <div className="w-full mx-auto px-6 py-24 my-24 bg-white/10 backdrop-blur-lg border-y border-extralightblue/30">
           <div className="pb-12 text-center">
             <h2 className="text-4xl md:text-5xl text-regularblue mb-6 font-medium">
-              Réalisations
+              Etudes de cas
             </h2>
             <p className="text-xl text-regularblue/70 max-w-3xl mx-auto">
               Chaque projet est unique et conçu pour répondre aux besoins
