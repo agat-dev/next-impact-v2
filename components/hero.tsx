@@ -73,7 +73,7 @@ export default function Hero() {
             {/* Placeholder for profile image - replace with actual image */}
             <div className="bg-gradient-to-br from-brand-400/80 to-brand-600/80 w-full h-full flex items-center justify-center">
               <Image
-                src="/img/avatar.png" // Replace with your image path
+                src="/img/agathe.png" // Replace with your image path
                 alt="Profile"
                 className="bg-white object-cover w-full h-full rounded-xl"
                 width={500} // Adjust width as needed
