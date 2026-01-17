@@ -1,5 +1,4 @@
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { MagicCard } from './magicui/magic-card';
 
 const Testimonials = () => {
   const testimonials = [
@@ -45,15 +44,14 @@ const Testimonials = () => {
     <section id="testimonials" className="py-24 md:py-32 ">
       <div className="container">
         <div className='text-center'>
-          <h2 className="text-4xl md:text-5xl text-regularblue mb-6">Ce qu'en disent mes clients</h2>
+          <h2 className="text-4xl md:text-5xl text-regularblue font-medium mb-6">Ce qu'en disent mes clients</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
           {testimonials.map((testimonial, index) => (
-          <MagicCard className="h-max rounded-2xl">
             <Card 
               key={index} 
-              className="bg-white border border-pink-200/40 rounded-2xl transition-all overflow-hidden shadow-none"
+              className="bg-yellow-50/10 backdrop-blur-md border border-lightyellow/40 rounded-2xl transition-all overflow-hidden shadow-none"
             >
               <CardContent className="pt-8 flex-grow">     
                 <div className="flex items-center mb-4">
@@ -77,7 +75,6 @@ const Testimonials = () => {
                 </div>
               </CardFooter>
             </Card>
-          </MagicCard>
           ))}
         </div>
       </div>

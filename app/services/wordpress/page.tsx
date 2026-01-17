@@ -25,6 +25,7 @@ import { DecisionHelper } from "@/components/decision-helper";
 import { ApplicationsTabs } from "@/components/applications-tabs";
 import { FeaturesTabs } from "@/components/services/features";
 import { Metadata } from "next";
+import PageHero from "@/components/page-hero";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -139,42 +140,17 @@ export default function SitesCorporate() {
   return (
     <>
       <div className="min-h-screen">
-
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 md:py-16 pt-16 text-center">
-          <Badge
-            variant="outline"
-            className="mb-4 border-regularblue/20 text-regularblue"
-          >
-            Solution recommandée pour 90% des projets
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-medium tracking-tight mb-6">
-            Sites web <span className="text-regularblue">WordPress</span>
-          </h1>
-          <p className="text-xl text-regularblue/80 max-w-3xl mx-auto mb-8">
-            WordPress traditionnel unit la gestion de contenu et
-            l'affichage dans une solution intégrée et globale.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#services">
-              <Button
-                size="lg"
-                className="gap-1 rounded-full text-white bg-regularblue/90 hover:bg-regularblue/80"
-              >
-                Services
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="#tarifs">
-              <Button
-                size="lg"
-                className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30"
-              >
-                Tarifs
-              </Button>
-            </Link>
-          </div>
-        </section>
+        <PageHero
+          badge="services et conseil"
+          titre1="Sites web"
+          titre2="WordPress"
+          sousTitre="WordPress traditionnel unit la gestion de contenu et l'affichage dans une solution intégrée et globale."
+          cta1Text="Services"
+          cta1Link="#services"
+          cta2Text="Tarifs"
+          cta2Link="#tarifs"
+          illustration="/illustrations/ai-audit-banner-light.svg"
+        />
 
 
         {/* Applications en Tabs */}

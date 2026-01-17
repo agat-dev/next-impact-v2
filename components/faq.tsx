@@ -6,7 +6,7 @@ export default function FAQ() {
         <section id="faq">
             <div className="container">
                 <div className="text-center md:mb-16">
-                    <h2 className="text-4xl md:text-5xl text-regularblue mb-6">Questions fréquentes</h2>
+                    <h2 className="text-4xl md:text-5xl text-regularblue font-medium mb-6">Questions fréquentes</h2>
                     <p className="text-xl max-w-3xl mx-auto text-regularblue/70">
                         Vous avez des questions ? Voici les réponses aux questions les plus fréquentes que je reçois.
                     </p>
@@ -15,7 +15,7 @@ export default function FAQ() {
             <div className="mx-auto max-w-3xl py-12">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>Quelle est la différence entre WordPress classique et WordPress Headless, et lequel convient le mieux à mon projet ?</AccordionTrigger>
+                  <AccordionTrigger>Quelle différence entre WordPress classique et WordPress Headless ?</AccordionTrigger>
                   <AccordionContent>
                     WordPress classique est une solution complète avec interface d'administration et affichage intégrés, 
                     idéale pour la plupart des sites web traditionnels. 
@@ -29,19 +29,17 @@ export default function FAQ() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
-                  <AccordionTrigger>Combien coûte la création ou la refonte d'un site WordPress et quels sont les délais de réalisation ?</AccordionTrigger>
+                  <AccordionTrigger>Quels tarifs et quels délais ?</AccordionTrigger>
                   <AccordionContent>
-                    Nos tarifs varient selon la complexité : site vitrine simple (1 500-3 500€), site e-commerce (3 000-7 000€), 
-                    WordPress Headless sur-mesure (4 000-15 000€+). <br /><br />
                     Les délais s'échelonnent de 3-4 semaines pour un site basique à 8-12 semaines pour des projets complexes. 
                     Chaque devis est personnalisé après analyse de vos besoins spécifiques, du nombre de pages, 
-                    des fonctionnalités requises et du niveau de personnalisation. 
-                    <br /><br />Simulateur en ligne : 
-                    <a href="/simulateur-tarifs" className="text-regularblue font-medium hover:underline"> Estimer le tarif de mon site web</a>.
+                    des fonctionnalités requises et du niveau de personnalisation. <br /><br />
+                  Nos tarifs varient selon la complexité : 
+                    <a href="/simulateur-tarifs" className="text-regularblue font-medium hover:underline"> Simuler le tarif de mon site web</a>.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
-                  <AccordionTrigger>Mon site actuel peut-il être migré vers WordPress sans perdre mon référencement et mes données ?</AccordionTrigger>
+                  <AccordionTrigger>Comment se passe la migration vers WordPress Headless ?</AccordionTrigger>
                   <AccordionContent>
                     Oui, nous réalisons des migrations complètes en préservant votre SEO grâce aux redirections 301, à la conservation de vos URLs et métadonnées. 
                     Toutes vos données (contenus, images, utilisateurs) sont transférées et vérifiées minutieusement. <br /><br />
@@ -50,7 +48,7 @@ export default function FAQ() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-4">
-                  <AccordionTrigger>Le site sera-t-il responsive et optimisé pour les mobiles et les moteurs de recherche ?</AccordionTrigger>
+                  <AccordionTrigger>Le site est-il optimisé pour les mobiles et le SEO ?</AccordionTrigger>
                   <AccordionContent>
                     Absolument, tous nos sites sont conçus mobile-first et s'adaptent parfaitement à tous les écrans (smartphones, tablettes, ordinateurs). <br /><br />
                     L'optimisation SEO est intégrée dès la conception : structure technique optimisée, vitesse de chargement, balises sémantiques, 
@@ -59,7 +57,7 @@ export default function FAQ() {
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-5">
-                  <AccordionTrigger>Pourrai-je modifier facilement le contenu de mon site une fois terminé, et proposez-vous une formation ?</AccordionTrigger>
+                  <AccordionTrigger>Comment modifier le contenu de mon site une fois terminé ?</AccordionTrigger>
                   <AccordionContent>
                     WordPress est reconnu pour sa facilité d'utilisation : vous pourrez modifier textes, images et pages via une interface intuitive, sans connaissances techniques.
                     <br /><br /> 

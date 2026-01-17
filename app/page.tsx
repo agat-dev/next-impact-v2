@@ -99,7 +99,7 @@ export default function Home() {
 
         {/* Détails offre */}
         <div className="w-full max-w-7xl mx-auto mt-24 px-6 py-12">
-          <div className="mb-6 text-center bg-white/60 backdrop-blur-sm p-6 rounded-2xl border border-extralightblue/30">
+          <div className="mb-6 text-center bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-extralightblue/30">
             <h2 className="text-4xl tracking-tight text-coral/80 font-googletexte mb-4 line-clamp-5">
               <div className="text-5xl text-regularblue font-googletitre font-medium">Services</div> WordPress & Headless
             </h2>
@@ -117,7 +117,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
             {/* Première carte */}
-            <div className="flex flex-col p-6 justify-start items-start bg-white/10 backdrop-blur-lg rounded-2xl border border-extrlightblue/30">
+            <div className="flex flex-col p-6 justify-start items-start bg-amber-50/30 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
               <img
                 src="/icons/frontend-icon-light.svg"
                 alt="WordPress Logo"
@@ -147,7 +147,7 @@ export default function Home() {
               </div>
             </div>
             {/* Deuxième carte */}
-            <div className="flex flex-col p-6 justify-start items-start bg-white/10 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
+            <div className="flex flex-col p-6 justify-start items-start bg-rose-50/30 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
               <img
                 src="/icons/brand-reach-icon-light.svg"
                 alt="Astro Logo"
@@ -177,7 +177,7 @@ export default function Home() {
               </div>
             </div>
             {/* Troisième carte */}
-            <div className="flex flex-col p-6 justify-start items-start bg-white/10 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
+            <div className="flex flex-col p-6 justify-start items-start bg-amber-50/30 backdrop-blur-lg rounded-2xl border border-extralightblue/30">
               <img
                 src="/icons/saas-features-icon-light.svg"
                 alt="Next.js Logo"
@@ -216,14 +216,14 @@ export default function Home() {
 
 
         {/* Advantages Section */}
-        <section className="w-full mx-auto px-6 py-24 mt-24 mb-36 bg-white/10 backdrop-blur-lg border-y border-extralightblue/30">
+        <section className="w-full mx-auto px-6 py-24 mt-24 mb-36 bg-lightblue/5 backdrop-blur-lg border-y border-extralightblue/30">
         <Advantages />
         </section>
 
 
         {/* Realisation Section */}
 
-        <div className="w-full mx-auto px-6 py-24 my-24 bg-white/10 backdrop-blur-lg border-y border-extralightblue/30">
+        <div className="w-full mx-auto px-6 py-24 my-24 bg-white/5 backdrop-blur-lg border-y border-extralightblue/30">
           <div className="pb-12 text-center">
             <h2 className="text-4xl md:text-5xl text-regularblue mb-6 font-medium">
               Etudes de cas

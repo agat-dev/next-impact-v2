@@ -9,7 +9,7 @@ export default function Hero() {
 
       <div className="container grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Text Content */}
-        <div className="flex flex-col lg:col-span-7 gap-2 bg-white/5 p-8 rounded-xl shadow-lg backdrop-blur-sm">
+        <div className="flex flex-col lg:col-span-7 gap-2 bg-rose-50/20 p-8 rounded-xl shadow-lg backdrop-blur-sm">
           <span className="w-max inline-flex items-center px-3 py-1 text-xs font-googletexte font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
             services et conseil
           </span>

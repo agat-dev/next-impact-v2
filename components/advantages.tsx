@@ -10,16 +10,16 @@ export default function Advantages() {
 
   const features = [
     {
-      id: "analytics",
+      id: "frontend",
+      title: "Front-end flexible et puissant",
+      description: "Des front-end adaptés aux exigeances du web moderne et de vos visiteurs développées sur-mesure avec les dernières technologies.",
+      image: "/img/desktop-screen-next-event.jpg?height=400&width=600",
+    },
+    {
+      id: "administration",
       title: "Admin de WordPress",
       description: "En conservant WordPress comme outil d'administration, votre site web reste facilement administrable.",
       image: "/img/desktop-screen-wordpress.jpg?height=400&width=600",
-    },
-    {
-      id: "automation",
-      title: "Interface au design moderne",
-      description: "Des front-end adaptés aux exigeances du web moderne et de vos visiteurs développées sur-mesure avec les dernières technologies.",
-      image: "/img/desktop-screen-next-event.jpg?height=400&width=600",
     },
   ]
    
@@ -44,9 +44,9 @@ export default function Advantages() {
                     key={feature.id}
                     onClick={() => setSelectedFeature(feature.id)}
                     className={cn(
-                      "w-full text-left p-4 rounded-lg border transition-all duration-200 group",
+                      "w-full text-left p-4 rounded-3xl border transition-all duration-200 group",
                       selectedFeature === feature.id
-                        ? "bg-white/80 border-coral/20"
+                        ? "bg-rose-50/30 border-rose-200"
                         : "bg-white/70 border-border hover:bg-white/80",
                     )}
                   >
@@ -54,7 +54,7 @@ export default function Advantages() {
                       <div className="flex-1">
                         <h3
                           className={cn(
-                            "font-medium text-2xl mb-2 transition-colors",
+                            "font-medium text-3xl transition-colors",
                             selectedFeature === feature.id ? "text-coral" : "text-regularblue group-hover:text-foreground",
                           )}
                         >
@@ -62,9 +62,9 @@ export default function Advantages() {
                         </h3>
                         <p
                           className={cn(
-                            "text-sm transition-colors",
+                            "transition-colors border-t border-coral pt-6",
                             selectedFeature === feature.id
-                              ? "text-regularblue"
+                              ? "text-mediumblue/80"
                               : "text-regularblue/80 group-hover:text-regularblue",
                           )}
                         >
@@ -87,7 +87,7 @@ export default function Advantages() {
 
             {/* Feature Video + Content with Framer Motion */}
             <div className="lg:sticky lg:top-8">
-              <div className="relative aspect-[3/2] rounded-xl overflow-hidden bg-muted border shadow-lg">
+              <div className="relative aspect-[3/2] rounded-3xl overflow-hidden bg-muted border shadow-lg">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentFeature.id}
@@ -107,7 +107,7 @@ export default function Advantages() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4">
                         <h4 className="font-medium text-regularblue mb-1">{currentFeature.title}</h4>
                         <p className="text-sm text-regularblue/80">{currentFeature.description}</p>
                       </div>

@@ -13,7 +13,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className="border-b pb-8"
+    className="pb-8"
     {...props}
   />
 ))
@@ -27,11 +27,11 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className=
-        "flex flex-1 items-center justify-between py-4 text-left text-xl font-medium text-regularblue transition-all [&[data-state=open]>svg]:rotate-180"      
+        "w-max flex flex-1 items-center justify-between p-6 rounded-2xl text-left text-2xl font-medium text-regularblue bg-regularblue/5 backdrop-blur-md border border-regularblue/10 transition-all [&[data-state=open]>svg]:rotate-180"      
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <ChevronDown className="ml-8 h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
@@ -43,7 +43,7 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-base/6 font-adobetext font-normal text-mediumblue/70 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="pt-6 overflow-hidden text-lg font-adobetext font-normal text-mediumblue/70 transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
