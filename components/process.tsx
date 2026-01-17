@@ -10,14 +10,13 @@ export default function Process() {
     return (
         <section className="container mx-auto px-4 py-24">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-medium text-regularblue mb-4">
+            <h2 className="text-5xl font-medium text-regularblue mb-4">
               Méthode éprouvée en 5 étapes
             </h2>
             <p className="text-lg text-regularblue/80">
               Un processus rodé pour votre réussite
             </p>
           </div>
-          <CDCCard />
 
           <div className="relative max-w-4xl mx-auto" ref={timelineRef}>
             {/* Ligne centrale dégradée */}
@@ -26,7 +25,7 @@ export default function Process() {
               style={{
                 height: "100%",
                 background:
-                  "linear-gradient(to bottom, #f9a8d4 0%, #60a5fa 100%)", // pink-300 -> blue-300
+                  "linear-gradient(to bottom, lightyellow 0%, coral 100%)", // pink-300 -> blue-300
               }}
             />
             <ol className="relative z-10 grid md:grid-cols-1 gap-0">
@@ -57,7 +56,7 @@ export default function Process() {
                 },
                 {
                   step: "5",
-                  title: "Mise en Ligne",
+                  title: "Mise en Ligne et formation",
                   duration: "1 semaine",
                   description: "Migration, tests et support",
                 },
@@ -80,7 +79,7 @@ export default function Process() {
                         : "mr-auto text-left"
                     }`}
                   >
-                    <div className="bg-white rounded-2xl border border-pink-300/30 p-6">
+                    <div className="bg-white rounded-2xl border border-lightyellow/50 p-6">
                       <div className="flex md:flex-row flex-col items-center gap-2 mb-2">
                         <span className="text-lg font-googletitre font-medium text-regularblue">
                           {phase.title}

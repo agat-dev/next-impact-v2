@@ -132,8 +132,6 @@ export default function Home() {
         <FAQ />
         </div>
 
-        {/* CTA Section */}
-        <CTASection />
       </main>
     </>
   );

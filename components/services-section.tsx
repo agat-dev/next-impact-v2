@@ -65,7 +65,7 @@ const ServicesSection = () => (
             Idéal pour
           </div>
           <p>
-            Entreprises soucieuses de leur image, du SEO et de la vitesse de chargement
+            Entreprises avec enjeu d'image, de SEO et de performance
           </p>
         </div>
         <div className="mt-8 text-mediumblue/80">
@@ -95,7 +95,7 @@ const ServicesSection = () => (
             Idéal pour
           </div>
           <p>
-            Entreprises ayant besoin de fonctionnalités sur-mesure très spécifiques
+            Entreprises ayant besoin de fonctionnalités spécifiques
           </p>
         </div>
         <div className="mt-8 text-mediumblue/80">

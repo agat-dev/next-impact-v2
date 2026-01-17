@@ -27,12 +27,12 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section className="h-full grid grid-cols-1 md:grid-cols-2 items-end place-content-end gap-8 container mx-auto px-4 md:py-16 pt-16 text-center">
-      <div className="flex flex-col items-start mb-8 md:mb-12 bg-extralightblue/10 p-8 rounded-xl shadow-lg backdrop-blur-sm max-w-3xl animate-fadeInUp">
+      <div className="flex flex-col items-start gap-6 mb-8 md:mb-12 bg-extralightblue/10 p-8 rounded-xl shadow-lg backdrop-blur-sm max-w-3xl animate-fadeInUp">
         <span className="w-max inline-flex items-center px-3 py-1 text-xs font-googletexte font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
           {badge}
         </span>
         <h1 className="text-4xl text-left md:text-5xl font-medium text-coral tracking-tight mb-6">
-          {titre1} <div className="text-regularblue text-2xl md:text-4xl">{titre2}</div>
+          {titre1} <div className="mt-2 text-regularblue text-2xl md:text-4xl">{titre2}</div>
         </h1>
         <p className="text-xl text-regularblue/80 text-left mb-8">
           {sousTitre}

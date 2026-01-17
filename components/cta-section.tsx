@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTASection() {
     return (
-        <section className="w-full py-12 ">
+        <section className="w-full pt-12 md:pt-20">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-8 text-center">
               <div className="space-y-8">
@@ -36,21 +36,6 @@ export function CTASection() {
                   </a>
                 </Button>
               </div>
-              {/*}
-              <p className="text-sm">Ou inscrivez-vous à notre newsletter pour recevoir nos conseils et astuces</p>
-              <div className="w-full max-w-sm">
-                <div className="flex space-x-2">
-                  <Input
-                    type="email"
-                    placeholder="Votre email"
-                    className="max-w-lg flex-1 border-regularblue/20 focus:border-regularblue/80"
-                  />
-                  <Button type="submit" className="gap-1 rounded-full text-regularblue bg-extralightblue/40 hover:bg-extralightblue/30">
-                    S'inscrire
-                  </Button>
-                </div>
-              </div>
-              */}
             </div>
           </div>
         </section>

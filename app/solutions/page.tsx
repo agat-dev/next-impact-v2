@@ -2,50 +2,48 @@
 
 import PageHero from "@/components/page-hero"
 import SolutionsOffers from "@/components/solutions/SolutionsOffers"
-import SolutionsHeadless from "@/components/solutions/SolutionsHeadless"
+import { SolutionsComparisonTable } from "@/components/solutions/SolutionsComparisonTable"
 import SolutionsGuide from "@/components/solutions/SolutionsGuide"
-import SolutionsProcess from "@/components/solutions/SolutionsProcess"
+import Process from "@/components/process"
 import SolutionsFAQ from "@/components/solutions/SolutionsFAQ"
-import SolutionsCTA from "@/components/solutions/SolutionsCTA"
 import { ArrowRight, CheckCircle2, ChevronDown, Zap, Shield, Users, TrendingUp, Rocket, Smartphone, Monitor, Code, Settings, FileSearch, GraduationCap } from "lucide-react"
-import { Button } from "@/components/ui/button"
+
 
 export default function SolutionsPage() {
-  // ...existing code...
 
   const offers = [
     {
       name: "ESSENTIEL",
       tech: "WordPress Standard",
       target: "Pour les TPE/PME et créateurs",
-      concept: "Un site robuste et 100% administrable en autonomie.",
+      concept: "Un site robuste avec une autonomie totale.",
       icon: "/icons/wordpress-icon.svg",
       color: "#719ED9",
       features: ["Budget maîtrisé", "Mise en ligne rapide", "Évolutif via plugins", "Formation incluse"],
       recommended: false,
     },
     {
-      name: "PERFORMANCE",
+      name: "PREMIUM",
       tech: "WordPress + Astro",
-      target: "Pour les médias et sites de contenu",
-      concept: "La rapidité absolue pour dominer le SEO.",
+      target: "Enjeux d'image, de SEO et de performance",
+      concept: "La puissance des technologies modernes.",
       icon: "/icons/speed-icon.svg",
-      color: "#F29F05",
+      color: "#FF6B6B",
       features: [
-        "Score PageSpeed 100/100",
+        "Flexibilité totale du design",
+        "Score PageSpeed maximum",
         "Sécurité maximale (statique)",
-        "Expérience mobile fluide",
         "SEO optimisé nativement",
       ],
       recommended: true,
     },
     {
-      name: "SUR-MESURE",
+      name: "ULTIMATE",
       tech: "WordPress + Next.js",
-      target: "Pour les startups et services SaaS",
-      concept: "Une expérience utilisateur fluide d'une application.",
+      target: "Pour des fonctionnalités spécifiques",
+      concept: "L'expérience utilisateur fluide d'une application.",
       icon: "/icons/saas-features-icon.svg",
-      color: "#FF6B6B",
+      color: "#719ED9",
       features: [
         "Interactions dynamiques",
         "Espace client complexe",
@@ -56,23 +54,6 @@ export default function SolutionsPage() {
     },
   ]
 
-  const headlessReasons = [
-    {
-      icon: Shield,
-      title: "Sécurité renforcée",
-      description: "Votre base de données WordPress est isolée, rendant le site quasi impossible à pirater.",
-    },
-    {
-      icon: Zap,
-      title: "Vitesse fulgurante",
-      description: "Les pages se chargent instantanément, réduisant le taux de rebond de 40%.",
-    },
-    {
-      icon: Users,
-      title: "Expérience éditeur préservée",
-      description: "Vos équipes continuent d'écrire leurs articles sur l'interface WordPress qu'elles connaissent.",
-    },
-  ]
 
   const needsGuide = [
     {
@@ -81,43 +62,17 @@ export default function SolutionsPage() {
       icon: Monitor,
     },
     {
-      need: "Mon site actuel est trop lent et mon SEO stagne",
+      need: "Mon site actuel est trop lent et daté",
       solution: "Astro + Headless",
       icon: TrendingUp,
     },
     {
-      need: "Je veux un portail client avec des filtres complexes",
+      need: "Je veux un portail client avec des services en ligne",
       solution: "Next.js + Headless",
       icon: Smartphone,
     },
   ]
 
-  const processSteps = [
-    {
-      step: 1,
-      title: "Analyse",
-      description: "Étude de vos besoins et choix de l'architecture.",
-      icon: FileSearch,
-    },
-    {
-      step: 2,
-      title: "Développement",
-      description: "Montage du back-end (WP) et du front-end (Astro/Next/PHP).",
-      icon: Code,
-    },
-    {
-      step: 3,
-      title: "Optimisation",
-      description: "Tests de performance et SEO.",
-      icon: Settings,
-    },
-    {
-      step: 4,
-      title: "Formation",
-      description: "Prise en main de votre interface d'administration.",
-      icon: GraduationCap,
-    },
-  ]
 
   const faqs = [
     {
@@ -148,21 +103,20 @@ export default function SolutionsPage() {
                   <div className="min-h-screen font-googletexte text-foreground">
                     <PageHero
                       badge="Solutions web sur-mesure"
-                      titre1="Des sites web performants,"
+                      titre1="Des sites web puissants"
                       titre2="adaptés à vos ambitions"
                       sousTitre="Du site vitrine administrable à l'application web haute performance, nous choisissons l'architecture qui sert vos objectifs de croissance."
                       cta1Text="Découvrir nos offres"
                       cta1Link="#offres"
                       cta2Text="Demander un audit gratuit"
                       cta2Link="/contact"
-                      illustration="/img/illustrations/solutions-hero.svg"
+                      illustration="/illustrations/tech-ecosystem.svg"
                     />
                     <SolutionsOffers offers={offers} />
-                    <SolutionsHeadless headlessReasons={headlessReasons} />
+                    <SolutionsComparisonTable />
                     <SolutionsGuide needsGuide={needsGuide} />
-                    <SolutionsProcess processSteps={processSteps} />
+                    <Process />
                     <SolutionsFAQ faqs={faqs} />
-                    <SolutionsCTA />
                   </div>
 
     </main>

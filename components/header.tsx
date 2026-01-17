@@ -42,6 +42,10 @@ export function NavBar() {
               <Link href="/" className='font-googletitre text-regularblue text-lg font-medium px-6'>Accueil</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <Link href="/solutions" className='font-googletitre text-regularblue text-lg font-medium px-6'>Solutions</Link>
+            </NavigationMenuItem>
+            {/*}
+            <NavigationMenuItem>
               <NavigationMenuTrigger className='font-googletitre text-regularblue text-lg'>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
@@ -66,12 +70,13 @@ export function NavBar() {
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>         
+            </NavigationMenuItem>     
+            */}    
             <NavigationMenuItem>
               <Link href="/demo" className='font-googletitre text-regularblue text-lg font-medium px-6'>Démo</Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Réalisations</Link>
+              <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Etudes de cas</Link>
             </NavigationMenuItem>         
             <NavigationMenuItem>
               <Link href="/tarifs" className='font-googletitre text-regularblue text-lg font-medium px-6'>Tarifs</Link>
