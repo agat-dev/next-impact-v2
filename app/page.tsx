@@ -103,7 +103,7 @@ export default function Home() {
 
 
         {/* Advantages Section */}
-        <section className="w-full mx-auto px-6 py-24 mt-24 mb-36 backdrop-blur-lg border-y border-yellow-100/70 bg-yellow-100/10">
+        <section className="w-full mx-auto px-6 py-24 mt-24 mb-36 backdrop-blur-lg border-y border-yellow-100/70 bg-yellow-100/5">
         <Advantages />
         </section>
 
