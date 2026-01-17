@@ -50,7 +50,7 @@
     
     <!-- ROI Chart -->
     <g id="roi-chart">
-      <text x="540" y="125" fill="#021373" font-size="12" font-weight="600">ROI Projection</text>
+      <text x="540" y="125" fill="#021373" font-size="12" font-weight="600" font-family="Open Sans">ROI</text>
       
       <rect x="540" y="145" width="20" height="50" fill="url(#chartGradientLight)" rx="2">
         <animate attributeName="height" values="30;50;30" dur="3s" repeatCount="indefinite"/>
@@ -75,7 +75,7 @@
 
     <!-- Performance Metrics -->
     <g id="metrics">
-      <text x="680" y="125" fill="#021373" font-size="12" font-weight="600">Performance</text>
+      <text x="680" y="125" fill="#021373" font-size="12" font-weight="600" font-family="Open Sans">Performance</text>
       
       <circle cx="720" cy="160" r="25" fill="none" stroke="#D0DCF2" stroke-width="4"/>
       <circle cx="720" cy="160" r="25" fill="none" stroke="#F29F05" stroke-width="4" 
@@ -87,7 +87,6 @@
 
     <!-- Cost Optimization -->
     <g id="cost-optimization">
-      <text x="540" y="225" fill="#021373" font-size="12" font-weight="600">Cost Efficiency</text>
       
       <circle cx="580" cy="260" r="20" fill="none" stroke="#1F54BF" stroke-width="8" 
               stroke-dasharray="80 120" transform="rotate(-90 580 260)"/>

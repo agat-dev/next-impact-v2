@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Accordion,
@@ -64,10 +65,10 @@ const FaqSchema: React.FC<FaqSchemaProps> = ({
                     {/* Utilisation de motion.div pour l'animation du contenu */}
                     <motion.div
                       key={`faq-content-${idx}`}
-                      initial={{ opacity: 0, y: -10 }}
+                      initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 1.4, ease: "circOut", type: "tween" }}
                     >
                       {faq.answer}
                     </motion.div>

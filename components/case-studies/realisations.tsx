@@ -203,7 +203,7 @@ export default function Realisations({ count }: RealisationsProps) {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="h-full"
                     >
-                      <div className="group relative overflow-hidden rounded-2xl bg-white/50 transition-all duration-500 hover:shadow h-full flex flex-col">
+                      <div className="group relative overflow-hidden rounded-2xl bg-white/50 transition-all duration-500 hover:shadow h-full flex flex-col border border-lightblue/20">
                         <div className="flex align-middle aspect-video overflow-hidden">
                           <img
                             src={project.image}
@@ -214,19 +214,19 @@ export default function Realisations({ count }: RealisationsProps) {
                             className="w-full mx-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
                           />
                         </div>
-                        <div className="p-6 flex flex-col flex-1">
+                        <div className="p-6 flex flex-col flex-1 justify-between">
                           <Link href={project.link}>
-                            <h3 className="text-2xl font-medium transition-colors duration-300 text-regularblue group-hover:text-regularblue/70">
+                            <h3 className="text-2xl font-medium transition-colors duration-300 text-mediumblue group-hover:text-mediumblue/90">
                               {project.title}
                             </h3>
                             <p className="mt-2 text-regularblue/70 text-sm group-hover:text-regularblue/50">
                               {project.description}
                             </p>
                           </Link>
-                          <div className="mt-4 mt-auto">
+                          <div className="mt-8">
                             <Link
                               href={project.link}
-                              className="inline-flex items-center text-sm font-medium  text-regularblue group-hover:text-regularblue/70 transition-all duration-300 hover:translate-x-1"
+                              className="inline-flex items-center py-1 px-4 rounded-full font-medium bg-regularblue/90 text-white hover:bg-regularblue/70 hover:text-white transition-all duration-300 hover:translate-x-1"
                             >
                               Voir le projet
                               <ArrowRight className="ml-1 h-4 w-4" />

@@ -27,7 +27,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section className="h-full grid grid-cols-1 md:grid-cols-2 items-end place-content-end gap-8 container mx-auto px-4 md:py-16 pt-16 text-center">
-      <div className="flex flex-col items-start gap-6 mb-8 md:mb-12 bg-extralightblue/10 p-8 rounded-xl shadow-lg backdrop-blur-sm max-w-3xl animate-fadeInUp">
+      <div className="flex flex-col items-start gap-6 mb-8 md:mb-12 bg-white/40 p-8 rounded-xl shadow-lg backdrop-blur-sm max-w-3xl animate-fadeInUp">
         <span className="w-max inline-flex items-center px-3 py-1 text-xs font-googletexte font-medium uppercase rounded-full bg-white text-mediumblue/60 tracking-wider">
           {badge}
         </span>
@@ -61,7 +61,7 @@ export default function PageHero({
         <img
           src={illustration}
           alt="Illustration Hero"
-          className="h-[34vh] w-auto bg-white/40 backdrop-blur-lg rounded-2xl shadow-lg"
+          className="h-[34vh] w-auto mx-auto bg-white/40 backdrop-blur-lg rounded-2xl shadow-lg "
         />
       </div>
     </section>

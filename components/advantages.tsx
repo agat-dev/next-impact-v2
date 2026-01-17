@@ -55,17 +55,17 @@ export default function Advantages() {
                         <h3
                           className={cn(
                             "font-medium text-3xl transition-colors",
-                            selectedFeature === feature.id ? "text-mediumblue" : "text-regularblue group-hover:text-foreground",
+                            selectedFeature === feature.id ? "text-orange" : "text-regularblue group-hover:text-foreground",
                           )}
                         >
                           {feature.title}
                         </h3>
                         <p
                           className={cn(
-                            "transition-colors border-t border-mediumblue pt-6",
+                            "transition-colors border-t border-orange pt-6",
                             selectedFeature === feature.id
                               ? "text-mediumblue/80"
-                              : "text-regularblue/80 group-hover:text-regularblue",
+                              : "text-mediumblue/80 group-hover:text-mediumblue/70",
                           )}
                         >
                           {feature.description}
@@ -75,8 +75,8 @@ export default function Advantages() {
                         className={cn(
                           "h-5 w-5 transition-all duration-200 ml-4 flex-shrink-0",
                           selectedFeature === feature.id
-                            ? "text-regularblue rotate-360"
-                            : "text-regularblue/80 group-hover:text-regularblue group-hover:translate-x-1",
+                            ? "text-orange rotate-360"
+                            : "text-mediumblue/80 group-hover:text-mediumblue group-hover:translate-x-1",
                         )}
                       />
                     </div>

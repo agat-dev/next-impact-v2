@@ -60,8 +60,8 @@ export default function SolutionsOffers({ offers }: { offers: any[] }) {
                     : "bg-regularblue hover:bg-mediumblue text-white"
                 }`}
               >
-                <Link href={`/contact?ref=offer-${offer.name.toLowerCase()}`} className="flex items-center justify-center w-full text-white hover:text-white">
-                Découvrir l'offre
+                <Link href="/simulateur-tarif-wordpress-headless" className="flex items-center justify-center w-full text-lg text-white hover:text-white">
+                Simuler mon tarif
                 <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

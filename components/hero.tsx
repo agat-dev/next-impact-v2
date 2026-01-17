@@ -49,16 +49,16 @@ export default function Hero() {
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row gap-5">
-            <Link href="/services/wordpress" className="group">
+            <Link href="/solutions/wordpress" className="group">
               <Button
                 size="lg"
                 variant="outline"
                 className="relative overflow-hidden rounded-full text-lg font-googletitre text-white/90 bg-regularblue border-blue-100/40 hover:bg-regularblue/90 hover:text-white/80"
               >
-                Services
+                Solutions
               </Button>
             </Link>
-            <Link href="/services/headless" className="group">
+            <Link href="/demo" className="group">
               <Button
                 size="lg"
                 variant="outline"

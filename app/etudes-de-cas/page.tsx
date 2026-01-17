@@ -1,4 +1,5 @@
 import Realisations from "@/components/case-studies/realisations" 
+import PageHero from "@/components/page-hero";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,15 +28,19 @@ export default function CaseStudiesPage() {
   return (
     <main>
               {/* Hero Section */}
-        <section className="container mx-auto px-4 text-center py-16">
-          <h1 className="text-5xl md:text-6xl tracking-tight mt-12 mb-6">
-            Etudes de cas 
-          </h1>
-          <p className="text-xl text-regularblue/80 max-w-3xl mx-auto">
-            Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs grâce à des sites web performants et adaptés à leurs besoins.
-          </p>
-        </section>
-      <div className="container mx-auto">
+      <PageHero 
+        titre1="Études de cas"
+        titre2="de sites web WordPress"
+        sousTitre="Penser besoin de la vie réelle, comprendre les enjeux concrets du client constituent la base de la mise au point d'une solution adaptée." 
+        badge="Études de cas"
+        illustration="/illustrations/user-experience.svg"
+        cta1Link="/solutions"
+        cta1Text="Solutions"
+        cta2Link="/demo"
+        cta2Text="Démo"
+      />
+
+      <div className="container mx-auto mt-12">
         <Realisations count={100} />
       </div>
     </main>

@@ -7,7 +7,7 @@ export function CTASection() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-8 text-center">
               <div className="space-y-8">
-                <h2 className="text-4xl font-MEDIUM tracking-tighter text-regularblue md:text-4xl/tight">
+                <h2 className="text-4xl font-medium tracking-tighter text-regularblue md:text-4xl/tight">
                   Prêt à transformer votre présence en ligne ?
                 </h2>
                 <p className="mx-auto max-w-[700px] text-lg text-regularblue/70">
@@ -18,21 +18,21 @@ export function CTASection() {
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Button
                   size="lg"
-                  className="gap-1 text-lg font-medium rounded-full text-white bg-coral hover:bg-coral/90 hover:text-white transition-all duration-300"
+                  className="gap-1 text-lg font-medium rounded-full text-white bg-regularblue hover:bg-regularblue/90 hover:text-white transition-all duration-300"
                   asChild
                 >
                   <a href="tel:0673981638">
-                    Appeler maintenant <ArrowRight className="h-4 w-4" />
+                    Appeler <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-1 text-lg font-medium rounded-full border-coral text-coral hover:bg-white/90 hover:text-coral/90 transition-all duration-300"
+                  className="gap-1 text-lg font-medium rounded-full bg-coral text-white hover:bg-coral/90 hover:text-white transition-all duration-300"
                   asChild
                 >
                   <a href="mailto:agathe@next-impact.digital">
-                    Envoyer un e-mail <ArrowRight className="h-4 w-4" />
+                    Envoyer un mail <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
               </div>

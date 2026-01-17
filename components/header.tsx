@@ -79,7 +79,7 @@ export function NavBar() {
               <Link href="/etudes-de-cas" className='font-googletitre text-regularblue text-lg font-medium px-2'>Etudes de cas</Link>
             </NavigationMenuItem>         
             <NavigationMenuItem>
-              <Link href="/tarifs" className='font-googletitre text-regularblue text-lg font-medium px-6'>Tarifs</Link>
+              <Link href="/simulateur-tarif-wordpress-headless" className='font-googletitre text-regularblue text-lg font-medium px-6'>Tarifs</Link>
             </NavigationMenuItem>    
             {/*}
             <NavigationMenuItem>
@@ -172,41 +172,15 @@ export function NavBar() {
                 </div>
                 <div className="p-4 space-y-0">
                   <MobileMenuLink href="/" onClick={handleMenuClick}>Accueil</MobileMenuLink>
-                  {/* Services sous-menu */}
+                  <MobileMenuLink href="/solutions" onClick={handleMenuClick}>Solutions</MobileMenuLink>
+                  <MobileMenuLink href="/demo" onClick={handleMenuClick}>Démo</MobileMenuLink>
+                  <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Etudes de cas</MobileMenuLink>
+                  <MobileMenuLink href="/simulateur-tarif-wordpress-headless" onClick={handleMenuClick}>Tarifs</MobileMenuLink>
+                  {/* Ressources sous-menu */}
                   <div>
                     <button
                       className={cn(
-                        "w-full text-left block py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
-                        openSubMenu === "services" && "bg-lightblue/10"
-                      )}
-                      onClick={() => handleToggleSubMenu("services")}
-                      aria-expanded={openSubMenu === "services"}
-                    >
-                      Services
-                      <span className={cn("transition-transform", openSubMenu === "services" ? "rotate-180" : "")}>
-                        <ChevronDown className="inline w-5 h-5 ml-2" />
-                      </span>
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {openSubMenu === "services" && (
-                        <motion.div
-                          key="services-sub"
-                          initial={{ y: -20, opacity: 0, height: 0 }}
-                          animate={{ y: 0, opacity: 1, height: "auto" }}
-                          exit={{ y: -20, opacity: 0, height: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="pl-4 overflow-hidden"
-                        >
-                          <MobileMenuLink href="/services/wordpress" onClick={handleMenuClick} className="pl-4">WordPress</MobileMenuLink>
-                          <MobileMenuLink href="/services/headless" onClick={handleMenuClick} className="pl-4">WordPress Headless</MobileMenuLink>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                    <MobileMenuLink href="/etudes-de-cas" onClick={handleMenuClick}>Réalisations</MobileMenuLink>
-
-                    <button
-                      className={cn(
-                        "w-full text-left block py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
+                        "w-full text-left py-3 px-4 rounded-md text-regularblue font-medium text-lg hover:bg-lightblue/10 transition cursor-pointer select-none flex items-center justify-between",
                         openSubMenu === "ressources" && "bg-lightblue/10"
                       )}
                       onClick={() => handleToggleSubMenu("ressources")}
@@ -227,8 +201,8 @@ export function NavBar() {
                           transition={{ duration: 0.25 }}
                           className="pl-4 overflow-hidden"
                         >
-                          <MobileMenuLink href="/cms-headless" onClick={handleMenuClick} className="pl-4">WordPress CMS ou Headless ?</MobileMenuLink>
-                          <MobileMenuLink href="/simulateur-tarifs" onClick={handleMenuClick} className="pl-4">Simulateur du budget</MobileMenuLink>
+                          <MobileMenuLink href="/cms-headless" onClick={handleMenuClick} className="pl-4">Quiz WordPress ou Headless ?</MobileMenuLink>
+                          <MobileMenuLink href="/simulateur-tarifs" onClick={handleMenuClick} className="pl-4">Simulateur de budget</MobileMenuLink>
                           <MobileMenuLink href="/cahier-des-charges" onClick={handleMenuClick} className="pl-4">Générateur de cahier des charges</MobileMenuLink>
                           <MobileMenuLink href="/documentation" onClick={handleMenuClick} className="pl-4">Documentation & Blog</MobileMenuLink>
                         </motion.div>
@@ -314,7 +288,7 @@ ListItem.displayName = "ListItem"
 
 export default function Header() {
   return (
-    <header className="border-b top-0 z-50 shadow-sm">
+    <header className=" sticky top-0 z-50 w-full justify-center bg-white/40 backdrop-blur-md shadow-md">
       <div className="container flex h-16 items-center justify-between px-2">
         <div className='basis-1/6 pt-2 md:pl-0 pl-4'>
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
