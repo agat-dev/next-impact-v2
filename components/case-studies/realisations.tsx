@@ -159,31 +159,31 @@ export default function Realisations({ count }: RealisationsProps) {
             <TabsList className="flex flex-wrap md:bg-white bg-transparent p-1 rounded-full">
               <TabsTrigger
                 value="derniers"
-                className="rounded-full data-[state=active]:bg-background/10"
+                className="rounded-full data-[state=active]:bg-white/50"
               >
                 Réalisations marquantes
               </TabsTrigger>
               <TabsTrigger
                 value="corporate"
-                className="rounded-full data-[state=active]:bg-background/10"
+                className="rounded-full data-[state=active]:bg-white/50"
               >
                 Corporate
               </TabsTrigger>
               <TabsTrigger
                 value="institutional"
-                className="rounded-full data-[state=active]:bg-background/10"
+                className="rounded-full data-[state=active]:bg-white/50"
               >
                 Institutionnel
               </TabsTrigger>
 			  <TabsTrigger
                 value="ess"
-                className="rounded-full data-[state=active]:bg-background/10"
+                className="rounded-full data-[state=active]:bg-white/50"
               >
                 ESS
               </TabsTrigger>
               <TabsTrigger
                 value="headless"
-                className="rounded-full data-[state=active]:bg-background/10"
+                className="rounded-full data-[state=active]:bg-white/50"
               >
                 Headless
               </TabsTrigger>
@@ -203,7 +203,7 @@ export default function Realisations({ count }: RealisationsProps) {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="h-full"
                     >
-                      <div className="group relative overflow-hidden rounded-2xl bg-background transition-all duration-500 hover:shadow h-full flex flex-col">
+                      <div className="group relative overflow-hidden rounded-2xl bg-white/50 transition-all duration-500 hover:shadow h-full flex flex-col">
                         <div className="flex align-middle aspect-video overflow-hidden">
                           <img
                             src={project.image}
