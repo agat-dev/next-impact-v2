@@ -1,14 +1,12 @@
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { sendMail } from "@/lib/mailer";
 
 export async function POST(req: Request) {
   const { name, email, message, pdfBase64, pdfName } = await req.json();
 
   // Prépare l'email pour l'admin
-  const emailData: any = {
+  const adminMail: any = {
     from: "Next Impact <agathe@next-impact.digital>",
-    to: ["agathe@next-impact.digital"],
+    to: "agathe@next-impact.digital",
     subject: `Nouveau message de ${name}`,
     replyTo: email,
     html: `
@@ -24,22 +22,18 @@ export async function POST(req: Request) {
           : ""
       }
     `,
-  };
-
-  // Ajoute la pièce jointe seulement si elle existe et est non vide
-  if (pdfBase64 && typeof pdfBase64 === "string" && pdfBase64.length > 20) {
-    emailData.attachments = [
+    attachments: pdfBase64 && typeof pdfBase64 === "string" && pdfBase64.length > 20 ? [
       {
         filename: pdfName || "cahier-des-charges.pdf",
-        content: pdfBase64,
+        content: Buffer.from(pdfBase64, 'base64'),
       },
-    ];
-  }
+    ] : undefined,
+  };
 
   // Prépare l'email de confirmation pour l'utilisateur
-  const confirmationEmail = {
+  const confirmationMail = {
     from: "Next Impact <agathe@next-impact.digital>",
-    to: [email],
+    to: email,
     subject: "Confirmation de réception de votre message – Next Impact Digital",
     html: `
       <h3>Bonjour ${name},</h3>
@@ -60,20 +54,11 @@ export async function POST(req: Request) {
   };
 
   try {
-    // Envoi en parallèle
-    const [adminRes, userRes] = await Promise.all([
-      resend.emails.send(emailData),
-      resend.emails.send(confirmationEmail),
-    ]);
-
-    if (adminRes.error || userRes.error) {
-      console.error("Resend error:", adminRes.error || userRes.error);
-      return new Response("Erreur Resend: " + JSON.stringify(adminRes.error || userRes.error), { status: 500 });
-    }
-
+    await sendMail(adminMail);
+    await sendMail(confirmationMail);
     return new Response("Message envoyé", { status: 200 });
-  } catch (err) {
-    console.error("Server error:", err);
+  } catch (err: any) {
+    console.error("Erreur serveur:", err);
     return new Response("Erreur serveur: " + String(err), { status: 500 });
   }
 }

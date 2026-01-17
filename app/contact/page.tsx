@@ -1,10 +1,5 @@
-
-import PageHero from "@/components/page-hero"
-import Link from "next/link";
-import ContactForm from "@/components/contact-form";
-import { MagicCard } from "@/components/magicui/magic-card";
+import  PageHero from "@/components/page-hero";
 import { Metadata } from "next";
-import { CDCCard } from "@/components/tools";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -28,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+export default function ContactPage() {
   return (
     <main>
       <PageHero
@@ -42,9 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
         illustration="/img/illustrations/contact-hero.svg"
       />
       <div className="mt-24 space-y-12 rounded-2xl" id="formulaire">
-        <MagicCard className="rounded-2xl">
-          <ContactForm />
-        </MagicCard>
+
       </div>
       <div className="mt-12 text-sm text-mediumblue text-center">
         <p>Basée en France - Disponible à distance</p>
